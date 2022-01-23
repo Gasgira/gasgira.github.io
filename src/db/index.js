@@ -70,14 +70,19 @@ export class Item extends Component {
 	}
 
 	async render() {
-
 			if (!this.data) await this.init();
+			let imagePath = '';
+			const displayPath = this?.data?.CommonData?.DisplayPath?.Media?.MediaUrl?.Path;
+			if (displayPath && typeof displayPath === 'string') {
+				imagePath = `${displayPath[0].toUpperCase()}${displayPath.substring(1)}`;
+				console.log(imagePath)
+			}
 			console.log('render', this.path)
 			return this.html`
 				<button
 					class=${`dbItem dbItemIcon${this?.data?.CommonData?.Quality ? ` ${this?.data.CommonData.Quality?.toLowerCase?.()}` : ''}`}
 					onclick=${() => this.showItemPanel()}
-					style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${this?.data?.CommonData?.DisplayPath?.Media?.MediaUrl?.Path})`}}
+					style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${imagePath})`}}
 				>
 					<span>${this?.data?.CommonData?.Title ?? '???'}</span>
 				</button>
