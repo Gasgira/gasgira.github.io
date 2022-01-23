@@ -1,0 +1,120 @@
+{
+	"TagId": 0,
+	"ThemeName": {
+		"m_identifier": 1023577090
+	},
+	"EmblemShaderName": {
+		"m_identifier": 0
+	},
+	"CommonData": {
+		"Id": "013-001-d92d85c8",
+		"HideUntilOwned": false,
+		"Title": "Radioactive",
+		"Description": "It's over nine thousand roentgen!",
+		"FeatureFlag": true,
+		"ItemAvailability": "",
+		"DateReleased": {
+			"ISO8601Date": ""
+		},
+		"AltName": "013-001-d92d85c8",
+		"IconStringId": {
+			"m_identifier": -1
+		},
+		"SpriteBitmap": 0,
+		"SpriteFrameIndex": 0,
+		"AltSpriteBitmap": 0,
+		"AltSpriteFrameIndex": 0,
+		"FocusMarker": {
+			"m_identifier": -1
+		},
+		"FocalDistance": 0,
+		"FocusMarkerOffset": 0,
+		"DOFType": "None",
+		"DOFFocalLength": 0,
+		"DOFFocalDistance": 0,
+		"DOFFStop": 0,
+		"DisplayPath": {
+			"Width": 614,
+			"Height": 615,
+			"Media": {
+				"MediaUrl": {
+					"AuthorityId": "",
+					"Path": "progression/Inventory/Emblems/Olympus_Radioactive_emblem.png",
+					"RetryPolicyId": "",
+					"TopicName": "",
+					"AcknowledgementTypeId": "NoAcknowledgement",
+					"AuthenticationLifetimeExtensionSupported": false,
+					"ClearanceAware": false
+				},
+				"MimeType": "",
+				"Caption": "",
+				"AlternateText": "",
+				"FolderPath": "",
+				"FileName": ""
+			},
+			"MimeType": "image/png",
+			"FolderPath": "progression/Inventory/Emblems",
+			"FileName": "Olympus_Radioactive_emblem.png"
+		},
+		"Quality": "Common",
+		"ManufacturerId": 23,
+		"Type": "ArmorEmblem",
+		"ParentTheme": "",
+		"RewardTrack": "",
+		"CameraPositions": [],
+		"CameraOffset": 0,
+		"CameraFOV": 0,
+		"CameraTransition": 0,
+		"Orientation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"Season": "Season 1",
+		"FocusedObjectOrientation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"ParentPaths": [
+			{
+				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
+				"Type": "ArmorTheme"
+			},
+			{
+				"Path": "Inventory/Armor/Themes/007-001-reach-2564121f.json",
+				"Type": "ArmorTheme"
+			},
+			{
+				"Path": "Inventory/Armor/Themes/007-001-samurai-55badb14.json",
+				"Type": "ArmorTheme"
+			}
+		],
+		"SortingMetadata": {
+			"categoryWeight": 0,
+			"subCategoryWeight": 0
+		}
+	},
+	"AvailableConfigurations": [
+		{
+			"ConfigurationId": -322620398,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-425a34e1.json"
+		},
+		{
+			"ConfigurationId": 929516217,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-c675a8c6.json"
+		},
+		{
+			"ConfigurationId": -266027103,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-ed58fb05.json"
+		},
+		{
+			"ConfigurationId": 802727239,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-885e047a.json"
+		},
+		{
+			"ConfigurationId": -748408373,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-5a77daa1.json"
+		}
+	]
+}

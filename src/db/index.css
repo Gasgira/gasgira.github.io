@@ -1,0 +1,135 @@
+button.dbItemIcon {
+	--length: 10rem;
+	width: var(--length);
+	height: var(--length);
+	margin: 0.8rem;
+	background-color: black;
+	background-size: contain;                      /* <------ */
+	background-repeat: no-repeat;
+	background-position: center center;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	background-color: rgba(0,0,0,0.5);
+	font-weight: bold;
+	&::before {
+		border-width: 0.25rem;
+		--padding: -0.5rem;
+		opacity: 0.4;
+	}
+	&::after {
+		display: block;
+		content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+	}
+	&>span {
+		width: 100%;
+		opacity: 1;
+		transition: opacity var(--time-active) linear;
+		font-size: 0.9rem;
+		margin-bottom: 0.25rem;
+	}
+	&:hover {
+    background-color: rgba(255,255,255,1);
+		color: #000;
+		text-shadow: 0 0 1rem #fff, 0 0 0.5rem #fff;
+	}
+	&:hover>span {
+		opacity: 1;
+	}
+}
+
+.dbItemPanel_clickout {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.5);
+	cursor: pointer;
+	animation: fade-in var(--time-active) linear;
+}
+
+.dbItemPanel_wrapper {
+	display: flex;
+	position: fixed;
+	height: 100vh;
+	max-width: 80vw;
+	width: 50rem;
+	right: 0;
+	top: 0;
+	background-color: #333;
+	flex-direction: column;
+	overflow: hidden;
+	box-shadow: -1rem 0 1rem #000;
+	animation: slide-in-right var(--time-active) linear;
+	& .dbItemPanel_json {
+		width: 100%;
+		font-size: 0.7rem;
+		line-break: anywhere;
+		overflow-x: scroll;
+		overflow-y: auto;
+		padding-left: 1rem;
+		padding-bottom: 5rem;
+		font-family: monospace;
+	}
+	& .dbItemPanel_close {
+		position: fixed;
+		top: 0;
+		right: 1rem;
+	}
+	&>header {
+		padding-bottom: 0.5rem;
+		display: flex;
+		flex-direction: row;
+		&>img {
+			width: 8rem;
+			height: 8rem;
+			background-color: rgba(0,0,0,0.8);
+		}
+		& h2 {
+			font-size: 1.25rem;
+			padding-top: 1rem;
+		}
+		& h3 {
+			font-size: 0.8rem;
+			font-weight: normal;
+			font-style: italic;
+			opacity: 0.75;
+			padding-right: 0.5rem;
+		}
+		& .dbItemPanel_titles {
+			--rarity: var(--rarity-common);
+			padding-left: 1rem;
+			border-left: 0.2rem solid var(--rarity-common);
+			width: 100%;
+			background: linear-gradient(175deg, var(--rarity), rgba(0,0,0,0) 30%);
+			transition: border-color var(--time-state) linear;
+			&.legendary {
+				--rarity: var(--rarity-legendary);
+				border-left: 0.2rem solid var(--rarity);
+			}
+			&.epic {
+				--rarity: var(--rarity-epic);
+				border-left: 0.2rem solid var(--rarity-epic);
+			}
+			&.rare {
+				--rarity: var(--rarity-rare);
+				border-left: 0.2rem solid var(--rarity-rare);
+			}
+		}
+	}
+	& .dbItemPanel_path {
+		opacity: 0.5;
+		padding-left: 0.8rem;
+		padding-bottom: 0.5rem;
+		font-size: 0.7rem;
+		font-weight: normal;
+		font-style: italic;
+	}
+}

@@ -1,0 +1,111 @@
+{
+	"TagId": 0,
+	"ThemeName": {
+		"m_identifier": 365466887
+	},
+	"EmblemShaderName": {
+		"m_identifier": -1
+	},
+	"AvailableConfigurations": [
+		{
+			"ConfigurationId": 2031065504,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-bacbd32c.json"
+		},
+		{
+			"ConfigurationId": -1708548354,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-d7d28f03.json"
+		},
+		{
+			"ConfigurationId": -497080097,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-94f78905.json"
+		},
+		{
+			"ConfigurationId": -2070548530,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-02dd7bf3.json"
+		},
+		{
+			"ConfigurationId": -531379543,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-15364c66.json"
+		},
+		{
+			"ConfigurationId": 1398757569,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-3b61ee6e.json"
+		}
+	],
+	"CommonData": {
+		"Id": "104-001-olympus-loyal-bb8d5ccb",
+		"HideUntilOwned": true,
+		"Title": "Eld",
+		"Description": "Life presents strife and death as well as joy and birth.",
+		"FeatureFlag": true,
+		"ItemAvailability": "",
+		"DateReleased": {
+			"ISO8601Date": ""
+		},
+		"AltName": "104-001-olympus-loyal-bb8d5ccb",
+		"IconStringId": {
+			"m_identifier": -1
+		},
+		"SpriteBitmap": 0,
+		"SpriteFrameIndex": 0,
+		"AltSpriteBitmap": 0,
+		"AltSpriteFrameIndex": 0,
+		"FocusMarker": {
+			"m_identifier": -1
+		},
+		"FocalDistance": 0,
+		"FocusMarkerOffset": 0,
+		"DOFType": "None",
+		"DOFFocalLength": 0,
+		"DOFFocalDistance": 0,
+		"DOFFStop": 0,
+		"DisplayPath": {
+			"Width": 358,
+			"Height": 358,
+			"Media": {
+				"MediaUrl": {
+					"AuthorityId": "",
+					"Path": "progression/Inventory/Emblems/olympus_loyalty_eld_emblem.png",
+					"RetryPolicyId": "",
+					"TopicName": "",
+					"AcknowledgementTypeId": "NoAcknowledgement",
+					"AuthenticationLifetimeExtensionSupported": false,
+					"ClearanceAware": false
+				},
+				"MimeType": "",
+				"Caption": "",
+				"AlternateText": "",
+				"FolderPath": "",
+				"FileName": ""
+			},
+			"MimeType": "image/png",
+			"FolderPath": "progression/Inventory/Emblems",
+			"FileName": "olympus_loyalty_eld_emblem.png"
+		},
+		"Quality": "Legendary",
+		"ManufacturerId": 0,
+		"Type": "SpartanEmblem",
+		"ParentTheme": "",
+		"RewardTrack": "",
+		"CameraPositions": [],
+		"CameraOffset": 0,
+		"CameraFOV": 0,
+		"CameraTransition": 0,
+		"Orientation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"Season": "Season 1",
+		"FocusedObjectOrientation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"ParentPaths": [],
+		"SortingMetadata": {
+			"categoryWeight": 1,
+			"subCategoryWeight": 0
+		}
+	}
+}

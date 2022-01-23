@@ -1,0 +1,11 @@
+{
+	"Title": "Boost and Swap Pack",
+	"Description": "Includes 2 XP Boosts and 2 Challenge Swaps",
+	"Quality": "Common",
+	"WidthHint": 2,
+	"HeightHint": 1,
+	"FlairText": "",
+	"FlairIconPath": null,
+	"FlairBackgroundPath": null,
+	"ObjectImagePath": "progression/StoreContent/Offerings/Boost_and_Swap_Pack_v3.png"
+}

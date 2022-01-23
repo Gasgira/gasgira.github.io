@@ -1,0 +1,1263 @@
+{
+	"IsItemOwnershipRequired": true,
+	"Coatings": {
+		"IsRequired": true,
+		"DefaultOptionPath": "Inventory/Armor/Coatings/002-001-olympus-c07553ed.json",
+		"OptionPaths": [
+			"Inventory/Armor/Coatings/002-001-olympus-80607276.json",
+			"Inventory/Armor/Coatings/002-001-olympus-97d6675c.json",
+			"Inventory/Armor/Coatings/002-001-olympus-70b3bac0.json",
+			"Inventory/Armor/Coatings/002-001-olympus-cd373d05.json",
+			"Inventory/Armor/Coatings/002-001-olympus-c07553ed.json",
+			"Inventory/Armor/Coatings/002-001-olympus-97186be7.json",
+			"Inventory/Armor/Coatings/002-001-olympus-7676d1f0.json",
+			"Inventory/Armor/Coatings/002-001-olympus-33b49735.json",
+			"Inventory/Armor/Coatings/002-001-olympus-892d1fa5.json",
+			"Inventory/Armor/Coatings/002-001-olympus-93e4bd89.json",
+			"Inventory/Armor/Coatings/002-001-olympus-cb455696.json",
+			"Inventory/Armor/Coatings/002-001-olympus-f94a0c5f.json",
+			"Inventory/Armor/Coatings/002-001-olympus-bc325299.json",
+			"Inventory/Armor/Coatings/002-001-olympus-ba63ec9a.json",
+			"Inventory/Armor/Coatings/002-001-olympus-18fab069.json",
+			"Inventory/Armor/Coatings/002-001-olympus-c9e84fcc.json",
+			"Inventory/Armor/Coatings/002-001-olympus-dce288ed.json",
+			"Inventory/Armor/Coatings/002-001-olympus-3a26bce3.json",
+			"Inventory/Armor/Coatings/002-001-olympus-0e956092.json",
+			"Inventory/Armor/Coatings/002-001-olympus-5b06ece8.json",
+			"Inventory/Armor/Coatings/002-001-olympus-3fe59808.json",
+			"Inventory/Armor/Coatings/002-001-olympus-43cc3d20.json",
+			"Inventory/Armor/Coatings/002-001-olympus-58d06c68.json",
+			"Inventory/Armor/Coatings/002-001-olympus-ff28d026.json",
+			"Inventory/Armor/Coatings/002-001-olympus-b25198ed.json",
+			"Inventory/Armor/Coatings/002-001-olympus-1985d5dc.json",
+			"Inventory/Armor/Coatings/002-001-olympus-15400a0c.json",
+			"Inventory/Armor/Coatings/002-001-olympus-f242eec4.json",
+			"Inventory/Armor/Coatings/002-001-olympus-05e9e416.json",
+			"Inventory/Armor/Coatings/002-001-olympus-da3ba426.json",
+			"Inventory/Armor/Coatings/002-001-olympus-7c9c748a.json",
+			"Inventory/Armor/Coatings/002-001-olympus-75f39f2f.json",
+			"Inventory/Armor/Coatings/002-001-olympus-814c6f72.json",
+			"Inventory/Armor/Coatings/002-001-olympus-48526ce0.json",
+			"Inventory/Armor/Coatings/002-001-olympus-361921db.json",
+			"Inventory/Armor/Coatings/002-001-olympus-0f2fcfd5.json",
+			"Inventory/Armor/Coatings/002-001-olympus-cc22c74e.json",
+			"Inventory/Armor/Coatings/002-001-olympus-9e246335.json",
+			"Inventory/Armor/Coatings/002-001-olympus-60e4a38a.json",
+			"Inventory/Armor/Coatings/002-001-olympus-ec5327ff.json",
+			"Inventory/Armor/Coatings/002-001-olympus-12f74a7c.json",
+			"Inventory/Armor/Coatings/002-001-olympus-7f895462.json",
+			"Inventory/Armor/Coatings/002-001-olympus-281bee6e.json",
+			"Inventory/Armor/Coatings/002-001-olympus-d7387e5d.json",
+			"Inventory/Armor/Coatings/002-001-olympus-86783bbc.json",
+			"Inventory/Armor/Coatings/002-001-olympus-c040a28a.json",
+			"Inventory/Armor/Coatings/002-001-olympus-0ef64262.json",
+			"Inventory/Armor/Coatings/002-001-olympus-4ca5b569.json",
+			"Inventory/Armor/Coatings/002-001-olympus-c25fbec5.json",
+			"Inventory/Armor/Coatings/002-001-olympus-d28fc5df.json",
+			"Inventory/Armor/Coatings/002-001-olympus-063d787b.json",
+			"Inventory/Armor/Coatings/002-001-olympus-73eb2016.json",
+			"Inventory/Armor/Coatings/002-001-olympus-3ded5319.json",
+			"Inventory/Armor/Coatings/002-001-olympus-ebb12066.json",
+			"Inventory/Armor/Coatings/002-001-olympus-f90d56b9.json",
+			"Inventory/Armor/Coatings/002-001-olympus-b53ae8e6.json",
+			"Inventory/Armor/Coatings/002-001-olympus-aacf68b1.json",
+			"Inventory/Armor/Coatings/002-001-olympus-08bb58cb.json",
+			"Inventory/Armor/Coatings/002-001-olympus-59e31f7d.json",
+			"Inventory/Armor/Coatings/002-001-olympus-755f8cdf.json",
+			"Inventory/Armor/Coatings/002-001-olympus-04fadae0.json",
+			"Inventory/Armor/Coatings/002-001-olympus-95b31d2c.json",
+			"Inventory/Armor/Coatings/002-001-olympus-bfdc6250.json",
+			"Inventory/Armor/Coatings/002-001-olympus-bc220d04.json",
+			"Inventory/Armor/Coatings/002-001-olympus-1d6ba9eb.json",
+			"Inventory/Armor/Coatings/002-001-olympus-a9ae4921.json",
+			"Inventory/Armor/Coatings/002-001-olympus-c0122ae6.json",
+			"Inventory/Armor/Coatings/002-001-olympus-f2065c3b.json",
+			"Inventory/Armor/Coatings/002-001-olympus-e3ca8a4f.json",
+			"Inventory/Armor/Coatings/002-001-olympus-0fc1731e.json",
+			"Inventory/Armor/Coatings/002-001-olympus-f957ae61.json",
+			"Inventory/Armor/Coatings/002-001-olympus-69513c5d.json"
+		]
+	},
+	"Helmets": {
+		"IsRequired": true,
+		"DefaultOptionPath": "Inventory/Armor/Helmets/005-001-olympus-609a5d1c.json",
+		"Options": [
+			{
+				"HelmetPath": "Inventory/Armor/Helmets/005-001-olympus-c13d0b38.json",
+				"HelmetAttachments": {
+					"DefaultOptionPath": "",
+					"IsRequired": false,
+					"OptionPaths": [
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-87622224.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-a6bbe304.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-8d96b0c7.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-948d8186.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-dbcc1741.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-7779584d.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-c2d72600.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-f0e14482.json"
+					]
+				}
+			},
+			{
+				"HelmetPath": "Inventory/Armor/Helmets/005-001-olympus-ea1058fb.json",
+				"HelmetAttachments": {
+					"DefaultOptionPath": "",
+					"IsRequired": false,
+					"OptionPaths": [
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-6c559927.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-948d8186.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-dbcc1741.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-7779584d.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-c2d72600.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-f0e14482.json"
+					]
+				}
+			},
+			{
+				"HelmetPath": "Inventory/Armor/Helmets/005-001-olympus-f30b69ba.json",
+				"HelmetAttachments": {
+					"DefaultOptionPath": "",
+					"IsRequired": false,
+					"OptionPaths": [
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-8397f219.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-948d8186.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-dbcc1741.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-7779584d.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-c2d72600.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-f0e14482.json"
+					]
+				}
+			},
+			{
+				"HelmetPath": "Inventory/Armor/Helmets/005-001-olympus-bc4aff7d.json",
+				"HelmetAttachments": {
+					"DefaultOptionPath": "",
+					"IsRequired": false,
+					"OptionPaths": [
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-614be960.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-948d8186.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-dbcc1741.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-7779584d.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-c2d72600.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-f0e14482.json"
+					]
+				}
+			},
+			{
+				"HelmetPath": "Inventory/Armor/Helmets/005-001-olympus-a551ce3c.json",
+				"HelmetAttachments": {
+					"DefaultOptionPath": "",
+					"IsRequired": false,
+					"OptionPaths": [
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-8e89825e.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-948d8186.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-dbcc1741.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-7779584d.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-c2d72600.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-f0e14482.json"
+					]
+				}
+			},
+			{
+				"HelmetPath": "Inventory/Armor/Helmets/005-001-olympus-8e7c9dff.json",
+				"HelmetAttachments": {
+					"DefaultOptionPath": "",
+					"IsRequired": false,
+					"OptionPaths": [
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-65be395d.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-948d8186.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-dbcc1741.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-7779584d.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-c2d72600.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-f0e14482.json"
+					]
+				}
+			},
+			{
+				"HelmetPath": "Inventory/Armor/Helmets/005-001-olympus-9767acbe.json",
+				"HelmetAttachments": {
+					"DefaultOptionPath": "",
+					"IsRequired": false,
+					"OptionPaths": [
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-8a7c5263.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-948d8186.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-dbcc1741.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-7779584d.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-c2d72600.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-f0e14482.json"
+					]
+				}
+			},
+			{
+				"HelmetPath": "Inventory/Armor/Helmets/005-001-olympus-10ffb071.json",
+				"HelmetAttachments": {
+					"DefaultOptionPath": "",
+					"IsRequired": false,
+					"OptionPaths": [
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-7b7709ee.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-a6bbe304.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-8d96b0c7.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-948d8186.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-dbcc1741.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-7779584d.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-c2d72600.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-f0e14482.json"
+					]
+				}
+			},
+			{
+				"HelmetPath": "Inventory/Armor/Helmets/005-001-olympus-09e48130.json",
+				"HelmetAttachments": {
+					"DefaultOptionPath": "",
+					"IsRequired": false,
+					"OptionPaths": [
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-94b562d0.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-948d8186.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-dbcc1741.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-7779584d.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-c2d72600.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-f0e14482.json"
+					]
+				}
+			},
+			{
+				"HelmetPath": "Inventory/Armor/Helmets/005-001-olympus-609a5d1c.json",
+				"HelmetAttachments": {
+					"DefaultOptionPath": "",
+					"IsRequired": false,
+					"OptionPaths": [
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-f3050575.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-948d8186.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-dbcc1741.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-7779584d.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-c2d72600.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-f0e14482.json"
+					]
+				}
+			},
+			{
+				"HelmetPath": "Inventory/Armor/Helmets/005-001-olympus-79816c5d.json",
+				"HelmetAttachments": {
+					"DefaultOptionPath": "",
+					"IsRequired": false,
+					"OptionPaths": [
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-1cc76e4b.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-a6bbe304.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-948d8186.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-dbcc1741.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-7779584d.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-c2d72600.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-f0e14482.json"
+					]
+				}
+			},
+			{
+				"HelmetPath": "Inventory/Armor/Helmets/005-001-olympus-52ac3f9e.json",
+				"HelmetAttachments": {
+					"DefaultOptionPath": "",
+					"IsRequired": false,
+					"OptionPaths": [
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-f7f0d548.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-a6bbe304.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-948d8186.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-dbcc1741.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-7779584d.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-c2d72600.json",
+						"Inventory/Armor/HelmetAttachments/004-001-olympus-f0e14482.json"
+					]
+				}
+			}
+		]
+	},
+	"Visors": {
+		"IsRequired": true,
+		"DefaultOptionPath": "Inventory/Armor/Visors/012-001-eda22df2.json",
+		"OptionPaths": [
+			"Inventory/Armor/Visors/012-001-eda22df2.json",
+			"Inventory/Armor/Visors/012-001-2f9d5491.json",
+			"Inventory/Armor/Visors/012-001-3a264e2f.json",
+			"Inventory/Armor/Visors/012-001-aca35a00.json",
+			"Inventory/Armor/Visors/012-001-a8a475ad.json",
+			"Inventory/Armor/Visors/012-001-bdb9fc8a.json",
+			"Inventory/Armor/Visors/012-001-5438b142.json",
+			"Inventory/Armor/Visors/012-001-fe73b03c.json",
+			"Inventory/Armor/Visors/012-001-d2342690.json",
+			"Inventory/Armor/Visors/012-001-101c6e1d.json",
+			"Inventory/Armor/Visors/012-001-6dae39c2.json",
+			"Inventory/Armor/Visors/012-001-fc8b59be.json",
+			"Inventory/Armor/Visors/012-001-46af2392.json",
+			"Inventory/Armor/Visors/012-001-7c7e0def.json",
+			"Inventory/Armor/Visors/012-001-4df92fda.json",
+			"Inventory/Armor/Visors/012-001-f24af123.json",
+			"Inventory/Armor/Visors/012-001-95b881d7.json",
+			"Inventory/Armor/Visors/012-001-f6d6437e.json",
+			"Inventory/Armor/Visors/012-001-3d4aa867.json",
+			"Inventory/Armor/Visors/012-001-cbabd291.json",
+			"Inventory/Armor/Visors/012-001-c6c3cef5.json",
+			"Inventory/Armor/Visors/012-001-938c6f4d.json",
+			"Inventory/Armor/Visors/012-001-d75d98ae.json",
+			"Inventory/Armor/Visors/012-001-20e20559.json",
+			"Inventory/Armor/Visors/012-001-83bc93ef.json",
+			"Inventory/Armor/Visors/012-001-40d97848.json",
+			"Inventory/Armor/Visors/012-001-bc9e240b.json",
+			"Inventory/Armor/Visors/012-001-e1fe4a07.json"
+		]
+	},
+	"LeftShoulderPads": {
+		"IsRequired": false,
+		"DefaultOptionPath": "Inventory/Armor/ShouldersLeft/008-001-olympus-ea1058fb.json",
+		"OptionPaths": [
+			"Inventory/Armor/ShouldersLeft/008-001-olympus-c13d0b38.json",
+			"Inventory/Armor/ShouldersLeft/008-001-olympus-ea1058fb.json",
+			"Inventory/Armor/ShouldersLeft/008-001-olympus-f30b69ba.json",
+			"Inventory/Armor/ShouldersLeft/008-001-olympus-bc4aff7d.json",
+			"Inventory/Armor/ShouldersLeft/008-001-olympus-a551ce3c.json",
+			"Inventory/Armor/ShouldersLeft/008-001-olympus-8e7c9dff.json",
+			"Inventory/Armor/ShouldersLeft/008-001-olympus-9767acbe.json",
+			"Inventory/Armor/ShouldersLeft/008-001-olympus-10ffb071.json",
+			"Inventory/Armor/ShouldersLeft/008-001-olympus-09e48130.json",
+			"Inventory/Armor/ShouldersLeft/008-001-olympus-609a5d1c.json",
+			"Inventory/Armor/ShouldersLeft/008-001-olympus-79816c5d.json",
+			"Inventory/Armor/ShouldersLeft/008-001-olympus-52ac3f9e.json",
+			"Inventory/Armor/ShouldersLeft/008-001-olympus-4bb70edf.json",
+			"Inventory/Armor/ShouldersLeft/008-001-olympus-04f69818.json"
+		],
+		"OffRegionInfo": [
+			{
+				"RegionId": {
+					"m_identifier": 7291560
+				},
+				"PermutationId": {
+					"m_identifier": 0
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			}
+		]
+	},
+	"RightShoulderPads": {
+		"IsRequired": false,
+		"DefaultOptionPath": "Inventory/Armor/ShouldersRight/009-001-olympus-ea1058fb.json",
+		"OptionPaths": [
+			"Inventory/Armor/ShouldersRight/009-001-olympus-c13d0b38.json",
+			"Inventory/Armor/ShouldersRight/009-001-olympus-ea1058fb.json",
+			"Inventory/Armor/ShouldersRight/009-001-olympus-f30b69ba.json",
+			"Inventory/Armor/ShouldersRight/009-001-olympus-bc4aff7d.json",
+			"Inventory/Armor/ShouldersRight/009-001-olympus-a551ce3c.json",
+			"Inventory/Armor/ShouldersRight/009-001-olympus-8e7c9dff.json",
+			"Inventory/Armor/ShouldersRight/009-001-olympus-9767acbe.json",
+			"Inventory/Armor/ShouldersRight/009-001-olympus-10ffb071.json",
+			"Inventory/Armor/ShouldersRight/009-001-olympus-09e48130.json",
+			"Inventory/Armor/ShouldersRight/009-001-olympus-609a5d1c.json",
+			"Inventory/Armor/ShouldersRight/009-001-olympus-79816c5d.json",
+			"Inventory/Armor/ShouldersRight/009-001-olympus-52ac3f9e.json",
+			"Inventory/Armor/ShouldersRight/009-001-olympus-4bb70edf.json",
+			"Inventory/Armor/ShouldersRight/009-001-olympus-04f69818.json"
+		],
+		"OffRegionInfo": [
+			{
+				"RegionId": {
+					"m_identifier": -1236654186
+				},
+				"PermutationId": {
+					"m_identifier": 0
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			}
+		]
+	},
+	"Gloves": {
+		"IsRequired": true,
+		"DefaultOptionPath": "Inventory/Armor/Gloves/003-001-olympus-c13d0b38.json",
+		"OptionPaths": [
+			"Inventory/Armor/Gloves/003-001-olympus-c13d0b38.json",
+			"Inventory/Armor/Gloves/003-001-olympus-ea1058fb.json",
+			"Inventory/Armor/Gloves/003-001-olympus-f30b69ba.json",
+			"Inventory/Armor/Gloves/003-001-olympus-bc4aff7d.json"
+		]
+	},
+	"KneePads": {
+		"IsRequired": true,
+		"DefaultOptionPath": "Inventory/Armor/KneePads/006-001-olympus-c13d0b38.json",
+		"OptionPaths": [
+			"Inventory/Armor/KneePads/006-001-olympus-c13d0b38.json",
+			"Inventory/Armor/KneePads/006-001-olympus-ea1058fb.json",
+			"Inventory/Armor/KneePads/006-001-olympus-f30b69ba.json",
+			"Inventory/Armor/KneePads/006-001-olympus-bc4aff7d.json",
+			"Inventory/Armor/KneePads/006-001-olympus-a551ce3c.json"
+		]
+	},
+	"ChestAttachments": {
+		"IsRequired": false,
+		"DefaultOptionPath": "",
+		"OptionPaths": [
+			"Inventory/Armor/ChestAttachments/001-001-olympus-04c91602.json",
+			"Inventory/Armor/ChestAttachments/001-001-olympus-2fe445c1.json",
+			"Inventory/Armor/ChestAttachments/001-001-olympus-36ff7480.json",
+			"Inventory/Armor/ChestAttachments/001-001-olympus-79bee247.json",
+			"Inventory/Armor/ChestAttachments/001-001-olympus-60a5d306.json",
+			"Inventory/Armor/ChestAttachments/001-001-olympus-4b8880c5.json",
+			"Inventory/Armor/ChestAttachments/001-001-olympus-5293b184.json",
+			"Inventory/Armor/ChestAttachments/001-001-olympus-d50bad4b.json",
+			"Inventory/Armor/ChestAttachments/001-001-olympus-cc109c0a.json",
+			"Inventory/Armor/ChestAttachments/001-001-olympus-a56e4026.json",
+			"Inventory/Armor/ChestAttachments/001-001-olympus-74acfb6f.json",
+			"Inventory/Armor/ChestAttachments/001-001-olympus-aec0de89.json",
+			"Inventory/Armor/ChestAttachments/001-001-olympus-b7dbefc8.json",
+			"Inventory/Armor/ChestAttachments/001-001-olympus-d0082762.json"
+		]
+	},
+	"WristAttachments": {
+		"IsRequired": false,
+		"DefaultOptionPath": "",
+		"OptionPaths": [
+			"Inventory/Armor/WristAttachments/011-001-olympus-f7e6ca39.json"
+		]
+	},
+	"HipAttachments": {
+		"IsRequired": false,
+		"DefaultOptionPath": "",
+		"OptionPaths": [
+			"Inventory/Armor/HipAttachments/010-001-olympus-2620cc52.json",
+			"Inventory/Armor/HipAttachments/010-001-olympus-424c0956.json",
+			"Inventory/Armor/HipAttachments/010-001-olympus-69615a95.json",
+			"Inventory/Armor/HipAttachments/010-001-olympus-707a6bd4.json",
+			"Inventory/Armor/HipAttachments/010-001-olympus-3f3bfd13.json",
+			"Inventory/Armor/HipAttachments/010-001-olympus-0d0d9f91.json",
+			"Inventory/Armor/HipAttachments/010-001-olympus-1416aed0.json"
+		]
+	},
+	"Emblems": {
+		"IsRequired": false,
+		"AvailableLocations": [
+			{
+				"LocationId": -142056143,
+				"DefaultOption": {
+					"Path": "",
+					"ConfigurationId": 0
+				}
+			}
+		],
+		"OptionPaths": [
+			"Inventory/Armor/Emblems/013-001-cf7e1ba1.json",
+			"Inventory/Armor/Emblems/013-001-5d4ea595.json",
+			"Inventory/Armor/Emblems/013-001-5b23aa43.json",
+			"Inventory/Armor/Emblems/013-001-648d52c8.json",
+			"Inventory/Armor/Emblems/013-001-ab4477b3.json",
+			"Inventory/Armor/Emblems/013-001-077a8181.json",
+			"Inventory/Armor/Emblems/013-001-cc5721ec.json",
+			"Inventory/Armor/Emblems/013-001-6517b593.json",
+			"Inventory/Armor/Emblems/013-001-2bab4ddc.json",
+			"Inventory/Armor/Emblems/013-001-7de386a8.json",
+			"Inventory/Armor/Emblems/013-001-b9bc123d.json",
+			"Inventory/Armor/Emblems/013-001-a817382f.json",
+			"Inventory/Armor/Emblems/013-001-0fe4e1a4.json",
+			"Inventory/Armor/Emblems/013-001-5ad6496d.json",
+			"Inventory/Armor/Emblems/013-001-29314dca.json",
+			"Inventory/Armor/Emblems/013-001-67afb03d.json",
+			"Inventory/Armor/Emblems/013-001-46563dc5.json",
+			"Inventory/Armor/Emblems/013-001-dbc914b3.json",
+			"Inventory/Armor/Emblems/013-001-84d5f20f.json",
+			"Inventory/Armor/Emblems/013-001-92ebf95c.json",
+			"Inventory/Armor/Emblems/013-001-5fa5e458.json",
+			"Inventory/Armor/Emblems/013-001-e62f9609.json",
+			"Inventory/Armor/Emblems/013-001-8bca9687.json",
+			"Inventory/Armor/Emblems/013-001-e00d2ae7.json",
+			"Inventory/Armor/Emblems/013-001-368749e8.json",
+			"Inventory/Armor/Emblems/013-001-2ea35550.json",
+			"Inventory/Armor/Emblems/013-001-0619720f.json",
+			"Inventory/Armor/Emblems/013-001-2ddbe23b.json",
+			"Inventory/Armor/Emblems/013-001-d333d964.json",
+			"Inventory/Armor/Emblems/013-001-bb8d5ccb.json",
+			"Inventory/Armor/Emblems/013-001-2944109d.json",
+			"Inventory/Armor/Emblems/013-001-0a3b2d71.json",
+			"Inventory/Armor/Emblems/013-001-91bf35d1.json",
+			"Inventory/Armor/Emblems/013-001-c227d626.json",
+			"Inventory/Armor/Emblems/013-001-07cb81ae.json",
+			"Inventory/Armor/Emblems/013-001-635c93db.json",
+			"Inventory/Armor/Emblems/013-001-fa9d5b4e.json",
+			"Inventory/Armor/Emblems/013-001-54e52ec9.json",
+			"Inventory/Armor/Emblems/013-001-059ad16c.json",
+			"Inventory/Armor/Emblems/013-001-a7997bc9.json",
+			"Inventory/Armor/Emblems/013-001-d068f68f.json",
+			"Inventory/Armor/Emblems/013-001-d3eb8dc5.json",
+			"Inventory/Armor/Emblems/013-001-c241d985.json",
+			"Inventory/Armor/Emblems/013-001-d7c18e51.json",
+			"Inventory/Armor/Emblems/013-001-be6fe862.json",
+			"Inventory/Armor/Emblems/013-001-3f1c0440.json",
+			"Inventory/Armor/Emblems/013-001-94aea7fd.json",
+			"Inventory/Armor/Emblems/013-001-63ace31e.json",
+			"Inventory/Armor/Emblems/013-001-5d673af6.json",
+			"Inventory/Armor/Emblems/013-001-c136c1d0.json",
+			"Inventory/Armor/Emblems/013-001-3eab7999.json",
+			"Inventory/Armor/Emblems/013-001-403944ba.json",
+			"Inventory/Armor/Emblems/013-001-8643a9b3.json",
+			"Inventory/Armor/Emblems/013-001-84d2f996.json",
+			"Inventory/Armor/Emblems/013-001-c615fbd5.json",
+			"Inventory/Armor/Emblems/013-001-97b657fe.json",
+			"Inventory/Armor/Emblems/013-001-64d4daeb.json",
+			"Inventory/Armor/Emblems/013-001-24439c74.json",
+			"Inventory/Armor/Emblems/013-001-f24c7ad9.json",
+			"Inventory/Armor/Emblems/013-001-7f9f5924.json",
+			"Inventory/Armor/Emblems/013-001-8988a590.json",
+			"Inventory/Armor/Emblems/013-001-a8a0a472.json",
+			"Inventory/Armor/Emblems/013-001-dfbe1cc2.json",
+			"Inventory/Armor/Emblems/013-001-19bfbf29.json",
+			"Inventory/Armor/Emblems/013-001-e30dc8d8.json",
+			"Inventory/Armor/Emblems/013-001-84ab8190.json",
+			"Inventory/Armor/Emblems/013-001-19be615a.json",
+			"Inventory/Armor/Emblems/013-001-37ba759d.json",
+			"Inventory/Armor/Emblems/013-001-d83dae85.json",
+			"Inventory/Armor/Emblems/013-001-3e93da58.json",
+			"Inventory/Armor/Emblems/013-001-a50125a2.json",
+			"Inventory/Armor/Emblems/013-001-d9ec00c3.json",
+			"Inventory/Armor/Emblems/013-001-746026db.json",
+			"Inventory/Armor/Emblems/013-001-878b1cd3.json",
+			"Inventory/Armor/Emblems/013-001-f2f09a8f.json",
+			"Inventory/Armor/Emblems/013-001-073ac8c7.json",
+			"Inventory/Armor/Emblems/013-001-782a8d66.json",
+			"Inventory/Armor/Emblems/013-001-3a4a658c.json",
+			"Inventory/Armor/Emblems/013-001-45996d0b.json",
+			"Inventory/Armor/Emblems/013-001-edae43df.json",
+			"Inventory/Armor/Emblems/013-001-888d43e2.json",
+			"Inventory/Armor/Emblems/013-001-e7b3b353.json",
+			"Inventory/Armor/Emblems/013-001-265a8ecc.json",
+			"Inventory/Armor/Emblems/013-001-eb992756.json",
+			"Inventory/Armor/Emblems/013-001-8915e286.json",
+			"Inventory/Armor/Emblems/013-001-d0fe80dc.json",
+			"Inventory/Armor/Emblems/013-001-9271b7cc.json",
+			"Inventory/Armor/Emblems/013-001-dc307222.json",
+			"Inventory/Armor/Emblems/013-001-472320c7.json",
+			"Inventory/Armor/Emblems/013-001-c2daae95.json",
+			"Inventory/Armor/Emblems/013-001-52f7d7f5.json",
+			"Inventory/Armor/Emblems/013-001-73651e6b.json",
+			"Inventory/Armor/Emblems/013-001-0da04777.json",
+			"Inventory/Armor/Emblems/013-001-e5396cee.json",
+			"Inventory/Armor/Emblems/013-001-3112937b.json",
+			"Inventory/Armor/Emblems/013-001-322abffa.json",
+			"Inventory/Armor/Emblems/013-001-d92d85c8.json",
+			"Inventory/Armor/Emblems/013-001-2845463e.json",
+			"Inventory/Armor/Emblems/013-001-13949cb3.json",
+			"Inventory/Armor/Emblems/013-001-f9bc88ce.json",
+			"Inventory/Armor/Emblems/013-001-3d208338.json",
+			"Inventory/Armor/Emblems/013-001-ad40b77b.json",
+			"Inventory/Armor/Emblems/013-001-365a8151.json",
+			"Inventory/Armor/Emblems/013-001-05cf43ac.json",
+			"Inventory/Armor/Emblems/013-001-37d15c60.json",
+			"Inventory/Armor/Emblems/013-001-87cc929c.json",
+			"Inventory/Armor/Emblems/013-001-399d9323.json",
+			"Inventory/Armor/Emblems/013-001-9c2240b9.json",
+			"Inventory/Armor/Emblems/013-001-105c8d95.json",
+			"Inventory/Armor/Emblems/013-001-bf97682c.json",
+			"Inventory/Armor/Emblems/013-001-6952b67c.json",
+			"Inventory/Armor/Emblems/013-001-36d293ed.json",
+			"Inventory/Armor/Emblems/013-001-8acc35b1.json",
+			"Inventory/Armor/Emblems/013-001-3ae8c550.json",
+			"Inventory/Armor/Emblems/013-001-9979d16d.json",
+			"Inventory/Armor/Emblems/013-001-1512a1f7.json",
+			"Inventory/Armor/Emblems/013-001-0098979e.json",
+			"Inventory/Armor/Emblems/013-001-a0eab295.json",
+			"Inventory/Armor/Emblems/013-001-20e1ae6e.json",
+			"Inventory/Armor/Emblems/013-001-27722f73.json",
+			"Inventory/Armor/Emblems/013-001-30f48361.json",
+			"Inventory/Armor/Emblems/013-001-481619d7.json",
+			"Inventory/Armor/Emblems/013-001-74673216.json",
+			"Inventory/Armor/Emblems/013-001-7c8212c8.json",
+			"Inventory/Armor/Emblems/013-001-8fc29cd6.json",
+			"Inventory/Armor/Emblems/013-001-bf424153.json",
+			"Inventory/Armor/Emblems/013-001-d8562af4.json",
+			"Inventory/Armor/Emblems/013-001-e1c18f9f.json",
+			"Inventory/Armor/Emblems/013-001-15ed7ee8.json",
+			"Inventory/Armor/Emblems/013-001-f17a3e6b.json"
+		]
+	},
+	"ArmorFx": {
+		"IsRequired": false,
+		"DefaultOptionPath": "",
+		"OptionPaths": [
+			"Inventory/Armor/FXArmor/015-000-flaming-helme-cc6ea6ab.json",
+			"Inventory/Armor/FXArmor/015-000-judgment-mant-211262c6.json",
+			"Inventory/Armor/FXArmor/015-000-perfect-circl-24878e67.json",
+			"Inventory/Armor/FXArmor/015-000-perfect-subli-2559c51b.json",
+			"Inventory/Armor/FXArmor/015-000-synthawk-51f52302.json",
+			"Inventory/Armor/FXArmor/015-000-synthvisor-e0fb67af.json",
+			"Inventory/Armor/FXArmor/015-000-noble-fire-cc6ea6ab.json"
+		]
+	},
+	"MythicFx": {
+		"IsRequired": false,
+		"DefaultOptionPath": "",
+		"OptionPaths": [
+			"Inventory/Armor/FXMythic/016-000-olympus-ff9f8007.json",
+			"Inventory/Armor/FXMythic/016-000-tech-66736c8b.json",
+			"Inventory/Armor/FXMythic/016-000-flower-petals-57a94281.json",
+			"Inventory/Armor/FXMythic/016-000-synthwave-178fd347.json"
+		]
+	},
+	"TagId": -830435295,
+	"VariantId": {
+		"m_identifier": 332549919
+	},
+	"CoreRegionData": {
+		"BaseRegionData": [
+			{
+				"RegionId": {
+					"m_identifier": -592012529
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": -1423584766
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": 1503319737
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": -2070903492
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": 1066512234
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": -1547743034
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": 1733594109
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": -1293399145
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": -1721324182
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": 1133478663
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": -1149815856
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": 1318168609
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": 702769714
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": 1250001557
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": 1798246436
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": 706373173
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": 1923396739
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			}
+		],
+		"BodyTypeSmallOverrides": [
+			{
+				"RegionId": {
+					"m_identifier": 1318168609
+				},
+				"PermutationId": {
+					"m_identifier": -559891038
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": -1547743034
+				},
+				"PermutationId": {
+					"m_identifier": -559891038
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": 706373173
+				},
+				"PermutationId": {
+					"m_identifier": -559891038
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": 1923396739
+				},
+				"PermutationId": {
+					"m_identifier": -559891038
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			}
+		],
+		"BodyTypeLargeOverrides": [
+			{
+				"RegionId": {
+					"m_identifier": 1318168609
+				},
+				"PermutationId": {
+					"m_identifier": -1359825604
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": -1547743034
+				},
+				"PermutationId": {
+					"m_identifier": -1359825604
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": 706373173
+				},
+				"PermutationId": {
+					"m_identifier": -1359825604
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": 1923396739
+				},
+				"PermutationId": {
+					"m_identifier": -1359825604
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			}
+		],
+		"ProstheticLeftArmOverrides": {
+			"Full": [
+				{
+					"RegionId": {
+						"m_identifier": -1423584766
+					},
+					"PermutationId": {
+						"m_identifier": 0
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": -1547743034
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": -592012529
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": 1066512234
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": 1644532521
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				}
+			],
+			"Half": [
+				{
+					"RegionId": {
+						"m_identifier": 1066512234
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": -1423584766
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": 1644532521
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				}
+			],
+			"Extremity": [
+				{
+					"RegionId": {
+						"m_identifier": 1644532521
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": 1948739329
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				}
+			]
+		},
+		"ProstheticRightArmOverrides": {
+			"Full": [
+				{
+					"RegionId": {
+						"m_identifier": -1293399145
+					},
+					"PermutationId": {
+						"m_identifier": 0
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": 1318168609
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": 1733594109
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": -1149815856
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": 2088789481
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				}
+			],
+			"Half": [
+				{
+					"RegionId": {
+						"m_identifier": -1149815856
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": -1293399145
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": 2088789481
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				}
+			],
+			"Extremity": [
+				{
+					"RegionId": {
+						"m_identifier": 2088789481
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": 742143389
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				}
+			]
+		},
+		"ProstheticLeftLegOverrides": {
+			"Full": [
+				{
+					"RegionId": {
+						"m_identifier": 1503319737
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": -2070903492
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				}
+			],
+			"Half": [],
+			"Extremity": []
+		},
+		"ProstheticRightLegOverrides": {
+			"Full": [
+				{
+					"RegionId": {
+						"m_identifier": -1721324182
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": 1133478663
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				}
+			],
+			"Half": [],
+			"Extremity": []
+		}
+	},
+	"CommonData": {
+		"Id": "007-001-olympus-c13d0b38",
+		"HideUntilOwned": false,
+		"Title": "Mark VII",
+		"Description": "The latest generation of powered assault armor.",
+		"FeatureFlag": true,
+		"ItemAvailability": "",
+		"DateReleased": {
+			"ISO8601Date": ""
+		},
+		"AltName": "olympus",
+		"IconStringId": {
+			"m_identifier": -1
+		},
+		"SpriteBitmap": 0,
+		"SpriteFrameIndex": 0,
+		"AltSpriteBitmap": 0,
+		"AltSpriteFrameIndex": 0,
+		"FocusMarker": {
+			"m_identifier": -1
+		},
+		"FocalDistance": 0,
+		"FocusMarkerOffset": 0,
+		"DOFType": "None",
+		"DOFFocalLength": 0,
+		"DOFFocalDistance": 0,
+		"DOFFStop": 0,
+		"DisplayPath": {
+			"Width": 320,
+			"Height": 320,
+			"Media": {
+				"MediaUrl": {
+					"AuthorityId": "",
+					"Path": "progression/Inventory/Armor/Themes/007-001-olympus-c13d0b38-SM.png",
+					"RetryPolicyId": "",
+					"TopicName": "",
+					"AcknowledgementTypeId": "NoAcknowledgement",
+					"AuthenticationLifetimeExtensionSupported": false,
+					"ClearanceAware": false
+				},
+				"MimeType": "",
+				"Caption": "",
+				"AlternateText": "",
+				"FolderPath": "",
+				"FileName": ""
+			},
+			"MimeType": "image/png",
+			"FolderPath": "progression/Inventory/Armor/Themes",
+			"FileName": "007-001-olympus-c13d0b38-SM.png"
+		},
+		"Quality": "Rare",
+		"ManufacturerId": 13,
+		"Type": "ArmorTheme",
+		"ParentTheme": "Cores/ArmorCores/017-001-olympus-c13d0b38.json",
+		"RewardTrack": "",
+		"CameraPositions": [],
+		"CameraOffset": 0,
+		"CameraFOV": 0,
+		"CameraTransition": 0,
+		"Orientation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"Season": "Season 1",
+		"FocusedObjectOrientation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"ParentPaths": [
+			{
+				"Path": "Cores/ArmorCores/017-001-olympus-c13d0b38.json",
+				"Type": "ArmorCore"
+			}
+		],
+		"SortingMetadata": {
+			"categoryWeight": 0,
+			"subCategoryWeight": 0
+		},
+		"CustomAvailability": "Starting Inventory"
+	},
+	"IsKit": false
+}

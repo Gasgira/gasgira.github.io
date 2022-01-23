@@ -1,6 +1,6 @@
-db/
-dump/
-assets/
+/db/
+/dump/
+/assets/
 
 # Logs
 logs
@@ -93,7 +93,6 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist
 
 # Gatsby files
 .cache/

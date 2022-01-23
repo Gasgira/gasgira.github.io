@@ -1,0 +1,120 @@
+{
+	"TagId": 0,
+	"ThemeName": {
+		"m_identifier": -1280425104
+	},
+	"EmblemShaderName": {
+		"m_identifier": 0
+	},
+	"CommonData": {
+		"Id": "013-001-5b23aa43",
+		"HideUntilOwned": true,
+		"Title": "Forumgoer Chief",
+		"Description": "Now listen here, you little…",
+		"FeatureFlag": true,
+		"ItemAvailability": "",
+		"DateReleased": {
+			"ISO8601Date": ""
+		},
+		"AltName": "013-001-5b23aa43",
+		"IconStringId": {
+			"m_identifier": -1
+		},
+		"SpriteBitmap": 0,
+		"SpriteFrameIndex": 0,
+		"AltSpriteBitmap": 0,
+		"AltSpriteFrameIndex": 0,
+		"FocusMarker": {
+			"m_identifier": -1
+		},
+		"FocalDistance": 0,
+		"FocusMarkerOffset": 0,
+		"DOFType": "None",
+		"DOFFocalLength": 0,
+		"DOFFocalDistance": 0,
+		"DOFFStop": 0,
+		"DisplayPath": {
+			"Width": 358,
+			"Height": 358,
+			"Media": {
+				"MediaUrl": {
+					"AuthorityId": "",
+					"Path": "progression/Inventory/Emblems/343other_forumgoerchief_emblem.png",
+					"RetryPolicyId": "",
+					"TopicName": "",
+					"AcknowledgementTypeId": "NoAcknowledgement",
+					"AuthenticationLifetimeExtensionSupported": false,
+					"ClearanceAware": false
+				},
+				"MimeType": "",
+				"Caption": "",
+				"AlternateText": "",
+				"FolderPath": "",
+				"FileName": ""
+			},
+			"MimeType": "image/png",
+			"FolderPath": "progression/Inventory/Emblems",
+			"FileName": "343other_forumgoerchief_emblem.png"
+		},
+		"Quality": "Epic",
+		"ManufacturerId": 0,
+		"Type": "ArmorEmblem",
+		"ParentTheme": "Inventory/Armor/Themes/007-001-reach-2564121f.json",
+		"RewardTrack": "",
+		"CameraPositions": [],
+		"CameraOffset": 0,
+		"CameraFOV": 0,
+		"CameraTransition": 0,
+		"Orientation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"Season": "Season 1",
+		"FocusedObjectOrientation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"ParentPaths": [
+			{
+				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
+				"Type": "ArmorTheme"
+			},
+			{
+				"Path": "Inventory/Armor/Themes/007-001-reach-2564121f.json",
+				"Type": "ArmorTheme"
+			},
+			{
+				"Path": "Inventory/Armor/Themes/007-001-samurai-55badb14.json",
+				"Type": "ArmorTheme"
+			}
+		],
+		"SortingMetadata": {
+			"categoryWeight": 0,
+			"subCategoryWeight": 0
+		}
+	},
+	"AvailableConfigurations": [
+		{
+			"ConfigurationId": -2030886203,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-30b609fa.json"
+		},
+		{
+			"ConfigurationId": -2041724281,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-fe876e90.json"
+		},
+		{
+			"ConfigurationId": 802727239,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-885e047a.json"
+		},
+		{
+			"ConfigurationId": 824330229,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-227adf2f.json"
+		},
+		{
+			"ConfigurationId": -1675595004,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-727bc628.json"
+		}
+	]
+}

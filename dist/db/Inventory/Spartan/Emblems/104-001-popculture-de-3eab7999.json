@@ -1,0 +1,123 @@
+{
+	"TagId": 0,
+	"ThemeName": {
+		"m_identifier": 1185772854
+	},
+	"EmblemShaderName": {
+		"m_identifier": -1
+	},
+	"AvailableConfigurations": [
+		{
+			"ConfigurationId": 2088371238,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-828f5755.json"
+		},
+		{
+			"ConfigurationId": -508244458,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-bc077f64.json"
+		},
+		{
+			"ConfigurationId": -995607808,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-17282257.json"
+		},
+		{
+			"ConfigurationId": -831056095,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-4ae9bb14.json"
+		},
+		{
+			"ConfigurationId": 1540133627,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-cf1c5706.json"
+		},
+		{
+			"ConfigurationId": 1874182241,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-261fbb95.json"
+		},
+		{
+			"ConfigurationId": -283867365,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-1e0f228a.json"
+		},
+		{
+			"ConfigurationId": -1698878342,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-8a3325cd.json"
+		},
+		{
+			"ConfigurationId": 824330229,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-227adf2f.json"
+		}
+	],
+	"CommonData": {
+		"Id": "104-001-popculture-de-3eab7999",
+		"HideUntilOwned": true,
+		"Title": "Assembled",
+		"Description": "Each Spartan is a weapon system greater than the sum of their parts.",
+		"FeatureFlag": true,
+		"ItemAvailability": "",
+		"DateReleased": {
+			"ISO8601Date": ""
+		},
+		"AltName": "104-001-popculture-de-3eab7999",
+		"IconStringId": {
+			"m_identifier": -1
+		},
+		"SpriteBitmap": 0,
+		"SpriteFrameIndex": 0,
+		"AltSpriteBitmap": 0,
+		"AltSpriteFrameIndex": 0,
+		"FocusMarker": {
+			"m_identifier": -1
+		},
+		"FocalDistance": 0,
+		"FocusMarkerOffset": 0,
+		"DOFType": "None",
+		"DOFFocalLength": 0,
+		"DOFFocalDistance": 0,
+		"DOFFStop": 0,
+		"DisplayPath": {
+			"Width": 358,
+			"Height": 358,
+			"Media": {
+				"MediaUrl": {
+					"AuthorityId": "",
+					"Path": "progression/Inventory/Emblems/popculture_dealerschoice_assembled_emblem.png",
+					"RetryPolicyId": "",
+					"TopicName": "",
+					"AcknowledgementTypeId": "NoAcknowledgement",
+					"AuthenticationLifetimeExtensionSupported": false,
+					"ClearanceAware": false
+				},
+				"MimeType": "",
+				"Caption": "",
+				"AlternateText": "",
+				"FolderPath": "",
+				"FileName": ""
+			},
+			"MimeType": "image/png",
+			"FolderPath": "progression/Inventory/Emblems",
+			"FileName": "popculture_dealerschoice_assembled_emblem.png"
+		},
+		"Quality": "Epic",
+		"ManufacturerId": 6,
+		"Type": "SpartanEmblem",
+		"ParentTheme": "",
+		"RewardTrack": "",
+		"CameraPositions": [],
+		"CameraOffset": 0,
+		"CameraFOV": 0,
+		"CameraTransition": 0,
+		"Orientation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"Season": "Season 1",
+		"FocusedObjectOrientation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"ParentPaths": [],
+		"SortingMetadata": {
+			"categoryWeight": 1,
+			"subCategoryWeight": 0
+		}
+	}
+}

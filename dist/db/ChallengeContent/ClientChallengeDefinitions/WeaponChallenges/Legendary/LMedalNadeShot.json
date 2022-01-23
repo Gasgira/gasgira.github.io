@@ -1,0 +1,11 @@
+{
+	"Description": "Headshot an Enemy Spartan immediately after damaging them with a Grenade in PvP",
+	"Difficulty": "legendary",
+	"Category": "WeaponBased",
+	"Reward": {
+		"InventoryItems": [],
+		"OperationExperience": 300
+	},
+	"ThresholdForSuccess": 1,
+	"Title": "Combo Toss"
+}

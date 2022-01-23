@@ -1,0 +1,11 @@
+{
+	"Description": "Play any PvP Match",
+	"Difficulty": "heroic",
+	"Category": "Daily",
+	"Reward": {
+		"InventoryItems": [],
+		"OperationExperience": 150
+	},
+	"ThresholdForSuccess": 8,
+	"Title": "Practice Makes Perfection 6"
+}

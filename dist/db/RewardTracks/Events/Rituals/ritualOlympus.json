@@ -1,0 +1,184 @@
+{
+	"TrackId": "ritualOlympus",
+	"XpPerRank": 1,
+	"Ranks": [
+		{
+			"Rank": 1,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "inventory/spartan/actionposes/101-000-menu-stance-o-7ba7d54b.json",
+						"Amount": 1,
+						"Type": "SpartanActionPose"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 2,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/Armor/Visors/012-001-aca35a00.json",
+						"Amount": 1,
+						"Type": "ArmorVisor"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 3,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/Weapon/Charms/201-201-2033c871.json",
+						"Amount": 1,
+						"Type": "WeaponCharm"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 4,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/spartan/backdropimages/103-000-ui-background-eb8d24cc.json",
+						"Amount": 1,
+						"Type": "SpartanBackdropImage"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 5,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "inventory/armor/helmets/005-001-olympus-a551ce3c.json",
+						"Amount": 1,
+						"Type": "ArmorHelmet"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 6,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/Armor/ChestAttachments/001-001-olympus-79bee247.json",
+						"Amount": 1,
+						"Type": "ArmorChestAttachment"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 7,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/Armor/HipAttachments/010-001-olympus-3f3bfd13.json",
+						"Amount": 1,
+						"Type": "ArmorHipAttachment"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 8,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/Armor/Gloves/003-001-olympus-ea1058fb.json",
+						"Amount": 1,
+						"Type": "ArmorGlove"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 9,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/Armor/Coatings/002-001-olympus-ba63ec9a.json",
+						"Amount": 1,
+						"Type": "ArmorCoating"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 10,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/Armor/HelmetAttachments/004-001-olympus-8e89825e.json",
+						"Amount": 1,
+						"Type": "ArmorHelmetAttachment"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		}
+	],
+	"Name": "Tactical Ops",
+	"Description": "Test your aim in a high stakes battle",
+	"OperationNumber": 1,
+	"DateRange": "February 8th, 2022 - February 21st, 2022",
+	"IsRitual": true,
+	"SummaryImagePath": "progression/RewardTracks/Olympus_Progression_Comps_Summary_CartArt_Event_TacOps.png",
+	"WeekNumber": null,
+	"BackgroundImagePath": ""
+}

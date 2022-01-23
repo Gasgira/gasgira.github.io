@@ -1,0 +1,62 @@
+[
+	{
+		"CMSId": "007-001-olympus-c13d0b38",
+		"CMSPath": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
+		"CoreCMSPath": "cores/armorcores/017-001-olympus-c13d0b38.json",
+		"ItemType": "ArmorTheme",
+		"TagPath": "",
+		"TagId": 0,
+		"TagData": [],
+		"MetaData": [
+			{
+				"Key": "Title",
+				"Value": "Mark VII"
+			},
+			{
+				"Key": "Description",
+				"Value": "The latest generation of powered assault armor."
+			}
+		],
+		"ImagePath": "progression/Default/default.png"
+	},
+	{
+		"CMSId": "007-001-reach-2564121f",
+		"CMSPath": "Inventory/Armor/Themes/007-001-reach-2564121f.json",
+		"CoreCMSPath": "cores/armorcores/017-001-reach-2564121f.json",
+		"ItemType": "ArmorTheme",
+		"TagPath": "",
+		"TagId": 0,
+		"TagData": [],
+		"MetaData": [
+			{
+				"Key": "Title",
+				"Value": "Mark V [B]"
+			},
+			{
+				"Key": "Description",
+				"Value": "Forged before the fall of Reach.\n"
+			}
+		],
+		"ImagePath": "progression/Default/default.png"
+	},
+	{
+		"CMSId": "007-001-samurai-55badb14",
+		"CMSPath": "Inventory/Armor/Themes/007-001-samurai-55badb14.json",
+		"CoreCMSPath": "cores/armorcores/017-001-samurai-55badb14.json",
+		"ItemType": "ArmorTheme",
+		"TagPath": "",
+		"TagId": 0,
+		"TagData": [],
+		"MetaData": [
+			{
+				"Key": "Title",
+				"Value": "Yoroi"
+			},
+			{
+				"Key": "Description",
+				"Value": "Samurai armor from the strange realm known as \"Tenra.\""
+			}
+		],
+		"ImagePath": "progression/Default/default.png"
+	}
+]
