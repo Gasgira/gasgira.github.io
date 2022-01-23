@@ -18,7 +18,6 @@ module.exports = {
 	resolve: {
 		alias: {},
 		modules: [
-			path.resolve('./src/client/static'),
 			path.resolve('./src'),
 			path.resolve('./node_modules')
 		]
@@ -65,13 +64,7 @@ module.exports = {
 		],
 	},
 	devServer: {
-		static: path.join(__dirname, 'docs'), // for serving static files only
-		// compress: true,
-		// host: 'local.derek.care',
-		// port: 443,
-		// historyApiFallback: true,
-		// https: true,
-		// stats: 'errors-only',
+		static: path.join(__dirname, 'docs'),
 		hot: true
 	},
 	plugins: [
