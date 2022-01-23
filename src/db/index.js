@@ -75,7 +75,6 @@ export class Item extends Component {
 			const displayPath = this?.data?.CommonData?.DisplayPath?.Media?.MediaUrl?.Path;
 			if (displayPath && typeof displayPath === 'string') {
 				imagePath = `${displayPath[0].toUpperCase()}${displayPath.substring(1)}`;
-				console.log(imagePath)
 			}
 			console.log('render', this.path)
 			return this.html`
@@ -139,6 +138,13 @@ class ItemPanel extends Component {
 	render() {
 		if (this.state.visible) {
 			const item = this.state.item.data;
+
+			let imagePath = '';
+			const displayPath = item?.CommonData?.DisplayPath?.Media?.MediaUrl?.Path;
+			if (displayPath && typeof displayPath === 'string') {
+				imagePath = `${displayPath[0].toUpperCase()}${displayPath.substring(1)}`;
+			}
+
 			return HTML.bind(document.querySelector('.js-item-panel'))`
 				<div
 					class="dbItemPanel_clickout"
@@ -148,7 +154,7 @@ class ItemPanel extends Component {
 					class="dbItemPanel_wrapper"
 				>
 					<header>
-						<img src=${`db/images/${this.state.item?.data?.CommonData?.DisplayPath?.Media?.MediaUrl?.Path}`}>
+						<img src=${`db/images/${imagePath}`}>
 						<div class=${`dbItemPanel_titles${item?.CommonData?.Quality ? ` ${item.CommonData.Quality?.toLowerCase?.()}` : ''}`}>
 							<h2>${this.state.item?.data?.CommonData?.Title ?? 'Item'}</h2>
 							<h3>${this.state.item?.data?.CommonData?.Description ?? '...'}</h3>

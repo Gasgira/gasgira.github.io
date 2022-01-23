@@ -3562,14 +3562,18 @@ class Item extends component__WEBPACK_IMPORTED_MODULE_0__.Component {
 	}
 
 	async render() {
-
 			if (!this.data) await this.init();
+			let imagePath = '';
+			const displayPath = this?.data?.CommonData?.DisplayPath?.Media?.MediaUrl?.Path;
+			if (displayPath && typeof displayPath === 'string') {
+				imagePath = `${displayPath[0].toUpperCase()}${displayPath.substring(1)}`;
+			}
 			console.log('render', this.path)
 			return this.html`
 				<button
 					class=${`dbItem dbItemIcon${this?.data?.CommonData?.Quality ? ` ${this?.data.CommonData.Quality?.toLowerCase?.()}` : ''}`}
 					onclick=${() => this.showItemPanel()}
-					style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${this?.data?.CommonData?.DisplayPath?.Media?.MediaUrl?.Path})`}}
+					style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${imagePath})`}}
 				>
 					<span>${this?.data?.CommonData?.Title ?? '???'}</span>
 				</button>
@@ -3626,6 +3630,13 @@ class ItemPanel extends component__WEBPACK_IMPORTED_MODULE_0__.Component {
 	render() {
 		if (this.state.visible) {
 			const item = this.state.item.data;
+
+			let imagePath = '';
+			const displayPath = item?.CommonData?.DisplayPath?.Media?.MediaUrl?.Path;
+			if (displayPath && typeof displayPath === 'string') {
+				imagePath = `${displayPath[0].toUpperCase()}${displayPath.substring(1)}`;
+			}
+
 			return lib_HTML__WEBPACK_IMPORTED_MODULE_1__.HTML.bind(document.querySelector('.js-item-panel'))`
 				<div
 					class="dbItemPanel_clickout"
@@ -3635,7 +3646,7 @@ class ItemPanel extends component__WEBPACK_IMPORTED_MODULE_0__.Component {
 					class="dbItemPanel_wrapper"
 				>
 					<header>
-						<img src=${`db/images/${this.state.item?.data?.CommonData?.DisplayPath?.Media?.MediaUrl?.Path}`}>
+						<img src=${`db/images/${imagePath}`}>
 						<div class=${`dbItemPanel_titles${item?.CommonData?.Quality ? ` ${item.CommonData.Quality?.toLowerCase?.()}` : ''}`}>
 							<h2>${this.state.item?.data?.CommonData?.Title ?? 'Item'}</h2>
 							<h3>${this.state.item?.data?.CommonData?.Description ?? '...'}</h3>
@@ -4906,7 +4917,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("bcea1da249f058682387")
+/******/ 		__webpack_require__.h = () => ("224ae77bdae65b15fa19")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -4929,7 +4940,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	/* webpack/runtime/load script */
 /******/ 	(() => {
 /******/ 		var inProgress = {};
-/******/ 		var dataWebpackPrefix = "halosets:";
+/******/ 		var dataWebpackPrefix = "skimmer:";
 /******/ 		// loadScript function to load a script via script tag
 /******/ 		__webpack_require__.l = (url, done, key, chunkId) => {
 /******/ 			if(inProgress[url]) { inProgress[url].push(done); return; }
@@ -5424,7 +5435,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 			});
 /******/ 		}
 /******/ 		
-/******/ 		self["webpackHotUpdatehalosets"] = (chunkId, moreModules, runtime) => {
+/******/ 		self["webpackHotUpdateskimmer"] = (chunkId, moreModules, runtime) => {
 /******/ 			for(var moduleId in moreModules) {
 /******/ 				if(__webpack_require__.o(moreModules, moduleId)) {
 /******/ 					currentUpdate[moduleId] = moreModules[moduleId];
@@ -5904,4 +5915,4 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.bcea1da249f058682387.js.map
+//# sourceMappingURL=main.224ae77bdae65b15fa19.js.map
