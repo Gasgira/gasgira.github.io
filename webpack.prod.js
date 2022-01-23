@@ -12,7 +12,7 @@ module.exports = {
 	entry: './src',
 	output: {
 		filename: '[name].[hash].js', // contenthash
-		path: path.resolve(__dirname, './dist'),
+		path: path.resolve(__dirname, './docs'),
 		// publicPath: '/assets/'
 	},
 	resolve: {
@@ -65,7 +65,7 @@ module.exports = {
 		],
 	},
 	devServer: {
-		static: path.join(__dirname, 'dist'), // for serving static files only
+		static: path.join(__dirname, 'docs'), // for serving static files only
 		// compress: true,
 		// host: 'local.derek.care',
 		// port: 443,
