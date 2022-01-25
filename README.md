@@ -1,9 +1,10 @@
 # skimmer
  
+Skimmer is a compendium of items and experiences found within Halo Infinite.
 
 This project is not operated by nor affiliated with Microsoft and 343 Industries.
 
-This project displays content copyrighted or licensed by Microsoft for the purpose of education.
+This project displays content copyrighted or licensed by Microsoft for the purpose of education and information archiving.
 
 
 
