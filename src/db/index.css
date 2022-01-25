@@ -3,18 +3,19 @@ button.dbItemIcon {
 	width: var(--length);
 	height: var(--length);
 	margin: 0.8rem;
-	background-color: black;
-	background-size: contain;                      /* <------ */
+	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center center;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
 	align-items: center;
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(0,0,0,0.25);
 	font-weight: bold;
+	text-shadow: 0.1rem 0.1rem 0.2rem #000;
+	animation: fade-in var(--time-state) linear;
 	&::before {
-		border-width: 0.25rem;
+		border-width: 0.18rem;
 		--padding: -0.5rem;
 		opacity: 0.4;
 	}
@@ -38,6 +39,9 @@ button.dbItemIcon {
     background-color: rgba(255,255,255,1);
 		color: #000;
 		text-shadow: 0 0 1rem #fff, 0 0 0.5rem #fff;
+		&::before {
+			border-width: 0.25rem;
+		}
 	}
 	&:hover>span {
 		opacity: 1;
@@ -68,6 +72,7 @@ button.dbItemIcon {
 	overflow: hidden;
 	box-shadow: -1rem 0 1rem #000;
 	animation: slide-in-right var(--time-active) linear;
+	z-index: 10;
 	& .dbItemPanel_json {
 		width: 100%;
 		font-size: 0.7rem;
@@ -77,6 +82,9 @@ button.dbItemIcon {
 		padding-left: 1rem;
 		padding-bottom: 5rem;
 		font-family: monospace;
+		tab-size: 1rem;
+		white-space: pre-wrap;
+		word-break: keep-all;
 	}
 	& .dbItemPanel_close {
 		position: fixed;

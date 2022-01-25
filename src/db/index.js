@@ -8,6 +8,10 @@ class Database {
 	constructor() {
 		this.dbPath = 'db';
 		if (settings.data.has('dbPath')) this.dbPath = settings.data.get('dbPath');
+		if (settings.data.has('pathCasing')) this.pathCasing = settings.data.get('pathCasing');
+
+		// TODO get manufacturer info
+		// metadata/metadata.json
 	}
 
 	async getJSON(path) {
@@ -17,10 +21,11 @@ class Database {
 			console.warn(`[db.get] Bad path! "${path}"`);
 			return;
 		}
-		return await fetch(`/${this?.dbPath ?? 'db'}/${path}`)
+		
+		return await fetch(`/${this?.dbPath ?? 'db'}/${this.pathCase(path)}`)
 			.then(response => {
 				if (response.ok) return response.json();
-				console.error(`[db.get] ${response.status} "${path}"`)
+				console.error(`[db.get] ${response.status} "${this.pathCase(path)}"`)
 				return Promise.reject(response);
 			});
 	}
@@ -33,6 +38,11 @@ class Database {
 		const item = new Item(path);
 		await item?.init();
 		itemPanel.displayItem(item, skipState);
+	}
+
+	pathCase(path) {
+		if (!path || typeof path !== 'string') return '';
+		return `${(this?.pathCasing ?? true) ? path.toLowerCase() : path}`
 	}
 }
 
@@ -81,11 +91,18 @@ export class Item extends Component {
 				<button
 					class=${`dbItem dbItemIcon${this?.data?.CommonData?.Quality ? ` ${this?.data.CommonData.Quality?.toLowerCase?.()}` : ''}`}
 					onclick=${() => this.showItemPanel()}
-					style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${imagePath})`}}
+					style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(imagePath)})`}}
 				>
 					<span>${this?.data?.CommonData?.Title ?? '???'}</span>
 				</button>
 			`;
+	}
+
+	async icon() {
+		if (!this.data) await this.init();
+		return HTML.wire(this, ':icon')`
+			this should work around the multiple render issues??
+		`;
 	}
 
 	showItemPanel() {
@@ -154,7 +171,7 @@ class ItemPanel extends Component {
 					class="dbItemPanel_wrapper"
 				>
 					<header>
-						<img src=${`db/images/${imagePath}`}>
+						<img src=${`db/images/${db.pathCase(imagePath)}`}>
 						<div class=${`dbItemPanel_titles${item?.CommonData?.Quality ? ` ${item.CommonData.Quality?.toLowerCase?.()}` : ''}`}>
 							<h2>${this.state.item?.data?.CommonData?.Title ?? 'Item'}</h2>
 							<h3>${this.state.item?.data?.CommonData?.Description ?? '...'}</h3>

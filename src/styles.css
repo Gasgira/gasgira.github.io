@@ -48,8 +48,8 @@
 	--theme-error: var(--base-red);			--theme-error-hsl: var(--base-red-hsl);
 	--theme-blank: #000;
 
-	--rarity-legendary: #a46a22;
-	--rarity-epic: #4c4281;
+	--rarity-legendary: #a6701b;
+	--rarity-epic: #5948b0;
 	--rarity-rare: #2a71a7;
 	--rarity-common: #808080;
 
@@ -85,10 +85,26 @@ body {
 	font-family: "Noto Sans", "Roboto", "system-ui", "system", sans-serif;
 }
 
+.bg {
+	display: flex;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	pointer-events: none;
+	background-color: transparent;
+	background: linear-gradient(217deg, rgba(40,49,64,.5), transparent 69%),
+	linear-gradient(336deg, rgba(16,33,80,.8), transparent 69%);
+	z-index: 0;
+}
+
 main {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	z-index: 1;
 }
 
 a:not([class]) {
@@ -206,7 +222,7 @@ a:not([class]) {
 }
 
 button {
-	--rarity: #fff;
+	--rarity: rgba(255,255,255,0.25);
 	position: relative;
 	appearance: none;
 	width: fit-content;
@@ -217,6 +233,7 @@ button {
 	padding: var(--theme-padding) var(--theme-padding-double);
 	margin: var(--theme-padding) 0;
 	background: hsla(var(--theme-accent-hsl), 0.25);
+	background: transparent;
 	color: var(--theme-text);
 	cursor: pointer;
 	font-family: var(--theme-fonts);
@@ -225,9 +242,8 @@ button {
 	overflow: visible;
 	border: none;
 	margin: 0.2rem;
-	text-shadow: 0.1rem 0.1rem 0.2rem #000;
 	transition: color var(--time-state) linear,
-	background-color var(--time-active) linear,
+	background var(--time-state) linear,
 	text-shadow var(--time-active) linear;
 	&.rare {
 		--rarity: var(--rarity-rare);
@@ -238,14 +254,17 @@ button {
 	&.legendary {
 		--rarity: var(--rarity-legendary);
 	}
-	&:hover, &:focus {
+	&:hover {
 		color: var(--theme-interact);
+		color: #000;
+		background-color: hsla(var(--theme-interact-hsl), 1);
 	}
 	&:hover::before, &:focus::before {
 		opacity: 1;
 	}
 	&:active {
 		color: var(--theme-active);
+		color: #000;
 	}
 	&::before {
 		display: block;
@@ -274,7 +293,8 @@ button {
 		) 1 100%;
 		border-image-slice: 1;
 		opacity: 0.33;
-		transition: opacity var(--time-state) linear;
+		transition: opacity var(--time-state) linear,
+		border-width var(--time-active) linear;
 	}
 	
 	&.ui-button_loss:hover {
