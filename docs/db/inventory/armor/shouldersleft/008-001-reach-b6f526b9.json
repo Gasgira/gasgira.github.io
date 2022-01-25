@@ -1,0 +1,100 @@
+{
+	"TagId": -1,
+	"StyleId": {
+		"m_identifier": -1
+	},
+	"RegionData": [
+		{
+			"RegionId": {
+				"m_identifier": 7291560
+			},
+			"PermutationId": {
+				"m_identifier": 1106762332
+			},
+			"StyleIdOverride": {
+				"m_identifier": -1
+			}
+		}
+	],
+	"CommonData": {
+		"Id": "008-001-reach-b6f526b9",
+		"HideUntilOwned": true,
+		"Title": "SAP/RECON",
+		"Description": "Armored AESA panels associated with RECON armor.",
+		"FeatureFlag": true,
+		"ItemAvailability": "",
+		"DateReleased": {
+			"ISO8601Date": ""
+		},
+		"AltName": "008-001-reach-b6f526b9",
+		"IconStringId": {
+			"m_identifier": -1
+		},
+		"SpriteBitmap": 0,
+		"SpriteFrameIndex": 0,
+		"AltSpriteBitmap": 0,
+		"AltSpriteFrameIndex": 0,
+		"FocusMarker": {
+			"m_identifier": -1
+		},
+		"FocalDistance": 0,
+		"FocusMarkerOffset": 0,
+		"DOFType": "None",
+		"DOFFocalLength": 0,
+		"DOFFocalDistance": 0,
+		"DOFFStop": 0,
+		"DisplayPath": {
+			"Width": 320,
+			"Height": 320,
+			"Media": {
+				"MediaUrl": {
+					"AuthorityId": "",
+					"Path": "Progression/Inventory/Armor/ShouldersLeft/008-001-reach-b6f526b9-SM.png",
+					"RetryPolicyId": "",
+					"TopicName": "",
+					"AcknowledgementTypeId": "NoAcknowledgement",
+					"AuthenticationLifetimeExtensionSupported": false,
+					"ClearanceAware": false
+				},
+				"MimeType": "",
+				"Caption": "",
+				"AlternateText": "",
+				"FolderPath": "",
+				"FileName": ""
+			},
+			"MimeType": "image/png",
+			"FolderPath": "Progression/Inventory/Armor/ShouldersLeft",
+			"FileName": "008-001-reach-b6f526b9-SM.png"
+		},
+		"Quality": "Rare",
+		"ManufacturerId": 13,
+		"Type": "ArmorLeftShoulderPad",
+		"ParentTheme": "Inventory/Armor/Themes/007-001-reach-2564121f.json",
+		"RewardTrack": "",
+		"CameraPositions": [],
+		"CameraOffset": 0,
+		"CameraFOV": 0,
+		"CameraTransition": 0,
+		"Orientation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"Season": "Season 1",
+		"FocusedObjectOrientation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"ParentPaths": [
+			{
+				"Path": "Inventory/Armor/Themes/007-001-reach-2564121f.json",
+				"Type": "ArmorTheme"
+			}
+		],
+		"SortingMetadata": {
+			"categoryWeight": 0,
+			"subCategoryWeight": 0
+		}
+	}
+}

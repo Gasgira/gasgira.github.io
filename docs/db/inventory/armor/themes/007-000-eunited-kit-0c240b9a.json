@@ -1,0 +1,793 @@
+{
+	"IsItemOwnershipRequired": false,
+	"Coatings": {
+		"IsRequired": true,
+		"DefaultOptionPath": "Inventory/Armor/Coatings/002-001-olympus-1bf3c172.json",
+		"OptionPaths": [
+			"Inventory/Armor/Coatings/002-001-olympus-1bf3c172.json"
+		]
+	},
+	"Helmets": {
+		"IsRequired": true,
+		"DefaultOptionPath": "Inventory/Armor/Helmets/005-001-olympus-c13d0b38.json",
+		"Options": [
+			{
+				"HelmetPath": "Inventory/Armor/Helmets/005-001-olympus-c13d0b38.json",
+				"HelmetAttachments": {
+					"DefaultOptionPath": "",
+					"IsRequired": false,
+					"OptionPaths": []
+				}
+			}
+		]
+	},
+	"Visors": {
+		"IsRequired": true,
+		"DefaultOptionPath": "Inventory/Armor/Visors/012-001-0783f88e.json",
+		"OptionPaths": [
+			"Inventory/Armor/Visors/012-001-0783f88e.json"
+		]
+	},
+	"LeftShoulderPads": {
+		"IsRequired": true,
+		"DefaultOptionPath": "Inventory/Armor/ShouldersLeft/008-001-olympus-c13d0b38.json",
+		"OptionPaths": [
+			"Inventory/Armor/ShouldersLeft/008-001-olympus-c13d0b38.json"
+		],
+		"OffRegionInfo": [
+			{
+				"RegionId": {
+					"m_identifier": 7291560
+				},
+				"PermutationId": {
+					"m_identifier": -1
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			}
+		]
+	},
+	"RightShoulderPads": {
+		"IsRequired": true,
+		"DefaultOptionPath": "Inventory/Armor/ShouldersRight/009-001-olympus-c13d0b38.json",
+		"OptionPaths": [
+			"Inventory/Armor/ShouldersRight/009-001-olympus-c13d0b38.json"
+		],
+		"OffRegionInfo": [
+			{
+				"RegionId": {
+					"m_identifier": -1236654186
+				},
+				"PermutationId": {
+					"m_identifier": -1
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			}
+		]
+	},
+	"Gloves": {
+		"IsRequired": true,
+		"DefaultOptionPath": "Inventory/Armor/Gloves/003-001-olympus-c13d0b38.json",
+		"OptionPaths": [
+			"Inventory/Armor/Gloves/003-001-olympus-c13d0b38.json"
+		]
+	},
+	"KneePads": {
+		"IsRequired": true,
+		"DefaultOptionPath": "Inventory/Armor/KneePads/006-001-olympus-c13d0b38.json",
+		"OptionPaths": [
+			"Inventory/Armor/KneePads/006-001-olympus-c13d0b38.json"
+		]
+	},
+	"ChestAttachments": {
+		"IsRequired": false,
+		"DefaultOptionPath": "",
+		"OptionPaths": []
+	},
+	"WristAttachments": {
+		"IsRequired": false,
+		"DefaultOptionPath": "",
+		"OptionPaths": []
+	},
+	"HipAttachments": {
+		"IsRequired": false,
+		"DefaultOptionPath": "",
+		"OptionPaths": []
+	},
+	"Emblems": {
+		"IsRequired": true,
+		"AvailableLocations": [
+			{
+				"LocationId": -142056143,
+				"DefaultOption": {
+					"Path": "Inventory/Armor/Emblems/013-001-a616c7cd.json",
+					"ConfigurationId": -1979809126
+				}
+			}
+		],
+		"OptionPaths": [
+			"Inventory/Armor/Emblems/013-001-a616c7cd.json"
+		],
+		"AvailableConfigurations": [
+			{
+				"Path": "Inventory/Armor/Emblems/013-001-a616c7cd.json",
+				"Configurations": []
+			}
+		]
+	},
+	"ArmorFx": {
+		"IsRequired": false,
+		"DefaultOptionPath": "",
+		"OptionPaths": []
+	},
+	"MythicFx": {
+		"IsRequired": false,
+		"DefaultOptionPath": "",
+		"OptionPaths": []
+	},
+	"TagId": -830435295,
+	"VariantId": {
+		"m_identifier": 332549919
+	},
+	"CoreRegionData": {
+		"BaseRegionData": [
+			{
+				"RegionId": {
+					"m_identifier": -592012529
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": -1423584766
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": 1503319737
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": -2070903492
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": 1066512234
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": -1547743034
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": 1733594109
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": -1293399145
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": -1721324182
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": 1133478663
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": -1149815856
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": 1318168609
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": 702769714
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": 1250001557
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": 1798246436
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": 706373173
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": 1923396739
+				},
+				"PermutationId": {
+					"m_identifier": 332549919
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			}
+		],
+		"BodyTypeSmallOverrides": [
+			{
+				"RegionId": {
+					"m_identifier": 1318168609
+				},
+				"PermutationId": {
+					"m_identifier": -559891038
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": -1547743034
+				},
+				"PermutationId": {
+					"m_identifier": -559891038
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": 706373173
+				},
+				"PermutationId": {
+					"m_identifier": -559891038
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": 1923396739
+				},
+				"PermutationId": {
+					"m_identifier": -559891038
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			}
+		],
+		"BodyTypeLargeOverrides": [
+			{
+				"RegionId": {
+					"m_identifier": 1318168609
+				},
+				"PermutationId": {
+					"m_identifier": -1359825604
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": -1547743034
+				},
+				"PermutationId": {
+					"m_identifier": -1359825604
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": 706373173
+				},
+				"PermutationId": {
+					"m_identifier": -1359825604
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			},
+			{
+				"RegionId": {
+					"m_identifier": 1923396739
+				},
+				"PermutationId": {
+					"m_identifier": -1359825604
+				},
+				"StyleIdOverride": {
+					"m_identifier": -1
+				}
+			}
+		],
+		"ProstheticLeftArmOverrides": {
+			"Full": [
+				{
+					"RegionId": {
+						"m_identifier": -1423584766
+					},
+					"PermutationId": {
+						"m_identifier": 0
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": -1547743034
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": -592012529
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": 1066512234
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": 1644532521
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				}
+			],
+			"Half": [
+				{
+					"RegionId": {
+						"m_identifier": 1066512234
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": -1423584766
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": 1644532521
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				}
+			],
+			"Extremity": [
+				{
+					"RegionId": {
+						"m_identifier": 1644532521
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": 1948739329
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				}
+			]
+		},
+		"ProstheticRightArmOverrides": {
+			"Full": [
+				{
+					"RegionId": {
+						"m_identifier": -1293399145
+					},
+					"PermutationId": {
+						"m_identifier": 0
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": 1318168609
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": 1733594109
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": -1149815856
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": 2088789481
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				}
+			],
+			"Half": [
+				{
+					"RegionId": {
+						"m_identifier": -1149815856
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": -1293399145
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": 2088789481
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				}
+			],
+			"Extremity": [
+				{
+					"RegionId": {
+						"m_identifier": 2088789481
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": 742143389
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				}
+			]
+		},
+		"ProstheticLeftLegOverrides": {
+			"Full": [
+				{
+					"RegionId": {
+						"m_identifier": 1503319737
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": -2070903492
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				}
+			],
+			"Half": [],
+			"Extremity": []
+		},
+		"ProstheticRightLegOverrides": {
+			"Full": [
+				{
+					"RegionId": {
+						"m_identifier": -1721324182
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				},
+				{
+					"RegionId": {
+						"m_identifier": 1133478663
+					},
+					"PermutationId": {
+						"m_identifier": -485679728
+					},
+					"StyleIdOverride": {
+						"m_identifier": -1
+					}
+				}
+			],
+			"Half": [],
+			"Extremity": []
+		}
+	},
+	"CommonData": {
+		"Id": "007-000-eunited-kit-0c240b9a",
+		"HideUntilOwned": false,
+		"Title": "eUnited",
+		"Description": "There is truly no better way to Stand United",
+		"FeatureFlag": true,
+		"ItemAvailability": "",
+		"DateReleased": {
+			"ISO8601Date": ""
+		},
+		"AltName": "olympus",
+		"IconStringId": {
+			"m_identifier": -1
+		},
+		"SpriteBitmap": 0,
+		"SpriteFrameIndex": 0,
+		"AltSpriteBitmap": 0,
+		"AltSpriteFrameIndex": 0,
+		"FocusMarker": {
+			"m_identifier": -1
+		},
+		"FocalDistance": 0,
+		"FocusMarkerOffset": 0,
+		"DOFType": "None",
+		"DOFFocalLength": 0,
+		"DOFFocalDistance": 0,
+		"DOFFStop": 0,
+		"DisplayPath": {
+			"Width": 320,
+			"Height": 320,
+			"Media": {
+				"MediaUrl": {
+					"AuthorityId": "",
+					"Path": "progression/Inventory/Armor/Themes/007-000-eunited-kit-0c240b9a-SM.png",
+					"RetryPolicyId": "",
+					"TopicName": "",
+					"AcknowledgementTypeId": "NoAcknowledgement",
+					"AuthenticationLifetimeExtensionSupported": false,
+					"ClearanceAware": false
+				},
+				"MimeType": "",
+				"Caption": "",
+				"AlternateText": "",
+				"FolderPath": "",
+				"FileName": ""
+			},
+			"MimeType": "image/png",
+			"FolderPath": "progression/Inventory/Armor/Themes",
+			"FileName": "007-000-eunited-kit-0c240b9a-SM.png"
+		},
+		"Quality": "Epic",
+		"ManufacturerId": 0,
+		"Type": "ArmorTheme",
+		"ParentTheme": "Cores/ArmorCores/017-001-olympus-c13d0b38.json",
+		"RewardTrack": "",
+		"CameraPositions": [],
+		"CameraOffset": 0,
+		"CameraFOV": 0,
+		"CameraTransition": 0,
+		"Orientation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"Season": "Season 1",
+		"FocusedObjectOrientation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"ParentPaths": [
+			{
+				"Path": "Cores/ArmorCores/017-001-olympus-c13d0b38.json",
+				"Type": "ArmorCore"
+			}
+		],
+		"SortingMetadata": {
+			"categoryWeight": 0,
+			"subCategoryWeight": 0
+		}
+	},
+	"IsKit": true,
+	"KitBaseThemePath": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json"
+}

@@ -1,0 +1,11 @@
+{
+	"Description": "Win a Capture the Flag Match in PvP",
+	"Difficulty": "heroic",
+	"Category": "ModeBased",
+	"Reward": {
+		"InventoryItems": [],
+		"OperationExperience": 250
+	},
+	"ThresholdForSuccess": 1,
+	"Title": "I Claim this Map..."
+}

@@ -1,0 +1,98 @@
+{
+	"ImagePath": {
+		"Width": 0,
+		"Height": 0,
+		"Media": {
+			"MediaUrl": {
+				"AuthorityId": "",
+				"Path": "Progression/Backgrounds/UI_Background_ilovebees.png",
+				"RetryPolicyId": "",
+				"TopicName": "",
+				"AcknowledgementTypeId": "NoAcknowledgement",
+				"AuthenticationLifetimeExtensionSupported": false,
+				"ClearanceAware": false
+			},
+			"MimeType": "",
+			"Caption": "",
+			"AlternateText": "",
+			"FolderPath": "",
+			"FileName": ""
+		}
+	},
+	"CommonData": {
+		"Id": "103-000-UI-Background-c4aa5283",
+		"HideUntilOwned": true,
+		"Title": "Margaret's Honey",
+		"Description": "They dance, they work, they make life sweet!",
+		"FeatureFlag": true,
+		"ItemAvailability": "",
+		"DateReleased": {
+			"ISO8601Date": ""
+		},
+		"AltName": "UI_Background_ilovebees.png",
+		"IconStringId": {
+			"m_identifier": -1
+		},
+		"SpriteBitmap": 0,
+		"SpriteFrameIndex": 0,
+		"AltSpriteBitmap": 0,
+		"AltSpriteFrameIndex": 0,
+		"FocusMarker": {
+			"m_identifier": -1
+		},
+		"FocalDistance": 0,
+		"FocusMarkerOffset": 0,
+		"DOFType": "None",
+		"DOFFocalLength": 0,
+		"DOFFocalDistance": 0,
+		"DOFFStop": 0,
+		"DisplayPath": {
+			"Width": 2115,
+			"Height": 2160,
+			"Media": {
+				"MediaUrl": {
+					"AuthorityId": "",
+					"Path": "progression/Backgrounds/UI_Background_ilovebees.png",
+					"RetryPolicyId": "",
+					"TopicName": "",
+					"AcknowledgementTypeId": "NoAcknowledgement",
+					"AuthenticationLifetimeExtensionSupported": false,
+					"ClearanceAware": false
+				},
+				"MimeType": "",
+				"Caption": "",
+				"AlternateText": "",
+				"FolderPath": "",
+				"FileName": ""
+			},
+			"MimeType": "image/png",
+			"FolderPath": "progression/Backgrounds",
+			"FileName": "UI_Background_ilovebees.png"
+		},
+		"Quality": "Epic",
+		"ManufacturerId": 6,
+		"Type": "SpartanBackdropImage",
+		"ParentTheme": "",
+		"RewardTrack": "",
+		"CameraPositions": [],
+		"CameraOffset": 0,
+		"CameraFOV": 0,
+		"CameraTransition": 0,
+		"Orientation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"Season": "Season 1",
+		"FocusedObjectOrientation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"ParentPaths": [],
+		"SortingMetadata": {
+			"categoryWeight": 0,
+			"subCategoryWeight": 0
+		}
+	}
+}

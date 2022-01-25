@@ -1,0 +1,12 @@
+{
+	"Title": "FaZe Clan",
+	"Description": "Bundle includes team nameplate and customization kits for the Mark VII armor and BR75 Battle Rifle",
+	"Quality": "Epic",
+	"WidthHint": 2,
+	"HeightHint": 1,
+	"FlairText": "",
+	"FlairIconPath": null,
+	"FlairBackgroundPath": null,
+	"ObjectImagePath": "progression/StoreContent/Offerings/HCS_Storefront/007-000-faze-clan-kit-0c240b9a-2x1_HCS_store.png",
+	"HCSTeamIndex": 4
+}

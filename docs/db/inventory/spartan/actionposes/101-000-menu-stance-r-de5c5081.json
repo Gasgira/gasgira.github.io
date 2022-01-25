@@ -1,0 +1,87 @@
+{
+	"StanceId": {
+		"m_identifier": 1130930316
+	},
+	"CommonData": {
+		"Id": "101-000-menu-stance-r-de5c5081",
+		"HideUntilOwned": false,
+		"Title": "Calm Blossom",
+		"Description": "Empty the mind of all earthly attachments. Only duty should remain.",
+		"FeatureFlag": true,
+		"ItemAvailability": "",
+		"DateReleased": {
+			"ISO8601Date": ""
+		},
+		"AltName": "menu:stance:reach:epic:six",
+		"IconStringId": {
+			"m_identifier": -1
+		},
+		"SpriteBitmap": 0,
+		"SpriteFrameIndex": 0,
+		"AltSpriteBitmap": 0,
+		"AltSpriteFrameIndex": 0,
+		"FocusMarker": {
+			"m_identifier": -1
+		},
+		"FocalDistance": 0,
+		"FocusMarkerOffset": 0,
+		"DOFType": "None",
+		"DOFFocalLength": 0,
+		"DOFFocalDistance": 0,
+		"DOFFStop": 0,
+		"DisplayPath": {
+			"Width": 320,
+			"Height": 320,
+			"Media": {
+				"MediaUrl": {
+					"AuthorityId": "",
+					"Path": "progression/Inventory/Spartan/ActionPoses/101-000-menu-stance-r-de5c5081-SM.png",
+					"RetryPolicyId": "",
+					"TopicName": "",
+					"AcknowledgementTypeId": "NoAcknowledgement",
+					"AuthenticationLifetimeExtensionSupported": false,
+					"ClearanceAware": false
+				},
+				"MimeType": "",
+				"Caption": "",
+				"AlternateText": "",
+				"FolderPath": "",
+				"FileName": ""
+			},
+			"MimeType": "image/png",
+			"FolderPath": "progression/Inventory/Spartan/ActionPoses",
+			"FileName": "101-000-menu-stance-r-de5c5081-SM.png"
+		},
+		"Quality": "Rare",
+		"ManufacturerId": 23,
+		"Type": "SpartanActionPose",
+		"ParentTheme": "",
+		"RewardTrack": "RewardTracks/Operations/battlepass-noblesacrifice.json",
+		"CameraPositions": [],
+		"CameraOffset": 0,
+		"CameraFOV": 0,
+		"CameraTransition": 0,
+		"Orientation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"Season": "Season 1",
+		"FocusedObjectOrientation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"ParentPaths": [
+			{
+				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
+				"Type": "ArmorTheme"
+			}
+		],
+		"SortingMetadata": {
+			"categoryWeight": 0,
+			"subCategoryWeight": 0
+		}
+	},
+	"WeaponTagId": -40348340
+}

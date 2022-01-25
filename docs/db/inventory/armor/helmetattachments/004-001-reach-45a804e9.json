@@ -1,0 +1,100 @@
+{
+	"TagId": 727511643,
+	"MarkerLocation": {
+		"MarkerName": {
+			"m_identifier": 714966513
+		},
+		"VariantId": {
+			"m_identifier": 1120495519
+		}
+	},
+	"StyleId": {
+		"m_identifier": -1
+	},
+	"MeshIndex": 0,
+	"CommonData": {
+		"Id": "004-001-reach-45a804e9",
+		"HideUntilOwned": false,
+		"Title": "FC-I/FASCIA",
+		"Description": "This attachment adds an additional satcom receiver panel, FASCIA hardware-accelerator for decryption, and protects the faceplate from high-angle attacks.",
+		"FeatureFlag": true,
+		"ItemAvailability": "",
+		"DateReleased": {
+			"ISO8601Date": ""
+		},
+		"AltName": "004-001-reach-45a804e9",
+		"IconStringId": {
+			"m_identifier": -1
+		},
+		"SpriteBitmap": 0,
+		"SpriteFrameIndex": 0,
+		"AltSpriteBitmap": 0,
+		"AltSpriteFrameIndex": 0,
+		"FocusMarker": {
+			"m_identifier": -1
+		},
+		"FocalDistance": 0,
+		"FocusMarkerOffset": 0,
+		"DOFType": "None",
+		"DOFFocalLength": 0,
+		"DOFFocalDistance": 0,
+		"DOFFStop": 0,
+		"DisplayPath": {
+			"Width": 320,
+			"Height": 320,
+			"Media": {
+				"MediaUrl": {
+					"AuthorityId": "",
+					"Path": "progression/Inventory/Armor/HelmetAttachments/004-001-reach-45a804e9-SM.png",
+					"RetryPolicyId": "",
+					"TopicName": "",
+					"AcknowledgementTypeId": "NoAcknowledgement",
+					"AuthenticationLifetimeExtensionSupported": false,
+					"ClearanceAware": false
+				},
+				"MimeType": "",
+				"Caption": "",
+				"AlternateText": "",
+				"FolderPath": "",
+				"FileName": ""
+			},
+			"MimeType": "image/png",
+			"FolderPath": "progression/Inventory/Armor/HelmetAttachments",
+			"FileName": "004-001-reach-45a804e9-SM.png"
+		},
+		"Quality": "Legendary",
+		"ManufacturerId": 15,
+		"Type": "ArmorHelmetAttachment",
+		"ParentTheme": "Inventory/Armor/Themes/007-001-reach-2564121f.json",
+		"RewardTrack": "RewardTracks/Operations/battlepass-noblesacrifice.json",
+		"CameraPositions": [],
+		"CameraOffset": 0,
+		"CameraFOV": 0,
+		"CameraTransition": 0,
+		"Orientation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"Season": "Season 1",
+		"FocusedObjectOrientation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"ParentPaths": [
+			{
+				"Path": "Inventory/Armor/Themes/007-001-reach-2564121f.json",
+				"Type": "ArmorTheme"
+			},
+			{
+				"Path": "Inventory/armor/helmets/005-001-reach-0e4941dc.json",
+				"Type": "ArmorHelmet"
+			}
+		],
+		"SortingMetadata": {
+			"categoryWeight": 0,
+			"subCategoryWeight": 0
+		}
+	}
+}

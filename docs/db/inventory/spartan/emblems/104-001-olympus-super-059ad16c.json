@@ -1,0 +1,127 @@
+{
+	"TagId": 0,
+	"ThemeName": {
+		"m_identifier": 1248836536
+	},
+	"EmblemShaderName": {
+		"m_identifier": -1
+	},
+	"AvailableConfigurations": [
+		{
+			"ConfigurationId": 1398757569,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-3b61ee6e.json"
+		},
+		{
+			"ConfigurationId": -411885605,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-485b05b7.json"
+		},
+		{
+			"ConfigurationId": 1198260756,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-4b26eb4d.json"
+		},
+		{
+			"ConfigurationId": -1972710010,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-4b2910dd.json"
+		},
+		{
+			"ConfigurationId": 1713794302,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-822de7c9.json"
+		},
+		{
+			"ConfigurationId": 802727239,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-885e047a.json"
+		},
+		{
+			"ConfigurationId": -2008883112,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-902f0f40.json"
+		},
+		{
+			"ConfigurationId": 1738220857,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-a0bc7fcf.json"
+		},
+		{
+			"ConfigurationId": 2135095940,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-b646c9ff.json"
+		},
+		{
+			"ConfigurationId": 176812955,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-cabc2933.json"
+		}
+	],
+	"CommonData": {
+		"Id": "104-001-olympus-super-059ad16c",
+		"HideUntilOwned": false,
+		"Title": "Superintendent",
+		"Description": "Keep it Clean!",
+		"FeatureFlag": true,
+		"ItemAvailability": "",
+		"DateReleased": {
+			"ISO8601Date": ""
+		},
+		"AltName": "104-001-olympus-super-059ad16c",
+		"IconStringId": {
+			"m_identifier": -1
+		},
+		"SpriteBitmap": 0,
+		"SpriteFrameIndex": 0,
+		"AltSpriteBitmap": 0,
+		"AltSpriteFrameIndex": 0,
+		"FocusMarker": {
+			"m_identifier": -1
+		},
+		"FocalDistance": 0,
+		"FocusMarkerOffset": 0,
+		"DOFType": "None",
+		"DOFFocalLength": 0,
+		"DOFFocalDistance": 0,
+		"DOFFStop": 0,
+		"DisplayPath": {
+			"Width": 358,
+			"Height": 358,
+			"Media": {
+				"MediaUrl": {
+					"AuthorityId": "",
+					"Path": "progression/Inventory/Emblems/olympus_superintendant_emblem.png",
+					"RetryPolicyId": "",
+					"TopicName": "",
+					"AcknowledgementTypeId": "NoAcknowledgement",
+					"AuthenticationLifetimeExtensionSupported": false,
+					"ClearanceAware": false
+				},
+				"MimeType": "",
+				"Caption": "",
+				"AlternateText": "",
+				"FolderPath": "",
+				"FileName": ""
+			},
+			"MimeType": "image/png",
+			"FolderPath": "progression/Inventory/Emblems",
+			"FileName": "olympus_superintendant_emblem.png"
+		},
+		"Quality": "Epic",
+		"ManufacturerId": 23,
+		"Type": "SpartanEmblem",
+		"ParentTheme": "",
+		"RewardTrack": "",
+		"CameraPositions": [],
+		"CameraOffset": 0,
+		"CameraFOV": 0,
+		"CameraTransition": 0,
+		"Orientation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"Season": "Season 1",
+		"FocusedObjectOrientation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"ParentPaths": [],
+		"SortingMetadata": {
+			"categoryWeight": 1,
+			"subCategoryWeight": 0
+		}
+	}
+}

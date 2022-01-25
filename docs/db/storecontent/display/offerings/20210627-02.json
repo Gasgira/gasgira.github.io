@@ -1,0 +1,11 @@
+{
+	"Title": "Latin America",
+	"Description": "Bundle includes the LATAM visor, nameplate, two emblems and a weapon coating.",
+	"Quality": "Rare",
+	"WidthHint": 1,
+	"HeightHint": 1,
+	"FlairText": "",
+	"FlairIconPath": null,
+	"FlairBackgroundPath": null,
+	"ObjectImagePath": "progression/StoreContent/Offerings/HCS_Storefront/hcs_branded_rewards_latam_emblem_HCS_store.png"
+}

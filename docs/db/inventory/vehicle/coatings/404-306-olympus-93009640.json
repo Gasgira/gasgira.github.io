@@ -1,0 +1,91 @@
+{
+	"TagId": 0,
+	"StyleId": {
+		"m_identifier": -996425597
+	},
+	"RegionPartId": {
+		"m_identifier": -1
+	},
+	"CommonData": {
+		"Id": "404-306-olympus-93009640",
+		"HideUntilOwned": true,
+		"Title": "Platinum Anniversary",
+		"Description": "No. I think we're just getting started",
+		"FeatureFlag": true,
+		"ItemAvailability": "",
+		"DateReleased": {
+			"ISO8601Date": ""
+		},
+		"AltName": "oly_20yhalo_h1_warthog",
+		"IconStringId": {
+			"m_identifier": -1
+		},
+		"SpriteBitmap": 0,
+		"SpriteFrameIndex": 0,
+		"AltSpriteBitmap": 0,
+		"AltSpriteFrameIndex": 0,
+		"FocusMarker": {
+			"m_identifier": -1
+		},
+		"FocalDistance": 0,
+		"FocusMarkerOffset": 0,
+		"DOFType": "None",
+		"DOFFocalLength": 0,
+		"DOFFocalDistance": 0,
+		"DOFFStop": 0,
+		"DisplayPath": {
+			"Width": 320,
+			"Height": 320,
+			"Media": {
+				"MediaUrl": {
+					"AuthorityId": "",
+					"Path": "progression/Inventory/Vehicle/Coatings/404-306-olympus-93009640-SM.png",
+					"RetryPolicyId": "",
+					"TopicName": "",
+					"AcknowledgementTypeId": "NoAcknowledgement",
+					"AuthenticationLifetimeExtensionSupported": false,
+					"ClearanceAware": false
+				},
+				"MimeType": "",
+				"Caption": "",
+				"AlternateText": "",
+				"FolderPath": "",
+				"FileName": ""
+			},
+			"MimeType": "image/png",
+			"FolderPath": "progression/Inventory/Vehicle/Coatings",
+			"FileName": "404-306-olympus-93009640-SM.png"
+		},
+		"Quality": "Legendary",
+		"ManufacturerId": 0,
+		"Type": "VehicleCoating",
+		"ParentTheme": "Inventory/Vehicle/Themes/408-306-olympus-174b9a04.json",
+		"RewardTrack": "",
+		"CameraPositions": [],
+		"CameraOffset": 0,
+		"CameraFOV": 0,
+		"CameraTransition": 0,
+		"Orientation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"Season": "Season 1",
+		"FocusedObjectOrientation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"ParentPaths": [
+			{
+				"Path": "Inventory/Vehicle/Themes/408-306-olympus-aa30213b.json",
+				"Type": "VehicleTheme"
+			}
+		],
+		"SortingMetadata": {
+			"categoryWeight": 0,
+			"subCategoryWeight": 0
+		}
+	},
+	"LightingScalarOverride": 0
+}

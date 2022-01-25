@@ -1,0 +1,121 @@
+{
+	"TagId": 0,
+	"ThemeName": {
+		"m_identifier": -1968853164
+	},
+	"EmblemShaderName": {
+		"m_identifier": 0
+	},
+	"CommonData": {
+		"Id": "405-305-64d4daeb",
+		"HideUntilOwned": true,
+		"Title": "Fangs",
+		"Description": "Don't get them riled up.",
+		"FeatureFlag": true,
+		"ItemAvailability": "",
+		"DateReleased": {
+			"ISO8601Date": ""
+		},
+		"AltName": "405-305-64d4daeb",
+		"IconStringId": {
+			"m_identifier": -1
+		},
+		"SpriteBitmap": 0,
+		"SpriteFrameIndex": 0,
+		"AltSpriteBitmap": 0,
+		"AltSpriteFrameIndex": 0,
+		"FocusMarker": {
+			"m_identifier": -1
+		},
+		"FocalDistance": 0,
+		"FocusMarkerOffset": 0,
+		"DOFType": "None",
+		"DOFFocalLength": 0,
+		"DOFFocalDistance": 0,
+		"DOFFStop": 0,
+		"DisplayPath": {
+			"Width": 358,
+			"Height": 358,
+			"Media": {
+				"MediaUrl": {
+					"AuthorityId": "",
+					"Path": "progression/Inventory/Emblems/razer_fangs_emblem.png",
+					"RetryPolicyId": "",
+					"TopicName": "",
+					"AcknowledgementTypeId": "NoAcknowledgement",
+					"AuthenticationLifetimeExtensionSupported": false,
+					"ClearanceAware": false
+				},
+				"MimeType": "",
+				"Caption": "",
+				"AlternateText": "",
+				"FolderPath": "",
+				"FileName": ""
+			},
+			"MimeType": "image/png",
+			"FolderPath": "progression/Inventory/Emblems",
+			"FileName": "razer_fangs_emblem.png"
+		},
+		"Quality": "Epic",
+		"ManufacturerId": 0,
+		"Type": "VehicleEmblem",
+		"ParentTheme": "Inventory/Vehicle/Themes/408-300-olympus-aa30213b.json",
+		"RewardTrack": "",
+		"CameraPositions": [],
+		"CameraOffset": 0,
+		"CameraFOV": 0,
+		"CameraTransition": 0,
+		"Orientation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"Season": "Season 1",
+		"FocusedObjectOrientation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"ParentPaths": [
+			{
+				"Path": "Inventory/Vehicle/Themes/408-300-olympus-aa30213b.json",
+				"Type": "VehicleTheme"
+			},
+			{
+				"Path": "Inventory/Vehicle/Themes/408-301-olympus-aa30213b.json",
+				"Type": "VehicleTheme"
+			},
+			{
+				"Path": "Inventory/Vehicle/Themes/408-302-olympus-aa30213b.json",
+				"Type": "VehicleTheme"
+			},
+			{
+				"Path": "Inventory/Vehicle/Themes/408-303-olympus-aa30213b.json",
+				"Type": "VehicleTheme"
+			},
+			{
+				"Path": "Inventory/Vehicle/Themes/408-304-olympus-aa30213b.json",
+				"Type": "VehicleTheme"
+			},
+			{
+				"Path": "Inventory/Vehicle/Themes/408-305-olympus-aa30213b.json",
+				"Type": "VehicleTheme"
+			},
+			{
+				"Path": "Inventory/Vehicle/Themes/408-306-olympus-aa30213b.json",
+				"Type": "VehicleTheme"
+			}
+		],
+		"SortingMetadata": {
+			"categoryWeight": 0,
+			"subCategoryWeight": 0
+		},
+		"CustomAvailability": "Available via Halo Infinite partners"
+	},
+	"AvailableConfigurations": [
+		{
+			"ConfigurationId": -1382628992,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-557d5bf5.json"
+		}
+	]
+}

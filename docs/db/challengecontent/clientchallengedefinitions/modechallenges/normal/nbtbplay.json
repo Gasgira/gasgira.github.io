@@ -1,0 +1,11 @@
+{
+	"Description": "Complete a Big Team Battle Match",
+	"Difficulty": "normal",
+	"Category": "ModeBased",
+	"Reward": {
+		"InventoryItems": [],
+		"OperationExperience": 200
+	},
+	"ThresholdForSuccess": 1,
+	"Title": "Large Squad Scuffle"
+}

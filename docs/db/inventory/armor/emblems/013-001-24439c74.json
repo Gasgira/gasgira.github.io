@@ -1,0 +1,104 @@
+{
+	"TagId": 0,
+	"ThemeName": {
+		"m_identifier": -1992109958
+	},
+	"EmblemShaderName": {
+		"m_identifier": 0
+	},
+	"CommonData": {
+		"Id": "013-001-24439c74",
+		"HideUntilOwned": false,
+		"Title": "Greenhorn",
+		"Description": "The first steps to a grand adventure.",
+		"FeatureFlag": true,
+		"ItemAvailability": "",
+		"DateReleased": {
+			"ISO8601Date": ""
+		},
+		"AltName": "013-001-24439c74",
+		"IconStringId": {
+			"m_identifier": -1
+		},
+		"SpriteBitmap": 0,
+		"SpriteFrameIndex": 0,
+		"AltSpriteBitmap": 0,
+		"AltSpriteFrameIndex": 0,
+		"FocusMarker": {
+			"m_identifier": -1
+		},
+		"FocalDistance": 0,
+		"FocusMarkerOffset": 0,
+		"DOFType": "None",
+		"DOFFocalLength": 0,
+		"DOFFocalDistance": 0,
+		"DOFFStop": 0,
+		"DisplayPath": {
+			"Width": 358,
+			"Height": 358,
+			"Media": {
+				"MediaUrl": {
+					"AuthorityId": "",
+					"Path": "progression/Inventory/Emblems/razer_greenhorn_emblem.png",
+					"RetryPolicyId": "",
+					"TopicName": "",
+					"AcknowledgementTypeId": "NoAcknowledgement",
+					"AuthenticationLifetimeExtensionSupported": false,
+					"ClearanceAware": false
+				},
+				"MimeType": "",
+				"Caption": "",
+				"AlternateText": "",
+				"FolderPath": "",
+				"FileName": ""
+			},
+			"MimeType": "image/png",
+			"FolderPath": "progression/Inventory/Emblems",
+			"FileName": "razer_greenhorn_emblem.png"
+		},
+		"Quality": "Epic",
+		"ManufacturerId": 0,
+		"Type": "ArmorEmblem",
+		"ParentTheme": "",
+		"RewardTrack": "",
+		"CameraPositions": [],
+		"CameraOffset": 0,
+		"CameraFOV": 0,
+		"CameraTransition": 0,
+		"Orientation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"Season": "Season 1",
+		"FocusedObjectOrientation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"ParentPaths": [
+			{
+				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
+				"Type": "ArmorTheme"
+			},
+			{
+				"Path": "Inventory/Armor/Themes/007-001-reach-2564121f.json",
+				"Type": "ArmorTheme"
+			},
+			{
+				"Path": "Inventory/Armor/Themes/007-001-samurai-55badb14.json",
+				"Type": "ArmorTheme"
+			}
+		],
+		"SortingMetadata": {
+			"categoryWeight": 0,
+			"subCategoryWeight": 0
+		}
+	},
+	"AvailableConfigurations": [
+		{
+			"ConfigurationId": -1382628992,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-557d5bf5.json"
+		}
+	]
+}

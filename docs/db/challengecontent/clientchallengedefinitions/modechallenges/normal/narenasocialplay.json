@@ -1,0 +1,11 @@
+{
+	"Description": "Complete Quick Play Matches",
+	"Difficulty": "normal",
+	"Category": "ModeBased",
+	"Reward": {
+		"InventoryItems": [],
+		"OperationExperience": 200
+	},
+	"ThresholdForSuccess": 3,
+	"Title": "For the Fun"
+}

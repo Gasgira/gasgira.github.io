@@ -1,0 +1,11 @@
+{
+	"Description": "Kill an Enemy Flag Carrier in PvP",
+	"Difficulty": "heroic",
+	"Category": "ModeBased",
+	"Reward": {
+		"InventoryItems": [],
+		"OperationExperience": 250
+	},
+	"ThresholdForSuccess": 1,
+	"Title": "We'll Take That Back, Thanks"
+}

@@ -1,0 +1,11 @@
+{
+	"Description": "Kill an Enemy Spartan with the Bulldog",
+	"Difficulty": "normal",
+	"Category": "WeaponBased",
+	"Reward": {
+		"InventoryItems": [],
+		"OperationExperience": 200
+	},
+	"ThresholdForSuccess": 1,
+	"Title": "Dogged Determination"
+}
