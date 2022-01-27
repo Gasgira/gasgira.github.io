@@ -22,6 +22,7 @@ class Settings extends Component {
 
 	render() {
 		return this.html`
+			<span>These are advanced settings. Do not modify them unless you know why to.</span>
 			<button onclick=${() => this.reset()}>Reset Settings</button>
 			<label for="dbPath">dbPath:</label>
 			<input type="text" id="dbPath" name="dbPath" required minlength="0" maxlength="8" size="10"
@@ -44,7 +45,7 @@ class Settings extends Component {
 	setDbPath(path) {
 		if (path && typeof path === 'string') {
 			localStorage.setItem('dbPath', `${path}`);
-			console.info(`[halosets][settings] Set dbPath to custom value! Refresh the page to take full effect.`, localStorage.getItem('dbPath'));
+			console.info(`[skimmer][settings] Set dbPath to custom value! Refresh the page to take full effect.`, localStorage.getItem('dbPath'));
 		}
 	}
 
@@ -55,14 +56,14 @@ class Settings extends Component {
 			localStorage.setItem('pathCasing', false);
 		}
 		
-		console.info(`[halosets][settings] Set normalize path casing! Refresh the page to take full effect.`, localStorage.getItem('pathCasing'));
+		console.info(`[skimmer][settings] Set normalize path casing! Refresh the page to take full effect.`, localStorage.getItem('pathCasing'));
 
 	}
 
 	reset() {
 		this.data.clear();
 		localStorage.clear();
-		console.warn(`[halosets][settings] Cleared settings. Refresh the page to take full effect.`, this.data);
+		console.warn(`[skimmer][settings] Cleared settings. Refresh the page to take full effect.`, this.data);
 		this.render();
 	}
 }

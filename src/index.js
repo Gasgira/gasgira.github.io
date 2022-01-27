@@ -1,7 +1,8 @@
 import { HTML } from 'lib/HTML';
 import { headerNav } from 'ui/nav';
 import { db } from 'db';
-import { armorCores, inventory } from 'entries';
+import { coreViewer } from 'ui/cores';
+import { inventory } from 'ui/inventory';
 
 import './styles.css';
 
@@ -19,30 +20,35 @@ HTML.bind(document.querySelector('.js--main'))`
 
 class App {
 	async init() {
-		this.entries = [
-			armorCores.init(),
-			inventory.init()
-		]
+		// this.entries = [
+		// 	inventory.init(),
+		// 	armorCores.init(),
+		// 	coreViewer.init()
+		// ]
 
-		Promise.all(this.entries)
-			.then(() => this.render())
-			.then(() => this.parseUri());
+		// Promise.all(this.entries)
+		// 	.then(() => this.render())
+		// 	.then(() => this.parseUri());
+		await inventory.init();
+		await coreViewer.init();
+		this.render();
+		this.parseUri();
 		
 		window.addEventListener('popstate', (event) => {
 			console.log('popstate', event.state);
-			if (event?.state?.path) db.showItemPanelByPath(event.state.path, true)
+			if (event?.state?.path) db.showItemPanelByPath(event.state.path, true);
 		});
 		window.addEventListener('hashchange', (event) => {
 			const hash = window.location.hash?.substring?.(1);
-			if (hash && typeof hash === 'string' && hash.length > 6 && hash.substring(hash.length -5) === '.json') db.showItemPanelByPath(hash, true)
+			if (hash && typeof hash === 'string' && hash.length > 6 && hash.substring(hash.length -5) === '.json') db.showItemPanelByPath(hash, true);
 		});
 	}
 
 	async render() {
 		HTML.bind(document.querySelector('.js--main'))`
 			${headerNav.render()}
-			<div class="inventory-cores_wrapper">${armorCores.render()}</div>
-			<div>${inventory.render()}</div>
+			${coreViewer.render()}
+			${inventory.render()}
 		`;
 	}
 
@@ -52,7 +58,7 @@ class App {
 			try {
 				db.showItemPanelByPath(hash, true);
 			} catch (error) {
-				console.error(`[halosets][parseUri]`, error)
+				console.error(`[skimmer][parseUri]`, error)
 			}
 		}
 	}

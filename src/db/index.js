@@ -56,11 +56,15 @@ export class Item extends Component {
 		if (!path || path.length < 10) return console.error(`[Item] Bad path ${path}`);
 		if (db.items.has(path))
 		{
-			console.warn('[halosets][db.item] Duplicate', path);
+			console.warn('[skimmer][db.item] Duplicate', path);
 			return db.items.get(path);
 		}
 		this.path = path;
 		db.items.set(`${path}`, this);
+	}
+
+	get name() {
+		return this?.data?.CommonData?.Title ?? this.path;
 	}
 
 	get defaultState() {
@@ -89,7 +93,7 @@ export class Item extends Component {
 			console.log('render', this.path)
 			return this.html`
 				<button
-					class=${`dbItem dbItemIcon${this?.data?.CommonData?.Quality ? ` ${this?.data.CommonData.Quality?.toLowerCase?.()}` : ''}`}
+					class=${`item dbItemIcon${this?.data?.CommonData?.Quality ? ` ${this?.data.CommonData.Quality?.toLowerCase?.()}` : ''}`}
 					onclick=${() => this.showItemPanel()}
 					style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(imagePath)})`}}
 				>
@@ -98,11 +102,27 @@ export class Item extends Component {
 			`;
 	}
 
-	async icon() {
+	async renderIcon(id) {
 		if (!this.data) await this.init();
-		return HTML.wire(this, ':icon')`
-			this should work around the multiple render issues??
+		let imagePath = '';
+		const displayPath = this?.data?.CommonData?.DisplayPath?.Media?.MediaUrl?.Path;
+		if (displayPath && typeof displayPath === 'string') {
+			imagePath = `${displayPath[0].toUpperCase()}${displayPath.substring(1)}`;
+		}
+		console.info(`[skimmer][item:icon]`, this.path)
+		return HTML.wire(this, `:${id ?? 'icon'}`)`
+			<button
+				class=${`dbItem dbItemIcon${this?.data?.CommonData?.Quality ? ` ${this?.data.CommonData.Quality?.toLowerCase?.()}` : ''}`}
+				onclick=${() => this.showItemPanel()}
+				style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(imagePath)})`}}
+			>
+				<span>${this?.data?.CommonData?.Title ?? '???'}</span>
+			</button>
 		`;
+	}
+
+	get icon() {
+		return this?._icon ?? (this._icon = this.renderIcon())
 	}
 
 	showItemPanel() {
@@ -125,7 +145,7 @@ class ItemPanel extends Component {
 
 	hide() {
 		this.setState({visible: false});
-		// history.pushState(null, 'Halosets', `#`);
+		history.pushState(null, 'Halosets', `.`);
 	}
 
 	toggleVisibility() {

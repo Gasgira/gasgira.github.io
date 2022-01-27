@@ -13,9 +13,9 @@ class HeaderNav extends Component {
 	}
 	render() {
 		return this.html`
-			<nav><ul>
+			<nav class="toolbar"><ul>
 				<li><a href="#">Skimmer</a></li>
-				<li><button onclick=${() => modalConstructor.showView(about.render())}>About</button></li>
+				<li><button onclick=${() => modalConstructor.showView(about.render())}>Disclaimer</button></li>
 				<li><button onclick=${() => modalConstructor.showView(settings.render())}>Settings</button></li>
 			</ul></nav>
 		`;
