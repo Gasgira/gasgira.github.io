@@ -9,7 +9,7 @@
 	},
 	"CommonData": {
 		"Id": "012-001-4df92fda",
-		"HideUntilOwned": false,
+		"HideUntilOwned": true,
 		"Title": "Rampant",
 		"Description": "The color of despair and madness.",
 		"FeatureFlag": true,

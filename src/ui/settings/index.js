@@ -11,13 +11,13 @@ class Settings extends Component {
 
 		// enabling pathCasing with normalize all paths as lower case
 		const pathCasing = localStorage.getItem('pathCasing');
-		console.error('pathc', pathCasing, pathCasing === 'false')
+		// console.error('pathc', pathCasing, pathCasing === 'false')
 		if (!pathCasing || pathCasing === 'true') {
 			this.data.set('pathCasing', true);
 		} else {
 			this.data.set('pathCasing', false);
 		}
-		console.error('pathv', this.data.get('pathCasing'))
+		// console.error('pathv', this.data.get('pathCasing'))
 	}
 
 	render() {

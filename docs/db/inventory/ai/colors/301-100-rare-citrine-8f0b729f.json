@@ -6,7 +6,7 @@
 	"DefaultScanlineIdex": 0,
 	"CommonData": {
 		"Id": "301-100-rare-citrine-8f0b729f",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Hardlight",
 		"Description": "A harsh, but fair, color option.",
 		"FeatureFlag": true,
@@ -37,7 +37,7 @@
 			"Media": {
 				"MediaUrl": {
 					"AuthorityId": "",
-					"Path": "progression/Inventory/AI/Colors//301-100-rare-citrine-8f0b729f-SM.png",
+					"Path": "progression/Inventory/Ai/Colors/301-100-rare-citrine-8f0b729f.png",
 					"RetryPolicyId": "",
 					"TopicName": "",
 					"AcknowledgementTypeId": "NoAcknowledgement",
@@ -51,8 +51,8 @@
 				"FileName": ""
 			},
 			"MimeType": "image/png",
-			"FolderPath": "progression/Inventory/AI/Colors/",
-			"FileName": "301-100-rare-citrine-8f0b729f-SM.png"
+			"FolderPath": "progression/Inventory/Ai/Colors",
+			"FileName": "301-100-rare-citrine-8f0b729f.png"
 		},
 		"Quality": "Rare",
 		"ManufacturerId": 23,

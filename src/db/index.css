@@ -46,6 +46,15 @@ button.dbItemIcon {
 	&:hover>span {
 		opacity: 1;
 	}
+	&.invert-hover:hover {
+		filter: invert(1);
+		background-color: #000;
+		color: #fff;
+		text-shadow: 0 0 1rem #000, 0 0 0.5rem #000;
+		&::before {
+			filter: invert(1);
+		}
+	}
 }
 
 .dbItemPanel_clickout {
@@ -132,6 +141,12 @@ button.dbItemIcon {
 			}
 		}
 	}
+	& .attribute {
+		padding-left: 0.8rem;
+		padding-bottom: 0.5rem;
+		font-size: 0.7rem;
+		font-weight: normal;
+	}
 	& .dbItemPanel_path {
 		opacity: 0.5;
 		padding-left: 0.8rem;
@@ -139,5 +154,11 @@ button.dbItemIcon {
 		font-size: 0.7rem;
 		font-weight: normal;
 		font-style: italic;
+	}
+	& .parentSocket {
+		background-color: hsla(var(--theme-interact-hsl), 0.1);
+		padding: 0 0.2rem;
+		margin: 0 0.2rem;
+		border-radius: var(--theme-border-radius);
 	}
 }

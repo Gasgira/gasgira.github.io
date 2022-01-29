@@ -1,6 +1,7 @@
 import { HTML } from 'lib/HTML';
 import { headerNav } from 'ui/nav';
 import { db } from 'db';
+import { calendar } from 'ui/calendar';
 import { coreViewer } from 'ui/cores';
 import { inventory } from 'ui/inventory';
 
@@ -31,6 +32,7 @@ class App {
 		// 	.then(() => this.parseUri());
 		await inventory.init();
 		await coreViewer.init();
+		await calendar.init();
 		this.render();
 		this.parseUri();
 		
@@ -48,6 +50,7 @@ class App {
 		HTML.bind(document.querySelector('.js--main'))`
 			${headerNav.render()}
 			${coreViewer.render()}
+			${calendar.render()}
 			${inventory.render()}
 		`;
 	}

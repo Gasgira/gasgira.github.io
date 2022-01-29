@@ -9,7 +9,7 @@
 	},
 	"CommonData": {
 		"Id": "012-001-a8a475ad",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Goblin",
 		"Description": "Tricksters are wise to hide their eyes.",
 		"FeatureFlag": true,
@@ -78,10 +78,6 @@
 			"z": 0
 		},
 		"ParentPaths": [
-			{
-				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
-				"Type": "ArmorTheme"
-			},
 			{
 				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
 				"Type": "ArmorTheme"

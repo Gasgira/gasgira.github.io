@@ -1,0 +1,184 @@
+{
+	"TrackId": "ritualWinter",
+	"XpPerRank": 1,
+	"Ranks": [
+		{
+			"Rank": 1,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/spartan/Emblems/104-001-popculture-de-97b657fe.json",
+						"Amount": 1,
+						"Type": "SpartanEmblem"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 2,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/Armor/Coatings/002-001-olympus-e3ca8a4f.json",
+						"Amount": 1,
+						"Type": "ArmorCoating"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 3,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/Armor/ShouldersLeft/008-001-olympus-79816c5d.json",
+						"Amount": 1,
+						"Type": "ArmorLeftShoulderPad"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 4,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/Armor/ShouldersRight/009-001-olympus-79816c5d.json",
+						"Amount": 1,
+						"Type": "ArmorRightShoulderPad"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 5,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/Weapon/Coatings/203-201-olympus-e3ca8a4f.json",
+						"Amount": 1,
+						"Type": "WeaponCoating"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 6,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/spartan/backdropimages/103-000-ui-background-bb67c3be.json",
+						"Amount": 1,
+						"Type": "SpartanBackdropImage"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 7,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/spartan/Emblems/104-001-olympus-navlo-e5396cee.json",
+						"Amount": 1,
+						"Type": "SpartanEmblem"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 8,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/Weapon/Coatings/203-200-olympus-e3ca8a4f.json",
+						"Amount": 1,
+						"Type": "WeaponCoating"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 9,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/Armor/HipAttachments/010-001-olympus-707a6bd4.json",
+						"Amount": 1,
+						"Type": "ArmorHipAttachment"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 10,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/Armor/Coatings/002-001-olympus-1985d5dc.json",
+						"Amount": 1,
+						"Type": "ArmorCoating"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		}
+	],
+	"Name": "Winter Contingency",
+	"Description": "Complete your first match each day to earn Winter-themed rewards.",
+	"OperationNumber": 1,
+	"DateRange": "December 21st, 2021 - January 3rd, 2022",
+	"IsRitual": true,
+	"WeekNumber": 1,
+	"SummaryImagePath": "progression/RewardTracks/Olympus_Progression_Comps_Summary_CartArt_Temp_02_Ritual.png",
+	"BackgroundImagePath": "progression/ScreenBackgrounds/ProgressionRewardsBackgroundTemp.png"
+}

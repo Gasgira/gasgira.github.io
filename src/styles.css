@@ -33,7 +33,7 @@
 	--theme-shadow-right-hover: 1rem 0rem 0.75rem -1rem rgba(0, 0, 0, 0.75);
 	--theme-shadow-cover: 0 0.5rem 1.75rem -0.25rem rgba(0, 0, 0, 0.5);
 
-	--theme-border-radius: 0.1rem; --theme-radius: 0.25rem;
+	--theme-border-radius: 0.2rem; --theme-radius: 0.25rem;
 	--theme-border: 0.1rem solid hsla(var(--theme-accent-hsl), 0.75);
 
 	--theme-padding: 0.25rem; --theme-padding-double: 0.5rem; --theme-padding-thin: 0.15rem;
@@ -41,7 +41,7 @@
 	/*Dark Theme*/
 	--theme-primary: var(--base-dark);		--theme-primary-hsl: var(--base-dark-hsl);
 	--theme-secondary: var(--base-darkish);	--theme-secondary-hsl: var(--base-darkish-hsl);
-	--theme-accent: var(--base-darker);		--theme-accent-hsl: var(--base-darker-hsl);
+	--theme-accent: #102150;		--theme-accent-hsl: 224, 67%, 19%;
 	--theme-text: var(--base-bright);		--theme-text-hsl: var(--base-bright-hsl);
 	--theme-interact: var(--base-white);	--theme-interact-hsl: var(--base-white-hsl);
 	--theme-active: var(--base-blue);		--theme-active-hsl: var(--base-blue-hsl);
@@ -97,13 +97,29 @@ body {
   }
 	&::before {
 		background: radial-gradient(circle at 66%, transparent 30%, #0f161f 60%);
-		mask: var(--noise), radial-gradient(circle at 66%, transparent 30%, #000 60%);
+		mask: var(--noise), radial-gradient(circle at 66%, transparent 40%, #000 75%);
 	}
   
   &::after {
-    mask-image: var(--noise), linear-gradient(-80deg, #000 0%, transparent 45%, transparent 75%, #000 100%);
-    background: linear-gradient(-80deg, rgba(16,33,80,0.5) 20%, transparent 45%, transparent 75%, rgb(40,49,64) 90%);
+    mask-image: var(--noise), linear-gradient(-80deg, #000 0%, transparent 25%, transparent 75%, #000 100%);
+    background: linear-gradient(-80deg, rgba(16,33,80,0.66) 20%, transparent 45%, transparent 75%, rgb(40,49,64) 90%);
   }
+}
+
+footer {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem;
+	opacity: 0.5;
+	font-size: 0.8rem;
+	& a {
+		text-decoration: none;
+	}
+	& span {
+		padding-left: 0.33rem;
+	}
 }
 
 /* .bg {
@@ -128,7 +144,7 @@ main {
 	z-index: 1;
 }
 
-a:not([class]) {
+a:not([class]), .parentSocket {
 	font-size: 1em;
 	color: var(--theme-text);
 	text-underline-offset: 0.15em;
@@ -249,10 +265,6 @@ button {
 	}
 	&:hover::before, &:focus::before {
 		opacity: 1;
-	}
-	&:active {
-		color: var(--theme-active);
-		color: #000;
 	}
 	&::before {
 		display: block;

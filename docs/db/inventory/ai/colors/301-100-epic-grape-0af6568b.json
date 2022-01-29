@@ -6,7 +6,7 @@
 	"DefaultScanlineIdex": 0,
 	"CommonData": {
 		"Id": "301-100-epic-grape-0af6568b",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Prophet's Wish",
 		"Description": "Hubris is a slippery slope for us all, biological and digital alike.",
 		"FeatureFlag": true,
@@ -37,7 +37,7 @@
 			"Media": {
 				"MediaUrl": {
 					"AuthorityId": "",
-					"Path": "progression/Inventory/AI/Colors/301-100-epic-grape-0af6568b-SM.png",
+					"Path": "progression/Inventory/Ai/Colors/301-100-epic-grape-0af6568b.png",
 					"RetryPolicyId": "",
 					"TopicName": "",
 					"AcknowledgementTypeId": "NoAcknowledgement",
@@ -51,8 +51,8 @@
 				"FileName": ""
 			},
 			"MimeType": "image/png",
-			"FolderPath": "progression/Inventory/AI/Colors",
-			"FileName": "301-100-epic-grape-0af6568b-SM.png"
+			"FolderPath": "progression/Inventory/Ai/Colors",
+			"FileName": "301-100-epic-grape-0af6568b.png"
 		},
 		"Quality": "Epic",
 		"ManufacturerId": 23,

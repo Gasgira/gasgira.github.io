@@ -39,7 +39,7 @@
 			"Media": {
 				"MediaUrl": {
 					"AuthorityId": "",
-					"Path": "Progression/Inventory/Weapon/Coatings/203-202-olympus-1dc2f961-SM.png",
+					"Path": "progression/Inventory/Weapon/Coatings/203-202-olympus-1dc2f961.png",
 					"RetryPolicyId": "",
 					"TopicName": "",
 					"AcknowledgementTypeId": "NoAcknowledgement",
@@ -53,8 +53,8 @@
 				"FileName": ""
 			},
 			"MimeType": "image/png",
-			"FolderPath": "Progression/Inventory/Weapon/Coatings",
-			"FileName": "203-202-olympus-1dc2f961-SM.png"
+			"FolderPath": "progression/Inventory/Weapon/Coatings",
+			"FileName": "203-202-olympus-1dc2f961.png"
 		},
 		"Quality": "Rare",
 		"ManufacturerId": 23,

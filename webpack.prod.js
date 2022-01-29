@@ -79,6 +79,7 @@ module.exports = {
 		// new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
 			template: 'src/index.html',
+			date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
 			// hash: true
 			inject: true
 		})

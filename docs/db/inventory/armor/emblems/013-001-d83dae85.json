@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "013-001-d83dae85",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "The Gate",
 		"Description": "All ends have a beginning.",
 		"FeatureFlag": true,
@@ -88,14 +88,6 @@
 			{
 				"Path": "Inventory/Armor/Themes/007-001-samurai-55badb14.json",
 				"Type": "ArmorTheme"
-			},
-			{
-				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
-				"Type": "ArmorTheme"
-			},
-			{
-				"Path": "Inventory/Armor/Themes/007-001-samurai-55badb14.json",
-				"Type": "ArmorTheme"
 			}
 		],
 		"SortingMetadata": {
@@ -105,40 +97,40 @@
 	},
 	"AvailableConfigurations": [
 		{
-			"ConfigurationId": 531760148,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-2d5bb798.json"
+			"ConfigurationId": 824330229,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-227adf2f.json"
 		},
 		{
 			"ConfigurationId": 1874182241,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-261fbb95.json"
 		},
 		{
-			"ConfigurationId": -1300612690,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-f37482bf.json"
-		},
-		{
-			"ConfigurationId": -1960353591,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-9fbc4981.json"
+			"ConfigurationId": 531760148,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-2d5bb798.json"
 		},
 		{
 			"ConfigurationId": -1735535024,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-3f8ab8f6.json"
 		},
 		{
+			"ConfigurationId": 1198260756,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-4b26eb4d.json"
+		},
+		{
 			"ConfigurationId": 1834538618,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-7d7b75d9.json"
+		},
+		{
+			"ConfigurationId": -1960353591,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-9fbc4981.json"
 		},
 		{
 			"ConfigurationId": 2135095940,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-b646c9ff.json"
 		},
 		{
-			"ConfigurationId": 1198260756,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-4b26eb4d.json"
-		},
-		{
-			"ConfigurationId": 824330229,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-227adf2f.json"
+			"ConfigurationId": -1300612690,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-f37482bf.json"
 		}
 	]
 }

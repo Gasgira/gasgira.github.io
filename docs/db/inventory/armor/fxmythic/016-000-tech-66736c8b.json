@@ -7,7 +7,7 @@
 	],
 	"CommonData": {
 		"Id": "016-000-tech-66736c8b",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Perfect Sector",
 		"Description": "There's a glitch in the simulation.",
 		"FeatureFlag": false,
@@ -82,14 +82,6 @@
 			},
 			{
 				"Path": "Inventory/Armor/Themes/007-001-reach-2564121f.json",
-				"Type": "ArmorTheme"
-			},
-			{
-				"Path": "Inventory/Armor/Themes/007-001-samurai-55badb14.json",
-				"Type": "ArmorTheme"
-			},
-			{
-				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
 				"Type": "ArmorTheme"
 			},
 			{

@@ -1,12 +1,15 @@
 nav.toolbar {
 	width: 100%;
-	background-color: hsla(var(--theme-interact-hsl), 0.1);
 	padding: 0.2rem 0.5rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 1rem;
 	& ul {
 		list-style-type: none;
 		display: flex;
 		flex-direction: row;
-		justify-content: left;
 		align-items: center;
 		& li {
 			padding: 0 0.5rem;
@@ -14,5 +17,8 @@ nav.toolbar {
 				border-width: 0;
 			}
 		}
+	}
+	& .settings:not(:hover) {
+		color: transparent;
 	}
 }

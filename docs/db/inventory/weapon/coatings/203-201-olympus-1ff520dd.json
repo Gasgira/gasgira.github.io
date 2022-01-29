@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "203-201-olympus-1ff520dd",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Acid Burn",
 		"Description": "Caution: hazardous, corrosive material.",
 		"FeatureFlag": true,

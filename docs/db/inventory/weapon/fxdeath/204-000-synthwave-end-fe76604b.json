@@ -4,7 +4,7 @@
 	],
 	"CommonData": {
 		"Id": "204-000-synthwave-end-fe76604b",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Neon End Credits",
 		"Description": "You can't outrun inevitability. At least, not forever.",
 		"FeatureFlag": false,
@@ -104,38 +104,6 @@
 			{
 				"Path": "Inventory/Weapon/Themes/207-207-olympus-aa30213b.json",
 				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-200-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-201-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-202-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-203-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-204-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-205-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-206-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-207-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
 			}
 		],
 		"SortingMetadata": {
@@ -143,7 +111,7 @@
 			"subCategoryWeight": 0
 		}
 	},
-	"FxContentType": "EffectOverride",
+	"FxContentType": "None",
 	"ComposerSceneName": {
 		"m_identifier": 1350908892
 	}

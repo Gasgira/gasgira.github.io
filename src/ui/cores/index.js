@@ -32,7 +32,7 @@ class CoreViewer extends Component {
 
 	render() {
 		return this.html`
-			<div class ="core-viewer_wrapper mica-100">
+			<div class ="core-viewer_wrapper">
 				<nav class ="core-viewer_nav"><ul>
 					<li><button class=${`core-tab${this.state?.coreType === this.armorCores ? ' active' : ''}`} onclick=${() => this.showArmorCores()}>Armor</button></li>
 					<li><button class=${`core-tab${this.state?.coreType === this.weaponCores ? ' active' : ''}`} onclick=${() => this.showWeaponCores()}>Weapons</button></li>
@@ -61,7 +61,7 @@ class CoreViewer extends Component {
 	}
 
 	showArmorCores() {
-		console.info(`[skimmer] showArmorCores`);
+		// console.info(`[skimmer] showArmorCores`);
 		this.state.coreType = this.armorCores;
 		this.armorCores.forEach(async core => {
 			await core.init();
@@ -117,10 +117,20 @@ class Core extends Component {
 				const OptionPaths = item[socketName]?.OptionPaths;
 				this.sockets.push(new Socket({OptionPaths, socketName}));
 			} else if (socketName === 'Helmets' && item[socketName]?.Options?.length) {
+				const attachmentPaths = new Set();
 				const OptionPaths = item[socketName]?.Options.map(option => {
+					option?.HelmetAttachments?.OptionPaths.forEach(path => attachmentPaths.add(path));
 					return option.HelmetPath;
 				});
-				this.sockets.push(new Socket({OptionPaths, socketName}));
+
+				const socket = new Socket({OptionPaths, socketName});
+				this.sockets.push(socket);
+				this.state.socket = socket;
+
+				this.sockets.push(new Socket({
+					OptionPaths: [...attachmentPaths],
+					socketName: 'HelmetAttachments'
+				}));
 			}
 		}
 		this.render();
@@ -150,7 +160,7 @@ class Core extends Component {
 	}
 
 	showSocket(socket) {
-		if (this.state.socket === socket) {
+		if (this.state?.socket === socket) {
 			this.setState({socket: undefined});
 			return;
 		}

@@ -15,7 +15,7 @@ class Database {
 	}
 
 	async getJSON(path) {
-		console.log(`[db.get] "${path}"`);
+		// console.log(`[db.get] "${path}"`);
 		if (!path)
 		{
 			console.warn(`[db.get] Bad path! "${path}"`);
@@ -56,7 +56,7 @@ export class Item extends Component {
 		if (!path || path.length < 10) return console.error(`[Item] Bad path ${path}`);
 		if (db.items.has(path))
 		{
-			console.warn('[skimmer][db.item] Duplicate', path);
+			// console.warn('[skimmer][db.item] Duplicate', path);
 			return db.items.get(path);
 		}
 		this.path = path;
@@ -64,7 +64,17 @@ export class Item extends Component {
 	}
 
 	get name() {
-		return this?.data?.CommonData?.Title ?? this.path;
+		return this?.data?.CommonData?.Title ?? '???';
+	}
+
+	async getName() {
+		if (!this.data) await this.init();
+		return this?.data?.CommonData?.Title ?? '???';
+	}
+
+	get parentPaths() {
+		if (!this?.data?.CommonData?.ParentPaths?.length) return;
+		return this?._parentPaths ?? (this._parentPaths = new Set([...this?.data?.CommonData?.ParentPaths.map(parent => parent?.Path)]));
 	}
 
 	get defaultState() {
@@ -90,7 +100,7 @@ export class Item extends Component {
 			if (displayPath && typeof displayPath === 'string') {
 				imagePath = `${displayPath[0].toUpperCase()}${displayPath.substring(1)}`;
 			}
-			console.log('render', this.path)
+			// console.log('render', this.path)
 			return this.html`
 				<button
 					class=${`item dbItemIcon${this?.data?.CommonData?.Quality ? ` ${this?.data.CommonData.Quality?.toLowerCase?.()}` : ''}`}
@@ -104,21 +114,37 @@ export class Item extends Component {
 
 	async renderIcon(id) {
 		if (!this.data) await this.init();
+		// let imagePath = '';
+		// const displayPath = this?.data?.CommonData?.DisplayPath?.Media?.MediaUrl?.Path;
+		// if (displayPath && typeof displayPath === 'string') {
+		// 	imagePath = `${displayPath[0].toUpperCase()}${displayPath.substring(1)}`;
+		// }
+		// console.info(`[skimmer][item:icon]`, this.path)
+		return HTML.wire(this, `:${id ?? 'icon'}`)`
+			<button
+				class=${
+					`dbItem dbItemIcon${
+						this?.data?.CommonData?.Quality ? ` ${this?.data?.CommonData?.Quality?.toLowerCase?.() ?? ''}` : ''
+						}${
+						this?.data?.CommonData?.Type === 'SpartanBackdropImage' ? ' invert-hover' : ''
+					}`
+				}
+				onclick=${() => this.showItemPanel()}
+				style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(this.imagePath)})`}}
+			>
+				<span>${this.name ?? '???'}</span>
+			</button>
+		`;
+	}
+
+	get imagePath() {
 		let imagePath = '';
 		const displayPath = this?.data?.CommonData?.DisplayPath?.Media?.MediaUrl?.Path;
 		if (displayPath && typeof displayPath === 'string') {
-			imagePath = `${displayPath[0].toUpperCase()}${displayPath.substring(1)}`;
+			imagePath = `${displayPath[0].toLowerCase()}${displayPath.substring(1)}`;
 		}
-		console.info(`[skimmer][item:icon]`, this.path)
-		return HTML.wire(this, `:${id ?? 'icon'}`)`
-			<button
-				class=${`dbItem dbItemIcon${this?.data?.CommonData?.Quality ? ` ${this?.data.CommonData.Quality?.toLowerCase?.()}` : ''}`}
-				onclick=${() => this.showItemPanel()}
-				style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(imagePath)})`}}
-			>
-				<span>${this?.data?.CommonData?.Title ?? '???'}</span>
-			</button>
-		`;
+
+		return imagePath;
 	}
 
 	get icon() {
@@ -127,6 +153,42 @@ export class Item extends Component {
 
 	showItemPanel() {
 		itemPanel.displayItem(this);
+	}
+}
+
+export class CurrencyItem extends Item {
+	get currencies() {
+		return this?._currencies ?? (this._currencies = new Map([
+			['currency/currencies/rerollcurrency.json', {
+				mediaPath: 'progression/currencies/1104-000-data-pad-e39bef84-sm.png',
+				name: 'Challenge Swap'
+			}],
+			['currency/currencies/xpgrant.json', {
+				mediaPath: 'progression/currencies/1102-000-xp-grant-c77c6396-sm.png',
+				name: 'XP Grant'
+			}],
+			['currency/currencies/xpboost.json', {
+				mediaPath: 'progression/currencies/1103-000-xp-boost-5e92621a-sm.png',
+				name: 'XP Boost'
+			}]
+		]))
+	}
+
+	get currency() {
+		const path = this.path.toLowerCase();
+		if (this.currencies.has(path)) return this.currencies.get(path);
+		return {
+			mediaPath: 'progression/Default/default.png',
+			name: 'Unknown Currency'
+		}
+	}
+
+	get name() {
+		return this.currency.name;
+	}
+
+	get imagePath() {
+		return this.currency.mediaPath;
 	}
 }
 
@@ -158,8 +220,8 @@ class ItemPanel extends Component {
 
 	displayItem(item, skipState) {
 		// check if is of class Item...
-		this.history.add(item);
-		console.log(`[ItemPanel] Displaying "${item?.path}". "${this.history.size}" items in history.`);
+		// this.history.add(item);
+		// console.log(`[ItemPanel] Displaying "${item?.path}". "${this.history.size}" items in history.`);
 		if (skipState) {
 			history.replaceState({path: `${item?.path}`}, `Halosets`, `#${item?.path}`);
 		} else {
@@ -197,6 +259,12 @@ class ItemPanel extends Component {
 							<h3>${this.state.item?.data?.CommonData?.Description ?? '...'}</h3>
 						</div>
 					</header>
+					<span class="attribute">${this.state.item?.data?.CommonData?.Season ?? ''}</span>
+					<span class="attribute">${this.state.item?.data?.CommonData?.Type ?? ''}</span>
+					<span class="attribute">
+						${this.state.item?.parentPaths ? `Applies to: ` : ''}
+						${[...this.state.item?.parentPaths ?? []].map(async path => `<a class="parentSocket" href=${`#${path}`}>${await new Item(path).getName()}</a>`)}
+					</span>
 					<span class="dbItemPanel_path">${this.state.item?.path ?? 'UNK'}</span>
 					<button
 						onclick=${() => this.setState({pretty: !this.state.pretty})}

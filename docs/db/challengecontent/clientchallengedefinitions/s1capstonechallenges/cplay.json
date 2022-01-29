@@ -1,0 +1,18 @@
+{
+	"Description": "Complete any PvP Matches",
+	"Difficulty": "mythic",
+	"Category": "Capstone",
+	"Reward": {
+		"OperationExperience": 400,
+		"InventoryItems": [],
+		"InventoryRewards": [
+			{
+				"InventoryItemPath": "Inventory/armor/visors/012-001-5438b142.json",
+				"Amount": 1,
+				"Type": "ArmorVisor"
+			}
+		]
+	},
+	"ThresholdForSuccess": 7,
+	"Title": "Hello World"
+}

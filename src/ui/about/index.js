@@ -10,6 +10,7 @@ class About extends Component {
 		return this.html`
 		<p>
 			<span>Skimmer is a compendium of items found within the game Halo Infinite.</span><br><br>
+			<span>All information presented is generated from the game API and is subject to change. As such it may not accurately reflect future content and can not be used as an authoritative source.</span><br><br>
 			<span>This site is not operated by nor affiliated with Microsoft and 343 Industries.</span><br><br>
 			<span>This site displays content copyrighted or licensed by Microsoft for the purpose of education and information archiving.</span><br><br><br>
 			<span>The original assets (e.g. code) used for this website, not associated with Microsoft, are licensed under the ISC license.</span>

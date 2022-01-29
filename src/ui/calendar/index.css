@@ -1,0 +1,169 @@
+.calendar_wrapper {
+	display: flex;
+	flex-direction: column;
+	background-color: rgba(0,0,0,0.15);
+	box-shadow: 0 1rem 1rem rgba(0,0,0,0.25);
+	margin-bottom: 6rem;
+	max-width: 100%;
+	& header {
+		background-color: rgba(0,0,0,0.25);
+		padding: 1rem;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		& .notice {
+			font-size: 0.8rem;
+			opacity: 0.66;
+			pointer-events: none;
+			user-select: none;
+		}
+	}
+	& .calendar-placeholder {
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+		align-content: center;
+		opacity: 0.66;
+		pointer-events: none;
+		user-select: none;
+	}
+	& .calendar_content {
+		display: flex;
+		flex-direction: row;
+	}
+	& nav ul {
+		list-style-type: none;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		justify-content: left;
+		align-items: center;
+		align-content: flex-start;
+		background-color: rgba(0,0,0,0.15);
+		padding: 1rem;
+		height: 100%;
+		& button {
+			font-size: 1rem;
+			width: 9.5rem;
+			max-width: 30vw;
+			&::before {
+				border-width: 0;
+			}
+			&.active {
+				background-color: hsla(var(--theme-interact-hsl), 0.1);
+				&:hover {
+					background-color: hsla(var(--theme-interact-hsl), 1);
+				}
+			}
+			& span {
+				overflow: hidden;
+				text-overflow: ellipsis;
+				text-align: left;
+			}
+		}
+	}
+}
+
+.reward-track_wrapper {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding: 0.5rem;
+	& ul {
+		list-style-type: none;
+	}
+	& .dates-list {
+		list-style-type: none;
+		display: flex;
+		flex-direction: row;
+		font-size: 0.8rem;
+		flex-wrap: wrap;
+		visibility: collapse;
+		& li {
+			background-color: red;
+			background-color: rgba(0,0,0,0.25);
+			padding: 0.5rem;
+			margin: 0.2rem;
+			border-radius: var(--theme-border-radius);
+		}
+	}
+	& .reward-list {
+		list-style-type: none;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		& .rank_rewards {
+			display: flex;
+			flex-direction: row;
+			position: relative;
+			padding-bottom: 2rem;
+			animation: fade-in var(--time-state) linear;
+			&:hover .rank_number {
+				background-color: hsla(var(--theme-interact-hsl), 0.25);
+			}
+			& .rank_number {
+				display: flex;
+				justify-content: left;
+				padding-left: 0.5rem;
+				align-items: center;
+				position: absolute;
+				background-color: hsla(var(--theme-interact-hsl), 0.1);
+				bottom: 0.8rem;
+				left: 0.5rem;
+				right: 0.5rem;
+				height: 1.2rem;
+				font-size: 0.9rem;
+				border-radius: var(--theme-border-radius);
+				text-align: center;
+				user-select: none;
+				point-events: none;
+				transition: background-color var(--time-active) linear;
+			}
+			& .rank_reward-items li {
+				position: relative;
+				&::before {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					position: absolute;
+					font-size: 0.8rem;
+					bottom: -2rem;
+					height: 1rem;
+					width: 3rem;
+					left: calc(50% - 1.5rem);
+					padding: 0 0.2rem;
+					margin: 0.1rem;
+					user-select: none;
+					point-events: none;
+					opacity: 0.8;
+				}
+			}
+			& .rank_reward-items.free li::before {
+				content: "FREE";
+			}
+			& .rank_reward-items.paid li::before {
+				content: "PAID";
+			}
+			& .currency::after {
+				content: "×" attr(data-quantity);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: absolute;
+				font-size: 0.8rem;
+				bottom: -2rem;
+				height: 1rem;
+				width: 3rem;
+				right: 0;
+				padding: 0 0.2rem;
+				margin: 0.1rem;
+				user-select: none;
+				point-events: none;
+				opacity: 0.8;
+			}
+		}
+	}
+}

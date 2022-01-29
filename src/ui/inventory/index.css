@@ -2,8 +2,9 @@
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	margin-top: 2rem;
 	background-color: rgba(0,0,0,0.15);
+	box-shadow: 0 1rem 1rem rgba(0,0,0,0.25);
+	margin-bottom: 2rem;
 	& header {
 		background-color: rgba(0,0,0,0.25);
 		padding: 1rem;
@@ -31,11 +32,14 @@
 			overflow: hidden;
 			white-space: nowrap;
 			font-size: 0.9rem;
+			&.active {
+				background-color: hsla(var(--theme-interact-hsl), 0.1);
+				&:hover {
+					background-color: hsla(var(--theme-interact-hsl), 1);
+				}
+			}
 			&::before {
 				border-width: 0;
-				&.active {
-					border-left-width: 0.2rem;
-				}
 			}
 			& span {
 				overflow: hidden;
@@ -64,15 +68,6 @@
 		flex-wrap: wrap;
 		justify-content: left;
 		padding: 0.5rem;
-		& .invert-focus button:hover {
-			filter: invert(1);
-			background-color: #000;
-			color: #fff;
-			text-shadow: 0 0 1rem #000, 0 0 0.5rem #000;
-			&::before {
-				filter: invert(1);
-			}
-		}
 	}
 	& ul {
 		list-style-type: none;

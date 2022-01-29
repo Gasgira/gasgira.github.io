@@ -88,7 +88,7 @@ class InventoryCategory extends Component {
 
 	init() {
 		if (this.items) return;
-		this.itemPaths = this.inventory.itemPathsOfCategoryName(this.categoryName);
+		this.itemPaths = inventory.itemPathsOfCategoryName(this.categoryName);
 		// console.log(`[InventoryCategory] Got items`, this.itemPaths);
 		this.items = [...this.itemPaths].map(path => new Item(path));
 	}
@@ -102,7 +102,7 @@ class InventoryCategory extends Component {
 				<ul
 					class="inventory-category_items"
 				>
-					${this.items.map(item => HTML.wire()`<li class=${this.categoryName === 'SpartanBackdropImage' ? 'invert-focus' : null}>${item.renderIcon('inventory')}</li>`)}
+					${this.items.map(item => HTML.wire()`<li>${item.renderIcon('inventory')}</li>`)}
 				</ul>
 			</div>
 		`;
