@@ -30,6 +30,7 @@ class App {
 		// Promise.all(this.entries)
 		// 	.then(() => this.render())
 		// 	.then(() => this.parseUri());
+		await db.init();
 		await inventory.init();
 		await coreViewer.init();
 		await calendar.init();

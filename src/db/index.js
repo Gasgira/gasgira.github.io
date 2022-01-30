@@ -14,6 +14,15 @@ class Database {
 		// metadata/metadata.json
 	}
 
+	async init() {
+		const metadataPath = 'metadata/metadata.json';
+		this.metadata = await this.getJSON(metadataPath)
+			.catch(error => {
+				console.warn(`[skimmer] metadata did not load...`, error);
+				this.metadata = {}
+			});
+	}
+
 	async getJSON(path) {
 		// console.log(`[db.get] "${path}"`);
 		if (!path)
@@ -32,6 +41,23 @@ class Database {
 
 	get items() {
 		return this?._items ?? (this._items = new Map());
+	}
+
+	get manufacturers() {
+		if (!this.metadata) return new Map();
+		return this?._manufacturers ?? (this._manufacturers = new Map(
+			this?.metadata?.Manufacturers.map((properties, index) => [index, properties])
+		))
+	}
+
+	getManufacturerByIndex(index) {
+		const defaultMan = {
+			"ManufacturerName": "",
+			"ManufacturerLogoImage": ""
+		}
+		if (!index || index === 0) return defaultMan;
+		if (this.manufacturers.has(index)) return this.manufacturers.get(index);
+		return defaultMan;
 	}
 
 	async showItemPanelByPath(path, skipState) {
@@ -75,6 +101,14 @@ export class Item extends Component {
 	get parentPaths() {
 		if (!this?.data?.CommonData?.ParentPaths?.length) return;
 		return this?._parentPaths ?? (this._parentPaths = new Set([...this?.data?.CommonData?.ParentPaths.map(parent => parent?.Path)]));
+	}
+
+	get manufacturerName() {
+		return db.getManufacturerByIndex(this?.data?.CommonData?.ManufacturerId)?.ManufacturerName ?? '';
+	}
+
+	get manufacturerImage() {
+		return db.getManufacturerByIndex(this?.data?.CommonData?.ManufacturerId)?.ManufacturerLogoImage ?? '';
 	}
 
 	get defaultState() {
@@ -170,6 +204,10 @@ export class CurrencyItem extends Item {
 			['currency/currencies/xpboost.json', {
 				mediaPath: 'progression/currencies/1103-000-xp-boost-5e92621a-sm.png',
 				name: 'XP Boost'
+			}],
+			['currency/currencies/cr.json', {
+				mediaPath: 'progression/Default/default.png',
+				name: 'cR'
 			}]
 		]))
 	}
@@ -253,22 +291,41 @@ class ItemPanel extends Component {
 					class="dbItemPanel_wrapper"
 				>
 					<header>
-						<img src=${`db/images/${db.pathCase(imagePath)}`}>
+						<div
+							class="item-img"
+							style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(imagePath)})`}}
+						></div>
 						<div class=${`dbItemPanel_titles${item?.CommonData?.Quality ? ` ${item.CommonData.Quality?.toLowerCase?.()}` : ''}`}>
 							<h2>${this.state.item?.data?.CommonData?.Title ?? 'Item'}</h2>
 							<h3>${this.state.item?.data?.CommonData?.Description ?? '...'}</h3>
 						</div>
 					</header>
-					<span class="attribute">${this.state.item?.data?.CommonData?.Season ?? ''}</span>
-					<span class="attribute">${this.state.item?.data?.CommonData?.Type ?? ''}</span>
-					<span class="attribute">
-						${this.state.item?.parentPaths ? `Applies to: ` : ''}
-						${[...this.state.item?.parentPaths ?? []].map(async path => `<a class="parentSocket" href=${`#${path}`}>${await new Item(path).getName()}</a>`)}
-					</span>
-					<span class="dbItemPanel_path">${this.state.item?.path ?? 'UNK'}</span>
-					<button
-						onclick=${() => this.setState({pretty: !this.state.pretty})}
-					>${this.state.pretty ? 'raw' : 'pretty'}</button>
+					<div class="item-info_wrapper">
+						<div class="item-badges">
+							<div class="badge">
+								<span>${this.state.item?.data?.CommonData?.Season ?? ''}</span>
+							</div>
+							<div class="badge">
+								<div
+									class="badge-icon"
+									style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(this.state.item?.manufacturerImage)})`}}
+								></div>
+								<span class="badge">${this.state.item?.manufacturerName ?? ''}</span>
+							</div>
+						</div>
+						<span class="attribute">${this.state.item?.data?.CommonData?.CustomAvailability ?? null}</span>
+						<span class="attribute">${this.state.item?.data?.CommonData?.Type ?? ''}</span>
+						<span class="attribute">
+							${this.state.item?.parentPaths ? `Applies to: ` : ''}
+							${[...this.state.item?.parentPaths ?? []].map(async path => `<a class="parentSocket" href=${`#${path}`}>${await new Item(path).getName()}</a>`)}
+						</span>
+					</div>
+					<div class="json-info_wrapper">
+						<span class="dbItemPanel_path">Share link: <a href=${`#${this.state.item?.path ?? ''}`}>${this.state.item?.path ?? 'UNK'}</a></span>
+						<button
+							onclick=${() => this.setState({pretty: !this.state.pretty})}
+						>${this.state.pretty ? 'raw' : 'pretty'}</button>
+					</div>
 					<pre class="dbItemPanel_json">${{html: this.state.pretty ? this.prettyJson(this.state?.item?.data ?? {}) : JSON.stringify(this.state.item?.data, null, "\t")}}</pre>
 				</div>
 			`;

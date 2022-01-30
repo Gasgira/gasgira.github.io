@@ -81,7 +81,7 @@
 		flex-direction: row;
 		font-size: 0.8rem;
 		flex-wrap: wrap;
-		visibility: collapse;
+		/* visibility: collapse; */
 		& li {
 			background-color: red;
 			background-color: rgba(0,0,0,0.25);
