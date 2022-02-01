@@ -29,7 +29,7 @@ class Calendar extends Component {
 		});
 		this.data?.Events?.forEach(ritual => {
 			const path = ritual?.RewardTrackPath;
-			console.log(path)
+			// console.log(path)
 			if (!path) return;
 			if (!this.rewardTracks.has(path))
 			{
@@ -44,7 +44,7 @@ class Calendar extends Component {
 
 		// this.rewardTracks = [...this.rewardTrackPaths.values()].map(path => new RewardTrack(path));
 
-		console.log('[skimmer] rewardTracks', this.rewardTracks);
+		// console.log('[skimmer] rewardTracks', this.rewardTracks);
 		this.render();
 		Promise.allSettled([...this?.rewardTracks.values()].map(rewardTrack => rewardTrack.init()))
 			.then(() => this.renderEventList())
@@ -54,7 +54,7 @@ class Calendar extends Component {
 	async render() {
 		return this.html`
 			<div class="calendar_wrapper">
-				<header><span>Season Calendar</span><span class="notice">Note: content and dates subject to change.</span></header>
+				<header class="viewer-header"><span>Season Calendar</span><span class="notice">Note: content and dates subject to change.</span></header>
 				<div class="calendar_content">
 					<nav><ul>
 						${this.renderEventList()}
@@ -110,6 +110,7 @@ class RewardTrack extends Component {
 		return this.html`
 			<div class="reward-track_wrapper">
 				<ul class="dates-list">
+					<li class="event-header">${this.name} // </li>
 					${{html: this.dates.map(dates => `
 						<li><span>
 							${dates.startDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}

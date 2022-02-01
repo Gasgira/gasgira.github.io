@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "002-001-olympus-5b06ece8",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Wet Crow",
 		"Description": "The Forerunners were blind to their hubris.",
 		"FeatureFlag": true,
@@ -77,10 +77,6 @@
 			"z": 0
 		},
 		"ParentPaths": [
-			{
-				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
-				"Type": "ArmorTheme"
-			},
 			{
 				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
 				"Type": "ArmorTheme"

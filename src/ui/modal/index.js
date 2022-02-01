@@ -16,9 +16,9 @@ class ModalConstructor extends Component {
 	}
 
 	closeView(modal) {
-		console.log('close', this)
+		// console.log('close', this)
 		if (this.modals.has(modal)) this.modals.delete(modal);
-		console.log('close', this.modals)
+		// console.log('close', this.modals)
 		this.render();
 	}
 

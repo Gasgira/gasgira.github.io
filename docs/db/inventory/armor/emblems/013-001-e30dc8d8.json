@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "013-001-e30dc8d8",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "House of Warriors",
 		"Description": "Duty is engraved on their heart, body, and armor.",
 		"FeatureFlag": true,
@@ -88,14 +88,6 @@
 			{
 				"Path": "Inventory/Armor/Themes/007-001-samurai-55badb14.json",
 				"Type": "ArmorTheme"
-			},
-			{
-				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
-				"Type": "ArmorTheme"
-			},
-			{
-				"Path": "Inventory/Armor/Themes/007-001-samurai-55badb14.json",
-				"Type": "ArmorTheme"
 			}
 		],
 		"SortingMetadata": {
@@ -105,40 +97,40 @@
 	},
 	"AvailableConfigurations": [
 		{
-			"ConfigurationId": 2045841324,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-d3977b3b.json"
+			"ConfigurationId": -2070548530,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-02dd7bf3.json"
 		},
 		{
 			"ConfigurationId": 1919700909,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-17b7138f.json"
 		},
 		{
-			"ConfigurationId": 231794219,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-f443ca44.json"
+			"ConfigurationId": 651339664,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-1bc64ab2.json"
 		},
 		{
 			"ConfigurationId": 1337929658,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-2bff0b6b.json"
 		},
 		{
+			"ConfigurationId": -1561561067,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-742078a9.json"
+		},
+		{
 			"ConfigurationId": -1788721142,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-86a778c0.json"
 		},
 		{
-			"ConfigurationId": 651339664,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-1bc64ab2.json"
+			"ConfigurationId": 2045841324,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-d3977b3b.json"
+		},
+		{
+			"ConfigurationId": 231794219,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-f443ca44.json"
 		},
 		{
 			"ConfigurationId": -143929135,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-f6c295ad.json"
-		},
-		{
-			"ConfigurationId": -2070548530,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-02dd7bf3.json"
-		},
-		{
-			"ConfigurationId": -1561561067,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-742078a9.json"
 		}
 	]
 }

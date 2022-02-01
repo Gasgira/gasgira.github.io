@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "001-001-samurai-f87a9dcf",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Kunai of the Hidden Hand",
 		"Description": "A brace of throwing knives gifted by the shinobi clans.",
 		"FeatureFlag": true,
@@ -83,10 +83,6 @@
 			"z": 0
 		},
 		"ParentPaths": [
-			{
-				"Path": "Inventory/Armor/Themes/007-001-samurai-55badb14.json",
-				"Type": "ArmorTheme"
-			},
 			{
 				"Path": "Inventory/Armor/Themes/007-001-samurai-55badb14.json",
 				"Type": "ArmorTheme"

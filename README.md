@@ -8,12 +8,12 @@ This project displays content copyrighted or licensed by Microsoft for the purpo
 
 
 
-The original assets (e.g. code) used for this website, not associated with Microsoft, are licensed under the ISC license.
+The original assets (e.g. code) used for this website, not associated with Microsoft, are available under the ISC license.
 		
 
 ISC License
 
-Copyright (c) 2022 Skimmer
+Copyright (c) 2022 Kwatzy
 
 Permission to use, copy, modify, and/or distribute this software for any
 purpose with or without fee is hereby granted, provided that the above

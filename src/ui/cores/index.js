@@ -150,7 +150,7 @@ class Core extends Component {
 						<li><button
 							onclick=${() => this.showSocket(socket)}
 							class=${this.state?.socket === socket ? 'active' : null}
-						><span>${socket.socketName}</span></button></li>
+						><span>${socket.name}</span></button></li>
 					`)}
 				</ul>
 				${this.state?.socket?.render() ?? ''}
@@ -188,7 +188,7 @@ class Socket extends Component {
 			<div
 				class ="core-sockets_wrapper"
 			>
-			${this?.socketName ?? 'Socket'} // ${this?.items?.length ?? '#'}
+			${this.name ?? 'Socket'} // ${this?.items?.length ?? '#'}
 				<ul
 					class="socket-items"
 				>
@@ -196,5 +196,9 @@ class Socket extends Component {
 				</ul>
 			</div>
 		`;
+	}
+
+	get name() {
+		return db.getItemType(this?.socketName);
 	}
 }

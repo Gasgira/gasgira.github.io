@@ -29,7 +29,7 @@
 	],
 	"CommonData": {
 		"Id": "006-001-samurai-55badb14",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Shadow Raven",
 		"Description": "The Covenant's tainted darkness does not kiss the earth, it smothers it.",
 		"FeatureFlag": true,
@@ -98,10 +98,6 @@
 			"z": 0
 		},
 		"ParentPaths": [
-			{
-				"Path": "Inventory/Armor/Themes/007-001-samurai-55badb14.json",
-				"Type": "ArmorTheme"
-			},
 			{
 				"Path": "Inventory/Armor/Themes/007-001-samurai-55badb14.json",
 				"Type": "ArmorTheme"

@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "002-001-reach-5b06ece8",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Wet Crow",
 		"Description": "The Forerunners were blind to their hubris.",
 		"FeatureFlag": true,

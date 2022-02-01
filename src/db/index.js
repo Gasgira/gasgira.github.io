@@ -60,6 +60,62 @@ class Database {
 		return defaultMan;
 	}
 
+	get itemTypes() {
+		return this?._types ?? (this._types = new Map([
+			['ArmorCoating', 'Coating, Armor'],
+			['ArmorHelmet', 'Helmet'],
+			['ArmorHelmetAttachment', 'Helmet Attachment'],
+			['ArmorVisor', 'Visor'],
+			['ArmorLeftShoulderPad', 'Shoulder, Left'],
+			['ArmorRightShoulderPad', 'Shoulder, Right'],
+			['ArmorGlove', 'Gloves'],
+			['ArmorChestAttachment', 'Chest Attachment'],
+			['ArmorKneePad', 'Knee Pads'],
+			['ArmorWristAttachment', 'Wrist Attachment'],
+			['ArmorHipAttachment', 'Hip Attachment'],
+			['ArmorEmblem', 'Emblem, Armor'],
+			['ArmorFx', 'Armor Effects'],
+			['ArmorMythicFx', 'Mythic Effects'],
+			['ArmorTheme', 'Theme, Armor'],
+			['ArmorCore', 'Core, Armor'],
+			['SpartanActionPose', 'Stance'],
+			['SpartanBackdropImage', 'Backdrop'],
+			['SpartanEmblem', 'Emblem, Player'],
+			['WeaponCharm', 'Weapon Charm'],
+			['WeaponCoating', 'Coating, Weapon'],
+			['WeaponDeathFx', 'Weapon Death Effect'],
+			['WeaponEmblem', 'Emblem, Weapon'],
+			['WeaponTheme', 'Theme, Weapon'],
+			['WeaponCore', 'Core, Weapon'],
+			['WeaponAlternateGeometryRegion', 'Weapon Model'],
+			['VehicleAlternateGeometryRegion', 'Vehicle Model'],
+			['VehicleCoating', 'Coating, Vehicle'],
+			['VehicleEmblem', 'Emblem, Vehicle'],
+			['VehicleTheme', 'Theme, Vehicle'],
+			['VehicleCore', 'Core, Vehicle'],
+			['HelmetAttachments', 'Helmet Attachments'],
+			['LeftShoulderPads', 'Shoulder, Left'],
+			['RightShoulderPads', 'Shoulder, Right'],
+			['KneePads', 'Knee Pads'],
+			['ChestAttachments', 'Chest Attachments'],
+			['WristAttachments', 'Wrist Attachments'],
+			['HipAttachments', 'Hip Attachments'],
+			['WeaponCharms', 'Weapon Charms'],
+			['DeathFx', 'Death Effects'],
+			['AlternateGeometryRegions', 'Models'],
+			['MythicFx', 'Mythic Effects'],
+			['AiColor', 'AI Color'],
+			['AiModel', 'AI Model'],
+			['AiTheme', 'Theme, AI'],
+			['AiCore', 'Core, AI']
+		]))
+	}
+
+	getItemType(name) {
+		if (name && this.itemTypes.has(name)) return this.itemTypes.get(name);
+		return name;
+	}
+
 	async showItemPanelByPath(path, skipState) {
 		const item = new Item(path);
 		await item?.init();
@@ -282,7 +338,7 @@ class ItemPanel extends Component {
 				imagePath = `${displayPath[0].toUpperCase()}${displayPath.substring(1)}`;
 			}
 
-			return HTML.bind(document.querySelector('.js-item-panel'))`
+			return HTML.bind(document.querySelector('.js--item-panel'))`
 				<div
 					class="dbItemPanel_clickout"
 					onclick=${() => this.hide()}
@@ -307,6 +363,14 @@ class ItemPanel extends Component {
 							</div>
 							<div class="badge">
 								<div
+									class="badge-svg"
+									data-icon=${this.state.item?.data?.CommonData?.Type ?? 'default'}
+									style=${{backgroundImage: `url(items.svg#${this.state.item?.data?.CommonData?.Type ?? 'default'})`}}
+								></div>
+								<span class="badge">${db.getItemType(this.state.item?.data?.CommonData?.Type) ?? ''}</span>
+							</div>
+							<div class="badge">
+								<div
 									class="badge-icon"
 									style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(this.state.item?.manufacturerImage)})`}}
 								></div>
@@ -314,7 +378,6 @@ class ItemPanel extends Component {
 							</div>
 						</div>
 						<span class="attribute">${this.state.item?.data?.CommonData?.CustomAvailability ?? null}</span>
-						<span class="attribute">${this.state.item?.data?.CommonData?.Type ?? ''}</span>
 						<span class="attribute">
 							${this.state.item?.parentPaths ? `Applies to: ` : ''}
 							${[...this.state.item?.parentPaths ?? []].map(async path => `<a class="parentSocket" href=${`#${path}`}>${await new Item(path).getName()}</a>`)}
@@ -330,8 +393,9 @@ class ItemPanel extends Component {
 				</div>
 			`;
 			// <pre class="dbItemPanel_json">${JSON.stringify(this.state.item?.data, null, "\t")}</pre>
+									// style=${{"maskImage": `url("/assets/icons.svg")`}}
 		}
-		return HTML.bind(document.querySelector('.js-item-panel'))``;
+		return HTML.bind(document.querySelector('.js--item-panel'))``;
 	}
 
 	prettyJson(json) {

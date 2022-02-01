@@ -124,7 +124,8 @@ button.dbItemIcon {
 			justify-content: left;
 			align-items: center;
 			font-size: 0.9rem;
-			gap: 0.5rem;
+			gap: 1rem;
+			margin-bottom: 0.5rem;
 			& .badge {
 				display: flex;
 				flex-direction: row;
@@ -139,6 +140,18 @@ button.dbItemIcon {
 					background-repeat: no-repeat;
 					background-position: center center;
 					opacity: 0.5;
+				}
+				& .badge-svg {
+					--length: 1.5rem;
+					--path: attr(data-icon);
+					width: var(--length);
+					height: var(--length);
+					/* background-color: #fff; */
+					/* mask: url("assets/icons.svg#close-x"); */
+					opacity: 0.5;
+					background-size: cover;
+					background-repeat: no-repeat;
+					background-position: center center;
 				}
 			}
 		}
@@ -164,8 +177,7 @@ button.dbItemIcon {
 		line-break: anywhere;
 		overflow-x: auto;
 		overflow-y: auto;
-		padding-left: 1rem;
-		padding-bottom: 5rem;
+		padding: 0 1rem 5rem 1rem;
 		font-family: monospace;
 		tab-size: 1rem;
 		white-space: pre-wrap;

@@ -16,7 +16,7 @@ class HeaderNav extends Component {
 			<nav class="toolbar">
 				<a href="#">Skimmer</a>
 				<ul>
-					<li><button class="settings" onclick=${() => modalConstructor.showView(settings.render())}>Settings</button></li>
+					<li><button class="settings" onclick=${() => modalConstructor.showView(settings.render())}>${window?.location?.hostname === 'gasgira.github.io' ? '' : 'Settings'}</button></li>
 					<li><button onclick=${() => modalConstructor.showView(about.render())}>Disclaimer</button></li>
 				</ul>
 			</nav>

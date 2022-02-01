@@ -50,7 +50,7 @@ module.exports = {
 				],
 			},
 			{
-				test: /\.(png|svg|jpg|gif)$/,
+				test: /\.(png|jpg|gif)$/,
 				use: [
 					'file-loader'
 				]
@@ -82,19 +82,15 @@ module.exports = {
 			date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
 			// hash: true
 			inject: true
+		}),
+		new CopyPlugin({
+			patterns: [
+				{
+					from: '**/*',
+					to: '',
+					context: 'src/assets/'
+				}
+			],
 		})
-		// new CopyPlugin({
-		// 	patterns: [{
-		// 			from: '**/*',
-		// 			to: '',
-		// 			context: 'src/client/static/'
-		// 		},
-		// 		{
-		// 			from: '**/*',
-		// 			to: 'assets/',
-		// 			context: 'src/assets/'
-		// 		}
-		// 	],
-		// })
 	]
 }

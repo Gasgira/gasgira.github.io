@@ -21,6 +21,7 @@ class Settings extends Component {
 	}
 
 	render() {
+		if (window?.location?.hostname === 'gasgira.github.io') return this.html`...`;
 		return this.html`
 			<span>These are advanced settings. Do not modify them unless you know why to.</span>
 			<button onclick=${() => this.reset()}>Reset Settings</button>

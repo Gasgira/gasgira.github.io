@@ -18,7 +18,7 @@
 	],
 	"CommonData": {
 		"Id": "009-001-samurai-1afb4dd3",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Shadow Crow",
 		"Description": "A not-so-subtle reminder that samurai can strike under cover of night.",
 		"FeatureFlag": true,
@@ -87,10 +87,6 @@
 			"z": 0
 		},
 		"ParentPaths": [
-			{
-				"Path": "Inventory/Armor/Themes/007-001-samurai-55badb14.json",
-				"Type": "ArmorTheme"
-			},
 			{
 				"Path": "Inventory/Armor/Themes/007-001-samurai-55badb14.json",
 				"Type": "ArmorTheme"

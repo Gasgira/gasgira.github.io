@@ -31,7 +31,7 @@ class Inventory extends Component {
 					${this.categories.map(category => HTML.wire(category)`<li><button
 						onclick=${() => this.showCategory(category)}
 						class=${this.state?.inventoryCategory === category ? 'active' : null}
-					><span>${category.categoryName}</span></button></li>`)}
+					><span>${db.getItemType(category.categoryName) ?? '...'}</span></button></li>`)}
 				</ul>
 				${this.state?.inventoryCategory?.render() ?? ''}
 				${{html: this.state?.inventoryCategory ? '' : '<div class="inv-category-placeholder">CHOOSE A CATEGORY</div>'}}
@@ -98,7 +98,7 @@ class InventoryCategory extends Component {
 			<div
 				class ="inventory-category_wrapper"
 			>
-			${this.categoryName} // ${this.items.length}
+			${db.getItemType(this.categoryName) ?? ''} // ${this.items.length}
 				<ul
 					class="inventory-category_items"
 				>
