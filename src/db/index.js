@@ -1,4 +1,5 @@
 import { Component } from 'component';
+import { emitter } from 'eventEmitter';
 import { HTML } from 'lib/HTML';
 import { settings } from 'ui/settings';
 
@@ -126,6 +127,32 @@ class Database {
 		if (!path || typeof path !== 'string') return '';
 		return `${(this?.pathCasing ?? true) ? path.toLowerCase() : path}`
 	}
+
+	get favoriteItemPaths() {
+		if (this?._favoriteItemPaths) return this._favoriteItemPaths;
+		const stored = localStorage.getItem('userFavorites');
+		if (!stored) return (this._favoriteItemPaths = new Set());
+		console.log('stored!')
+		// TODO process for is a path? etc
+		return (this._favoriteItemPaths = new Set(JSON.parse(stored)));
+	}
+
+	toggleFavorite(path) {
+		console.log('fav', path);
+		if (!path) return;
+		if (this.favoriteItemPaths.has(`${path}`))
+		{
+			console.info(`[skimmer] Removing favorite path ${path}`);
+			this.favoriteItemPaths.delete(`${path}`);
+		} else {
+			console.info(`[skimmer] Adding favorite path ${path}`);
+			this.favoriteItemPaths.add(`${path}`);
+		}
+
+		localStorage.setItem('userFavorites', JSON.stringify([...this.favoriteItemPaths]));
+		console.warn(localStorage.getItem('userFavorites'))
+		emitter.emit('favoriteItemPaths', `${path}`)
+	}
 }
 
 export const db = new Database();
@@ -147,6 +174,14 @@ export class Item extends Component {
 
 	get name() {
 		return this?.data?.CommonData?.Title ?? '???';
+	}
+
+	get seasonNumber() {
+		const season = this?.data?.CommonData?.Season;
+		if (!season || typeof season !== 'string') return 'default';
+		const split = season.split(' ');
+		if (split && split?.[1]) return parseInt(split[1]);
+		return 'other';
 	}
 
 	async getName() {
@@ -174,9 +209,15 @@ export class Item extends Component {
 	}
 
 	async init() {
-		if (this.data) return this;
+		if (this.data)
+		{
+			await this.data;
+			return this;
+		}
 		try {
-			this.data = await db.getJSON(this.path);
+			this.data = db.getJSON(this.path) // TODO need to get rid of this await. errors with itempanel on refresh
+				.then(res => this.data = res);
+			await this.data;
 		} catch (error) {
 			console.error(`[Item.init]`, error)
 		}
@@ -184,32 +225,13 @@ export class Item extends Component {
 	}
 
 	async render() {
-			if (!this.data) await this.init();
-			let imagePath = '';
-			const displayPath = this?.data?.CommonData?.DisplayPath?.Media?.MediaUrl?.Path;
-			if (displayPath && typeof displayPath === 'string') {
-				imagePath = `${displayPath[0].toUpperCase()}${displayPath.substring(1)}`;
-			}
-			// console.log('render', this.path)
-			return this.html`
-				<button
-					class=${`item dbItemIcon${this?.data?.CommonData?.Quality ? ` ${this?.data.CommonData.Quality?.toLowerCase?.()}` : ''}`}
-					onclick=${() => this.showItemPanel()}
-					style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(imagePath)})`}}
-				>
-					<span>${this?.data?.CommonData?.Title ?? '???'}</span>
-				</button>
-			`;
+		console.warn('render', this);
 	}
 
-	async renderIcon(id) {
-		if (!this.data) await this.init();
-		// let imagePath = '';
-		// const displayPath = this?.data?.CommonData?.DisplayPath?.Media?.MediaUrl?.Path;
-		// if (displayPath && typeof displayPath === 'string') {
-		// 	imagePath = `${displayPath[0].toUpperCase()}${displayPath.substring(1)}`;
-		// }
-		// console.info(`[skimmer][item:icon]`, this.path)
+	async renderIcon(id, {
+		itemTypeIcon = false
+	} = {}) {
+		await this.init();
 		return HTML.wire(this, `:${id ?? 'icon'}`)`
 			<button
 				class=${
@@ -223,8 +245,57 @@ export class Item extends Component {
 				style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(this.imagePath)})`}}
 			>
 				<span>${this.name ?? '???'}</span>
+				${itemTypeIcon ? this.renderItemTypeIcon() : ''}
 			</button>
 		`;
+	}
+
+	get itemTypeIcons() {
+		return this?._itemTypeIcons ?? (this._itemTypeIcons = new Set([
+			'ArmorCoating',
+			'WeaponCoating'
+		]));
+	}
+
+	async renderItemTypeIcon() {
+		const path = this?.data?.CommonData?.ParentTheme ?? this?.data?.CommonData?.ParentPaths?.[0];
+		const type = this?.data?.CommonData?.Type;
+		if (!path || !this.itemTypeIcons.has(type)) return '';
+		if (type && type === 'WeaponCoating')
+		{
+			const parent = await new Item(path).getImagePath();
+			const imagePath = `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(parent)})`;
+			return HTML.wire(this, `:itemType-${performance.now()}`)`
+				<div
+					class=${`item-type-icon ${this?.data?.CommonData?.Type ?? 'default-type'}`}
+					style=${{webkitMaskImage: imagePath, maskImage: imagePath}}
+				></div>
+			`;
+		}
+		if (type && type === 'ArmorCoating')
+		{
+			let svgId = 'ArmorCoating';
+			switch (path) {
+				case 'Inventory/Armor/Themes/007-001-olympus-c13d0b38.json':
+					svgId = 'MK7'
+					break;
+				case 'Inventory/Armor/Themes/007-001-reach-2564121f.json':
+					svgId = 'MK5'
+					break;
+				case 'Inventory/Armor/Themes/007-001-samurai-55badb14.json':
+					svgId = 'YOROI'
+					break;
+			
+				default:
+					break;
+			}
+			return HTML.wire(this, `:itemType-${performance.now()}`)`
+				<div
+					class=${`item-type-icon ${this?.data?.CommonData?.Type ?? 'default-type'}`}
+					style=${{backgroundImage: `url(items.svg#${svgId ?? 'default'})`}}
+				></div>
+			`;
+		}
 	}
 
 	get imagePath() {
@@ -235,6 +306,28 @@ export class Item extends Component {
 		}
 
 		return imagePath;
+	}
+
+	async getImagePath() {
+		if (!this.data) await this.init();
+		let imagePath = '';
+		const displayPath = this?.data?.CommonData?.DisplayPath?.Media?.MediaUrl?.Path;
+		if (displayPath && typeof displayPath === 'string') {
+			imagePath = `${displayPath[0].toLowerCase()}${displayPath.substring(1)}`;
+		}
+
+		return imagePath;
+	}
+
+	async getParentItem() {
+		if (this?._parentItem) return this._parentItem;
+		if (this?.data?.CommonData?.ParentTheme)
+		{
+			this._parentItem = new Item(this?.data?.CommonData?.ParentTheme);
+			await this._parentItem.init();
+			return this._parentItem;
+		}
+		// const test = async path => `<a class="parentSocket" href=${`#${path}`}>${await new Item(path).getName()}</a>`
 	}
 
 	get icon() {
@@ -355,11 +448,23 @@ class ItemPanel extends Component {
 							<h2>${this.state.item?.data?.CommonData?.Title ?? 'Item'}</h2>
 							<h3>${this.state.item?.data?.CommonData?.Description ?? '...'}</h3>
 						</div>
+						<button
+							class=${'favorite'}
+							onclick=${() => {
+								db.toggleFavorite(this.state.item.path);
+								this.render();
+							}}
+							style=${{backgroundImage: `url(items.svg#${db.favoriteItemPaths.has(this.state.item.path) ? 'favored' : 'unfavored'})`}}
+						></button>
 					</header>
 					<div class="item-info_wrapper">
 						<div class="item-badges">
 							<div class="badge">
-								<span>${this.state.item?.data?.CommonData?.Season ?? ''}</span>
+								<div
+									class="badge-svg"
+									style=${{backgroundImage: `url(seasons.svg#${this.state.item.seasonNumber ?? 'default'})`}}
+								></div>
+								<span>${this.state.item?.data?.CommonData?.Season ?? 'Season'}</span>
 							</div>
 							<div class="badge">
 								<div
@@ -367,7 +472,7 @@ class ItemPanel extends Component {
 									data-icon=${this.state.item?.data?.CommonData?.Type ?? 'default'}
 									style=${{backgroundImage: `url(items.svg#${this.state.item?.data?.CommonData?.Type ?? 'default'})`}}
 								></div>
-								<span class="badge">${db.getItemType(this.state.item?.data?.CommonData?.Type) ?? ''}</span>
+								<span class="badge">${db.getItemType(this.state.item?.data?.CommonData?.Type) ?? 'Item'}</span>
 							</div>
 							<div class="badge">
 								<div

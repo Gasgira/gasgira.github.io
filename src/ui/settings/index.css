@@ -1,0 +1,16 @@
+.settings_wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: left;
+	gap: 1em;
+	& header {
+		font-size: 1.5em;
+	}
+	& .option_wrapper {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.5em;
+	}
+}

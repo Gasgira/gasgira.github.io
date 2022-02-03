@@ -134,7 +134,7 @@ class RewardTrack extends Component {
 						<li class="rank_number">${rank.Rank}</li>
 						<ul class="rank_reward-items free">
 							${rank?.FreeRewards?.InventoryRewards?.map(reward => {
-								return HTML.wire()`<li>${new Item(reward?.InventoryItemPath).renderIcon('reward')}</li>`
+								return HTML.wire()`<li>${new Item(reward?.InventoryItemPath).renderIcon('reward', {itemTypeIcon: true})}</li>`
 							})}
 							${rank?.FreeRewards?.CurrencyRewards?.map(reward => {
 								return HTML.wire()`<li class="currency" data-quantity=${parseInt(reward?.Amount)}>${new CurrencyItem(reward?.CurrencyPath).renderIcon(`${rank.Rank}-${performance.now()}`)}</li>`
@@ -142,7 +142,7 @@ class RewardTrack extends Component {
 						</ul>
 						<ul class="rank_reward-items paid">
 							${rank?.PaidRewards?.InventoryRewards?.map(reward => {
-								return HTML.wire()`<li>${new Item(reward?.InventoryItemPath).renderIcon('reward')}</li>`
+								return HTML.wire()`<li>${new Item(reward?.InventoryItemPath).renderIcon('reward', {itemTypeIcon: true})}</li>`
 							})}
 							${rank?.PaidRewards?.CurrencyRewards?.map(reward => {
 								return HTML.wire()`<li class="currency" data-quantity=${parseInt(reward?.Amount)}>${new CurrencyItem(reward?.CurrencyPath).renderIcon(`${rank.Rank}-${performance.now()}`)}</li>`

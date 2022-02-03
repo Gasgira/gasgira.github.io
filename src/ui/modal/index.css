@@ -34,7 +34,7 @@
 	& .modal_content {
 		align-items: left;
 		pointer-events: auto;
-		padding: 1rem;
+		padding: 1em;
 		max-width: 90vw;
 		max-height: 90vh;
 		overflow: auto;

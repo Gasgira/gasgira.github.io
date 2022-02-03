@@ -1,6 +1,6 @@
 :root {
-	--app-size: 16px;
-	--app-font-size: 14pt;
+	--app-size: 1rem;
+	--app-font-size: 1rem;
 	font-size: var(--app-size);
 
 	--theme-fonts: 'Titillium Web', "Noto Sans", "Roboto", "system-ui", "system", sans-serif;
@@ -33,10 +33,10 @@
 	--theme-shadow-right-hover: 1rem 0rem 0.75rem -1rem rgba(0, 0, 0, 0.75);
 	--theme-shadow-cover: 0 0.5rem 1.75rem -0.25rem rgba(0, 0, 0, 0.5);
 
-	--theme-border-radius: 0.2rem; --theme-radius: 0.25rem;
+	--theme-border-radius: 0.2em; --theme-radius: 0.25em;
 	--theme-border: 0.1rem solid hsla(var(--theme-accent-hsl), 0.75);
 
-	--theme-padding: 0.25rem; --theme-padding-double: 0.5rem; --theme-padding-thin: 0.15rem;
+	--theme-padding: 0.25em; --theme-padding-double: 0.5em; --theme-padding-thin: 0.15em;
 
 	/*Dark Theme*/
 	--theme-primary: var(--base-dark);		--theme-primary-hsl: var(--base-dark-hsl);
@@ -111,14 +111,14 @@ footer {
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	padding: 2rem;
+	padding: 2em;
 	opacity: 0.5;
-	font-size: 0.8rem;
+	font-size: 0.8em;
 	& a {
 		text-decoration: none;
 	}
 	& span {
-		padding-left: 0.33rem;
+		padding-left: 0.33em;
 	}
 }
 
@@ -245,7 +245,7 @@ button {
 	font-weight: light;
 	overflow: visible;
 	border: none;
-	margin: 0.2rem;
+	margin: 0.2em;
 	transition: color var(--time-state) linear,
 	background var(--time-state) linear,
 	text-shadow var(--time-active) linear;
@@ -269,14 +269,14 @@ button {
 	&::before {
 		display: block;
 		content: "";
-		--padding: 0rem;
+		--padding: 0em;
 		top: var(--padding);
 		left: var(--padding);
 		right: var(--padding);
 		bottom: var(--padding);
 		border-radius: var(--theme-border-radius);
 		position: absolute;
-		border-width: 0.15rem;
+		border-width: 0.15em;
 		border-style: solid;
 		border-image: linear-gradient(
 			to bottom,
@@ -301,7 +301,7 @@ button {
 		color: var(--base-red);
 	}
 	&.ui-button_hold {
-		padding-bottom: 0.5rem;
+		padding-bottom: 0.5em;
 	}
 	&.ui-button_hold:hover:active::after {
 		animation: hold-progress var(--time-hold-short) linear;
@@ -311,7 +311,7 @@ button {
 		bottom: var(--theme-padding-thin);
 		left: var(--theme-padding-thin);
 		width: calc(100% - (var(--theme-padding-thin) * 2));
-		height: 0.25rem;
+		height: 0.25em;
 		background-color: var(--theme-active);
 	}
 	&.ui-button_loss:hover:active::after {

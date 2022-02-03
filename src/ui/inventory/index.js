@@ -1,5 +1,6 @@
 import { Component } from 'component';
 import { db, Item } from 'db';
+import { emitter } from 'eventEmitter';
 import { HTML } from 'lib/HTML';
 
 import './index.css';
@@ -9,14 +10,14 @@ class Inventory extends Component {
 		const inventoryPath = 'Inventory/catalog/inventory_catalog.json';
 		this.data = await db.getJSON(inventoryPath);
 
-		this.categories = [];
+		this.categories = [new InventoryCategory({categoryName: 'Favorites'})];
 
 		for (const property in this.data) {
 			const categoryTerm = 'sOwnableCount';
 			if (property.includes(categoryTerm) && this.data[property] !== 0)
 			{
 				const categoryName = property.replace(categoryTerm, '');
-				this.categories.push(new InventoryCategory({categoryName, inventory: this}));
+				this.categories.push(new InventoryCategory({categoryName}));
 			}
 		}
 
@@ -53,6 +54,10 @@ class Inventory extends Component {
 
 		console.log(`[Inventory] Getting category "${categoryName}"`);
 
+		if (categoryName === 'Favorites') {
+			return db.favoriteItemPaths;
+		}
+
 		const paths = new Set();
 
 		if (categoryName.includes('Core')) {
@@ -78,16 +83,22 @@ export const inventory = new Inventory();
 
 class InventoryCategory extends Component {
 	constructor({
-		categoryName,
-		inventory
+		categoryName
 	}) {
 		super();
 		this.categoryName = categoryName;
-		this.inventory = inventory;
+
+		if (this.categoryName === 'Favorites') {
+			emitter.on('favoriteItemPaths', (path) => {
+				console.log('fav update', path);
+				this.init();
+				if (inventory.state?.inventoryCategory === this) this.render();
+			})
+		}
 	}
 
 	init() {
-		if (this.items) return;
+		if (this.items && this.categoryName !== 'Favorites') return;
 		this.itemPaths = inventory.itemPathsOfCategoryName(this.categoryName);
 		// console.log(`[InventoryCategory] Got items`, this.itemPaths);
 		this.items = [...this.itemPaths].map(path => new Item(path));
@@ -102,7 +113,7 @@ class InventoryCategory extends Component {
 				<ul
 					class="inventory-category_items"
 				>
-					${this.items.map(item => HTML.wire()`<li>${item.renderIcon('inventory')}</li>`)}
+					${this.items.map(item => HTML.wire()`<li>${item.renderIcon('inventory', {itemTypeIcon: true})}</li>`)}
 				</ul>
 			</div>
 		`;

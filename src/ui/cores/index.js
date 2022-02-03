@@ -12,22 +12,32 @@ class CoreViewer extends Component {
 		this.armorCores = [];
 		this.weaponCores = [];
 		this.vehicleCores = [];
+
+		this.cores = [];
 	}
 	async init() {
-		inventory.coreList.forEach(core => {
-			if (core?.ItemType === 'ArmorCore') this.armorCores.push(new Core(core?.ItemPath));
-			if (core?.ItemType === 'WeaponCore') this.weaponCores.push(new Core(core?.ItemPath));
-			if (core?.ItemType === 'VehicleCore') this.vehicleCores.push(new Core(core?.ItemPath));
+		inventory.coreList.forEach(item => {
+			const core = new Core(item?.ItemPath);
+			this.cores.push(core);
+			if (item?.ItemType === 'ArmorCore') this.armorCores.push(core);
+			if (item?.ItemType === 'WeaponCore') this.weaponCores.push(core);
+			if (item?.ItemType === 'VehicleCore') this.vehicleCores.push(core);
 		});
 		this.showArmorCores();
 		this.showCore(this.armorCores?.[0]);
 		this.render();
+
+		this.initAllCores();
 	}
 
 	get defaultState() {
 		return {
 			coreType: this.armorCores
 		};
+	}
+
+	initAllCores() {
+		this.cores.forEach(core => core.init());
 	}
 
 	render() {

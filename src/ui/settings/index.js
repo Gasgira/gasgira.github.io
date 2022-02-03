@@ -1,6 +1,8 @@
 import { HTML } from 'lib/HTML';
 import { Component } from 'component';
 
+import './index.css';
+
 class Settings extends Component {
 	constructor() {
 		super();
@@ -17,30 +19,96 @@ class Settings extends Component {
 		} else {
 			this.data.set('pathCasing', false);
 		}
-		// console.error('pathv', this.data.get('pathCasing'))
+
+		const appScale = localStorage.getItem('userAppScale');
+		if (appScale) {
+			this.setAppScale(appScale);
+		} 
+		
+		const textScale = localStorage.getItem('userTextScale');
+		if (appScale) {
+			this.setTextScale(textScale);
+		} 
 	}
 
 	render() {
-		if (window?.location?.hostname === 'gasgira.github.io') return this.html`...`;
 		return this.html`
-			<span>These are advanced settings. Do not modify them unless you know why to.</span>
-			<button onclick=${() => this.reset()}>Reset Settings</button>
-			<label for="dbPath">dbPath:</label>
-			<input type="text" id="dbPath" name="dbPath" required minlength="0" maxlength="8" size="10"
-				onchange=${(e) => this.setDbPath(e.target.value)}
-				placeholder=${this.data.get('dbPath') ?? 'db'}
-			>
-			<br>
-			<label for="pathCasing">Normalize paths to lowercase:</label>
-			<input type="checkbox" id="pathCasing" name="pathCasing"
-				onchange=${(e) => this.setPathCasing(e.target.checked)}
-				checked=${this.data.get('pathCasing') === true}
-			>
+			<div class="settings_wrapper">
+				<section>
+					<header>Accessibility</header>
+					<div class="option_wrapper">
+						<label for="appScale">Interface Scale: ${this.appScale}</label>
+						<input class="show-value" type="range" id="appScale" name="appScale" value=${this.appScale} min="0.5" max="2" step="0.05"
+							onchange=${(e) => this.setAppScale(parseFloat(e?.target?.value ?? 1))}
+						>
+					</div>
+					<div class="option_wrapper">
+						<label for="textScale">Text Scale: ${this.textScale}</label>
+						<input class="show-value" type="range" id="textScale" name="textScale" value=${this.textScale} min="0.5" max="2" step="0.05"
+							onchange=${(e) => this.setTextScale(parseFloat(e?.target?.value ?? 1))}
+						>
+					</div>
+				</section>
+				${this.advanced()}
+				<button onclick=${() => this.reset()}>Reset Settings</button>
+			</div>
+		`;
+	}
+
+	advanced() {
+		if (window?.location?.hostname === 'gasgira.github.io') return;
+		return HTML.wire(this, ':advanced')`
+			<section>
+				<header>Advanced</header>
+				<span>Do not modify advanced settings unless you know why to.</span><br>
+				<label for="dbPath">dbPath:</label>
+				<input type="text" id="dbPath" name="dbPath" minlength="0" maxlength="8" size="10"
+					onchange=${(e) => this.setDbPath(e.target.value)}
+					placeholder=${this.data.get('dbPath') ?? 'db'}
+				>
+				<br>
+				<label for="pathCasing">Normalize paths to lowercase:</label>
+				<input type="checkbox" id="pathCasing" name="pathCasing"
+					onchange=${(e) => this.setPathCasing(e.target.checked)}
+					checked=${this.data.get('pathCasing') === true}
+				>
+			</section>
 		`;
 	}
 
 	get data() {
 		return this._data ?? (this._data = new Map());
+	}
+
+	setRootProperty(key, value) {
+		const root = document.documentElement;
+		root.style.setProperty(`--${key}`, `${value}`);
+	}
+
+	get appScale() {
+		return localStorage.getItem('userAppScale') ?? 1;
+	}
+
+	setAppScale(value = 1) {
+		const float = parseFloat(value ?? 1);
+		console.info(`[skimmer] settings -> appScale "${float}"`);
+		localStorage.setItem('userAppScale', float);
+
+		this.setRootProperty('app-size', `${float}rem`);
+		this.render();
+	}
+
+	get textScale() {
+		return localStorage.getItem('userTextScale') ?? 1;
+	}
+
+	setTextScale(value = 1) {
+		const float = parseFloat(value ?? 1);
+		console.info(`[skimmer] settings -> textScale "${float}"`);
+		localStorage.setItem('userTextScale', float);
+
+		this.setRootProperty('app-font-size', `${float}rem`);
+		this.render();
 	}
 
 	setDbPath(path) {

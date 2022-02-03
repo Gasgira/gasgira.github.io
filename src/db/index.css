@@ -2,7 +2,7 @@ button.dbItemIcon {
 	--length: 10rem;
 	width: var(--length);
 	height: var(--length);
-	margin: 0.8rem;
+	margin: 0.8em;
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -14,9 +14,10 @@ button.dbItemIcon {
 	font-weight: bold;
 	text-shadow: 0.1rem 0.1rem 0.2rem #000;
 	animation: fade-in var(--time-state) linear;
+	position: relative;
 	&::before {
-		border-width: 0.18rem;
-		--padding: -0.5rem;
+		border-width: 0.18em;
+		--padding: -0.5em;
 		opacity: 0.4;
 	}
 	&::after {
@@ -32,15 +33,15 @@ button.dbItemIcon {
 		width: 100%;
 		opacity: 1;
 		transition: opacity var(--time-active) linear;
-		font-size: 0.9rem;
-		margin-bottom: 0.25rem;
+		font-size: 0.9em;
+		margin-bottom: 0.25em;
 	}
 	&:hover {
     background-color: rgba(255,255,255,1);
 		color: #000;
 		text-shadow: 0 0 1rem #fff, 0 0 0.5rem #fff;
 		&::before {
-			border-width: 0.25rem;
+			border-width: 0.25em;
 		}
 	}
 	&:hover>span {
@@ -53,6 +54,32 @@ button.dbItemIcon {
 		text-shadow: 0 0 1rem #000, 0 0 0.5rem #000;
 		&::before {
 			filter: invert(1);
+		}
+	}
+	& .item-type-icon {
+		position: absolute;
+		--typeLength: 2.3rem;
+		width: var(--typeLength);
+		height: var(--typeLength);
+		top: -0.1rem;
+		right: 0.5rem;
+		mask-size: contain;
+		mask-repeat: no-repeat;
+		mask-position: center center;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center center;
+		overflow: hidden;
+		border-radius: 0.1rem;
+		&.WeaponCoating {
+			transform: rotate(-30deg);
+			background-color: rgb(128,128,128);
+		}
+		&.ArmorCoating {
+			opacity: 0.5;
+			top: 0.3rem;
+			right: 0.1rem;
+			--typeLength: 1.7rem;
 		}
 	}
 }
@@ -73,7 +100,7 @@ button.dbItemIcon {
 	position: fixed;
 	height: 100vh;
 	max-width: 80vw;
-	width: 50rem;
+	width: 50em;
 	right: 0;
 	top: 0;
 	background-color: #141c27;
@@ -98,7 +125,7 @@ button.dbItemIcon {
 	&::after {
 		content: "";
 		position: fixed;
-		height: 5rem;
+		height: 5em;
 		width: 100%;
 		bottom: 0;
 		z-index: 1;
@@ -111,10 +138,10 @@ button.dbItemIcon {
 		display: flex;
 		flex-direction: column;
 		justify-content: left;
-		padding: 0 1rem;
-		margin-bottom: 1rem;
+		padding: 0 1em;
+		margin-bottom: 1em;
 		& .attribute {
-			font-size: 0.8rem;
+			font-size: 0.8em;
 			font-weight: normal;
 		}
 		& .item-badges {
@@ -123,17 +150,17 @@ button.dbItemIcon {
 			flex-wrap: wrap;
 			justify-content: left;
 			align-items: center;
-			font-size: 0.9rem;
-			gap: 1rem;
-			margin-bottom: 0.5rem;
+			font-size: 0.9em;
+			gap: 1em;
+			margin-bottom: 0.5em;
 			& .badge {
 				display: flex;
 				flex-direction: row;
 				justify-content: left;
 				align-items: center;
-				gap: 0.25rem;
+				gap: 0.25em;
 				& .badge-icon {
-					--length: 1.5rem;
+					--length: 1.5em;
 					min-width: var(--length);
 					min-height: var(--length);
 					background-size: cover;
@@ -142,7 +169,7 @@ button.dbItemIcon {
 					opacity: 0.5;
 				}
 				& .badge-svg {
-					--length: 1.5rem;
+					--length: 1.5em;
 					--path: attr(data-icon);
 					width: var(--length);
 					height: var(--length);
@@ -161,25 +188,25 @@ button.dbItemIcon {
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
-		margin-bottom: 1rem;
-		padding: 0 1rem;
+		margin-bottom: 1em;
+		padding: 0 1em;
 		& .dbItemPanel_path {
 			opacity: 0.5;
-			padding-bottom: 0.5rem;
-			font-size: 0.7rem;
+			padding-bottom: 0.5em;
+			font-size: 0.7em;
 			font-weight: normal;
 			font-style: italic;
 		}
 	}
 	& .dbItemPanel_json {
 		width: 100%;
-		font-size: 0.7rem;
+		font-size: 0.7em;
 		line-break: anywhere;
 		overflow-x: auto;
 		overflow-y: auto;
-		padding: 0 1rem 5rem 1rem;
+		padding: 0 1rem 5rem 1em;
 		font-family: monospace;
-		tab-size: 1rem;
+		tab-size: 1em;
 		white-space: pre-wrap;
 		word-break: keep-all;
 		position: relative;
@@ -189,14 +216,14 @@ button.dbItemIcon {
 		}
 	}
 	& header {
-		margin-bottom: 1rem;
+		margin-bottom: 1em;
 		display: flex;
 		flex-direction: row;
 		width: 100%;
 		box-shadow: 0 1rem 1rem rgba(0,0,0,0.25);
 		background-color: rgba(0,0,0,0.15);
 		& .item-img {
-			--length: 9rem;
+			--length: 9em;
 			min-width: var(--length);
 			min-height: var(--length);
 			background-color: rgba(0,0,0,0.66);
@@ -205,20 +232,20 @@ button.dbItemIcon {
 			background-position: center center;
 		}
 		& h2 {
-			font-size: 1.25rem;
+			font-size: 1.25em;
 			padding-top: 1rem;
 		}
 		& h3 {
-			font-size: 0.8rem;
+			font-size: 0.8em;
 			font-weight: normal;
 			font-style: italic;
 			opacity: 0.75;
-			padding-right: 0.5rem;
+			padding-right: 0.5em;
 		}
 		& .dbItemPanel_titles {
 			--rarity: var(--rarity-common);
 			width: 100%;
-			padding-left: 1rem;
+			padding-left: 1em;
 			border-left: 0.2rem solid var(--rarity-common);
 			transition: border-color var(--time-state) linear;
 			position: relative;
@@ -248,11 +275,29 @@ button.dbItemIcon {
 				border-left: 0.2rem solid var(--rarity-rare);
 			}
 		}
+		& .favorite {
+			--length: 2rem;
+			height: var(--length);
+			width: var(--length);
+			position: absolute;
+			right: 0.5rem;
+			top: 0.5rem;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center center;
+			&:hover {
+				color: #fff;
+				background-color: transparent;
+			}
+			&::before {
+				border-width: 0;
+			}
+		}
 	}
 	& .parentSocket {
 		background-color: hsla(var(--theme-interact-hsl), 0.1);
-		padding: 0 0.2rem;
-		margin: 0 0.2rem;
+		padding: 0 0.2em;
+		margin: 0 0.2em;
 		border-radius: var(--theme-border-radius);
 	}
 }
