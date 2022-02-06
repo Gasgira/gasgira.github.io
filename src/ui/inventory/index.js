@@ -2,6 +2,8 @@ import { Component } from 'component';
 import { db, Item } from 'db';
 import { emitter } from 'eventEmitter';
 import { HTML } from 'lib/HTML';
+import { modalConstructor } from 'ui/modal';
+import { urlParams } from 'urlParams';
 
 import './index.css';
 
@@ -10,25 +12,41 @@ class Inventory extends Component {
 		const inventoryPath = 'Inventory/catalog/inventory_catalog.json';
 		this.data = await db.getJSON(inventoryPath);
 
-		this.categories = [new InventoryCategory({categoryName: 'Favorites'})];
+		const favorites = new InventoryCategory({categoryName: 'Favorites'});
 
+		this.categories = [favorites];
+
+		const paramCategoryName = urlParams.getSecionSetting('inventory');
 		for (const property in this.data) {
 			const categoryTerm = 'sOwnableCount';
 			if (property.includes(categoryTerm) && this.data[property] !== 0)
 			{
 				const categoryName = property.replace(categoryTerm, '');
-				this.categories.push(new InventoryCategory({categoryName}));
+				const category = new InventoryCategory({categoryName});
+				this.categories.push(category);
+
+				if (paramCategoryName && categoryName === paramCategoryName)
+				{
+					category.init();
+					this.state.inventoryCategory = category;
+				}
 			}
+		}
+
+		if (!this.state.inventoryCategory)
+		{
+			favorites.init();
+			this.state.inventoryCategory = favorites;
 		}
 
 		console.info(`[Inventory] Found "${this.categories.length}" item categories.`)
 	}
 
 	render() {
-		return this.html`<div class="inventory_wrapper">
-			<header>Inventory</header>
-			<div class="inventory_content">
-				<ul class="inventory-catergories">
+		return this.html`<div class="inventory_wrapper mica_viewer" id="inventory">
+			<header class="inventory mica_header-strip"><a class="mica_header-anchor" href="#inventory"><h2>Inventory</h2></a></header>
+			<div class="inventory_content mica_main-content">
+				<ul class="inventory-catergories mica_nav-list">
 					${this.categories.map(category => HTML.wire(category)`<li><button
 						onclick=${() => this.showCategory(category)}
 						class=${this.state?.inventoryCategory === category ? 'active' : null}
@@ -43,10 +61,12 @@ class Inventory extends Component {
 	showCategory(inventoryCategory) {
 		if (this.state?.inventoryCategory === inventoryCategory) {
 			this.setState({inventoryCategory: undefined});
+			urlParams.deleteSecionSetting('inventory');
 			return;
 		}
 		inventoryCategory.init();
 		this.setState({inventoryCategory});
+		urlParams.setSecionSetting('inventory', inventoryCategory?.categoryName ?? 'unk');
 	}
 
 	itemPathsOfCategoryName(categoryName) {
@@ -87,6 +107,7 @@ class InventoryCategory extends Component {
 	}) {
 		super();
 		this.categoryName = categoryName;
+		this.items = [];
 
 		if (this.categoryName === 'Favorites') {
 			emitter.on('favoriteItemPaths', (path) => {
@@ -97,8 +118,14 @@ class InventoryCategory extends Component {
 		}
 	}
 
+	get defaultState() {
+		return {
+			importValid: false
+		};
+	}
+
 	init() {
-		if (this.items && this.categoryName !== 'Favorites') return;
+		if (this.items?.length && this.categoryName !== 'Favorites') return;
 		this.itemPaths = inventory.itemPathsOfCategoryName(this.categoryName);
 		// console.log(`[InventoryCategory] Got items`, this.itemPaths);
 		this.items = [...this.itemPaths].map(path => new Item(path));
@@ -109,13 +136,71 @@ class InventoryCategory extends Component {
 			<div
 				class ="inventory-category_wrapper"
 			>
-			${db.getItemType(this.categoryName) ?? ''} // ${this.items.length}
+			<header class="h-favorites">
+				<div>${db.getItemType(this.categoryName) ?? ''} // ${this?.items?.length}</div>
+			</header>
 				<ul
 					class="inventory-category_items"
 				>
 					${this.items.map(item => HTML.wire()`<li>${item.renderIcon('inventory', {itemTypeIcon: true})}</li>`)}
+					${this.categoryName === 'Favorites' && !this.items.length ? HTML.wire(this, ':favPlaceholder')`
+						<div class="favorites-placeholder">Tap the <span
+							class=${'favorite'}
+							style=${{backgroundImage: `url(items.svg#unfavored)`}}
+						></span> in item detail panels to collect favorites into this section.</div>
+					` : ''}
 				</ul>
 			</div>
 		`;
+				// ${this.categoryName === 'Favorites' ? HTML.wire(this, ':manage')`
+				// <button
+				// 	onclick=${() => modalConstructor.showView(this.renderFavoritesManager())}
+				// >Manage</button>` : ''}
+	}
+
+	renderFavoritesManager() {
+		console.log('reb');
+		return HTML.wire(this, ':favoritesManager')`
+			<div class="favorites-man_wrapper">
+				<span>Click the star icon in item detail panels to add favorites!</span>
+				<span>Copy and paste the following text box to send your list to someone.</span>
+				<textarea id="story" name="fav-export" rows="5" cols="33" readonly>${JSON.stringify([...db.favoriteItemPaths], null, '\t')}</textarea>
+				<span>---TODO collapsing import---</span>
+				<span>Paste a favorites list in the following box.</span>
+				<textarea id="story" name="fav-import" rows="5" cols="33"
+					oninput=${(e) => this.validateImport(e.target.value)}
+				></textarea>
+				<button
+					onclick=${() => this.replaceFavorites()}
+				>Replace</button>
+				<button
+					onclick=${() => this.appendFavorites()}
+				>Append</button>${this.state?.awaitingImport}
+			</div>
+		`;
+	}
+
+	validateImport(text) {
+		try {
+			console.log('v', text);
+			const json = JSON.parse(text);
+
+			if (json && json.length) {
+				const set = new Set(json);
+				this.state.awaitingImport = set;
+				console.log('arr', this.state.awaitingImport);
+				this.renderFavoritesManager();
+			}
+		} catch (error) {
+			console.error(`[skimmer] validateImport`, error)
+		}
+	}
+
+	replaceFavorites() {
+		console.log('rep', this.state?.awaitingImport)
+	}
+
+	appendFavorites() {
+		console.log('app', this.state?.awaitingImport)
 	}
 }

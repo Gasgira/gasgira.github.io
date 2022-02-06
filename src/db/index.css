@@ -16,9 +16,34 @@ button.dbItemIcon {
 	animation: fade-in var(--time-state) linear;
 	position: relative;
 	&::before {
-		border-width: 0.18em;
+		display: block;
+		content: "";
 		--padding: -0.5em;
+		top: var(--padding);
+		left: var(--padding);
+		right: var(--padding);
+		bottom: var(--padding);
+		border-radius: var(--theme-border-radius);
+		position: absolute;
+		border-width: 0.18em;
+		border-style: solid;
+		border-image: linear-gradient(
+			to bottom,
+			hsla(var(--theme-interact-hsl), 1),
+			hsla(var(--theme-interact-hsl), 1) 7%,
+			hsla(var(--theme-interact-hsl), 0) 8%,
+			hsla(var(--theme-interact-hsl), 0) 12%,
+			hsla(var(--theme-interact-hsl), 0.25) 13%,
+			hsla(var(--theme-interact-hsl), 0.25) 87%,
+			hsla(var(--theme-interact-hsl), 0) 88%,
+			hsla(var(--theme-interact-hsl), 0) 92%,
+			var(--rarity) 93%,
+			var(--rarity)
+		) 1 100%;
+		border-image-slice: 1;
 		opacity: 0.4;
+		transition: opacity var(--time-state) linear,
+			border-width var(--time-active) linear;
 	}
 	&::after {
 		display: block;
@@ -45,6 +70,9 @@ button.dbItemIcon {
 		}
 	}
 	&:hover>span {
+		opacity: 1;
+	}
+	&:hover::before, &:focus::before {
 		opacity: 1;
 	}
 	&.invert-hover:hover {
@@ -76,7 +104,6 @@ button.dbItemIcon {
 			background-color: rgb(128,128,128);
 		}
 		&.ArmorCoating {
-			opacity: 0.5;
 			top: 0.3rem;
 			right: 0.1rem;
 			--typeLength: 1.7rem;

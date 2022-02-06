@@ -1,6 +1,7 @@
 import { Component } from 'component';
 import { HTML } from 'lib/HTML';
 import { db, Item, CurrencyItem } from 'db';
+import { urlParams } from 'urlParams';
 
 import './index.css';
 
@@ -8,8 +9,7 @@ class Calendar extends Component {
 	async init() {
 		const calendarPath = 'Calendars/Seasons/SeasonCalendar.json';
 		this.data = await db.getJSON(calendarPath);
-
-		this.rewardTracks = new Map();
+		this.events = [];
 
 		this.data?.Seasons?.forEach(async season => {
 			const path = season.OperationTrackPath;
@@ -20,25 +20,42 @@ class Calendar extends Component {
 				this.rewardTracks.set(`${path}`, rewardTrack);
 				rewardTrack.addDates(season?.StartDate?.ISO8601Date, season?.EndDate?.ISO8601Date);
 
-				if (!this.state?.rewardTrack)
-				{
-					// await rewardTrack.init();
-					// this.setState({rewardTrack});
-				}
+				this.events.push({
+					startDate: season?.StartDate?.ISO8601Date,
+					endDate: season?.EndDate?.ISO8601Date,
+					rewardTrack
+				});
 			}
 		});
+		const launchDate = new Date('2021-11-15T08:00:00');
 		this.data?.Events?.forEach(ritual => {
 			const path = ritual?.RewardTrackPath;
 			// console.log(path)
 			if (!path) return;
 			if (!this.rewardTracks.has(path))
 			{
-				const rewardTrack = new RewardTrack(path, false);
-				this.rewardTracks.set(`${path}`, rewardTrack);
-				rewardTrack.addDates(ritual?.StartDate?.ISO8601Date, ritual?.EndDate?.ISO8601Date);
+				const startDate = new Date(ritual?.StartDate?.ISO8601Date);
+				if (!(startDate < launchDate))
+				{
+					const rewardTrack = new RewardTrack(path, false);
+					this.rewardTracks.set(`${path}`, rewardTrack);
+					rewardTrack.addDates(ritual?.StartDate?.ISO8601Date, ritual?.EndDate?.ISO8601Date);
+	
+					this.events.push({
+						startDate: ritual?.StartDate?.ISO8601Date,
+						endDate: ritual?.EndDate?.ISO8601Date,
+						rewardTrack
+					});
+				}
 			} else {
 				const rewardTrack = this.rewardTracks.get(ritual.RewardTrackPath);
 				rewardTrack.addDates(ritual?.StartDate?.ISO8601Date, ritual?.EndDate?.ISO8601Date);
+
+				this.events.push({
+					startDate: ritual?.StartDate?.ISO8601Date,
+					endDate: ritual?.EndDate?.ISO8601Date,
+					rewardTrack
+				});
 			}
 		});
 
@@ -47,27 +64,43 @@ class Calendar extends Component {
 		// console.log('[skimmer] rewardTracks', this.rewardTracks);
 		this.render();
 		Promise.allSettled([...this?.rewardTracks.values()].map(rewardTrack => rewardTrack.init()))
-			.then(() => this.renderEventList())
+			.then(() => {
+				this.render();
+				this.renderEventList();
+				const paramEvent = urlParams.getSecionSetting('calendar');
+				if (paramEvent) this.showRewardTrackByName(paramEvent);
+			})
 		return this;
+	}
+
+	get rewardTracks() {
+		return this?._rewardTracks ?? (this._rewardTracks = new Map());
 	}
 
 	async render() {
 		return this.html`
-			<div class="calendar_wrapper">
-				<header class="viewer-header"><span>Season Calendar</span><span class="notice">Note: content and dates subject to change.</span></header>
-				<div class="calendar_content">
-					<nav><ul>
+			<div class="mica_viewer calendar_wrapper" id="season-calendar">
+				<header class="mica_header-strip"><a class="mica_header-anchor" href="#season-calendar"><h2>Season Calendar</h2></a><span class="header-notice">Note: content and dates subject to change.</span></header>
+				<div class="mica_main-content">
+					<nav><ul class="mica_nav-list">
 						${this.renderEventList()}
 					</ul></nav>
-					${this.state?.rewardTrack?.render() ?? ''}
-					${{html: this.state?.rewardTrack ? '' : '<div class="calendar-placeholder">CHOOSE AN EVENT</div>'}}
+					${this.state?.rewardTrack?.render() ?? this.calendar()}
 				</div>
 			</div>
 		`;
+		// ${{html: this.state?.rewardTrack ? '' : '<div class="calendar-placeholder">CHOOSE AN EVENT</div>'}}
 	}
 
 	renderEventList() {
 		return HTML.wire(this, ':list')`
+			<li
+			><button
+				onclick=${() => this.showCalendar()}
+				class=${!this.state?.rewardTrack ? 'active' : null}
+			>
+				<span>Timeline</span>
+			</button></li>
 			${[...this?.rewardTracks.values()].map(rewardTrack => HTML.wire(rewardTrack)`
 				<li
 					class=${rewardTrack.isSeason ? 'season' : null}
@@ -75,19 +108,68 @@ class Calendar extends Component {
 					onclick=${() => this.showRewardTrack(rewardTrack)}
 					class=${this.state?.rewardTrack === rewardTrack ? 'active' : null}
 				>
-					<span>${rewardTrack.name}</span>
+					<span>${rewardTrack?.name}</span>
 				</button></li>
 			`)}
 		`;
 	}
 
+	calendar() {
+		return HTML.wire(this, ':calendar')`
+			<ul class="timeline_wrapper">
+				${{html: this?.events ? '' : '<div class="timeline-placeholder">Loading timeline...</div>'}}
+				${this?.events?.map(event => {
+					let active = false;
+					let startDate = new Date(event.startDate);
+					const launchDate = new Date('2021-11-15T08:00:00');
+					if (startDate < launchDate) startDate = launchDate;
+					const endDate = new Date(event.endDate);
+					endDate.setDate(endDate.getDate() - 1);
+
+					const today = new Date();
+					if (startDate <= today && endDate >= today) active = true;
+					return HTML.wire(event)`
+						<li class="timeline-event">
+							<button
+								class=${active ? 'active' : ''}
+								onclick=${() => this.showRewardTrack(event.rewardTrack)}
+							>
+								<div class="date-range">
+								${startDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+								${' - '}${endDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+								</div>
+								<div class="event-name">${event.rewardTrack.name}</div>
+							</button>
+						</li>
+					`;
+				}) ?? 'nop'}
+			</ul>
+		`;
+	}
+
 	showRewardTrack(rewardTrack) {
 		if (this.state?.rewardTrack === rewardTrack) {
-			this.setState({rewardTrack: undefined});
+			this.showCalendar();
 			return;
 		}
 		this.setState({rewardTrack});
-		// rewardTrack.render();
+		urlParams.setSecionSetting('calendar', rewardTrack?.name);
+	}
+
+	showRewardTrackByName(name) {
+		for (const rewardTrack of [...this?.rewardTracks.values()])
+		{
+			if (rewardTrack?.name === name)
+			{
+				this.showRewardTrack(rewardTrack);
+				break;
+			}
+		}
+	}
+
+	showCalendar() {
+		this.setState({rewardTrack: undefined});
+		urlParams.deleteSecionSetting('calendar');
 	}
 }
 

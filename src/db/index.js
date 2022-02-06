@@ -119,8 +119,8 @@ class Database {
 
 	async showItemPanelByPath(path, skipState) {
 		const item = new Item(path);
-		await item?.init();
-		itemPanel.displayItem(item, skipState);
+		const response = await item?.init();
+		if (response) itemPanel.displayItem(item, skipState);
 	}
 
 	pathCase(path) {
@@ -132,7 +132,7 @@ class Database {
 		if (this?._favoriteItemPaths) return this._favoriteItemPaths;
 		const stored = localStorage.getItem('userFavorites');
 		if (!stored) return (this._favoriteItemPaths = new Set());
-		console.log('stored!')
+		// console.log('stored!')
 		// TODO process for is a path? etc
 		return (this._favoriteItemPaths = new Set(JSON.parse(stored)));
 	}
@@ -185,7 +185,7 @@ export class Item extends Component {
 	}
 
 	async getName() {
-		if (!this.data) await this.init();
+		await this.init();
 		return this?.data?.CommonData?.Title ?? '???';
 	}
 
@@ -211,7 +211,7 @@ export class Item extends Component {
 	async init() {
 		if (this.data)
 		{
-			await this.data;
+			await Promise.resolve(this.data);
 			return this;
 		}
 		try {
@@ -219,7 +219,8 @@ export class Item extends Component {
 				.then(res => this.data = res);
 			await this.data;
 		} catch (error) {
-			console.error(`[Item.init]`, error)
+			console.error(`[Item.init]`, error);
+			return false;
 		}
 		return this;
 	}
@@ -388,27 +389,17 @@ class ItemPanel extends Component {
 		};
 	}
 
-	show() {
-		this.setState({visible: true});
-	}
-
 	hide() {
 		this.setState({visible: false});
-		history.pushState(null, 'Halosets', `.`);
+		history.pushState(null, 'Halosets', `#`);
 	}
 
 	toggleVisibility() {
 		this.setState({visible: !this.state.visible});
 	}
 
-	get history() {
-		return this?._history ?? (this._history = new Set());
-	}
-
 	displayItem(item, skipState) {
 		// check if is of class Item...
-		// this.history.add(item);
-		// console.log(`[ItemPanel] Displaying "${item?.path}". "${this.history.size}" items in history.`);
 		if (skipState) {
 			history.replaceState({path: `${item?.path}`}, `Halosets`, `#${item?.path}`);
 		} else {
@@ -428,7 +419,7 @@ class ItemPanel extends Component {
 			let imagePath = '';
 			const displayPath = item?.CommonData?.DisplayPath?.Media?.MediaUrl?.Path;
 			if (displayPath && typeof displayPath === 'string') {
-				imagePath = `${displayPath[0].toUpperCase()}${displayPath.substring(1)}`;
+				imagePath = `${displayPath[0].toLowerCase()}${displayPath.substring(1)}`;
 			}
 
 			return HTML.bind(document.querySelector('.js--item-panel'))`
@@ -451,6 +442,7 @@ class ItemPanel extends Component {
 						<button
 							class=${'favorite'}
 							onclick=${() => {
+								if (!this.state.item?.data?.CommonData) return;
 								db.toggleFavorite(this.state.item.path);
 								this.render();
 							}}
@@ -489,7 +481,7 @@ class ItemPanel extends Component {
 						</span>
 					</div>
 					<div class="json-info_wrapper">
-						<span class="dbItemPanel_path">Share link: <a href=${`#${this.state.item?.path ?? ''}`}>${this.state.item?.path ?? 'UNK'}</a></span>
+						<span class="dbItemPanel_path">Share link: <a href=${`/#${this.state.item?.path ?? ''}`}>${this.state.item?.path ?? 'UNK'}</a></span>
 						<button
 							onclick=${() => this.setState({pretty: !this.state.pretty})}
 						>${this.state.pretty ? 'raw' : 'pretty'}</button>
@@ -514,5 +506,4 @@ class ItemPanel extends Component {
 	}
 }
 
-const itemPanel = new ItemPanel();
-itemPanel.render();
+export const itemPanel = new ItemPanel();

@@ -80,7 +80,6 @@ html {
 body {
 	font-size: 12pt;
 	font-size: var(--app-font-size);
-	/* background-color: var(--theme-blank) !important; */
 	color: #ccc;
 	font-family: "Noto Sans", "Roboto", "system-ui", "system", sans-serif;
 	min-height: 100%;
@@ -121,21 +120,6 @@ footer {
 		padding-left: 0.33em;
 	}
 }
-
-/* .bg {
-	display: flex;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	overflow: hidden;
-	pointer-events: none;
-	background-color: #fff;
-	background: linear-gradient(217deg, rgba(40,49,64,.5), transparent 69%),
-	linear-gradient(336deg, rgba(16,33,80,.8), transparent 69%);
-	z-index: 0;
-} */
 
 main {
 	display: flex;
@@ -221,10 +205,6 @@ a:not([class]), .parentSocket {
 	}
 }
 
-.mica-100 {
-	/* backdrop-filter: blur(0.5rem); */
-}
-
 button {
 	--rarity: rgba(255,255,255,0.25);
 	position: relative;
@@ -232,12 +212,10 @@ button {
 	width: fit-content;
 	display: flex;
 	align-items: center;
-	--button-border: var(--theme-padding-thin) solid red;
 	border-radius: var(--theme-border-radius);
 	padding: var(--theme-padding) var(--theme-padding-double);
 	margin: var(--theme-padding) 0;
-	background: hsla(var(--theme-accent-hsl), 0.25);
-	background: transparent;
+	background-color: transparent;
 	color: var(--theme-text);
 	cursor: pointer;
 	font-family: var(--theme-fonts);
@@ -247,8 +225,8 @@ button {
 	border: none;
 	margin: 0.2em;
 	transition: color var(--time-state) linear,
-	background var(--time-state) linear,
-	text-shadow var(--time-active) linear;
+		background var(--time-state) linear,
+		text-shadow var(--time-active) linear;
 	&.rare {
 		--rarity: var(--rarity-rare);
 	}
@@ -259,66 +237,83 @@ button {
 		--rarity: var(--rarity-legendary);
 	}
 	&:hover {
-		color: var(--theme-interact);
 		color: #000;
 		background-color: hsla(var(--theme-interact-hsl), 1);
 	}
-	&:hover::before, &:focus::before {
-		opacity: 1;
-	}
-	&::before {
-		display: block;
-		content: "";
-		--padding: 0em;
-		top: var(--padding);
-		left: var(--padding);
-		right: var(--padding);
-		bottom: var(--padding);
-		border-radius: var(--theme-border-radius);
-		position: absolute;
-		border-width: 0.15em;
-		border-style: solid;
-		border-image: linear-gradient(
-			to bottom,
-			hsla(var(--theme-interact-hsl), 1),
-			hsla(var(--theme-interact-hsl), 1) 7%,
-			hsla(var(--theme-interact-hsl), 0) 8%,
-			hsla(var(--theme-interact-hsl), 0) 12%,
-			hsla(var(--theme-interact-hsl), 0.25) 13%,
-			hsla(var(--theme-interact-hsl), 0.25) 87%,
-			hsla(var(--theme-interact-hsl), 0) 88%,
-			hsla(var(--theme-interact-hsl), 0) 92%,
-			var(--rarity) 93%,
-			var(--rarity)
-		) 1 100%;
-		border-image-slice: 1;
-		opacity: 0.33;
-		transition: opacity var(--time-state) linear,
-		border-width var(--time-active) linear;
-	}
-	
-	&.ui-button_loss:hover {
-		color: var(--base-red);
-	}
-	&.ui-button_hold {
-		padding-bottom: 0.5em;
-	}
-	&.ui-button_hold:hover:active::after {
-		animation: hold-progress var(--time-hold-short) linear;
-		content: "";
+}
+
+.mica_viewer {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	background-color: rgba(0,0,0,0.15);
+	box-shadow: 0 1rem 1rem rgba(0,0,0,0.25);
+	margin-bottom: 2em;
+	& .mica_header-strip {
 		display: flex;
-		position: absolute;
-		bottom: var(--theme-padding-thin);
-		left: var(--theme-padding-thin);
-		width: calc(100% - (var(--theme-padding-thin) * 2));
-		height: 0.25em;
-		background-color: var(--theme-active);
+		background-color: rgba(0,0,0,0.25);
+		padding: 1em;
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: row;
+		flex-wrap: wrap;
+		& .mica_header-anchor {
+			opacity: 0.8;
+			color: var(--theme-text);
+			text-decoration: none;
+			text-decoration-color: transparent;
+			transition: text-decoration-color var(--time-state) linear,
+				opacity var(--time-state) linear;
+			&:hover, &:focus {
+				opacity: 1;
+				text-decoration: underline;
+				text-underline-offset: 0.15em;
+				text-decoration-skip-ink: auto;
+				text-decoration-color: hsla(var(--theme-interact-hsl), 0.5);
+				transition: text-decoration-color var(--time-state) linear;
+			}
+			& h2 {
+				font-size: 1.3rem;
+				font-weight: normal;
+			}
+		}
 	}
-	&.ui-button_loss:hover:active::after {
-		animation-duration: var(--time-hold-long);
-		background-color: var(--base-red);
+	& .mica_nav-list {
+		list-style-type: none;
+		display: flex;
+		flex-direction: column;
+		min-height: 100%;
+		max-height: 100%;
+		scrollbar-width: none;
+		padding: 1em;
+		background-color: rgba(0,0,0,0.15);
+		&::-webkit-scrollbar {
+			display: none;
+		}
+		& button {
+			display: flex;
+			width: 9.5em;
+			overflow: hidden;
+			white-space: nowrap;
+			font-size: 0.9em;
+			&.active {
+				background-color: hsla(var(--theme-interact-hsl), 0.1);
+				&:hover {
+					background-color: hsla(var(--theme-interact-hsl), 1);
+				}
+			}
+			& span {
+				overflow: hidden;
+				word-wrap: break-word;
+				overflow-wrap: break-word;
+				text-overflow: ellipsis;
+			}
+		}
 	}
-	&.ui-button_held {
-		animation: pop-up var(--time-state) linear;
+	& .mica_main-content {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: no-wrap;
+		width: 100%;
 	}
 }

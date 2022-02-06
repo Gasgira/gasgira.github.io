@@ -2,16 +2,23 @@ import { Component } from 'component';
 import { db, Item } from 'db';
 import { HTML } from 'lib/HTML';
 import { inventory } from 'ui/inventory';
+import { urlParams } from 'urlParams';
 
 import './index.css';
 
 class CoreViewer extends Component {
 	constructor() {
 		super();
+
+		this.coreTypes = new Map([
+			['ArmorCore', []],
+			['WeaponCore', []],
+			['VehicleCore', []]
+		]);
 		
-		this.armorCores = [];
-		this.weaponCores = [];
-		this.vehicleCores = [];
+		// this.armorCores = [];
+		// this.weaponCores = [];
+		// this.vehicleCores = [];
 
 		this.cores = [];
 	}
@@ -19,45 +26,70 @@ class CoreViewer extends Component {
 		inventory.coreList.forEach(item => {
 			const core = new Core(item?.ItemPath);
 			this.cores.push(core);
-			if (item?.ItemType === 'ArmorCore') this.armorCores.push(core);
-			if (item?.ItemType === 'WeaponCore') this.weaponCores.push(core);
-			if (item?.ItemType === 'VehicleCore') this.vehicleCores.push(core);
+			// if (item?.ItemType === 'ArmorCore') this.armorCores.push(core);
+			// if (item?.ItemType === 'WeaponCore') this.weaponCores.push(core);
+			// if (item?.ItemType === 'VehicleCore') this.vehicleCores.push(core);
+			const type = item?.ItemType;
+			if (type && typeof type === 'string' && this.coreTypes.has(type))
+			{
+				this.coreTypes.get(type).push(core);
+			}
 		});
-		this.showArmorCores();
-		this.showCore(this.armorCores?.[0]);
+
+		const paramCoreType = urlParams.getSecionSetting('coreType');
+		if (paramCoreType && this.coreTypes.has(paramCoreType))
+		{
+			this.showCoreType(paramCoreType, true)
+			// console.log('ct init', paramCoreType);
+			const coreName = urlParams.getSecionSetting('coreName');
+			if (coreName)
+			{
+				// console.log('ct corename', coreName);
+				await this.initAllCores();
+				this.showCoreByName(coreName)
+			};
+		} else {
+			this.showCoreType('ArmorCore', true);
+			this.showCore(this.state?.coreType?.[0], true);
+		}
 		this.render();
 
-		this.initAllCores();
+		// this.initAllCores()
+		// 	.then(() => emitter.emit('CoreViewer.initAllCores'));
 	}
 
 	get defaultState() {
 		return {
-			coreType: this.armorCores
 		};
 	}
 
-	initAllCores() {
-		this.cores.forEach(core => core.init());
+	async initAllCores() {
+		// this.cores.forEach(core => core.init());
+		for (const core of this.cores)
+		{
+			await core.init()
+		}
 	}
 
 	render() {
 		return this.html`
-			<div class ="core-viewer_wrapper">
+			<div class ="core-viewer_wrapper mica_viewer">
 				<nav class ="core-viewer_nav"><ul>
-					<li><button class=${`core-tab${this.state?.coreType === this.armorCores ? ' active' : ''}`} onclick=${() => this.showArmorCores()}>Armor</button></li>
-					<li><button class=${`core-tab${this.state?.coreType === this.weaponCores ? ' active' : ''}`} onclick=${() => this.showWeaponCores()}>Weapons</button></li>
-					<li><button class=${`core-tab${this.state?.coreType === this.vehicleCores ? ' active' : ''}`} onclick=${() => this.showVehicleCores()}>Vehicles</button></li>
+					<li><button class=${`core-tab${this.state?.coreTypeName === 'ArmorCore' ? ' active' : ''}`} onclick=${() => this.showCoreType('ArmorCore')}>Armor</button></li>
+					<li><button class=${`core-tab${this.state?.coreTypeName === 'WeaponCore' ? ' active' : ''}`} onclick=${() => this.showCoreType('WeaponCore')}>Weapons</button></li>
+					<li><button class=${`core-tab${this.state?.coreTypeName === 'VehicleCore' ? ' active' : ''}`} onclick=${() => this.showCoreType('VehicleCore')}>Vehicles</button></li>
 				</ul></nav>
 				<nav class ="cores-list_nav"><ul>
 					${this.coreList()}
 				</ul></nav>
-				${this.state?.core?.render() ?? 'Choose a core'}
+				${this.state?.core?.render() ?? ''}
+				${{html: this.state?.core ? '' : '<div class="core-placeholder">Loading cores...</div>'}}
 			</div>
 		`;
 	}
   
 	coreList() {
-		return HTML.wire(this, ':list')`
+		return HTML.wire(this, ':coreList')`
 			${this.state.coreType.map(core => HTML.wire(core, ':nav')`<li><button
 				onclick=${() => this.showCore(core)}
 				class=${this.state?.core === core ? 'active' : null}
@@ -65,37 +97,41 @@ class CoreViewer extends Component {
 		`;
 	}
 
-	async showCore(core) {
+	showCore(core, skipParam = false) {
 		if (!core) return;
 		this.setState({core});
+
+		if (!skipParam)
+		{
+			urlParams.setSecionSetting('coreType', this.state?.coreTypeName ?? 'unk');
+			urlParams.setSecionSetting('coreName', core?.name ?? 'unk');
+		}
+		// console.warn('c', urlParams.getSecionSetting('coreName'))
 	}
 
-	showArmorCores() {
-		// console.info(`[skimmer] showArmorCores`);
-		this.state.coreType = this.armorCores;
-		this.armorCores.forEach(async core => {
+	showCoreByName(coreName) {
+		if (!coreName || typeof coreName !== 'string' || !this.state.coreType) return;
+		for (const core of this.state.coreType)
+		{
+			if (core && core.name && core.name === coreName)
+			{
+				this.setState({core});
+				break;
+			}
+		}
+	}
+
+	showCoreType(type, skipParam = false) {
+		if (!type || !this.coreTypes.has(type)) return;
+		const coreType = this.coreTypes.get(type);
+		this.state.coreType = coreType;
+		this.state.coreTypeName = type;
+		coreType.forEach(async core => {
 			await core.init();
 			this.coreList();
 		});
-	}
 
-	showWeaponCores() {
-		console.info(`[skimmer] showWeaponCores`);
-		this.state.coreType = this.weaponCores;
-		this.weaponCores.forEach(async core => {
-			await core.init();
-			this.coreList();
-		});
-		// this.setState({coreType: this.weaponCores})
-	}
-
-	showVehicleCores() {
-		console.info(`[skimmer] showVehicleCores`);
-		this.state.coreType = this.vehicleCores;
-		this.vehicleCores.forEach(async core => {
-			await core.init();
-			this.coreList();
-		});
+		// if (!skipParam) urlParams.setSecionSetting('coreType', type);
 	}
 }
 
@@ -121,11 +157,15 @@ class Core extends Component {
 
 		const item = this.item.data;
 
+		const paramSocketName = urlParams.getSecionSetting('coreSocket');
+
 		for (const socketName in item) {
+			let socket;
 			if (item[socketName]?.OptionPaths?.length)
 			{
 				const OptionPaths = item[socketName]?.OptionPaths;
-				this.sockets.push(new Socket({OptionPaths, socketName}));
+				socket = new Socket({OptionPaths, socketName});
+				this.sockets.push(socket);
 			} else if (socketName === 'Helmets' && item[socketName]?.Options?.length) {
 				const attachmentPaths = new Set();
 				const OptionPaths = item[socketName]?.Options.map(option => {
@@ -133,15 +173,22 @@ class Core extends Component {
 					return option.HelmetPath;
 				});
 
-				const socket = new Socket({OptionPaths, socketName});
+				socket = new Socket({OptionPaths, socketName});
 				this.sockets.push(socket);
-				this.state.socket = socket;
+				if (!paramSocketName) this.state.socket = socket;
 
-				this.sockets.push(new Socket({
-					OptionPaths: [...attachmentPaths],
-					socketName: 'HelmetAttachments'
-				}));
+				if (attachmentPaths.size)
+				{
+					const attachmentSocket = new Socket({
+						OptionPaths: [...attachmentPaths],
+						socketName: 'HelmetAttachments'
+					});
+					this.sockets.push(attachmentSocket);
+					if (paramSocketName && paramSocketName === 'HelmetAttachments') this.state.socket = attachmentSocket;
+				}
 			}
+
+			if (paramSocketName && socketName === paramSocketName) this.state.socket = socket;
 		}
 		this.render();
 
@@ -152,9 +199,9 @@ class Core extends Component {
 		if (!this.core) await this.init();
 		return this.html`
 			<div
-				class ="core_wrapper"
+				class ="core_wrapper mica_main-content"
 			>
-				<ul class="core-socket-list">
+				<ul class="core-socket-list mica_nav-list">
 					<li class="core-socket-title">${this?.item?.data?.CommonData?.Title ?? 'Core!'}</li>
 					${this.sockets.map(socket => HTML.wire(socket)`
 						<li><button
@@ -175,6 +222,7 @@ class Core extends Component {
 			return;
 		}
 		this.setState({socket});
+		urlParams.setSecionSetting('coreSocket', socket.socketName ?? 'unk');
 	}
 }
 

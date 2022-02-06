@@ -1,6 +1,7 @@
 import { HTML } from 'lib/HTML';
+import { emitter } from 'eventEmitter';
 import { headerNav } from 'ui/nav';
-import { db } from 'db';
+import { db, itemPanel } from 'db';
 import { calendar } from 'ui/calendar';
 import { coreViewer } from 'ui/cores';
 import { inventory } from 'ui/inventory';
@@ -32,8 +33,9 @@ class App {
 		// 	.then(() => this.parseUri());
 		await db.init();
 		await inventory.init();
-		await coreViewer.init();
-		await calendar.init();
+		coreViewer.init()
+			// .then(() => this.parseUri());
+		calendar.init();
 		this.render();
 		this.parseUri();
 		
@@ -43,7 +45,10 @@ class App {
 		});
 		window.addEventListener('hashchange', (event) => {
 			const hash = window.location.hash?.substring?.(1);
-			if (hash && typeof hash === 'string' && hash.length > 6 && hash.substring(hash.length -5) === '.json') db.showItemPanelByPath(hash, true);
+			if (hash && typeof hash === 'string' && hash.length > 6 && hash.substring(hash.length -5) === '.json')
+			{
+				db.showItemPanelByPath(hash, true);
+			}
 		});
 	}
 
@@ -58,7 +63,7 @@ class App {
 
 	parseUri() {
 		const hash = window.location.hash?.substring?.(1);
-		if (hash && typeof hash === 'string') {
+		if (hash && typeof hash === 'string' && hash.substring(hash.length-5, hash.length) === '.json') {
 			try {
 				db.showItemPanelByPath(hash, true);
 			} catch (error) {

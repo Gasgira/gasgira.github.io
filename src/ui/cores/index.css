@@ -1,10 +1,4 @@
 .core-viewer_wrapper {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	background-color: rgba(0,0,0,0.15);
-	box-shadow: 0 1rem 1rem rgba(0,0,0,0.25);
-	margin-bottom: 6em;
 	& .core-viewer_nav ul {
 		list-style-type: none;
 		display: flex;
@@ -23,18 +17,31 @@
 	}
 	& nav button {
 		margin-top: 0;
-		&::before {
-			border-width: 0;
-			&.active {
-				border-top-width: 0.2em;
+		border-top: 0.2em solid transparent;
+		&.active {
+			border-top: 0.2em solid hsla(var(--theme-interact-hsl), 0.5);
+			border-radius: 0 0 var(--theme-border-radius) var(--theme-border-radius);
+			&:hover {
+				background-color: hsla(var(--theme-interact-hsl), 0.1);
+				color: var(--theme-text);
 			}
 		}
+	}
+	& .core-placeholder {
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+		align-content: center;
+		opacity: 0.66;
+		pointer-events: none;
+		user-select: none;
+		text-transform: uppercase;
+		min-height: 8rem;
 	}
 }
 
 .core_wrapper {
-	display: flex;
-	flex-direction: row;
 	& .core-socket-placeholder {
 		display: flex;
 		width: 100%;
@@ -46,15 +53,7 @@
 		user-select: none;
 	}
 	& .core-socket-list {
-		list-style-type: none;
-		display: flex;
-		flex-direction: column;
-		flex-wrap: wrap;
-		justify-content: left;
-		align-items: center;
-		align-content: flex-start;
-		background-color: rgba(0,0,0,0.15);
-		padding: 1em;
+		animation: fade-in var(--time-active) linear;
 		& button {
 			font-size: 1em;
 			width: 9.5em;
