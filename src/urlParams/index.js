@@ -33,8 +33,10 @@ class Params extends Component {
 	setSecionSetting(name, value) {
 		try {
 			if (typeof name !== 'string' || typeof value !== 'string') return;
+			const currentSetting = this.getSecionSetting(name);
+			if (currentSetting && currentSetting === value) return;
 			this.params.set(encodeURIComponent(name), encodeURIComponent(value));
-			// console.log(`params`, this.params.toString());
+			console.log(`params`, this.params.toString());
 			history.replaceState({}, `Skimmer`, `?${this.params.toString()}`);
 		} catch (error) {
 			console.error(`[skimmer] setSecionSetting`, error);

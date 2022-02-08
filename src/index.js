@@ -34,10 +34,10 @@ class App {
 		await db.init();
 		await inventory.init();
 		coreViewer.init()
-			// .then(() => this.parseUri());
-		calendar.init();
+		calendar.init()
+			.then(() => this.parseUri());
 		this.render();
-		this.parseUri();
+		// this.parseUri();
 		
 		window.addEventListener('popstate', (event) => {
 			console.log('popstate', event.state);
@@ -69,12 +69,17 @@ class App {
 			} catch (error) {
 				console.error(`[skimmer][parseUri]`, error)
 			}
+		} else if (hash && typeof hash === 'string') {
+			console.warn('id hash', `#${hash}`)
+			const el = document.querySelector(`#${hash}`);
+			if (el)
+			{
+				console.warn('scroll',el)
+				el.scrollIntoView();
+			}
 		}
 	}
 }
 
 const app = new App();
 app.init();
-
-// TODO accept #path urls to open in item panel
-

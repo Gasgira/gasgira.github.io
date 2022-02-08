@@ -21,6 +21,7 @@ class Calendar extends Component {
 				rewardTrack.addDates(season?.StartDate?.ISO8601Date, season?.EndDate?.ISO8601Date);
 
 				this.events.push({
+					type: 'operation',
 					startDate: season?.StartDate?.ISO8601Date,
 					endDate: season?.EndDate?.ISO8601Date,
 					rewardTrack
@@ -42,6 +43,7 @@ class Calendar extends Component {
 					rewardTrack.addDates(ritual?.StartDate?.ISO8601Date, ritual?.EndDate?.ISO8601Date);
 	
 					this.events.push({
+						type: 'ritual',
 						startDate: ritual?.StartDate?.ISO8601Date,
 						endDate: ritual?.EndDate?.ISO8601Date,
 						rewardTrack
@@ -52,6 +54,7 @@ class Calendar extends Component {
 				rewardTrack.addDates(ritual?.StartDate?.ISO8601Date, ritual?.EndDate?.ISO8601Date);
 
 				this.events.push({
+					type: 'ritual',
 					startDate: ritual?.StartDate?.ISO8601Date,
 					endDate: ritual?.EndDate?.ISO8601Date,
 					rewardTrack
@@ -127,11 +130,16 @@ class Calendar extends Component {
 					endDate.setDate(endDate.getDate() - 1);
 
 					const today = new Date();
-					if (startDate <= today && endDate >= today) active = true;
+					if (startDate <= today && new Date(event.endDate) >= today) active = true;
 					return HTML.wire(event)`
-						<li class="timeline-event">
+						<li
+							class=${`timeline-event ${event?.type ?? 'ritual'}${active ? ' active' : ''}`}
+						>
+							<div
+								class="event-bg"
+								style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(event.rewardTrack?.data?.SummaryImagePath)})`}}
+							></div>
 							<button
-								class=${active ? 'active' : ''}
 								onclick=${() => this.showRewardTrack(event.rewardTrack)}
 							>
 								<div class="date-range">

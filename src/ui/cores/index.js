@@ -105,6 +105,12 @@ class CoreViewer extends Component {
 		{
 			urlParams.setSecionSetting('coreType', this.state?.coreTypeName ?? 'unk');
 			urlParams.setSecionSetting('coreName', core?.name ?? 'unk');
+			if (core?.state?.socket)
+			{
+				urlParams.setSecionSetting('coreSocket', core?.state?.socket?.socketName ?? 'unk');
+			} else {
+				urlParams.deleteSecionSetting('coreSocket');
+			}
 		}
 		// console.warn('c', urlParams.getSecionSetting('coreName'))
 	}
