@@ -44,68 +44,90 @@
 }
 
 .timeline_wrapper {
+	width: 100%;
 	display: flex;
 	flex-direction: row;
-	flex-wrap: wrap;
-	width: 100%;
-	padding: 0.5em;
-	list-style-type: none;
 	justify-content: flex-start;
-	align-items: center;
-	align-content: center;
-	gap: 0.2rem;
-	& .timeline-event {
-		position: relative;
-		border-radius: var(--theme-border-radius);
-		overflow: hidden;
-		& .event-bg {
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background-size: cover;
-			background-repeat: no-repeat;
-			background-position: center 35%;
-			opacity: 0.15;
-			transition: opacity var(--time-active) linear;
-			border: 0.15rem solid var(--rarity-epic);
-			pointer-events: none;
-			user-select: none;
-		}
-		&:hover .event-bg {
-			opacity: 0.5;
-		}
-		&.active {
+	align-items: flex-start;
+	align-content: flex-start;
+	& .timeline_list {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		width: 100%;
+		padding: 0.5em;
+		list-style-type: none;
+		justify-content: flex-start;
+		align-items: center;
+		align-content: center;
+		gap: 0.2rem;
+		& .timeline-event {
+			position: relative;
+			border-radius: var(--theme-border-radius);
+			overflow: hidden;
 			& .event-bg {
-				opacity: 0.6;
-				border: 0.15rem solid var(--rarity-event);
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center 35%;
+				opacity: 0.15;
+				transition: opacity var(--time-active) linear;
+				border: 0.15rem solid var(--rarity-epic);
+				pointer-events: none;
+				user-select: none;
 			}
 			&:hover .event-bg {
-				opacity: 0.8;
+				opacity: 0.5;
+			}
+			&.active {
+				& .event-bg {
+					opacity: 0.8;
+					border: 0.15rem solid var(--rarity-event);
+				}
+				&:hover .event-bg {
+					opacity: 1;
+				}
+			}
+			&.operation .event-bg {
+				border: 0.15rem solid var(--rarity-legendary);
+			}
+			& button {
+				display: flex;
+				position: relative;
+				flex-direction: column;
+				flex-wrap: wrap;
+				background-color: rgba(0,0,0,0.25);
+				padding: 0.75em;
+				margin: 0;
+				font-size: 1em;
+				height: 10rem;
+				width: 10rem;
+				justify-content: space-between;
+				align-items: flex-start;
+				align-content: flex-start;
+				text-shadow: 0.1rem 0.1rem 0.2rem #000, 0.1rem 0.1rem 0.2rem #000;
+				text-align: left;
+				&:hover {
+					color: currentColor;
+				}
+				& .upcoming {
+					opacity: 0.5;
+				}
 			}
 		}
-		&.operation .event-bg {
-			border: 0.15rem solid var(--rarity-legendary);
-		}
+	}
+	& .timeline_list.rituals {
+		flex-grow: 2;
+	}
+	& .timeline_list.operations {
+		width: 10rem;
 		& button {
-			display: flex;
-			position: relative;
-			flex-direction: column;
-			flex-wrap: wrap;
-			background-color: rgba(0,0,0,0.25);
-			padding: 0.75em;
-			margin: 0;
-			font-size: 1em;
-			height: 10rem;
+			height: 20rem;
 			width: 10rem;
-			justify-content: space-between;
-			align-items: flex-start;
-			align-content: flex-start;
-			text-shadow: 0.1rem 0.1rem 0.2rem #000, 0.1rem 0.1rem 0.2rem #000;
-			&:hover {
-				color: currentColor;
-			}
 		}
 	}
 }

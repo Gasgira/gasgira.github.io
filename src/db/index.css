@@ -15,6 +15,10 @@ button.dbItemIcon {
 	text-shadow: 0.1rem 0.1rem 0.2rem #000;
 	animation: fade-in var(--time-state) linear;
 	position: relative;
+	&.ArmorVisor {
+		background-size: 160%;
+		background-position: center 60%;
+	}
 	&::before {
 		display: block;
 		content: "";

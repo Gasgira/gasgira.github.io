@@ -1,5 +1,6 @@
 import { Component } from 'component';
 import { db, Item } from 'db';
+import { emitter } from 'eventEmitter';
 import { HTML } from 'lib/HTML';
 import { inventory } from 'ui/inventory';
 import { urlParams } from 'urlParams';
@@ -21,6 +22,8 @@ class CoreViewer extends Component {
 		// this.vehicleCores = [];
 
 		this.cores = [];
+
+		emitter.on('showSocket', () => this.updateParams());
 	}
 	async init() {
 		inventory.coreList.forEach(item => {
@@ -97,20 +100,24 @@ class CoreViewer extends Component {
 		`;
 	}
 
+	updateParams() {
+		urlParams.setSecionSetting('coreType', this.state?.coreTypeName ?? 'unk');
+		urlParams.setSecionSetting('coreName', this.state?.core?.name ?? 'unk');
+		if (this.state?.core?.state?.socket)
+		{
+			urlParams.setSecionSetting('coreSocket', this.state?.core?.state?.socket?.socketName ?? 'unk');
+		} else {
+			urlParams.deleteSecionSetting('coreSocket');
+		}
+	}
+
 	showCore(core, skipParam = false) {
 		if (!core) return;
 		this.setState({core});
 
 		if (!skipParam)
 		{
-			urlParams.setSecionSetting('coreType', this.state?.coreTypeName ?? 'unk');
-			urlParams.setSecionSetting('coreName', core?.name ?? 'unk');
-			if (core?.state?.socket)
-			{
-				urlParams.setSecionSetting('coreSocket', core?.state?.socket?.socketName ?? 'unk');
-			} else {
-				urlParams.deleteSecionSetting('coreSocket');
-			}
+			this.updateParams();
 		}
 		// console.warn('c', urlParams.getSecionSetting('coreName'))
 	}
@@ -136,8 +143,6 @@ class CoreViewer extends Component {
 			await core.init();
 			this.coreList();
 		});
-
-		// if (!skipParam) urlParams.setSecionSetting('coreType', type);
 	}
 }
 
@@ -208,7 +213,7 @@ class Core extends Component {
 				class ="core_wrapper mica_main-content"
 			>
 				<ul class="core-socket-list mica_nav-list">
-					<li class="core-socket-title">${this?.item?.data?.CommonData?.Title ?? 'Core!'}</li>
+					<li class="core-socket-title">${this?.item?.data?.CommonData?.Title ?? 'Loading core...'}</li>
 					${this.sockets.map(socket => HTML.wire(socket)`
 						<li><button
 							onclick=${() => this.showSocket(socket)}
@@ -225,10 +230,11 @@ class Core extends Component {
 	showSocket(socket) {
 		if (this.state?.socket === socket) {
 			this.setState({socket: undefined});
+			emitter.emit('showSocket');
 			return;
 		}
 		this.setState({socket});
-		urlParams.setSecionSetting('coreSocket', socket.socketName ?? 'unk');
+		emitter.emit('showSocket');
 	}
 }
 

@@ -70,11 +70,9 @@ class App {
 				console.error(`[skimmer][parseUri]`, error)
 			}
 		} else if (hash && typeof hash === 'string') {
-			console.warn('id hash', `#${hash}`)
 			const el = document.querySelector(`#${hash}`);
 			if (el)
 			{
-				console.warn('scroll',el)
 				el.scrollIntoView();
 			}
 		}

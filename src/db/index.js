@@ -236,11 +236,11 @@ export class Item extends Component {
 		return HTML.wire(this, `:${id ?? 'icon'}`)`
 			<button
 				class=${
-					`dbItem dbItemIcon${
+					`dbItem dbItemIcon ${this?.data?.CommonData?.Type ?? 'defaultType'}${
 						this?.data?.CommonData?.Quality ? ` ${this?.data?.CommonData?.Quality?.toLowerCase?.() ?? ''}` : ''
 						}${
 						this?.data?.CommonData?.Type === 'SpartanBackdropImage' ? ' invert-hover' : ''
-					}`
+						}`
 				}
 				onclick=${() => this.showItemPanel()}
 				style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(this.imagePath)})`}}

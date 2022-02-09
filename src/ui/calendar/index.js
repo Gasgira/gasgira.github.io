@@ -10,6 +10,7 @@ class Calendar extends Component {
 		const calendarPath = 'Calendars/Seasons/SeasonCalendar.json';
 		this.data = await db.getJSON(calendarPath);
 		this.events = [];
+		this.operations = [];
 
 		this.data?.Seasons?.forEach(async season => {
 			const path = season.OperationTrackPath;
@@ -20,7 +21,7 @@ class Calendar extends Component {
 				this.rewardTracks.set(`${path}`, rewardTrack);
 				rewardTrack.addDates(season?.StartDate?.ISO8601Date, season?.EndDate?.ISO8601Date);
 
-				this.events.push({
+				this.operations.push({
 					type: 'operation',
 					startDate: season?.StartDate?.ISO8601Date,
 					endDate: season?.EndDate?.ISO8601Date,
@@ -29,13 +30,23 @@ class Calendar extends Component {
 			}
 		});
 		const launchDate = new Date('2021-11-15T08:00:00');
+		const today = new Date();
+		let upcoming = false;
 		this.data?.Events?.forEach(ritual => {
 			const path = ritual?.RewardTrackPath;
 			// console.log(path)
 			if (!path) return;
+			const startDate = new Date(ritual?.StartDate?.ISO8601Date);
+
+			let isNext = false;
+			if (startDate > today && !upcoming)
+			{
+				isNext = true;
+				upcoming = true;
+			}
+
 			if (!this.rewardTracks.has(path))
 			{
-				const startDate = new Date(ritual?.StartDate?.ISO8601Date);
 				if (!(startDate < launchDate))
 				{
 					const rewardTrack = new RewardTrack(path, false);
@@ -46,7 +57,8 @@ class Calendar extends Component {
 						type: 'ritual',
 						startDate: ritual?.StartDate?.ISO8601Date,
 						endDate: ritual?.EndDate?.ISO8601Date,
-						rewardTrack
+						rewardTrack,
+						isNext
 					});
 				}
 			} else {
@@ -57,7 +69,8 @@ class Calendar extends Component {
 					type: 'ritual',
 					startDate: ritual?.StartDate?.ISO8601Date,
 					endDate: ritual?.EndDate?.ISO8601Date,
-					rewardTrack
+					rewardTrack,
+					isNext
 				});
 			}
 		});
@@ -117,41 +130,97 @@ class Calendar extends Component {
 		`;
 	}
 
+	daysLeftInSeason() {
+		try {
+			const operation = this?.operations?.[0];
+			if (operation)
+			{
+				const today = new Date();
+				const endDate = new Date(operation?.endDate);
+				const dayMS = 24 * 60 * 60 * 1000;
+
+				const days = Math.round(Math.abs((today - endDate) / dayMS));
+				return days;
+			}
+		} catch (error) {
+			console.error('daysLeftInSeason', error);
+			return 0
+		}
+	}
+
 	calendar() {
 		return HTML.wire(this, ':calendar')`
-			<ul class="timeline_wrapper">
-				${{html: this?.events ? '' : '<div class="timeline-placeholder">Loading timeline...</div>'}}
-				${this?.events?.map(event => {
-					let active = false;
-					let startDate = new Date(event.startDate);
-					const launchDate = new Date('2021-11-15T08:00:00');
-					if (startDate < launchDate) startDate = launchDate;
-					const endDate = new Date(event.endDate);
-					endDate.setDate(endDate.getDate() - 1);
+		<div class="reward-track_wrapper">
+			<span>Season 1 // ${this.daysLeftInSeason()} days remaining</span>
+			<div class="timeline_wrapper">
+				<ul class="timeline_list operations">
+					${this?.operations?.map(event => {
+						let active = false;
+						let startDate = new Date(event.startDate);
+						const launchDate = new Date('2021-11-15T08:00:00');
+						if (startDate < launchDate) startDate = launchDate;
+						const endDate = new Date(event.endDate);
+						endDate.setDate(endDate.getDate() - 1);
 
-					const today = new Date();
-					if (startDate <= today && new Date(event.endDate) >= today) active = true;
-					return HTML.wire(event)`
-						<li
-							class=${`timeline-event ${event?.type ?? 'ritual'}${active ? ' active' : ''}`}
-						>
-							<div
-								class="event-bg"
-								style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(event.rewardTrack?.data?.SummaryImagePath)})`}}
-							></div>
-							<button
-								onclick=${() => this.showRewardTrack(event.rewardTrack)}
+						const today = new Date();
+						if (startDate <= today && new Date(event.endDate) >= today) active = true;
+						return HTML.wire(event)`
+							<li
+								class=${`timeline-event ${event?.type ?? 'ritual'}${active ? ' active' : ''}`}
 							>
-								<div class="date-range">
-								${startDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
-								${' - '}${endDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
-								</div>
-								<div class="event-name">${event.rewardTrack.name}</div>
-							</button>
-						</li>
-					`;
-				}) ?? 'nop'}
-			</ul>
+								<div
+									class="event-bg"
+									style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(event.rewardTrack?.data?.SummaryImagePath)})`}}
+								></div>
+								<button
+									onclick=${() => this.showRewardTrack(event.rewardTrack)}
+								>
+									<span class="date-range">
+									${startDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+									${' - '}${endDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+									</span>
+									<span class="event-name">${event.rewardTrack.name}</span>
+								</button>
+							</li>
+						`;
+					}) ?? 'Could not load events...'}
+				</ul>
+				<ul class="timeline_list rituals">
+					${{html: this?.events ? '' : '<div class="timeline-placeholder">Loading timeline...</div>'}}
+					${this?.events?.map(event => {
+						let active = false;
+						let startDate = new Date(event.startDate);
+						const launchDate = new Date('2021-11-15T08:00:00');
+						if (startDate < launchDate) startDate = launchDate;
+						const endDate = new Date(event.endDate);
+						endDate.setDate(endDate.getDate() - 1);
+
+						const today = new Date();
+						if (startDate <= today && new Date(event.endDate) >= today) active = true;
+						return HTML.wire(event)`
+							<li
+								class=${`timeline-event ${event?.type ?? 'ritual'}${active ? ' active' : ''}`}
+							>
+								<div
+									class="event-bg"
+									style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(event.rewardTrack?.data?.SummaryImagePath)})`}}
+								></div>
+								<button
+									onclick=${() => this.showRewardTrack(event.rewardTrack)}
+								>
+									<span class="date-range">
+										${startDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+										${' - '}${endDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+										<br><span class="upcoming">${event.isNext ? 'Up Next' : ''}</span>
+									</span>
+									<span class="event-name">${event.rewardTrack.name}</span>
+								</button>
+							</li>
+						`;
+					}) ?? 'Could not load events...'}
+				</ul>
+			</div>
+		</div>
 		`;
 	}
 
