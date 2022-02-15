@@ -16,7 +16,7 @@ button.dbItemIcon {
 	animation: fade-in var(--time-state) linear;
 	position: relative;
 	&.ArmorVisor {
-		background-size: 160%;
+		background-size: 130%;
 		background-position: center 60%;
 	}
 	&::before {
@@ -112,6 +112,22 @@ button.dbItemIcon {
 			right: 0.1rem;
 			--typeLength: 1.7rem;
 		}
+	}
+	& .season-icon {
+		--seasonLength: 1rem;
+		width: var(--seasonLength);
+		height: var(--seasonLength);
+		position: absolute;
+		top: 0.2rem;
+		left: 0.2rem;
+		opacity: 1;
+		background-color: #808080;
+		mask-size: contain;
+		mask-repeat: no-repeat;
+		mask-position: center center;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center center;
 	}
 }
 

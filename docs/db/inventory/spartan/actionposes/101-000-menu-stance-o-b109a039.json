@@ -4,7 +4,7 @@
 	},
 	"CommonData": {
 		"Id": "101-000-menu-stance-o-b109a039",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Patrol Formation",
 		"Description": "There is nothing more dangerous than a Spartan who appears relaxed.",
 		"FeatureFlag": true,

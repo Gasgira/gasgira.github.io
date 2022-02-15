@@ -37,8 +37,10 @@ class Calendar extends Component {
 			// console.log(path)
 			if (!path) return;
 			const startDate = new Date(ritual?.StartDate?.ISO8601Date);
+			const endDate = new Date(ritual?.EndDate?.ISO8601Date);
 
 			let isNext = false;
+			let isPast = today > endDate ? true : false;
 			if (startDate > today && !upcoming)
 			{
 				isNext = true;
@@ -58,7 +60,8 @@ class Calendar extends Component {
 						startDate: ritual?.StartDate?.ISO8601Date,
 						endDate: ritual?.EndDate?.ISO8601Date,
 						rewardTrack,
-						isNext
+						isNext,
+						isPast
 					});
 				}
 			} else {
@@ -70,7 +73,8 @@ class Calendar extends Component {
 					startDate: ritual?.StartDate?.ISO8601Date,
 					endDate: ritual?.EndDate?.ISO8601Date,
 					rewardTrack,
-					isNext
+					isNext,
+					isPast
 				});
 			}
 		});
@@ -202,7 +206,7 @@ class Calendar extends Component {
 								class=${`timeline-event ${event?.type ?? 'ritual'}${active ? ' active' : ''}`}
 							>
 								<div
-									class="event-bg"
+									class=${`event-bg${event.isPast ? ' past' : ''}`}
 									style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(event.rewardTrack?.data?.SummaryImagePath)})`}}
 								></div>
 								<button

@@ -18,7 +18,7 @@
 	],
 	"CommonData": {
 		"Id": "008-001-olympus-9767acbe",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "UA/Gordius",
 		"Description": "Supplemental deltoid/shoulder armor.",
 		"FeatureFlag": true,
@@ -87,10 +87,6 @@
 			"z": 0
 		},
 		"ParentPaths": [
-			{
-				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
-				"Type": "ArmorTheme"
-			},
 			{
 				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
 				"Type": "ArmorTheme"

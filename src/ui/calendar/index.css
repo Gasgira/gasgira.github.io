@@ -74,11 +74,15 @@
 				background-size: cover;
 				background-repeat: no-repeat;
 				background-position: center 35%;
-				opacity: 0.15;
+				opacity: 0.33;
 				transition: opacity var(--time-active) linear;
 				border: 0.15rem solid var(--rarity-epic);
 				pointer-events: none;
 				user-select: none;
+				&.past {
+					filter: grayscale(80%);
+					opacity: 0.15;
+				}
 			}
 			&:hover .event-bg {
 				opacity: 0.5;
@@ -126,7 +130,7 @@
 	& .timeline_list.operations {
 		width: 10rem;
 		& button {
-			height: 20rem;
+			height: 20.2rem;
 			width: 10rem;
 		}
 	}

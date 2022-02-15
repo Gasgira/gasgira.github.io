@@ -4,7 +4,7 @@
 	],
 	"CommonData": {
 		"Id": "015-000-perfect-circl-24878e67",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Perfect Circle",
 		"Description": "Don't let the power go to your head.",
 		"FeatureFlag": false,
@@ -53,7 +53,7 @@
 			"FileName": "015-000-perfect-circl-24878e67-SM.png"
 		},
 		"Quality": "Epic",
-		"ManufacturerId": 12,
+		"ManufacturerId": 6,
 		"Type": "ArmorFx",
 		"ParentTheme": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
 		"RewardTrack": "",
@@ -79,14 +79,6 @@
 			},
 			{
 				"Path": "Inventory/Armor/Themes/007-001-reach-2564121f.json",
-				"Type": "ArmorTheme"
-			},
-			{
-				"Path": "Inventory/Armor/Themes/007-001-samurai-55badb14.json",
-				"Type": "ArmorTheme"
-			},
-			{
-				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
 				"Type": "ArmorTheme"
 			},
 			{

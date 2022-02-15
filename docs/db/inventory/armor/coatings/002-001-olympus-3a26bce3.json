@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "002-001-olympus-3a26bce3",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Midnight Frost",
 		"Description": "The climate control system of the ring has its own peculiar logic.",
 		"FeatureFlag": true,
@@ -56,7 +56,7 @@
 			"FolderPath": "Progression/Inventory/Armor/Coatings",
 			"FileName": "002-001-olympus-3a26bce3-SM.png"
 		},
-		"Quality": "Legendary",
+		"Quality": "Epic",
 		"ManufacturerId": 23,
 		"Type": "ArmorCoating",
 		"ParentTheme": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
@@ -77,10 +77,6 @@
 			"z": 0
 		},
 		"ParentPaths": [
-			{
-				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
-				"Type": "ArmorTheme"
-			},
 			{
 				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
 				"Type": "ArmorTheme"

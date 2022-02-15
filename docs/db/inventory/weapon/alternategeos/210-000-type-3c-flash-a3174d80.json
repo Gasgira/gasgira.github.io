@@ -18,7 +18,7 @@
 	],
 	"CommonData": {
 		"Id": "210-000-type-3c-flash-a3174d80",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Type 3C Flash Hider",
 		"Description": "Heavy-duty barrel attachment.",
 		"FeatureFlag": false,
@@ -87,10 +87,6 @@
 			"z": 0
 		},
 		"ParentPaths": [
-			{
-				"Path": "Inventory/Weapon/Themes/207-202-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
 			{
 				"Path": "Inventory/Weapon/Themes/207-202-olympus-aa30213b.json",
 				"Type": "WeaponTheme"

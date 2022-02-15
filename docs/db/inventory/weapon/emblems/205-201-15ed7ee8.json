@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "205-201-15ed7ee8",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Driving Offensively",
 		"Description": "Don't let a little cliff stop you!",
 		"FeatureFlag": true,
@@ -77,38 +77,6 @@
 			"z": 0
 		},
 		"ParentPaths": [
-			{
-				"Path": "Inventory/Weapon/Themes/207-200-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-201-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-202-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-203-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-204-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-205-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-206-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-207-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
 			{
 				"Path": "Inventory/Weapon/Themes/207-200-olympus-aa30213b.json",
 				"Type": "WeaponTheme"

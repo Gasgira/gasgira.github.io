@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "013-001-37d15c60",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Wrath",
 		"Description": "Every detail carved with cold fury.",
 		"FeatureFlag": true,
@@ -88,14 +88,6 @@
 			{
 				"Path": "Inventory/Armor/Themes/007-001-samurai-55badb14.json",
 				"Type": "ArmorTheme"
-			},
-			{
-				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
-				"Type": "ArmorTheme"
-			},
-			{
-				"Path": "Inventory/Armor/Themes/007-001-samurai-55badb14.json",
-				"Type": "ArmorTheme"
 			}
 		],
 		"SortingMetadata": {
@@ -109,20 +101,20 @@
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-0f644de9.json"
 		},
 		{
-			"ConfigurationId": -1490538315,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-af628c41.json"
-		},
-		{
-			"ConfigurationId": -809699482,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-d9c135d6.json"
+			"ConfigurationId": 1001724940,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-246a8ef0.json"
 		},
 		{
 			"ConfigurationId": -1897428325,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-8b52a92e.json"
 		},
 		{
-			"ConfigurationId": 1001724940,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-246a8ef0.json"
+			"ConfigurationId": -1490538315,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-af628c41.json"
+		},
+		{
+			"ConfigurationId": -809699482,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-d9c135d6.json"
 		}
 	]
 }

@@ -18,7 +18,7 @@
 	],
 	"CommonData": {
 		"Id": "210-000-m90-shroud-d8c09977",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "M90 Shroud",
 		"Description": "Marketed towards the police and self-defense markets.",
 		"FeatureFlag": false,
@@ -87,10 +87,6 @@
 			"z": 0
 		},
 		"ParentPaths": [
-			{
-				"Path": "Inventory/Weapon/Themes/207-200-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
 			{
 				"Path": "Inventory/Weapon/Themes/207-200-olympus-aa30213b.json",
 				"Type": "WeaponTheme"

@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "001-001-olympus-04c91602",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "UA/Malachit Plate",
 		"Description": "The defining standard in assault up-armor plating.",
 		"FeatureFlag": true,
@@ -83,10 +83,6 @@
 			"z": 0
 		},
 		"ParentPaths": [
-			{
-				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
-				"Type": "ArmorTheme"
-			},
 			{
 				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
 				"Type": "ArmorTheme"

@@ -81,7 +81,7 @@ class Database {
 			['ArmorCore', 'Core, Armor'],
 			['SpartanActionPose', 'Stance'],
 			['SpartanBackdropImage', 'Backdrop'],
-			['SpartanEmblem', 'Emblem, Player'],
+			['SpartanEmblem', 'Emblem, Nameplate'],
 			['WeaponCharm', 'Weapon Charm'],
 			['WeaponCoating', 'Coating, Weapon'],
 			['WeaponDeathFx', 'Weapon Death Effect'],
@@ -178,10 +178,10 @@ export class Item extends Component {
 
 	get seasonNumber() {
 		const season = this?.data?.CommonData?.Season;
-		if (!season || typeof season !== 'string') return 'default';
+		if (!season || typeof season !== 'string') return '0';
 		const split = season.split(' ');
 		if (split && split?.[1]) return parseInt(split[1]);
-		return 'other';
+		return '0';
 	}
 
 	async getName() {
@@ -247,6 +247,11 @@ export class Item extends Component {
 			>
 				<span>${this.name ?? '???'}</span>
 				${itemTypeIcon ? this.renderItemTypeIcon() : ''}
+				${this.seasonNumber > 1 ? HTML.wire(this, ':seasonIcon')`<div
+						class="season-icon"
+						style=${{webkitMaskImage: `url(seasons.svg#${this.seasonNumber ?? 'default'})`}}
+					></div>` : ''
+				}
 			</button>
 		`;
 	}

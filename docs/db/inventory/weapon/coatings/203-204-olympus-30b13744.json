@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "203-204-olympus-30b13744",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Setting Sun",
 		"Description": "Cast your gaze upon the horizon at Golden Hour.",
 		"FeatureFlag": true,
@@ -77,10 +77,6 @@
 			"z": 0
 		},
 		"ParentPaths": [
-			{
-				"Path": "Inventory/Weapon/Themes/207-204-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
 			{
 				"Path": "Inventory/Weapon/Themes/207-204-olympus-aa30213b.json",
 				"Type": "WeaponTheme"

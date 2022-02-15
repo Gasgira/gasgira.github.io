@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "203-200-olympus-8088283d",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Pop",
 		"Description": "Time to get all \"pow pow\" on these fools.",
 		"FeatureFlag": true,
@@ -77,10 +77,6 @@
 			"z": 0
 		},
 		"ParentPaths": [
-			{
-				"Path": "Inventory/Weapon/Themes/207-200-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
 			{
 				"Path": "Inventory/Weapon/Themes/207-200-olympus-aa30213b.json",
 				"Type": "WeaponTheme"

@@ -56,7 +56,7 @@
 			"FolderPath": "Progression/Inventory/Weapon/Coatings",
 			"FileName": "203-202-olympus-79ae3c65-SM.png"
 		},
-		"Quality": "Rare",
+		"Quality": "Epic",
 		"ManufacturerId": 23,
 		"Type": "WeaponCoating",
 		"ParentTheme": "Inventory/Weapon/Themes/207-202-olympus-aa30213b.json",
@@ -77,10 +77,6 @@
 			"z": 0
 		},
 		"ParentPaths": [
-			{
-				"Path": "Inventory/Weapon/Themes/207-202-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
 			{
 				"Path": "Inventory/Weapon/Themes/207-202-olympus-aa30213b.json",
 				"Type": "WeaponTheme"

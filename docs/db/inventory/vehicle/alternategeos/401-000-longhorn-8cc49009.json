@@ -29,7 +29,7 @@
 	],
 	"CommonData": {
 		"Id": "401-000-longhorn-8cc49009",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Longhorn",
 		"Description": "Turn your war hog into battle cattle.",
 		"FeatureFlag": false,
@@ -98,10 +98,6 @@
 			"z": 0
 		},
 		"ParentPaths": [
-			{
-				"Path": "Inventory/Vehicle/Themes/408-300-olympus-aa30213b.json",
-				"Type": "VehicleTheme"
-			},
 			{
 				"Path": "Inventory/Vehicle/Themes/408-300-olympus-aa30213b.json",
 				"Type": "VehicleTheme"

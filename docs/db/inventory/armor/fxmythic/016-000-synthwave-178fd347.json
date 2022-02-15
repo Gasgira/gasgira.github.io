@@ -56,7 +56,7 @@
 			"FileName": "016-000-synthwave-178fd347-SM.png"
 		},
 		"Quality": "Epic",
-		"ManufacturerId": 12,
+		"ManufacturerId": 6,
 		"Type": "ArmorMythicFx",
 		"ParentTheme": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
 		"RewardTrack": "",
@@ -82,14 +82,6 @@
 			},
 			{
 				"Path": "Inventory/Armor/Themes/007-001-reach-2564121f.json",
-				"Type": "ArmorTheme"
-			},
-			{
-				"Path": "Inventory/Armor/Themes/007-001-samurai-55badb14.json",
-				"Type": "ArmorTheme"
-			},
-			{
-				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
 				"Type": "ArmorTheme"
 			},
 			{

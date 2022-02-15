@@ -13,8 +13,9 @@ class Inventory extends Component {
 		this.data = await db.getJSON(inventoryPath);
 
 		const favorites = new InventoryCategory({categoryName: 'Favorites'});
+		const search = new Search({categoryName: 'Search'});
 
-		this.categories = [favorites];
+		this.categories = [favorites]; // , search
 
 		const paramCategoryName = urlParams.getSecionSetting('inventory');
 		for (const property in this.data) {
@@ -33,10 +34,14 @@ class Inventory extends Component {
 			}
 		}
 
-		if (!this.state.inventoryCategory)
+		if (!this.state.inventoryCategory && paramCategoryName !== 'Search')
 		{
 			favorites.init();
 			this.state.inventoryCategory = favorites;
+		} else if (paramCategoryName === 'Search')
+		{
+			search.init();
+			this.state.inventoryCategory = search;
 		}
 
 		console.info(`[Inventory] Found "${this.categories.length}" item categories.`)
@@ -202,5 +207,61 @@ class InventoryCategory extends Component {
 
 	appendFavorites() {
 		console.log('app', this.state?.awaitingImport)
+	}
+}
+
+class Search extends InventoryCategory {
+	init() {
+		this.items = new Set();
+	}
+
+	get defaultState() {
+		return {
+			term: ''
+		};
+	}
+
+	render() {
+		return this.html`
+			<div
+				class ="inventory-category_wrapper"
+			>
+				<header class="h-favorites">
+					<div>Search // ${this?.items?.size}</div>
+				</header>
+				<div class="inventory-search_wrapper">
+					<input
+						type="search"
+						class="inventory-search_input"
+						id="inventory-search"
+						name="inventory-search"
+						oninput=${(e) => this.input(e?.target?.value ?? '')}
+						value=${this.state.term}
+					>
+					<button
+						class="inventory-search_submit"
+						onclick=${() => this.submit()}
+					>Search</button>
+				</div>
+				<ul
+					class="inventory-category_items"
+				>
+					${[...this.items].map(item => HTML.wire()`<li>${item.renderIcon('inventory', {itemTypeIcon: true})}</li>`)}
+				</ul>
+			</div>
+		`;
+	}
+
+	input(value) {
+		if (value && typeof value === 'string')
+		{
+			return this.state.term = value;
+		}
+		return this.state.term = '';
+	}
+
+	submit() {
+		console.log('submit', this.state.term);
+		this.render();
 	}
 }
