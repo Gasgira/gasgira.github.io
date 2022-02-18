@@ -4106,17 +4106,38 @@ class Database {
 	}
 
 	async init() {
-		const metadataPath = 'metadata/metadata.json';
-		this.metadata = await this.getJSON(metadataPath)
+		this.metadata = await this.getJSON('metadata/metadata.json')
 			.catch(error => {
 				console.warn(`[skimmer] metadata did not load...`, error);
 				this.metadata = {}
 			});
+		
+		this.index = await this.getJSON('index.json')
+			.then(response => {
+				if (!response || !Array.isArray(response?.types) || !Array.isArray(response?.manifest))
+				{
+					throw new Error(`[skimmer] index malformed...`)
+				}
+				return {
+					date: new Date(response.date),
+					types: new Set(response?.types ?? []),
+					manifest: new Map(response?.manifest ?? [])
+				}
+			})
+			.catch(error => {
+				console.error(`[skimmer] index did not load...`, error);
+				this.index = {
+					date: new Date(),
+					types: new Set(),
+					manifest: new Map()
+				}
+			});
+		if (this.index) console.info(`[skimmer.db.init] "${this.index.manifest.size}" items in index.`);
 	}
 
 	async getJSON(path) {
 		// console.log(`[db.get] "${path}"`);
-		if (!path)
+		if (!path || typeof path !== 'string')
 		{
 			console.warn(`[db.get] Bad path! "${path}"`);
 			return;
@@ -4132,6 +4153,65 @@ class Database {
 
 	get items() {
 		return this?._items ?? (this._items = new Map());
+	}
+
+	get typeIDs() {
+		return this?._typeIDs ?? (this._typeIDs = new Map());
+	}
+
+	itemPathToID(path) {
+		if (!path || typeof path !== 'string') return;
+		try {
+			const pathLowercase = path.toLowerCase();
+			const pathParts = pathLowercase.split('/');
+			if (!pathParts.length) return;
+
+			const fileName = pathParts[pathParts.length-1];
+			const name = fileName.substring(0, fileName.length-5); // remove '.json'
+			if (name) return name;
+		} catch (error) {
+			console.error(`[db.itemPathToID] Bad id/path for "${path}"`);
+			return '???';
+		}
+	}
+
+	getItemsIDsByType(type) {
+		if (!type || typeof type !== 'string') return;
+		if (this.typeIDs.has(type)) return this.typeIDs.get(type);
+
+		if (type === 'Favorites') {
+			return new Set([...this.favoriteItemPaths].map(path => this.itemPathToID(path)));
+		}
+
+		if (this.index.types.has(type))
+		{
+			const entries = [...this.index.manifest.values()].filter(entry => entry?.type === type);
+			this.typeIDs.set(type, new Set(entries.map(entry => entry?.name ?? 'UNK')));
+			return this.typeIDs.get(type);
+		}
+		console.warn(`[db.getItemsIDsByType] Type not found! "${type}"`);
+	}
+
+	getItemManifestByID(id) {
+		if (!id || typeof id !== 'string') return;
+		if (this.index.manifest.has(id)) return this.index.manifest.get(id);
+		console.warn(`[db.getItemManifestByID] Not found! "${id}"`);
+	}
+
+	getItemPathByID(id) {
+		if (!id || typeof id !== 'string') return;
+		const path = this.getItemManifestByID(id)?.path;
+		if (path) return path;
+		console.warn(`[db.getItemPathByID] Not found! "${id}"`);
+	}
+
+	getItemByID(id) {
+		if (!id || typeof id !== 'string') return;
+		const path = this.getItemPathByID(id);
+		if (path)
+		{
+			// TODO
+		}
 	}
 
 	get manufacturers() {
@@ -4174,7 +4254,7 @@ class Database {
 			['SpartanEmblem', 'Emblem, Nameplate'],
 			['WeaponCharm', 'Weapon Charm'],
 			['WeaponCoating', 'Coating, Weapon'],
-			['WeaponDeathFx', 'Weapon Death Effect'],
+			['WeaponDeathFx', 'Death Effect'],
 			['WeaponEmblem', 'Emblem, Weapon'],
 			['WeaponTheme', 'Theme, Weapon'],
 			['WeaponCore', 'Core, Weapon'],
@@ -4184,7 +4264,7 @@ class Database {
 			['VehicleEmblem', 'Emblem, Vehicle'],
 			['VehicleTheme', 'Theme, Vehicle'],
 			['VehicleCore', 'Core, Vehicle'],
-			['HelmetAttachments', 'Helmet Attachments'],
+			['HelmetAttachments', 'Helmet Attachment'],
 			['LeftShoulderPads', 'Shoulder, Left'],
 			['RightShoulderPads', 'Shoulder, Right'],
 			['KneePads', 'Knee Pads'],
@@ -4253,17 +4333,22 @@ class Item extends component__WEBPACK_IMPORTED_MODULE_0__.Component {
 	constructor(path) {
 		super();
 		if (!path || path.length < 10) return console.error(`[Item] Bad path ${path}`);
-		if (db.items.has(path))
+		const pathLowercase = path.toLowerCase();
+		if (db.items.has(pathLowercase))
 		{
 			// console.warn('[skimmer][db.item] Duplicate', path);
-			return db.items.get(path);
+			return db.items.get(pathLowercase);
 		}
-		this.path = path;
-		db.items.set(`${path}`, this);
+		this.path = pathLowercase;
+		db.items.set(`${pathLowercase}`, this);
+	}
+
+	get id() {
+		return this?._id ?? (this._id = db.itemPathToID(this.path));
 	}
 
 	get name() {
-		return this?.data?.CommonData?.Title ?? '???';
+		return this?.data?.CommonData?.Title ?? this.id;
 	}
 
 	get seasonNumber() {
@@ -4276,7 +4361,7 @@ class Item extends component__WEBPACK_IMPORTED_MODULE_0__.Component {
 
 	async getName() {
 		await this.init();
-		return this?.data?.CommonData?.Title ?? '???';
+		return this?.data?.CommonData?.Title ?? this.id;
 	}
 
 	get parentPaths() {
@@ -4301,7 +4386,7 @@ class Item extends component__WEBPACK_IMPORTED_MODULE_0__.Component {
 	async init() {
 		if (this.data)
 		{
-			await Promise.resolve(this.data);
+			await this.data;
 			return this;
 		}
 		try {
@@ -4354,14 +4439,14 @@ class Item extends component__WEBPACK_IMPORTED_MODULE_0__.Component {
 	}
 
 	async renderItemTypeIcon() {
-		const path = this?.data?.CommonData?.ParentTheme ?? this?.data?.CommonData?.ParentPaths?.[0];
+		const path = this?.data?.CommonData?.ParentPaths?.[0]?.Path ?? this?.data?.CommonData?.ParentTheme ?? '';
 		const type = this?.data?.CommonData?.Type;
 		if (!path || !this.itemTypeIcons.has(type)) return '';
 		if (type && type === 'WeaponCoating')
 		{
 			const parent = await new Item(path).getImagePath();
 			const imagePath = `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(parent)})`;
-			return lib_HTML__WEBPACK_IMPORTED_MODULE_2__.HTML.wire(this, `:itemType-${performance.now()}`)`
+			return lib_HTML__WEBPACK_IMPORTED_MODULE_2__.HTML.wire(this, `:itemType-${path}`)`
 				<div
 					class=${`item-type-icon ${this?.data?.CommonData?.Type ?? 'default-type'}`}
 					style=${{webkitMaskImage: imagePath, maskImage: imagePath}}
@@ -4405,14 +4490,15 @@ class Item extends component__WEBPACK_IMPORTED_MODULE_0__.Component {
 	}
 
 	async getImagePath() {
-		if (!this.data) await this.init();
+		if (this?._imagePath) return this._imagePath;
+		await this.init();
 		let imagePath = '';
 		const displayPath = this?.data?.CommonData?.DisplayPath?.Media?.MediaUrl?.Path;
 		if (displayPath && typeof displayPath === 'string') {
 			imagePath = `${displayPath[0].toLowerCase()}${displayPath.substring(1)}`;
 		}
 
-		return imagePath;
+		return (this._imagePath = imagePath);
 	}
 
 	async getParentItem() {
@@ -5577,22 +5663,62 @@ class Inventory extends component__WEBPACK_IMPORTED_MODULE_0__.Component {
 		const favorites = new InventoryCategory({categoryName: 'Favorites'});
 		const search = new Search({categoryName: 'Search'});
 
-		this.categories = [favorites]; // , search
+		this.categories = [favorites, search];
 
 		const paramCategoryName = urlParams__WEBPACK_IMPORTED_MODULE_5__.urlParams.getSecionSetting('inventory');
-		for (const property in this.data) {
-			const categoryTerm = 'sOwnableCount';
-			if (property.includes(categoryTerm) && this.data[property] !== 0)
-			{
-				const categoryName = property.replace(categoryTerm, '');
-				const category = new InventoryCategory({categoryName});
-				this.categories.push(category);
+		const paramBundle = urlParams__WEBPACK_IMPORTED_MODULE_5__.urlParams.getSecionSetting('bundle');
 
-				if (paramCategoryName && categoryName === paramCategoryName)
+		if (paramBundle)
+		{
+			const bundleSet = new Set(paramBundle.split('~'));
+			if (bundleSet.size)
+			{
+				const bundleCategory = new InventoryCategory({
+					categoryName: 'Collection',
+					itemIDs: bundleSet
+				});
+				this.categories.push(bundleCategory);
+				if (!paramCategoryName || paramCategoryName === 'Collection')
 				{
-					category.init();
-					this.state.inventoryCategory = category;
+					bundleCategory.init();
+					this.state.inventoryCategory = bundleCategory;
 				}
+			}
+		}
+
+		// for (const property in this.data) {
+		// 	const categoryTerm = 'sOwnableCount';
+		// 	if (property.includes(categoryTerm) && this.data[property] !== 0)
+		// 	{
+		// 		const categoryName = property.replace(categoryTerm, '');
+		// 		const category = new InventoryCategory({categoryName});
+		// 		this.categories.push(category);
+
+		// 		if (paramCategoryName && categoryName === paramCategoryName)
+		// 		{
+		// 			category.init();
+		// 			this.state.inventoryCategory = category;
+		// 		}
+		// 	}
+		// }
+
+		const skipTypes = new Set([
+			'ChallengeReroll',
+			'XPBoost',
+			'XPGrant',
+			'None',
+		]);
+
+		for (const type of db__WEBPACK_IMPORTED_MODULE_1__.db.index.types)
+		{
+			if (skipTypes.has(type)) continue;
+			const category = new InventoryCategory({categoryName: type});
+			this.categories.push(category);
+
+			if (paramCategoryName && paramCategoryName === type)
+			{
+				category.init();
+				this.state.inventoryCategory = category;
 			}
 		}
 
@@ -5611,7 +5737,9 @@ class Inventory extends component__WEBPACK_IMPORTED_MODULE_0__.Component {
 
 	render() {
 		return this.html`<div class="inventory_wrapper mica_viewer" id="inventory">
-			<header class="inventory mica_header-strip"><a class="mica_header-anchor" href="#inventory"><h2>Inventory</h2></a></header>
+			<header class="inventory mica_header-strip">
+				<a class="mica_header-anchor" href="#inventory"><h2>Inventory</h2></a>
+			</header>
 			<div class="inventory_content mica_main-content">
 				<ul class="inventory-catergories mica_nav-list">
 					${this.categories.map(category => lib_HTML__WEBPACK_IMPORTED_MODULE_3__.HTML.wire(category)`<li><button
@@ -5670,12 +5798,22 @@ const inventory = new Inventory();
 
 class InventoryCategory extends component__WEBPACK_IMPORTED_MODULE_0__.Component {
 	constructor({
-		categoryName
+		categoryName,
+		itemIDs
 	}) {
 		super();
 		this.categoryName = categoryName;
 		this.items = [];
+		this.itemIDs = new Set();
 
+		if (itemIDs && itemIDs.size)
+		{
+			// TODO get items
+			console.log('TEST Bundle', itemIDs);
+			this.itemIDs = new Set(itemIDs);
+		}
+
+		// Listen for updates to favorites list, render on change
 		if (this.categoryName === 'Favorites') {
 			eventEmitter__WEBPACK_IMPORTED_MODULE_2__.emitter.on('favoriteItemPaths', (path) => {
 				console.log('fav update', path);
@@ -5693,9 +5831,15 @@ class InventoryCategory extends component__WEBPACK_IMPORTED_MODULE_0__.Component
 
 	init() {
 		if (this.items?.length && this.categoryName !== 'Favorites') return;
-		this.itemPaths = inventory.itemPathsOfCategoryName(this.categoryName);
+		// this.itemPaths = inventory.itemPathsOfCategoryName(this.categoryName);
+
+		if (!this.itemIDs.size) this.itemIDs = db__WEBPACK_IMPORTED_MODULE_1__.db.getItemsIDsByType(this.categoryName);
+		
+		if (!this.itemIDs.size) return;
+		console.info('IDs', this.itemIDs);
 		// console.log(`[InventoryCategory] Got items`, this.itemPaths);
-		this.items = [...this.itemPaths].map(path => new db__WEBPACK_IMPORTED_MODULE_1__.Item(path));
+		// this.items = [...this.itemPaths].map(path => new Item(path));
+		this.items = [...this.itemIDs].map(id => new db__WEBPACK_IMPORTED_MODULE_1__.Item(db__WEBPACK_IMPORTED_MODULE_1__.db.getItemPathByID(id)));
 	}
 
 	render() {
@@ -5774,7 +5918,13 @@ class InventoryCategory extends component__WEBPACK_IMPORTED_MODULE_0__.Component
 
 class Search extends InventoryCategory {
 	init() {
-		this.items = new Set();
+		// this.items = new Set();
+		const term = urlParams__WEBPACK_IMPORTED_MODULE_5__.urlParams.getSecionSetting('s');
+		if (!this.state.term && term && typeof term === 'string')
+		{
+			this.state.term = term;
+			this.searchItems();
+		}
 	}
 
 	get defaultState() {
@@ -5789,7 +5939,7 @@ class Search extends InventoryCategory {
 				class ="inventory-category_wrapper"
 			>
 				<header class="h-favorites">
-					<div>Search // ${this?.items?.size}</div>
+					<div>Search // ${this?.itemIDs?.size ?? 0}</div>
 				</header>
 				<div class="inventory-search_wrapper">
 					<input
@@ -5805,6 +5955,10 @@ class Search extends InventoryCategory {
 						onclick=${() => this.submit()}
 					>Search</button>
 				</div>
+				<div class="inventory-search_info">
+					${this?.itemIDs?.size > 100 ? `${this.itemIDs.size} results, showing ${this?.items?.size}` : ''}
+					${this.state.term && !this?.itemIDs?.size ? 'No results' : ''}
+				</div>
 				<ul
 					class="inventory-category_items"
 				>
@@ -5817,13 +5971,48 @@ class Search extends InventoryCategory {
 	input(value) {
 		if (value && typeof value === 'string')
 		{
-			return this.state.term = value;
+			return this.state.term = value.toLowerCase();
 		}
 		return this.state.term = '';
 	}
 
+	searchItems() {
+		if (!this.state.term || typeof this.state.term !== 'string') return;
+		this.itemIDs = new Set();
+		// console.info(`[search] "${db.index.manifest.size}" items in index`);
+		[...db__WEBPACK_IMPORTED_MODULE_1__.db.index.manifest.values()].forEach(entry => {
+			const title = entry.title.toLowerCase();
+			if (title.includes(this.state.term))
+			{
+				this.itemIDs.add(entry.name);
+				// console.log(title, entry.name);
+			}
+		});
+		console.info(`[search] Found "${this.itemIDs.size}" items`);
+		if (this.itemIDs.size)
+		{
+			// TODO slice, pagination
+			this.items = new Set([...this.itemIDs].slice(0, 100).map(id => new db__WEBPACK_IMPORTED_MODULE_1__.Item(db__WEBPACK_IMPORTED_MODULE_1__.db.getItemPathByID(id))));
+			this.render();
+			return;
+		}
+
+		this.items = new Set();
+		this.render();
+	}
+
 	submit() {
+		if (!this.state.term || typeof this.state.term !== 'string')
+		{
+			this.items = new Set();
+			this.itemIDs = new Set();
+			urlParams__WEBPACK_IMPORTED_MODULE_5__.urlParams.deleteSecionSetting('s');
+			this.render();
+			return;
+		}
 		console.log('submit', this.state.term);
+		urlParams__WEBPACK_IMPORTED_MODULE_5__.urlParams.setSecionSetting('s', this.state.term);
+		this.searchItems();
 		this.render();
 	}
 }
@@ -6795,7 +6984,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("e21ed60c42a0f9c56401")
+/******/ 		__webpack_require__.h = () => ("325f87f81957b5055ee4")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -7793,4 +7982,4 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.e21ed60c42a0f9c56401.js.map
+//# sourceMappingURL=main.325f87f81957b5055ee4.js.map

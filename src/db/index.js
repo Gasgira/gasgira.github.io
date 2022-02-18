@@ -16,17 +16,38 @@ class Database {
 	}
 
 	async init() {
-		const metadataPath = 'metadata/metadata.json';
-		this.metadata = await this.getJSON(metadataPath)
+		this.metadata = await this.getJSON('metadata/metadata.json')
 			.catch(error => {
 				console.warn(`[skimmer] metadata did not load...`, error);
 				this.metadata = {}
 			});
+		
+		this.index = await this.getJSON('index.json')
+			.then(response => {
+				if (!response || !Array.isArray(response?.types) || !Array.isArray(response?.manifest))
+				{
+					throw new Error(`[skimmer] index malformed...`)
+				}
+				return {
+					date: new Date(response.date),
+					types: new Set(response?.types ?? []),
+					manifest: new Map(response?.manifest ?? [])
+				}
+			})
+			.catch(error => {
+				console.error(`[skimmer] index did not load...`, error);
+				this.index = {
+					date: new Date(),
+					types: new Set(),
+					manifest: new Map()
+				}
+			});
+		if (this.index) console.info(`[skimmer.db.init] "${this.index.manifest.size}" items in index.`);
 	}
 
 	async getJSON(path) {
 		// console.log(`[db.get] "${path}"`);
-		if (!path)
+		if (!path || typeof path !== 'string')
 		{
 			console.warn(`[db.get] Bad path! "${path}"`);
 			return;
@@ -42,6 +63,65 @@ class Database {
 
 	get items() {
 		return this?._items ?? (this._items = new Map());
+	}
+
+	get typeIDs() {
+		return this?._typeIDs ?? (this._typeIDs = new Map());
+	}
+
+	itemPathToID(path) {
+		if (!path || typeof path !== 'string') return;
+		try {
+			const pathLowercase = path.toLowerCase();
+			const pathParts = pathLowercase.split('/');
+			if (!pathParts.length) return;
+
+			const fileName = pathParts[pathParts.length-1];
+			const name = fileName.substring(0, fileName.length-5); // remove '.json'
+			if (name) return name;
+		} catch (error) {
+			console.error(`[db.itemPathToID] Bad id/path for "${path}"`);
+			return '???';
+		}
+	}
+
+	getItemsIDsByType(type) {
+		if (!type || typeof type !== 'string') return;
+		if (this.typeIDs.has(type)) return this.typeIDs.get(type);
+
+		if (type === 'Favorites') {
+			return new Set([...this.favoriteItemPaths].map(path => this.itemPathToID(path)));
+		}
+
+		if (this.index.types.has(type))
+		{
+			const entries = [...this.index.manifest.values()].filter(entry => entry?.type === type);
+			this.typeIDs.set(type, new Set(entries.map(entry => entry?.name ?? 'UNK')));
+			return this.typeIDs.get(type);
+		}
+		console.warn(`[db.getItemsIDsByType] Type not found! "${type}"`);
+	}
+
+	getItemManifestByID(id) {
+		if (!id || typeof id !== 'string') return;
+		if (this.index.manifest.has(id)) return this.index.manifest.get(id);
+		console.warn(`[db.getItemManifestByID] Not found! "${id}"`);
+	}
+
+	getItemPathByID(id) {
+		if (!id || typeof id !== 'string') return;
+		const path = this.getItemManifestByID(id)?.path;
+		if (path) return path;
+		console.warn(`[db.getItemPathByID] Not found! "${id}"`);
+	}
+
+	getItemByID(id) {
+		if (!id || typeof id !== 'string') return;
+		const path = this.getItemPathByID(id);
+		if (path)
+		{
+			// TODO
+		}
 	}
 
 	get manufacturers() {
@@ -84,7 +164,7 @@ class Database {
 			['SpartanEmblem', 'Emblem, Nameplate'],
 			['WeaponCharm', 'Weapon Charm'],
 			['WeaponCoating', 'Coating, Weapon'],
-			['WeaponDeathFx', 'Weapon Death Effect'],
+			['WeaponDeathFx', 'Death Effect'],
 			['WeaponEmblem', 'Emblem, Weapon'],
 			['WeaponTheme', 'Theme, Weapon'],
 			['WeaponCore', 'Core, Weapon'],
@@ -94,7 +174,7 @@ class Database {
 			['VehicleEmblem', 'Emblem, Vehicle'],
 			['VehicleTheme', 'Theme, Vehicle'],
 			['VehicleCore', 'Core, Vehicle'],
-			['HelmetAttachments', 'Helmet Attachments'],
+			['HelmetAttachments', 'Helmet Attachment'],
 			['LeftShoulderPads', 'Shoulder, Left'],
 			['RightShoulderPads', 'Shoulder, Right'],
 			['KneePads', 'Knee Pads'],
@@ -163,17 +243,22 @@ export class Item extends Component {
 	constructor(path) {
 		super();
 		if (!path || path.length < 10) return console.error(`[Item] Bad path ${path}`);
-		if (db.items.has(path))
+		const pathLowercase = path.toLowerCase();
+		if (db.items.has(pathLowercase))
 		{
 			// console.warn('[skimmer][db.item] Duplicate', path);
-			return db.items.get(path);
+			return db.items.get(pathLowercase);
 		}
-		this.path = path;
-		db.items.set(`${path}`, this);
+		this.path = pathLowercase;
+		db.items.set(`${pathLowercase}`, this);
+	}
+
+	get id() {
+		return this?._id ?? (this._id = db.itemPathToID(this.path));
 	}
 
 	get name() {
-		return this?.data?.CommonData?.Title ?? '???';
+		return this?.data?.CommonData?.Title ?? this.id;
 	}
 
 	get seasonNumber() {
@@ -186,7 +271,7 @@ export class Item extends Component {
 
 	async getName() {
 		await this.init();
-		return this?.data?.CommonData?.Title ?? '???';
+		return this?.data?.CommonData?.Title ?? this.id;
 	}
 
 	get parentPaths() {
@@ -211,7 +296,7 @@ export class Item extends Component {
 	async init() {
 		if (this.data)
 		{
-			await Promise.resolve(this.data);
+			await this.data;
 			return this;
 		}
 		try {
@@ -264,14 +349,14 @@ export class Item extends Component {
 	}
 
 	async renderItemTypeIcon() {
-		const path = this?.data?.CommonData?.ParentTheme ?? this?.data?.CommonData?.ParentPaths?.[0];
+		const path = this?.data?.CommonData?.ParentPaths?.[0]?.Path ?? this?.data?.CommonData?.ParentTheme ?? '';
 		const type = this?.data?.CommonData?.Type;
 		if (!path || !this.itemTypeIcons.has(type)) return '';
 		if (type && type === 'WeaponCoating')
 		{
 			const parent = await new Item(path).getImagePath();
 			const imagePath = `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(parent)})`;
-			return HTML.wire(this, `:itemType-${performance.now()}`)`
+			return HTML.wire(this, `:itemType-${path}`)`
 				<div
 					class=${`item-type-icon ${this?.data?.CommonData?.Type ?? 'default-type'}`}
 					style=${{webkitMaskImage: imagePath, maskImage: imagePath}}
@@ -315,14 +400,15 @@ export class Item extends Component {
 	}
 
 	async getImagePath() {
-		if (!this.data) await this.init();
+		if (this?._imagePath) return this._imagePath;
+		await this.init();
 		let imagePath = '';
 		const displayPath = this?.data?.CommonData?.DisplayPath?.Media?.MediaUrl?.Path;
 		if (displayPath && typeof displayPath === 'string') {
 			imagePath = `${displayPath[0].toLowerCase()}${displayPath.substring(1)}`;
 		}
 
-		return imagePath;
+		return (this._imagePath = imagePath);
 	}
 
 	async getParentItem() {

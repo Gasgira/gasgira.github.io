@@ -15,22 +15,62 @@ class Inventory extends Component {
 		const favorites = new InventoryCategory({categoryName: 'Favorites'});
 		const search = new Search({categoryName: 'Search'});
 
-		this.categories = [favorites]; // , search
+		this.categories = [favorites, search];
 
 		const paramCategoryName = urlParams.getSecionSetting('inventory');
-		for (const property in this.data) {
-			const categoryTerm = 'sOwnableCount';
-			if (property.includes(categoryTerm) && this.data[property] !== 0)
-			{
-				const categoryName = property.replace(categoryTerm, '');
-				const category = new InventoryCategory({categoryName});
-				this.categories.push(category);
+		const paramBundle = urlParams.getSecionSetting('bundle');
 
-				if (paramCategoryName && categoryName === paramCategoryName)
+		if (paramBundle)
+		{
+			const bundleSet = new Set(paramBundle.split('~'));
+			if (bundleSet.size)
+			{
+				const bundleCategory = new InventoryCategory({
+					categoryName: 'Collection',
+					itemIDs: bundleSet
+				});
+				this.categories.push(bundleCategory);
+				if (!paramCategoryName || paramCategoryName === 'Collection')
 				{
-					category.init();
-					this.state.inventoryCategory = category;
+					bundleCategory.init();
+					this.state.inventoryCategory = bundleCategory;
 				}
+			}
+		}
+
+		// for (const property in this.data) {
+		// 	const categoryTerm = 'sOwnableCount';
+		// 	if (property.includes(categoryTerm) && this.data[property] !== 0)
+		// 	{
+		// 		const categoryName = property.replace(categoryTerm, '');
+		// 		const category = new InventoryCategory({categoryName});
+		// 		this.categories.push(category);
+
+		// 		if (paramCategoryName && categoryName === paramCategoryName)
+		// 		{
+		// 			category.init();
+		// 			this.state.inventoryCategory = category;
+		// 		}
+		// 	}
+		// }
+
+		const skipTypes = new Set([
+			'ChallengeReroll',
+			'XPBoost',
+			'XPGrant',
+			'None',
+		]);
+
+		for (const type of db.index.types)
+		{
+			if (skipTypes.has(type)) continue;
+			const category = new InventoryCategory({categoryName: type});
+			this.categories.push(category);
+
+			if (paramCategoryName && paramCategoryName === type)
+			{
+				category.init();
+				this.state.inventoryCategory = category;
 			}
 		}
 
@@ -49,7 +89,9 @@ class Inventory extends Component {
 
 	render() {
 		return this.html`<div class="inventory_wrapper mica_viewer" id="inventory">
-			<header class="inventory mica_header-strip"><a class="mica_header-anchor" href="#inventory"><h2>Inventory</h2></a></header>
+			<header class="inventory mica_header-strip">
+				<a class="mica_header-anchor" href="#inventory"><h2>Inventory</h2></a>
+			</header>
 			<div class="inventory_content mica_main-content">
 				<ul class="inventory-catergories mica_nav-list">
 					${this.categories.map(category => HTML.wire(category)`<li><button
@@ -108,12 +150,22 @@ export const inventory = new Inventory();
 
 class InventoryCategory extends Component {
 	constructor({
-		categoryName
+		categoryName,
+		itemIDs
 	}) {
 		super();
 		this.categoryName = categoryName;
 		this.items = [];
+		this.itemIDs = new Set();
 
+		if (itemIDs && itemIDs.size)
+		{
+			// TODO get items
+			console.log('TEST Bundle', itemIDs);
+			this.itemIDs = new Set(itemIDs);
+		}
+
+		// Listen for updates to favorites list, render on change
 		if (this.categoryName === 'Favorites') {
 			emitter.on('favoriteItemPaths', (path) => {
 				console.log('fav update', path);
@@ -131,9 +183,15 @@ class InventoryCategory extends Component {
 
 	init() {
 		if (this.items?.length && this.categoryName !== 'Favorites') return;
-		this.itemPaths = inventory.itemPathsOfCategoryName(this.categoryName);
+		// this.itemPaths = inventory.itemPathsOfCategoryName(this.categoryName);
+
+		if (!this.itemIDs.size) this.itemIDs = db.getItemsIDsByType(this.categoryName);
+		
+		if (!this.itemIDs.size) return;
+		console.info('IDs', this.itemIDs);
 		// console.log(`[InventoryCategory] Got items`, this.itemPaths);
-		this.items = [...this.itemPaths].map(path => new Item(path));
+		// this.items = [...this.itemPaths].map(path => new Item(path));
+		this.items = [...this.itemIDs].map(id => new Item(db.getItemPathByID(id)));
 	}
 
 	render() {
@@ -212,7 +270,13 @@ class InventoryCategory extends Component {
 
 class Search extends InventoryCategory {
 	init() {
-		this.items = new Set();
+		// this.items = new Set();
+		const term = urlParams.getSecionSetting('s');
+		if (!this.state.term && term && typeof term === 'string')
+		{
+			this.state.term = term;
+			this.searchItems();
+		}
 	}
 
 	get defaultState() {
@@ -227,7 +291,7 @@ class Search extends InventoryCategory {
 				class ="inventory-category_wrapper"
 			>
 				<header class="h-favorites">
-					<div>Search // ${this?.items?.size}</div>
+					<div>Search // ${this?.itemIDs?.size ?? 0}</div>
 				</header>
 				<div class="inventory-search_wrapper">
 					<input
@@ -243,6 +307,10 @@ class Search extends InventoryCategory {
 						onclick=${() => this.submit()}
 					>Search</button>
 				</div>
+				<div class="inventory-search_info">
+					${this?.itemIDs?.size > 100 ? `${this.itemIDs.size} results, showing ${this?.items?.size}` : ''}
+					${this.state.term && !this?.itemIDs?.size ? 'No results' : ''}
+				</div>
 				<ul
 					class="inventory-category_items"
 				>
@@ -255,13 +323,48 @@ class Search extends InventoryCategory {
 	input(value) {
 		if (value && typeof value === 'string')
 		{
-			return this.state.term = value;
+			return this.state.term = value.toLowerCase();
 		}
 		return this.state.term = '';
 	}
 
+	searchItems() {
+		if (!this.state.term || typeof this.state.term !== 'string') return;
+		this.itemIDs = new Set();
+		// console.info(`[search] "${db.index.manifest.size}" items in index`);
+		[...db.index.manifest.values()].forEach(entry => {
+			const title = entry.title.toLowerCase();
+			if (title.includes(this.state.term))
+			{
+				this.itemIDs.add(entry.name);
+				// console.log(title, entry.name);
+			}
+		});
+		console.info(`[search] Found "${this.itemIDs.size}" items`);
+		if (this.itemIDs.size)
+		{
+			// TODO slice, pagination
+			this.items = new Set([...this.itemIDs].slice(0, 100).map(id => new Item(db.getItemPathByID(id))));
+			this.render();
+			return;
+		}
+
+		this.items = new Set();
+		this.render();
+	}
+
 	submit() {
+		if (!this.state.term || typeof this.state.term !== 'string')
+		{
+			this.items = new Set();
+			this.itemIDs = new Set();
+			urlParams.deleteSecionSetting('s');
+			this.render();
+			return;
+		}
 		console.log('submit', this.state.term);
+		urlParams.setSecionSetting('s', this.state.term);
+		this.searchItems();
 		this.render();
 	}
 }
