@@ -38,27 +38,13 @@ class Inventory extends Component {
 			}
 		}
 
-		// for (const property in this.data) {
-		// 	const categoryTerm = 'sOwnableCount';
-		// 	if (property.includes(categoryTerm) && this.data[property] !== 0)
-		// 	{
-		// 		const categoryName = property.replace(categoryTerm, '');
-		// 		const category = new InventoryCategory({categoryName});
-		// 		this.categories.push(category);
-
-		// 		if (paramCategoryName && categoryName === paramCategoryName)
-		// 		{
-		// 			category.init();
-		// 			this.state.inventoryCategory = category;
-		// 		}
-		// 	}
-		// }
-
 		const skipTypes = new Set([
 			'ChallengeReroll',
 			'XPBoost',
 			'XPGrant',
 			'None',
+			'AiTheme',
+			'AiCore',
 		]);
 
 		for (const type of db.index.types)
@@ -116,30 +102,6 @@ class Inventory extends Component {
 		urlParams.setSecionSetting('inventory', inventoryCategory?.categoryName ?? 'unk');
 	}
 
-	itemPathsOfCategoryName(categoryName) {
-		if (!categoryName || typeof categoryName !== 'string') return;
-
-		console.log(`[Inventory] Getting category "${categoryName}"`);
-
-		if (categoryName === 'Favorites') {
-			return db.favoriteItemPaths;
-		}
-
-		const paths = new Set();
-
-		if (categoryName.includes('Core')) {
-			this.data?.Cores?.forEach(core => {
-				if (core?.ItemType === categoryName) paths.add(core?.ItemPath);
-			});
-			return paths;
-		}
-
-		this.data?.Items.forEach(item => {
-			if (item?.ItemType === categoryName) paths.add(item?.ItemPath);
-		});
-		return paths;
-	}
-
 	get coreList() {
 		if (!this.data) return [];
 		return this.data?.Cores;
@@ -183,14 +145,12 @@ class InventoryCategory extends Component {
 
 	init() {
 		if (this.items?.length && this.categoryName !== 'Favorites') return;
-		// this.itemPaths = inventory.itemPathsOfCategoryName(this.categoryName);
 
-		if (!this.itemIDs.size) this.itemIDs = db.getItemsIDsByType(this.categoryName);
+		if (!this.itemIDs.size || this.categoryName === 'Favorites') this.itemIDs = db.getItemsIDsByType(this.categoryName);
 		
 		if (!this.itemIDs.size) return;
 		console.info('IDs', this.itemIDs);
-		// console.log(`[InventoryCategory] Got items`, this.itemPaths);
-		// this.items = [...this.itemPaths].map(path => new Item(path));
+
 		this.items = [...this.itemIDs].map(id => new Item(db.getItemPathByID(id)));
 	}
 

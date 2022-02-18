@@ -4214,6 +4214,13 @@ class Database {
 		}
 	}
 
+	getCorePaths() {
+		const coreTypes = ['ArmorCore', 'VehicleCore', 'WeaponCore'];
+		return coreTypes.map(type => {
+			return [...this.getItemsIDsByType(type)].map(entry => entry.path);
+		});
+	}
+
 	get manufacturers() {
 		if (!this.metadata) return new Map();
 		return this?._manufacturers ?? (this._manufacturers = new Map(
@@ -5686,27 +5693,13 @@ class Inventory extends component__WEBPACK_IMPORTED_MODULE_0__.Component {
 			}
 		}
 
-		// for (const property in this.data) {
-		// 	const categoryTerm = 'sOwnableCount';
-		// 	if (property.includes(categoryTerm) && this.data[property] !== 0)
-		// 	{
-		// 		const categoryName = property.replace(categoryTerm, '');
-		// 		const category = new InventoryCategory({categoryName});
-		// 		this.categories.push(category);
-
-		// 		if (paramCategoryName && categoryName === paramCategoryName)
-		// 		{
-		// 			category.init();
-		// 			this.state.inventoryCategory = category;
-		// 		}
-		// 	}
-		// }
-
 		const skipTypes = new Set([
 			'ChallengeReroll',
 			'XPBoost',
 			'XPGrant',
 			'None',
+			'AiTheme',
+			'AiCore',
 		]);
 
 		for (const type of db__WEBPACK_IMPORTED_MODULE_1__.db.index.types)
@@ -5764,30 +5757,6 @@ class Inventory extends component__WEBPACK_IMPORTED_MODULE_0__.Component {
 		urlParams__WEBPACK_IMPORTED_MODULE_5__.urlParams.setSecionSetting('inventory', inventoryCategory?.categoryName ?? 'unk');
 	}
 
-	itemPathsOfCategoryName(categoryName) {
-		if (!categoryName || typeof categoryName !== 'string') return;
-
-		console.log(`[Inventory] Getting category "${categoryName}"`);
-
-		if (categoryName === 'Favorites') {
-			return db__WEBPACK_IMPORTED_MODULE_1__.db.favoriteItemPaths;
-		}
-
-		const paths = new Set();
-
-		if (categoryName.includes('Core')) {
-			this.data?.Cores?.forEach(core => {
-				if (core?.ItemType === categoryName) paths.add(core?.ItemPath);
-			});
-			return paths;
-		}
-
-		this.data?.Items.forEach(item => {
-			if (item?.ItemType === categoryName) paths.add(item?.ItemPath);
-		});
-		return paths;
-	}
-
 	get coreList() {
 		if (!this.data) return [];
 		return this.data?.Cores;
@@ -5831,14 +5800,12 @@ class InventoryCategory extends component__WEBPACK_IMPORTED_MODULE_0__.Component
 
 	init() {
 		if (this.items?.length && this.categoryName !== 'Favorites') return;
-		// this.itemPaths = inventory.itemPathsOfCategoryName(this.categoryName);
 
-		if (!this.itemIDs.size) this.itemIDs = db__WEBPACK_IMPORTED_MODULE_1__.db.getItemsIDsByType(this.categoryName);
+		if (!this.itemIDs.size || this.categoryName === 'Favorites') this.itemIDs = db__WEBPACK_IMPORTED_MODULE_1__.db.getItemsIDsByType(this.categoryName);
 		
 		if (!this.itemIDs.size) return;
 		console.info('IDs', this.itemIDs);
-		// console.log(`[InventoryCategory] Got items`, this.itemPaths);
-		// this.items = [...this.itemPaths].map(path => new Item(path));
+
 		this.items = [...this.itemIDs].map(id => new db__WEBPACK_IMPORTED_MODULE_1__.Item(db__WEBPACK_IMPORTED_MODULE_1__.db.getItemPathByID(id)));
 	}
 
@@ -6984,7 +6951,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("325f87f81957b5055ee4")
+/******/ 		__webpack_require__.h = () => ("31d766dc408e07dd4471")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -7982,4 +7949,4 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.325f87f81957b5055ee4.js.map
+//# sourceMappingURL=main.31d766dc408e07dd4471.js.map

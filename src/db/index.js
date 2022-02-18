@@ -124,6 +124,13 @@ class Database {
 		}
 	}
 
+	getCorePaths() {
+		const coreTypes = ['ArmorCore', 'VehicleCore', 'WeaponCore'];
+		return coreTypes.map(type => {
+			return [...this.getItemsIDsByType(type)].map(entry => entry.path);
+		});
+	}
+
 	get manufacturers() {
 		if (!this.metadata) return new Map();
 		return this?._manufacturers ?? (this._manufacturers = new Map(
