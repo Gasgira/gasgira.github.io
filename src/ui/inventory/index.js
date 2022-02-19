@@ -70,7 +70,16 @@ class Inventory extends Component {
 			this.state.inventoryCategory = search;
 		}
 
-		console.info(`[Inventory] Found "${this.categories.length}" item categories.`)
+		console.info(`[Inventory] Found "${this.categories.length}" item categories.`);
+
+		emitter.on('nav-search', () => {
+			this.showCategory(search);
+			const el = document.querySelector(`#inventory`);
+			if (el) el.scrollIntoView();
+
+			const input = document.querySelector(`#inventory-search`);
+			if (input) input.focus();
+		});
 	}
 
 	render() {
@@ -93,8 +102,8 @@ class Inventory extends Component {
 
 	showCategory(inventoryCategory) {
 		if (this.state?.inventoryCategory === inventoryCategory) {
-			this.setState({inventoryCategory: undefined});
-			urlParams.deleteSecionSetting('inventory');
+			// this.setState({inventoryCategory: undefined});
+			// urlParams.deleteSecionSetting('inventory');
 			return;
 		}
 		inventoryCategory.init();
@@ -259,13 +268,17 @@ class Search extends InventoryCategory {
 						class="inventory-search_input"
 						id="inventory-search"
 						name="inventory-search"
+						maxlength="24"
 						oninput=${(e) => this.input(e?.target?.value ?? '')}
+						onkeydown=${(e) => {
+							if (e?.key === 'Enter') this.submit();
+						}}
 						value=${this.state.term}
 					>
 					<button
 						class="inventory-search_submit"
 						onclick=${() => this.submit()}
-					>Search</button>
+					><div class="icon-masked icon-search"></div></button>
 				</div>
 				<div class="inventory-search_info">
 					${this?.itemIDs?.size > 100 ? `${this.itemIDs.size} results, showing ${this?.items?.size}` : ''}
@@ -326,5 +339,8 @@ class Search extends InventoryCategory {
 		urlParams.setSecionSetting('s', this.state.term);
 		this.searchItems();
 		this.render();
+
+		const el = document.querySelector(`#inventory`);
+		if (el) el.scrollIntoView();
 	}
 }

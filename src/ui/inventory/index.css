@@ -71,6 +71,10 @@
 			color: var(--theme-text);
 			font-size: 1.25em;
 		}
+		& .inventory-search_submit {
+			font-size: 1.25em;
+			padding: 0.5em;
+		}
 	}
 }
 .favorites-man_wrapper {

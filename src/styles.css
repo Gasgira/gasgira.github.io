@@ -318,3 +318,20 @@ button {
 		width: 100%;
 	}
 }
+
+.icon-masked {
+	background-color: currentColor;
+	height: 1em;
+	width: 1em;
+	padding: 0.7em 0;
+	mask-size: contain;
+	mask-repeat: no-repeat;
+	mask-position: center center;
+	mask-image: url("assets/icons.svg#dots-h");
+	&.icon-search {
+		mask-image: url("assets/icons.svg#search");
+	}
+	&.icon-settings {
+		mask-image: url("assets/icons.svg#settings");
+	}
+}

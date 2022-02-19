@@ -10,9 +10,9 @@ import './styles.css';
 
 console.log('hello world');
 
-HTML.bind(document.querySelector('.js--main'))`
-	<div>Loading...</div>
-`;
+// HTML.bind(document.querySelector('.js--main'))`
+// 	<div>Loading...</div>
+// `;
 
 // await fetch('/db/entries/armor-core-list.json')
 // 	.then(response => response.json())

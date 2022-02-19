@@ -2,7 +2,7 @@
 <html lang="en" style="background-color:#141c27;color:#fff;">
 	<head>
 		<meta charset="UTF-8">
-		<title>Cylix</title>
+		<title>Cylix Guide</title>
 		<link rel="canonical" href="https://gasgira.github.io">
 		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍞</text></svg>">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,12 +11,56 @@
 
 		<meta name="twitter:card" content="summary" />
 		<meta property="og:url" content="https://gasgira.github.io/" />
-		<meta property="og:title" content="Cylix" />
+		<meta property="og:title" content="Cylix Guide" />
 		<meta property="og:description" content="Halo Infinite API Explorer" />
 		<meta property="og:image" content="https://gasgira.github.io/social.jpg" />
-	<script defer src="main.3dea464b99decb01e198.js"></script></head>
+		<style>
+			.placeholder-loading {
+				width: 100%;
+				margin-top: 33vh;
+				margin-bottom: 33vh;
+			}
+		</style>
+	<script defer src="main.238f1359fed47d874a77.js"></script></head>
 	<body>
-		<main class="js--main">loading...</main>
+		<main class="js--main"><div class="placeholder-loading">
+			<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 256" preserveAspectRatio="xMidYMid meet" width="100%" height="2rem">
+				<defs>
+						<style>
+								@keyframes loading_path {
+										0% {
+												transform: scale(0) translate(0, 0);
+												opacity: 0
+										}
+										5% {
+												transform: scale(1) translate(128px, 96px);
+												opacity: 1
+										}
+										40% {
+												transform: scale(1) translate(608px, 96px);
+												opacity: 1
+										}
+										43% {
+												opacity: 0
+										}
+										50%,
+										to {
+												transform: scale(1) translate(800px, 96px);
+												opacity: 0
+										}
+								}
+		
+								.loading_dot {
+										fill: currentColor;
+										animation: 2s loading_path cubic-bezier(.1, .7, 1, 1) infinite normal
+								}
+						</style>
+				</defs>
+				<circle class="loading_dot" cx="32" cy="32" r="32" style="animation-delay:0s" />
+				<circle class="loading_dot" cx="32" cy="32" r="32" style="animation-delay:.4s" />
+				<circle class="loading_dot" cx="32" cy="32" r="32" style="animation-delay:.8s" />
+			</svg>
+		</div></main>
 		<footer>
 			<a href="https://github.com/Gasgira/gasgira.github.io" target="_blank" rel="noopener noreferrer">GitHub</a>
 			<span> — Compiled on February 18, 2022</span>

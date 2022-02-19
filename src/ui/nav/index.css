@@ -13,14 +13,14 @@ nav.toolbar {
 		flex-direction: row;
 		align-items: center;
 		& li {
-			padding: 0 0.5em;
+			padding: 0 0.15em;
 			/* & button::before {
 				border-width: 0;
 			} */
 		}
 	}
 	& .settings:not(:hover) {
-		opacity: 0.5;
+		/* opacity: 0.5; */
 	}
 	& .header-logo {
 		color: #fff;

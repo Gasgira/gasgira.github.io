@@ -1,5 +1,6 @@
 import { HTML } from 'lib/HTML';
 import { Component } from 'component';
+import { emitter } from 'eventEmitter';
 import { settings } from 'ui/settings';
 import { about } from 'ui/about';
 import { modalConstructor } from 'ui/modal';
@@ -42,13 +43,14 @@ class HeaderNav extends Component {
 						</svg>
 					</div>
 					<div class="title_wrapper">
-						<h1>Cylix</h1>
+						<h1>Cylix Guide</h1>
 						<span>Halo Infinite API Explorer</span>
 					</div>
 				</header></a>
 				<ul>
-					<li><button class="settings" onclick=${() => modalConstructor.showView(settings.render())}>Settings</button></li>
-					<li><button onclick=${() => modalConstructor.showView(about.render())}>Disclaimer</button></li>
+					<li><button aria-label="Search" onclick=${() => emitter.emit('nav-search')}><div class="icon-masked icon-search"></div></button></li>
+					<li><button aria-label="Settings" onclick=${() => modalConstructor.showView(settings.render())}><div class="icon-masked icon-settings"></button></li>
+					<li><button aria-label="Disclaimer" onclick=${() => modalConstructor.showView(about.render())}>Disclaimer</button></li>
 				</ul>
 			</nav>
 		`;
