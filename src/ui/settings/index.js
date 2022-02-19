@@ -56,7 +56,7 @@ class Settings extends Component {
 	}
 
 	advanced() {
-		if (window?.location?.hostname === 'gasgira.github.io') return;
+		if (window?.location?.hostname === 'cylix.guide') return;
 		return HTML.wire(this, ':advanced')`
 			<section>
 				<header>Advanced</header>

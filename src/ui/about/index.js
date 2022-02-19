@@ -9,7 +9,7 @@ class About extends Component {
 	render() {
 		return this.html`
 		<p>
-			<span>Skimmer is a compendium of items found within the game Halo Infinite.</span><br><br>
+			<span>Cylix is a compendium of items found within the game Halo Infinite.</span><br><br>
 			<span>All information presented is generated from the game API and is subject to change. As such it may not accurately reflect future content and can not be used as an authoritative source.</span><br><br>
 			<span>This site is not operated by nor affiliated with Microsoft and 343 Industries.</span><br><br>
 			<span>This site displays content owned or licensed by Microsoft for the purpose of education and information archiving.</span><br><br><br>

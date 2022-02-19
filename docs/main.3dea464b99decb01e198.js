@@ -4311,7 +4311,9 @@ class Database {
 		if (!stored) return (this._favoriteItemPaths = new Set());
 		// console.log('stored!')
 		// TODO process for is a path? etc
-		return (this._favoriteItemPaths = new Set(JSON.parse(stored)));
+		const paths = JSON.parse(stored);
+		if (!Array.isArray(paths)) return (this._favoriteItemPaths = new Set());
+		return (this._favoriteItemPaths = new Set(paths.map(path => path.toLowerCase())));
 	}
 
 	toggleFavorite(path) {
@@ -4965,7 +4967,7 @@ class About extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 	render() {
 		return this.html`
 		<p>
-			<span>Skimmer is a compendium of items found within the game Halo Infinite.</span><br><br>
+			<span>Cylix is a compendium of items found within the game Halo Infinite.</span><br><br>
 			<span>All information presented is generated from the game API and is subject to change. As such it may not accurately reflect future content and can not be used as an authoritative source.</span><br><br>
 			<span>This site is not operated by nor affiliated with Microsoft and 343 Industries.</span><br><br>
 			<span>This site displays content owned or licensed by Microsoft for the purpose of education and information archiving.</span><br><br><br>
@@ -6110,7 +6112,7 @@ class HeaderNav extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 						</svg>
 					</div>
 					<div class="title_wrapper">
-						<h1>Skimmer</h1>
+						<h1>Cylix</h1>
 						<span>Halo Infinite API Explorer</span>
 					</div>
 				</header></a>
@@ -6198,7 +6200,7 @@ class Settings extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 	}
 
 	advanced() {
-		if (window?.location?.hostname === 'gasgira.github.io') return;
+		if (window?.location?.hostname === 'cylix.guide') return;
 		return lib_HTML__WEBPACK_IMPORTED_MODULE_0__.HTML.wire(this, ':advanced')`
 			<section>
 				<header>Advanced</header>
@@ -6951,7 +6953,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("31d766dc408e07dd4471")
+/******/ 		__webpack_require__.h = () => ("3dea464b99decb01e198")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -7949,4 +7951,4 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.31d766dc408e07dd4471.js.map
+//# sourceMappingURL=main.3dea464b99decb01e198.js.map

@@ -221,7 +221,9 @@ class Database {
 		if (!stored) return (this._favoriteItemPaths = new Set());
 		// console.log('stored!')
 		// TODO process for is a path? etc
-		return (this._favoriteItemPaths = new Set(JSON.parse(stored)));
+		const paths = JSON.parse(stored);
+		if (!Array.isArray(paths)) return (this._favoriteItemPaths = new Set());
+		return (this._favoriteItemPaths = new Set(paths.map(path => path.toLowerCase())));
 	}
 
 	toggleFavorite(path) {

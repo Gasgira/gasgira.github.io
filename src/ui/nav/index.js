@@ -42,7 +42,7 @@ class HeaderNav extends Component {
 						</svg>
 					</div>
 					<div class="title_wrapper">
-						<h1>Skimmer</h1>
+						<h1>Cylix</h1>
 						<span>Halo Infinite API Explorer</span>
 					</div>
 				</header></a>
