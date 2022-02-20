@@ -22,6 +22,21 @@
 		</style>
 	</head>
 	<body>
+		<script>
+			try {
+				const { host, pathname } = new URL(window?.location ?? '');
+				if (pathname && pathname.startsWith('/share/inventory') && pathname.substring(pathname.length-5) === '.json')
+				{
+					console.log('Redirecting to cylix.guide');
+					const itemPath = pathname.substring(7, pathname.length);
+					window.location.replace(`https://${host}/#${itemPath}`);
+				} else {
+					window.location.replace(`https://${host}`);
+				}
+			} catch (error) {
+				
+			}
+		</script>
 		<a href="https://cylix.guide/">Cylix Guide</a>
 		<h1>Item</h1>
 		<p>...</p>
