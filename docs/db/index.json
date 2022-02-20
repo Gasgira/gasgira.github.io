@@ -1,44 +1,44 @@
 {
-	"date": "2022-02-13T00:00:00.000Z",
+	"date": "2022-02-15T00:00:00.000Z",
 	"types": [
-		"AiColor",
-		"AiCore",
-		"AiModel",
-		"AiTheme",
-		"ArmorChestAttachment",
-		"ArmorCoating",
 		"ArmorCore",
-		"ArmorEmblem",
-		"ArmorFx",
-		"ArmorGlove",
+		"ArmorTheme",
+		"ArmorCoating",
 		"ArmorHelmet",
 		"ArmorHelmetAttachment",
-		"ArmorHipAttachment",
-		"ArmorKneePad",
-		"ArmorLeftShoulderPad",
-		"ArmorMythicFx",
-		"ArmorRightShoulderPad",
-		"ArmorTheme",
 		"ArmorVisor",
+		"ArmorLeftShoulderPad",
+		"ArmorRightShoulderPad",
+		"ArmorGlove",
+		"ArmorKneePad",
+		"ArmorChestAttachment",
 		"ArmorWristAttachment",
-		"ChallengeReroll",
-		"None",
+		"ArmorHipAttachment",
+		"ArmorEmblem",
+		"ArmorFx",
+		"ArmorMythicFx",
 		"SpartanActionPose",
 		"SpartanBackdropImage",
 		"SpartanEmblem",
 		"SpartanVoice",
-		"VehicleAlternateGeometryRegion",
-		"VehicleCoating",
 		"VehicleCore",
-		"VehicleEmblem",
 		"VehicleTheme",
-		"WeaponAlternateGeometryRegion",
-		"WeaponCharm",
-		"WeaponCoating",
+		"VehicleCoating",
+		"VehicleEmblem",
+		"VehicleAlternateGeometryRegion",
 		"WeaponCore",
+		"WeaponTheme",
+		"WeaponCoating",
+		"WeaponCharm",
 		"WeaponDeathFx",
 		"WeaponEmblem",
-		"WeaponTheme",
+		"WeaponAlternateGeometryRegion",
+		"AiColor",
+		"AiCore",
+		"AiModel",
+		"AiTheme",
+		"ChallengeReroll",
+		"None",
 		"XPBoost",
 		"XPGrant",
 		"meta"
@@ -1939,7 +1939,7 @@
 			"name": "001-001-olympus-04c91602",
 			"title": "UA/Malachit Plate",
 			"type": "ArmorChestAttachment",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["001-001-olympus-2fe445c1", {
 			"path": "inventory/armor/chestattachments/001-001-olympus-2fe445c1.json",
@@ -2289,7 +2289,7 @@
 			"name": "002-001-olympus-3a26bce3",
 			"title": "Midnight Frost",
 			"type": "ArmorCoating",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["002-001-olympus-3c9898f5", {
 			"path": "inventory/armor/coatings/002-001-olympus-3c9898f5.json",
@@ -2611,7 +2611,7 @@
 			"name": "002-001-olympus-cd373d05",
 			"title": "Limed Ash",
 			"type": "ArmorCoating",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["002-001-olympus-d28fc5df", {
 			"path": "inventory/armor/coatings/002-001-olympus-d28fc5df.json",
@@ -3346,7 +3346,7 @@
 			"name": "013-001-37d15c60",
 			"title": "Wrath",
 			"type": "ArmorEmblem",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["013-001-399d9323", {
 			"path": "inventory/armor/emblems/013-001-399d9323.json",
@@ -4095,42 +4095,42 @@
 			"name": "015-000-noble-fire-cc6ea6ab",
 			"title": "Noble Fire",
 			"type": "ArmorFx",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["015-000-perfect-circl-24878e67", {
 			"path": "inventory/armor/fxarmor/015-000-perfect-circl-24878e67.json",
 			"name": "015-000-perfect-circl-24878e67",
 			"title": "Perfect Circle",
 			"type": "ArmorFx",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["015-000-perfect-subli-2559c51b", {
 			"path": "inventory/armor/fxarmor/015-000-perfect-subli-2559c51b.json",
 			"name": "015-000-perfect-subli-2559c51b",
 			"title": "Perfect Sublimity",
 			"type": "ArmorFx",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["015-000-synthawk-51f52302", {
 			"path": "inventory/armor/fxarmor/015-000-synthawk-51f52302.json",
 			"name": "015-000-synthawk-51f52302",
 			"title": "Neon Hawk",
 			"type": "ArmorFx",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["015-000-synthvisor-e0fb67af", {
 			"path": "inventory/armor/fxarmor/015-000-synthvisor-e0fb67af.json",
 			"name": "015-000-synthvisor-e0fb67af",
 			"title": "Neon Screen",
 			"type": "ArmorFx",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["016-000-flower-petals-57a94281", {
 			"path": "inventory/armor/fxmythic/016-000-flower-petals-57a94281.json",
 			"name": "016-000-flower-petals-57a94281",
 			"title": "Enlightened Path",
 			"type": "ArmorMythicFx",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["016-000-olympus-ff9f8007", {
 			"path": "inventory/armor/fxmythic/016-000-olympus-ff9f8007.json",
@@ -4144,14 +4144,14 @@
 			"name": "016-000-synthwave-178fd347",
 			"title": "Neon Beat",
 			"type": "ArmorMythicFx",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["016-000-tech-66736c8b", {
 			"path": "inventory/armor/fxmythic/016-000-tech-66736c8b.json",
 			"name": "016-000-tech-66736c8b",
 			"title": "Perfect Sector",
 			"type": "ArmorMythicFx",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["003-001-olympus-bc4aff7d", {
 			"path": "inventory/armor/gloves/003-001-olympus-bc4aff7d.json",
@@ -4179,7 +4179,7 @@
 			"name": "003-001-olympus-f30b69ba",
 			"title": "Hemicyon",
 			"type": "ArmorGlove",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["003-001-reach-2564121f", {
 			"path": "inventory/armor/gloves/003-001-reach-2564121f.json",
@@ -4298,7 +4298,7 @@
 			"name": "004-001-olympus-f7f0d548",
 			"title": "TAS/GUNGNIR MOD 6",
 			"type": "ArmorHelmetAttachment",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["004-001-reach-20937e55", {
 			"path": "inventory/armor/helmetattachments/004-001-reach-20937e55.json",
@@ -4396,7 +4396,7 @@
 			"name": "004-001-samurai-6610745d",
 			"title": "Windblown Mask",
 			"type": "ArmorHelmetAttachment",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["004-001-samurai-6b0e041a", {
 			"path": "inventory/armor/helmetattachments/004-001-samurai-6b0e041a.json",
@@ -4438,7 +4438,7 @@
 			"name": "005-001-olympus-52ac3f9e",
 			"title": "STORMFALL",
 			"type": "ArmorHelmet",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["005-001-olympus-609a5d1c", {
 			"path": "inventory/armor/helmets/005-001-olympus-609a5d1c.json",
@@ -4746,7 +4746,7 @@
 			"name": "006-001-olympus-f30b69ba",
 			"title": "UA/Type MR",
 			"type": "ArmorKneePad",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["006-001-reach-2564121f", {
 			"path": "inventory/armor/kneepads/006-001-reach-2564121f.json",
@@ -4879,7 +4879,7 @@
 			"name": "008-001-olympus-9767acbe",
 			"title": "UA/Gordius",
 			"type": "ArmorLeftShoulderPad",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["008-001-olympus-a551ce3c", {
 			"path": "inventory/armor/shouldersleft/008-001-olympus-a551ce3c.json",
@@ -5117,7 +5117,7 @@
 			"name": "009-001-olympus-9767acbe",
 			"title": "UA/Gordius",
 			"type": "ArmorRightShoulderPad",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["009-001-olympus-a551ce3c", {
 			"path": "inventory/armor/shouldersright/009-001-olympus-a551ce3c.json",
@@ -6006,7 +6006,7 @@
 			"name": "101-000-menu-stance-o-b109a039",
 			"title": "Patrol Formation",
 			"type": "SpartanActionPose",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["101-000-menu-stance-o-b92e4670", {
 			"path": "inventory/spartan/actionposes/101-000-menu-stance-o-b92e4670.json",
@@ -6174,7 +6174,7 @@
 			"name": "103-000-ui-background-410a879c",
 			"title": "Banner Day",
 			"type": "SpartanBackdropImage",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["103-000-ui-background-4522b283", {
 			"path": "inventory/spartan/backdropimages/103-000-ui-background-4522b283.json",
@@ -7252,7 +7252,7 @@
 			"name": "104-001-reach-wrath-e-37d15c60",
 			"title": "Wrath",
 			"type": "SpartanEmblem",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["104-001-samurai-grand-105c8d95", {
 			"path": "inventory/spartan/emblems/104-001-samurai-grand-105c8d95.json",
@@ -8442,7 +8442,7 @@
 			"name": "405-305-37d15c60",
 			"title": "Wrath",
 			"type": "VehicleEmblem",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["405-305-399d9323", {
 			"path": "inventory/vehicle/emblems/405-305-399d9323.json",
@@ -9135,7 +9135,7 @@
 			"name": "210-000-m90-shroud-d8c09977",
 			"title": "M90 Shroud",
 			"type": "WeaponAlternateGeometryRegion",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["210-000-shuraudo-ff8dfa29", {
 			"path": "inventory/weapon/alternategeos/210-000-shuraudo-ff8dfa29.json",
@@ -9170,7 +9170,7 @@
 			"name": "210-000-type-3c-flash-a3174d80",
 			"title": "Type 3C Flash Hider",
 			"type": "WeaponAlternateGeometryRegion",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["201-201-03a85295", {
 			"path": "inventory/weapon/charms/201-201-03a85295.json",
@@ -9492,7 +9492,7 @@
 			"name": "203-200-olympus-8088283d",
 			"title": "Pop",
 			"type": "WeaponCoating",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["203-200-olympus-a3f588cb", {
 			"path": "inventory/weapon/coatings/203-200-olympus-a3f588cb.json",
@@ -9674,7 +9674,7 @@
 			"name": "203-201-olympus-8088283d",
 			"title": "Pop",
 			"type": "WeaponCoating",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["203-201-olympus-90bc428c", {
 			"path": "inventory/weapon/coatings/203-201-olympus-90bc428c.json",
@@ -9954,7 +9954,7 @@
 			"name": "203-202-olympus-8088283d",
 			"title": "Pop",
 			"type": "WeaponCoating",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["203-202-olympus-81647ac6", {
 			"path": "inventory/weapon/coatings/203-202-olympus-81647ac6.json",
@@ -10108,7 +10108,7 @@
 			"name": "203-203-olympus-8088283d",
 			"title": "Pop",
 			"type": "WeaponCoating",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["203-203-olympus-aa30213b", {
 			"path": "inventory/weapon/coatings/203-203-olympus-aa30213b.json",
@@ -10479,7 +10479,7 @@
 			"name": "205-201-15ed7ee8",
 			"title": "Driving Offensively",
 			"type": "WeaponEmblem",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["205-201-19be615a", {
 			"path": "inventory/weapon/emblems/205-201-19be615a.json",
@@ -10619,7 +10619,7 @@
 			"name": "205-201-37d15c60",
 			"title": "Wrath",
 			"type": "WeaponEmblem",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["205-201-399d9323", {
 			"path": "inventory/weapon/emblems/205-201-399d9323.json",
@@ -11326,21 +11326,21 @@
 			"name": "204-000-olympus_camo_dissolve",
 			"title": "Perfect Decompilation",
 			"type": "WeaponDeathFx",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["204-000-samurai_blossom_death", {
 			"path": "inventory/weapon/fxdeath/204-000-samurai_blossom_death.json",
 			"name": "204-000-samurai_blossom_death",
 			"title": "Enlightened Blossoms",
 			"type": "WeaponDeathFx",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["204-000-synthwave-end-fe76604b", {
 			"path": "inventory/weapon/fxdeath/204-000-synthwave-end-fe76604b.json",
 			"name": "204-000-synthwave-end-fe76604b",
 			"title": "Neon End Credits",
 			"type": "WeaponDeathFx",
-			"touched": ["2022-02-13T00:00:00.000Z"]
+			"touched": ["2022-02-13T00:00:00.000Z", "2022-02-15T00:00:00.000Z"]
 		}],
 		["207-000-cloud9-24fe39cf", {
 			"path": "inventory/weapon/themes/207-000-cloud9-24fe39cf.json",

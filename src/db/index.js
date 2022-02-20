@@ -152,50 +152,52 @@ class Database {
 		return this?._types ?? (this._types = new Map([
 			['ArmorCoating', 'Coating, Armor'],
 			['ArmorHelmet', 'Helmet'],
-			['ArmorHelmetAttachment', 'Helmet Attachment'],
+			['ArmorHelmetAttachment', 'Helmet Atch.'],
 			['ArmorVisor', 'Visor'],
 			['ArmorLeftShoulderPad', 'Shoulder, Left'],
 			['ArmorRightShoulderPad', 'Shoulder, Right'],
 			['ArmorGlove', 'Gloves'],
-			['ArmorChestAttachment', 'Chest Attachment'],
+			['ArmorChestAttachment', 'Chest Atch.'],
 			['ArmorKneePad', 'Knee Pads'],
-			['ArmorWristAttachment', 'Wrist Attachment'],
-			['ArmorHipAttachment', 'Hip Attachment'],
+			['ArmorWristAttachment', 'Wrist Atch.'],
+			['ArmorHipAttachment', 'Hip Atch.'],
 			['ArmorEmblem', 'Emblem, Armor'],
 			['ArmorFx', 'Armor Effects'],
 			['ArmorMythicFx', 'Mythic Effects'],
-			['ArmorTheme', 'Theme, Armor'],
+			['ArmorTheme', 'Kit, Armor'],
 			['ArmorCore', 'Core, Armor'],
 			['SpartanActionPose', 'Stance'],
 			['SpartanBackdropImage', 'Backdrop'],
 			['SpartanEmblem', 'Emblem, Nameplate'],
-			['WeaponCharm', 'Weapon Charm'],
+			['SpartanVoice', 'Voice Imprint'],
+			['WeaponCharm', 'Charm'],
 			['WeaponCoating', 'Coating, Weapon'],
 			['WeaponDeathFx', 'Death Effect'],
 			['WeaponEmblem', 'Emblem, Weapon'],
-			['WeaponTheme', 'Theme, Weapon'],
+			['WeaponTheme', 'Kit, Weapon'],
 			['WeaponCore', 'Core, Weapon'],
-			['WeaponAlternateGeometryRegion', 'Weapon Model'],
-			['VehicleAlternateGeometryRegion', 'Vehicle Model'],
+			['WeaponAlternateGeometryRegion', 'Model, Weapon'],
+			['VehicleAlternateGeometryRegion', 'Model, Vehicle'],
 			['VehicleCoating', 'Coating, Vehicle'],
 			['VehicleEmblem', 'Emblem, Vehicle'],
-			['VehicleTheme', 'Theme, Vehicle'],
+			['VehicleTheme', 'Kit, Vehicle'],
 			['VehicleCore', 'Core, Vehicle'],
-			['HelmetAttachments', 'Helmet Attachment'],
+			['HelmetAttachments', 'Helmet Atch.'],
 			['LeftShoulderPads', 'Shoulder, Left'],
 			['RightShoulderPads', 'Shoulder, Right'],
 			['KneePads', 'Knee Pads'],
-			['ChestAttachments', 'Chest Attachments'],
-			['WristAttachments', 'Wrist Attachments'],
-			['HipAttachments', 'Hip Attachments'],
+			['ChestAttachments', 'Chest Atch.'],
+			['WristAttachments', 'Wrist Atch.'],
+			['HipAttachments', 'Hip Atch.'],
 			['WeaponCharms', 'Weapon Charms'],
 			['DeathFx', 'Death Effects'],
 			['AlternateGeometryRegions', 'Models'],
 			['MythicFx', 'Mythic Effects'],
 			['AiColor', 'AI Color'],
 			['AiModel', 'AI Model'],
-			['AiTheme', 'Theme, AI'],
-			['AiCore', 'Core, AI']
+			['AiTheme', 'Kit, AI'],
+			['AiCore', 'Core, AI'],
+			['meta', 'Meta']
 		]))
 	}
 
@@ -481,6 +483,20 @@ export class CurrencyItem extends Item {
 }
 
 class ItemPanel extends Component {
+	constructor() {
+		super();
+
+		window.addEventListener("keydown", (event) => {
+			if (event.defaultPrevented) return;
+		
+			if (this.state.visible === true && event.key === 'Escape')
+			{
+				this.hide();
+				event.preventDefault();
+			}
+		}, true);
+	}
+
 	get defaultState() {
 		return {
 			visible: false,

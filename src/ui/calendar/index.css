@@ -1,5 +1,8 @@
 .calendar_wrapper {
 	& .header-notice {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
 		font-size: 0.8em;
 		opacity: 0.66;
 		pointer-events: none;

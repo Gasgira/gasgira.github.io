@@ -12,7 +12,7 @@ class Inventory extends Component {
 		const inventoryPath = 'Inventory/catalog/inventory_catalog.json';
 		this.data = await db.getJSON(inventoryPath);
 
-		const favorites = new InventoryCategory({categoryName: 'Favorites'});
+		const favorites = new Favorites({categoryName: 'Favorites'});
 		const search = new Search({categoryName: 'Search'});
 
 		this.categories = [favorites, search];
@@ -75,11 +75,22 @@ class Inventory extends Component {
 		emitter.on('nav-search', () => {
 			this.showCategory(search);
 			const el = document.querySelector(`#inventory`);
-			if (el) el.scrollIntoView();
+			if (el)
+			{
+				el.scrollIntoView();
+				history.replaceState({}, `Cylix`, `#inventory`);
+			}
 
 			const input = document.querySelector(`#inventory-search`);
 			if (input) input.focus();
 		});
+
+		// Listen for updates to favorites list, render on change
+		emitter.on('favoriteItemPaths', (path) => {
+			// console.log('fav update', path);
+			favorites.init();
+			if (this.state?.inventoryCategory === favorites) favorites.render();
+		})
 	}
 
 	render() {
@@ -135,15 +146,6 @@ class InventoryCategory extends Component {
 			console.log('TEST Bundle', itemIDs);
 			this.itemIDs = new Set(itemIDs);
 		}
-
-		// Listen for updates to favorites list, render on change
-		if (this.categoryName === 'Favorites') {
-			emitter.on('favoriteItemPaths', (path) => {
-				console.log('fav update', path);
-				this.init();
-				if (inventory.state?.inventoryCategory === this) this.render();
-			})
-		}
 	}
 
 	get defaultState() {
@@ -153,9 +155,9 @@ class InventoryCategory extends Component {
 	}
 
 	init() {
-		if (this.items?.length && this.categoryName !== 'Favorites') return;
+		if (this.items.length) return;
 
-		if (!this.itemIDs.size || this.categoryName === 'Favorites') this.itemIDs = db.getItemsIDsByType(this.categoryName);
+		if (!this.itemIDs.size) this.itemIDs = db.getItemsIDsByType(this.categoryName);
 		
 		if (!this.itemIDs.size) return;
 		console.info('IDs', this.itemIDs);
@@ -188,6 +190,13 @@ class InventoryCategory extends Component {
 				// <button
 				// 	onclick=${() => modalConstructor.showView(this.renderFavoritesManager())}
 				// >Manage</button>` : ''}
+	}
+}
+
+class Favorites extends InventoryCategory {
+	init() {
+		this.itemIDs = db.getItemsIDsByType(this.categoryName);
+		this.items = [...this.itemIDs].map(id => new Item(db.getItemPathByID(id)));
 	}
 
 	renderFavoritesManager() {
@@ -244,13 +253,23 @@ class Search extends InventoryCategory {
 		if (!this.state.term && term && typeof term === 'string')
 		{
 			this.state.term = term;
-			this.searchItems();
 		}
+		
+		const modifiedDateString = urlParams.getSecionSetting('smd');
+		if (modifiedDateString && typeof modifiedDateString === 'string' && Date.parse(modifiedDateString))
+		{
+			console.log('sdm', modifiedDateString)
+			this.state.filters.set('modifiedDate', new Date(modifiedDateString));
+		}
+
+		if (this.state.term || this.state.filters.size) this.searchItems();
 	}
 
 	get defaultState() {
 		return {
-			term: ''
+			term: '',
+			filters: new Map(),
+			showFilters: false
 		};
 	}
 
@@ -263,26 +282,39 @@ class Search extends InventoryCategory {
 					<div>Search // ${this?.itemIDs?.size ?? 0}</div>
 				</header>
 				<div class="inventory-search_wrapper">
-					<input
-						type="search"
-						class="inventory-search_input"
-						id="inventory-search"
-						name="inventory-search"
-						maxlength="24"
-						oninput=${(e) => this.input(e?.target?.value ?? '')}
-						onkeydown=${(e) => {
-							if (e?.key === 'Enter') this.submit();
-						}}
-						value=${this.state.term}
-					>
-					<button
-						class="inventory-search_submit"
-						onclick=${() => this.submit()}
-					><div class="icon-masked icon-search"></div></button>
+					<div class="inventory-search-bar_wrapper">
+						<input
+							aria-label="Search Input"
+							type="search"
+							class="inventory-search_input"
+							id="inventory-search"
+							name="inventory-search"
+							maxlength="24"
+							oninput=${(e) => this.input(e?.target?.value ?? '')}
+							onkeydown=${(e) => {
+								if (e?.key === 'Enter') this.submit();
+							}}
+							value=${this.state.term}
+						>
+						<button
+							class="inventory-search_submit"
+							onclick=${() => this.submit()}
+							aria-label="Submit Search"
+						><label for="inventory-search" class="icon-masked icon-search"></label></button>
+					</div>
+					<div class="inventory-search-filter_wrapper">
+						<button
+							class="inventory-search_toggle-filters"
+							onclick=${() => this.setState({showFilters: !this.state.showFilters})}
+							aria-label="Toggle Search Filter Menu"
+							disabled=${this.state.filters.size}
+						><div class="icon-masked icon-filter"></div></button>
+						${(this.state.showFilters || this.state.filters.size) ? this.renderFilters() : ''}
+					</div>
 				</div>
 				<div class="inventory-search_info">
-					${this?.itemIDs?.size > 100 ? `${this.itemIDs.size} results, showing ${this?.items?.size}` : ''}
-					${this.state.term && !this?.itemIDs?.size ? 'No results' : ''}
+					${{html: this?.itemIDs?.size > 100 ? `<div class="icon-masked icon-alert"></div> ${this.itemIDs.size} results, showing ${this?.items?.size}` : ''}}
+					${{html: this.state.term && !this?.itemIDs?.size ? '<div class="icon-masked icon-alert"></div> No results' : ''}}
 				</div>
 				<ul
 					class="inventory-category_items"
@@ -290,6 +322,25 @@ class Search extends InventoryCategory {
 					${[...this.items].map(item => HTML.wire()`<li>${item.renderIcon('inventory', {itemTypeIcon: true})}</li>`)}
 				</ul>
 			</div>
+		`;
+	}
+
+	renderFilters() {
+		return HTML.wire(this, ':filters')`
+			<ul class="inventory-search-filters">
+				<li class="filter-input_wrapper">
+					<label for="date_modified-after">Modified After</label>
+					<input
+						type="date"
+						id="date_modified-after"
+						onchange=${(e) => this.filterModifiedDate(e.target.value)}
+						value=${urlParams.getSecionSetting('smd')
+							? `${urlParams.getSecionSetting('smd')}`
+							: ''
+						}
+					>
+				</li>
+			</ul>
 		`;
 	}
 
@@ -302,17 +353,65 @@ class Search extends InventoryCategory {
 	}
 
 	searchItems() {
-		if (!this.state.term || typeof this.state.term !== 'string') return;
+		// if (!this.state.term || typeof this.state.term !== 'string') return;
 		this.itemIDs = new Set();
 		// console.info(`[search] "${db.index.manifest.size}" items in index`);
-		[...db.index.manifest.values()].forEach(entry => {
+		for (const entry of db.index.manifest.values())
+		{
 			const title = entry.title.toLowerCase();
-			if (title.includes(this.state.term))
+			if (this.state.term && !title.includes(this.state.term))
 			{
-				this.itemIDs.add(entry.name);
+				continue;
+				// this.itemIDs.add(entry.name);
 				// console.log(title, entry.name);
 			}
-		});
+
+			const filters = this.state.filters;
+
+			if (filters.has('modifiedDate') && Array.isArray(entry?.touched))
+			{
+				const dateString = entry.touched[entry.touched.length-1];
+				if (Date.parse(dateString))
+				{
+					const lastModified = new Date(dateString);
+					if (new Date(filters.get('modifiedDate')) >= lastModified)
+					{
+						// console.log(lastModified)
+						continue;
+					}
+				}
+			}
+
+			this.itemIDs.add(entry.name);
+		}
+		// [...db.index.manifest.values()].forEach(entry => {
+		// 	let matches = true;
+		// 	const title = entry.title.toLowerCase();
+		// 	if (this.state.term && !title.includes(this.state.term))
+		// 	{
+		// 		matches = false;
+		// 		// this.itemIDs.add(entry.name);
+		// 		// console.log(title, entry.name);
+		// 	}
+
+		// 	const filters = this.state.filters;
+
+		// 	if (filters.has('modifiedDate') && Array.isArray(entry?.touched))
+		// 	{
+		// 		const dateString = entry.touched[entry.touched.length-1];
+		// 		if (Date.parse(dateString))
+		// 		{
+		// 			const lastModified = new Date(dateString);
+		// 			if (new Date(filters.get('modifiedDate')) >= lastModified)
+		// 			{
+		// 				// console.log(lastModified)
+		// 				matches = false;
+		// 			}
+		// 		}
+		// 	}
+
+		// 	if (matches) this.itemIDs.add(entry.name);
+		// });
 		console.info(`[search] Found "${this.itemIDs.size}" items`);
 		if (this.itemIDs.size)
 		{
@@ -327,7 +426,7 @@ class Search extends InventoryCategory {
 	}
 
 	submit() {
-		if (!this.state.term || typeof this.state.term !== 'string')
+		if ((!this.state.term || typeof this.state.term !== 'string') && !this.state.filters.size)
 		{
 			this.items = new Set();
 			this.itemIDs = new Set();
@@ -341,6 +440,30 @@ class Search extends InventoryCategory {
 		this.render();
 
 		const el = document.querySelector(`#inventory`);
-		if (el) el.scrollIntoView();
+		if (el)
+		{
+			el.scrollIntoView();
+			history.replaceState({}, `Cylix`, `#inventory`);
+		}
+	}
+
+	filterModifiedDate(dateString) {
+		// console.log('date', dateString)
+		if (!dateString || !Date.parse(dateString))
+		{
+			// console.log('del', dateString)
+			if (this.state.filters.has('modifiedDate')) this.state.filters.delete('modifiedDate');
+			urlParams.deleteSecionSetting('smd');
+			return;
+		}
+		const date = new Date(dateString);
+		if (!date) return;
+		// date.setDate(date.getDate() + 1);
+		// console.log(date);
+		this.state.filters.set('modifiedDate', date);
+		urlParams.setSecionSetting('smd',
+			`${new Date(new Date(date).setDate(date.getDate() + 1)).toLocaleDateString('se-SE',
+				{ year: 'numeric', month: 'numeric', day: 'numeric' }
+			)}`);
 	}
 }

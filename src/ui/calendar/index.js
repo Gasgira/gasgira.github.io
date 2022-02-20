@@ -100,7 +100,7 @@ class Calendar extends Component {
 	async render() {
 		return this.html`
 			<div class="mica_viewer calendar_wrapper" id="season-calendar">
-				<header class="mica_header-strip"><a class="mica_header-anchor" href="#season-calendar"><h2>Season Calendar</h2></a><span class="header-notice">Note: content and dates subject to change.</span></header>
+				<header class="mica_header-strip"><a class="mica_header-anchor" href="#season-calendar"><h2>Season Calendar</h2></a><span class="header-notice"><div class="icon-masked icon-info"></div> Content and dates subject to change.</span></header>
 				<div class="mica_main-content">
 					<nav><ul class="mica_nav-list">
 						${this.renderEventList()}
