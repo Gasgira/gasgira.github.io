@@ -258,7 +258,7 @@ class Socket extends Component {
 			<div
 				class ="core-sockets_wrapper"
 			>
-			${this.name ?? 'Socket'} // ${this?.items?.length ?? '#'}
+			${this.name?.replace('Atch.', 'Attachments') ?? 'Socket'} // ${this?.items?.length ?? '#'}
 				<ul
 					class="socket-items"
 				>

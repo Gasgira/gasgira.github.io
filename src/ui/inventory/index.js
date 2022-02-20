@@ -74,15 +74,7 @@ class Inventory extends Component {
 
 		emitter.on('nav-search', () => {
 			this.showCategory(search);
-			const el = document.querySelector(`#inventory`);
-			if (el)
-			{
-				el.scrollIntoView();
-				history.replaceState({}, `Cylix`, `#inventory`);
-			}
-
-			const input = document.querySelector(`#inventory-search`);
-			if (input) input.focus();
+			search.focus();
 		});
 
 		// Listen for updates to favorites list, render on change
@@ -113,6 +105,7 @@ class Inventory extends Component {
 
 	showCategory(inventoryCategory) {
 		if (this.state?.inventoryCategory === inventoryCategory) {
+			this.scrollIntoView();
 			// this.setState({inventoryCategory: undefined});
 			// urlParams.deleteSecionSetting('inventory');
 			return;
@@ -120,11 +113,21 @@ class Inventory extends Component {
 		inventoryCategory.init();
 		this.setState({inventoryCategory});
 		urlParams.setSecionSetting('inventory', inventoryCategory?.categoryName ?? 'unk');
+		this.scrollIntoView();
 	}
 
 	get coreList() {
 		if (!this.data) return [];
 		return this.data?.Cores;
+	}
+
+	scrollIntoView() {
+		const el = document.querySelector(`#inventory`);
+		if (el)
+		{
+			el.scrollIntoView();
+			history.replaceState({}, `Cylix`, `#inventory`);
+		}
 	}
 }
 
@@ -157,7 +160,7 @@ class InventoryCategory extends Component {
 	init() {
 		if (this.items.length) return;
 
-		if (!this.itemIDs.size) this.itemIDs = db.getItemsIDsByType(this.categoryName);
+		if (!this.itemIDs.size) this.itemIDs = db.getItemIDsByType(this.categoryName);
 		
 		if (!this.itemIDs.size) return;
 		console.info('IDs', this.itemIDs);
@@ -171,7 +174,7 @@ class InventoryCategory extends Component {
 				class ="inventory-category_wrapper"
 			>
 			<header class="h-favorites">
-				<div>${db.getItemType(this.categoryName) ?? ''} // ${this?.items?.length}</div>
+				<div>${db.getItemType(this.categoryName)?.replace('Atch.', 'Attachments') ?? ''} // ${this?.items?.length}</div>
 			</header>
 				<ul
 					class="inventory-category_items"
@@ -195,7 +198,7 @@ class InventoryCategory extends Component {
 
 class Favorites extends InventoryCategory {
 	init() {
-		this.itemIDs = db.getItemsIDsByType(this.categoryName);
+		this.itemIDs = db.getItemIDsByType(this.categoryName);
 		this.items = [...this.itemIDs].map(id => new Item(db.getItemPathByID(id)));
 	}
 
@@ -256,13 +259,15 @@ class Search extends InventoryCategory {
 		}
 		
 		const modifiedDateString = urlParams.getSecionSetting('smd');
-		if (modifiedDateString && typeof modifiedDateString === 'string' && Date.parse(modifiedDateString))
+		if (modifiedDateString && typeof modifiedDateString === 'string' && Date.parse(`${modifiedDateString}T00:00:00Z`))
 		{
 			console.log('sdm', modifiedDateString)
-			this.state.filters.set('modifiedDate', new Date(modifiedDateString));
+			this.state.filters.set('modifiedDate', new Date(`${modifiedDateString}T00:00:00Z`));
 		}
 
-		if (this.state.term || this.state.filters.size) this.searchItems();
+		if (this.state.term || this.state.filters.size) {
+			this.searchItems();
+		}
 	}
 
 	get defaultState() {
@@ -289,6 +294,7 @@ class Search extends InventoryCategory {
 							class="inventory-search_input"
 							id="inventory-search"
 							name="inventory-search"
+							placeholder="Search..."
 							maxlength="24"
 							oninput=${(e) => this.input(e?.target?.value ?? '')}
 							onkeydown=${(e) => {
@@ -329,7 +335,7 @@ class Search extends InventoryCategory {
 		return HTML.wire(this, ':filters')`
 			<ul class="inventory-search-filters">
 				<li class="filter-input_wrapper">
-					<label for="date_modified-after">Modified After</label>
+					<label for="date_modified-after">Date Modified</label>
 					<input
 						type="date"
 						id="date_modified-after"
@@ -359,12 +365,7 @@ class Search extends InventoryCategory {
 		for (const entry of db.index.manifest.values())
 		{
 			const title = entry.title.toLowerCase();
-			if (this.state.term && !title.includes(this.state.term))
-			{
-				continue;
-				// this.itemIDs.add(entry.name);
-				// console.log(title, entry.name);
-			}
+			if (this.state.term && !title.includes(this.state.term)) continue;
 
 			const filters = this.state.filters;
 
@@ -374,7 +375,7 @@ class Search extends InventoryCategory {
 				if (Date.parse(dateString))
 				{
 					const lastModified = new Date(dateString);
-					if (new Date(filters.get('modifiedDate')) >= lastModified)
+					if (new Date(filters.get('modifiedDate')) > lastModified)
 					{
 						// console.log(lastModified)
 						continue;
@@ -384,34 +385,7 @@ class Search extends InventoryCategory {
 
 			this.itemIDs.add(entry.name);
 		}
-		// [...db.index.manifest.values()].forEach(entry => {
-		// 	let matches = true;
-		// 	const title = entry.title.toLowerCase();
-		// 	if (this.state.term && !title.includes(this.state.term))
-		// 	{
-		// 		matches = false;
-		// 		// this.itemIDs.add(entry.name);
-		// 		// console.log(title, entry.name);
-		// 	}
-
-		// 	const filters = this.state.filters;
-
-		// 	if (filters.has('modifiedDate') && Array.isArray(entry?.touched))
-		// 	{
-		// 		const dateString = entry.touched[entry.touched.length-1];
-		// 		if (Date.parse(dateString))
-		// 		{
-		// 			const lastModified = new Date(dateString);
-		// 			if (new Date(filters.get('modifiedDate')) >= lastModified)
-		// 			{
-		// 				// console.log(lastModified)
-		// 				matches = false;
-		// 			}
-		// 		}
-		// 	}
-
-		// 	if (matches) this.itemIDs.add(entry.name);
-		// });
+		
 		console.info(`[search] Found "${this.itemIDs.size}" items`);
 		if (this.itemIDs.size)
 		{
@@ -434,21 +408,16 @@ class Search extends InventoryCategory {
 			this.render();
 			return;
 		}
-		console.log('submit', this.state.term);
+		console.log('submit', this.state.term, this.state.filters);
 		urlParams.setSecionSetting('s', this.state.term);
 		this.searchItems();
 		this.render();
 
-		const el = document.querySelector(`#inventory`);
-		if (el)
-		{
-			el.scrollIntoView();
-			history.replaceState({}, `Cylix`, `#inventory`);
-		}
+		inventory.scrollIntoView();
 	}
 
 	filterModifiedDate(dateString) {
-		// console.log('date', dateString)
+		console.log('date', dateString)
 		if (!dateString || !Date.parse(dateString))
 		{
 			// console.log('del', dateString)
@@ -456,14 +425,17 @@ class Search extends InventoryCategory {
 			urlParams.deleteSecionSetting('smd');
 			return;
 		}
-		const date = new Date(dateString);
+		const date = new Date(`${dateString}T00:00:00Z`);
 		if (!date) return;
+		console.log('datep', date)
 		// date.setDate(date.getDate() + 1);
 		// console.log(date);
 		this.state.filters.set('modifiedDate', date);
-		urlParams.setSecionSetting('smd',
-			`${new Date(new Date(date).setDate(date.getDate() + 1)).toLocaleDateString('se-SE',
-				{ year: 'numeric', month: 'numeric', day: 'numeric' }
-			)}`);
+		urlParams.setSecionSetting('smd', `${dateString}`);
+	}
+
+	focus() {
+		const input = document.querySelector(`#inventory-search`);
+		if (input) input.focus();
 	}
 }

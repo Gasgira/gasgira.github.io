@@ -230,6 +230,19 @@ button.dbItemIcon {
 			}
 		}
 	}
+	& .modified-info_wrapper {
+		display: flex;
+		flex-direction: row;
+		justify-content: right;
+		align-items: center;
+		padding: 0 1rem;
+		opacity: 0.8;
+		& label {
+			opacity: 0.66;
+			font-size: 0.8em;
+			padding-right: 0.2em;
+		}
+	}
 	& .json-info_wrapper {
 		display: flex;
 		flex-direction: row;

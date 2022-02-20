@@ -85,7 +85,7 @@ class Database {
 		}
 	}
 
-	getItemsIDsByType(type) {
+	getItemIDsByType(type) {
 		if (!type || typeof type !== 'string') return;
 		if (this.typeIDs.has(type)) return this.typeIDs.get(type);
 
@@ -96,10 +96,13 @@ class Database {
 		if (this.index.types.has(type))
 		{
 			const entries = [...this.index.manifest.values()].filter(entry => entry?.type === type);
+				// .sort((a, b) => {
+				// 	if (a.title && b.title) return a.title.toLowerCase().localeCompare(b.title.toLowerCase());
+				// });
 			this.typeIDs.set(type, new Set(entries.map(entry => entry?.name ?? 'UNK')));
 			return this.typeIDs.get(type);
 		}
-		console.warn(`[db.getItemsIDsByType] Type not found! "${type}"`);
+		console.warn(`[db.getItemIDsByType] Type not found! "${type}"`);
 	}
 
 	getItemManifestByID(id) {
@@ -127,7 +130,7 @@ class Database {
 	getCorePaths() {
 		const coreTypes = ['ArmorCore', 'VehicleCore', 'WeaponCore'];
 		return coreTypes.map(type => {
-			return [...this.getItemsIDsByType(type)].map(entry => entry.path);
+			return [...this.getItemIDsByType(type)].map(entry => entry.path);
 		});
 	}
 
@@ -440,6 +443,24 @@ export class Item extends Component {
 	showItemPanel() {
 		itemPanel.displayItem(this);
 	}
+
+	get manifestItem() {
+		if (this?._manifestItem) return this._manifestItem;
+		const manifest = db.getItemManifestByID(this.id);
+		if (manifest) return (this._manifestItem = manifest);
+	}
+
+	get lastModifiedDate() {
+		if (this?._lastModifiedDate) return this._lastModifiedDate;
+		if (!Array.isArray(this?.manifestItem?.touched)) return new Date('2021-11-15T20:00:00.000Z');
+		
+		const dateString = this?.manifestItem?.touched[this.manifestItem.touched.length-1];
+		if (!Date.parse(dateString)) new Date('2021-11-15T20:00:00.000Z');
+
+		const date = new Date(dateString);
+		date.setUTCHours(20);
+		return (this._lastModifiedDate = date);
+	}
 }
 
 export class CurrencyItem extends Item {
@@ -528,6 +549,10 @@ class ItemPanel extends Component {
 		});
 	}
 
+	get item() {
+		if (this.state.item) return this.state.item;
+	}
+
 	render() {
 		if (this.state.visible) {
 			const item = this.state.item.data;
@@ -596,8 +621,13 @@ class ItemPanel extends Component {
 							${[...this.state.item?.parentPaths ?? []].map(async path => `<a class="parentSocket" href=${`#${path}`}>${await new Item(path).getName()}</a>`)}
 						</span>
 					</div>
+					<div class="modified-info_wrapper">
+							<label for="item-modified-date">Modified: </label><span id="item-modified-date">${this?.item?.lastModifiedDate?.toLocaleDateString(undefined, {
+								year: 'numeric', month: 'numeric', day: 'numeric'
+							}) ?? 'untracked'}</span>
+					</div>
 					<div class="json-info_wrapper">
-						<span class="dbItemPanel_path">Share link: <a href=${`/#${this.state.item?.path ?? ''}`}>${this.state.item?.path ?? 'UNK'}</a></span>
+						<span class="dbItemPanel_path">Share link: <a href=${`/share/${this.state.item?.path ?? ''}`} target="_blank" rel="noopener noreferrer">${this.state.item?.path ?? 'UNK'}</a></span>
 						<button
 							onclick=${() => this.setState({pretty: !this.state.pretty})}
 						>${this.state.pretty ? 'raw' : 'pretty'}</button>
