@@ -361,4 +361,13 @@ button {
 	&.icon-info {
 		mask-image: url("assets/icons.svg#info");
 	}
+	&.icon-link {
+		mask-image: url("assets/icons.svg#link");
+	}
+	&.icon-copy {
+		mask-image: url("assets/icons.svg#copy");
+	}
+	&.icon-share {
+		mask-image: url("assets/icons.svg#share");
+	}
 }

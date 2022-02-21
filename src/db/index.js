@@ -522,7 +522,8 @@ class ItemPanel extends Component {
 		return {
 			visible: false,
 			item: {},
-			pretty: true
+			pretty: true,
+			copyStatus: 'Share'
 		};
 	}
 
@@ -627,7 +628,27 @@ class ItemPanel extends Component {
 							}) ?? 'untracked'}</span>
 					</div>
 					<div class="json-info_wrapper">
-						<span class="dbItemPanel_path">Share link: <a href=${`/share/${this.state.item?.path ?? ''}`} target="_blank" rel="noopener noreferrer">${this.state.item?.path ?? 'UNK'}</a></span>
+						<span class="dbItemPanel_path">
+							<button
+								aria-label="Copy shareable link"
+								onclick=${() => {
+									navigator.clipboard.writeText(`https://${window?.location?.host ?? 'cylix.guide'}${this.sharePath}`)
+										.then(success => {
+											this.setState({copyStatus: 'Copied!'});
+											setTimeout(() => {
+												this.setState({copyStatus: 'Share'});
+											}, 2000);
+										}, error => {
+											console.error('Copy share link', error);
+											this.setState({copyStatus: 'Error!'});
+											setTimeout(() => {
+												this.setState({copyStatus: 'Share'});
+											}, 2000);
+										})
+								}}
+							><span class="icon-masked icon-share"></span> ${this.state?.copyStatus ?? 'Share'}</button>
+							<a href=${this.sharePath} target="_blank" rel="noopener noreferrer">${this.state.item?.path ?? 'UNK'}</a>
+						</span>
 						<button
 							onclick=${() => this.setState({pretty: !this.state.pretty})}
 						>${this.state.pretty ? 'raw' : 'pretty'}</button>
@@ -639,6 +660,10 @@ class ItemPanel extends Component {
 									// style=${{"maskImage": `url("/assets/icons.svg")`}}
 		}
 		return HTML.bind(document.querySelector('.js--item-panel'))``;
+	}
+
+	get sharePath() {
+		return `${this.item?.path.startsWith('inventory/') ? '/share/' : '/#'}${this.item?.path ?? ''}`;
 	}
 
 	prettyJson(json) {
