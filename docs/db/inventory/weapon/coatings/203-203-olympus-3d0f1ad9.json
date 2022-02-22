@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "203-203-olympus-3d0f1ad9",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Crimson Skyed",
 		"Description": "Hardware representing limitless potential for victory.",
 		"FeatureFlag": true,

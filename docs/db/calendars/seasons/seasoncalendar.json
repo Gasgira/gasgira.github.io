@@ -8,6 +8,17 @@
 				"ISO8601Date": "2020-09-23T17:00:00.000Z"
 			},
 			"EndDate": {
+				"ISO8601Date": "2022-02-22T22:00:00.000Z"
+			}
+		},
+		{
+			"CsrSeasonFilePath": "Csr/Seasons/CsrSeason1-2.json",
+			"OperationTrackPath": "RewardTracks/Operations/battlepass-noblesacrifice.json",
+			"SeasonMetadata": "Seasons/Season6-2.json",
+			"StartDate": {
+				"ISO8601Date": "2022-02-22T22:00:00.000Z"
+			},
+			"EndDate": {
 				"ISO8601Date": "2022-05-02T17:00:00.000Z"
 			}
 		}

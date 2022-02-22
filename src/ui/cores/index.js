@@ -2,7 +2,6 @@ import { Component } from 'component';
 import { db, Item } from 'db';
 import { emitter } from 'eventEmitter';
 import { HTML } from 'lib/HTML';
-import { inventory } from 'ui/inventory';
 import { urlParams } from 'urlParams';
 
 import './index.css';
@@ -26,18 +25,25 @@ class CoreViewer extends Component {
 		emitter.on('showSocket', () => this.updateParams());
 	}
 	async init() {
-		inventory.coreList.forEach(item => {
-			const core = new Core(item?.ItemPath);
-			this.cores.push(core);
-			// if (item?.ItemType === 'ArmorCore') this.armorCores.push(core);
-			// if (item?.ItemType === 'WeaponCore') this.weaponCores.push(core);
-			// if (item?.ItemType === 'VehicleCore') this.vehicleCores.push(core);
-			const type = item?.ItemType;
-			if (type && typeof type === 'string' && this.coreTypes.has(type))
-			{
-				this.coreTypes.get(type).push(core);
-			}
-		});
+		const armor = [...db.getItemIDsByType('ArmorCore')]
+			.sort() // hack... mk7 id puts it ahead of mk5
+			.forEach(id => {
+				const core = new Core(db.getItemPathByID(id));
+				this.cores.push(core);
+				this.coreTypes.get('ArmorCore').push(core);
+			});
+		db.getItemIDsByType('WeaponCore')
+			.forEach(id => {
+				const core = new Core(db.getItemPathByID(id));
+				this.cores.push(core);
+				this.coreTypes.get('WeaponCore').push(core);
+			});
+		db.getItemIDsByType('VehicleCore')
+			.forEach(id => {
+				const core = new Core(db.getItemPathByID(id));
+				this.cores.push(core);
+				this.coreTypes.get('VehicleCore').push(core);
+			});
 
 		const paramCoreType = urlParams.getSecionSetting('coreType');
 		if (paramCoreType && this.coreTypes.has(paramCoreType))
@@ -229,8 +235,8 @@ class Core extends Component {
 
 	showSocket(socket) {
 		if (this.state?.socket === socket) {
-			this.setState({socket: undefined});
-			emitter.emit('showSocket');
+			// this.setState({socket: undefined});
+			// emitter.emit('showSocket');
 			return;
 		}
 		this.setState({socket});

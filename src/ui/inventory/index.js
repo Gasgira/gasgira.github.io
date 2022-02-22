@@ -9,9 +9,6 @@ import './index.css';
 
 class Inventory extends Component {
 	async init() {
-		const inventoryPath = 'Inventory/catalog/inventory_catalog.json';
-		this.data = await db.getJSON(inventoryPath);
-
 		const favorites = new Favorites({categoryName: 'Favorites'});
 		const search = new Search({categoryName: 'Search'});
 
@@ -70,8 +67,6 @@ class Inventory extends Component {
 			this.state.inventoryCategory = search;
 		}
 
-		console.info(`[Inventory] Found "${this.categories.length}" item categories.`);
-
 		emitter.on('nav-search', () => {
 			this.showCategory(search);
 			search.focus();
@@ -116,11 +111,6 @@ class Inventory extends Component {
 		this.scrollIntoView();
 	}
 
-	get coreList() {
-		if (!this.data) return [];
-		return this.data?.Cores;
-	}
-
 	scrollIntoView() {
 		const el = document.querySelector(`#inventory`);
 		if (el)
@@ -153,7 +143,7 @@ class InventoryCategory extends Component {
 
 	get defaultState() {
 		return {
-			importValid: false
+			page: 0
 		};
 	}
 
@@ -163,9 +153,62 @@ class InventoryCategory extends Component {
 		if (!this.itemIDs.size) this.itemIDs = db.getItemIDsByType(this.categoryName);
 		
 		if (!this.itemIDs.size) return;
-		console.info('IDs', this.itemIDs);
+		// console.info('IDs', this.itemIDs);
 
-		this.items = [...this.itemIDs].map(id => new Item(db.getItemPathByID(id)));
+		this.getCurrentItemPage();
+	}
+
+	getCurrentItemPage() {
+		return (this.items = [...this.currentPageIDs].map(id => new Item(db.getItemPathByID(id))));
+	}
+
+	nextPage() {
+		if (this.pageNumber === this.pages-1) return;
+		this.state.page = this.pageNumber + 1;
+		this.getCurrentItemPage();
+		this.render();
+		inventory.scrollIntoView();
+	}
+
+	previousPage() {
+		if (this.pageNumber === 0) return;
+		this.state.page = this.pageNumber - 1;
+		this.getCurrentItemPage();
+		this.render();
+		inventory.scrollIntoView();
+	}
+
+	get pageLength() {
+		return 100;
+	}
+
+	get pages() {
+		return Math.ceil(this.itemIDs.size / this.pageLength);
+	}
+
+	get pageNumber() {
+		return this.state?.page ?? 0;
+	}
+
+	get currentPageIDs() {
+		return new Set([...this.itemIDs].slice((this.pageNumber * this.pageLength), (this.pageNumber * this.pageLength) + this.pageLength));
+	}
+
+	renderPageControls(id = upper) {
+		if (this.pages < 2) return '';
+		return HTML.wire(this, `:${id}`)`
+			<div class="page-controls_wrapper">
+				<button
+					onclick=${() => this.previousPage()}
+					disabled=${this.pageNumber === 0}
+				>Prev Page</button>
+				<span>${this.pageNumber+1} of ${this.pages}</span>
+				<button
+					onclick=${() => this.nextPage()}
+					disabled=${this.pageNumber + 1 === this.pages}
+				>Next Page</button>
+			</div>
+		`;
 	}
 
 	render() {
@@ -173,9 +216,10 @@ class InventoryCategory extends Component {
 			<div
 				class ="inventory-category_wrapper"
 			>
-			<header class="h-favorites">
-				<div>${db.getItemType(this.categoryName)?.replace('Atch.', 'Attachments') ?? ''} // ${this?.items?.length}</div>
-			</header>
+				<header class="h-favorites">
+					<div>${db.getItemType(this.categoryName)?.replace('Atch.', 'Attachments') ?? ''} // ${this?.itemIDs.size}</div>
+				</header>
+				${this.renderPageControls('upper')}
 				<ul
 					class="inventory-category_items"
 				>
@@ -187,6 +231,7 @@ class InventoryCategory extends Component {
 						></span> in item detail panels to collect favorites into this section.</div>
 					` : ''}
 				</ul>
+				${this.renderPageControls('lower')}
 			</div>
 		`;
 				// ${this.categoryName === 'Favorites' ? HTML.wire(this, ':manage')`
@@ -319,14 +364,15 @@ class Search extends InventoryCategory {
 					</div>
 				</div>
 				<div class="inventory-search_info">
-					${{html: this?.itemIDs?.size > 100 ? `<div class="icon-masked icon-alert"></div> ${this.itemIDs.size} results, showing ${this?.items?.size}` : ''}}
 					${{html: this.state.term && !this?.itemIDs?.size ? '<div class="icon-masked icon-alert"></div> No results' : ''}}
 				</div>
+				${this.renderPageControls('upper')}
 				<ul
 					class="inventory-category_items"
 				>
 					${[...this.items].map(item => HTML.wire()`<li>${item.renderIcon('inventory', {itemTypeIcon: true})}</li>`)}
 				</ul>
+				${this.renderPageControls('lower')}
 			</div>
 		`;
 	}
@@ -335,7 +381,7 @@ class Search extends InventoryCategory {
 		return HTML.wire(this, ':filters')`
 			<ul class="inventory-search-filters">
 				<li class="filter-input_wrapper">
-					<label for="date_modified-after">Date Modified</label>
+					<label for="date_modified-after">Modified After</label>
 					<input
 						type="date"
 						id="date_modified-after"
@@ -390,7 +436,8 @@ class Search extends InventoryCategory {
 		if (this.itemIDs.size)
 		{
 			// TODO slice, pagination
-			this.items = new Set([...this.itemIDs].slice(0, 100).map(id => new Item(db.getItemPathByID(id))));
+			// this.items = new Set([...this.itemIDs].slice(0, 100).map(id => new Item(db.getItemPathByID(id))));
+			this.getCurrentItemPage();
 			this.render();
 			return;
 		}

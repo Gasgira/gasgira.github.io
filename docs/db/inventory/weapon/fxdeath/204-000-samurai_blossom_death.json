@@ -4,7 +4,7 @@
 	],
 	"CommonData": {
 		"Id": "204-000-1101898147",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Enlightened Blossoms",
 		"Description": "Beauty blooms in adversity.",
 		"FeatureFlag": false,
@@ -53,7 +53,7 @@
 			"FileName": "204-000-samurai_blossom_death-SM.png"
 		},
 		"Quality": "Legendary",
-		"ManufacturerId": 6,
+		"ManufacturerId": 8,
 		"Type": "WeaponDeathFx",
 		"ParentTheme": "Inventory/Weapon/Themes/207-200-olympus-aa30213b.json",
 		"RewardTrack": "",

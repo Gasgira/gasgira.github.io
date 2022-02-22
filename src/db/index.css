@@ -249,7 +249,7 @@ button.dbItemIcon {
 		justify-content: space-between;
 		align-items: center;
 		margin-bottom: 1em;
-		padding: 0 1em;
+		padding: 0 0.5em;
 		& .dbItemPanel_path {
 			padding-bottom: 0.5em;
 			font-weight: normal;

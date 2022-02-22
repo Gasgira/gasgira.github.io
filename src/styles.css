@@ -241,6 +241,10 @@ button {
 	transition: color var(--time-state) linear,
 		background var(--time-state) linear,
 		text-shadow var(--time-active) linear;
+	&[disabled] {
+		opacity: 0.5;
+		cursor: default;
+	}
 	&.rare {
 		--rarity: var(--rarity-rare);
 	}
@@ -250,7 +254,7 @@ button {
 	&.legendary {
 		--rarity: var(--rarity-legendary);
 	}
-	&:hover {
+	&:hover:not([disabled]) {
 		color: #000;
 		background-color: hsla(var(--theme-interact-hsl), 1);
 	}

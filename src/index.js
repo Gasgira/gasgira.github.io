@@ -10,34 +10,18 @@ import './styles.css';
 
 console.log('hello world');
 
-// HTML.bind(document.querySelector('.js--main'))`
-// 	<div>Loading...</div>
-// `;
-
-// await fetch('/db/entries/armor-core-list.json')
-// 	.then(response => response.json())
-// 	.then(data => console.log(data))
-
-// db.init();
-
 class App {
 	async init() {
-		// this.entries = [
-		// 	inventory.init(),
-		// 	armorCores.init(),
-		// 	coreViewer.init()
-		// ]
-
-		// Promise.all(this.entries)
-		// 	.then(() => this.render())
-		// 	.then(() => this.parseUri());
 		await db.init();
-		await inventory.init();
-		coreViewer.init()
-		calendar.init()
-			.then(() => this.parseUri());
+		Promise.all([
+			coreViewer.init(),
+			calendar.init(),
+			inventory.init()
+		]).then(() => {
+			this.parseUri();
+			this.render();
+		})
 		this.render();
-		// this.parseUri();
 		
 		window.addEventListener('popstate', (event) => {
 			console.log('popstate', event.state);

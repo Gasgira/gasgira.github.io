@@ -129,6 +129,23 @@
 			}
 		}
 	}
+	& .page-controls_wrapper {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+		& span {
+			width: 4rem;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			align-content: center;
+			justify-content: center;
+			pointer-events: none;
+			user-select: none;
+		}
+	}
 }
 .favorites-man_wrapper {
 	display: flex;

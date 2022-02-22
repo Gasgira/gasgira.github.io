@@ -86,7 +86,7 @@ class Database {
 	}
 
 	getItemIDsByType(type) {
-		if (!type || typeof type !== 'string') return;
+		if (!type || typeof type !== 'string') return new Set();
 		if (this.typeIDs.has(type)) return this.typeIDs.get(type);
 
 		if (type === 'Favorites') {
