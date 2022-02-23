@@ -5093,19 +5093,16 @@ class Calendar extends component__WEBPACK_IMPORTED_MODULE_0__.Component {
 		this.data?.Seasons?.forEach(async season => {
 			const path = season.OperationTrackPath;
 			if (!path) return;
-			if (!this.rewardTracks.has(path))
-			{
-				const rewardTrack = new RewardTrack(path, true);
-				this.rewardTracks.set(`${path}`, rewardTrack);
-				rewardTrack.addDates(season?.StartDate?.ISO8601Date, season?.EndDate?.ISO8601Date);
+			const rewardTrack = new RewardTrack(path, true);
+			this.rewardTracks.set(`${path}`, rewardTrack);
+			rewardTrack.addDates(season?.StartDate?.ISO8601Date, season?.EndDate?.ISO8601Date);
 
-				this.operations.push({
-					type: 'operation',
-					startDate: season?.StartDate?.ISO8601Date,
-					endDate: season?.EndDate?.ISO8601Date,
-					rewardTrack
-				});
-			}
+			this.operations.push({
+				type: 'operation',
+				startDate: season?.StartDate?.ISO8601Date,
+				endDate: season?.EndDate?.ISO8601Date,
+				rewardTrack
+			});
 		});
 		const launchDate = new Date('2021-11-15T08:00:00');
 		const today = new Date();
@@ -5214,7 +5211,7 @@ class Calendar extends component__WEBPACK_IMPORTED_MODULE_0__.Component {
 
 	daysLeftInSeason() {
 		try {
-			const operation = this?.operations?.[0];
+			const operation = this?.operations?.[this.operations.length-1];
 			if (operation)
 			{
 				const today = new Date();
@@ -5236,36 +5233,44 @@ class Calendar extends component__WEBPACK_IMPORTED_MODULE_0__.Component {
 			<span>Season 1 // ${this.daysLeftInSeason()} days remaining</span>
 			<div class="timeline_wrapper">
 				<ul class="timeline_list operations">
-					${this?.operations?.map(event => {
-						let active = false;
-						let startDate = new Date(event.startDate);
+					${() => {
+						const operation = this?.operations?.[this.operations.length - 1];
+						if (!operation) return 'Could not get active season!';
+
+						let active = true;
+						let startDate = new Date(operation.startDate);
+
+						// Season 1 special case dates for nice display
 						const launchDate = new Date('2021-11-15T08:00:00');
-						if (startDate < launchDate) startDate = launchDate;
-						const endDate = new Date(event.endDate);
+						const csrResetDate = new Date('2022-02-23T00:00:00Z');
+
+						if (startDate < csrResetDate) startDate = launchDate;
+						const endDate = new Date(operation.endDate);
 						endDate.setDate(endDate.getDate() - 1);
 
 						const today = new Date();
-						if (startDate <= today && new Date(event.endDate) >= today) active = true;
-						return lib_HTML__WEBPACK_IMPORTED_MODULE_1__.HTML.wire(event)`
+						if (startDate <= today && new Date(operation.endDate) >= today) active = true;
+
+						return lib_HTML__WEBPACK_IMPORTED_MODULE_1__.HTML.wire(operation)`
 							<li
-								class=${`timeline-event ${event?.type ?? 'ritual'}${active ? ' active' : ''}`}
+								class=${`timeline-event ${operation?.type ?? 'ritual'}${active ? ' active' : ''}`}
 							>
 								<div
 									class="event-bg"
-									style=${{backgroundImage: `url(/${db__WEBPACK_IMPORTED_MODULE_2__.db.dbPath ?? 'db'}/images/${db__WEBPACK_IMPORTED_MODULE_2__.db.pathCase(event.rewardTrack?.data?.SummaryImagePath)})`}}
+									style=${{backgroundImage: `url(/${db__WEBPACK_IMPORTED_MODULE_2__.db.dbPath ?? 'db'}/images/${db__WEBPACK_IMPORTED_MODULE_2__.db.pathCase(operation.rewardTrack?.data?.SummaryImagePath)})`}}
 								></div>
 								<button
-									onclick=${() => this.showRewardTrack(event.rewardTrack)}
+									onclick=${() => this.showRewardTrack(operation.rewardTrack)}
 								>
 									<span class="date-range">
 									${startDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
 									${' - '}${endDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
 									</span>
-									<span class="event-name">${event.rewardTrack.name}</span>
+									<span class="event-name">${operation.rewardTrack.name}</span>
 								</button>
 							</li>
 						`;
-					}) ?? 'Could not load events...'}
+					}}
 				</ul>
 				<ul class="timeline_list rituals">
 					${{html: this?.events ? '' : '<div class="timeline-placeholder">Loading timeline...</div>'}}
@@ -7194,7 +7199,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("550f22f5c11c500b4868")
+/******/ 		__webpack_require__.h = () => ("7e360edae518c1016759")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -8192,4 +8197,4 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.550f22f5c11c500b4868.js.map
+//# sourceMappingURL=main.7e360edae518c1016759.js.map
