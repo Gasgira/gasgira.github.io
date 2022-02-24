@@ -337,6 +337,22 @@ button {
 		flex-wrap: no-wrap;
 		width: 100%;
 	}
+	& .mica_content {
+		padding: 0.5rem;
+		--mica-content-inset: 0.5rem;
+	}
+}
+
+@media(max-width: 580px) {
+	.mica_viewer {
+		& .mica_nav-list {
+			/* display: none; */
+		}
+		& .mica_content {
+			padding: 0.2rem;
+			--mica-content-inset: 0;
+		}
+	}
 }
 
 .icon-masked {

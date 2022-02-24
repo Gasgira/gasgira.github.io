@@ -88,10 +88,6 @@
 				"Type": "ArmorTheme"
 			},
 			{
-				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
-				"Type": "ArmorTheme"
-			},
-			{
 				"Path": "Inventory/Armor/Helmets/005-001-olympus-ea1058fb.json",
 				"Type": "ArmorHelmet"
 			}

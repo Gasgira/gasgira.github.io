@@ -227,7 +227,7 @@ class Core extends Component {
 						><span>${socket.name}</span></button></li>
 					`)}
 				</ul>
-				${this.state?.socket?.render() ?? ''}
+				<div class="mica_content">${this.state?.socket?.render() ?? ''}</div>
 				${{html: this.state?.socket ? '' : '<div class="core-socket-placeholder">CHOOSE A SOCKET</div>'}}
 			</div>
 		`

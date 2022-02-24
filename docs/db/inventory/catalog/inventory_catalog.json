@@ -7284,34 +7284,79 @@
 			"ItemId": "001-001-samurai-850d698a",
 			"ItemType": "ArmorChestAttachment",
 			"ItemPath": "Inventory/Armor/ChestAttachments/001-001-samurai-850d698a.json"
+		},
+		{
+			"ItemId": "203-202-olympus-0085e68b",
+			"ItemType": "WeaponCoating",
+			"ItemPath": "Inventory/Weapon/Coatings/203-202-olympus-0085e68b.json"
+		},
+		{
+			"ItemId": "012-001-088496de",
+			"ItemType": "ArmorVisor",
+			"ItemPath": "Inventory/Armor/Visors/012-001-088496de.json"
+		},
+		{
+			"ItemId": "013-001-e261d24f",
+			"ItemType": "ArmorEmblem",
+			"ItemPath": "Inventory/Armor/Emblems/013-001-e261d24f.json"
+		},
+		{
+			"ItemId": "002-001-olympus-0085e68b",
+			"ItemType": "ArmorCoating",
+			"ItemPath": "Inventory/Armor/Coatings/002-001-olympus-0085e68b.json"
+		},
+		{
+			"ItemId": "002-001-olympus-765947da",
+			"ItemType": "ArmorCoating",
+			"ItemPath": "Inventory/Armor/Coatings/002-001-olympus-765947da.json"
+		},
+		{
+			"ItemId": "104-001-esports-optic-e261d24f",
+			"ItemType": "SpartanEmblem",
+			"ItemPath": "Inventory/Spartan/Emblems/104-001-esports-optic-e261d24f.json"
+		},
+		{
+			"ItemId": "007-000-optic-gaming-0903655e",
+			"ItemType": "ArmorTheme",
+			"ItemPath": "Inventory/Armor/Themes/007-000-optic-gaming-0903655e.json"
+		},
+		{
+			"ItemId": "207-000-optic-24fe39cf",
+			"ItemType": "WeaponTheme",
+			"ItemPath": "Inventory/Weapon/Themes/207-000-optic-24fe39cf.json"
+		},
+		{
+			"ItemId": "205-201-e261d24f",
+			"ItemType": "WeaponEmblem",
+			"ItemPath": "Inventory/Weapon/Emblems/205-201-e261d24f.json"
 		}
 	],
 	"ArmorChestAttachmentsOwnableCount": 36,
-	"ArmorCoatingsOwnableCount": 136,
+	"ArmorCoatingsOwnableCount": 138,
 	"ArmorGlovesOwnableCount": 7,
 	"ArmorHelmetAttachmentsOwnableCount": 34,
 	"ArmorHelmetsOwnableCount": 29,
 	"ArmorKneePadsOwnableCount": 15,
-	"ArmorThemesOwnableCount": 17,
+	"ArmorThemesOwnableCount": 18,
 	"ArmorLeftShoulderPadsOwnableCount": 37,
 	"ArmorRightShoulderPadsOwnableCount": 37,
 	"ArmorHipAttachmentsOwnableCount": 13,
 	"ArmorWristAttachmentsOwnableCount": 6,
-	"ArmorVisorsOwnableCount": 57,
-	"ArmorEmblemsOwnableCount": 141,
+	"ArmorVisorsOwnableCount": 58,
+	"ArmorEmblemsOwnableCount": 142,
 	"ArmorFxsOwnableCount": 7,
 	"ArmorMythicFxsOwnableCount": 4,
 	"ArmorCoresOwnableCount": 3,
 	"SpartanActionPosesOwnableCount": 40,
 	"SpartanStancesOwnableCount": 0,
 	"SpartanBackdropImagesOwnableCount": 62,
-	"SpartanEmblemsOwnableCount": 146,
+	"SpartanEmblemsOwnableCount": 147,
 	"WeaponCharmsOwnableCount": 40,
 	"WeaponAmmoCounterColorsOwnableCount": 0,
-	"WeaponCoatingsOwnableCount": 136,
+	"WeaponCoatingsOwnableCount": 137,
 	"WeaponDeathFxsOwnableCount": 4,
-	"WeaponEmblemsOwnableCount": 136,
-	"WeaponThemesOwnableCount": 17,
+	"WeaponEmblemsOwnableCount": 137,
+	"WeaponThemesOwnableCount": 18,
 	"WeaponStatTrackersOwnableCount": 0,
 	"WeaponCoresOwnableCount": 8,
 	"WeaponAlternateGeometryRegionsOwnableCount": 10,
@@ -8413,6 +8458,11 @@
 		{
 			"ItemId": "1000-000-fe386583",
 			"ItemPath": "Configuration/Emblems/Coatings/1000-000-fe386583.json",
+			"ItemType": "ArmorEmblemCoating"
+		},
+		{
+			"ItemId": "1000-000-9aac5d54",
+			"ItemPath": "Configuration/Emblems/Coatings/1000-000-9aac5d54.json",
 			"ItemType": "ArmorEmblemCoating"
 		}
 	],

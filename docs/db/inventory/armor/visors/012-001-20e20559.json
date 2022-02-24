@@ -9,7 +9,7 @@
 	},
 	"CommonData": {
 		"Id": "012-001-20e20559",
-		"HideUntilOwned": false,
+		"HideUntilOwned": true,
 		"Title": "Juice",
 		"Description": "Look at it all!",
 		"FeatureFlag": true,
@@ -78,10 +78,6 @@
 			"z": 0
 		},
 		"ParentPaths": [
-			{
-				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
-				"Type": "ArmorTheme"
-			},
 			{
 				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
 				"Type": "ArmorTheme"

@@ -9,7 +9,7 @@
 	},
 	"CommonData": {
 		"Id": "012-001-7c7e0def",
-		"HideUntilOwned": false,
+		"HideUntilOwned": true,
 		"Title": "Blackpool",
 		"Description": "What lies beneath?",
 		"FeatureFlag": true,
@@ -78,10 +78,6 @@
 			"z": 0
 		},
 		"ParentPaths": [
-			{
-				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
-				"Type": "ArmorTheme"
-			},
 			{
 				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
 				"Type": "ArmorTheme"

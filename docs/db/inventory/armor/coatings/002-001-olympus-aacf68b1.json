@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "002-001-olympus-aacf68b1",
-		"HideUntilOwned": false,
+		"HideUntilOwned": true,
 		"Title": "Neon Superfly",
 		"Description": "A resonant cascade success.",
 		"FeatureFlag": true,
@@ -77,10 +77,6 @@
 			"z": 0
 		},
 		"ParentPaths": [
-			{
-				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
-				"Type": "ArmorTheme"
-			},
 			{
 				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
 				"Type": "ArmorTheme"

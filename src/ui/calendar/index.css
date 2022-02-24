@@ -103,6 +103,8 @@
 				border: 0.15rem solid var(--rarity-legendary);
 			}
 			& button {
+				--length: 10rem;
+				--lengthMax: 39vw;
 				display: flex;
 				position: relative;
 				flex-direction: column;
@@ -111,8 +113,10 @@
 				padding: 0.75em;
 				margin: 0;
 				font-size: 1em;
-				height: 10rem;
-				width: 10rem;
+				height: var(--length);
+				width: var(--length);
+				max-width: var(--lengthMax);
+				max-height: var(--lengthMax);
 				justify-content: space-between;
 				align-items: flex-start;
 				align-content: flex-start;
@@ -134,7 +138,17 @@
 		width: 10rem;
 		& button {
 			height: 20.2rem;
+			max-height: 20.2rem;
 			width: 10rem;
+		}
+	}
+}
+
+@media(max-width: 400px) {
+	.timeline_wrapper {
+		flex-direction: column;
+		& .timeline_list.operations button {
+			max-height: var(--lengthMax);
 		}
 	}
 }

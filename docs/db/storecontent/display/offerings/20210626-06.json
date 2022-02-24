@@ -8,5 +8,6 @@
 	"FlairIconPath": null,
 	"FlairBackgroundPath": null,
 	"ObjectImagePath": "progression/StoreContent/Offerings/HCS_Storefront/007-000-space-station-0903655e-2x1_HCS_store.png",
-	"HCSTeamIndex": 9
+	"HCSTeamIndex": 10,
+	"HasFlair": null
 }

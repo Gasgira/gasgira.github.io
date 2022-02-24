@@ -1,23 +1,23 @@
 {
 	"VisorId": {
-		"m_identifier": 988054775
+		"m_identifier": 1544031111
 	},
 	"Roughness": 4,
 	"Emissive": 0,
 	"ColorVariant": {
-		"m_identifier": 2005300120
+		"m_identifier": -1376865369
 	},
 	"CommonData": {
-		"Id": "012-001-aca35a00",
-		"HideUntilOwned": true,
-		"Title": "Phalanx",
-		"Description": "With shield and spear, vigilant.",
+		"Id": "012-001-088496de",
+		"HideUntilOwned": false,
+		"Title": "Optic Gaming",
+		"Description": "Brick by brick",
 		"FeatureFlag": true,
 		"ItemAvailability": "",
 		"DateReleased": {
 			"ISO8601Date": ""
 		},
-		"AltName": "phalanx",
+		"AltName": "optic",
 		"IconStringId": {
 			"m_identifier": -1
 		},
@@ -40,7 +40,7 @@
 			"Media": {
 				"MediaUrl": {
 					"AuthorityId": "",
-					"Path": "progression/Inventory/Armor/Visors/012-001-aca35a00-SM.png",
+					"Path": "progression/Inventory/Armor/Visors/012-001-088496de.png",
 					"RetryPolicyId": "",
 					"TopicName": "",
 					"AcknowledgementTypeId": "NoAcknowledgement",
@@ -55,13 +55,13 @@
 			},
 			"MimeType": "image/png",
 			"FolderPath": "progression/Inventory/Armor/Visors",
-			"FileName": "012-001-aca35a00-SM.png"
+			"FileName": "012-001-088496de.png"
 		},
-		"Quality": "Rare",
-		"ManufacturerId": 23,
+		"Quality": "Epic",
+		"ManufacturerId": 0,
 		"Type": "ArmorVisor",
 		"ParentTheme": "",
-		"RewardTrack": "RewardTracks/Operations/Flighting.json",
+		"RewardTrack": "",
 		"CameraPositions": [],
 		"CameraOffset": 0,
 		"CameraFOV": 0,
@@ -79,7 +79,7 @@
 		},
 		"ParentPaths": [
 			{
-				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
+				"Path": "Inventory/Armor/Themes/007-000-optic-gaming-0903655e.json",
 				"Type": "ArmorTheme"
 			}
 		],

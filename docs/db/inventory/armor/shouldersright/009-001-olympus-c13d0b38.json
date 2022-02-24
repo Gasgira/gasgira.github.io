@@ -116,6 +116,10 @@
 				"Type": "ArmorTheme"
 			},
 			{
+				"Path": "Inventory/Armor/Themes/007-000-optic-gaming-0903655e.json",
+				"Type": "ArmorTheme"
+			},
+			{
 				"Path": "Inventory/Armor/Themes/007-000-sentinels-kit-0903655e.json",
 				"Type": "ArmorTheme"
 			},

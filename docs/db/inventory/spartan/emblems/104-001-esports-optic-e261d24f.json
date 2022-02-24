@@ -1,23 +1,28 @@
 {
-	"VisorId": {
-		"m_identifier": 988054775
+	"TagId": 0,
+	"ThemeName": {
+		"m_identifier": 1385557355
 	},
-	"Roughness": 4,
-	"Emissive": 0,
-	"ColorVariant": {
-		"m_identifier": 2005300120
+	"EmblemShaderName": {
+		"m_identifier": -1
 	},
+	"AvailableConfigurations": [
+		{
+			"ConfigurationId": 805560220,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-9aac5d54.json"
+		}
+	],
 	"CommonData": {
-		"Id": "012-001-aca35a00",
-		"HideUntilOwned": true,
-		"Title": "Phalanx",
-		"Description": "With shield and spear, vigilant.",
+		"Id": "104-001-esports-optic-e261d24f",
+		"HideUntilOwned": false,
+		"Title": "Optic Gaming",
+		"Description": "Brick by brick",
 		"FeatureFlag": true,
 		"ItemAvailability": "",
 		"DateReleased": {
 			"ISO8601Date": ""
 		},
-		"AltName": "phalanx",
+		"AltName": "104-001-esports-optic-e261d24f",
 		"IconStringId": {
 			"m_identifier": -1
 		},
@@ -35,12 +40,12 @@
 		"DOFFocalDistance": 0,
 		"DOFFStop": 0,
 		"DisplayPath": {
-			"Width": 320,
-			"Height": 320,
+			"Width": 887,
+			"Height": 576,
 			"Media": {
 				"MediaUrl": {
 					"AuthorityId": "",
-					"Path": "progression/Inventory/Armor/Visors/012-001-aca35a00-SM.png",
+					"Path": "progression/Inventory/Spartan/Emblems/104-001-esports-optic-e261d24f.svg",
 					"RetryPolicyId": "",
 					"TopicName": "",
 					"AcknowledgementTypeId": "NoAcknowledgement",
@@ -53,15 +58,15 @@
 				"FolderPath": "",
 				"FileName": ""
 			},
-			"MimeType": "image/png",
-			"FolderPath": "progression/Inventory/Armor/Visors",
-			"FileName": "012-001-aca35a00-SM.png"
+			"MimeType": "image/svg+xml",
+			"FolderPath": "progression/Inventory/Spartan/Emblems",
+			"FileName": "104-001-esports-optic-e261d24f.svg"
 		},
-		"Quality": "Rare",
-		"ManufacturerId": 23,
-		"Type": "ArmorVisor",
+		"Quality": "Epic",
+		"ManufacturerId": 0,
+		"Type": "SpartanEmblem",
 		"ParentTheme": "",
-		"RewardTrack": "RewardTracks/Operations/Flighting.json",
+		"RewardTrack": "",
 		"CameraPositions": [],
 		"CameraOffset": 0,
 		"CameraFOV": 0,
@@ -77,16 +82,10 @@
 			"y": 0,
 			"z": 0
 		},
-		"ParentPaths": [
-			{
-				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
-				"Type": "ArmorTheme"
-			}
-		],
+		"ParentPaths": [],
 		"SortingMetadata": {
-			"categoryWeight": 0,
+			"categoryWeight": 1,
 			"subCategoryWeight": 0
 		}
-	},
-	"TagId": 0
+	}
 }

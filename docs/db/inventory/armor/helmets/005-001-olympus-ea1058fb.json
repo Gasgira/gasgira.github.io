@@ -18,7 +18,7 @@
 	],
 	"CommonData": {
 		"Id": "005-001-olympus-ea1058fb",
-		"HideUntilOwned": false,
+		"HideUntilOwned": true,
 		"Title": "FIREFALL",
 		"Description": "A radical offshoot of other ODST armor development projects at Cascade, the FIREFALL is the first component of an ensemble that aims to eliminate the need for drop pods in Spartan orbital insertions.",
 		"FeatureFlag": true,

@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "002-001-olympus-da3ba426",
-		"HideUntilOwned": false,
+		"HideUntilOwned": true,
 		"Title": "Cosmic Corruption",
 		"Description": "Custom paint and materials.",
 		"FeatureFlag": true,

@@ -1,23 +1,22 @@
 {
-	"VisorId": {
-		"m_identifier": 988054775
+	"TagId": 0,
+	"StyleId": {
+		"m_identifier": -235706863
 	},
-	"Roughness": 4,
-	"Emissive": 0,
-	"ColorVariant": {
-		"m_identifier": 2005300120
+	"RegionPartId": {
+		"m_identifier": -1
 	},
 	"CommonData": {
-		"Id": "012-001-aca35a00",
+		"Id": "002-001-olympus-765947da",
 		"HideUntilOwned": true,
-		"Title": "Phalanx",
-		"Description": "With shield and spear, vigilant.",
+		"Title": "Optimal Polish Initiated",
+		"Description": "Custom paint and materials.",
 		"FeatureFlag": true,
 		"ItemAvailability": "",
 		"DateReleased": {
 			"ISO8601Date": ""
 		},
-		"AltName": "phalanx",
+		"AltName": "OPI",
 		"IconStringId": {
 			"m_identifier": -1
 		},
@@ -40,7 +39,7 @@
 			"Media": {
 				"MediaUrl": {
 					"AuthorityId": "",
-					"Path": "progression/Inventory/Armor/Visors/012-001-aca35a00-SM.png",
+					"Path": "progression/Inventory/Armor/Coatings/002-001-olympus-765947da-SM.png",
 					"RetryPolicyId": "",
 					"TopicName": "",
 					"AcknowledgementTypeId": "NoAcknowledgement",
@@ -54,14 +53,14 @@
 				"FileName": ""
 			},
 			"MimeType": "image/png",
-			"FolderPath": "progression/Inventory/Armor/Visors",
-			"FileName": "012-001-aca35a00-SM.png"
+			"FolderPath": "progression/Inventory/Armor/Coatings",
+			"FileName": "002-001-olympus-765947da-SM.png"
 		},
-		"Quality": "Rare",
-		"ManufacturerId": 23,
-		"Type": "ArmorVisor",
-		"ParentTheme": "",
-		"RewardTrack": "RewardTracks/Operations/Flighting.json",
+		"Quality": "Epic",
+		"ManufacturerId": 0,
+		"Type": "ArmorCoating",
+		"ParentTheme": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
+		"RewardTrack": "",
 		"CameraPositions": [],
 		"CameraOffset": 0,
 		"CameraFOV": 0,
@@ -88,5 +87,5 @@
 			"subCategoryWeight": 0
 		}
 	},
-	"TagId": 0
+	"LightingScalarOverride": 0
 }
