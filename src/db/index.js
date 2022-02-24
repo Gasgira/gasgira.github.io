@@ -404,10 +404,10 @@ export class Item extends Component {
 	}
 
 	get imagePath() {
-		let imagePath = '';
+		let imagePath = 'progression/default/default.png';
 		const displayPath = this?.data?.CommonData?.DisplayPath?.Media?.MediaUrl?.Path;
 		if (displayPath && typeof displayPath === 'string') {
-			imagePath = `${displayPath[0].toLowerCase()}${displayPath.substring(1)}`;
+			imagePath = `${displayPath.toLowerCase()}`;
 		}
 
 		return imagePath;

@@ -4504,10 +4504,10 @@ class Item extends component__WEBPACK_IMPORTED_MODULE_0__.Component {
 	}
 
 	get imagePath() {
-		let imagePath = '';
+		let imagePath = 'progression/default/default.png';
 		const displayPath = this?.data?.CommonData?.DisplayPath?.Media?.MediaUrl?.Path;
 		if (displayPath && typeof displayPath === 'string') {
-			imagePath = `${displayPath[0].toLowerCase()}${displayPath.substring(1)}`;
+			imagePath = `${displayPath.toLowerCase()}`;
 		}
 
 		return imagePath;
@@ -7199,7 +7199,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("5533afd739c52eafbc44")
+/******/ 		__webpack_require__.h = () => ("1729dc801e8dc05a9de2")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -8197,4 +8197,4 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.5533afd739c52eafbc44.js.map
+//# sourceMappingURL=main.1729dc801e8dc05a9de2.js.map
