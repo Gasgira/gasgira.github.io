@@ -147,6 +147,15 @@
 		}
 	}
 }
+
+@media(max-width: 580px) {
+	.inventory_wrapper {
+		& .inventory-search-bar_wrapper, & .inventory-search-filter_wrapper {
+			width: 100% !important;
+		}
+	}
+}
+
 .favorites-man_wrapper {
 	display: flex;
 	flex-direction: column;

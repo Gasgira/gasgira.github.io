@@ -3,6 +3,7 @@ import { db, Item } from 'db';
 import { emitter } from 'eventEmitter';
 import { HTML } from 'lib/HTML';
 import { urlParams } from 'urlParams';
+import { MobileMicaMenu } from 'ui/mica';
 
 import './index.css';
 
@@ -24,6 +25,7 @@ class CoreViewer extends Component {
 
 		emitter.on('showSocket', () => this.updateParams());
 	}
+
 	async init() {
 		const armor = [...db.getItemIDsByType('ArmorCore')]
 			.sort() // hack... mk7 id puts it ahead of mk5
@@ -61,10 +63,8 @@ class CoreViewer extends Component {
 			this.showCoreType('ArmorCore', true);
 			this.showCore(this.state?.coreType?.[0], true);
 		}
-		this.render();
 
-		// this.initAllCores()
-		// 	.then(() => emitter.emit('CoreViewer.initAllCores'));
+		this.render();
 	}
 
 	get defaultState() {
@@ -207,9 +207,21 @@ class Core extends Component {
 
 			if (paramSocketName && socketName === paramSocketName) this.state.socket = socket;
 		}
+
+		this.mobileMicaMenu = new MobileMicaMenu(`MobileMicaMenu-${this.name}`, 'Sockets');
+		emitter.on(`MobileMicaMenu-${this.name}`, () => {
+			this.setState({mobileMenu: !this.state.mobileMenu});
+		});
+
 		this.render();
 
 		return this;
+	}
+
+	get defaultState() {
+		return {
+			mobileMenu: false
+		};
 	}
 
 	async render() {
@@ -218,7 +230,7 @@ class Core extends Component {
 			<div
 				class ="core_wrapper mica_main-content"
 			>
-				<ul class="core-socket-list mica_nav-list">
+				<ul class=${`core-socket-list mica_nav-list ${this.state.mobileMenu ? 'show-mobile' : 'hide-mobile'}`}>
 					<li class="core-socket-title">${this?.item?.data?.CommonData?.Title ?? 'Loading core...'}</li>
 					${this.sockets.map(socket => HTML.wire(socket)`
 						<li><button
@@ -229,14 +241,17 @@ class Core extends Component {
 				</ul>
 				<div class="mica_content">${this.state?.socket?.render() ?? ''}</div>
 				${{html: this.state?.socket ? '' : '<div class="core-socket-placeholder">CHOOSE A SOCKET</div>'}}
+				<div class=${`mica_mobile-menu_container ${this.state.mobileMenu ? 'show-mobile' : 'hide-mobile'}`}>${this?.mobileMicaMenu?.render() ?? ''}</div>
 			</div>
 		`
 	}
 
 	showSocket(socket) {
+		this.state.mobileMenu = false;
 		if (this.state?.socket === socket) {
 			// this.setState({socket: undefined});
 			// emitter.emit('showSocket');
+			this.render();
 			return;
 		}
 		this.setState({socket});

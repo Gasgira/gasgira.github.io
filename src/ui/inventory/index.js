@@ -4,6 +4,7 @@ import { emitter } from 'eventEmitter';
 import { HTML } from 'lib/HTML';
 import { modalConstructor } from 'ui/modal';
 import { urlParams } from 'urlParams';
+import { MobileMicaMenu } from 'ui/mica';
 
 import './index.css';
 
@@ -67,6 +68,11 @@ class Inventory extends Component {
 			this.state.inventoryCategory = search;
 		}
 
+		this.mobileMicaMenu = new MobileMicaMenu('MobileMicaMenu-Inventory', 'Categories');
+		emitter.on('MobileMicaMenu-Inventory', () => {
+			this.setState({mobileMenu: !this.state.mobileMenu});
+		});
+
 		emitter.on('nav-search', () => {
 			this.showCategory(search);
 			search.focus();
@@ -80,13 +86,19 @@ class Inventory extends Component {
 		})
 	}
 
+	get defaultState() {
+		return {
+			mobileMenu: false
+		};
+	}
+
 	render() {
 		return this.html`<div class="inventory_wrapper mica_viewer" id="inventory">
 			<header class="inventory mica_header-strip">
 				<a class="mica_header-anchor" href="#inventory"><h2>Inventory</h2></a>
 			</header>
 			<div class="inventory_content mica_main-content">
-				<ul class="inventory-catergories mica_nav-list">
+				<ul class=${`inventory-catergories mica_nav-list ${this.state.mobileMenu ? 'show-mobile' : 'hide-mobile'}`}>
 					${this.categories.map(category => HTML.wire(category)`<li><button
 						onclick=${() => this.showCategory(category)}
 						class=${this.state?.inventoryCategory === category ? 'active' : null}
@@ -94,11 +106,13 @@ class Inventory extends Component {
 				</ul>
 				${this.state?.inventoryCategory?.render() ?? ''}
 				${{html: this.state?.inventoryCategory ? '' : '<div class="inv-category-placeholder">CHOOSE A CATEGORY</div>'}}
+				<div class=${`mica_mobile-menu_container ${this.state.mobileMenu ? 'show-mobile' : 'hide-mobile'}`}>${this?.mobileMicaMenu.render()}</div>
 			</div>
 		</div>`;
 	}
 
 	showCategory(inventoryCategory) {
+		this.state.mobileMenu = false;
 		if (this.state?.inventoryCategory === inventoryCategory) {
 			this.scrollIntoView();
 			// this.setState({inventoryCategory: undefined});

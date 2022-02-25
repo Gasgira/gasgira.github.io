@@ -165,7 +165,7 @@ button.dbItemIcon {
 	overflow: hidden;
 	box-shadow: -1rem 0 1rem #000;
 	animation: slide-in-right var(--time-active) linear;
-	z-index: 99;
+	z-index: 999;
 	&::before {
     content: "";
     position: absolute;
@@ -384,8 +384,43 @@ button.dbItemIcon {
 	}
 }
 
-@media(max-width: 400px) {
+@media(max-width: 500px) {
 	.dbItemPanel_wrapper {
+		min-height: 100vh;
+		height: 100%;
+		overflow: visible;
+		overflow-y: scroll;
+		scrollbar-width: none;
+		&::-webkit-scrollbar {
+			display: none;
+		}
+		&::before {
+			display: none;
+		}
+		& header {
+			margin-bottom: 1em;
+			display: flex;
+			flex-direction: column;
+			& .item-img {
+				--length: var(--panelMaxWidth);
+			}
+			& .dbItemPanel_titles {
+				padding-left: 0.5em;
+			}
+		}
+		& .dbItemPanel_path a {
+			display: none;
+		}
+		& .dbItemPanel_json {
+			overflow-x: initial;
+			overflow-y: initial;
+		}
+	}
+}
+
+@media(max-height: 500px) {
+	.dbItemPanel_wrapper {
+		--panelMaxWidth: 40vw;
 		min-height: 100vh;
 		height: 100%;
 		overflow: visible;

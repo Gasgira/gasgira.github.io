@@ -1,11 +1,22 @@
 import { Component } from 'component';
+import { emitter } from 'eventEmitter';
 import { HTML } from 'lib/HTML';
 import { db, Item, CurrencyItem } from 'db';
 import { urlParams } from 'urlParams';
+import { MobileMicaMenu } from 'ui/mica';
 
 import './index.css';
 
 class Calendar extends Component {
+	constructor() {
+		super();
+
+		this.mobileMicaMenu = new MobileMicaMenu('MobileMicaMenu-Calendar', 'Events');
+		emitter.on('MobileMicaMenu-Calendar', () => {
+			this.setState({mobileMenu: !this.state.mobileMenu});
+		});
+	}
+
 	async init() {
 		const calendarPath = 'Calendars/Seasons/SeasonCalendar.json';
 		this.data = await db.getJSON(calendarPath);
@@ -90,6 +101,12 @@ class Calendar extends Component {
 		return this;
 	}
 
+	get defaultState() {
+		return {
+			mobileMenu: false
+		};
+	}
+
 	get rewardTracks() {
 		return this?._rewardTracks ?? (this._rewardTracks = new Map());
 	}
@@ -99,10 +116,11 @@ class Calendar extends Component {
 			<div class="mica_viewer calendar_wrapper" id="season-calendar">
 				<header class="mica_header-strip"><a class="mica_header-anchor" href="#season-calendar"><h2>Season Calendar</h2></a><span class="header-notice"><div class="icon-masked icon-info"></div> Content and dates subject to change.</span></header>
 				<div class="mica_main-content">
-					<nav><ul class="mica_nav-list">
+					<nav><ul class=${`mica_nav-list ${this.state.mobileMenu ? 'show-mobile' : 'hide-mobile'}`}>
 						${this.renderEventList()}
 					</ul></nav>
 					${this.state?.rewardTrack?.render() ?? this.calendar()}
+					<div class=${`mica_mobile-menu_container ${this.state.mobileMenu ? 'show-mobile' : 'hide-mobile'}`}>${this?.mobileMicaMenu.render()}</div>
 				</div>
 			</div>
 		`;
@@ -234,6 +252,7 @@ class Calendar extends Component {
 	}
 
 	showRewardTrack(rewardTrack) {
+		this.state.mobileMenu = false;
 		if (this.state?.rewardTrack === rewardTrack) {
 			this.showCalendar();
 			return;
@@ -254,6 +273,7 @@ class Calendar extends Component {
 	}
 
 	showCalendar() {
+		this.state.mobileMenu = false;
 		this.setState({rewardTrack: undefined});
 		urlParams.deleteSecionSetting('calendar');
 	}

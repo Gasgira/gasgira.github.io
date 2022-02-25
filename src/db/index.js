@@ -407,7 +407,7 @@ export class Item extends Component {
 		let imagePath = 'progression/default/default.png';
 		const displayPath = this?.data?.CommonData?.DisplayPath?.Media?.MediaUrl?.Path;
 		if (displayPath && typeof displayPath === 'string') {
-			imagePath = `${displayPath.toLowerCase()}`;
+			imagePath = `${displayPath.toLowerCase().replace('.svg', '.png')}`;
 		}
 
 		return imagePath;

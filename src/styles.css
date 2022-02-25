@@ -311,7 +311,7 @@ button {
 		&::-webkit-scrollbar {
 			display: none;
 		}
-		& button {
+		& button:not(.mica_mobile-menu_button) {
 			display: flex;
 			width: 9.5em;
 			overflow: hidden;
@@ -336,6 +336,22 @@ button {
 		flex-direction: row;
 		flex-wrap: no-wrap;
 		width: 100%;
+		position: relative;
+		& .mica_mobile-menu_container {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			display: flex;
+			justify-content: right;
+			align-items: flex-end;
+			pointer-events: none;
+			z-index: 100;
+			& .mica_mobile-menu_button {
+				pointer-events: auto;
+			}
+		}
 	}
 	& .mica_content {
 		padding: 0.5rem;
@@ -343,10 +359,51 @@ button {
 	}
 }
 
+.mica_mobile-menu_button {
+	display: none;
+}
+
 @media(max-width: 580px) {
+	.mica_mobile-menu_container {
+		z-index: 98;
+	}
+	.mica_mobile-menu_button {
+		display: flex;
+		position: sticky;
+		height: 2rem;
+		bottom: 0.5rem;
+		margin: 0.5rem;
+		pointer-events: initial;
+		background-color: hsla(var(--theme-interact-hsl), 0.15);
+	}
+
 	.mica_viewer {
-		& .mica_nav-list {
-			/* display: none; */
+		& .mica_nav-list.show-mobile {
+			position: fixed;
+			justify-content: flex-end;
+			align-items: center;
+			padding-bottom: 6rem;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: var(--bg0);
+			overflow-y: scroll;
+			flex-wrap: wrap;
+			z-index: 97;
+			animation: slide-in-right var(--time-active) linear;
+			& button {
+				width: 10em;
+			}
+		}
+		& .mica_mobile-menu_container.show-mobile {
+			position: fixed;
+		}
+		& .mica_mobile-menu_container.hide-mobile {
+			z-index: 96;
+		}
+		& .mica_nav-list.hide-mobile {
+			display: none;
 		}
 		& .mica_content {
 			padding: 0.2rem;
@@ -366,6 +423,12 @@ button {
 	mask-repeat: no-repeat;
 	mask-position: center center;
 	mask-image: url("assets/icons.svg#dots-h");
+	&.icon-menu {
+		mask-image: url("assets/icons.svg#menu");
+	}
+	&.icon-dots-v {
+		mask-image: url("assets/icons.svg#dots-v");
+	}
 	&.icon-search {
 		mask-image: url("assets/icons.svg#search");
 	}
