@@ -1,0 +1,18 @@
+{
+	"Description": "Kill Enemy Spartans in Fiesta Matches",
+	"Difficulty": "mythic",
+	"Category": "Capstone",
+	"Reward": {
+		"InventoryItems": [],
+		"OperationExperience": 400,
+		"InventoryRewards": [
+			{
+				"InventoryItemPath": "Inventory/Armor/Coatings/002-001-olympus-755f8cdf.json",
+				"Amount": 1,
+				"Type": "ArmorCoating"
+			}
+		]
+	},
+	"ThresholdForSuccess": 50,
+	"Title": "Way of the Warrior"
+}

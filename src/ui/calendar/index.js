@@ -169,7 +169,7 @@ class Calendar extends Component {
 
 	calendar() {
 		return HTML.wire(this, ':calendar')`
-		<div class="reward-track_wrapper">
+		<div class="reward-track_wrapper mica_content">
 			<span>Season 1 // ${this.daysLeftInSeason()} days remaining</span>
 			<div class="timeline_wrapper">
 				<ul class="timeline_list operations">
@@ -259,6 +259,7 @@ class Calendar extends Component {
 		}
 		this.setState({rewardTrack});
 		urlParams.setSecionSetting('calendar', rewardTrack?.name);
+		this.scrollIntoView();
 	}
 
 	showRewardTrackByName(name) {
@@ -276,6 +277,16 @@ class Calendar extends Component {
 		this.state.mobileMenu = false;
 		this.setState({rewardTrack: undefined});
 		urlParams.deleteSecionSetting('calendar');
+		this.scrollIntoView();
+	}
+
+	scrollIntoView() {
+		const el = document.querySelector(`#season-calendar`);
+		if (el)
+		{
+			el.scrollIntoView();
+			history.replaceState({}, `Cylix`, `#season-calendar`);
+		}
 	}
 }
 
@@ -296,7 +307,7 @@ class RewardTrack extends Component {
 
 	render() {
 		return this.html`
-			<div class="reward-track_wrapper">
+			<div class="reward-track_wrapper mica_content">
 				<ul class="dates-list">
 					<li class="event-header">${this.name} // </li>
 					${{html: this.dates.map(dates => `

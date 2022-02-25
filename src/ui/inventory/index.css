@@ -1,6 +1,5 @@
 .inventory_wrapper {
 	& .inventory-category_wrapper {
-		padding: 0.5em;
 		width: 100%;
 	}
 	& .inv-category-placeholder {
@@ -153,6 +152,9 @@
 		& .inventory-search-bar_wrapper, & .inventory-search-filter_wrapper {
 			width: 100% !important;
 		}
+	}
+	.inventory-category_items {
+		justify-content: center !important;
 	}
 }
 

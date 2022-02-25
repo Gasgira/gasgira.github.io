@@ -20,7 +20,7 @@ export class MobileMicaMenu extends Component {
 				class="mica_mobile-menu_button"
 				onclick=${() => this.toggle()}
 				title=${this.title}
-			><span class="icon-masked icon-menu"></span>${this.title}</button>
+			>${this.title}<span class="icon-masked icon-menu"></span></button>
 		`;
 	}
 }

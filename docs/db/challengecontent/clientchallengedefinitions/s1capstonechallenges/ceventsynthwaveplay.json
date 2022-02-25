@@ -1,0 +1,18 @@
+{
+	"Description": "Complete Attrition matches",
+	"Difficulty": "mythic",
+	"Category": "Capstone",
+	"Reward": {
+		"InventoryItems": [],
+		"OperationExperience": 400,
+		"InventoryRewards": [
+			{
+				"InventoryItemPath": "Inventory/armor/visors/012-001-4df92fda.json",
+				"Amount": 1,
+				"Type": "ArmorVisor"
+			}
+		]
+	},
+	"ThresholdForSuccess": 4,
+	"Title": "Shift in Power"
+}

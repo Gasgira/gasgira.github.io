@@ -1,0 +1,18 @@
+{
+	"Description": "Win Stockpile Matches in PvP",
+	"Difficulty": "mythic",
+	"Category": "Capstone",
+	"Reward": {
+		"InventoryItems": [],
+		"OperationExperience": 400,
+		"InventoryRewards": [
+			{
+				"InventoryItemPath": "Inventory/Armor/Emblems/013-001-15ed7ee8.json",
+				"Amount": 1,
+				"Type": "ArmorEmblem"
+			}
+		]
+	},
+	"ThresholdForSuccess": 2,
+	"Title": "Stockpile Win"
+}

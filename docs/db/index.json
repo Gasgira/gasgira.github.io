@@ -357,6 +357,18 @@
 			}
 		],
 		[
+			"carenacompetitivewin",
+			{
+				"path": "challengecontent/clientchallengedefinitions/s1capstonechallenges/carenacompetitivewin.json",
+				"name": "carenacompetitivewin",
+				"title": "carenacompetitivewin",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
 			"1000-000-9f65b909",
 			{
 				"path": "configuration/emblems/coatings/1000-000-9f65b909.json",
@@ -1053,6 +1065,18 @@
 			}
 		],
 		[
+			"season6-2",
+			{
+				"path": "seasons/season6-2.json",
+				"name": "season6-2",
+				"title": "Heroes of Reach",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
 			"hflagcarrierkill",
 			{
 				"path": "challengecontent/clientchallengedefinitions/modechallenges/heroic/hflagcarrierkill.json",
@@ -1600,6 +1624,7 @@
 				"title": "s1vanillaweeklydeck1",
 				"type": "meta",
 				"touched": [
+					"2021-11-15T20:00:00.000Z",
 					"2021-11-15T20:00:00.000Z"
 				]
 			}
@@ -1649,7 +1674,8 @@
 				"type": "meta",
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
-					"2022-02-22T00:00:00.000Z"
+					"2022-02-22T00:00:00.000Z",
+					"2021-11-15T20:00:00.000Z"
 				]
 			}
 		],
@@ -4356,6 +4382,54 @@
 			}
 		],
 		[
+			"cbtbplay",
+			{
+				"path": "challengecontent/clientchallengedefinitions/s1capstonechallenges/cbtbplay.json",
+				"name": "cbtbplay",
+				"title": "cbtbplay",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"cbtbwin",
+			{
+				"path": "challengecontent/clientchallengedefinitions/s1capstonechallenges/cbtbwin.json",
+				"name": "cbtbwin",
+				"title": "cbtbwin",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"ceventsynthwaveplay",
+			{
+				"path": "challengecontent/clientchallengedefinitions/s1capstonechallenges/ceventsynthwaveplay.json",
+				"name": "ceventsynthwaveplay",
+				"title": "ceventsynthwaveplay",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"ceventsynthwavewin",
+			{
+				"path": "challengecontent/clientchallengedefinitions/s1capstonechallenges/ceventsynthwavewin.json",
+				"name": "ceventsynthwavewin",
+				"title": "ceventsynthwavewin",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
 			"203-202-olympus-1dc2f961",
 			{
 				"path": "inventory/weapon/coatings/203-202-olympus-1dc2f961.json",
@@ -5220,6 +5294,30 @@
 			}
 		],
 		[
+			"ckill",
+			{
+				"path": "challengecontent/clientchallengedefinitions/s1capstonechallenges/ckill.json",
+				"name": "ckill",
+				"title": "ckill",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"ckillheadshot",
+			{
+				"path": "challengecontent/clientchallengedefinitions/s1capstonechallenges/ckillheadshot.json",
+				"name": "ckillheadshot",
+				"title": "ckillheadshot",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
 			"103-000-ui-background-59430b15",
 			{
 				"path": "inventory/spartan/backdropimages/103-000-ui-background-59430b15.json",
@@ -5394,6 +5492,30 @@
 				"name": "002-001-olympus-814c6f72",
 				"title": "Cloven Seafoam",
 				"type": "ArmorCoating",
+				"touched": [
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"cmedaldoublekill",
+			{
+				"path": "challengecontent/clientchallengedefinitions/s1capstonechallenges/cmedaldoublekill.json",
+				"name": "cmedaldoublekill",
+				"title": "cmedaldoublekill",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"cmedalsplatter",
+			{
+				"path": "challengecontent/clientchallengedefinitions/s1capstonechallenges/cmedalsplatter.json",
+				"name": "cmedalsplatter",
+				"title": "cmedalsplatter",
+				"type": "meta",
 				"touched": [
 					"2021-11-15T20:00:00.000Z"
 				]
@@ -5677,6 +5799,18 @@
 			}
 		],
 		[
+			"crankedflagwin",
+			{
+				"path": "challengecontent/clientchallengedefinitions/s1capstonechallenges/crankedflagwin.json",
+				"name": "crankedflagwin",
+				"title": "crankedflagwin",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
 			"006-001-samurai-7e9788d7",
 			{
 				"path": "inventory/armor/kneepads/006-001-samurai-7e9788d7.json",
@@ -5937,12 +6071,132 @@
 			}
 		],
 		[
+			"csamuraikill",
+			{
+				"path": "challengecontent/clientchallengedefinitions/s1capstonechallenges/csamuraikill.json",
+				"name": "csamuraikill",
+				"title": "csamuraikill",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"csamuraimedalkillingspree",
+			{
+				"path": "challengecontent/clientchallengedefinitions/s1capstonechallenges/csamuraimedalkillingspree.json",
+				"name": "csamuraimedalkillingspree",
+				"title": "csamuraimedalkillingspree",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"csamuraimedalkilljoy",
+			{
+				"path": "challengecontent/clientchallengedefinitions/s1capstonechallenges/csamuraimedalkilljoy.json",
+				"name": "csamuraimedalkilljoy",
+				"title": "csamuraimedalkilljoy",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"csamuraioddballwin",
+			{
+				"path": "challengecontent/clientchallengedefinitions/s1capstonechallenges/csamuraioddballwin.json",
+				"name": "csamuraioddballwin",
+				"title": "csamuraioddballwin",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"csamuraiplay",
+			{
+				"path": "challengecontent/clientchallengedefinitions/s1capstonechallenges/csamuraiplay.json",
+				"name": "csamuraiplay",
+				"title": "csamuraiplay",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"csamuraiwin",
+			{
+				"path": "challengecontent/clientchallengedefinitions/s1capstonechallenges/csamuraiwin.json",
+				"name": "csamuraiwin",
+				"title": "csamuraiwin",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"cslayerwin",
+			{
+				"path": "challengecontent/clientchallengedefinitions/s1capstonechallenges/cslayerwin.json",
+				"name": "cslayerwin",
+				"title": "cslayerwin",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"cstockpilewin",
+			{
+				"path": "challengecontent/clientchallengedefinitions/s1capstonechallenges/cstockpilewin.json",
+				"name": "cstockpilewin",
+				"title": "cstockpilewin",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"ctotalcontrolwin",
+			{
+				"path": "challengecontent/clientchallengedefinitions/s1capstonechallenges/ctotalcontrolwin.json",
+				"name": "ctotalcontrolwin",
+				"title": "ctotalcontrolwin",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
 			"1000-000-246a8ef0",
 			{
 				"path": "configuration/emblems/coatings/1000-000-246a8ef0.json",
 				"name": "1000-000-246a8ef0",
 				"title": "Curious Meridian",
 				"type": "None",
+				"touched": [
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"cwin",
+			{
+				"path": "challengecontent/clientchallengedefinitions/s1capstonechallenges/cwin.json",
+				"name": "cwin",
+				"title": "cwin",
+				"type": "meta",
 				"touched": [
 					"2021-11-15T20:00:00.000Z"
 				]
@@ -8019,6 +8273,7 @@
 				"title": "Fracture: Tenrai",
 				"type": "meta",
 				"touched": [
+					"2021-11-15T20:00:00.000Z",
 					"2021-11-15T20:00:00.000Z"
 				]
 			}
@@ -10889,9 +11144,11 @@
 				"name": "017-001-olympus-c13d0b38",
 				"title": "Mark VII",
 				"type": "ArmorCore",
+				"visible": "2021-11-15T20:00:00.000Z",
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
-					"2022-02-24T00:00:00.000Z"
+					"2022-02-24T00:00:00.000Z",
+					"2021-11-15T20:00:00.000Z"
 				]
 			}
 		],
@@ -12452,8 +12709,10 @@
 				"name": "012-001-088496de",
 				"title": "Optic Gaming",
 				"type": "ArmorVisor",
+				"visible": "2021-11-15T20:00:00.000Z",
 				"touched": [
-					"2022-02-24T00:00:00.000Z"
+					"2022-02-24T00:00:00.000Z",
+					"2021-11-15T20:00:00.000Z"
 				]
 			}
 		],
@@ -12464,8 +12723,10 @@
 				"name": "013-001-e261d24f",
 				"title": "Optic Gaming",
 				"type": "ArmorEmblem",
+				"visible": "2021-11-15T20:00:00.000Z",
 				"touched": [
-					"2022-02-24T00:00:00.000Z"
+					"2022-02-24T00:00:00.000Z",
+					"2021-11-15T20:00:00.000Z"
 				]
 			}
 		],
@@ -12488,8 +12749,10 @@
 				"name": "104-001-esports-optic-e261d24f",
 				"title": "Optic Gaming",
 				"type": "SpartanEmblem",
+				"visible": "2021-11-15T20:00:00.000Z",
 				"touched": [
-					"2022-02-24T00:00:00.000Z"
+					"2022-02-24T00:00:00.000Z",
+					"2021-11-15T20:00:00.000Z"
 				]
 			}
 		],
@@ -12512,8 +12775,10 @@
 				"name": "205-201-e261d24f",
 				"title": "Optic Gaming",
 				"type": "WeaponEmblem",
+				"visible": "2021-11-15T20:00:00.000Z",
 				"touched": [
-					"2022-02-24T00:00:00.000Z"
+					"2022-02-24T00:00:00.000Z",
+					"2021-11-15T20:00:00.000Z"
 				]
 			}
 		],
@@ -13909,6 +14174,266 @@
 				"title": "Ryuu",
 				"type": "ArmorVisor",
 				"touched": [
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"s1rankedweeklydeck",
+			{
+				"path": "challengecontent/clientchallengedeckdefinitions/s1rankedweeklydeck.json",
+				"name": "s1rankedweeklydeck",
+				"title": "s1rankedweeklydeck",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z",
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"s1rankedweeklydeck2",
+			{
+				"path": "challengecontent/clientchallengedeckdefinitions/s1rankedweeklydeck2.json",
+				"name": "s1rankedweeklydeck2",
+				"title": "s1rankedweeklydeck2",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z",
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"s1samuraiweeklydeck1",
+			{
+				"path": "challengecontent/clientchallengedeckdefinitions/s1samuraiweeklydeck1.json",
+				"name": "s1samuraiweeklydeck1",
+				"title": "s1samuraiweeklydeck1",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z",
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"s1samuraiweeklydeck2",
+			{
+				"path": "challengecontent/clientchallengedeckdefinitions/s1samuraiweeklydeck2.json",
+				"name": "s1samuraiweeklydeck2",
+				"title": "s1samuraiweeklydeck2",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z",
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"s1samuraiweeklydeck3",
+			{
+				"path": "challengecontent/clientchallengedeckdefinitions/s1samuraiweeklydeck3.json",
+				"name": "s1samuraiweeklydeck3",
+				"title": "s1samuraiweeklydeck3",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z",
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"s1samuraiweeklydeck4",
+			{
+				"path": "challengecontent/clientchallengedeckdefinitions/s1samuraiweeklydeck4.json",
+				"name": "s1samuraiweeklydeck4",
+				"title": "s1samuraiweeklydeck4",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z",
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"s1samuraiweeklydeck5",
+			{
+				"path": "challengecontent/clientchallengedeckdefinitions/s1samuraiweeklydeck5.json",
+				"name": "s1samuraiweeklydeck5",
+				"title": "s1samuraiweeklydeck5",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z",
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"s1samuraiweeklydeck6",
+			{
+				"path": "challengecontent/clientchallengedeckdefinitions/s1samuraiweeklydeck6.json",
+				"name": "s1samuraiweeklydeck6",
+				"title": "s1samuraiweeklydeck6",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z",
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"s1synthweeklydeck1",
+			{
+				"path": "challengecontent/clientchallengedeckdefinitions/s1synthweeklydeck1.json",
+				"name": "s1synthweeklydeck1",
+				"title": "s1synthweeklydeck1",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z",
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"s1synthweeklydeck2",
+			{
+				"path": "challengecontent/clientchallengedeckdefinitions/s1synthweeklydeck2.json",
+				"name": "s1synthweeklydeck2",
+				"title": "s1synthweeklydeck2",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z",
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"s1vanillaweeklydeck2",
+			{
+				"path": "challengecontent/clientchallengedeckdefinitions/s1vanillaweeklydeck2.json",
+				"name": "s1vanillaweeklydeck2",
+				"title": "s1vanillaweeklydeck2",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z",
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"s1vanillaweeklydeck3",
+			{
+				"path": "challengecontent/clientchallengedeckdefinitions/s1vanillaweeklydeck3.json",
+				"name": "s1vanillaweeklydeck3",
+				"title": "s1vanillaweeklydeck3",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z",
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"s1vanillaweeklydeck4",
+			{
+				"path": "challengecontent/clientchallengedeckdefinitions/s1vanillaweeklydeck4.json",
+				"name": "s1vanillaweeklydeck4",
+				"title": "s1vanillaweeklydeck4",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z",
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"s1vanillaweeklydeck5",
+			{
+				"path": "challengecontent/clientchallengedeckdefinitions/s1vanillaweeklydeck5.json",
+				"name": "s1vanillaweeklydeck5",
+				"title": "s1vanillaweeklydeck5",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z",
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"s1vanillaweeklydeck6",
+			{
+				"path": "challengecontent/clientchallengedeckdefinitions/s1vanillaweeklydeck6.json",
+				"name": "s1vanillaweeklydeck6",
+				"title": "s1vanillaweeklydeck6",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z",
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"s1vanillaweeklydeck7",
+			{
+				"path": "challengecontent/clientchallengedeckdefinitions/s1vanillaweeklydeck7.json",
+				"name": "s1vanillaweeklydeck7",
+				"title": "s1vanillaweeklydeck7",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z",
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"s1vanillaweeklydeck8",
+			{
+				"path": "challengecontent/clientchallengedeckdefinitions/s1vanillaweeklydeck8.json",
+				"name": "s1vanillaweeklydeck8",
+				"title": "s1vanillaweeklydeck8",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z",
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"s1vanillaweeklydeck9",
+			{
+				"path": "challengecontent/clientchallengedeckdefinitions/s1vanillaweeklydeck9.json",
+				"name": "s1vanillaweeklydeck9",
+				"title": "s1vanillaweeklydeck9",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z",
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"s1winterweeklydeck1",
+			{
+				"path": "challengecontent/clientchallengedeckdefinitions/s1winterweeklydeck1.json",
+				"name": "s1winterweeklydeck1",
+				"title": "s1winterweeklydeck1",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z",
+					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"s1winterweeklydeck2",
+			{
+				"path": "challengecontent/clientchallengedeckdefinitions/s1winterweeklydeck2.json",
+				"name": "s1winterweeklydeck2",
+				"title": "s1winterweeklydeck2",
+				"type": "meta",
+				"touched": [
+					"2021-11-15T20:00:00.000Z",
 					"2021-11-15T20:00:00.000Z"
 				]
 			}
@@ -17238,6 +17763,7 @@
 				"title": "Tactical Ops",
 				"type": "meta",
 				"touched": [
+					"2021-11-15T20:00:00.000Z",
 					"2021-11-15T20:00:00.000Z"
 				]
 			}

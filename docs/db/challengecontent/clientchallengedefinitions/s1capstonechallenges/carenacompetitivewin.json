@@ -1,0 +1,18 @@
+{
+	"Description": "Win Ranked Arena Matches",
+	"Difficulty": "mythic",
+	"Category": "Capstone",
+	"Reward": {
+		"InventoryItems": [],
+		"OperationExperience": 400,
+		"InventoryRewards": [
+			{
+				"InventoryItemPath": "Inventory/Spartan/BackdropImages/103-000-ui-background-605cd940.json",
+				"Amount": 1,
+				"Type": "SpartanBackdropImage"
+			}
+		]
+	},
+	"ThresholdForSuccess": 5,
+	"Title": "Battle Tested"
+}

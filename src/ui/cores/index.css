@@ -91,7 +91,12 @@
 			flex-direction: row;
 			flex-wrap: wrap;
 			justify-content: left;
-			padding: var(--mica-content-inset);
 		}
+	}
+}
+
+@media(max-width: 580px) {
+	.socket-items {
+		justify-content: center !important;
 	}
 }

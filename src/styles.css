@@ -369,12 +369,14 @@ button {
 	}
 	.mica_mobile-menu_button {
 		display: flex;
+		align-items: flex-end;
 		position: sticky;
 		height: 2rem;
 		bottom: 0.5rem;
 		margin: 0.5rem;
 		pointer-events: initial;
-		background-color: hsla(var(--theme-interact-hsl), 0.15);
+		color: #000;
+		background-color: hsla(var(--theme-interact-hsl), 0.66);
 	}
 
 	.mica_viewer {
@@ -408,6 +410,9 @@ button {
 		& .mica_content {
 			padding: 0.2rem;
 			--mica-content-inset: 0;
+		}
+		& .mica_main-content {
+			padding-bottom: 3rem;
 		}
 	}
 }

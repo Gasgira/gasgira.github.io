@@ -2,7 +2,6 @@ import { Component } from 'component';
 import { db, Item } from 'db';
 import { emitter } from 'eventEmitter';
 import { HTML } from 'lib/HTML';
-import { modalConstructor } from 'ui/modal';
 import { urlParams } from 'urlParams';
 import { MobileMicaMenu } from 'ui/mica';
 
@@ -228,7 +227,7 @@ class InventoryCategory extends Component {
 	render() {
 		return this.html`
 			<div
-				class ="inventory-category_wrapper"
+				class ="inventory-category_wrapper mica_content"
 			>
 				<header class="h-favorites">
 					<div>${db.getItemType(this.categoryName)?.replace('Atch.', 'Attachments') ?? ''} // ${this?.itemIDs.size}</div>

@@ -82,7 +82,7 @@ class CoreViewer extends Component {
 
 	render() {
 		return this.html`
-			<div class ="core-viewer_wrapper mica_viewer">
+			<div id="cores" class ="core-viewer_wrapper mica_viewer">
 				<nav class ="core-viewer_nav"><ul>
 					<li><button class=${`core-tab${this.state?.coreTypeName === 'ArmorCore' ? ' active' : ''}`} onclick=${() => this.showCoreType('ArmorCore')}>Armor</button></li>
 					<li><button class=${`core-tab${this.state?.coreTypeName === 'WeaponCore' ? ' active' : ''}`} onclick=${() => this.showCoreType('WeaponCore')}>Weapons</button></li>
@@ -252,10 +252,21 @@ class Core extends Component {
 			// this.setState({socket: undefined});
 			// emitter.emit('showSocket');
 			this.render();
+			this.scrollIntoView();
 			return;
 		}
 		this.setState({socket});
 		emitter.emit('showSocket');
+		this.scrollIntoView();
+	}
+
+	scrollIntoView() {
+		const el = document.querySelector(`#cores`);
+		if (el)
+		{
+			el.scrollIntoView();
+			history.replaceState({}, `Cylix`, `#cores`);
+		}
 	}
 }
 
@@ -277,7 +288,7 @@ class Socket extends Component {
 	render() {
 		return this.html`
 			<div
-				class ="core-sockets_wrapper"
+				class ="core-sockets_wrapper mica_content"
 			>
 			${this.name?.replace('Atch.', 'Attachments') ?? 'Socket'} // ${this?.items?.length ?? '#'}
 				<ul

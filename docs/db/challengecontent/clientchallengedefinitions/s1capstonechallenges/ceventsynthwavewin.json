@@ -1,0 +1,18 @@
+{
+	"Description": "Win Attrition Matches",
+	"Difficulty": "mythic",
+	"Category": "Capstone",
+	"Reward": {
+		"InventoryItems": [],
+		"OperationExperience": 400,
+		"InventoryRewards": [
+			{
+				"InventoryItemPath": "Inventory/Weapon/Coatings/203-206-olympus-f3cfcd0c.json",
+				"Amount": 1,
+				"Type": "WeaponCoating"
+			}
+		]
+	},
+	"ThresholdForSuccess": 3,
+	"Title": "Endurance of Will"
+}
