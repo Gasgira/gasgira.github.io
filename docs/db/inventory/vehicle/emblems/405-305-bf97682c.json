@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "405-305-bf97682c",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Kabuto",
 		"Description": "Fight with honor.",
 		"FeatureFlag": true,
@@ -113,12 +113,12 @@
 	},
 	"AvailableConfigurations": [
 		{
-			"ConfigurationId": 1939033603,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-e39b77e0.json"
-		},
-		{
 			"ConfigurationId": 863318506,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-0eac22ce.json"
+		},
+		{
+			"ConfigurationId": 824330229,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-227adf2f.json"
 		},
 		{
 			"ConfigurationId": 802727239,
@@ -129,8 +129,8 @@
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-ad8a2b03.json"
 		},
 		{
-			"ConfigurationId": 824330229,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-227adf2f.json"
+			"ConfigurationId": 1939033603,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-e39b77e0.json"
 		}
 	]
 }

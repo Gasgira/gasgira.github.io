@@ -48,9 +48,9 @@ class HeaderNav extends Component {
 					</div>
 				</header></a>
 				<ul>
-					<li><button aria-label="Search" onclick=${() => emitter.emit('nav-search')}><div class="icon-masked icon-search"></div></button></li>
-					<li><button aria-label="Settings" onclick=${() => modalConstructor.showView(settings.render())}><div class="icon-masked icon-settings"></div></button></li>
-					<li><button aria-label="Disclaimer" onclick=${() => modalConstructor.showView(about.render())}>Disclaimer</button></li>
+					<li><button aria-label="Search" title="Search" onclick=${() => emitter.emit('nav-search')}><div class="icon-masked icon-search"></div></button></li>
+					<li><button aria-label="Settings" title="Settings" onclick=${() => modalConstructor.showView(settings.render())}><div class="icon-masked icon-settings"></div></button></li>
+					<li><button aria-label="Disclaimer" title="Disclaimer" onclick=${() => modalConstructor.showView(about.render())}>Disclaimer</button></li>
 				</ul>
 			</nav>
 		`;

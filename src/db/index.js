@@ -1,9 +1,7 @@
-import { Component } from 'component';
 import { emitter } from 'eventEmitter';
-import { HTML } from 'lib/HTML';
 import { settings } from 'ui/settings';
-
-import './index.css';
+import { itemPanel } from 'db/itemPanel';
+import { Item } from 'db/item';
 
 class Database {
 	constructor() {
@@ -15,14 +13,17 @@ class Database {
 		// metadata/metadata.json
 	}
 
-	async init() {
-		this.metadata = await this.getJSON('metadata/metadata.json')
+	async getMetaData() {
+		const metadata = await this.getJSON('metadata/metadata.json')
 			.catch(error => {
 				console.warn(`[skimmer] metadata did not load...`, error);
 				this.metadata = {}
 			});
-		
-		this.index = await this.getJSON('index.json')
+		if (metadata) return metadata;
+	}
+
+	async getIndex() {
+		const index = await this.getJSON('index.json')
 			.then(response => {
 				if (!response || !Array.isArray(response?.types) || !Array.isArray(response?.manifest))
 				{
@@ -42,7 +43,19 @@ class Database {
 					manifest: new Map()
 				}
 			});
-		if (this.index) console.info(`[skimmer.db.init] "${this.index.manifest.size}" items in index.`);
+		if (index) return index;
+	}
+
+	async init() {
+		const [index, metadata] = await Promise.all([
+			this.getIndex(),
+			this.getMetaData()
+		]);
+
+		this.index = index;
+		console.info(`[skimmer.db.init] "${this.index.manifest.size}" items in index.`);
+
+		this.metadata = metadata;
 	}
 
 	async getJSON(path) {
@@ -247,225 +260,9 @@ class Database {
 		console.warn(localStorage.getItem('userFavorites'))
 		emitter.emit('favoriteItemPaths', `${path}`)
 	}
-}
 
-export const db = new Database();
-
-
-
-export class Item extends Component {
-	constructor(path) {
-		super();
-		if (!path || path.length < 10) return console.error(`[Item] Bad path ${path}`);
-		const pathLowercase = path.toLowerCase();
-		if (db.items.has(pathLowercase))
-		{
-			// console.warn('[skimmer][db.item] Duplicate', path);
-			return db.items.get(pathLowercase);
-		}
-		this.path = pathLowercase;
-		db.items.set(`${pathLowercase}`, this);
-	}
-
-	get id() {
-		return this?._id ?? (this._id = db.itemPathToID(this.path));
-	}
-
-	get name() {
-		return this?.data?.CommonData?.Title ?? this.id;
-	}
-
-	get seasonNumber() {
-		const season = this?.data?.CommonData?.Season;
-		if (!season || typeof season !== 'string') return '0';
-		const split = season.split(' ');
-		if (split && split?.[1]) return parseInt(split[1]);
-		return '0';
-	}
-
-	async getName() {
-		await this.init();
-		return this?.data?.CommonData?.Title ?? this.id;
-	}
-
-	get parentPaths() {
-		if (!this?.data?.CommonData?.ParentPaths?.length) return;
-		return this?._parentPaths ?? (this._parentPaths = new Set([...this?.data?.CommonData?.ParentPaths.map(parent => parent?.Path)]));
-	}
-
-	get manufacturerName() {
-		return db.getManufacturerByIndex(this?.data?.CommonData?.ManufacturerId)?.ManufacturerName ?? '';
-	}
-
-	get manufacturerImage() {
-		return db.getManufacturerByIndex(this?.data?.CommonData?.ManufacturerId)?.ManufacturerLogoImage ?? '';
-	}
-
-	get defaultState() {
-		return {
-			expand: false
-		};
-	}
-
-	async init() {
-		if (this.data)
-		{
-			await this.data;
-			return this;
-		}
-		try {
-			this.data = db.getJSON(this.path) // TODO need to get rid of this await. errors with itempanel on refresh
-				.then(res => this.data = res);
-			await this.data;
-		} catch (error) {
-			console.error(`[Item.init]`, error);
-			return false;
-		}
-		return this;
-	}
-
-	async render() {
-		console.warn('render', this);
-	}
-
-	async renderIcon(id, {
-		itemTypeIcon = false
-	} = {}) {
-		await this.init();
-		return HTML.wire(this, `:${id ?? 'icon'}`)`
-			<button
-				class=${
-					`dbItem dbItemIcon ${this?.data?.CommonData?.Type ?? 'defaultType'}${
-						this?.data?.CommonData?.Quality ? ` ${this?.data?.CommonData?.Quality?.toLowerCase?.() ?? ''}` : ''
-						}${
-						this?.data?.CommonData?.Type === 'SpartanBackdropImage' ? ' invert-hover' : ''
-						}`
-				}
-				onclick=${() => this.showItemPanel()}
-				style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(this.imagePath)})`}}
-			>
-				<span>${this.name ?? '???'}</span>
-				${itemTypeIcon ? this.renderItemTypeIcon() : ''}
-				${this.seasonNumber > 1 ? HTML.wire(this, ':seasonIcon')`<div
-						class="season-icon"
-						style=${{webkitMaskImage: `url(seasons.svg#${this.seasonNumber ?? 'default'})`}}
-					></div>` : ''
-				}
-			</button>
-		`;
-	}
-
-	get itemTypeIcons() {
-		return this?._itemTypeIcons ?? (this._itemTypeIcons = new Set([
-			'ArmorCoating',
-			'WeaponCoating'
-		]));
-	}
-
-	async renderItemTypeIcon() {
-		const path = this?.data?.CommonData?.ParentPaths?.[0]?.Path ?? this?.data?.CommonData?.ParentTheme ?? '';
-		const type = this?.data?.CommonData?.Type;
-		if (!path || !this.itemTypeIcons.has(type)) return '';
-		if (type && type === 'WeaponCoating')
-		{
-			const parent = await new Item(path).getImagePath();
-			const imagePath = `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(parent)})`;
-			return HTML.wire(this, `:itemType-${path}`)`
-				<div
-					class=${`item-type-icon ${this?.data?.CommonData?.Type ?? 'default-type'}`}
-					style=${{webkitMaskImage: imagePath, maskImage: imagePath}}
-				></div>
-			`;
-		}
-		if (type && type === 'ArmorCoating')
-		{
-			let svgId = 'ArmorCoating';
-			switch (path) {
-				case 'Inventory/Armor/Themes/007-001-olympus-c13d0b38.json':
-					svgId = 'MK7'
-					break;
-				case 'Inventory/Armor/Themes/007-001-reach-2564121f.json':
-					svgId = 'MK5'
-					break;
-				case 'Inventory/Armor/Themes/007-001-samurai-55badb14.json':
-					svgId = 'YOROI'
-					break;
-			
-				default:
-					break;
-			}
-			return HTML.wire(this, `:itemType-${performance.now()}`)`
-				<div
-					class=${`item-type-icon ${this?.data?.CommonData?.Type ?? 'default-type'}`}
-					style=${{backgroundImage: `url(items.svg#${svgId ?? 'default'})`}}
-				></div>
-			`;
-		}
-	}
-
-	get imagePath() {
-		let imagePath = 'progression/default/default.png';
-		const displayPath = this?.data?.CommonData?.DisplayPath?.Media?.MediaUrl?.Path;
-		if (displayPath && typeof displayPath === 'string') {
-			imagePath = `${displayPath.toLowerCase().replace('.svg', '.png')}`;
-		}
-
-		return imagePath;
-	}
-
-	async getImagePath() {
-		if (this?._imagePath) return this._imagePath;
-		await this.init();
-		let imagePath = '';
-		const displayPath = this?.data?.CommonData?.DisplayPath?.Media?.MediaUrl?.Path;
-		if (displayPath && typeof displayPath === 'string') {
-			imagePath = `${displayPath[0].toLowerCase()}${displayPath.substring(1)}`;
-		}
-
-		return (this._imagePath = imagePath);
-	}
-
-	async getParentItem() {
-		if (this?._parentItem) return this._parentItem;
-		if (this?.data?.CommonData?.ParentTheme)
-		{
-			this._parentItem = new Item(this?.data?.CommonData?.ParentTheme);
-			await this._parentItem.init();
-			return this._parentItem;
-		}
-		// const test = async path => `<a class="parentSocket" href=${`#${path}`}>${await new Item(path).getName()}</a>`
-	}
-
-	get icon() {
-		return this?._icon ?? (this._icon = this.renderIcon())
-	}
-
-	showItemPanel() {
-		itemPanel.displayItem(this);
-	}
-
-	get manifestItem() {
-		if (this?._manifestItem) return this._manifestItem;
-		const manifest = db.getItemManifestByID(this.id);
-		if (manifest) return (this._manifestItem = manifest);
-	}
-
-	get lastModifiedDate() {
-		if (this?._lastModifiedDate) return this._lastModifiedDate;
-		if (!Array.isArray(this?.manifestItem?.touched)) return new Date('2021-11-15T20:00:00.000Z');
-		
-		const dateString = this?.manifestItem?.touched[this.manifestItem.touched.length-1];
-		if (!Date.parse(dateString)) new Date('2021-11-15T20:00:00.000Z');
-
-		const date = new Date(dateString);
-		date.setUTCHours(20);
-		return (this._lastModifiedDate = date);
-	}
-}
-
-export class CurrencyItem extends Item {
-	get currencies() {
-		return this?._currencies ?? (this._currencies = new Map([
+	get replacedInfoItems() {
+		return this?._replacedInfoItems ?? (this._replacedInfoItems = new Map([
 			['currency/currencies/rerollcurrency.json', {
 				mediaPath: 'progression/currencies/1104-000-data-pad-e39bef84-sm.png',
 				name: 'Challenge Swap'
@@ -484,197 +281,6 @@ export class CurrencyItem extends Item {
 			}]
 		]))
 	}
-
-	get currency() {
-		const path = this.path.toLowerCase();
-		if (this.currencies.has(path)) return this.currencies.get(path);
-		return {
-			mediaPath: 'progression/Default/default.png',
-			name: 'Unknown Currency'
-		}
-	}
-
-	get name() {
-		return this.currency.name;
-	}
-
-	get imagePath() {
-		return this.currency.mediaPath;
-	}
 }
 
-class ItemPanel extends Component {
-	constructor() {
-		super();
-
-		window.addEventListener("keydown", (event) => {
-			if (event.defaultPrevented) return;
-		
-			if (this.state.visible === true && event.key === 'Escape')
-			{
-				this.hide();
-				event.preventDefault();
-			}
-		}, true);
-	}
-
-	get defaultState() {
-		return {
-			visible: false,
-			item: {},
-			pretty: true,
-			copyStatus: 'Share'
-		};
-	}
-
-	hide() {
-		this.setState({visible: false});
-		history.pushState(null, 'Halosets', `#`);
-	}
-
-	toggleVisibility() {
-		this.setState({visible: !this.state.visible});
-	}
-
-	displayItem(item, skipState) {
-		// check if is of class Item...
-		if (skipState) {
-			history.replaceState({path: `${item?.path}`}, `Halosets`, `#${item?.path}`);
-		} else {
-			history.pushState({path: `${item?.path}`}, `Halosets`, `#${item?.path}`);
-		}
-		
-		this.setState({
-			item,
-			visible: true
-		});
-	}
-
-	get item() {
-		if (this.state.item) return this.state.item;
-	}
-
-	render() {
-		if (this.state.visible) {
-			const item = this.state.item.data;
-
-			let imagePath = '';
-			const displayPath = item?.CommonData?.DisplayPath?.Media?.MediaUrl?.Path;
-			if (displayPath && typeof displayPath === 'string') {
-				imagePath = `${displayPath[0].toLowerCase()}${displayPath.substring(1)}`;
-			}
-
-			return HTML.bind(document.querySelector('.js--item-panel'))`
-				<div
-					class="dbItemPanel_clickout"
-					onclick=${() => this.hide()}
-				></div>
-				<div
-					class="dbItemPanel_wrapper"
-				>
-					<header>
-						<div
-							class="item-img"
-							style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(imagePath)})`}}
-						></div>
-						<div class=${`dbItemPanel_titles${item?.CommonData?.Quality ? ` ${item.CommonData.Quality?.toLowerCase?.()}` : ''}`}>
-							<h2>${this.state.item?.data?.CommonData?.Title ?? 'Item'}</h2>
-							<h3>${this.state.item?.data?.CommonData?.Description ?? '...'}</h3>
-						</div>
-						<button
-							class=${'favorite'}
-							onclick=${() => {
-								if (!this.state.item?.data?.CommonData) return;
-								db.toggleFavorite(this.state.item.path);
-								this.render();
-							}}
-							style=${{backgroundImage: `url(items.svg#${db.favoriteItemPaths.has(this.state.item.path) ? 'favored' : 'unfavored'})`}}
-						></button>
-					</header>
-					<div class="item-info_wrapper">
-						<div class="item-badges">
-							<div class="badge">
-								<div
-									class="badge-svg"
-									style=${{backgroundImage: `url(seasons.svg#${this.state.item.seasonNumber ?? 'default'})`}}
-								></div>
-								<span>${this.state.item?.data?.CommonData?.Season ?? 'Season'}</span>
-							</div>
-							<div class="badge">
-								<div
-									class="badge-svg"
-									data-icon=${this.state.item?.data?.CommonData?.Type ?? 'default'}
-									style=${{backgroundImage: `url(items.svg#${this.state.item?.data?.CommonData?.Type ?? 'default'})`}}
-								></div>
-								<span class="badge">${db.getItemType(this.state.item?.data?.CommonData?.Type) ?? 'Item'}</span>
-							</div>
-							<div class="badge">
-								<div
-									class="badge-icon"
-									style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(this.state.item?.manufacturerImage)})`}}
-								></div>
-								<span class="badge">${this.state.item?.manufacturerName ?? ''}</span>
-							</div>
-						</div>
-						<span class="attribute">${this.state.item?.data?.CommonData?.CustomAvailability ?? null}</span>
-						<span class="attribute">
-							${this.state.item?.parentPaths ? `Applies to: ` : ''}
-							${[...this.state.item?.parentPaths ?? []].map(async path => `<a class="parentSocket" href=${`#${path}`}>${await new Item(path).getName()}</a>`)}
-						</span>
-					</div>
-					<div class="modified-info_wrapper">
-							<label for="item-modified-date">Modified: </label><span id="item-modified-date">${this?.item?.lastModifiedDate?.toLocaleDateString(undefined, {
-								year: 'numeric', month: 'numeric', day: 'numeric'
-							}) ?? 'untracked'}</span>
-					</div>
-					<div class="json-info_wrapper">
-						<span class="dbItemPanel_path">
-							<button
-								aria-label="Copy shareable link"
-								onclick=${() => {
-									navigator.clipboard.writeText(`https://${window?.location?.host ?? 'cylix.guide'}${this.sharePath}`)
-										.then(success => {
-											this.setState({copyStatus: 'Copied!'});
-											setTimeout(() => {
-												this.setState({copyStatus: 'Share'});
-											}, 2000);
-										}, error => {
-											console.error('Copy share link', error);
-											this.setState({copyStatus: 'Error!'});
-											setTimeout(() => {
-												this.setState({copyStatus: 'Share'});
-											}, 2000);
-										})
-								}}
-							><span class="icon-masked icon-share"></span> ${this.state?.copyStatus ?? 'Share'}</button>
-							<a href=${this.sharePath} target="_blank" rel="noopener noreferrer">${this.state.item?.path ?? 'UNK'}</a>
-						</span>
-						<button
-							onclick=${() => this.setState({pretty: !this.state.pretty})}
-						>${this.state.pretty ? 'raw' : 'pretty'}</button>
-					</div>
-					<pre class="dbItemPanel_json">${{html: this.state.pretty ? this.prettyJson(this.state?.item?.data ?? {}) : JSON.stringify(this.state.item?.data, null, "\t")}}</pre>
-				</div>
-			`;
-			// <pre class="dbItemPanel_json">${JSON.stringify(this.state.item?.data, null, "\t")}</pre>
-									// style=${{"maskImage": `url("/assets/icons.svg")`}}
-		}
-		return HTML.bind(document.querySelector('.js--item-panel'))``;
-	}
-
-	get sharePath() {
-		return `${this.item?.path.startsWith('inventory/') ? '/share/' : '/#'}${this.item?.path ?? ''}`;
-	}
-
-	prettyJson(json) {
-		return JSON.stringify(json, (key, value) => {
-			if (typeof value === 'string' && value.length > 10 && value.substring(value.length -5) === '.json')
-			{
-				return `<a href=${`#${value}`}>${value}</a>`;
-			}
-			return value;
-		}, '\t');
-	}
-}
-
-export const itemPanel = new ItemPanel();
+export const db = new Database();

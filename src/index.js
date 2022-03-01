@@ -1,7 +1,8 @@
 import { HTML } from 'lib/HTML';
 import { emitter } from 'eventEmitter';
 import { headerNav } from 'ui/nav';
-import { db, itemPanel } from 'db';
+import { db } from 'db';
+import { itemPanel } from 'db/itemPanel';
 import { calendar } from 'ui/calendar';
 import { coreViewer } from 'ui/cores';
 import { inventory } from 'ui/inventory';
@@ -26,13 +27,16 @@ class App {
 		window.addEventListener('popstate', (event) => {
 			console.log('popstate', event.state);
 			if (event?.state?.path) db.showItemPanelByPath(event.state.path, true);
+			emitter.emit('popstate');
 		});
 		window.addEventListener('hashchange', (event) => {
 			const hash = window.location.hash?.substring?.(1);
 			if (hash && typeof hash === 'string' && hash.length > 6 && hash.substring(hash.length -5) === '.json')
 			{
-				db.showItemPanelByPath(hash, true);
+				return db.showItemPanelByPath(hash, true);
 			}
+
+			return itemPanel.hide();
 		});
 	}
 

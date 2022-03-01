@@ -8,12 +8,12 @@
 	},
 	"AvailableConfigurations": [
 		{
-			"ConfigurationId": 1939033603,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-e39b77e0.json"
-		},
-		{
 			"ConfigurationId": 863318506,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-0eac22ce.json"
+		},
+		{
+			"ConfigurationId": 824330229,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-227adf2f.json"
 		},
 		{
 			"ConfigurationId": 802727239,
@@ -24,13 +24,13 @@
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-ad8a2b03.json"
 		},
 		{
-			"ConfigurationId": 824330229,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-227adf2f.json"
+			"ConfigurationId": 1939033603,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-e39b77e0.json"
 		}
 	],
 	"CommonData": {
 		"Id": "104-001-samurai-kabut-bf97682c",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Kabuto",
 		"Description": "Fight with honor.",
 		"FeatureFlag": true,
@@ -98,12 +98,7 @@
 			"y": 0,
 			"z": 0
 		},
-		"ParentPaths": [
-			{
-				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
-				"Type": "ArmorTheme"
-			}
-		],
+		"ParentPaths": [],
 		"SortingMetadata": {
 			"categoryWeight": 1,
 			"subCategoryWeight": 0

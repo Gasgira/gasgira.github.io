@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "405-305-15ed7ee8",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Driving Offensively",
 		"Description": "Don't let a little cliff stop you!",
 		"FeatureFlag": true,

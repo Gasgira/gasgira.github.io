@@ -1,7 +1,9 @@
 import { Component } from 'component';
-import { db, Item } from 'db';
+import { db } from 'db';
+import { Item, placeholderItem } from 'db/item';
 import { emitter } from 'eventEmitter';
 import { HTML } from 'lib/HTML';
+import { settings } from 'ui/settings';
 import { urlParams } from 'urlParams';
 import { MobileMicaMenu } from 'ui/mica';
 
@@ -9,6 +11,7 @@ import './index.css';
 
 class Inventory extends Component {
 	async init() {
+		this.pageSize = parseInt(settings.pageSize ?? 100);
 		const favorites = new Favorites({categoryName: 'Favorites'});
 		const search = new Search({categoryName: 'Search'});
 
@@ -70,12 +73,27 @@ class Inventory extends Component {
 		this.mobileMicaMenu = new MobileMicaMenu('MobileMicaMenu-Inventory', 'Categories');
 		emitter.on('MobileMicaMenu-Inventory', () => {
 			this.setState({mobileMenu: !this.state.mobileMenu});
+			if (this.state.mobileMenu) history.pushState({}, `Halosets`, ``);
+		});
+		emitter.on('popstate', () => {
+			if (this.state.mobileMenu) this.setState({mobileMenu: false});
 		});
 
 		emitter.on('nav-search', () => {
 			this.showCategory(search);
 			search.focus();
 		});
+
+		// window.addEventListener("keydown", (event) => {
+		// 	if (event.defaultPrevented) return;
+		
+		// 	if (event.key === '/')
+		// 	{
+		// 		this.showCategory(search);
+		// 		search.focus();
+		// 		event.preventDefault();
+		// 	}
+		// }, true);
 
 		// Listen for updates to favorites list, render on change
 		emitter.on('favoriteItemPaths', (path) => {
@@ -192,7 +210,7 @@ class InventoryCategory extends Component {
 	}
 
 	get pageLength() {
-		return 100;
+		return inventory?.pageSize ?? 100;
 	}
 
 	get pages() {
@@ -236,7 +254,12 @@ class InventoryCategory extends Component {
 				<ul
 					class="inventory-category_items"
 				>
-					${this.items.map(item => HTML.wire()`<li>${item.renderIcon('inventory', {itemTypeIcon: true})}</li>`)}
+					${this.items.map(item => HTML.wire()`<li>
+						${{
+							any: item.renderIcon('inventory', {itemTypeIcon: true}),
+							placeholder: placeholderItem.cloneNode(true)
+						}}
+					</li>`)}
 					${this.categoryName === 'Favorites' && !this.items.length ? HTML.wire(this, ':favPlaceholder')`
 						<div class="favorites-placeholder">Tap the <span
 							class=${'favorite'}
@@ -339,7 +362,7 @@ class Search extends InventoryCategory {
 	render() {
 		return this.html`
 			<div
-				class ="inventory-category_wrapper"
+				class ="inventory-category_wrapper mica_content"
 			>
 				<header class="h-favorites">
 					<div>Search // ${this?.itemIDs?.size ?? 0}</div>
@@ -405,6 +428,18 @@ class Search extends InventoryCategory {
 						}
 					>
 				</li>
+				<li class="filter-input_wrapper">
+					<label for="date_modified-before">Modified Before</label>
+					<input
+						type="date"
+						id="date_modified-before"
+						onchange=${(e) => this.filterModifiedBeforeDate(e.target.value)}
+						value=${urlParams.getSecionSetting('smb')
+							? `${urlParams.getSecionSetting('smb')}`
+							: ''
+						}
+					>
+				</li>
 			</ul>
 		`;
 	}
@@ -435,6 +470,20 @@ class Search extends InventoryCategory {
 				{
 					const lastModified = new Date(dateString);
 					if (new Date(filters.get('modifiedDate')) > lastModified)
+					{
+						// console.log(lastModified)
+						continue;
+					}
+				}
+			}
+
+			if (filters.has('modifiedBeforeDate') && Array.isArray(entry?.touched))
+			{
+				const dateString = entry.touched[entry.touched.length-1];
+				if (Date.parse(dateString))
+				{
+					const lastModified = new Date(dateString);
+					if (new Date(filters.get('modifiedBeforeDate')) < lastModified)
 					{
 						// console.log(lastModified)
 						continue;
@@ -492,6 +541,24 @@ class Search extends InventoryCategory {
 		// console.log(date);
 		this.state.filters.set('modifiedDate', date);
 		urlParams.setSecionSetting('smd', `${dateString}`);
+	}
+
+	filterModifiedBeforeDate(dateString) {
+		console.log('date', dateString)
+		if (!dateString || !Date.parse(dateString))
+		{
+			// console.log('del', dateString)
+			if (this.state.filters.has('modifiedBeforeDate')) this.state.filters.delete('modifiedBeforeDate');
+			urlParams.deleteSecionSetting('smb');
+			return;
+		}
+		const date = new Date(`${dateString}T00:00:00Z`);
+		if (!date) return;
+		console.log('datep', date)
+		// date.setDate(date.getDate() + 1);
+		// console.log(date);
+		this.state.filters.set('modifiedBeforeDate', date);
+		urlParams.setSecionSetting('smb', `${dateString}`);
 	}
 
 	focus() {

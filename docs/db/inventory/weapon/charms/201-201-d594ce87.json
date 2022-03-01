@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "201-201-d594ce87",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Tank Rank",
 		"Description": "Undefeated in the power rankings.",
 		"FeatureFlag": true,
@@ -83,38 +83,6 @@
 			"z": 0
 		},
 		"ParentPaths": [
-			{
-				"Path": "Inventory/Weapon/Themes/207-200-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-201-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-202-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-203-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-204-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-205-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-206-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-207-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
 			{
 				"Path": "Inventory/Weapon/Themes/207-200-olympus-aa30213b.json",
 				"Type": "WeaponTheme"

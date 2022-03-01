@@ -14,11 +14,22 @@
 			"StyleIdOverride": {
 				"m_identifier": -1
 			}
+		},
+		{
+			"RegionId": {
+				"m_identifier": -138055652
+			},
+			"PermutationId": {
+				"m_identifier": 332549919
+			},
+			"StyleIdOverride": {
+				"m_identifier": -1
+			}
 		}
 	],
 	"CommonData": {
 		"Id": "401-000-cowcatcher-f8a2624a",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Cowcatcher",
 		"Description": "Push aside the local wildlife.",
 		"FeatureFlag": false,
@@ -87,10 +98,6 @@
 			"z": 0
 		},
 		"ParentPaths": [
-			{
-				"Path": "Inventory/Vehicle/Themes/408-300-olympus-aa30213b.json",
-				"Type": "VehicleTheme"
-			},
 			{
 				"Path": "Inventory/Vehicle/Themes/408-300-olympus-aa30213b.json",
 				"Type": "VehicleTheme"

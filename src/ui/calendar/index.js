@@ -1,7 +1,8 @@
 import { Component } from 'component';
 import { emitter } from 'eventEmitter';
 import { HTML } from 'lib/HTML';
-import { db, Item, CurrencyItem } from 'db';
+import { db } from 'db';
+import { Item, placeholderItem } from 'db/item';
 import { urlParams } from 'urlParams';
 import { MobileMicaMenu } from 'ui/mica';
 
@@ -14,6 +15,10 @@ class Calendar extends Component {
 		this.mobileMicaMenu = new MobileMicaMenu('MobileMicaMenu-Calendar', 'Events');
 		emitter.on('MobileMicaMenu-Calendar', () => {
 			this.setState({mobileMenu: !this.state.mobileMenu});
+			if (this.state.mobileMenu) history.pushState({}, `Halosets`, ``);
+		});
+		emitter.on('popstate', () => {
+			if (this.state.mobileMenu) this.setState({mobileMenu: false});
 		});
 	}
 
@@ -333,18 +338,30 @@ class RewardTrack extends Component {
 						<li class="rank_number">${rank.Rank}</li>
 						<ul class="rank_reward-items free">
 							${rank?.FreeRewards?.InventoryRewards?.map(reward => {
-								return HTML.wire()`<li>${new Item(reward?.InventoryItemPath).renderIcon('reward', {itemTypeIcon: true})}</li>`
+								return HTML.wire()`<li>${{
+									any: new Item(reward?.InventoryItemPath).renderIcon('reward', {itemTypeIcon: true}),
+									placeholder: placeholderItem.cloneNode(true)
+								}}</li>`
 							})}
 							${rank?.FreeRewards?.CurrencyRewards?.map(reward => {
-								return HTML.wire()`<li class="currency" data-quantity=${parseInt(reward?.Amount)}>${new CurrencyItem(reward?.CurrencyPath).renderIcon(`${rank.Rank}-${performance.now()}`)}</li>`
+								return HTML.wire()`<li class="currency" data-quantity=${parseInt(reward?.Amount)}>${{
+									any: new Item(reward?.CurrencyPath).renderIcon(`${rank.Rank}-${performance.now()}`),
+									placeholder: placeholderItem.cloneNode(true)
+								}}</li>`
 							})}
 						</ul>
 						<ul class="rank_reward-items paid">
 							${rank?.PaidRewards?.InventoryRewards?.map(reward => {
-								return HTML.wire()`<li>${new Item(reward?.InventoryItemPath).renderIcon('reward', {itemTypeIcon: true})}</li>`
+								return HTML.wire()`<li>${{
+									any: new Item(reward?.InventoryItemPath).renderIcon('reward', {itemTypeIcon: true}),
+									placeholder: placeholderItem.cloneNode(true)
+								}}</li>`
 							})}
 							${rank?.PaidRewards?.CurrencyRewards?.map(reward => {
-								return HTML.wire()`<li class="currency" data-quantity=${parseInt(reward?.Amount)}>${new CurrencyItem(reward?.CurrencyPath).renderIcon(`${rank.Rank}-${performance.now()}`)}</li>`
+								return HTML.wire()`<li class="currency" data-quantity=${parseInt(reward?.Amount)}>${{
+									any: new Item(reward?.CurrencyPath).renderIcon(`${rank.Rank}-${performance.now()}`),
+									placeholder: placeholderItem.cloneNode(true)
+								}}</li>`
 							})}
 						</ul>
 					</ul>

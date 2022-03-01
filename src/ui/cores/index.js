@@ -1,5 +1,6 @@
 import { Component } from 'component';
-import { db, Item } from 'db';
+import { db } from 'db';
+import { Item, placeholderItem } from 'db/item';
 import { emitter } from 'eventEmitter';
 import { HTML } from 'lib/HTML';
 import { urlParams } from 'urlParams';
@@ -211,6 +212,10 @@ class Core extends Component {
 		this.mobileMicaMenu = new MobileMicaMenu(`MobileMicaMenu-${this.name}`, 'Sockets');
 		emitter.on(`MobileMicaMenu-${this.name}`, () => {
 			this.setState({mobileMenu: !this.state.mobileMenu});
+			if (this.state.mobileMenu) history.pushState({}, `Halosets`, ``);
+		});
+		emitter.on('popstate', () => {
+			if (this.state.mobileMenu) this.setState({mobileMenu: false});
 		});
 
 		this.render();
@@ -294,7 +299,10 @@ class Socket extends Component {
 				<ul
 					class="socket-items"
 				>
-					${this.items.map(item => HTML.wire()`<li>${item.renderIcon('core')}</li>`)}
+					${this.items.map(item => HTML.wire()`<li>${{
+						any: item.renderIcon('core'),
+						placeholder: placeholderItem.cloneNode(true)
+					}}</li>`)}
 				</ul>
 			</div>
 		`;

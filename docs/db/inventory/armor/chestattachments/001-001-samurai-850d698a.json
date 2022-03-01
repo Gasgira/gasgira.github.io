@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "001-001-samurai-850d698a",
-		"HideUntilOwned": false,
+		"HideUntilOwned": true,
 		"Title": "Ever-filled Juzu",
 		"Description": "A healthy supply of meals for long marches away from the comforts of civilization.",
 		"FeatureFlag": true,
@@ -83,10 +83,6 @@
 			"z": 0
 		},
 		"ParentPaths": [
-			{
-				"Path": "Inventory/Armor/Themes/007-001-samurai-55badb14.json",
-				"Type": "ArmorTheme"
-			},
 			{
 				"Path": "Inventory/Armor/Themes/007-001-samurai-55badb14.json",
 				"Type": "ArmorTheme"

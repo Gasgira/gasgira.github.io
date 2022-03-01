@@ -49,6 +49,15 @@ class Settings extends Component {
 						>
 					</div>
 				</section>
+				<section>
+					<header>Inventory</header>
+					<div class="option_wrapper">
+						<label for="pageSize">Page Size: ${this.pageSize}</label>
+						<input class="show-value" type="number" id="pageSize" name="pageSize" value=${this.pageSize} min="10" max="1000" step="1"
+							onchange=${(e) => this.setPageSize(parseInt(e?.target?.value ?? 100))}
+						>
+					</div>
+				</section>
 				${this.advanced()}
 				<button onclick=${() => this.reset()}>Reset Settings</button>
 			</div>
@@ -108,6 +117,20 @@ class Settings extends Component {
 		localStorage.setItem('userTextScale', float);
 
 		this.setRootProperty('app-font-size', `${float}rem`);
+		this.render();
+	}
+
+	get pageSize() {
+		return localStorage.getItem('userPageSize') ?? 100;
+	}
+
+	setPageSize(value = 100) {
+		let int = parseInt(value ?? 100);
+		if (int > 1000) int = 1000;
+		if (int < 10) int = 10;
+		console.info(`[skimmer] settings -> pageSize "${int}"`);
+		localStorage.setItem('userPageSize', int);
+
 		this.render();
 	}
 
