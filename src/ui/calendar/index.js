@@ -191,7 +191,7 @@ class Calendar extends Component {
 
 						if (startDate < csrResetDate) startDate = launchDate;
 						const endDate = new Date(operation.endDate);
-						endDate.setDate(endDate.getDate() - 1);
+						// endDate.setDate(endDate.getDate() - 1);
 
 						const today = new Date();
 						if (startDate <= today && new Date(operation.endDate) >= today) active = true;

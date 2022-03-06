@@ -5488,7 +5488,7 @@ class Calendar extends component__WEBPACK_IMPORTED_MODULE_0__.Component {
 
 						if (startDate < csrResetDate) startDate = launchDate;
 						const endDate = new Date(operation.endDate);
-						endDate.setDate(endDate.getDate() - 1);
+						// endDate.setDate(endDate.getDate() - 1);
 
 						const today = new Date();
 						if (startDate <= today && new Date(operation.endDate) >= today) active = true;
@@ -7648,7 +7648,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("7e41721750576efd6d1f")
+/******/ 		__webpack_require__.h = () => ("296a4cf6f3deda64fb7a")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -8646,4 +8646,4 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.7e41721750576efd6d1f.js.map
+//# sourceMappingURL=main.296a4cf6f3deda64fb7a.js.map
