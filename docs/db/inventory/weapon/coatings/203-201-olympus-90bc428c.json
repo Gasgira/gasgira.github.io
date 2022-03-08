@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "203-201-olympus-90bc428c",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Woodland Tradewinds",
 		"Description": "Tradewinds bring good fortune.",
 		"FeatureFlag": true,
@@ -77,10 +77,6 @@
 			"z": 0
 		},
 		"ParentPaths": [
-			{
-				"Path": "Inventory/Weapon/Themes/207-201-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
 			{
 				"Path": "Inventory/Weapon/Themes/207-201-olympus-aa30213b.json",
 				"Type": "WeaponTheme"

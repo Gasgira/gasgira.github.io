@@ -17,7 +17,40 @@
 		},
 		{
 			"RegionId": {
+				"m_identifier": -426951920
+			},
+			"PermutationId": {
+				"m_identifier": -1392291542
+			},
+			"StyleIdOverride": {
+				"m_identifier": -1
+			}
+		},
+		{
+			"RegionId": {
 				"m_identifier": -1733714892
+			},
+			"PermutationId": {
+				"m_identifier": -1392291542
+			},
+			"StyleIdOverride": {
+				"m_identifier": -1
+			}
+		},
+		{
+			"RegionId": {
+				"m_identifier": -1733714892
+			},
+			"PermutationId": {
+				"m_identifier": -1392291542
+			},
+			"StyleIdOverride": {
+				"m_identifier": -1
+			}
+		},
+		{
+			"RegionId": {
+				"m_identifier": -251990544
 			},
 			"PermutationId": {
 				"m_identifier": -1392291542
@@ -47,11 +80,22 @@
 			"StyleIdOverride": {
 				"m_identifier": -1
 			}
+		},
+		{
+			"RegionId": {
+				"m_identifier": 641790271
+			},
+			"PermutationId": {
+				"m_identifier": -1392291542
+			},
+			"StyleIdOverride": {
+				"m_identifier": -1
+			}
 		}
 	],
 	"CommonData": {
 		"Id": "401-000-honeycomb-whe-a25eb8cc",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Honeycomb Wheels",
 		"Description": "Non-pneumatic all-terrain tires wrapped with armored tread.",
 		"FeatureFlag": false,
@@ -120,10 +164,6 @@
 			"z": 0
 		},
 		"ParentPaths": [
-			{
-				"Path": "Inventory/Vehicle/Themes/408-300-olympus-aa30213b.json",
-				"Type": "VehicleTheme"
-			},
 			{
 				"Path": "Inventory/Vehicle/Themes/408-300-olympus-aa30213b.json",
 				"Type": "VehicleTheme"

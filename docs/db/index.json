@@ -1,5 +1,5 @@
 {
-	"date": "2022-03-01T00:00:00.000Z",
+	"date": "2022-03-08T00:00:00.000Z",
 	"types": [
 		"ArmorCore",
 		"ArmorTheme",
@@ -5589,7 +5589,8 @@
 				"visible": "2022-03-01T00:00:00.000Z",
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
-					"2022-03-01T00:00:00.000Z"
+					"2022-03-01T00:00:00.000Z",
+					"2022-03-08T00:00:00.000Z"
 				]
 			}
 		],
@@ -9186,8 +9187,10 @@
 				"name": "401-000-honeycomb-whe-a25eb8cc",
 				"title": "Honeycomb Wheels",
 				"type": "VehicleAlternateGeometryRegion",
+				"visible": "2022-03-08T00:00:00.000Z",
 				"touched": [
-					"2021-11-15T20:00:00.000Z"
+					"2021-11-15T20:00:00.000Z",
+					"2022-03-08T00:00:00.000Z"
 				]
 			}
 		],
@@ -18189,8 +18192,10 @@
 				"name": "012-001-3d4aa867",
 				"title": "Three-Five-Five",
 				"type": "ArmorVisor",
+				"visible": "2022-03-08T00:00:00.000Z",
 				"touched": [
-					"2021-11-15T20:00:00.000Z"
+					"2021-11-15T20:00:00.000Z",
+					"2022-03-08T00:00:00.000Z"
 				]
 			}
 		],
@@ -21037,8 +21042,10 @@
 				"name": "404-300-olympus-90bc428c",
 				"title": "Woodland Tradewinds",
 				"type": "VehicleCoating",
+				"visible": "2022-03-08T00:00:00.000Z",
 				"touched": [
-					"2021-11-15T20:00:00.000Z"
+					"2021-11-15T20:00:00.000Z",
+					"2022-03-08T00:00:00.000Z"
 				]
 			}
 		],
@@ -21049,8 +21056,10 @@
 				"name": "404-301-olympus-90bc428c",
 				"title": "Woodland Tradewinds",
 				"type": "VehicleCoating",
+				"visible": "2022-03-08T00:00:00.000Z",
 				"touched": [
-					"2021-11-15T20:00:00.000Z"
+					"2021-11-15T20:00:00.000Z",
+					"2022-03-08T00:00:00.000Z"
 				]
 			}
 		],
@@ -21061,8 +21070,10 @@
 				"name": "404-302-olympus-90bc428c",
 				"title": "Woodland Tradewinds",
 				"type": "VehicleCoating",
+				"visible": "2022-03-08T00:00:00.000Z",
 				"touched": [
-					"2021-11-15T20:00:00.000Z"
+					"2021-11-15T20:00:00.000Z",
+					"2022-03-08T00:00:00.000Z"
 				]
 			}
 		],
@@ -21073,8 +21084,10 @@
 				"name": "404-303-olympus-90bc428c",
 				"title": "Woodland Tradewinds",
 				"type": "VehicleCoating",
+				"visible": "2022-03-08T00:00:00.000Z",
 				"touched": [
-					"2021-11-15T20:00:00.000Z"
+					"2021-11-15T20:00:00.000Z",
+					"2022-03-08T00:00:00.000Z"
 				]
 			}
 		],
@@ -21085,8 +21098,10 @@
 				"name": "404-304-olympus-90bc428c",
 				"title": "Woodland Tradewinds",
 				"type": "VehicleCoating",
+				"visible": "2022-03-08T00:00:00.000Z",
 				"touched": [
-					"2021-11-15T20:00:00.000Z"
+					"2021-11-15T20:00:00.000Z",
+					"2022-03-08T00:00:00.000Z"
 				]
 			}
 		],
@@ -21097,8 +21112,10 @@
 				"name": "404-305-olympus-90bc428c",
 				"title": "Woodland Tradewinds",
 				"type": "VehicleCoating",
+				"visible": "2022-03-08T00:00:00.000Z",
 				"touched": [
-					"2021-11-15T20:00:00.000Z"
+					"2021-11-15T20:00:00.000Z",
+					"2022-03-08T00:00:00.000Z"
 				]
 			}
 		],
@@ -21109,8 +21126,10 @@
 				"name": "404-306-olympus-90bc428c",
 				"title": "Woodland Tradewinds",
 				"type": "VehicleCoating",
+				"visible": "2022-03-08T00:00:00.000Z",
 				"touched": [
-					"2021-11-15T20:00:00.000Z"
+					"2021-11-15T20:00:00.000Z",
+					"2022-03-08T00:00:00.000Z"
 				]
 			}
 		],
@@ -21121,8 +21140,10 @@
 				"name": "203-201-olympus-90bc428c",
 				"title": "Woodland Tradewinds",
 				"type": "WeaponCoating",
+				"visible": "2022-03-08T00:00:00.000Z",
 				"touched": [
-					"2021-11-15T20:00:00.000Z"
+					"2021-11-15T20:00:00.000Z",
+					"2022-03-08T00:00:00.000Z"
 				]
 			}
 		],

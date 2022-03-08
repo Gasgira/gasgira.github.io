@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "404-302-olympus-90bc428c",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Woodland Tradewinds",
 		"Description": "Tradewinds bring good fortune.",
 		"FeatureFlag": true,
@@ -77,10 +77,6 @@
 			"z": 0
 		},
 		"ParentPaths": [
-			{
-				"Path": "Inventory/Vehicle/Themes/408-302-olympus-aa30213b.json",
-				"Type": "VehicleTheme"
-			},
 			{
 				"Path": "Inventory/Vehicle/Themes/408-302-olympus-aa30213b.json",
 				"Type": "VehicleTheme"
