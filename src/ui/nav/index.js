@@ -3,6 +3,7 @@ import { Component } from 'component';
 import { emitter } from 'eventEmitter';
 import { settings } from 'ui/settings';
 import { about } from 'ui/about';
+import { discord } from 'ui/discord';
 import { modalConstructor } from 'ui/modal';
 
 import './index.css';
@@ -50,7 +51,8 @@ class HeaderNav extends Component {
 				<ul>
 					<li><button aria-label="Search" title="Search" onclick=${() => emitter.emit('nav-search')}><div class="icon-masked icon-search"></div></button></li>
 					<li><button aria-label="Settings" title="Settings" onclick=${() => modalConstructor.showView(settings.render())}><div class="icon-masked icon-settings"></div></button></li>
-					<li><button aria-label="Disclaimer" title="Disclaimer" onclick=${() => modalConstructor.showView(about.render())}>Disclaimer</button></li>
+					<li><button aria-label="Disclaimer" title="Discord" onclick=${() => modalConstructor.showView(discord.render())}>Discord</button></li>
+					<li><button aria-label="Disclaimer" title="About" onclick=${() => modalConstructor.showView(about.render())}>About</button></li>
 				</ul>
 			</nav>
 		`;

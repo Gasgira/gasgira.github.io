@@ -1,0 +1,22 @@
+.discord_wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: left;
+	gap: 1em;
+	& header {
+		font-size: 1.5em;
+	}
+	& p {
+		max-width: 600px;
+		max-width: 80ch;
+	}
+	& img {
+		max-width: 50%;
+	}
+	& .option_wrapper {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 0.5em;
+	}
+}

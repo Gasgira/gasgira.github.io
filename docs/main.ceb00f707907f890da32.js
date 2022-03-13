@@ -149,6 +149,32 @@ ___CSS_LOADER_EXPORT___.push([module.id, "\r\n\t.core-viewer_wrapper .core-viewe
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/ui/discord/index.css":
+/*!**********************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/ui/discord/index.css ***!
+  \**********************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".discord_wrapper {\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\tjustify-content: left;\r\n\tgap: 1em\r\n}\n.discord_wrapper header {\r\n\t\tfont-size: 1.5em;\r\n\t}\n.discord_wrapper p {\r\n\t\tmax-width: 600px;\r\n\t\tmax-width: 80ch;\r\n\t}\n.discord_wrapper img {\r\n\t\tmax-width: 50%;\r\n\t}\n.discord_wrapper .option_wrapper {\r\n\t\tdisplay: flex;\r\n\t\tflex-direction: row;\r\n\t\talign-items: center;\r\n\t\tgap: 0.5em;\r\n\t}", "",{"version":3,"sources":["webpack://./src/ui/discord/index.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,sBAAsB;CACtB,qBAAqB;CACrB;AAiBD;AAhBC;EACC,gBAAgB;CACjB;AACA;EACC,gBAAgB;EAChB,eAAe;CAChB;AACA;EACC,cAAc;CACf;AACA;EACC,aAAa;EACb,mBAAmB;EACnB,mBAAmB;EACnB,UAAU;CACX","sourcesContent":[".discord_wrapper {\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\tjustify-content: left;\r\n\tgap: 1em;\r\n\t& header {\r\n\t\tfont-size: 1.5em;\r\n\t}\r\n\t& p {\r\n\t\tmax-width: 600px;\r\n\t\tmax-width: 80ch;\r\n\t}\r\n\t& img {\r\n\t\tmax-width: 50%;\r\n\t}\r\n\t& .option_wrapper {\r\n\t\tdisplay: flex;\r\n\t\tflex-direction: row;\r\n\t\talign-items: center;\r\n\t\tgap: 0.5em;\r\n\t}\r\n}"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/ui/inventory/index.css":
 /*!************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/ui/inventory/index.css ***!
@@ -3267,6 +3293,118 @@ if (true) {
 
 /***/ }),
 
+/***/ "./src/ui/discord/index.css":
+/*!**********************************!*\
+  !*** ./src/ui/discord/index.css ***!
+  \**********************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_index_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./index.css */ "./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/ui/discord/index.css");
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+
+      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+    
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_index_css__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+if (true) {
+  if (!_node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_index_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals || module.hot.invalidate) {
+    var isEqualLocals = function isEqualLocals(a, b, isNamedExport) {
+  if (!a && b || a && !b) {
+    return false;
+  }
+
+  var p;
+
+  for (p in a) {
+    if (isNamedExport && p === "default") {
+      // eslint-disable-next-line no-continue
+      continue;
+    }
+
+    if (a[p] !== b[p]) {
+      return false;
+    }
+  }
+
+  for (p in b) {
+    if (isNamedExport && p === "default") {
+      // eslint-disable-next-line no-continue
+      continue;
+    }
+
+    if (!a[p]) {
+      return false;
+    }
+  }
+
+  return true;
+};
+    var isNamedExport = !_node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_index_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals;
+    var oldLocals = isNamedExport ? _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_index_css__WEBPACK_IMPORTED_MODULE_6__ : _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_index_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals;
+
+    module.hot.accept(
+      /*! !!../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./index.css */ "./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/ui/discord/index.css",
+      __WEBPACK_OUTDATED_DEPENDENCIES__ => { /* harmony import */ _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_index_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./index.css */ "./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/ui/discord/index.css");
+(function () {
+        if (!isEqualLocals(oldLocals, isNamedExport ? _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_index_css__WEBPACK_IMPORTED_MODULE_6__ : _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_index_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals, isNamedExport)) {
+                module.hot.invalidate();
+
+                return;
+              }
+
+              oldLocals = isNamedExport ? _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_index_css__WEBPACK_IMPORTED_MODULE_6__ : _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_index_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals;
+
+              update(_node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_index_css__WEBPACK_IMPORTED_MODULE_6__["default"]);
+      })(__WEBPACK_OUTDATED_DEPENDENCIES__); }
+    )
+  }
+
+  module.hot.dispose(function() {
+    update();
+  });
+}
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_index_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_index_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_index_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ }),
+
 /***/ "./src/ui/inventory/index.css":
 /*!************************************!*\
   !*** ./src/ui/inventory/index.css ***!
@@ -6016,6 +6154,134 @@ class Socket extends component__WEBPACK_IMPORTED_MODULE_0__.Component {
 
 /***/ }),
 
+/***/ "./src/ui/discord/index.js":
+/*!*********************************!*\
+  !*** ./src/ui/discord/index.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "discord": () => (/* binding */ discord)
+/* harmony export */ });
+/* harmony import */ var lib_HTML__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lib/HTML */ "./src/lib/HTML/index.js");
+/* harmony import */ var component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! component */ "./src/component/index.js");
+/* harmony import */ var urlParams__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! urlParams */ "./src/urlParams/index.js");
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./index.css */ "./src/ui/discord/index.css");
+
+
+
+
+
+
+class Discord extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
+	constructor() {
+		super();
+
+		const webhook = localStorage.getItem('user.discordWebhook');
+		if (webhook) this.webhookID = webhook;
+	}
+
+	render() {
+		const testParam = urlParams__WEBPACK_IMPORTED_MODULE_2__.urlParams.getSecionSetting('discord');
+		if (!testParam) return 'Daily store update bot coming soon...'
+		return this.html`
+			<div class="discord_wrapper">
+				<section>
+					<header>Discord</header>
+					<p>Cylix Guide offers a Discord webhook service which can post daily Halo Infinite store updates to your community. If you operate a Discord server and would like this service, please read <a href="https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks" target="_blank" rel="noopener noreferrer">Discord's page on webhooks</a> and submit your webhook below.</p><br/>
+					<p>Updates will be sent near 10 AM Pacific, following the store reset.</p><br/>
+					<p>If your server has an active webhook and you would like to stop recieving updates, you must remove the webhook from your Discord server integrations.</p><br/>
+					<div class="option_wrapper">
+						<label for="webhook">Webhook URL: </label>
+						<input class="show-value" type="text" id="webhook" name="webhook"
+							onchange=${(e) => this.input(e?.target?.value)}
+							disabled=${this?.webhookID}
+						>
+					</div>
+					<button
+						onclick=${() => this.submit()}
+						disabled=${this?.webhookID}
+					>Submit</button>
+					${this.renderStatus()}
+					<br/>
+					<span title=${this?.webhookID ?? '...'}>${this?.webhookID ? `You have registered a webhook with the ID: ${this.webhookID.substring(0, 9)}...` : ''}</span>
+					<br/>
+					<img src="/discord.jpg">
+				</section>
+			</div>
+		`;
+	}
+
+	renderStatus() {
+		return lib_HTML__WEBPACK_IMPORTED_MODULE_0__.HTML.wire(this, ':status')`
+			<span class="discord-status">${this.state?.status ? `Response: ${this.state.status}` : '...'}</span>
+		`;
+	}
+
+	input(string) {
+		try {
+			if (!string || typeof string !== 'string' || !string.startsWith('https://discord.com/api/webhooks/'))
+			{
+				this.setState({status: 'Invalid input!'});
+				throw new Error('Invalid URL');
+			}
+			const url = new URL(string);
+
+			this.inputURL = url.toString();
+	
+			console.log('url', url);
+		} catch (error) {
+			console.error('[Discord.webhook] Error processing input URL', error);
+			this.inputURL = undefined;
+		}
+	}
+
+	async submit() {
+		if (!this.inputURL || typeof this.inputURL !== 'string' || !this.inputURL.startsWith('https://discord.com/api/webhooks/'))
+		{
+			this.setState({status: 'Invalid submission!'});
+			return;
+		}
+		console.log('submit', this.inputURL);
+		this.setState({status: 'pending'});
+
+		const body = JSON.stringify({webhook: this.inputURL});
+
+		const response = await fetch('https://cylix.guide/api/webhooks/discord', {
+			method: 'POST',
+			// mode: 'no-cors',
+			headers: {
+				'x-cylix-auth': '77f146a1-05cd-440d-acdb-7ac96958a354'
+			},
+			body
+		});
+
+		if (response)
+		{
+			console.log(`[Discord.webhook] response "${response.status}"`);
+			if (!response.ok)
+			{
+				this.setState({status: `Bad response ${response.status ?? '???'}`});
+				return;
+			}
+
+			const json = await response.json();
+			if (json && json.id)
+			{
+				this.setState({status: `Accepted webhook ID ${json.id}`});
+				return;
+			}
+		}
+		
+		this.setState({status: 'No response!'});
+	}
+}
+
+const discord = new Discord();
+
+/***/ }),
+
 /***/ "./src/ui/inventory/index.js":
 /*!***********************************!*\
   !*** ./src/ui/inventory/index.js ***!
@@ -6726,8 +6992,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var eventEmitter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! eventEmitter */ "./src/eventEmitter/index.js");
 /* harmony import */ var ui_settings__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ui/settings */ "./src/ui/settings/index.js");
 /* harmony import */ var ui_about__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ui/about */ "./src/ui/about/index.js");
-/* harmony import */ var ui_modal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ui/modal */ "./src/ui/modal/index.js");
-/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./index.css */ "./src/ui/nav/index.css");
+/* harmony import */ var ui_discord__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ui/discord */ "./src/ui/discord/index.js");
+/* harmony import */ var ui_modal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ui/modal */ "./src/ui/modal/index.js");
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./index.css */ "./src/ui/nav/index.css");
+
 
 
 
@@ -6779,8 +7047,9 @@ class HeaderNav extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 				</header></a>
 				<ul>
 					<li><button aria-label="Search" title="Search" onclick=${() => eventEmitter__WEBPACK_IMPORTED_MODULE_2__.emitter.emit('nav-search')}><div class="icon-masked icon-search"></div></button></li>
-					<li><button aria-label="Settings" title="Settings" onclick=${() => ui_modal__WEBPACK_IMPORTED_MODULE_5__.modalConstructor.showView(ui_settings__WEBPACK_IMPORTED_MODULE_3__.settings.render())}><div class="icon-masked icon-settings"></div></button></li>
-					<li><button aria-label="Disclaimer" title="Disclaimer" onclick=${() => ui_modal__WEBPACK_IMPORTED_MODULE_5__.modalConstructor.showView(ui_about__WEBPACK_IMPORTED_MODULE_4__.about.render())}>Disclaimer</button></li>
+					<li><button aria-label="Settings" title="Settings" onclick=${() => ui_modal__WEBPACK_IMPORTED_MODULE_6__.modalConstructor.showView(ui_settings__WEBPACK_IMPORTED_MODULE_3__.settings.render())}><div class="icon-masked icon-settings"></div></button></li>
+					<li><button aria-label="Disclaimer" title="Discord" onclick=${() => ui_modal__WEBPACK_IMPORTED_MODULE_6__.modalConstructor.showView(ui_discord__WEBPACK_IMPORTED_MODULE_5__.discord.render())}>Discord</button></li>
+					<li><button aria-label="Disclaimer" title="About" onclick=${() => ui_modal__WEBPACK_IMPORTED_MODULE_6__.modalConstructor.showView(ui_about__WEBPACK_IMPORTED_MODULE_4__.about.render())}>About</button></li>
 				</ul>
 			</nav>
 		`;
@@ -7648,7 +7917,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("296a4cf6f3deda64fb7a")
+/******/ 		__webpack_require__.h = () => ("ceb00f707907f890da32")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -8646,4 +8915,4 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.296a4cf6f3deda64fb7a.js.map
+//# sourceMappingURL=main.ceb00f707907f890da32.js.map
