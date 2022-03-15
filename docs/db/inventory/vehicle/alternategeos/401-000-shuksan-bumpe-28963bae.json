@@ -14,11 +14,22 @@
 			"StyleIdOverride": {
 				"m_identifier": -1
 			}
+		},
+		{
+			"RegionId": {
+				"m_identifier": -138055652
+			},
+			"PermutationId": {
+				"m_identifier": 113798577
+			},
+			"StyleIdOverride": {
+				"m_identifier": -1
+			}
 		}
 	],
 	"CommonData": {
 		"Id": "401-000-shuksan-bumpe-28963bae",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Shuksan Bumper",
 		"Description": "Perfect for off-road missions in the darkest of nights.",
 		"FeatureFlag": false,
@@ -87,10 +98,6 @@
 			"z": 0
 		},
 		"ParentPaths": [
-			{
-				"Path": "Inventory/Vehicle/Themes/408-300-olympus-aa30213b.json",
-				"Type": "VehicleTheme"
-			},
 			{
 				"Path": "Inventory/Vehicle/Themes/408-300-olympus-aa30213b.json",
 				"Type": "VehicleTheme"

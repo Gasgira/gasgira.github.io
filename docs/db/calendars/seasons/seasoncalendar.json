@@ -90,6 +90,15 @@
 		{
 			"RewardTrackPath": "RewardTracks/Events/Rituals/ritualOlympus.json",
 			"StartDate": {
+				"ISO8601Date": "2022-03-04T18:00:00.00Z"
+			},
+			"EndDate": {
+				"ISO8601Date": "2022-03-05T18:00:00.00Z"
+			}
+		},
+		{
+			"RewardTrackPath": "RewardTracks/Events/Rituals/ritualOlympus.json",
+			"StartDate": {
 				"ISO8601Date": "2022-03-08T18:00:00.00Z"
 			},
 			"EndDate": {

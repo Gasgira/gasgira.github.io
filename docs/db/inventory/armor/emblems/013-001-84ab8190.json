@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "013-001-84ab8190",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Reflection",
 		"Description": "Two realms, separated by a single thread.",
 		"FeatureFlag": true,
@@ -97,24 +97,24 @@
 	},
 	"AvailableConfigurations": [
 		{
-			"ConfigurationId": -2033884168,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-af96afae.json"
-		},
-		{
-			"ConfigurationId": 692870235,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-bb025c83.json"
-		},
-		{
-			"ConfigurationId": 1193714674,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-a9d9a16f.json"
+			"ConfigurationId": -1561561067,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-742078a9.json"
 		},
 		{
 			"ConfigurationId": -2095749787,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-a8ddc916.json"
 		},
 		{
-			"ConfigurationId": -1561561067,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-742078a9.json"
+			"ConfigurationId": 1193714674,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-a9d9a16f.json"
+		},
+		{
+			"ConfigurationId": -2033884168,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-af96afae.json"
+		},
+		{
+			"ConfigurationId": 692870235,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-bb025c83.json"
 		}
 	]
 }

@@ -1,5 +1,5 @@
 {
-	"date": "2022-03-08T00:00:00.000Z",
+	"date": "2022-03-15T00:00:00.000Z",
 	"types": [
 		"ArmorCore",
 		"ArmorTheme",
@@ -3131,6 +3131,30 @@
 			}
 		],
 		[
+			"ceventtacticalslayerkillheadshot",
+			{
+				"path": "challengecontent/clientchallengedefinitions/s1capstonechallenges/ceventtacticalslayerkillheadshot.json",
+				"name": "ceventtacticalslayerkillheadshot",
+				"title": "ceventtacticalslayerkillheadshot",
+				"type": "meta",
+				"touched": [
+					"2022-03-14T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"ceventtacticalslayerkillspikerevolver",
+			{
+				"path": "challengecontent/clientchallengedefinitions/s1capstonechallenges/ceventtacticalslayerkillspikerevolver.json",
+				"name": "ceventtacticalslayerkillspikerevolver",
+				"title": "ceventtacticalslayerkillspikerevolver",
+				"type": "meta",
+				"touched": [
+					"2022-03-14T00:00:00.000Z"
+				]
+			}
+		],
+		[
 			"203-202-olympus-1dc2f961",
 			{
 				"path": "inventory/weapon/coatings/203-202-olympus-1dc2f961.json",
@@ -4397,8 +4421,10 @@
 				"name": "103-000-ui-background-52926003",
 				"title": "Core Element",
 				"type": "SpartanBackdropImage",
+				"visible": "2022-03-15T00:00:00.000Z",
 				"touched": [
-					"2021-11-15T20:00:00.000Z"
+					"2021-11-15T20:00:00.000Z",
+					"2022-03-15T00:00:00.000Z"
 				]
 			}
 		],
@@ -4421,9 +4447,11 @@
 				"name": "002-001-olympus-da3ba426",
 				"title": "Cosmic Corruption",
 				"type": "ArmorCoating",
+				"visible": "2022-03-15T00:00:00.000Z",
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
-					"2022-02-24T00:00:00.000Z"
+					"2022-02-24T00:00:00.000Z",
+					"2022-03-15T00:00:00.000Z"
 				]
 			}
 		],
@@ -6833,9 +6861,11 @@
 				"name": "005-001-olympus-ea1058fb",
 				"title": "FIREFALL",
 				"type": "ArmorHelmet",
+				"visible": "2022-03-15T00:00:00.000Z",
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
-					"2022-02-24T00:00:00.000Z"
+					"2022-02-24T00:00:00.000Z",
+					"2022-03-15T00:00:00.000Z"
 				]
 			}
 		],
@@ -7943,9 +7973,11 @@
 				"name": "012-001-a8a475ad",
 				"title": "Goblin",
 				"type": "ArmorVisor",
+				"visible": "2022-03-15T00:00:00.000Z",
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
-					"2022-02-24T00:00:00.000Z"
+					"2022-02-24T00:00:00.000Z",
+					"2022-03-15T00:00:00.000Z"
 				]
 			}
 		],
@@ -10999,8 +11031,10 @@
 				"name": "404-300-olympus-986adcb9",
 				"title": "Midnight Gold",
 				"type": "VehicleCoating",
+				"visible": "2022-03-15T00:00:00.000Z",
 				"touched": [
-					"2021-11-15T20:00:00.000Z"
+					"2021-11-15T20:00:00.000Z",
+					"2022-03-15T00:00:00.000Z"
 				]
 			}
 		],
@@ -11011,8 +11045,10 @@
 				"name": "404-304-olympus-986adcb9",
 				"title": "Midnight Gold",
 				"type": "VehicleCoating",
+				"visible": "2022-03-15T00:00:00.000Z",
 				"touched": [
-					"2021-11-15T20:00:00.000Z"
+					"2021-11-15T20:00:00.000Z",
+					"2022-03-15T00:00:00.000Z"
 				]
 			}
 		],
@@ -11023,8 +11059,10 @@
 				"name": "404-306-olympus-986adcb9",
 				"title": "Midnight Gold",
 				"type": "VehicleCoating",
+				"visible": "2022-03-15T00:00:00.000Z",
 				"touched": [
-					"2021-11-15T20:00:00.000Z"
+					"2021-11-15T20:00:00.000Z",
+					"2022-03-15T00:00:00.000Z"
 				]
 			}
 		],
@@ -13981,9 +14019,11 @@
 				"name": "013-001-84ab8190",
 				"title": "Reflection",
 				"type": "ArmorEmblem",
+				"visible": "2022-03-15T00:00:00.000Z",
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
-					"2022-02-24T00:00:00.000Z"
+					"2022-02-24T00:00:00.000Z",
+					"2022-03-15T00:00:00.000Z"
 				]
 			}
 		],
@@ -13994,8 +14034,10 @@
 				"name": "104-001-samurai-refle-84ab8190",
 				"title": "Reflection",
 				"type": "SpartanEmblem",
+				"visible": "2022-03-15T00:00:00.000Z",
 				"touched": [
-					"2021-11-15T20:00:00.000Z"
+					"2021-11-15T20:00:00.000Z",
+					"2022-03-15T00:00:00.000Z"
 				]
 			}
 		],
@@ -14006,8 +14048,10 @@
 				"name": "405-305-84ab8190",
 				"title": "Reflection",
 				"type": "VehicleEmblem",
+				"visible": "2022-03-15T00:00:00.000Z",
 				"touched": [
-					"2021-11-15T20:00:00.000Z"
+					"2021-11-15T20:00:00.000Z",
+					"2022-03-15T00:00:00.000Z"
 				]
 			}
 		],
@@ -14018,8 +14062,10 @@
 				"name": "205-201-84ab8190",
 				"title": "Reflection",
 				"type": "WeaponEmblem",
+				"visible": "2022-03-15T00:00:00.000Z",
 				"touched": [
-					"2021-11-15T20:00:00.000Z"
+					"2021-11-15T20:00:00.000Z",
+					"2022-03-15T00:00:00.000Z"
 				]
 			}
 		],
@@ -14260,6 +14306,30 @@
 				"type": "meta",
 				"touched": [
 					"2021-11-15T20:00:00.000Z"
+				]
+			}
+		],
+		[
+			"s1tacticalslayerweeklydeck1",
+			{
+				"path": "challengecontent/clientchallengedeckdefinitions/s1tacticalslayerweeklydeck1.json",
+				"name": "s1tacticalslayerweeklydeck1",
+				"title": "s1tacticalslayerweeklydeck1",
+				"type": "meta",
+				"touched": [
+					"2022-03-14T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"s1tacticalslayerweeklydeck2",
+			{
+				"path": "challengecontent/clientchallengedeckdefinitions/s1tacticalslayerweeklydeck2.json",
+				"name": "s1tacticalslayerweeklydeck2",
+				"title": "s1tacticalslayerweeklydeck2",
+				"type": "meta",
+				"touched": [
+					"2022-03-14T00:00:00.000Z"
 				]
 			}
 		],
@@ -15208,7 +15278,8 @@
 				"type": "meta",
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
-					"2022-02-22T00:00:00.000Z"
+					"2022-02-22T00:00:00.000Z",
+					"2022-03-15T00:00:00.000Z"
 				]
 			}
 		],
@@ -15567,8 +15638,10 @@
 				"name": "013-001-84d2f996",
 				"title": "Shreddin'",
 				"type": "ArmorEmblem",
+				"visible": "2022-03-15T00:00:00.000Z",
 				"touched": [
-					"2021-11-15T20:00:00.000Z"
+					"2021-11-15T20:00:00.000Z",
+					"2022-03-15T00:00:00.000Z"
 				]
 			}
 		],
@@ -15579,8 +15652,10 @@
 				"name": "104-001-popculture-de-84d2f996",
 				"title": "Shreddin'",
 				"type": "SpartanEmblem",
+				"visible": "2022-03-15T00:00:00.000Z",
 				"touched": [
-					"2021-11-15T20:00:00.000Z"
+					"2021-11-15T20:00:00.000Z",
+					"2022-03-15T00:00:00.000Z"
 				]
 			}
 		],
@@ -15591,8 +15666,10 @@
 				"name": "405-305-84d2f996",
 				"title": "Shreddin'",
 				"type": "VehicleEmblem",
+				"visible": "2022-03-15T00:00:00.000Z",
 				"touched": [
-					"2021-11-15T20:00:00.000Z"
+					"2021-11-15T20:00:00.000Z",
+					"2022-03-15T00:00:00.000Z"
 				]
 			}
 		],
@@ -15603,8 +15680,10 @@
 				"name": "205-201-84d2f996",
 				"title": "Shreddin'",
 				"type": "WeaponEmblem",
+				"visible": "2022-03-15T00:00:00.000Z",
 				"touched": [
-					"2021-11-15T20:00:00.000Z"
+					"2021-11-15T20:00:00.000Z",
+					"2022-03-15T00:00:00.000Z"
 				]
 			}
 		],
@@ -15615,8 +15694,10 @@
 				"name": "401-000-shuksan-bumpe-28963bae",
 				"title": "Shuksan Bumper",
 				"type": "VehicleAlternateGeometryRegion",
+				"visible": "2022-03-15T00:00:00.000Z",
 				"touched": [
-					"2021-11-15T20:00:00.000Z"
+					"2021-11-15T20:00:00.000Z",
+					"2022-03-15T00:00:00.000Z"
 				]
 			}
 		],
@@ -16048,8 +16129,10 @@
 				"name": "201-201-ce2c8fd6",
 				"title": "Skull",
 				"type": "WeaponCharm",
+				"visible": "2022-03-15T00:00:00.000Z",
 				"touched": [
-					"2021-11-15T20:00:00.000Z"
+					"2021-11-15T20:00:00.000Z",
+					"2022-03-15T00:00:00.000Z"
 				]
 			}
 		],
@@ -18195,7 +18278,8 @@
 				"visible": "2022-03-08T00:00:00.000Z",
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
-					"2022-03-08T00:00:00.000Z"
+					"2022-03-08T00:00:00.000Z",
+					"2022-03-15T00:00:00.000Z"
 				]
 			}
 		],

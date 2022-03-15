@@ -8,29 +8,29 @@
 	},
 	"AvailableConfigurations": [
 		{
-			"ConfigurationId": -2033884168,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-af96afae.json"
-		},
-		{
-			"ConfigurationId": 692870235,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-bb025c83.json"
-		},
-		{
-			"ConfigurationId": 1193714674,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-a9d9a16f.json"
+			"ConfigurationId": -1561561067,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-742078a9.json"
 		},
 		{
 			"ConfigurationId": -2095749787,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-a8ddc916.json"
 		},
 		{
-			"ConfigurationId": -1561561067,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-742078a9.json"
+			"ConfigurationId": 1193714674,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-a9d9a16f.json"
+		},
+		{
+			"ConfigurationId": -2033884168,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-af96afae.json"
+		},
+		{
+			"ConfigurationId": 692870235,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-bb025c83.json"
 		}
 	],
 	"CommonData": {
 		"Id": "104-001-samurai-refle-84ab8190",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Reflection",
 		"Description": "Two realms, separated by a single thread.",
 		"FeatureFlag": true,
@@ -98,12 +98,7 @@
 			"y": 0,
 			"z": 0
 		},
-		"ParentPaths": [
-			{
-				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
-				"Type": "ArmorTheme"
-			}
-		],
+		"ParentPaths": [],
 		"SortingMetadata": {
 			"categoryWeight": 1,
 			"subCategoryWeight": 0

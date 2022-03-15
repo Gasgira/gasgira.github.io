@@ -9,7 +9,7 @@
 	},
 	"CommonData": {
 		"Id": "012-001-3d4aa867",
-		"HideUntilOwned": false,
+		"HideUntilOwned": true,
 		"Title": "Three-Five-Five",
 		"Description": "Limitless possibilities in a limited pallete.",
 		"FeatureFlag": true,

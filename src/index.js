@@ -6,6 +6,8 @@ import { itemPanel } from 'db/itemPanel';
 import { calendar } from 'ui/calendar';
 import { coreViewer } from 'ui/cores';
 import { inventory } from 'ui/inventory';
+import { modalConstructor } from 'ui/modal';
+import { privacy } from 'ui/privacy';
 
 import './styles.css';
 
@@ -38,6 +40,13 @@ class App {
 
 			return itemPanel.hide();
 		});
+
+		HTML.bind(document.querySelector('.js--privacy'))`
+			<span
+				class="privacy-button"
+				onclick=${() => modalConstructor.showView(privacy.render())}
+			>Privacy</span>
+		`;
 	}
 
 	async render() {

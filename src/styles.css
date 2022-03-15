@@ -263,6 +263,10 @@ button {
 	}
 }
 
+.privacy-button {
+	cursor: pointer;
+}
+
 .mica_viewer {
 	display: flex;
 	flex-direction: column;

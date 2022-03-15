@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "013-001-84d2f996",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Shreddin'",
 		"Description": "War is a lot like skateboarding.",
 		"FeatureFlag": true,
@@ -97,24 +97,12 @@
 	},
 	"AvailableConfigurations": [
 		{
-			"ConfigurationId": 1715327144,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-65a30529.json"
-		},
-		{
-			"ConfigurationId": -831056095,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-4ae9bb14.json"
-		},
-		{
-			"ConfigurationId": 1540133627,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-cf1c5706.json"
-		},
-		{
 			"ConfigurationId": -283867365,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-1e0f228a.json"
 		},
 		{
-			"ConfigurationId": -1698878342,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-8a3325cd.json"
+			"ConfigurationId": 824330229,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-227adf2f.json"
 		},
 		{
 			"ConfigurationId": -1735535024,
@@ -125,8 +113,20 @@
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-485b05b7.json"
 		},
 		{
-			"ConfigurationId": 824330229,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-227adf2f.json"
+			"ConfigurationId": -831056095,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-4ae9bb14.json"
+		},
+		{
+			"ConfigurationId": 1715327144,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-65a30529.json"
+		},
+		{
+			"ConfigurationId": -1698878342,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-8a3325cd.json"
+		},
+		{
+			"ConfigurationId": 1540133627,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-cf1c5706.json"
 		}
 	]
 }

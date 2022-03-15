@@ -1,0 +1,18 @@
+{
+	"Description": "Kill Enemy Spartans with Headshots in Tactical Slayer",
+	"Difficulty": "mythic",
+	"Category": "Capstone",
+	"Reward": {
+		"InventoryItems": [],
+		"OperationExperience": 400,
+		"InventoryRewards": [
+			{
+				"InventoryItemPath": "Inventory/Spartan/BackdropImages/103-000-ui-background-52926003.json",
+				"Amount": 1,
+				"Type": "SpartanBackdropImage"
+			}
+		]
+	},
+	"ThresholdForSuccess": 50,
+	"Title": "Head Dead Reception"
+}

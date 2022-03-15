@@ -9,7 +9,7 @@
 	},
 	"CommonData": {
 		"Id": "012-001-a8a475ad",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Goblin",
 		"Description": "Tricksters are wise to hide their eyes.",
 		"FeatureFlag": true,

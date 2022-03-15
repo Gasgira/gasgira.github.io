@@ -8,13 +8,25 @@ class Discord extends Component {
 	constructor() {
 		super();
 
-		const webhook = localStorage.getItem('user.discordWebhook');
-		if (webhook) this.webhookID = webhook;
+		if (localStorage)
+		{
+			const webhook = localStorage.getItem('user.discordWebhook');
+			if (webhook) this.webhookID = webhook;
+		}
 	}
 
 	render() {
 		const testParam = urlParams.getSecionSetting('discord');
-		if (!testParam) return 'Daily store update bot coming soon...'
+		if (!testParam) return this.html`
+			<div class="discord_wrapper">
+				<section>
+					<header>Discord</header>
+					<p>Daily store update bot coming soon...</p>
+					<br/>
+					<img src="/discord.jpg">
+				</section>
+			</div>
+		`;
 		return this.html`
 			<div class="discord_wrapper">
 				<section>
@@ -99,7 +111,10 @@ class Discord extends Component {
 			const json = await response.json();
 			if (json && json.id)
 			{
-				this.setState({status: `Accepted webhook ID ${json.id}`});
+				const id = json.id;
+				this.webhookID = id;
+				this.setState({status: `Accepted webhook ID ${id}`});
+				if (localStorage) localStorage.setItem('user.discordWebhook', `${id}`);
 				return;
 			}
 		}

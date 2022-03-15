@@ -21,7 +21,7 @@
 	},
 	"CommonData": {
 		"Id": "103-000-UI-Background-52926003",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Core Element",
 		"Description": "It all began with a single spark…",
 		"FeatureFlag": true,

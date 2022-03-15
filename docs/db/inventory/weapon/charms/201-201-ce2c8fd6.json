@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "201-201-ce2c8fd6",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Skull",
 		"Description": "What an odd skull.",
 		"FeatureFlag": true,
