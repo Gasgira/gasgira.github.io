@@ -122,6 +122,7 @@ body {
 footer {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
 	padding: 2em;
@@ -461,5 +462,8 @@ button {
 	}
 	&.icon-share {
 		mask-image: url("assets/icons.svg#share");
+	}
+	&.icon-discord {
+		mask-image: url("assets/icons.svg#discord");
 	}
 }

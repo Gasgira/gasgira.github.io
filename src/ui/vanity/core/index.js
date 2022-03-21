@@ -19,7 +19,8 @@ export class AppearanceCore extends Component {
 		this.itemIDs = new Set();
 	}
 
-	async init() {
+	init() {
+		if (this.items.length) return;
 		console.log('AppearanceCore init', this.meta.sockets);
 		this.items = [...this.meta.sockets.values()].map(path => new Item(path));
 	}
@@ -30,6 +31,9 @@ export class AppearanceCore extends Component {
 			<div
 				class ="inventory-category_wrapper mica_content"
 			>
+				<header class="h-favorites">
+					<div>${this.meta?.type ?? 'Core'} // ${this?.items.length}</div>
+				</header>
 				<ul
 					class="inventory-category_items"
 				>

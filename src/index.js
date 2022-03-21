@@ -135,11 +135,13 @@ class VanityExplorer {
 
 	async init() {
 		if (this?._init) return;
+		
 		let gamertag;
 		const { pathname } = new URL(window.location);
 		const pathParts = pathname.split('/');
-		if (pathParts && pathParts.length > 2) gamertag = pathParts[2];
+		if (pathParts && pathParts.length > 2) gamertag = decodeURIComponent(pathParts[2]);
 		console.log('gt', gamertag);
+		
 		this._init = await vanity.init(gamertag);
 		console.log('App.Vanity.init');
 		this.render();

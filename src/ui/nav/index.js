@@ -14,6 +14,9 @@ class HeaderNav extends Component {
 		this.links = [];
 	}
 	render() {
+		const url = new URL(window.location);
+		const { pathname } = url;
+		
 		return this.html`
 			<nav class="toolbar">
 			<a class="header-logo" href="/"><header>
@@ -51,21 +54,32 @@ class HeaderNav extends Component {
 				<ul>
 					<li><button aria-label="Search" title="Search" onclick=${() => emitter.emit('nav-search')}><div class="icon-masked icon-search"></div></button></li>
 					<li><button aria-label="Settings" title="Settings" onclick=${() => modalConstructor.showView(settings.render())}><div class="icon-masked icon-settings"></div></button></li>
-					<li><button aria-label="Disclaimer" title="Discord" onclick=${() => modalConstructor.showView(discord.render())}>Discord</button></li>
-					
+					<li><button aria-label="Disclaimer" title="Discord" onclick=${() => modalConstructor.showView(discord.render())}><div class="icon-masked icon-discord"></div></button></li>
 					<li><button aria-label="Disclaimer" title="About" onclick=${() => modalConstructor.showView(about.render())}>About</button></li>
 				</ul>
 			</nav>
 		`;
-		// <li><button aria-label="Vanity" title="Vanity" onclick=${() => {
-		// 	const url = new URL(window.location);
-		// 	const { pathname } = url;
-		// 	if (pathname.startsWith('/vanity/')) return;
+					// ${pathname.startsWith('/vanity') ? this.itemsButton() : this.vanityButton()}
+	}
 
-		// 	history.pushState(null, null, '/vanity/');
-		// 	const popStateEvent = new PopStateEvent('popstate', null);
-		// 	dispatchEvent(popStateEvent);
-		// }}>Vanity</button></li>
+	vanityButton() {
+		return HTML.wire(this, ':vanity')`
+			<li><button aria-label="Vanity" title="Vanity" onclick=${() => {
+				history.pushState(null, null, '/vanity/');
+				const popStateEvent = new PopStateEvent('popstate', null);
+				dispatchEvent(popStateEvent);
+			}}>Vanity</button></li>
+		`;
+	}
+
+	itemsButton() {
+		return HTML.wire(this, ':items')`
+			<li><button aria-label="Vanity" title="Vanity" onclick=${() => {
+				history.pushState(null, null, '/');
+				const popStateEvent = new PopStateEvent('popstate', null);
+				dispatchEvent(popStateEvent);
+			}}>Items</button></li>
+		`;
 	}
 }
 

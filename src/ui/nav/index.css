@@ -3,6 +3,7 @@ nav.toolbar {
 	padding: 0.2rem 0.5em;
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	align-items: center;
 	align-content: center;
 	justify-content: space-between;
@@ -78,26 +79,6 @@ nav.toolbar {
 			padding: 0.25rem 0;
 			transform: translate(-2rem);
 			transition: transform var(--time-active) linear;
-		}
-	}
-}
-
-@media(max-width: 400px) {
-	nav.toolbar header {
-		& h1 {
-			font-size: 1rem;
-		}
-		& span {
-			font-size: 0.7rem;
-			width: 50%;
-		}
-	}
-}
-
-@media(max-width: 370px) {
-	nav.toolbar header {
-		& span {
-			display: none;
 		}
 	}
 }
