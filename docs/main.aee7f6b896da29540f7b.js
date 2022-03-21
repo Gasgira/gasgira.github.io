@@ -4771,7 +4771,7 @@ class ItemPanel extends component__WEBPACK_IMPORTED_MODULE_2__.Component {
 								db__WEBPACK_IMPORTED_MODULE_0__.db.toggleFavorite(this.state.item.path);
 								this.render();
 							}}
-							style=${{backgroundImage: `url(items.svg#${db__WEBPACK_IMPORTED_MODULE_0__.db.favoriteItemPaths.has(this.state.item.path) ? 'favored' : 'unfavored'})`}}
+							style=${{backgroundImage: `url(/items.svg#${db__WEBPACK_IMPORTED_MODULE_0__.db.favoriteItemPaths.has(this.state.item.path) ? 'favored' : 'unfavored'})`}}
 						></button>
 					</header>
 					<div class="item-info_wrapper">
@@ -4779,7 +4779,7 @@ class ItemPanel extends component__WEBPACK_IMPORTED_MODULE_2__.Component {
 							<div class="badge">
 								<div
 									class="badge-svg"
-									style=${{backgroundImage: `url(seasons.svg#${this.state.item.seasonNumber ?? 'default'})`}}
+									style=${{backgroundImage: `url(/seasons.svg#${this.state.item.seasonNumber ?? 'default'})`}}
 								></div>
 								<span>${this.state.item?.data?.CommonData?.Season ?? 'Season'}</span>
 							</div>
@@ -4787,7 +4787,7 @@ class ItemPanel extends component__WEBPACK_IMPORTED_MODULE_2__.Component {
 								<div
 									class="badge-svg"
 									data-icon=${this.state.item?.data?.CommonData?.Type ?? 'default'}
-									style=${{backgroundImage: `url(items.svg#${this.state.item?.data?.CommonData?.Type ?? 'default'})`}}
+									style=${{backgroundImage: `url(/items.svg#${this.state.item?.data?.CommonData?.Type ?? 'default'})`}}
 								></div>
 								<span class="badge">${db__WEBPACK_IMPORTED_MODULE_0__.db.getItemType(this.state.item?.data?.CommonData?.Type) ?? 'Item'}</span>
 							</div>
@@ -5009,7 +5009,7 @@ class Item extends component__WEBPACK_IMPORTED_MODULE_2__.Component {
 				${itemTypeIcon ? this.renderItemTypeIcon() : ''}
 				${this.seasonNumber > 1 ? lib_HTML__WEBPACK_IMPORTED_MODULE_3__.HTML.wire(this, ':seasonIcon')`<div
 						class="season-icon"
-						style=${{webkitMaskImage: `url(seasons.svg#${this.seasonNumber ?? 'default'})`}}
+						style=${{webkitMaskImage: `url(/seasons.svg#${this.seasonNumber ?? 'default'})`}}
 					></div>` : ''
 				}
 			</button>
@@ -5058,7 +5058,7 @@ class Item extends component__WEBPACK_IMPORTED_MODULE_2__.Component {
 			return lib_HTML__WEBPACK_IMPORTED_MODULE_3__.HTML.wire(this, `:itemType-${performance.now()}`)`
 				<div
 					class=${`item-type-icon ${this?.data?.CommonData?.Type ?? 'default-type'}`}
-					style=${{backgroundImage: `url(items.svg#${svgId ?? 'default'})`}}
+					style=${{backgroundImage: `url(/items.svg#${svgId ?? 'default'})`}}
 				></div>
 			`;
 		}
@@ -5266,7 +5266,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ui_inventory__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ui/inventory */ "./src/ui/inventory/index.js");
 /* harmony import */ var ui_modal__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ui/modal */ "./src/ui/modal/index.js");
 /* harmony import */ var ui_privacy__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ui/privacy */ "./src/ui/privacy/index.js");
-/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./styles.css */ "./src/styles.css");
+/* harmony import */ var ui_vanity__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ui/vanity */ "./src/ui/vanity/index.js");
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./styles.css */ "./src/styles.css");
+
 
 
 
@@ -5285,20 +5287,25 @@ console.log('hello world');
 class App {
 	async init() {
 		await db__WEBPACK_IMPORTED_MODULE_3__.db.init();
-		Promise.all([
-			ui_cores__WEBPACK_IMPORTED_MODULE_6__.coreViewer.init(),
-			ui_calendar__WEBPACK_IMPORTED_MODULE_5__.calendar.init(),
-			ui_inventory__WEBPACK_IMPORTED_MODULE_7__.inventory.init()
-		]).then(() => {
-			this.parseUri();
-			this.render();
-		})
-		this.render();
+		// this.render();
+
+		lib_HTML__WEBPACK_IMPORTED_MODULE_0__.HTML.bind(document.querySelector('.js--privacy'))`
+			<span
+				class="privacy-button"
+				onclick=${() => ui_modal__WEBPACK_IMPORTED_MODULE_8__.modalConstructor.showView(ui_privacy__WEBPACK_IMPORTED_MODULE_9__.privacy.render())}
+			>Privacy</span>
+		`;
+
+		this.parseUriHash();
+		await this.handleNavigation();
 		
-		window.addEventListener('popstate', (event) => {
+		window.addEventListener('popstate', async (event) => {
+			// event?.preventDefault();
 			console.log('popstate', event.state);
 			if (event?.state?.path) db__WEBPACK_IMPORTED_MODULE_3__.db.showItemPanelByPath(event.state.path, true);
 			eventEmitter__WEBPACK_IMPORTED_MODULE_1__.emitter.emit('popstate');
+
+			await this.handleNavigation(event);
 		});
 		window.addEventListener('hashchange', (event) => {
 			const hash = window.location.hash?.substring?.(1);
@@ -5309,25 +5316,36 @@ class App {
 
 			return db_itemPanel__WEBPACK_IMPORTED_MODULE_4__.itemPanel.hide();
 		});
-
-		lib_HTML__WEBPACK_IMPORTED_MODULE_0__.HTML.bind(document.querySelector('.js--privacy'))`
-			<span
-				class="privacy-button"
-				onclick=${() => ui_modal__WEBPACK_IMPORTED_MODULE_8__.modalConstructor.showView(ui_privacy__WEBPACK_IMPORTED_MODULE_9__.privacy.render())}
-			>Privacy</span>
-		`;
 	}
 
 	async render() {
-		lib_HTML__WEBPACK_IMPORTED_MODULE_0__.HTML.bind(document.querySelector('.js--main'))`
-			${ui_nav__WEBPACK_IMPORTED_MODULE_2__.headerNav.render()}
-			${ui_cores__WEBPACK_IMPORTED_MODULE_6__.coreViewer.render()}
-			${ui_calendar__WEBPACK_IMPORTED_MODULE_5__.calendar.render()}
-			${ui_inventory__WEBPACK_IMPORTED_MODULE_7__.inventory.render()}
-		`;
+		this?.page?.render() ?? console.warn('no page...');
 	}
 
-	parseUri() {
+	async handleNavigation(event) {
+		console.log('handleNavigation', this?.pathname)
+		const url = new URL(window.location);
+		const { pathname } = url;
+		console.log(`url ${url}`, pathname);
+
+		if (this?.pathname === pathname) return;
+		this.pathname = pathname;
+
+		console.log('navigating', this?.pathname)
+
+		if (pathname.startsWith('/vanity'))
+		{
+			this.page = new VanityExplorer();
+		} else {
+			console.log('else')
+			this.page = new ItemExplorer();
+		}
+
+		await this.page.init();
+		this.render();
+	}
+
+	parseUriHash() {
 		const hash = window.location.hash?.substring?.(1);
 		if (hash && typeof hash === 'string' && hash.substring(hash.length-5, hash.length) === '.json') {
 			try {
@@ -5347,6 +5365,64 @@ class App {
 
 const app = new App();
 app.init();
+
+let _explorer;
+class ItemExplorer {
+	constructor() {
+		if (_explorer) return _explorer;
+		_explorer = this;
+	}
+
+	async init() {
+		console.log('Explorer.init');
+		if (this?._init) return await this._init;
+		this._init = Promise.all([
+			ui_cores__WEBPACK_IMPORTED_MODULE_6__.coreViewer.init(),
+			ui_calendar__WEBPACK_IMPORTED_MODULE_5__.calendar.init(),
+			ui_inventory__WEBPACK_IMPORTED_MODULE_7__.inventory.init()
+		]).then(() => {
+			this.render();
+		})
+	}
+
+	async render() {
+		console.log('Explorer.render');
+		lib_HTML__WEBPACK_IMPORTED_MODULE_0__.HTML.bind(document.querySelector('.js--main'))`
+			${ui_nav__WEBPACK_IMPORTED_MODULE_2__.headerNav.render()}
+			${ui_cores__WEBPACK_IMPORTED_MODULE_6__.coreViewer.render()}
+			${ui_calendar__WEBPACK_IMPORTED_MODULE_5__.calendar.render()}
+			${ui_inventory__WEBPACK_IMPORTED_MODULE_7__.inventory.render()}
+		`;
+	}
+}
+
+let _vanity;
+class VanityExplorer {
+	constructor() {
+		if (_vanity) return _vanity;
+		_vanity = this;
+	}
+
+	async init() {
+		if (this?._init) return;
+		let gamertag;
+		const { pathname } = new URL(window.location);
+		const pathParts = pathname.split('/');
+		if (pathParts && pathParts.length > 2) gamertag = pathParts[2];
+		console.log('gt', gamertag);
+		this._init = await ui_vanity__WEBPACK_IMPORTED_MODULE_10__.vanity.init(gamertag);
+		console.log('App.Vanity.init');
+		this.render();
+	}
+
+	async render() {
+		console.log('App.Vanity.render');
+		lib_HTML__WEBPACK_IMPORTED_MODULE_0__.HTML.bind(document.querySelector('.js--main'))`
+			${ui_nav__WEBPACK_IMPORTED_MODULE_2__.headerNav.render()}
+			${ui_vanity__WEBPACK_IMPORTED_MODULE_10__.vanity.render()}
+		`;
+	}
+}
 
 /***/ }),
 
@@ -6273,10 +6349,6 @@ class Discord extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 
 		const response = await fetch('https://cylix.guide/api/webhooks/discord', {
 			method: 'POST',
-			// mode: 'no-cors',
-			headers: {
-				'x-cylix-auth': '77f146a1-05cd-440d-acdb-7ac96958a354'
-			},
 			body
 		});
 
@@ -7075,10 +7147,20 @@ class HeaderNav extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 					<li><button aria-label="Search" title="Search" onclick=${() => eventEmitter__WEBPACK_IMPORTED_MODULE_2__.emitter.emit('nav-search')}><div class="icon-masked icon-search"></div></button></li>
 					<li><button aria-label="Settings" title="Settings" onclick=${() => ui_modal__WEBPACK_IMPORTED_MODULE_6__.modalConstructor.showView(ui_settings__WEBPACK_IMPORTED_MODULE_3__.settings.render())}><div class="icon-masked icon-settings"></div></button></li>
 					<li><button aria-label="Disclaimer" title="Discord" onclick=${() => ui_modal__WEBPACK_IMPORTED_MODULE_6__.modalConstructor.showView(ui_discord__WEBPACK_IMPORTED_MODULE_5__.discord.render())}>Discord</button></li>
+					
 					<li><button aria-label="Disclaimer" title="About" onclick=${() => ui_modal__WEBPACK_IMPORTED_MODULE_6__.modalConstructor.showView(ui_about__WEBPACK_IMPORTED_MODULE_4__.about.render())}>About</button></li>
 				</ul>
 			</nav>
 		`;
+		// <li><button aria-label="Vanity" title="Vanity" onclick=${() => {
+		// 	const url = new URL(window.location);
+		// 	const { pathname } = url;
+		// 	if (pathname.startsWith('/vanity/')) return;
+
+		// 	history.pushState(null, null, '/vanity/');
+		// 	const popStateEvent = new PopStateEvent('popstate', null);
+		// 	dispatchEvent(popStateEvent);
+		// }}>Vanity</button></li>
 	}
 }
 
@@ -7294,6 +7376,222 @@ class Settings extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 }
 
 const settings = new Settings();
+
+/***/ }),
+
+/***/ "./src/ui/vanity/core/index.js":
+/*!*************************************!*\
+  !*** ./src/ui/vanity/core/index.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "AppearanceCore": () => (/* binding */ AppearanceCore)
+/* harmony export */ });
+/* harmony import */ var component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! component */ "./src/component/index.js");
+/* harmony import */ var db__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! db */ "./src/db/index.js");
+/* harmony import */ var db_item__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! db/item */ "./src/db/item/index.js");
+/* harmony import */ var eventEmitter__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! eventEmitter */ "./src/eventEmitter/index.js");
+/* harmony import */ var lib_HTML__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lib/HTML */ "./src/lib/HTML/index.js");
+/* harmony import */ var ui_settings__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ui/settings */ "./src/ui/settings/index.js");
+/* harmony import */ var urlParams__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! urlParams */ "./src/urlParams/index.js");
+
+
+
+
+
+
+
+
+class AppearanceCore extends component__WEBPACK_IMPORTED_MODULE_0__.Component {
+	constructor({ type, core, sockets }) {
+		super();
+		console.log('AppearanceCore', type)
+		this.meta = {
+			type,
+			core,
+			sockets 
+		}
+		this.items = [];
+		this.itemIDs = new Set();
+	}
+
+	async init() {
+		console.log('AppearanceCore init', this.meta.sockets);
+		this.items = [...this.meta.sockets.values()].map(path => new db_item__WEBPACK_IMPORTED_MODULE_2__.Item(path));
+	}
+
+	render() {
+		console.log('AppearanceCore render', this.items.length);
+		return this.html`
+			<div
+				class ="inventory-category_wrapper mica_content"
+			>
+				<ul
+					class="inventory-category_items"
+				>
+					${this.items.map(item => lib_HTML__WEBPACK_IMPORTED_MODULE_4__.HTML.wire()`<li>
+						${{
+							any: item.renderIcon('vanity', {itemTypeIcon: true}),
+							placeholder: db_item__WEBPACK_IMPORTED_MODULE_2__.placeholderItem.cloneNode(true)
+						}}
+					</li>`)}
+				</ul>
+			</div>
+		`;
+	}
+
+	getName() {
+		return this?.meta?.type ?? 'TYPE'
+	}
+}
+
+/***/ }),
+
+/***/ "./src/ui/vanity/index.js":
+/*!********************************!*\
+  !*** ./src/ui/vanity/index.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "vanity": () => (/* binding */ vanity)
+/* harmony export */ });
+/* harmony import */ var ui_vanity_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ui/vanity/core */ "./src/ui/vanity/core/index.js");
+/* harmony import */ var component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! component */ "./src/component/index.js");
+/* harmony import */ var lib_HTML__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lib/HTML */ "./src/lib/HTML/index.js");
+/* harmony import */ var ui_mica__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ui/mica */ "./src/ui/mica/index.js");
+
+
+
+
+
+class Vanity extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
+	async init(gamertag) {
+		if (!gamertag?.trim()) return;
+		this.state = this.defaultState;
+
+		const appearance = await this.requestAppearance(gamertag);
+		if (appearance) await this.showAppearance(appearance);
+	}
+
+	get defaultState() {
+		return {
+			mobileMenu: false,
+			cores: []
+		};
+	}
+
+	render() {
+		return this.html`<div class="inventory_wrapper mica_viewer" id="inventory">
+			<header class="inventory mica_header-strip">
+				<a class="mica_header-anchor" href="#inventory"><h2>Vanity</h2></a>
+			</header>
+			<div class="inventory_content mica_main-content">
+				<ul class=${`inventory-catergories mica_nav-list ${this.state.mobileMenu ? 'show-mobile' : 'hide-mobile'}`}>
+					${this.state.cores.map(core => lib_HTML__WEBPACK_IMPORTED_MODULE_2__.HTML.wire(core)`<li><button
+						onclick=${() => console.log('showCore', core)}
+						class=${this.state?.core === core ? 'active' : null}
+					><span>${core?.getName?.() ?? 'core'}</span></button></li>`)}
+				</ul>
+				${this.state?.core?.render?.() ?? '...'}
+			</div>
+		</div>`;
+	}
+
+	async requestAppearance(gamertag) {
+		// return testAppearance;
+		try {
+			if (!gamertag || typeof gamertag !== 'string') throw new Error(`No gamertag "${gamertag}"`);
+
+			// throw new Error(`host https://${window.location.host}`)
+			const response = await fetch(new URL(`/api/vanity/${gamertag}`, `https://cylix.guide`));
+			console.log('appearance', response.status);
+			if (response && response.ok)
+			{
+				const json = await response.json();
+				if (json && json.ArmorCores) return json;
+			}
+		} catch (error) {
+			console.error(`[Vanity.requestAppearance] Fetch error`, error);
+		}
+	}
+
+	async showAppearance(appearance) {
+		this.state.appearance = appearance;
+
+		// TODO iterate through all core types
+
+		if (appearance?.ArmorCores?.ArmorCores?.[0]?.CorePath)
+		{
+			const coreData = appearance?.ArmorCores?.ArmorCores?.[0];
+			const appearanceCore = this.makeAppearanceCore(coreData);
+			if (appearanceCore)
+			{
+				this.state.cores.push(appearanceCore);
+				await appearanceCore.init();
+				this.state.core = appearanceCore;
+			}
+			this.render();
+		}
+	}
+
+	makeAppearanceCore(coreData) {
+		try {
+			// TODO CoreType branching
+			const type = coreData.CoreType;
+			const core = coreData.CorePath;
+			const theme = coreData.Themes[0];
+			const sockets = new Map();
+
+			for (const property in theme)
+			{
+				// console.log('prop', property)
+				const value = theme[property];
+				if (pathNames.has(property) && value?.trim())
+				{
+					sockets.set(pathNames.get(property), value);
+				}
+			}
+
+			const appearanceCore = new ui_vanity_core__WEBPACK_IMPORTED_MODULE_0__.AppearanceCore({ type, core, sockets });
+			if (appearanceCore) return appearanceCore;
+		} catch (error) {
+			console.error(`[Vanity.makeAppearanceCore]`, error);
+		}
+	}
+}
+
+const vanity = new Vanity();
+
+const pathNames = new Map([
+	['ThemePath', 'Kit'],
+	['CoatingPath', 'Coating'],
+	['GlovePath', 'Gloves'],
+	['HelmetPath', 'Helmet'],
+	['HelmetAttachmentPath', 'Helmet Atch.'],
+	['ChestAttachmentPath', 'Chest Atch.'],
+	['KneePadPath', 'Knee Pads'],
+	['LeftShoulderPadPath', 'Shoulder, Left'],
+	['RightShoulderPadPath', 'Shoulder, Right'],
+	// ['Emblems', 'Emblem'],
+	// ['Emblem', 'Emblem'],
+	['ArmorFxPath', 'Armor FX'],
+	['MythicFxPath', 'Mythic FX'],
+	['VisorPath', 'Visor'],
+	['HipAttachmentPath', 'Hip Atch.'],
+	['WristAttachmentPath', 'Wrist Atch.'],
+	['ActionPosePath', 'Stance'],
+	['BackdropImagePath', 'Backdrop'],
+	// ['ServiceTag', 'Service Tag'],
+	['DeathFxPath', 'Death FX'],
+	['WeaponCharmPath', 'Charm'],
+	['AlternateGeometryRegionPath', 'Model'],
+	['ModelPath', 'AI Model'],
+	['ColorPath', 'AI Color']
+]);
 
 /***/ }),
 
@@ -7975,19 +8273,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("59277173b8a6c79b9e18")
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/global */
-/******/ 	(() => {
-/******/ 		__webpack_require__.g = (function() {
-/******/ 			if (typeof globalThis === 'object') return globalThis;
-/******/ 			try {
-/******/ 				return this || new Function('return this')();
-/******/ 			} catch (e) {
-/******/ 				if (typeof window === 'object') return window;
-/******/ 			}
-/******/ 		})();
+/******/ 		__webpack_require__.h = () => ("aee7f6b896da29540f7b")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
@@ -8433,22 +8719,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	(() => {
-/******/ 		var scriptUrl;
-/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
-/******/ 		var document = __webpack_require__.g.document;
-/******/ 		if (!scriptUrl && document) {
-/******/ 			if (document.currentScript)
-/******/ 				scriptUrl = document.currentScript.src
-/******/ 			if (!scriptUrl) {
-/******/ 				var scripts = document.getElementsByTagName("script");
-/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
-/******/ 			}
-/******/ 		}
-/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
-/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
-/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
-/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
-/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 		__webpack_require__.p = "/";
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
@@ -8973,4 +9244,4 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.59277173b8a6c79b9e18.js.map
+//# sourceMappingURL=main.aee7f6b896da29540f7b.js.map

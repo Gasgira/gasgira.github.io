@@ -13,7 +13,7 @@ module.exports = {
 	output: {
 		filename: '[name].[hash].js', // contenthash
 		path: path.resolve(__dirname, './docs'),
-		// publicPath: '/assets/'
+		publicPath: '/'
 	},
 	resolve: {
 		alias: {},
@@ -65,7 +65,8 @@ module.exports = {
 	},
 	devServer: {
 		static: path.join(__dirname, 'docs'),
-		hot: true
+		hot: true,
+    historyApiFallback: true
 	},
 	plugins: [
 		new webpack.DefinePlugin({

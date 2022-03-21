@@ -116,7 +116,7 @@ export class Item extends Component {
 				${itemTypeIcon ? this.renderItemTypeIcon() : ''}
 				${this.seasonNumber > 1 ? HTML.wire(this, ':seasonIcon')`<div
 						class="season-icon"
-						style=${{webkitMaskImage: `url(seasons.svg#${this.seasonNumber ?? 'default'})`}}
+						style=${{webkitMaskImage: `url(/seasons.svg#${this.seasonNumber ?? 'default'})`}}
 					></div>` : ''
 				}
 			</button>
@@ -165,7 +165,7 @@ export class Item extends Component {
 			return HTML.wire(this, `:itemType-${performance.now()}`)`
 				<div
 					class=${`item-type-icon ${this?.data?.CommonData?.Type ?? 'default-type'}`}
-					style=${{backgroundImage: `url(items.svg#${svgId ?? 'default'})`}}
+					style=${{backgroundImage: `url(/items.svg#${svgId ?? 'default'})`}}
 				></div>
 			`;
 		}

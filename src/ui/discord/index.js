@@ -92,10 +92,6 @@ class Discord extends Component {
 
 		const response = await fetch('https://cylix.guide/api/webhooks/discord', {
 			method: 'POST',
-			// mode: 'no-cors',
-			headers: {
-				'x-cylix-auth': '77f146a1-05cd-440d-acdb-7ac96958a354'
-			},
 			body
 		});
 

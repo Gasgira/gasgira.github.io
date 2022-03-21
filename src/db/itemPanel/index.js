@@ -93,7 +93,7 @@ class ItemPanel extends Component {
 								db.toggleFavorite(this.state.item.path);
 								this.render();
 							}}
-							style=${{backgroundImage: `url(items.svg#${db.favoriteItemPaths.has(this.state.item.path) ? 'favored' : 'unfavored'})`}}
+							style=${{backgroundImage: `url(/items.svg#${db.favoriteItemPaths.has(this.state.item.path) ? 'favored' : 'unfavored'})`}}
 						></button>
 					</header>
 					<div class="item-info_wrapper">
@@ -101,7 +101,7 @@ class ItemPanel extends Component {
 							<div class="badge">
 								<div
 									class="badge-svg"
-									style=${{backgroundImage: `url(seasons.svg#${this.state.item.seasonNumber ?? 'default'})`}}
+									style=${{backgroundImage: `url(/seasons.svg#${this.state.item.seasonNumber ?? 'default'})`}}
 								></div>
 								<span>${this.state.item?.data?.CommonData?.Season ?? 'Season'}</span>
 							</div>
@@ -109,7 +109,7 @@ class ItemPanel extends Component {
 								<div
 									class="badge-svg"
 									data-icon=${this.state.item?.data?.CommonData?.Type ?? 'default'}
-									style=${{backgroundImage: `url(items.svg#${this.state.item?.data?.CommonData?.Type ?? 'default'})`}}
+									style=${{backgroundImage: `url(/items.svg#${this.state.item?.data?.CommonData?.Type ?? 'default'})`}}
 								></div>
 								<span class="badge">${db.getItemType(this.state.item?.data?.CommonData?.Type) ?? 'Item'}</span>
 							</div>

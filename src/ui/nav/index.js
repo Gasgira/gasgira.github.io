@@ -52,10 +52,20 @@ class HeaderNav extends Component {
 					<li><button aria-label="Search" title="Search" onclick=${() => emitter.emit('nav-search')}><div class="icon-masked icon-search"></div></button></li>
 					<li><button aria-label="Settings" title="Settings" onclick=${() => modalConstructor.showView(settings.render())}><div class="icon-masked icon-settings"></div></button></li>
 					<li><button aria-label="Disclaimer" title="Discord" onclick=${() => modalConstructor.showView(discord.render())}>Discord</button></li>
+					
 					<li><button aria-label="Disclaimer" title="About" onclick=${() => modalConstructor.showView(about.render())}>About</button></li>
 				</ul>
 			</nav>
 		`;
+		// <li><button aria-label="Vanity" title="Vanity" onclick=${() => {
+		// 	const url = new URL(window.location);
+		// 	const { pathname } = url;
+		// 	if (pathname.startsWith('/vanity/')) return;
+
+		// 	history.pushState(null, null, '/vanity/');
+		// 	const popStateEvent = new PopStateEvent('popstate', null);
+		// 	dispatchEvent(popStateEvent);
+		// }}>Vanity</button></li>
 	}
 }
 
