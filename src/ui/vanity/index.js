@@ -27,8 +27,10 @@ class Vanity extends Component {
 		if (appearance)
 		{
 			this.state = this.defaultState;
-			await this.initAppearance(appearance, gamertag);
+			return await this.initAppearance(appearance, gamertag);
 		}
+
+		this.renderStatus('404');
 	}
 
 	get defaultState() {
@@ -37,7 +39,9 @@ class Vanity extends Component {
 			search: '',
 			failedSearch: '',
 			mobileMenu: false,
-			cores: []
+			cores: [],
+			status: '',
+			fetching: false
 		};
 	}
 
@@ -59,10 +63,10 @@ class Vanity extends Component {
 					}}
 					value=${this.state.term}
 				>
+				<div class="vanity-status">${this.renderStatus()}</div>
 			</header>
 			<div class="inventory_content mica_main-content">
 				<ul class=${`inventory-catergories mica_nav-list ${this.state.mobileMenu ? 'show-mobile' : 'hide-mobile'}`}>
-					<li>${this.state.gamertag}</li>
 					${this.state.cores.map(core => HTML.wire(core)`<li><button
 						onclick=${() => this.showCore(core)}
 						class=${this.state?.core === core ? 'active' : null}
@@ -73,6 +77,10 @@ class Vanity extends Component {
 				<div class=${`mica_mobile-menu_container ${this.state.mobileMenu ? 'show-mobile' : 'hide-mobile'}`}>${this?.mobileMicaMenu.render()}</div>
 			</div>
 		</div>`;
+	}
+
+	renderStatus(status) {
+		return HTML.wire(this, ':status')`${status ?? this.state.status}`;
 	}
 
 	showCore(appearanceCore) {
@@ -88,7 +96,10 @@ class Vanity extends Component {
 	}
 
 	async submitSearch() {
+		if (this.state.fetching) return;
 		if (!this.state.search || typeof this.state.search !== 'string') return;
+
+		this.renderStatus('...');
 
 		const search = this.state.search;
 		if (search === this.state.failedSearch) return;
@@ -102,6 +113,8 @@ class Vanity extends Component {
 		}
 
 		this.state.failedSearch = search;
+
+		this.renderStatus('Error!');
 	}
 
 	async requestAppearance(gamertag) {
@@ -109,17 +122,21 @@ class Vanity extends Component {
 		try {
 			if (!gamertag || typeof gamertag !== 'string') throw new Error(`No gamertag "${gamertag}"`);
 
-			// throw new Error(`host https://${window.location.host}`)
+			// throw new Error(`host https://${window.location.host}`);
+			this.setState({fetching: true});
 			const response = await fetch(new URL(`/api/vanity/${gamertag}`, `https://cylix.guide`));
-			console.log('appearance', response.status);
+			console.log('requestAppearance', response.status);
+			this.setState({fetching: false});
 			if (response && response.ok)
 			{
+				this.renderStatus('Found!');
 				const json = await response.json();
 				if (json && json.ArmorCores) return json;
 			}
 		} catch (error) {
 			console.error(`[Vanity.requestAppearance] Fetch error`, error);
 		}
+		this.setState({fetching: false});
 	}
 
 	async initAppearance(appearance, gamertag) {
@@ -128,6 +145,8 @@ class Vanity extends Component {
 		{
 			this.state.gamertag = gamertag;
 			history.pushState(null, null, `/vanity/${encodeURIComponent(gamertag.trim())}`);
+
+			this.renderStatus('');
 		}
 		
 		try {
@@ -155,10 +174,10 @@ class Vanity extends Component {
 			if (aiCore && aiCore.ModelPath) sockets.set('AI Model', aiCore.ModelPath);
 			if (aiCore && aiCore.ColorPath) sockets.set('AI Color', aiCore.ColorPath);
 
-			const appearanceCore = new AppearanceCore({ type: 'Spartan', sockets });
+			const appearanceCore = new AppearanceCore({ type: 'Spartan ID', sockets, gamertag: this.state.gamertag });
 			if (appearanceCore) this.state.cores.push(appearanceCore);
 		} catch (error) {
-			
+			console.error(`[Vanity.showAppearance] spartan`, error);
 		}
 
 		try {
@@ -202,7 +221,7 @@ class Vanity extends Component {
 				}
 			}
 
-			const appearanceCore = new AppearanceCore({ type, core, sockets });
+			const appearanceCore = new AppearanceCore({ type, core, sockets, gamertag: this.state.gamertag });
 			if (appearanceCore) return appearanceCore;
 		} catch (error) {
 			console.error(`[Vanity.makeAppearanceCore]`, error);

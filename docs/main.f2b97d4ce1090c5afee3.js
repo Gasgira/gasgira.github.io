@@ -5435,8 +5435,8 @@ class App {
 			>Privacy</span>
 		`;
 
-		this.parseUriHash();
 		await this.handleNavigation();
+		this.parseUriHash();
 		
 		window.addEventListener('popstate', async (event) => {
 			// event?.preventDefault();
@@ -7291,11 +7291,11 @@ class HeaderNav extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 					<li><button aria-label="Search" title="Search" onclick=${() => eventEmitter__WEBPACK_IMPORTED_MODULE_2__.emitter.emit('nav-search')}><div class="icon-masked icon-search"></div></button></li>
 					<li><button aria-label="Settings" title="Settings" onclick=${() => ui_modal__WEBPACK_IMPORTED_MODULE_6__.modalConstructor.showView(ui_settings__WEBPACK_IMPORTED_MODULE_3__.settings.render())}><div class="icon-masked icon-settings"></div></button></li>
 					<li><button aria-label="Disclaimer" title="Discord" onclick=${() => ui_modal__WEBPACK_IMPORTED_MODULE_6__.modalConstructor.showView(ui_discord__WEBPACK_IMPORTED_MODULE_5__.discord.render())}><div class="icon-masked icon-discord"></div></button></li>
+					${pathname.startsWith('/vanity') ? this.itemsButton() : this.vanityButton()}
 					<li><button aria-label="Disclaimer" title="About" onclick=${() => ui_modal__WEBPACK_IMPORTED_MODULE_6__.modalConstructor.showView(ui_about__WEBPACK_IMPORTED_MODULE_4__.about.render())}>About</button></li>
 				</ul>
 			</nav>
 		`;
-					// ${pathname.startsWith('/vanity') ? this.itemsButton() : this.vanityButton()}
 	}
 
 	vanityButton() {
@@ -7560,13 +7560,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class AppearanceCore extends component__WEBPACK_IMPORTED_MODULE_0__.Component {
-	constructor({ type, core, sockets }) {
+	constructor({ type = 'Sockets', core, sockets, gamertag = 'Spartan' } = {}) {
 		super();
-		console.log('AppearanceCore', type)
+		// console.log('AppearanceCore', type)
 		this.meta = {
 			type,
 			core,
-			sockets 
+			sockets,
+			gamertag
 		}
 		this.items = [];
 		this.itemIDs = new Set();
@@ -7585,7 +7586,7 @@ class AppearanceCore extends component__WEBPACK_IMPORTED_MODULE_0__.Component {
 				class ="inventory-category_wrapper mica_content"
 			>
 				<header class="h-favorites">
-					<div>${this.meta?.type ?? 'Core'} // ${this?.items.length}</div>
+					<div>${this.meta.gamertag} // ${this.meta?.type ?? 'Core'} // ${this?.items.length}</div>
 				</header>
 				<ul
 					class="inventory-category_items"
@@ -7653,8 +7654,10 @@ class Vanity extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 		if (appearance)
 		{
 			this.state = this.defaultState;
-			await this.initAppearance(appearance, gamertag);
+			return await this.initAppearance(appearance, gamertag);
 		}
+
+		this.renderStatus('404');
 	}
 
 	get defaultState() {
@@ -7663,7 +7666,9 @@ class Vanity extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 			search: '',
 			failedSearch: '',
 			mobileMenu: false,
-			cores: []
+			cores: [],
+			status: '',
+			fetching: false
 		};
 	}
 
@@ -7685,10 +7690,10 @@ class Vanity extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 					}}
 					value=${this.state.term}
 				>
+				<div class="vanity-status">${this.renderStatus()}</div>
 			</header>
 			<div class="inventory_content mica_main-content">
 				<ul class=${`inventory-catergories mica_nav-list ${this.state.mobileMenu ? 'show-mobile' : 'hide-mobile'}`}>
-					<li>${this.state.gamertag}</li>
 					${this.state.cores.map(core => lib_HTML__WEBPACK_IMPORTED_MODULE_3__.HTML.wire(core)`<li><button
 						onclick=${() => this.showCore(core)}
 						class=${this.state?.core === core ? 'active' : null}
@@ -7699,6 +7704,10 @@ class Vanity extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 				<div class=${`mica_mobile-menu_container ${this.state.mobileMenu ? 'show-mobile' : 'hide-mobile'}`}>${this?.mobileMicaMenu.render()}</div>
 			</div>
 		</div>`;
+	}
+
+	renderStatus(status) {
+		return lib_HTML__WEBPACK_IMPORTED_MODULE_3__.HTML.wire(this, ':status')`${status ?? this.state.status}`;
 	}
 
 	showCore(appearanceCore) {
@@ -7714,7 +7723,10 @@ class Vanity extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 	}
 
 	async submitSearch() {
+		if (this.state.fetching) return;
 		if (!this.state.search || typeof this.state.search !== 'string') return;
+
+		this.renderStatus('...');
 
 		const search = this.state.search;
 		if (search === this.state.failedSearch) return;
@@ -7728,6 +7740,8 @@ class Vanity extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 		}
 
 		this.state.failedSearch = search;
+
+		this.renderStatus('Error!');
 	}
 
 	async requestAppearance(gamertag) {
@@ -7735,17 +7749,21 @@ class Vanity extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 		try {
 			if (!gamertag || typeof gamertag !== 'string') throw new Error(`No gamertag "${gamertag}"`);
 
-			// throw new Error(`host https://${window.location.host}`)
+			// throw new Error(`host https://${window.location.host}`);
+			this.setState({fetching: true});
 			const response = await fetch(new URL(`/api/vanity/${gamertag}`, `https://cylix.guide`));
-			console.log('appearance', response.status);
+			console.log('requestAppearance', response.status);
+			this.setState({fetching: false});
 			if (response && response.ok)
 			{
+				this.renderStatus('Found!');
 				const json = await response.json();
 				if (json && json.ArmorCores) return json;
 			}
 		} catch (error) {
 			console.error(`[Vanity.requestAppearance] Fetch error`, error);
 		}
+		this.setState({fetching: false});
 	}
 
 	async initAppearance(appearance, gamertag) {
@@ -7754,6 +7772,8 @@ class Vanity extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 		{
 			this.state.gamertag = gamertag;
 			history.pushState(null, null, `/vanity/${encodeURIComponent(gamertag.trim())}`);
+
+			this.renderStatus('');
 		}
 		
 		try {
@@ -7781,10 +7801,10 @@ class Vanity extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 			if (aiCore && aiCore.ModelPath) sockets.set('AI Model', aiCore.ModelPath);
 			if (aiCore && aiCore.ColorPath) sockets.set('AI Color', aiCore.ColorPath);
 
-			const appearanceCore = new ui_vanity_core__WEBPACK_IMPORTED_MODULE_0__.AppearanceCore({ type: 'Spartan', sockets });
+			const appearanceCore = new ui_vanity_core__WEBPACK_IMPORTED_MODULE_0__.AppearanceCore({ type: 'Spartan ID', sockets, gamertag: this.state.gamertag });
 			if (appearanceCore) this.state.cores.push(appearanceCore);
 		} catch (error) {
-			
+			console.error(`[Vanity.showAppearance] spartan`, error);
 		}
 
 		try {
@@ -7828,7 +7848,7 @@ class Vanity extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 				}
 			}
 
-			const appearanceCore = new ui_vanity_core__WEBPACK_IMPORTED_MODULE_0__.AppearanceCore({ type, core, sockets });
+			const appearanceCore = new ui_vanity_core__WEBPACK_IMPORTED_MODULE_0__.AppearanceCore({ type, core, sockets, gamertag: this.state.gamertag });
 			if (appearanceCore) return appearanceCore;
 		} catch (error) {
 			console.error(`[Vanity.makeAppearanceCore]`, error);
@@ -8564,7 +8584,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("1945a1e10c20cb3b1877")
+/******/ 		__webpack_require__.h = () => ("f2b97d4ce1090c5afee3")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
@@ -9535,4 +9555,4 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.1945a1e10c20cb3b1877.js.map
+//# sourceMappingURL=main.f2b97d4ce1090c5afee3.js.map

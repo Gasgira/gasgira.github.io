@@ -7,13 +7,14 @@ import { settings } from 'ui/settings';
 import { urlParams } from 'urlParams';
 
 export class AppearanceCore extends Component {
-	constructor({ type, core, sockets }) {
+	constructor({ type = 'Sockets', core, sockets, gamertag = 'Spartan' } = {}) {
 		super();
-		console.log('AppearanceCore', type)
+		// console.log('AppearanceCore', type)
 		this.meta = {
 			type,
 			core,
-			sockets 
+			sockets,
+			gamertag
 		}
 		this.items = [];
 		this.itemIDs = new Set();
@@ -32,7 +33,7 @@ export class AppearanceCore extends Component {
 				class ="inventory-category_wrapper mica_content"
 			>
 				<header class="h-favorites">
-					<div>${this.meta?.type ?? 'Core'} // ${this?.items.length}</div>
+					<div>${this.meta.gamertag} // ${this.meta?.type ?? 'Core'} // ${this?.items.length}</div>
 				</header>
 				<ul
 					class="inventory-category_items"

@@ -26,8 +26,8 @@ class App {
 			>Privacy</span>
 		`;
 
-		this.parseUriHash();
 		await this.handleNavigation();
+		this.parseUriHash();
 		
 		window.addEventListener('popstate', async (event) => {
 			// event?.preventDefault();

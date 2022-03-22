@@ -55,11 +55,11 @@ class HeaderNav extends Component {
 					<li><button aria-label="Search" title="Search" onclick=${() => emitter.emit('nav-search')}><div class="icon-masked icon-search"></div></button></li>
 					<li><button aria-label="Settings" title="Settings" onclick=${() => modalConstructor.showView(settings.render())}><div class="icon-masked icon-settings"></div></button></li>
 					<li><button aria-label="Disclaimer" title="Discord" onclick=${() => modalConstructor.showView(discord.render())}><div class="icon-masked icon-discord"></div></button></li>
+					${pathname.startsWith('/vanity') ? this.itemsButton() : this.vanityButton()}
 					<li><button aria-label="Disclaimer" title="About" onclick=${() => modalConstructor.showView(about.render())}>About</button></li>
 				</ul>
 			</nav>
 		`;
-					// ${pathname.startsWith('/vanity') ? this.itemsButton() : this.vanityButton()}
 	}
 
 	vanityButton() {
