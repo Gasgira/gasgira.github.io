@@ -67,7 +67,6 @@ class App {
 		{
 			this.page = new VanityExplorer();
 		} else {
-			console.log('else')
 			this.page = new ItemExplorer();
 		}
 

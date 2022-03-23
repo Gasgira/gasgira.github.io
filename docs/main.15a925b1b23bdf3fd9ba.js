@@ -5476,7 +5476,6 @@ class App {
 		{
 			this.page = new VanityExplorer();
 		} else {
-			console.log('else')
 			this.page = new ItemExplorer();
 		}
 
@@ -7249,6 +7248,13 @@ class HeaderNav extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 		super();
 		this.links = [];
 	}
+
+	get defaultState() {
+		return {
+			copyStatus: 'Share'
+		};
+	}
+
 	render() {
 		const url = new URL(window.location);
 		const { pathname } = url;
@@ -7288,13 +7294,46 @@ class HeaderNav extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 					</div>
 				</header></a>
 				<ul>
-					<li><button aria-label="Search" title="Search" onclick=${() => eventEmitter__WEBPACK_IMPORTED_MODULE_2__.emitter.emit('nav-search')}><div class="icon-masked icon-search"></div></button></li>
+					${pathname.startsWith('/vanity') ? this.shareButton() : this.searchButton()}
 					<li><button aria-label="Settings" title="Settings" onclick=${() => ui_modal__WEBPACK_IMPORTED_MODULE_6__.modalConstructor.showView(ui_settings__WEBPACK_IMPORTED_MODULE_3__.settings.render())}><div class="icon-masked icon-settings"></div></button></li>
 					<li><button aria-label="Disclaimer" title="Discord" onclick=${() => ui_modal__WEBPACK_IMPORTED_MODULE_6__.modalConstructor.showView(ui_discord__WEBPACK_IMPORTED_MODULE_5__.discord.render())}><div class="icon-masked icon-discord"></div></button></li>
 					${pathname.startsWith('/vanity') ? this.itemsButton() : this.vanityButton()}
 					<li><button aria-label="Disclaimer" title="About" onclick=${() => ui_modal__WEBPACK_IMPORTED_MODULE_6__.modalConstructor.showView(ui_about__WEBPACK_IMPORTED_MODULE_4__.about.render())}>About</button></li>
 				</ul>
 			</nav>
+		`;
+	}
+
+	searchButton() {
+		return lib_HTML__WEBPACK_IMPORTED_MODULE_0__.HTML.wire(this, ':search')`
+			<li><button aria-label="Search" title="Search" onclick=${() => eventEmitter__WEBPACK_IMPORTED_MODULE_2__.emitter.emit('nav-search')}><div class="icon-masked icon-search"></div></button></li>
+		`;
+	}
+
+	shareButton() {
+		return lib_HTML__WEBPACK_IMPORTED_MODULE_0__.HTML.wire(this, ':share')`
+			<li>
+				<button
+					aria-label="Copy shareable link"
+					onclick=${() => {
+						navigator.clipboard.writeText(`${window?.location ?? 'https://cylix.guide/'}`)
+							.then(success => {
+								this.setState({copyStatus: 'Copied!'});
+								setTimeout(() => {
+									this.setState({copyStatus: 'Share'});
+								}, 2000);
+							}, error => {
+								console.error('Copy share link', error);
+								this.setState({copyStatus: 'Error!'});
+								setTimeout(() => {
+									this.setState({copyStatus: 'Share'});
+								}, 2000);
+							})
+					}}
+				>
+					<span class="icon-masked icon-share"></span> ${this.state?.copyStatus ?? 'Share'}
+				</button>
+			</li>
 		`;
 	}
 
@@ -7645,10 +7684,16 @@ class Vanity extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 		eventEmitter__WEBPACK_IMPORTED_MODULE_2__.emitter.on('popstate', () => {
 			if (this.state.mobileMenu) this.setState({mobileMenu: false});
 		});
+
+		this.wrongGamertags = new Set();
 	}
 
 	async init(gamertag) {
-		if (!gamertag?.trim()) return;
+		if (!gamertag?.trim())
+		{
+			if (this.state.gamertag) this.setUrlPathToGamertag(this.state.gamertag);
+			return;
+		}
 
 		const appearance = await this.requestAppearance(gamertag);
 		if (appearance)
@@ -7656,8 +7701,6 @@ class Vanity extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 			this.state = this.defaultState;
 			return await this.initAppearance(appearance, gamertag);
 		}
-
-		this.renderStatus('404');
 	}
 
 	get defaultState() {
@@ -7726,8 +7769,6 @@ class Vanity extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 		if (this.state.fetching) return;
 		if (!this.state.search || typeof this.state.search !== 'string') return;
 
-		this.renderStatus('...');
-
 		const search = this.state.search;
 		if (search === this.state.failedSearch) return;
 		console.info(`[Vanity.submitSearch]`, search);
@@ -7740,34 +7781,74 @@ class Vanity extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 		}
 
 		this.state.failedSearch = search;
-
-		this.renderStatus('Error!');
 	}
 
 	async requestAppearance(gamertag) {
 		// return testAppearance;
 		try {
+			if (this.state.disabled) throw new Error(`System offline. Please come back later.`);
 			if (!gamertag || typeof gamertag !== 'string') throw new Error(`No gamertag "${gamertag}"`);
+			if (this.wrongGamertags.has(gamertag.toLowerCase()))
+			{
+				this.setState({status: 'Not Found!'});
+				return console.error('Repeated 404 GT', gamertag);
+			}
 
 			// throw new Error(`host https://${window.location.host}`);
-			this.setState({fetching: true});
-			const response = await fetch(new URL(`/api/vanity/${gamertag}`, `https://cylix.guide`));
+			this.setState({
+				fetching: true,
+				status: 'Searching...'
+			});
+			// const response = await fetch(new URL(`/api/vanity/${gamertag}`, `https://cylix.guide`));
+			const response = await fetch(new URL(`/api/vanity/${gamertag}`, `https://${window.location.host}`));
 			console.log('requestAppearance', response.status);
-			this.setState({fetching: false});
+			this.state.fetching = false;
 			if (response && response.ok)
 			{
-				this.renderStatus('Found!');
+				// this.renderStatus('Found!');
 				const json = await response.json();
 				if (json && json.ArmorCores) return json;
+			}
+
+			if (!response)
+			{
+				this.setState({status: 'Network Error!'});
+				return;
+			}
+
+			if (response.status === 404)
+			{
+				this.wrongGamertags.add(gamertag.toLowerCase());
+				console.log('404', gamertag, this.wrongGamertags);
+				this.setState({status: 'Not Found!'});
+				return;
+			}
+
+			if (response.status === 405)
+			{
+				console.log('405', gamertag);
+				this.setState({
+					status: 'System Offline!',
+					disabled: true
+				});
+				return;
+			}
+
+			if (response.status >= 500)
+			{
+				this.setState({status: 'Server Error!'});
+				return;
 			}
 		} catch (error) {
 			console.error(`[Vanity.requestAppearance] Fetch error`, error);
 		}
-		this.setState({fetching: false});
+		this.setState({
+			fetching: false,
+			status: 'Error!'
+		});
 	}
 
-	async initAppearance(appearance, gamertag) {
-		this.state.appearance = appearance;
+	setUrlPathToGamertag(gamertag) {
 		if (gamertag && typeof gamertag === 'string')
 		{
 			this.state.gamertag = gamertag;
@@ -7775,7 +7856,12 @@ class Vanity extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 
 			this.renderStatus('');
 		}
-		
+	}
+
+	async initAppearance(appearance, gamertag) {
+		this.state.appearance = appearance;
+		this.setUrlPathToGamertag(gamertag);
+
 		try {
 			const armorCore = appearance?.ArmorCores?.ArmorCores?.[0];
 			const appearanceCore = this.makeAppearanceCore(armorCore);
@@ -8584,7 +8670,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("f2b97d4ce1090c5afee3")
+/******/ 		__webpack_require__.h = () => ("15a925b1b23bdf3fd9ba")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
@@ -9555,4 +9641,4 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.f2b97d4ce1090c5afee3.js.map
+//# sourceMappingURL=main.15a925b1b23bdf3fd9ba.js.map

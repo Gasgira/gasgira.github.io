@@ -18,10 +18,16 @@ class Vanity extends Component {
 		emitter.on('popstate', () => {
 			if (this.state.mobileMenu) this.setState({mobileMenu: false});
 		});
+
+		this.wrongGamertags = new Set();
 	}
 
 	async init(gamertag) {
-		if (!gamertag?.trim()) return;
+		if (!gamertag?.trim())
+		{
+			if (this.state.gamertag) this.setUrlPathToGamertag(this.state.gamertag);
+			return;
+		}
 
 		const appearance = await this.requestAppearance(gamertag);
 		if (appearance)
@@ -29,8 +35,6 @@ class Vanity extends Component {
 			this.state = this.defaultState;
 			return await this.initAppearance(appearance, gamertag);
 		}
-
-		this.renderStatus('404');
 	}
 
 	get defaultState() {
@@ -99,8 +103,6 @@ class Vanity extends Component {
 		if (this.state.fetching) return;
 		if (!this.state.search || typeof this.state.search !== 'string') return;
 
-		this.renderStatus('...');
-
 		const search = this.state.search;
 		if (search === this.state.failedSearch) return;
 		console.info(`[Vanity.submitSearch]`, search);
@@ -113,34 +115,74 @@ class Vanity extends Component {
 		}
 
 		this.state.failedSearch = search;
-
-		this.renderStatus('Error!');
 	}
 
 	async requestAppearance(gamertag) {
 		// return testAppearance;
 		try {
+			if (this.state.disabled) throw new Error(`System offline. Please come back later.`);
 			if (!gamertag || typeof gamertag !== 'string') throw new Error(`No gamertag "${gamertag}"`);
+			if (this.wrongGamertags.has(gamertag.toLowerCase()))
+			{
+				this.setState({status: 'Not Found!'});
+				return console.error('Repeated 404 GT', gamertag);
+			}
 
 			// throw new Error(`host https://${window.location.host}`);
-			this.setState({fetching: true});
-			const response = await fetch(new URL(`/api/vanity/${gamertag}`, `https://cylix.guide`));
+			this.setState({
+				fetching: true,
+				status: 'Searching...'
+			});
+			// const response = await fetch(new URL(`/api/vanity/${gamertag}`, `https://cylix.guide`));
+			const response = await fetch(new URL(`/api/vanity/${gamertag}`, `https://${window.location.host}`));
 			console.log('requestAppearance', response.status);
-			this.setState({fetching: false});
+			this.state.fetching = false;
 			if (response && response.ok)
 			{
-				this.renderStatus('Found!');
+				// this.renderStatus('Found!');
 				const json = await response.json();
 				if (json && json.ArmorCores) return json;
+			}
+
+			if (!response)
+			{
+				this.setState({status: 'Network Error!'});
+				return;
+			}
+
+			if (response.status === 404)
+			{
+				this.wrongGamertags.add(gamertag.toLowerCase());
+				console.log('404', gamertag, this.wrongGamertags);
+				this.setState({status: 'Not Found!'});
+				return;
+			}
+
+			if (response.status === 405)
+			{
+				console.log('405', gamertag);
+				this.setState({
+					status: 'System Offline!',
+					disabled: true
+				});
+				return;
+			}
+
+			if (response.status >= 500)
+			{
+				this.setState({status: 'Server Error!'});
+				return;
 			}
 		} catch (error) {
 			console.error(`[Vanity.requestAppearance] Fetch error`, error);
 		}
-		this.setState({fetching: false});
+		this.setState({
+			fetching: false,
+			status: 'Error!'
+		});
 	}
 
-	async initAppearance(appearance, gamertag) {
-		this.state.appearance = appearance;
+	setUrlPathToGamertag(gamertag) {
 		if (gamertag && typeof gamertag === 'string')
 		{
 			this.state.gamertag = gamertag;
@@ -148,7 +190,12 @@ class Vanity extends Component {
 
 			this.renderStatus('');
 		}
-		
+	}
+
+	async initAppearance(appearance, gamertag) {
+		this.state.appearance = appearance;
+		this.setUrlPathToGamertag(gamertag);
+
 		try {
 			const armorCore = appearance?.ArmorCores?.ArmorCores?.[0];
 			const appearanceCore = this.makeAppearanceCore(armorCore);

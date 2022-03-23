@@ -66,7 +66,22 @@ module.exports = {
 	devServer: {
 		static: path.join(__dirname, 'docs'),
 		hot: true,
-    historyApiFallback: true
+    historyApiFallback: true,
+		allowedHosts: [
+      'cylix.guide'
+    ],
+    headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Methods': '*',
+    },
+		proxy: {
+			'/api': {
+				target: 'https://cylix.guide',
+        changeOrigin: true,
+				secure: false,
+			}
+		}
 	},
 	plugins: [
 		new webpack.DefinePlugin({

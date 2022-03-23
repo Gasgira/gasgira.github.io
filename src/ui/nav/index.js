@@ -13,6 +13,13 @@ class HeaderNav extends Component {
 		super();
 		this.links = [];
 	}
+
+	get defaultState() {
+		return {
+			copyStatus: 'Share'
+		};
+	}
+
 	render() {
 		const url = new URL(window.location);
 		const { pathname } = url;
@@ -52,13 +59,46 @@ class HeaderNav extends Component {
 					</div>
 				</header></a>
 				<ul>
-					<li><button aria-label="Search" title="Search" onclick=${() => emitter.emit('nav-search')}><div class="icon-masked icon-search"></div></button></li>
+					${pathname.startsWith('/vanity') ? this.shareButton() : this.searchButton()}
 					<li><button aria-label="Settings" title="Settings" onclick=${() => modalConstructor.showView(settings.render())}><div class="icon-masked icon-settings"></div></button></li>
 					<li><button aria-label="Disclaimer" title="Discord" onclick=${() => modalConstructor.showView(discord.render())}><div class="icon-masked icon-discord"></div></button></li>
 					${pathname.startsWith('/vanity') ? this.itemsButton() : this.vanityButton()}
 					<li><button aria-label="Disclaimer" title="About" onclick=${() => modalConstructor.showView(about.render())}>About</button></li>
 				</ul>
 			</nav>
+		`;
+	}
+
+	searchButton() {
+		return HTML.wire(this, ':search')`
+			<li><button aria-label="Search" title="Search" onclick=${() => emitter.emit('nav-search')}><div class="icon-masked icon-search"></div></button></li>
+		`;
+	}
+
+	shareButton() {
+		return HTML.wire(this, ':share')`
+			<li>
+				<button
+					aria-label="Copy shareable link"
+					onclick=${() => {
+						navigator.clipboard.writeText(`${window?.location ?? 'https://cylix.guide/'}`)
+							.then(success => {
+								this.setState({copyStatus: 'Copied!'});
+								setTimeout(() => {
+									this.setState({copyStatus: 'Share'});
+								}, 2000);
+							}, error => {
+								console.error('Copy share link', error);
+								this.setState({copyStatus: 'Error!'});
+								setTimeout(() => {
+									this.setState({copyStatus: 'Share'});
+								}, 2000);
+							})
+					}}
+				>
+					<span class="icon-masked icon-share"></span> ${this.state?.copyStatus ?? 'Share'}
+				</button>
+			</li>
 		`;
 	}
 
