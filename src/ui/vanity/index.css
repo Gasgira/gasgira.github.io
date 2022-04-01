@@ -23,5 +23,7 @@
 		opacity: 0.66;
 		pointer-events: none;
 		user-select: none;
+		padding: 1rem;
+		text-align: center;
 	}
 }

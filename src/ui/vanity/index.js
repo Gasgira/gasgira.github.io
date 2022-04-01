@@ -77,7 +77,7 @@ class Vanity extends Component {
 					><span>${core?.getName() ?? 'core'}</span></button></li>`)}
 				</ul>
 				${this.state?.core?.render?.() ?? ''}
-				${{html: this.state?.core ? '' : '<div class="vanity-placeholder">Search for a gamertag.</div>'}}
+				${{html: this.state?.core ? '' : '<div class="vanity-placeholder"><span>Search for a gamertag to see their currently equipped items.</span></div>'}}
 				<div class=${`mica_mobile-menu_container ${this.state.mobileMenu ? 'show-mobile' : 'hide-mobile'}`}>${this?.mobileMicaMenu.render()}</div>
 			</div>
 		</div>`;

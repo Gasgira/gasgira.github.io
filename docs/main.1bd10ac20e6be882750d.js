@@ -169,7 +169,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".discord_wrapper {\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\tjustify-content: left;\r\n\tgap: 1em\r\n}\n.discord_wrapper header {\r\n\t\tfont-size: 1.5em;\r\n\t}\n.discord_wrapper p {\r\n\t\tmax-width: 600px;\r\n\t\tmax-width: 80ch;\r\n\t}\n.discord_wrapper img {\r\n\t\tmax-width: 80%;\r\n\t}\n.discord_wrapper .option_wrapper {\r\n\t\tdisplay: flex;\r\n\t\tflex-direction: row;\r\n\t\talign-items: center;\r\n\t\tgap: 0.5em;\r\n\t}", "",{"version":3,"sources":["webpack://./src/ui/discord/index.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,sBAAsB;CACtB,qBAAqB;CACrB;AAiBD;AAhBC;EACC,gBAAgB;CACjB;AACA;EACC,gBAAgB;EAChB,eAAe;CAChB;AACA;EACC,cAAc;CACf;AACA;EACC,aAAa;EACb,mBAAmB;EACnB,mBAAmB;EACnB,UAAU;CACX","sourcesContent":[".discord_wrapper {\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\tjustify-content: left;\r\n\tgap: 1em;\r\n\t& header {\r\n\t\tfont-size: 1.5em;\r\n\t}\r\n\t& p {\r\n\t\tmax-width: 600px;\r\n\t\tmax-width: 80ch;\r\n\t}\r\n\t& img {\r\n\t\tmax-width: 80%;\r\n\t}\r\n\t& .option_wrapper {\r\n\t\tdisplay: flex;\r\n\t\tflex-direction: row;\r\n\t\talign-items: center;\r\n\t\tgap: 0.5em;\r\n\t}\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".discord_wrapper {\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\tjustify-content: left;\r\n\tgap: 1em\r\n}\n.discord_wrapper header {\r\n\t\tfont-size: 1.5em;\r\n\t}\n.discord_wrapper p {\r\n\t\tmax-width: 600px;\r\n\t\tmax-width: 80ch;\r\n\t}\n.discord_wrapper img {\r\n\t\tmax-width: 80%;\r\n\t}\n.discord_wrapper .option_wrapper {\r\n\t\tdisplay: flex;\r\n\t\tflex-direction: row;\r\n\t\talign-items: center;\r\n\t\tgap: 0.5em;\r\n\t\tflex-wrap: wrap;\r\n\t}", "",{"version":3,"sources":["webpack://./src/ui/discord/index.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,sBAAsB;CACtB,qBAAqB;CACrB;AAkBD;AAjBC;EACC,gBAAgB;CACjB;AACA;EACC,gBAAgB;EAChB,eAAe;CAChB;AACA;EACC,cAAc;CACf;AACA;EACC,aAAa;EACb,mBAAmB;EACnB,mBAAmB;EACnB,UAAU;EACV,eAAe;CAChB","sourcesContent":[".discord_wrapper {\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\tjustify-content: left;\r\n\tgap: 1em;\r\n\t& header {\r\n\t\tfont-size: 1.5em;\r\n\t}\r\n\t& p {\r\n\t\tmax-width: 600px;\r\n\t\tmax-width: 80ch;\r\n\t}\r\n\t& img {\r\n\t\tmax-width: 80%;\r\n\t}\r\n\t& .option_wrapper {\r\n\t\tdisplay: flex;\r\n\t\tflex-direction: row;\r\n\t\talign-items: center;\r\n\t\tgap: 0.5em;\r\n\t\tflex-wrap: wrap;\r\n\t}\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -299,7 +299,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\r\n\t.vanity_wrapper .mica_header-strip {\r\n\t\tjustify-content: left !important;\r\n\t}\n.vanity_wrapper .vanity-search_input {\r\n\t\tpadding: 0.5em;\r\n\t\tmargin: 0 0.25rem;\r\n\t\tborder: 0;\r\n\t\tbackground-color: transparent;\r\n\t\tmax-width: 100%;\r\n\t\tcolor: var(--theme-text);\r\n\t\tfont-size: 1.25em;\r\n\t\tflex-grow: 2;\r\n\t}\n.vanity_wrapper .vanity-placeholder {\r\n\t\tdisplay: flex;\r\n\t\twidth: 100%;\r\n\t\theight: 10rem;\r\n\t\theight: 50vh;\r\n\t\tjustify-content: center;\r\n\t\talign-items: center;\r\n\t\talign-content: center;\r\n\t\topacity: 0.66;\r\n\t\tpointer-events: none;\r\n\t\t-webkit-user-select: none;\r\n\t\t   -moz-user-select: none;\r\n\t\t    -ms-user-select: none;\r\n\t\t        user-select: none;\r\n\t}", "",{"version":3,"sources":["webpack://./src/ui/vanity/index.css"],"names":[],"mappings":";CACC;EACC,gCAAgC;CACjC;AACA;EACC,cAAc;EACd,iBAAiB;EACjB,SAAS;EACT,6BAA6B;EAC7B,eAAe;EACf,wBAAwB;EACxB,iBAAiB;EACjB,YAAY;CACb;AACA;EACC,aAAa;EACb,WAAW;EACX,aAAa;EACb,YAAY;EACZ,uBAAuB;EACvB,mBAAmB;EACnB,qBAAqB;EACrB,aAAa;EACb,oBAAoB;EACpB,yBAAiB;KAAjB,sBAAiB;MAAjB,qBAAiB;UAAjB,iBAAiB;CAClB","sourcesContent":[".vanity_wrapper {\r\n\t& .mica_header-strip {\r\n\t\tjustify-content: left !important;\r\n\t}\r\n\t& .vanity-search_input {\r\n\t\tpadding: 0.5em;\r\n\t\tmargin: 0 0.25rem;\r\n\t\tborder: 0;\r\n\t\tbackground-color: transparent;\r\n\t\tmax-width: 100%;\r\n\t\tcolor: var(--theme-text);\r\n\t\tfont-size: 1.25em;\r\n\t\tflex-grow: 2;\r\n\t}\r\n\t& .vanity-placeholder {\r\n\t\tdisplay: flex;\r\n\t\twidth: 100%;\r\n\t\theight: 10rem;\r\n\t\theight: 50vh;\r\n\t\tjustify-content: center;\r\n\t\talign-items: center;\r\n\t\talign-content: center;\r\n\t\topacity: 0.66;\r\n\t\tpointer-events: none;\r\n\t\tuser-select: none;\r\n\t}\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "\r\n\t.vanity_wrapper .mica_header-strip {\r\n\t\tjustify-content: left !important;\r\n\t}\n.vanity_wrapper .vanity-search_input {\r\n\t\tpadding: 0.5em;\r\n\t\tmargin: 0 0.25rem;\r\n\t\tborder: 0;\r\n\t\tbackground-color: transparent;\r\n\t\tmax-width: 100%;\r\n\t\tcolor: var(--theme-text);\r\n\t\tfont-size: 1.25em;\r\n\t\tflex-grow: 2;\r\n\t}\n.vanity_wrapper .vanity-placeholder {\r\n\t\tdisplay: flex;\r\n\t\twidth: 100%;\r\n\t\theight: 10rem;\r\n\t\theight: 50vh;\r\n\t\tjustify-content: center;\r\n\t\talign-items: center;\r\n\t\talign-content: center;\r\n\t\topacity: 0.66;\r\n\t\tpointer-events: none;\r\n\t\t-webkit-user-select: none;\r\n\t\t   -moz-user-select: none;\r\n\t\t    -ms-user-select: none;\r\n\t\t        user-select: none;\r\n\t\tpadding: 1rem;\r\n\t\ttext-align: center;\r\n\t}", "",{"version":3,"sources":["webpack://./src/ui/vanity/index.css"],"names":[],"mappings":";CACC;EACC,gCAAgC;CACjC;AACA;EACC,cAAc;EACd,iBAAiB;EACjB,SAAS;EACT,6BAA6B;EAC7B,eAAe;EACf,wBAAwB;EACxB,iBAAiB;EACjB,YAAY;CACb;AACA;EACC,aAAa;EACb,WAAW;EACX,aAAa;EACb,YAAY;EACZ,uBAAuB;EACvB,mBAAmB;EACnB,qBAAqB;EACrB,aAAa;EACb,oBAAoB;EACpB,yBAAiB;KAAjB,sBAAiB;MAAjB,qBAAiB;UAAjB,iBAAiB;EACjB,aAAa;EACb,kBAAkB;CACnB","sourcesContent":[".vanity_wrapper {\r\n\t& .mica_header-strip {\r\n\t\tjustify-content: left !important;\r\n\t}\r\n\t& .vanity-search_input {\r\n\t\tpadding: 0.5em;\r\n\t\tmargin: 0 0.25rem;\r\n\t\tborder: 0;\r\n\t\tbackground-color: transparent;\r\n\t\tmax-width: 100%;\r\n\t\tcolor: var(--theme-text);\r\n\t\tfont-size: 1.25em;\r\n\t\tflex-grow: 2;\r\n\t}\r\n\t& .vanity-placeholder {\r\n\t\tdisplay: flex;\r\n\t\twidth: 100%;\r\n\t\theight: 10rem;\r\n\t\theight: 50vh;\r\n\t\tjustify-content: center;\r\n\t\talign-items: center;\r\n\t\talign-content: center;\r\n\t\topacity: 0.66;\r\n\t\tpointer-events: none;\r\n\t\tuser-select: none;\r\n\t\tpadding: 1rem;\r\n\t\ttext-align: center;\r\n\t}\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -6407,8 +6407,14 @@ class Discord extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 
 		if (localStorage)
 		{
-			const webhook = localStorage.getItem('user.discordWebhook');
-			if (webhook) this.webhookID = webhook;
+			const storeWebhookID = localStorage.getItem('user.storeWebhookID');
+			if (storeWebhookID) this.storeWebhookID = storeWebhookID;
+
+			const capstoneWebhookID = localStorage.getItem('user.capstoneWebhookID');
+			if (capstoneWebhookID) this.capstoneWebhookID = capstoneWebhookID;
+
+			const newsWebhookID = localStorage.getItem('user.newsWebhookID');
+			if (newsWebhookID) this.newsWebhookID = newsWebhookID;
 		}
 	}
 
@@ -6427,24 +6433,46 @@ class Discord extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 		return this.html`
 			<div class="discord_wrapper">
 				<section>
-					<header>Discord</header>
-					<p>Cylix Guide offers a Discord webhook service which can post daily Halo Infinite store updates to your community. If you operate a Discord server and would like this service, please read <a href="https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks" target="_blank" rel="noopener noreferrer">Discord's page on webhooks</a> and submit your webhook below.</p><br/>
-					<p>Updates will be sent near 10 AM Pacific, following the store reset.</p><br/>
-					<p>If your server has an active webhook and you would like to stop recieving updates, you must remove the webhook from your Discord server integrations.</p><br/>
-					<div class="option_wrapper">
-						<label for="webhook">Webhook URL: </label>
-						<input class="show-value" type="text" id="webhook" name="webhook"
-							onchange=${(e) => this.input(e?.target?.value)}
-							disabled=${this?.webhookID}
-						>
-					</div>
-					<button
-						onclick=${() => this.submit()}
-						disabled=${this?.webhookID}
-					>Submit</button>
-					${this.renderStatus()}
+					<header><h2>Discord</h2></header>
+					<p>To contribute to the project, ask questions, report issues, or just talk about Halo and its API feel free to <a href="https://cylix.guide/discord" target="_blank">join our Discord community.</a></p>
 					<br/>
-					<span title=${this?.webhookID ?? '...'}>${this?.webhookID ? `You have registered a webhook with the ID: ${this.webhookID.substring(0, 9)}...` : ''}</span>
+					<h2>Webhooks</h2>
+					<p>Cylix Guide offers a Discord webhook service which can post daily Halo Infinite updates to your community. If you operate a Discord server and would like this service, please read <a href="https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks" target="_blank" rel="noopener noreferrer">Discord's page on webhooks</a> and submit your webhook below.</p><br/>
+					<p>Updates will be sent following the in-game reset time.</p><br/>
+					<p>If your server has an active webhook and you would like to stop recieving updates, you must remove the webhook from your Discord server integrations.</p><br/>
+					${this.renderStatus()}
+					<br/><br/>
+
+					<div class="option_wrapper">
+						<label for="webhook-store">Store (daily): </label>
+						<input class="show-value" type="text" id="webhook-store" name="webhook-store"
+							onchange=${(e) => this.inputStore(e?.target?.value)}
+							disabled=${this?.storeWebhookID}
+							placeholder="https://discord.com/api/webhooks/..."
+						>
+						<button
+							onclick=${() => this.submitStore()}
+							disabled=${this?.storeWebhookID}
+						>Submit</button>
+					</div>
+					<span title=${this?.storeWebhookID ?? '...'}>${this?.storeWebhookID ? `You have registered a store webhook with the ID: ${this.storeWebhookID.substring(0, 9)}...` : ''}</span>
+					<br/>
+					<br/>
+
+					<div class="option_wrapper">
+						<label for="webhook-capstone">Capstone (weekly): </label>
+						<input class="show-value" type="text" id="webhook-capstone" name="webhook-capstone"
+							onchange=${(e) => this.inputCapstone(e?.target?.value)}
+							disabled=${this?.capstoneWebhookID}
+							placeholder="https://discord.com/api/webhooks/..."
+						>
+						<button
+							onclick=${() => this.submitCapstone()}
+							disabled=${this?.capstoneWebhookID}
+						>Submit</button>
+					</div>
+					<span title=${this?.capstoneWebhookID ?? '...'}>${this?.capstoneWebhookID ? `You have registered a capstone webhook with the ID: ${this.capstoneWebhookID.substring(0, 9)}...` : ''}</span>
+					<br/>
 					<br/>
 					<img src="/discord.jpg">
 				</section>
@@ -6458,36 +6486,79 @@ class Discord extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 		`;
 	}
 
-	input(string) {
+	inputStore(string) {
 		try {
 			if (!string || typeof string !== 'string' || !string.startsWith('https://discord.com/api/webhooks/'))
 			{
-				this.setState({status: 'Invalid input!'});
+				this.setState({status: 'Invalid store input!'});
 				throw new Error('Invalid URL');
 			}
 			const url = new URL(string);
 
-			this.inputURL = url.toString();
+			this.inputStoreURL = url.toString();
 	
 			console.log('url', url);
 		} catch (error) {
 			console.error('[Discord.webhook] Error processing input URL', error);
-			this.inputURL = undefined;
+			this.inputStoreURL = undefined;
 		}
 	}
 
-	async submit() {
-		if (!this.inputURL || typeof this.inputURL !== 'string' || !this.inputURL.startsWith('https://discord.com/api/webhooks/'))
+	async submitStore() {
+		if (!this.inputStoreURL || typeof this.inputStoreURL !== 'string' || !this.inputStoreURL.startsWith('https://discord.com/api/webhooks/'))
 		{
-			this.setState({status: 'Invalid submission!'});
+			this.setState({status: 'Invalid store webhook'});
 			return;
 		}
-		console.log('submit', this.inputURL);
+
+		await this.registerWebhook('store', this.inputStoreURL);
+	}
+
+	inputCapstone(string) {
+		try {
+			if (!string || typeof string !== 'string' || !string.startsWith('https://discord.com/api/webhooks/'))
+			{
+				this.setState({status: 'Invalid capstone input!'});
+				throw new Error('Invalid URL');
+			}
+			const url = new URL(string);
+
+			this.inputCapstoneURL = url.toString();
+	
+			console.log('url', url);
+		} catch (error) {
+			console.error('[Discord.webhook] Error processing input URL', error);
+			this.inputCapstoneURL = undefined;
+		}
+	}
+
+	async submitCapstone() {
+		if (!this.inputCapstoneURL || typeof this.inputCapstoneURL !== 'string' || !this.inputCapstoneURL.startsWith('https://discord.com/api/webhooks/'))
+		{
+			this.setState({status: 'Invalid capstone webhook'});
+			return;
+		}
+
+		await this.registerWebhook('capstone', this.inputCapstoneURL);
+	}
+
+	async registerWebhook(audience, webhook) {
+		if (!webhook || typeof webhook !== 'string' || !webhook.startsWith('https://discord.com/api/webhooks/'))
+		{
+			this.setState({status: 'Invalid webhook!'});
+			return;
+		}
+		if (!audience || typeof audience !== 'string')
+		{
+			this.setState({status: 'Invalid audience!'});
+			return;
+		}
+		console.log('submit', webhook);
 		this.setState({status: 'pending'});
 
-		const body = JSON.stringify({webhook: this.inputURL});
+		const body = JSON.stringify({webhook});
 
-		const response = await fetch('https://cylix.guide/api/webhooks/discord', {
+		const response = await fetch(new URL(`/api/webhooks/${audience}`, `https://${window.location.host}`), {
 			method: 'POST',
 			body
 		});
@@ -6497,22 +6568,30 @@ class Discord extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 			console.log(`[Discord.webhook] response "${response.status}"`);
 			if (!response.ok)
 			{
-				this.setState({status: `Bad response ${response.status ?? '???'}`});
+				this.setState({status: `Bad response ${response.status ?? '???'} for "${audience}"`});
 				return;
 			}
 
-			const json = await response.json();
-			if (json && json.id)
+			if (response.status === 200)
 			{
-				const id = json.id;
-				this.webhookID = id;
-				this.setState({status: `Accepted webhook ID ${id}`});
-				if (localStorage) localStorage.setItem('user.discordWebhook', `${id}`);
+				this.setState({status: `Duplicate webhook not accepted for "${audience}"!`});
 				return;
+			}
+
+			if (response.status === 201)
+			{
+				const json = await response.json();
+				if (json && json.id)
+				{
+					const id = json.id;
+					this.setState({status: `Accepted webhook ID "${id}" for "${audience}"`});
+					if (localStorage) localStorage.setItem(`user.${audience}WebhookID`, `${id}`);
+					return;
+				}
 			}
 		}
 		
-		this.setState({status: 'No response!'});
+		this.setState({status: `No response for "${audience}"`});
 	}
 }
 
@@ -6958,7 +7037,7 @@ class Search extends InventoryCategory {
 		return lib_HTML__WEBPACK_IMPORTED_MODULE_4__.HTML.wire(this, ':filters')`
 			<ul class="inventory-search-filters">
 				<li class="filter-input_wrapper">
-					<label for="date_modified-after">Modified After</label>
+					<label for="date_modified-after">Last Modified After</label>
 					<input
 						type="date"
 						id="date_modified-after"
@@ -6970,7 +7049,7 @@ class Search extends InventoryCategory {
 					>
 				</li>
 				<li class="filter-input_wrapper">
-					<label for="date_modified-before">Modified Before</label>
+					<label for="date_modified-before">Last Modified Before</label>
 					<input
 						type="date"
 						id="date_modified-before"
@@ -7375,13 +7454,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! component */ "./src/component/index.js");
 
 
+const updateDate = new Date('2022-03-30T18:10:31.072Z');
 class Privacy extends component__WEBPACK_IMPORTED_MODULE_0__.Component {
 	render() {
 		return this.html`
 			<div class="discord_wrapper">
 				<section>
 					<header>Privacy</header>
-					<p>Cylix Guide does not collect information from visitors unless explicitly submitted, e.g. through a form or searching a gamertag. Any information submitted is not shared outside of the data processors referred to in this policy, and is only used by Cylix Guide for purposes described in the submission form.</p><br/>
+					<span>Updated: ${updateDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+					<p>Cylix Guide does not collect information from visitors unless explicitly submitted, e.g. through a form or searching a gamertag. Any private information submitted is not shared outside of the data processors referred to in this policy, and is only used by Cylix Guide for purposes described in the submission form. Public information such as your spartan customization may be used to display anonymized statistics, e.g. item popularity.</p><br/>
 					<p>If you provided personally identifiable information and would like it to be deleted please <a href="mailto:info@cylix.guide">contact me</a>.</p><br/>
 					<p>Requests to cylix.guide are processed by <a href="https://developers.cloudflare.com/fundamentals/get-started/cloudflare-cookies/" target="_blank" rel="noopener noreferrer">Cloudflare</a> and <a href="https://docs.github.com/en/github/site-policy/github-privacy-statement#github-pages" target="_blank" rel="noopener noreferrer">GitHub</a>. Please refer to their privacy policies for any information they might collect.</p><br/>
 				</section>
@@ -7743,7 +7824,7 @@ class Vanity extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 					><span>${core?.getName() ?? 'core'}</span></button></li>`)}
 				</ul>
 				${this.state?.core?.render?.() ?? ''}
-				${{html: this.state?.core ? '' : '<div class="vanity-placeholder">Search for a gamertag.</div>'}}
+				${{html: this.state?.core ? '' : '<div class="vanity-placeholder"><span>Search for a gamertag to see their currently equipped items.</span></div>'}}
 				<div class=${`mica_mobile-menu_container ${this.state.mobileMenu ? 'show-mobile' : 'hide-mobile'}`}>${this?.mobileMicaMenu.render()}</div>
 			</div>
 		</div>`;
@@ -8670,7 +8751,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("15a925b1b23bdf3fd9ba")
+/******/ 		__webpack_require__.h = () => ("1bd10ac20e6be882750d")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
@@ -9641,4 +9722,4 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.15a925b1b23bdf3fd9ba.js.map
+//# sourceMappingURL=main.1bd10ac20e6be882750d.js.map

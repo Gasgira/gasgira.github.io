@@ -417,7 +417,7 @@ class Search extends InventoryCategory {
 		return HTML.wire(this, ':filters')`
 			<ul class="inventory-search-filters">
 				<li class="filter-input_wrapper">
-					<label for="date_modified-after">Modified After</label>
+					<label for="date_modified-after">Last Modified After</label>
 					<input
 						type="date"
 						id="date_modified-after"
@@ -429,7 +429,7 @@ class Search extends InventoryCategory {
 					>
 				</li>
 				<li class="filter-input_wrapper">
-					<label for="date_modified-before">Modified Before</label>
+					<label for="date_modified-before">Last Modified Before</label>
 					<input
 						type="date"
 						id="date_modified-before"

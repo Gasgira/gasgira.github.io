@@ -16,6 +16,7 @@
 		<meta property="og:description" content="Halo Infinite API Explorer" />
 		<meta property="og:image" content="https://cylix.guide/social.jpg" />
 		<meta name="theme-color" content="#2b92f4">
+		<meta name="item-path" content="">
 		<style>
 			html {
 				background-color: #141c27;
@@ -27,19 +28,26 @@
 		<script>
 			try {
 				const { host, pathname } = new URL(window?.location ?? '');
+				
 				if (pathname && pathname.startsWith('/share/inventory') && pathname.substring(pathname.length-5) === '.json')
 				{
 					console.log('Redirecting to cylix.guide');
 					const itemPath = pathname.substring(7, pathname.length);
 					window.location.replace(`https://${host}/#${itemPath}`);
-				} else {
-					window.location.replace(`https://${host}`);
 				}
+
+				const itemPath = document.querySelector('meta[name="item-path"]').content;
+				if (itemPath)
+				{
+					window.location.replace(`https://${host}/#${itemPath}`);
+				}
+
+				window.location.replace(`https://${host}`);
 			} catch (error) {
 				
 			}
 		</script>
-		<a href="https://cylix.guide/">Cylix Guide</a>
+		<a href="https://cylix.guide/">Cylix Guide</a> <span>Click the link if you are not automatically redirected!</span>
 		<h1>Item</h1>
 		<p>...</p>
 		<img src="/db/images/progression/default/default.png">
