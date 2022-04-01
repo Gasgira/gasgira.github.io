@@ -31,18 +31,20 @@
 				
 				if (pathname && pathname.startsWith('/share/inventory') && pathname.substring(pathname.length-5) === '.json')
 				{
-					console.log('Redirecting to cylix.guide');
 					const itemPath = pathname.substring(7, pathname.length);
+					console.log(`[/share/:path] redircting for ${itemPath}`);
 					window.location.replace(`https://${host}/#${itemPath}`);
+				} else {
+					const itemPathMeta = document.querySelector('meta[name="item-path"]').content;
+					if (itemPathMeta)
+					{
+						console.log(`[/item/:id] redircting for ${itemPathMeta}`);
+						window.location.replace(`https://${host}/#${itemPathMeta}`);
+					} else {
+						console.log(`[default] redircting to index`);
+						window.location.replace(`https://${host}`);
+					}
 				}
-
-				const itemPath = document.querySelector('meta[name="item-path"]').content;
-				if (itemPath)
-				{
-					window.location.replace(`https://${host}/#${itemPath}`);
-				}
-
-				window.location.replace(`https://${host}`);
 			} catch (error) {
 				
 			}
