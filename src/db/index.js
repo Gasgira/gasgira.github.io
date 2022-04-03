@@ -74,6 +74,11 @@ class Database {
 			});
 	}
 
+	async getOfferings() {
+		const offerings = await this.getJSON('offerings.json')
+		if (offerings && Array.isArray(offerings?.bundles)) return offerings;
+	}
+
 	get items() {
 		return this?._items ?? (this._items = new Map());
 	}

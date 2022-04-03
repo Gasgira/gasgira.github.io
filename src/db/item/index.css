@@ -22,6 +22,11 @@ button.dbItemIcon {
 		background-size: 130%;
 		background-position: center 60%;
 	}
+	&.offering {
+		background-size: cover;
+		width: 20.8rem;
+		max-width: 90vw;
+	}
 	&::before {
 		display: block;
 		content: "";

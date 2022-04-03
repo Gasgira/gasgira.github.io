@@ -234,3 +234,75 @@ export class Item extends Component {
 		return (this._lastModifiedDate = date);
 	}
 }
+
+export class Offering extends Item {
+	constructor({ offering, id }) {
+		if (db.items.has(id))
+		{
+			console.log('dupe offering', id)
+			return db.items.get(id);
+		}
+		if (offering?.title && Array.isArray(offering.touched))
+		{
+			const path = `storecontent/offerings/${id}.json`;
+			super(path);
+			console.log('new offering', path)
+			db.items.set(path, this);
+			this.data = offering;
+			this.path = path;
+		}
+	}
+
+	async renderIcon(id, {
+		itemTypeIcon = false
+	} = {}) {
+		await this.init();
+		return HTML.wire(this, `:${id ?? 'icon'}`)`
+			<button
+				class=${
+					`dbItem dbItemIcon offering ${this?.data?.info?.Type ?? 'defaultType'}${
+						this?.data?.info?.Quality ? ` ${this?.data?.info?.Quality?.toLowerCase?.() ?? ''}` : ''
+						}`
+				}
+				onclick=${() => this.showItemPanel()}
+				style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/store/${db.pathCase(this.data.offering.OfferingId)}.png)`}}
+				title=${this.name ?? 'item'}
+			>
+				<span>${this.name ?? '???'}</span>
+			</button>
+		`;
+	}
+
+	get name() {
+		return this.data.title || this.data?.offering?.OfferingId || 'Offering';
+	}
+
+	async getRelatedItems() {
+		if (this.relatedItems) return this.relatedItems;
+		const items = new Set();
+		this.data.offering.IncludedItems.forEach(offeringItem => {
+			if (offeringItem && offeringItem.ItemPath)
+			{
+				try {
+					const item = new Item(offeringItem.ItemPath);
+					if (item) items.add(item);
+				} catch (error) {
+					console.error(`[Item.Bundle] Invalid item`, error);
+				}
+			}
+		});
+
+		this.relatedItems = items;
+		if (!items.size) console.error(`[Item.Bundle] No valid items`);
+	}
+
+	get cost() {
+		// TODO extract filename as currency name
+		const cost = this.data?.Prices.map(price => `${price?.Cost ?? 0}`).join(', ');
+	}
+	
+	get lastModifiedDate() {
+		const touched = this.data.touched;
+		return new Date(touched[touched.length-1]);
+	}
+}

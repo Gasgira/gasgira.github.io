@@ -22,27 +22,27 @@ class Discord extends Component {
 	}
 
 	render() {
-		const testParam = urlParams.getSecionSetting('discord');
-		if (!testParam) return this.html`
-			<div class="discord_wrapper">
-				<section>
-					<header>Discord</header>
-					<p>Daily store update bot coming soon...</p>
-					<br/>
-					<img src="/discord.jpg">
-				</section>
-			</div>
-		`;
+		// const testParam = urlParams.getSecionSetting('discord');
+		// if (!testParam) return this.html`
+		// 	<div class="discord_wrapper">
+		// 		<section>
+		// 			<header>Discord</header>
+		// 			<p>Daily store update bot coming soon...</p>
+		// 			<br/>
+		// 			<img src="/discord.jpg">
+		// 		</section>
+		// 	</div>
+		// `;
 		return this.html`
 			<div class="discord_wrapper">
 				<section>
 					<header><h2>Discord</h2></header>
-					<p>To contribute to the project, ask questions, report issues, or just talk about Halo and its API feel free to <a href="https://cylix.guide/discord" target="_blank">join our Discord community.</a></p>
+					<p>To contribute to the project, report issues, or just talk about Halo and its API you are welcome to <a href="https://cylix.guide/discord" target="_blank">join our Discord community.</a></p>
 					<br/>
 					<h2>Webhooks</h2>
 					<p>Cylix Guide offers a Discord webhook service which can post daily Halo Infinite updates to your community. If you operate a Discord server and would like this service, please read <a href="https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks" target="_blank" rel="noopener noreferrer">Discord's page on webhooks</a> and submit your webhook below.</p><br/>
 					<p>Updates will be sent following the in-game reset time.</p><br/>
-					<p>If your server has an active webhook and you would like to stop recieving updates, you must remove the webhook from your Discord server integrations.</p><br/>
+					<p>If your server has an active webhook and you would like to stop receiving  updates, you must remove the webhook from your Discord server integrations.</p><br/>
 					${this.renderStatus()}
 					<br/><br/>
 

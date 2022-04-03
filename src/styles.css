@@ -246,6 +246,10 @@ button {
 		opacity: 0.5;
 		cursor: default;
 	}
+	&.featured {
+		color: #fcba03;
+		font-weight: normal;
+	}
 	&.rare {
 		--rarity: var(--rarity-rare);
 	}

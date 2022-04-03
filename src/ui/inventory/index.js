@@ -1,6 +1,6 @@
 import { Component } from 'component';
 import { db } from 'db';
-import { Item, placeholderItem } from 'db/item';
+import { Item, Offering, placeholderItem } from 'db/item';
 import { emitter } from 'eventEmitter';
 import { HTML } from 'lib/HTML';
 import { settings } from 'ui/settings';
@@ -14,8 +14,9 @@ class Inventory extends Component {
 		this.pageSize = parseInt(settings.pageSize ?? 100);
 		const favorites = new Favorites({categoryName: 'Favorites'});
 		const search = new Search({categoryName: 'Search'});
+		// const offerings = new Offerings({categoryName: 'Offerings'});
 
-		this.categories = [favorites, search];
+		this.categories = [favorites, search]; // , offerings
 
 		const paramCategoryName = urlParams.getSecionSetting('inventory');
 		const paramBundle = urlParams.getSecionSetting('bundle');
@@ -564,5 +565,28 @@ class Search extends InventoryCategory {
 	focus() {
 		const input = document.querySelector(`#inventory-search`);
 		if (input) input.focus();
+	}
+}
+
+class Offerings extends InventoryCategory {
+	async init() {
+		if (this.items.length) return;
+		try {
+			const offerings = await db.getOfferings();
+			const bundles = new Map(offerings.bundles);
+			if (!bundles || !bundles.size) throw new Error(`[StoreOfferings.init] No bundles!`);
+
+			this.bundles = bundles;
+			console.log('bundles', bundles);
+			this.items = [...this.bundles.entries()].map(([id, offering]) => {
+				console.log('of', id)
+				return new Offering({id, offering})
+			});
+
+			console.log('Offerings items', this.items);
+			this.render();
+		} catch (error) {
+			
+		}
 	}
 }

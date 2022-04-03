@@ -60,10 +60,29 @@ class HeaderNav extends Component {
 				</header></a>
 				<ul>
 					${pathname.startsWith('/vanity') ? this.shareButton() : this.searchButton()}
-					<li><button aria-label="Settings" title="Settings" onclick=${() => modalConstructor.showView(settings.render())}><div class="icon-masked icon-settings"></div></button></li>
-					<li><button aria-label="Disclaimer" title="Discord" onclick=${() => modalConstructor.showView(discord.render())}><div class="icon-masked icon-discord"></div></button></li>
+					<li><button
+						aria-label="Settings"
+						title="Settings"
+						onclick=${() => modalConstructor.showView(settings.render())}
+					>
+							<div class="icon-masked icon-settings"></div>
+					</button></li>
+					<li><button
+						aria-label="Discord"
+						title="Discord"
+						class="featured"
+						onclick=${() => modalConstructor.showView(discord.render())}
+					>
+						<div class="icon-masked icon-discord"></div>
+					</button></li>
 					${pathname.startsWith('/vanity') ? this.itemsButton() : this.vanityButton()}
-					<li><button aria-label="Disclaimer" title="About" onclick=${() => modalConstructor.showView(about.render())}>About</button></li>
+					<li><button
+					aria-label="About"
+					title="About"
+					onclick=${() => modalConstructor.showView(about.render())}
+					>
+						About
+					</button></li>
 				</ul>
 			</nav>
 		`;
@@ -80,6 +99,7 @@ class HeaderNav extends Component {
 			<li>
 				<button
 					aria-label="Copy shareable link"
+					title="Share"
 					onclick=${() => {
 						navigator.clipboard.writeText(`${window?.location ?? 'https://cylix.guide/'}`)
 							.then(success => {
@@ -104,21 +124,33 @@ class HeaderNav extends Component {
 
 	vanityButton() {
 		return HTML.wire(this, ':vanity')`
-			<li><button aria-label="Vanity" title="Vanity" onclick=${() => {
-				history.pushState(null, null, '/vanity/');
-				const popStateEvent = new PopStateEvent('popstate', null);
-				dispatchEvent(popStateEvent);
-			}}>Vanity</button></li>
+			<li><button
+				aria-label="Vanity"
+				title="Spartan Customization"
+				onclick=${() => {
+					history.pushState(null, null, '/vanity/');
+					const popStateEvent = new PopStateEvent('popstate', null);
+					dispatchEvent(popStateEvent);
+				}}
+			>
+				Vanity
+			</button></li>
 		`;
 	}
 
 	itemsButton() {
 		return HTML.wire(this, ':items')`
-			<li><button aria-label="Vanity" title="Vanity" onclick=${() => {
-				history.pushState(null, null, '/');
-				const popStateEvent = new PopStateEvent('popstate', null);
-				dispatchEvent(popStateEvent);
-			}}>Items</button></li>
+			<li><button
+				aria-label="Items"
+				title="Items Database"
+				onclick=${() => {
+					history.pushState(null, null, '/');
+					const popStateEvent = new PopStateEvent('popstate', null);
+					dispatchEvent(popStateEvent);
+				}}
+			>
+				Items
+			</button></li>
 		`;
 	}
 }

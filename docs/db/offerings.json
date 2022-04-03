@@ -1,0 +1,1389 @@
+{
+	"date": "2022-04-02T17:00:00.285Z",
+	"capstone": "ChallengeContent/ClientChallengeDeckDefinitions/S1TacticalSlayerWeeklyDeck1.json",
+	"store": [
+		"20210805-00",
+		"20210906-19",
+		"20220124-01",
+		"20211022-02",
+		"20210625-00"
+	],
+	"bundles": [
+		[
+			"20210928-00",
+			{
+				"title": "SALE! Anubis Armor Set",
+				"imagePath": "",
+				"description": "Resourceful. Relentless.",
+				"touched": [
+					"2022-03-09T00:00:00.000Z"
+				],
+				"collection": "cpYCVbaEb_",
+				"offering": {
+					"OfferingId": "20210928-00",
+					"OfferingDisplayPath": "StoreContent/Display/Offerings/20210928-00.json",
+					"OfferingExpirationDate": null,
+					"IncludedItems": [
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Coatings/002-001-olympus-bc325299.json",
+							"ItemType": "ArmorCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Helmets/005-001-olympus-10ffb071.json",
+							"ItemType": "ArmorHelmet"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/HelmetAttachments/004-001-olympus-7b7709ee.json",
+							"ItemType": "ArmorHelmetAttachment"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Visors/012-001-fc8b59be.json",
+							"ItemType": "ArmorVisor"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/ShouldersLeft/008-001-olympus-a551ce3c.json",
+							"ItemType": "ArmorLeftShoulderPad"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/ShouldersRight/009-001-olympus-a551ce3c.json",
+							"ItemType": "ArmorRightShoulderPad"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/KneePads/006-001-olympus-a551ce3c.json",
+							"ItemType": "ArmorKneePad"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Spartan/ActionPoses/101-000-menu-stance-o-684f8930.json",
+							"ItemType": "SpartanActionPose"
+						}
+					],
+					"Prices": [
+						{
+							"Cost": 1200,
+							"CurrencyPath": "Currency/Currencies/cR.json"
+						}
+					],
+					"IncludedCurrencies": [],
+					"IncludedRewardTracks": [],
+					"BoostPath": null,
+					"OperationXp": 0,
+					"EventXp": 0,
+					"MatchBoosts": null
+				}
+			}
+		],
+		[
+			"20211016-02",
+			{
+				"title": "Woodland Tradewinds",
+				"imagePath": "",
+				"description": "Works best at a glacial pace.",
+				"touched": [
+					"2022-03-09T00:00:00.000Z"
+				],
+				"collection": "ta6_utgniv",
+				"offering": {
+					"OfferingId": "20211016-02",
+					"OfferingDisplayPath": "StoreContent/Display/Offerings/20211016-02.json",
+					"OfferingExpirationDate": null,
+					"IncludedItems": [
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Coatings/203-201-olympus-90bc428c.json",
+							"ItemType": "WeaponCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Vehicle/Coatings/404-302-olympus-90bc428c.json",
+							"ItemType": "VehicleCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Vehicle/Coatings/404-303-olympus-90bc428c.json",
+							"ItemType": "VehicleCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Vehicle/AlternateGeos/401-000-honeycomb-whe-a25eb8cc.json",
+							"ItemType": "VehicleAlternateGeometryRegion"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Vehicle/Coatings/404-300-olympus-90bc428c.json",
+							"ItemType": "VehicleCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Vehicle/Coatings/404-304-olympus-90bc428c.json",
+							"ItemType": "VehicleCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Vehicle/Coatings/404-306-olympus-90bc428c.json",
+							"ItemType": "VehicleCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Vehicle/Coatings/404-301-olympus-90bc428c.json",
+							"ItemType": "VehicleCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Vehicle/Coatings/404-305-olympus-90bc428c.json",
+							"ItemType": "VehicleCoating"
+						}
+					],
+					"Prices": [
+						{
+							"Cost": 500,
+							"CurrencyPath": "Currency/Currencies/cR.json"
+						}
+					],
+					"IncludedCurrencies": [],
+					"IncludedRewardTracks": [],
+					"BoostPath": null,
+					"OperationXp": 0,
+					"EventXp": 0,
+					"MatchBoosts": null
+				}
+			}
+		],
+		[
+			"20211021-00",
+			{
+				"title": "Cat Lovers",
+				"imagePath": "",
+				"description": "Paws the game.",
+				"touched": [
+					"2022-03-09T00:00:00.000Z"
+				],
+				"collection": "xdJSrY67em",
+				"offering": {
+					"OfferingId": "20211021-00",
+					"OfferingDisplayPath": "StoreContent/Display/Offerings/20211021-00.json",
+					"OfferingExpirationDate": null,
+					"IncludedItems": [
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Coatings/002-001-olympus-f94a0c5f.json",
+							"ItemType": "ArmorCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/HelmetAttachments/004-001-olympus-c2d72600.json",
+							"ItemType": "ArmorHelmetAttachment"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Charms/201-201-eb1241bc.json",
+							"ItemType": "WeaponCharm"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Charms/201-201-878d2669.json",
+							"ItemType": "WeaponCharm"
+						}
+					],
+					"Prices": [
+						{
+							"Cost": 1000,
+							"CurrencyPath": "Currency/Currencies/cR.json"
+						}
+					],
+					"IncludedCurrencies": [],
+					"IncludedRewardTracks": [],
+					"BoostPath": null,
+					"OperationXp": 0,
+					"EventXp": 0,
+					"MatchBoosts": null
+				}
+			}
+		],
+		[
+			"20210904-01",
+			{
+				"title": "Intrusion Pack",
+				"imagePath": "",
+				"description": "It's easy to get attached.",
+				"touched": [
+					"2022-03-09T00:00:00.000Z",
+					"2022-03-11T00:00:00.000Z",
+					"2022-03-14T00:00:00.000Z"
+				],
+				"collection": "4wgd3r2IIt",
+				"offering": {
+					"OfferingId": "20210904-01",
+					"OfferingDisplayPath": "StoreContent/Display/Offerings/20210904-01.json",
+					"OfferingExpirationDate": null,
+					"IncludedItems": [
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/HelmetAttachments/004-001-olympus-dbcc1741.json",
+							"ItemType": "ArmorHelmetAttachment"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Coatings/002-001-olympus-97d6675c.json",
+							"ItemType": "ArmorCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/ShouldersLeft/008-001-olympus-10ffb071.json",
+							"ItemType": "ArmorLeftShoulderPad"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/ShouldersRight/009-001-olympus-10ffb071.json",
+							"ItemType": "ArmorRightShoulderPad"
+						}
+					],
+					"Prices": [
+						{
+							"Cost": 500,
+							"CurrencyPath": "Currency/Currencies/cR.json"
+						}
+					],
+					"IncludedCurrencies": [],
+					"IncludedRewardTracks": [],
+					"BoostPath": null,
+					"OperationXp": 0,
+					"EventXp": 0,
+					"MatchBoosts": null
+				}
+			}
+		],
+		[
+			"20210625-00",
+			{
+				"title": "Boost and Swap Pack",
+				"imagePath": "",
+				"description": "",
+				"touched": [
+					"2022-03-09T00:00:00.000Z"
+				],
+				"offering": {
+					"OfferingId": "20210625-00",
+					"OfferingDisplayPath": "StoreContent/Display/Offerings/20210625-00.json",
+					"OfferingExpirationDate": null,
+					"IncludedItems": [],
+					"Prices": [
+						{
+							"Cost": 200,
+							"CurrencyPath": "Currency/Currencies/cR.json"
+						}
+					],
+					"IncludedCurrencies": [
+						{
+							"Amount": 2,
+							"CurrencyPath": "Currency/Currencies/xpboost.json"
+						},
+						{
+							"Amount": 2,
+							"CurrencyPath": "Currency/Currencies/rerollcurrency.json"
+						}
+					],
+					"IncludedRewardTracks": [],
+					"BoostPath": null,
+					"OperationXp": 0,
+					"EventXp": 0,
+					"MatchBoosts": null
+				}
+			}
+		],
+		[
+			"20220119-01",
+			{
+				"title": "Cranial Lime",
+				"imagePath": "",
+				"description": "Custom paint and materials.",
+				"touched": [
+					"2022-03-09T00:00:00.000Z",
+					"2022-03-12T00:00:00.000Z"
+				],
+				"collection": "ci820yC5Jx",
+				"offering": {
+					"OfferingId": "20220119-01",
+					"OfferingDisplayPath": "StoreContent/Display/Offerings/20220119-01.json",
+					"OfferingExpirationDate": null,
+					"IncludedItems": [
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Coatings/203-202-olympus-60b50d24.json",
+							"ItemType": "WeaponCoating"
+						}
+					],
+					"Prices": [
+						{
+							"Cost": 300,
+							"CurrencyPath": "Currency/Currencies/cR.json"
+						}
+					],
+					"IncludedCurrencies": [],
+					"IncludedRewardTracks": [],
+					"BoostPath": null,
+					"OperationXp": 0,
+					"EventXp": 0,
+					"MatchBoosts": null
+				}
+			}
+		],
+		[
+			"20210906-02",
+			{
+				"touched": [
+					"2022-03-10T00:00:00.000Z",
+					"2022-03-13T00:00:00.000Z"
+				],
+				"collection": "4FYrzwvaef",
+				"offering": {
+					"OfferingId": "20210906-02",
+					"OfferingDisplayPath": "StoreContent/Display/Offerings/20210906-02.json",
+					"OfferingExpirationDate": null,
+					"IncludedItems": [
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Spartan/Emblems/104-001-razer-greenho-24439c74.json",
+							"ItemType": "SpartanEmblem"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Coatings/002-001-olympus-48526ce0.json",
+							"ItemType": "ArmorCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/ShouldersLeft/008-001-olympus-4bb70edf.json",
+							"ItemType": "ArmorLeftShoulderPad"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/ShouldersRight/009-001-olympus-4bb70edf.json",
+							"ItemType": "ArmorRightShoulderPad"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Vehicle/Emblems/405-305-24439c74.json",
+							"ItemType": "VehicleEmblem"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Emblems/013-001-24439c74.json",
+							"ItemType": "ArmorEmblem"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Emblems/205-201-24439c74.json",
+							"ItemType": "WeaponEmblem"
+						}
+					],
+					"Prices": [
+						{
+							"Cost": 500,
+							"CurrencyPath": "Currency/Currencies/cR.json"
+						}
+					],
+					"IncludedCurrencies": [],
+					"IncludedRewardTracks": [],
+					"BoostPath": null,
+					"OperationXp": 0,
+					"EventXp": 0,
+					"MatchBoosts": null
+				},
+				"title": "Greenhorn Pack",
+				"imagePath": "progression/StoreContent/Offerings/S1_Greenhorn.png",
+				"description": "Your fight has just begun."
+			}
+		],
+		[
+			"20210811-00",
+			{
+				"touched": [
+					"2022-03-15T00:00:00.000Z"
+				],
+				"collection": "gtsBl9eI9O",
+				"offering": {
+					"OfferingId": "20210811-00",
+					"OfferingDisplayPath": "StoreContent/Display/Offerings/20210811-00.json",
+					"OfferingExpirationDate": null,
+					"IncludedItems": [
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Coatings/002-001-olympus-08bb58cb.json",
+							"ItemType": "ArmorCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Coatings/002-001-samurai-3be7cc2c.json",
+							"ItemType": "ArmorCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Coatings/002-001-reach-f1748b4b.json",
+							"ItemType": "ArmorCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Coatings/203-202-olympus-5ce541d5.json",
+							"ItemType": "WeaponCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Coatings/203-205-olympus-063d787b.json",
+							"ItemType": "WeaponCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Coatings/203-206-olympus-063d787b.json",
+							"ItemType": "WeaponCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Spartan/ActionPoses/101-000-menu-stance-a-26467c06.json",
+							"ItemType": "SpartanActionPose"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Spartan/Emblems/104-001-popculture-de-c615fbd5.json",
+							"ItemType": "SpartanEmblem"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Emblems/013-001-c615fbd5.json",
+							"ItemType": "ArmorEmblem"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Vehicle/Emblems/405-305-c615fbd5.json",
+							"ItemType": "VehicleEmblem"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Emblems/205-201-c615fbd5.json",
+							"ItemType": "WeaponEmblem"
+						}
+					],
+					"Prices": [
+						{
+							"Cost": 1200,
+							"CurrencyPath": "Currency/Currencies/cR.json"
+						}
+					],
+					"IncludedCurrencies": [],
+					"IncludedRewardTracks": [],
+					"BoostPath": null,
+					"OperationXp": 0,
+					"EventXp": 0,
+					"MatchBoosts": null
+				},
+				"title": "SALE! Fire and Frost",
+				"imagePath": "progression/storecontent/offerings/S1_Fire_and_Ice.png",
+				"description": "Who do you want to become? Requires the Yoroi and Mark V armor core to equip all armor coatings."
+			}
+		],
+		[
+			"20210727-01",
+			{
+				"touched": [
+					"2022-03-15T00:00:00.000Z"
+				],
+				"collection": "8rXr_31xX4",
+				"offering": {
+					"OfferingId": "20210727-01",
+					"OfferingDisplayPath": "StoreContent/Display/Offerings/20210727-01.json",
+					"OfferingExpirationDate": null,
+					"IncludedItems": [
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/AlternateGeos/210-000-type-2p-flash-4a71df84.json",
+							"ItemType": "WeaponAlternateGeometryRegion"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/AlternateGeos/210-000-critpoint-shr-863d30c7.json",
+							"ItemType": "WeaponAlternateGeometryRegion"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/AlternateGeos/210-000-type-2a-barre-4a71df84.json",
+							"ItemType": "WeaponAlternateGeometryRegion"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Coatings/203-202-olympus-de53760e.json",
+							"ItemType": "WeaponCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Coatings/203-201-olympus-de53760e.json",
+							"ItemType": "WeaponCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Coatings/203-200-olympus-de53760e.json",
+							"ItemType": "WeaponCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Coatings/203-203-olympus-de53760e.json",
+							"ItemType": "WeaponCoating"
+						}
+					],
+					"Prices": [
+						{
+							"Cost": 800,
+							"CurrencyPath": "Currency/Currencies/cR.json"
+						}
+					],
+					"IncludedCurrencies": [],
+					"IncludedRewardTracks": [],
+					"BoostPath": null,
+					"OperationXp": 0,
+					"EventXp": 0,
+					"MatchBoosts": null
+				},
+				"title": "SALE! Maltese Mayhem Weapon Set",
+				"imagePath": "progression/StoreContent/Offerings/S1_Maltese_Mayhem.png",
+				"description": "You can't make wine without win."
+			}
+		],
+		[
+			"20220125-00",
+			{
+				"touched": [
+					"2022-03-15T00:00:00.000Z"
+				],
+				"collection": "qrigveQY5x",
+				"offering": {
+					"OfferingId": "20220125-00",
+					"OfferingDisplayPath": "StoreContent/Display/Offerings/20220125-00.json",
+					"OfferingExpirationDate": null,
+					"IncludedItems": [
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Vehicle/AlternateGeos/401-000-longhorn-8cc49009.json",
+							"ItemType": "VehicleAlternateGeometryRegion"
+						}
+					],
+					"Prices": [
+						{
+							"Cost": 600,
+							"CurrencyPath": "Currency/Currencies/cR.json"
+						}
+					],
+					"IncludedCurrencies": [],
+					"IncludedRewardTracks": [],
+					"BoostPath": null,
+					"OperationXp": 0,
+					"EventXp": 0,
+					"MatchBoosts": null
+				},
+				"title": "Longhorn",
+				"imagePath": "progression/StoreContent/Offerings/S1_longhorn.png",
+				"description": "Turn your war hog into battle cattle."
+			}
+		],
+		[
+			"20210906-04",
+			{
+				"touched": [
+					"2022-03-15T00:00:00.000Z",
+					"2022-03-18T00:00:00.000Z",
+					"2022-03-21T00:00:00.000Z"
+				],
+				"collection": "l01qclZam9",
+				"offering": {
+					"OfferingId": "20210906-04",
+					"OfferingDisplayPath": "StoreContent/Display/Offerings/20210906-04.json",
+					"OfferingExpirationDate": null,
+					"IncludedItems": [
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Charms/201-201-608c92a4.json",
+							"ItemType": "WeaponCharm"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Coatings/203-206-olympus-ead4fc4d.json",
+							"ItemType": "WeaponCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Spartan/Emblems/104-001-reach-brutes-7f9f5924.json",
+							"ItemType": "SpartanEmblem"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Vehicle/Emblems/405-305-7f9f5924.json",
+							"ItemType": "VehicleEmblem"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Emblems/013-001-7f9f5924.json",
+							"ItemType": "ArmorEmblem"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Emblems/205-201-7f9f5924.json",
+							"ItemType": "WeaponEmblem"
+						}
+					],
+					"Prices": [
+						{
+							"Cost": 700,
+							"CurrencyPath": "Currency/Currencies/cR.json"
+						}
+					],
+					"IncludedCurrencies": [],
+					"IncludedRewardTracks": [],
+					"BoostPath": null,
+					"OperationXp": 0,
+					"EventXp": 0,
+					"MatchBoosts": null
+				},
+				"title": "Happy Hunting",
+				"imagePath": "progression/StoreContent/Offerings/S1_HappyHunting.png",
+				"description": "May require camping."
+			}
+		],
+		[
+			"20211022-00",
+			{
+				"touched": [
+					"2022-03-16T00:00:00.000Z",
+					"2022-03-19T00:00:00.000Z"
+				],
+				"collection": "EdVCsptOt1",
+				"offering": {
+					"OfferingId": "20211022-00",
+					"OfferingDisplayPath": "StoreContent/Display/Offerings/20211022-00.json",
+					"OfferingExpirationDate": null,
+					"IncludedItems": [
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Coatings/002-001-olympus-da3ba426.json",
+							"ItemType": "ArmorCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Visors/012-001-a8a475ad.json",
+							"ItemType": "ArmorVisor"
+						}
+					],
+					"Prices": [
+						{
+							"Cost": 400,
+							"CurrencyPath": "Currency/Currencies/cR.json"
+						}
+					],
+					"IncludedCurrencies": [],
+					"IncludedRewardTracks": [],
+					"BoostPath": null,
+					"OperationXp": 0,
+					"EventXp": 0,
+					"MatchBoosts": null
+				},
+				"title": "Cosmic Goblin",
+				"imagePath": "progression/StoreContent/Offerings/S1_CosmicGoblin.png",
+				"description": "Mythic creatures abound!"
+			}
+		],
+		[
+			"20220202-01",
+			{
+				"touched": [
+					"2022-03-17T00:00:00.000Z",
+					"2022-03-20T00:00:00.000Z"
+				],
+				"collection": "fhxrNhjNC8",
+				"offering": {
+					"OfferingId": "20220202-01",
+					"OfferingDisplayPath": "StoreContent/Display/Offerings/20220202-01.json",
+					"OfferingExpirationDate": null,
+					"IncludedItems": [
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Coatings/203-204-olympus-30b13744.json",
+							"ItemType": "WeaponCoating"
+						}
+					],
+					"Prices": [
+						{
+							"Cost": 300,
+							"CurrencyPath": "Currency/Currencies/cR.json"
+						}
+					],
+					"IncludedCurrencies": [],
+					"IncludedRewardTracks": [],
+					"BoostPath": null,
+					"OperationXp": 0,
+					"EventXp": 0,
+					"MatchBoosts": null
+				},
+				"title": "Setting Sun",
+				"imagePath": "progression/StoreContent/Offerings/S1_Setting_sun.png",
+				"description": "Cast your gaze upon the horizon at Golden Hour."
+			}
+		],
+		[
+			"20211016-00",
+			{
+				"touched": [
+					"2022-03-22T00:00:00.000Z"
+				],
+				"collection": "b4pNKusS0P",
+				"offering": {
+					"OfferingId": "20211016-00",
+					"OfferingDisplayPath": "StoreContent/Display/Offerings/20211016-00.json",
+					"OfferingExpirationDate": null,
+					"IncludedItems": [
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Coatings/002-001-olympus-cd373d05.json",
+							"ItemType": "ArmorCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Helmets/005-001-olympus-52ac3f9e.json",
+							"ItemType": "ArmorHelmet"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/HelmetAttachments/004-001-olympus-f7f0d548.json",
+							"ItemType": "ArmorHelmetAttachment"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Gloves/003-001-olympus-f30b69ba.json",
+							"ItemType": "ArmorGlove"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/ChestAttachments/001-001-olympus-04c91602.json",
+							"ItemType": "ArmorChestAttachment"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/ShouldersLeft/008-001-olympus-9767acbe.json",
+							"ItemType": "ArmorLeftShoulderPad"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/ShouldersRight/009-001-olympus-9767acbe.json",
+							"ItemType": "ArmorRightShoulderPad"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/KneePads/006-001-olympus-f30b69ba.json",
+							"ItemType": "ArmorKneePad"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Spartan/ActionPoses/101-000-menu-stance-o-b109a039.json",
+							"ItemType": "SpartanActionPose"
+						}
+					],
+					"Prices": [
+						{
+							"Cost": 1200,
+							"CurrencyPath": "Currency/Currencies/cR.json"
+						}
+					],
+					"IncludedCurrencies": [],
+					"IncludedRewardTracks": [],
+					"BoostPath": null,
+					"OperationXp": 0,
+					"EventXp": 0,
+					"MatchBoosts": null
+				},
+				"title": "Stormfall Armor Set",
+				"imagePath": "progression/StoreContent/Offerings/S1_Stormfall.png",
+				"description": "Track your targets with precision."
+			}
+		],
+		[
+			"20211013-00",
+			{
+				"touched": [
+					"2022-03-22T00:00:00.000Z"
+				],
+				"collection": "iG6DPQO-Gq",
+				"offering": {
+					"OfferingId": "20211013-00",
+					"OfferingDisplayPath": "StoreContent/Display/Offerings/20211013-00.json",
+					"OfferingExpirationDate": null,
+					"IncludedItems": [
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Coatings/203-202-olympus-8088283d.json",
+							"ItemType": "WeaponCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/AlternateGeos/210-000-type-3c-flash-a3174d80.json",
+							"ItemType": "WeaponAlternateGeometryRegion"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/AlternateGeos/210-000-m90-shroud-d8c09977.json",
+							"ItemType": "WeaponAlternateGeometryRegion"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Coatings/203-200-olympus-8088283d.json",
+							"ItemType": "WeaponCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Coatings/203-201-olympus-8088283d.json",
+							"ItemType": "WeaponCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Coatings/203-203-olympus-8088283d.json",
+							"ItemType": "WeaponCoating"
+						}
+					],
+					"Prices": [
+						{
+							"Cost": 800,
+							"CurrencyPath": "Currency/Currencies/cR.json"
+						}
+					],
+					"IncludedCurrencies": [],
+					"IncludedRewardTracks": [],
+					"BoostPath": null,
+					"OperationXp": 0,
+					"EventXp": 0,
+					"MatchBoosts": null
+				},
+				"title": "Pop Weapon Set",
+				"imagePath": "progression/StoreContent/Offerings/S1_PopWeaponCoatings.png",
+				"description": "Life and the art of imitation."
+			}
+		],
+		[
+			"20220119-03",
+			{
+				"touched": [
+					"2022-03-22T00:00:00.000Z"
+				],
+				"collection": "TNUCRiJUtT",
+				"offering": {
+					"OfferingId": "20220119-03",
+					"OfferingDisplayPath": "StoreContent/Display/Offerings/20220119-03.json",
+					"OfferingExpirationDate": null,
+					"IncludedItems": [
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Helmets/005-001-olympus-ea1058fb.json",
+							"ItemType": "ArmorHelmet"
+						}
+					],
+					"Prices": [
+						{
+							"Cost": 700,
+							"CurrencyPath": "Currency/Currencies/cR.json"
+						}
+					],
+					"IncludedCurrencies": [],
+					"IncludedRewardTracks": [],
+					"BoostPath": null,
+					"OperationXp": 0,
+					"EventXp": 0,
+					"MatchBoosts": null
+				},
+				"title": "FIREFALL",
+				"imagePath": "progression/StoreContent/Offerings/S1_FirefallHelmet.png",
+				"description": "A radical offshoot of other ODST armor development projects at Cascade, the FIREFALL is the first component of an ensemble that aims to eliminate the need for drop pods in Spartan orbital insertions."
+			}
+		],
+		[
+			"20220119-02",
+			{
+				"touched": [
+					"2022-03-22T00:00:00.000Z",
+					"2022-03-25T00:00:00.000Z",
+					"2022-03-28T00:00:00.000Z"
+				],
+				"collection": "-DvvHazgY9",
+				"offering": {
+					"OfferingId": "20220119-02",
+					"OfferingDisplayPath": "StoreContent/Display/Offerings/20220119-02.json",
+					"OfferingExpirationDate": null,
+					"IncludedItems": [
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Coatings/203-201-olympus-1ff520dd.json",
+							"ItemType": "WeaponCoating"
+						}
+					],
+					"Prices": [
+						{
+							"Cost": 300,
+							"CurrencyPath": "Currency/Currencies/cR.json"
+						}
+					],
+					"IncludedCurrencies": [],
+					"IncludedRewardTracks": [],
+					"BoostPath": null,
+					"OperationXp": 0,
+					"EventXp": 0,
+					"MatchBoosts": null
+				},
+				"title": "Acid Burn",
+				"imagePath": "progression/StoreContent/Offerings/S1_AcidBurn.png",
+				"description": "Caution: hazardous, corrosive material."
+			}
+		],
+		[
+			"20210906-01",
+			{
+				"touched": [
+					"2022-03-23T00:00:00.000Z",
+					"2022-03-26T00:00:00.000Z"
+				],
+				"collection": "-X-blx5NVX",
+				"offering": {
+					"OfferingId": "20210906-01",
+					"OfferingDisplayPath": "StoreContent/Display/Offerings/20210906-01.json",
+					"OfferingExpirationDate": null,
+					"IncludedItems": [
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Coatings/203-206-olympus-599fb208.json",
+							"ItemType": "WeaponCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Coatings/002-001-olympus-814c6f72.json",
+							"ItemType": "ArmorCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Spartan/ActionPoses/101-000-menu-stance-o-669e76d1.json",
+							"ItemType": "SpartanActionPose"
+						}
+					],
+					"Prices": [
+						{
+							"Cost": 700,
+							"CurrencyPath": "Currency/Currencies/cR.json"
+						}
+					],
+					"IncludedCurrencies": [],
+					"IncludedRewardTracks": [],
+					"BoostPath": null,
+					"OperationXp": 0,
+					"EventXp": 0,
+					"MatchBoosts": null
+				},
+				"title": "Neptune's Depths",
+				"imagePath": "progression/StoreContent/Offerings/S1_NeptunesDepths.png",
+				"description": "Optimized fluid dynamics."
+			}
+		],
+		[
+			"20210903-02",
+			{
+				"touched": [
+					"2022-03-24T00:00:00.000Z",
+					"2022-03-27T00:00:00.000Z"
+				],
+				"collection": "0cDQ2W8_NU",
+				"offering": {
+					"OfferingId": "20210903-02",
+					"OfferingDisplayPath": "StoreContent/Display/Offerings/20210903-02.json",
+					"OfferingExpirationDate": null,
+					"IncludedItems": [
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Spartan/Emblems/104-001-popculture-ch-3f1c0440.json",
+							"ItemType": "SpartanEmblem"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Spartan/Emblems/104-001-popculture-ch-d068f68f.json",
+							"ItemType": "SpartanEmblem"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Spartan/Emblems/104-001-popculture-ch-94aea7fd.json",
+							"ItemType": "SpartanEmblem"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Vehicle/Emblems/405-305-3f1c0440.json",
+							"ItemType": "VehicleEmblem"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Emblems/013-001-3f1c0440.json",
+							"ItemType": "ArmorEmblem"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Emblems/205-201-3f1c0440.json",
+							"ItemType": "WeaponEmblem"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Vehicle/Emblems/405-305-d068f68f.json",
+							"ItemType": "VehicleEmblem"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Emblems/013-001-d068f68f.json",
+							"ItemType": "ArmorEmblem"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Emblems/205-201-d068f68f.json",
+							"ItemType": "WeaponEmblem"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Vehicle/Emblems/405-305-94aea7fd.json",
+							"ItemType": "VehicleEmblem"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Emblems/013-001-94aea7fd.json",
+							"ItemType": "ArmorEmblem"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Emblems/205-201-94aea7fd.json",
+							"ItemType": "WeaponEmblem"
+						}
+					],
+					"Prices": [
+						{
+							"Cost": 500,
+							"CurrencyPath": "Currency/Currencies/cR.json"
+						}
+					],
+					"IncludedCurrencies": [],
+					"IncludedRewardTracks": [],
+					"BoostPath": null,
+					"OperationXp": 0,
+					"EventXp": 0,
+					"MatchBoosts": null
+				},
+				"title": "Chibi Battle Bros",
+				"imagePath": "progression/StoreContent/Offerings/S1_Chibi_Brothers.png",
+				"description": "Pint-sized Powerhouses."
+			}
+		],
+		[
+			"20210805-00",
+			{
+				"touched": [
+					"2022-03-29T00:00:00.000Z"
+				],
+				"collection": "Bl7KsF1hAQ",
+				"offering": {
+					"OfferingId": "20210805-00",
+					"OfferingDisplayPath": "StoreContent/Display/Offerings/20210805-00.json",
+					"OfferingExpirationDate": null,
+					"IncludedItems": [
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/HipAttachments/010-001-samurai-4b488b79.json",
+							"ItemType": "ArmorHipAttachment"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Spartan/Emblems/104-001-samurai-senti-37ba759d.json",
+							"ItemType": "SpartanEmblem"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Emblems/013-001-37ba759d.json",
+							"ItemType": "ArmorEmblem"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Emblems/205-201-37ba759d.json",
+							"ItemType": "WeaponEmblem"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Vehicle/Emblems/405-305-37ba759d.json",
+							"ItemType": "VehicleEmblem"
+						}
+					],
+					"Prices": [
+						{
+							"Cost": 700,
+							"CurrencyPath": "Currency/Currencies/cR.json"
+						}
+					],
+					"IncludedCurrencies": [],
+					"IncludedRewardTracks": [],
+					"BoostPath": null,
+					"OperationXp": 0,
+					"EventXp": 0,
+					"MatchBoosts": null
+				},
+				"title": "SALE! Sentinel's Blades",
+				"imagePath": "progression/StoreContent/Offerings/S1_Sentinels_Blades.png",
+				"description": "Blades beget burden. Requires the Yoroi armor core earned in the Fracture: Tenrai event."
+			}
+		],
+		[
+			"20210906-19",
+			{
+				"touched": [
+					"2022-03-29T00:00:00.000Z"
+				],
+				"collection": "qQUxXudF3Y",
+				"offering": {
+					"OfferingId": "20210906-19",
+					"OfferingDisplayPath": "StoreContent/Display/Offerings/20210906-19.json",
+					"OfferingExpirationDate": null,
+					"IncludedItems": [
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Coatings/002-001-samurai-5b06ece8.json",
+							"ItemType": "ArmorCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/ShouldersLeft/008-001-samurai-1afb4dd3.json",
+							"ItemType": "ArmorLeftShoulderPad"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/ShouldersRight/009-001-samurai-1afb4dd3.json",
+							"ItemType": "ArmorRightShoulderPad"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/ChestAttachments/001-001-samurai-e161ac8e.json",
+							"ItemType": "ArmorChestAttachment"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/KneePads/006-001-samurai-55badb14.json",
+							"ItemType": "ArmorKneePad"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Spartan/Emblems/104-001-samurai-house-e30dc8d8.json",
+							"ItemType": "SpartanEmblem"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Vehicle/Emblems/405-305-e30dc8d8.json",
+							"ItemType": "VehicleEmblem"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Emblems/013-001-e30dc8d8.json",
+							"ItemType": "ArmorEmblem"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Emblems/205-201-e30dc8d8.json",
+							"ItemType": "WeaponEmblem"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Coatings/002-001-olympus-5b06ece8.json",
+							"ItemType": "ArmorCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Coatings/002-001-reach-5b06ece8.json",
+							"ItemType": "ArmorCoating"
+						}
+					],
+					"Prices": [
+						{
+							"Cost": 1000,
+							"CurrencyPath": "Currency/Currencies/cR.json"
+						}
+					],
+					"IncludedCurrencies": [],
+					"IncludedRewardTracks": [],
+					"BoostPath": null,
+					"OperationXp": 0,
+					"EventXp": 0,
+					"MatchBoosts": null
+				},
+				"title": "Silent Sentry Set",
+				"imagePath": "progression/StoreContent/Offerings/S1_Shadow-Gear.png",
+				"description": "Qualities of the quick and quiet. Requires the Yoroi armor core earned in the Fracture: Tenrai event."
+			}
+		],
+		[
+			"20220124-02",
+			{
+				"touched": [
+					"2022-03-29T00:00:00.000Z",
+					"2022-04-01T00:00:00.000Z"
+				],
+				"collection": "wzVBPGztIy",
+				"offering": {
+					"OfferingId": "20220124-02",
+					"OfferingDisplayPath": "StoreContent/Display/Offerings/20220124-02.json",
+					"OfferingExpirationDate": null,
+					"IncludedItems": [
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/ShouldersLeft/008-001-samurai-7e9788d7.json",
+							"ItemType": "ArmorLeftShoulderPad"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/ShouldersRight/009-001-samurai-7e9788d7.json",
+							"ItemType": "ArmorRightShoulderPad"
+						}
+					],
+					"Prices": [
+						{
+							"Cost": 200,
+							"CurrencyPath": "Currency/Currencies/cR.json"
+						}
+					],
+					"IncludedCurrencies": [],
+					"IncludedRewardTracks": [],
+					"BoostPath": null,
+					"OperationXp": 0,
+					"EventXp": 0,
+					"MatchBoosts": null
+				},
+				"title": "Sixth Gate",
+				"imagePath": "progression/StoreContent/Offerings/S1_Sixth_Gate.png",
+				"description": "Every element of the samurai's appearance has deep philosophical and practical meaning."
+			}
+		],
+		[
+			"20211022-02",
+			{
+				"touched": [
+					"2022-03-29T00:00:00.000Z"
+				],
+				"collection": "fx3MxH6RnF",
+				"offering": {
+					"OfferingId": "20211022-02",
+					"OfferingDisplayPath": "StoreContent/Display/Offerings/20211022-02.json",
+					"OfferingExpirationDate": null,
+					"IncludedItems": [
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/ChestAttachments/001-001-samurai-f87a9dcf.json",
+							"ItemType": "ArmorChestAttachment"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Visors/012-001-6c1e51f8.json",
+							"ItemType": "ArmorVisor"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Spartan/ActionPoses/101-000-menu-stance-o-1c5b82e7.json",
+							"ItemType": "SpartanActionPose"
+						}
+					],
+					"Prices": [
+						{
+							"Cost": 800,
+							"CurrencyPath": "Currency/Currencies/cR.json"
+						}
+					],
+					"IncludedCurrencies": [],
+					"IncludedRewardTracks": [],
+					"BoostPath": null,
+					"OperationXp": 0,
+					"EventXp": 0,
+					"MatchBoosts": null
+				},
+				"title": "Heart Piercer",
+				"imagePath": "progression/StoreContent/Offerings/S1_HeartPiercer.png",
+				"description": "Life happens between heart and mind. Requires the Yoroi armor core earned in the Fracture: Tenrai event."
+			}
+		],
+		[
+			"20220124-01",
+			{
+				"touched": [
+					"2022-03-30T00:00:00.000Z",
+					"2022-04-02T00:00:00.000Z"
+				],
+				"collection": "ZtNXI2L_NV",
+				"offering": {
+					"OfferingId": "20220124-01",
+					"OfferingDisplayPath": "StoreContent/Display/Offerings/20220124-01.json",
+					"OfferingExpirationDate": null,
+					"IncludedItems": [
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Coatings/002-001-samurai-229b94fa.json",
+							"ItemType": "ArmorCoating"
+						}
+					],
+					"Prices": [
+						{
+							"Cost": 400,
+							"CurrencyPath": "Currency/Currencies/cR.json"
+						}
+					],
+					"IncludedCurrencies": [],
+					"IncludedRewardTracks": [],
+					"BoostPath": null,
+					"OperationXp": 0,
+					"EventXp": 0,
+					"MatchBoosts": null
+				},
+				"title": "Ancient Flare",
+				"imagePath": "progression/StoreContent/Offerings/S1_Ancient_Flare.png",
+				"description": "Covenant raiders do not know honor, but they recognize wrath."
+			}
+		],
+		[
+			"20220124-00",
+			{
+				"touched": [
+					"2022-03-31T00:00:00.000Z"
+				],
+				"collection": "j8QAK_xDAp",
+				"offering": {
+					"OfferingId": "20220124-00",
+					"OfferingDisplayPath": "StoreContent/Display/Offerings/20220124-00.json",
+					"OfferingExpirationDate": null,
+					"IncludedItems": [
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Visors/012-001-a584fc2d.json",
+							"ItemType": "ArmorVisor"
+						}
+					],
+					"Prices": [
+						{
+							"Cost": 400,
+							"CurrencyPath": "Currency/Currencies/cR.json"
+						}
+					],
+					"IncludedCurrencies": [],
+					"IncludedRewardTracks": [],
+					"BoostPath": null,
+					"OperationXp": 0,
+					"EventXp": 0,
+					"MatchBoosts": null
+				},
+				"title": "Spirit",
+				"imagePath": "progression/StoreContent/Offerings/S1_Spirit.png",
+				"description": "Some move on. Some stay to fight."
+			}
+		]
+	]
+}

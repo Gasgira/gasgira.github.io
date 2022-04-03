@@ -13,6 +13,9 @@ nav.toolbar {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
+		justify-content: right;
+		flex-wrap: wrap;
+		flex-grow: 2;
 		& li {
 			padding: 0 0.15em;
 			/* & button::before {
