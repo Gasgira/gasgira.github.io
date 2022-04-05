@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "201-201-d60ea4c8",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Knuckles",
 		"Description": "A brass kiss.",
 		"FeatureFlag": true,
@@ -84,43 +84,11 @@
 		},
 		"ParentPaths": [
 			{
-				"Path": "Inventory/Weapon/Themes/207-200-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
 				"Path": "Inventory/Weapon/Themes/207-201-olympus-aa30213b.json",
 				"Type": "WeaponTheme"
 			},
 			{
-				"Path": "Inventory/Weapon/Themes/207-202-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-203-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-204-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-205-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-206-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-207-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
 				"Path": "Inventory/Weapon/Themes/207-200-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-201-olympus-aa30213b.json",
 				"Type": "WeaponTheme"
 			},
 			{
