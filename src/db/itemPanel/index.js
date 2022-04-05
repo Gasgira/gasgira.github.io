@@ -2,6 +2,7 @@ import { db } from 'db';
 import { Item } from 'db/item';
 import { Component } from 'component';
 import { HTML } from 'lib/HTML';
+import { filenameFromPath } from 'utils/paths.js';
 
 import './index.css';
 
@@ -120,6 +121,13 @@ class ItemPanel extends Component {
 								></div>
 								<span class="badge">${this.state.item?.manufacturerName ?? ''}</span>
 							</div>
+							<div class="badge">
+								<div
+									class="badge-svg"
+									style=${{backgroundImage: `url(/items.svg#${this.state.item?.data?.CommonData?.Type ?? 'default'})`}}
+								></div>
+								<span class="badge">${item?.CommonData?.HideUntilOwned === false ? 'Visible' : 'Hidden'}</span>
+							</div>
 						</div>
 						<span class="attribute">${this.state.item?.data?.CommonData?.CustomAvailability ?? null}</span>
 						<span class="attribute">
@@ -136,6 +144,7 @@ class ItemPanel extends Component {
 						<span class="dbItemPanel_path">
 							<button
 								aria-label="Copy shareable link"
+								title="share"
 								onclick=${() => {
 									navigator.clipboard.writeText(`https://${window?.location?.host ?? 'cylix.guide'}${this.sharePath}`)
 										.then(success => {
@@ -168,6 +177,12 @@ class ItemPanel extends Component {
 	}
 
 	get sharePath() {
+		if (this.item?.path.startsWith('inventory/'))
+		{
+			const id = filenameFromPath(this.item?.path);
+			if (id) return `/item/${id}`
+		}
+
 		return `${this.item?.path.startsWith('inventory/') ? '/share/' : '/#'}${this.item?.path ?? ''}`;
 	}
 

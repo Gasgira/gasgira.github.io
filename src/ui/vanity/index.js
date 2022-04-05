@@ -49,6 +49,10 @@ class Vanity extends Component {
 		};
 	}
 
+	get gamertag() {
+		return this.dashDecodeURIComponent(this.state.gamertag);
+	}
+
 	render() {
 		return this.html`<div class="inventory_wrapper vanity_wrapper mica_viewer" id="inventory">
 			<header class="mica_header-strip">
@@ -186,9 +190,29 @@ class Vanity extends Component {
 		if (gamertag && typeof gamertag === 'string')
 		{
 			this.state.gamertag = gamertag;
-			history.pushState(null, null, `/vanity/${encodeURIComponent(gamertag.trim())}`);
+			history.pushState(null, null, `/vanity/${this.dashEncodeURIComponent(gamertag.trim())}`);
 
 			this.renderStatus('');
+		}
+	}
+
+	dashEncodeURIComponent(string) {
+		try {
+			if (!string || typeof string !== 'string') return '';
+			if (!string.includes(' ')) return encodeURIComponent(string);
+			return encodeURIComponent(string.replaceAll(' ', '-'));
+		} catch (error) {
+			return encodeURIComponent(string);
+		}
+	}
+
+	dashDecodeURIComponent(string) {
+		try {
+			if (!string || typeof string !== 'string') return '';
+			if (!string.includes('-')) return decodeURIComponent(string);
+			return decodeURIComponent(string.replaceAll('-', ' '));
+		} catch (error) {
+			return decodeURIComponent(string);
 		}
 	}
 
@@ -221,7 +245,7 @@ class Vanity extends Component {
 			if (aiCore && aiCore.ModelPath) sockets.set('AI Model', aiCore.ModelPath);
 			if (aiCore && aiCore.ColorPath) sockets.set('AI Color', aiCore.ColorPath);
 
-			const appearanceCore = new AppearanceCore({ type: 'Spartan ID', sockets, gamertag: this.state.gamertag });
+			const appearanceCore = new AppearanceCore({ type: 'Spartan ID', sockets, gamertag: this.gamertag });
 			if (appearanceCore) this.state.cores.push(appearanceCore);
 		} catch (error) {
 			console.error(`[Vanity.showAppearance] spartan`, error);
@@ -268,7 +292,7 @@ class Vanity extends Component {
 				}
 			}
 
-			const appearanceCore = new AppearanceCore({ type, core, sockets, gamertag: this.state.gamertag });
+			const appearanceCore = new AppearanceCore({ type, core, sockets, gamertag: this.gamertag });
 			if (appearanceCore) return appearanceCore;
 		} catch (error) {
 			console.error(`[Vanity.makeAppearanceCore]`, error);

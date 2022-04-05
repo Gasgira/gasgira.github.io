@@ -43,6 +43,7 @@ class Discord extends Component {
 					<p>Cylix Guide offers a Discord webhook service which can post daily Halo Infinite updates to your community. If you operate a Discord server and would like this service, please read <a href="https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks" target="_blank" rel="noopener noreferrer">Discord's page on webhooks</a> and submit your webhook below.</p><br/>
 					<p>Updates will be sent following the in-game reset time.</p><br/>
 					<p>If your server has an active webhook and you would like to stop receiving  updates, you must remove the webhook from your Discord server integrations.</p><br/>
+					<p>Note: alternatively there is a followable channel in the <a href="https://cylix.guide/discord" target="_blank">Cylix discord</a> if you are not able to add the webhook directly.</p><br/>
 					${this.renderStatus()}
 					<br/><br/>
 

@@ -4819,7 +4819,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var db_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! db/item */ "./src/db/item/index.js");
 /* harmony import */ var component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! component */ "./src/component/index.js");
 /* harmony import */ var lib_HTML__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lib/HTML */ "./src/lib/HTML/index.js");
-/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./index.css */ "./src/db/itemPanel/index.css");
+/* harmony import */ var utils_paths_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! utils/paths.js */ "./src/utils/paths.js");
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./index.css */ "./src/db/itemPanel/index.css");
+
 
 
 
@@ -4942,6 +4944,13 @@ class ItemPanel extends component__WEBPACK_IMPORTED_MODULE_2__.Component {
 								></div>
 								<span class="badge">${this.state.item?.manufacturerName ?? ''}</span>
 							</div>
+							<div class="badge">
+								<div
+									class="badge-svg"
+									style=${{backgroundImage: `url(/items.svg#${this.state.item?.data?.CommonData?.Type ?? 'default'})`}}
+								></div>
+								<span class="badge">${item?.CommonData?.HideUntilOwned === false ? 'Visible' : 'Hidden'}</span>
+							</div>
 						</div>
 						<span class="attribute">${this.state.item?.data?.CommonData?.CustomAvailability ?? null}</span>
 						<span class="attribute">
@@ -4958,6 +4967,7 @@ class ItemPanel extends component__WEBPACK_IMPORTED_MODULE_2__.Component {
 						<span class="dbItemPanel_path">
 							<button
 								aria-label="Copy shareable link"
+								title="share"
 								onclick=${() => {
 									navigator.clipboard.writeText(`https://${window?.location?.host ?? 'cylix.guide'}${this.sharePath}`)
 										.then(success => {
@@ -4990,6 +5000,12 @@ class ItemPanel extends component__WEBPACK_IMPORTED_MODULE_2__.Component {
 	}
 
 	get sharePath() {
+		if (this.item?.path.startsWith('inventory/'))
+		{
+			const id = (0,utils_paths_js__WEBPACK_IMPORTED_MODULE_4__.filenameFromPath)(this.item?.path);
+			if (id) return `/item/${id}`
+		}
+
 		return `${this.item?.path.startsWith('inventory/') ? '/share/' : '/#'}${this.item?.path ?? ''}`;
 	}
 
@@ -6518,6 +6534,7 @@ class Discord extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 					<p>Cylix Guide offers a Discord webhook service which can post daily Halo Infinite updates to your community. If you operate a Discord server and would like this service, please read <a href="https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks" target="_blank" rel="noopener noreferrer">Discord's page on webhooks</a> and submit your webhook below.</p><br/>
 					<p>Updates will be sent following the in-game reset time.</p><br/>
 					<p>If your server has an active webhook and you would like to stop receiving  updates, you must remove the webhook from your Discord server integrations.</p><br/>
+					<p>Note: alternatively there is a followable channel in the <a href="https://cylix.guide/discord" target="_blank">Cylix discord</a> if you are not able to add the webhook directly.</p><br/>
 					${this.renderStatus()}
 					<br/><br/>
 
@@ -7930,6 +7947,10 @@ class Vanity extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 		};
 	}
 
+	get gamertag() {
+		return this.dashDecodeURIComponent(this.state.gamertag);
+	}
+
 	render() {
 		return this.html`<div class="inventory_wrapper vanity_wrapper mica_viewer" id="inventory">
 			<header class="mica_header-strip">
@@ -8067,9 +8088,29 @@ class Vanity extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 		if (gamertag && typeof gamertag === 'string')
 		{
 			this.state.gamertag = gamertag;
-			history.pushState(null, null, `/vanity/${encodeURIComponent(gamertag.trim())}`);
+			history.pushState(null, null, `/vanity/${this.dashEncodeURIComponent(gamertag.trim())}`);
 
 			this.renderStatus('');
+		}
+	}
+
+	dashEncodeURIComponent(string) {
+		try {
+			if (!string || typeof string !== 'string') return '';
+			if (!string.includes(' ')) return encodeURIComponent(string);
+			return encodeURIComponent(string.replaceAll(' ', '-'));
+		} catch (error) {
+			return encodeURIComponent(string);
+		}
+	}
+
+	dashDecodeURIComponent(string) {
+		try {
+			if (!string || typeof string !== 'string') return '';
+			if (!string.includes('-')) return decodeURIComponent(string);
+			return decodeURIComponent(string.replaceAll('-', ' '));
+		} catch (error) {
+			return decodeURIComponent(string);
 		}
 	}
 
@@ -8102,7 +8143,7 @@ class Vanity extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 			if (aiCore && aiCore.ModelPath) sockets.set('AI Model', aiCore.ModelPath);
 			if (aiCore && aiCore.ColorPath) sockets.set('AI Color', aiCore.ColorPath);
 
-			const appearanceCore = new ui_vanity_core__WEBPACK_IMPORTED_MODULE_0__.AppearanceCore({ type: 'Spartan ID', sockets, gamertag: this.state.gamertag });
+			const appearanceCore = new ui_vanity_core__WEBPACK_IMPORTED_MODULE_0__.AppearanceCore({ type: 'Spartan ID', sockets, gamertag: this.gamertag });
 			if (appearanceCore) this.state.cores.push(appearanceCore);
 		} catch (error) {
 			console.error(`[Vanity.showAppearance] spartan`, error);
@@ -8149,7 +8190,7 @@ class Vanity extends component__WEBPACK_IMPORTED_MODULE_1__.Component {
 				}
 			}
 
-			const appearanceCore = new ui_vanity_core__WEBPACK_IMPORTED_MODULE_0__.AppearanceCore({ type, core, sockets, gamertag: this.state.gamertag });
+			const appearanceCore = new ui_vanity_core__WEBPACK_IMPORTED_MODULE_0__.AppearanceCore({ type, core, sockets, gamertag: this.gamertag });
 			if (appearanceCore) return appearanceCore;
 		} catch (error) {
 			console.error(`[Vanity.makeAppearanceCore]`, error);
@@ -8290,6 +8331,51 @@ class Params extends component__WEBPACK_IMPORTED_MODULE_0__.Component {
 }
 
 const urlParams = new Params();
+
+/***/ }),
+
+/***/ "./src/utils/paths.js":
+/*!****************************!*\
+  !*** ./src/utils/paths.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "filenameFromPath": () => (/* binding */ filenameFromPath)
+/* harmony export */ });
+const filenameFromPath = (path, {
+	includeExtension = false
+} = {}) => {
+	if (!path || typeof path !== 'string') return;
+
+	const pathParts = path.split('/');
+
+	if (!pathParts.length) return path;
+	if (pathParts.length === 1)
+	{
+		if (path.includes('.') && !includeExtension)
+		{
+			// Is a filename without a path
+			const nameParts = path.split('.');
+			if (nameParts.length > 1) return nameParts.slice(0, nameParts.length - 1).join('');
+		}
+
+		// Is not a path, return string raw
+		return path;
+	}
+
+	const fileName = pathParts[pathParts.length-1];
+	if (includeExtension) return fileName;
+
+	if (fileName.includes('.') && !includeExtension)
+	{
+		const nameParts = fileName.split('.');
+		if (nameParts.length > 1) return nameParts.slice(0, nameParts.length - 1).join('.');
+	}
+
+	return fileName;
+}
 
 /***/ }),
 
@@ -8885,7 +8971,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("17852d132a0e6d75460f")
+/******/ 		__webpack_require__.h = () => ("1f3fe37a8ca3fff689df")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
@@ -9856,4 +9942,4 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.17852d132a0e6d75460f.js.map
+//# sourceMappingURL=main.1f3fe37a8ca3fff689df.js.map
