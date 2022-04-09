@@ -70,7 +70,6 @@ class HeaderNav extends Component {
 					<li><button
 						aria-label="Discord"
 						title="Discord"
-						class="featured"
 						onclick=${() => modalConstructor.showView(discord.render())}
 					>
 						<div class="icon-masked icon-discord"></div>

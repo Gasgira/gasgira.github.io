@@ -1,25 +1,19 @@
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
+const {
+	CleanWebpackPlugin
+} = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-	mode: 'production',
+	mode: 'development',
+	devtool: 'source-map',
 	entry: './src',
 	output: {
 		filename: '[name].[hash].js', // contenthash
 		path: path.resolve(__dirname, './docs'),
 		publicPath: '/'
-	},
-	optimization: {
-		minimize: true,
-		minimizer: [
-			new TerserPlugin({
-				extractComments: false,
-			}),
-		],
 	},
 	resolve: {
 		alias: {},
@@ -72,19 +66,19 @@ module.exports = {
 	devServer: {
 		static: path.join(__dirname, 'docs'),
 		hot: true,
-		historyApiFallback: true,
+    historyApiFallback: true,
 		allowedHosts: [
-			'cylix.guide'
-		],
-		headers: {
-				'Access-Control-Allow-Origin': '*',
-				'Access-Control-Allow-Headers': '*',
-				'Access-Control-Allow-Methods': '*',
-		},
+      'cylix.guide'
+    ],
+    headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Methods': '*',
+    },
 		proxy: {
 			'/api': {
 				target: 'https://cylix.guide',
-				changeOrigin: true,
+        changeOrigin: true,
 				secure: false,
 			}
 		}
@@ -98,13 +92,7 @@ module.exports = {
 			}
 		}),
 		new webpack.HotModuleReplacementPlugin(),
-		new CleanWebpackPlugin({
-			cleanOnceBeforeBuildPatterns: [
-				'**/*',
-				'!CNAME*',
-				'!db/**',
-			],
-		}),
+		// new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
 			template: 'src/index.html',
 			date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
