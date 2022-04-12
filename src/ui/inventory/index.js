@@ -14,9 +14,9 @@ class Inventory extends Component {
 		this.pageSize = parseInt(settings.pageSize ?? 100);
 		const favorites = new Favorites({categoryName: 'Favorites'});
 		const search = new Search({categoryName: 'Search'});
-		// const offerings = new Offerings({categoryName: 'Offerings'});
+		const offerings = new Offerings({categoryName: 'Offerings'});
 
-		this.categories = [favorites, search]; // , offerings
+		this.categories = [favorites, search, offerings]; // , offerings
 
 		const paramCategoryName = urlParams.getSecionSetting('inventory');
 		const paramBundle = urlParams.getSecionSetting('bundle');
@@ -346,6 +346,27 @@ class Search extends InventoryCategory {
 			console.log('sdm', modifiedDateString)
 			this.state.filters.set('modifiedDate', new Date(`${modifiedDateString}T00:00:00Z`));
 		}
+		
+		const addedDateString = urlParams.getSecionSetting('saa');
+		if (addedDateString && typeof addedDateString === 'string' && Date.parse(`${addedDateString}T00:00:00Z`))
+		{
+			console.log('saa', addedDateString)
+			this.state.filters.set('addedDate', new Date(`${addedDateString}T00:00:00Z`));
+		}
+		
+		const addedBeforeDateString = urlParams.getSecionSetting('sab');
+		if (addedBeforeDateString && typeof addedBeforeDateString === 'string' && Date.parse(`${addedBeforeDateString}T00:00:00Z`))
+		{
+			console.log('saa', addedBeforeDateString)
+			this.state.filters.set('addedBeforeDate', new Date(`${addedBeforeDateString}T00:00:00Z`));
+		}
+		
+		const types = urlParams.getSecionSetting('types');
+		if (types && typeof types === 'string')
+		{
+			console.log('types', types)
+			this.state.filters.set('types', types);
+		}
 
 		if (this.state.term || this.state.filters.size) {
 			this.searchItems();
@@ -441,6 +462,41 @@ class Search extends InventoryCategory {
 						}
 					>
 				</li>
+				<li class="filter-input_wrapper">
+					<label for="date_added-after">Added After</label>
+					<input
+						type="date"
+						id="date_added-after"
+						onchange=${(e) => this.filterAddedDate(e.target.value)}
+						value=${urlParams.getSecionSetting('saa')
+							? `${urlParams.getSecionSetting('saa')}`
+							: ''
+						}
+					>
+				</li>
+				<li class="filter-input_wrapper">
+					<label for="date_added-before">Added Before</label>
+					<input
+						type="date"
+						id="date_added-before"
+						onchange=${(e) => this.filterAddedBeforeDate(e.target.value)}
+						value=${urlParams.getSecionSetting('sab')
+							? `${urlParams.getSecionSetting('sab')}`
+							: ''
+						}
+					>
+				</li>
+				<li class="filter-input_wrapper">
+					<label for="select_types">Type</label>
+					<select
+						name="select_types"
+						id="select_types"
+						onchange=${(e) => this.filterType(e.target.value)}
+					>
+						<option value="">Any</option>
+						${() => [...db.itemTypes.entries()].map(([rawType, niceType]) => `<option value=${rawType}>${niceType}</option>`)}
+					</select>
+				</li>
 			</ul>
 		`;
 	}
@@ -464,6 +520,12 @@ class Search extends InventoryCategory {
 
 			const filters = this.state.filters;
 
+			// TODO support multiple types
+			if (filters.has('types') && entry?.type)
+			{
+				if (filters.get('types') !== entry.type) continue;
+			}
+
 			if (filters.has('modifiedDate') && Array.isArray(entry?.touched))
 			{
 				const dateString = entry.touched[entry.touched.length-1];
@@ -485,6 +547,34 @@ class Search extends InventoryCategory {
 				{
 					const lastModified = new Date(dateString);
 					if (new Date(filters.get('modifiedBeforeDate')) < lastModified)
+					{
+						// console.log(lastModified)
+						continue;
+					}
+				}
+			}
+
+			if (filters.has('addedDate') && Array.isArray(entry?.touched))
+			{
+				const dateString = entry.touched[0];
+				if (Date.parse(dateString))
+				{
+					const addedDate = new Date(dateString);
+					if (new Date(filters.get('addedDate')) > addedDate)
+					{
+						// console.log(lastModified)
+						continue;
+					}
+				}
+			}
+
+			if (filters.has('addedBeforeDate') && Array.isArray(entry?.touched))
+			{
+				const dateString = entry.touched[0];
+				if (Date.parse(dateString))
+				{
+					const addedDate = new Date(dateString);
+					if (new Date(filters.get('addedBeforeDate')) < addedDate)
 					{
 						// console.log(lastModified)
 						continue;
@@ -526,6 +616,21 @@ class Search extends InventoryCategory {
 		inventory.scrollIntoView();
 	}
 
+	filterType(value) {
+		const filterKey = 'types';
+		if (!value && this.state.filters.has(filterKey))
+		{
+			this.state.filters.delete(filterKey);
+			urlParams.deleteSecionSetting(filterKey);
+			return;
+		}
+		if (!value || typeof value !== 'string') return;
+		console.log('filterType', value);
+
+		this.state.filters.set(filterKey, value);
+		urlParams.setSecionSetting(filterKey, value);
+	}
+
 	filterModifiedDate(dateString) {
 		console.log('date', dateString)
 		if (!dateString || !Date.parse(dateString))
@@ -560,6 +665,46 @@ class Search extends InventoryCategory {
 		// console.log(date);
 		this.state.filters.set('modifiedBeforeDate', date);
 		urlParams.setSecionSetting('smb', `${dateString}`);
+	}
+
+	filterAddedDate(dateString) {
+		console.log('filterAddedDate', dateString)
+		const filterKey = 'addedDate';
+		const filterParam = 'saa';
+		if (!dateString || !Date.parse(dateString))
+		{
+			// console.log('del', dateString)
+			if (this.state.filters.has(filterKey)) this.state.filters.delete(filterKey);
+			urlParams.deleteSecionSetting(filterParam);
+			return;
+		}
+		const date = new Date(`${dateString}T00:00:00Z`);
+		if (!date) return;
+		console.log('datep', date)
+		// date.setDate(date.getDate() + 1);
+		// console.log(date);
+		this.state.filters.set(filterKey, date);
+		urlParams.setSecionSetting(filterParam, `${dateString}`);
+	}
+
+	filterAddedBeforeDate(dateString) {
+		console.log('filterAddedBeforeDate', dateString)
+		const filterKey = 'addedBeforeDate';
+		const filterParam = 'sab';
+		if (!dateString || !Date.parse(dateString))
+		{
+			// console.log('del', dateString)
+			if (this.state.filters.has(filterKey)) this.state.filters.delete(filterKey);
+			urlParams.deleteSecionSetting(filterParam);
+			return;
+		}
+		const date = new Date(`${dateString}T00:00:00Z`);
+		if (!date) return;
+		console.log('datep', date)
+		// date.setDate(date.getDate() + 1);
+		// console.log(date);
+		this.state.filters.set(filterKey, date);
+		urlParams.setSecionSetting(filterParam, `${dateString}`);
 	}
 
 	focus() {

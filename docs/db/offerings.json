@@ -1,11 +1,11 @@
 {
-	"date": "2022-04-02T17:00:00.285Z",
+	"date": "2022-04-11T17:00:01.311Z",
 	"capstone": "ChallengeContent/ClientChallengeDeckDefinitions/S1TacticalSlayerWeeklyDeck1.json",
 	"store": [
-		"20210805-00",
-		"20210906-19",
-		"20220124-01",
-		"20211022-02",
+		"20210623-14",
+		"20210928-02",
+		"20211018-04",
+		"20220202-01",
 		"20210625-00"
 	],
 	"bundles": [
@@ -340,7 +340,9 @@
 			{
 				"touched": [
 					"2022-03-10T00:00:00.000Z",
-					"2022-03-13T00:00:00.000Z"
+					"2022-03-13T00:00:00.000Z",
+					"2022-04-06T00:00:00.000Z",
+					"2022-04-09T00:00:00.000Z"
 				],
 				"collection": "4FYrzwvaef",
 				"offering": {
@@ -700,7 +702,10 @@
 			{
 				"touched": [
 					"2022-03-17T00:00:00.000Z",
-					"2022-03-20T00:00:00.000Z"
+					"2022-03-20T00:00:00.000Z",
+					"2022-04-06T00:00:00.000Z",
+					"2022-04-08T00:00:00.000Z",
+					"2022-04-11T00:00:00.000Z"
 				],
 				"collection": "fhxrNhjNC8",
 				"offering": {
@@ -1383,6 +1388,271 @@
 				"title": "Spirit",
 				"imagePath": "progression/StoreContent/Offerings/S1_Spirit.png",
 				"description": "Some move on. Some stay to fight."
+			}
+		],
+		[
+			"20210623-14",
+			{
+				"touched": [
+					"2022-04-05T00:00:00.000Z"
+				],
+				"collection": "3Vs7gw_wym",
+				"offering": {
+					"OfferingId": "20210623-14",
+					"OfferingDisplayPath": "StoreContent/Display/Offerings/20210623-14.json",
+					"OfferingExpirationDate": null,
+					"IncludedItems": [
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Coatings/002-001-olympus-dce288ed.json",
+							"ItemType": "ArmorCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Helmets/005-001-olympus-8e7c9dff.json",
+							"ItemType": "ArmorHelmet"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/HelmetAttachments/004-001-olympus-65be395d.json",
+							"ItemType": "ArmorHelmetAttachment"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Visors/012-001-f24af123.json",
+							"ItemType": "ArmorVisor"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/ShouldersRight/009-001-olympus-bc4aff7d.json",
+							"ItemType": "ArmorRightShoulderPad"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/ShouldersLeft/008-001-olympus-bc4aff7d.json",
+							"ItemType": "ArmorLeftShoulderPad"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/ChestAttachments/001-001-olympus-36ff7480.json",
+							"ItemType": "ArmorChestAttachment"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/KneePads/006-001-olympus-bc4aff7d.json",
+							"ItemType": "ArmorKneePad"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Spartan/ActionPoses/101-000-menu-stance-o-f373157c.json",
+							"ItemType": "SpartanActionPose"
+						}
+					],
+					"Prices": [
+						{
+							"Cost": 1500,
+							"CurrencyPath": "Currency/Currencies/cR.json"
+						}
+					],
+					"IncludedCurrencies": [],
+					"IncludedRewardTracks": [],
+					"BoostPath": null,
+					"OperationXp": 0,
+					"EventXp": 0,
+					"MatchBoosts": null
+				},
+				"title": "SALE! ZVEZDA Armor Set",
+				"imagePath": "progression/StoreContent/Offerings/S1_Zvezda.png",
+				"description": "Guardian of the stars."
+			}
+		],
+		[
+			"20210928-02",
+			{
+				"touched": [
+					"2022-04-05T00:00:00.000Z"
+				],
+				"collection": "hAAbLcZAr6",
+				"offering": {
+					"OfferingId": "20210928-02",
+					"OfferingDisplayPath": "StoreContent/Display/Offerings/20210928-02.json",
+					"OfferingExpirationDate": null,
+					"IncludedItems": [
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Coatings/002-001-olympus-7f895462.json",
+							"ItemType": "ArmorCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Vehicle/Coatings/404-300-olympus-7f895462.json",
+							"ItemType": "VehicleCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Vehicle/AlternateGeos/401-000-cowcatcher-f8a2624a.json",
+							"ItemType": "VehicleAlternateGeometryRegion"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Coatings/203-201-olympus-7f895462.json",
+							"ItemType": "WeaponCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Coatings/203-202-olympus-7f895462.json",
+							"ItemType": "WeaponCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Coatings/203-203-olympus-7f895462.json",
+							"ItemType": "WeaponCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Coatings/203-200-olympus-7f895462.json",
+							"ItemType": "WeaponCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Vehicle/Coatings/404-304-olympus-7f895462.json",
+							"ItemType": "VehicleCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Vehicle/Coatings/404-306-olympus-7f895462.json",
+							"ItemType": "VehicleCoating"
+						}
+					],
+					"Prices": [
+						{
+							"Cost": 1000,
+							"CurrencyPath": "Currency/Currencies/cR.json"
+						}
+					],
+					"IncludedCurrencies": [],
+					"IncludedRewardTracks": [],
+					"BoostPath": null,
+					"OperationXp": 0,
+					"EventXp": 0,
+					"MatchBoosts": null
+				},
+				"title": "Flash Fjord",
+				"imagePath": "progression/StoreContent/Offerings/S1_FlashFjord.png",
+				"description": "Rush and crush."
+			}
+		],
+		[
+			"20211018-04",
+			{
+				"touched": [
+					"2022-04-05T00:00:00.000Z"
+				],
+				"collection": "6Xlx7f-Kpv",
+				"offering": {
+					"OfferingId": "20211018-04",
+					"OfferingDisplayPath": "StoreContent/Display/Offerings/20211018-04.json",
+					"OfferingExpirationDate": null,
+					"IncludedItems": [
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Vehicle/Coatings/404-302-olympus-a3b7f8f9.json",
+							"ItemType": "VehicleCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Charms/201-201-d594ce87.json",
+							"ItemType": "WeaponCharm"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Spartan/Emblems/104-001-samurai-kabut-bf97682c.json",
+							"ItemType": "SpartanEmblem"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Vehicle/Emblems/405-305-bf97682c.json",
+							"ItemType": "VehicleEmblem"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Emblems/013-001-bf97682c.json",
+							"ItemType": "ArmorEmblem"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Weapon/Emblems/205-201-bf97682c.json",
+							"ItemType": "WeaponEmblem"
+						}
+					],
+					"Prices": [
+						{
+							"Cost": 400,
+							"CurrencyPath": "Currency/Currencies/cR.json"
+						}
+					],
+					"IncludedCurrencies": [],
+					"IncludedRewardTracks": [],
+					"BoostPath": null,
+					"OperationXp": 0,
+					"EventXp": 0,
+					"MatchBoosts": null
+				},
+				"title": "Tank Rank",
+				"imagePath": "progression/StoreContent/Offerings/S1-TankRank.png",
+				"description": "Ask any UNSC Marine."
+			}
+		],
+		[
+			"20211022-05",
+			{
+				"touched": [
+					"2022-04-07T00:00:00.000Z",
+					"2022-04-10T00:00:00.000Z"
+				],
+				"collection": "HSYvkl_gjR",
+				"offering": {
+					"OfferingId": "20211022-05",
+					"OfferingDisplayPath": "StoreContent/Display/Offerings/20211022-05.json",
+					"OfferingExpirationDate": null,
+					"IncludedItems": [
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/Coatings/002-001-olympus-3fe59808.json",
+							"ItemType": "ArmorCoating"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/HelmetAttachments/004-001-olympus-948d8186.json",
+							"ItemType": "ArmorHelmetAttachment"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/ShouldersLeft/008-001-olympus-8e7c9dff.json",
+							"ItemType": "ArmorLeftShoulderPad"
+						},
+						{
+							"Amount": 1,
+							"ItemPath": "Inventory/Armor/ShouldersRight/009-001-olympus-8e7c9dff.json",
+							"ItemType": "ArmorRightShoulderPad"
+						}
+					],
+					"Prices": [
+						{
+							"Cost": 500,
+							"CurrencyPath": "Currency/Currencies/cR.json"
+						}
+					],
+					"IncludedCurrencies": [],
+					"IncludedRewardTracks": [],
+					"BoostPath": null,
+					"OperationXp": 0,
+					"EventXp": 0,
+					"MatchBoosts": null
+				},
+				"title": "Bullet Time",
+				"imagePath": "progression/StoreContent/Offerings/S1_BulletTime.png",
+				"description": "Always one step ahead."
 			}
 		]
 	]

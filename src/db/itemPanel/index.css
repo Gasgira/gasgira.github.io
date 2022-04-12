@@ -82,6 +82,7 @@
 					background-repeat: no-repeat;
 					background-position: center center;
 					opacity: 0.5;
+					vertical-align: center;
 				}
 				& .badge-svg {
 					--length: 1.5em;

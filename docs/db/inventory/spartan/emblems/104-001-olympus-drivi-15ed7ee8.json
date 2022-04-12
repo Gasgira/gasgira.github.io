@@ -38,7 +38,7 @@
 	],
 	"CommonData": {
 		"Id": "104-001-olympus-drivi-15ed7ee8",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Driving Offensively",
 		"Description": "Don't let a little cliff stop you!",
 		"FeatureFlag": true,

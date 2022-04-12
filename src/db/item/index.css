@@ -72,6 +72,7 @@ button.dbItemIcon {
 		transition: opacity var(--time-active) linear;
 		font-size: 0.9em;
 		margin-bottom: 0.25em;
+		word-wrap: break-word;
 	}
 	&:hover {
     background-color: rgba(255,255,255,1);

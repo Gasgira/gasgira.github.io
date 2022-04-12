@@ -233,6 +233,37 @@ export class Item extends Component {
 		date.setUTCHours(20);
 		return (this._lastModifiedDate = date);
 	}
+
+	get visibility() {
+		if (this?._visibility) return this._visibility;
+		try {
+			const manifest = this.manifestItem;
+			const lastVisible = manifest?.visible;
+			const isHidden = this?.data?.CommonData.HideUntilOwned;
+	
+			// Now hidden, but was seen before
+			if (isHidden && lastVisible) return (this._visibility = {
+				status: 'Seen',
+				date: new Date(lastVisible)
+			})
+	
+			// Not hidden and has a date for first appearance
+			if (!isHidden && lastVisible) return (this._visibility = {
+				status: 'Visible',
+				date: new Date(lastVisible)
+			})
+	
+			return (this._visibility = {
+				status: isHidden ? 'Hidden' : 'Visible',
+				date: new Date('2021-11-15T20:00:00.000Z')
+			})
+		} catch (error) {
+			return (this._visibility = {
+				status: 'Hidden',
+				date: new Date('2021-11-15T20:00:00.000Z')
+			})
+		}
+	}
 }
 
 export class Offering extends Item {

@@ -83,6 +83,7 @@ class Database {
 		return this?._items ?? (this._items = new Map());
 	}
 
+	// cache items IDs by type
 	get typeIDs() {
 		return this?._typeIDs ?? (this._typeIDs = new Map());
 	}

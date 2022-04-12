@@ -78,7 +78,7 @@ class Discord extends Component {
 					<span title=${this?.capstoneWebhookID ?? '...'}>${this?.capstoneWebhookID ? `You have registered a capstone webhook with the ID: ${this.capstoneWebhookID.substring(0, 9)}...` : ''}</span>
 					<br/>
 					<br/>
-					<img src="/discord.jpg">
+					<img src="/storebot.jpg">
 				</section>
 			</div>
 		`;

@@ -121,12 +121,12 @@ class ItemPanel extends Component {
 								></div>
 								<span class="badge">${this.state.item?.manufacturerName ?? ''}</span>
 							</div>
-							<div class="badge">
+							<div class="badge" title=${this.state.item?.visibility?.date?.toLocaleDateString()}>
 								<div
 									class="badge-svg"
-									style=${{backgroundImage: `url(/items.svg#${this.state.item?.data?.CommonData?.Type ?? 'default'})`}}
+									style=${{backgroundImage: `url(/items.svg#${this.state.item?.visibility?.status.toLowerCase()})`}}
 								></div>
-								<span class="badge">${item?.CommonData?.HideUntilOwned === false ? 'Visible' : 'Hidden'}</span>
+								<span class="badge">${this.state.item?.visibility?.status}</span>
 							</div>
 						</div>
 						<span class="attribute">${this.state.item?.data?.CommonData?.CustomAvailability ?? null}</span>

@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "201-201-d60ea4c8",
-		"HideUntilOwned": false,
+		"HideUntilOwned": true,
 		"Title": "Knuckles",
 		"Description": "A brass kiss.",
 		"FeatureFlag": true,
