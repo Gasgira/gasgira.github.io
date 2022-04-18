@@ -22,62 +22,62 @@ class Discord extends Component {
 	}
 
 	render() {
-		// const testParam = urlParams.getSecionSetting('discord');
-		// if (!testParam) return this.html`
-		// 	<div class="discord_wrapper">
-		// 		<section>
-		// 			<header>Discord</header>
-		// 			<p>Daily store update bot coming soon...</p>
-		// 			<br/>
-		// 			<img src="/discord.jpg">
-		// 		</section>
-		// 	</div>
-		// `;
 		return this.html`
 			<div class="discord_wrapper">
 				<section>
 					<header><h2>Discord</h2></header>
 					<p>To contribute to the project, report issues, or just talk about Halo and its API you are welcome to <a href="https://cylix.guide/discord" target="_blank">join our Discord community.</a></p>
 					<br/>
-					<h2>Webhooks</h2>
-					<p>Cylix Guide offers a Discord webhook service which can post daily Halo Infinite updates to your community. If you operate a Discord server and would like this service, please read <a href="https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks" target="_blank" rel="noopener noreferrer">Discord's page on webhooks</a> and submit your webhook below.</p><br/>
-					<p>Updates will be sent following the in-game reset time.</p><br/>
-					<p>If your server has an active webhook and you would like to stop receiving  updates, you must remove the webhook from your Discord server integrations.</p><br/>
-					<p>Note: alternatively there is a followable channel in the <a href="https://cylix.guide/discord" target="_blank">Cylix discord</a> if you are not able to add the webhook directly.</p><br/>
-					${this.renderStatus()}
-					<br/><br/>
+					<article>
+						<h2>Bot</h2>
+						<p><a href="https://cylix.guide/discord/bot" target="_blank">Click here</a> to add the Discord bot to your server!</p>
+						<ul>
+							<li>/item "search term" "type?" "spoilers?"</li>
+							<li>/vanity "gamertag"</li>
+						</ul>
+					</article>
+					<br/>
+					<article>
+						<h2>Webhooks</h2>
+						<p>Cylix Guide offers a Discord webhook service which can post daily Halo Infinite updates to your community. If you operate a Discord server and would like this service, please read <a href="https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks" target="_blank" rel="noopener noreferrer">Discord's page on webhooks</a> and submit your webhook below.</p><br/>
+						<p>Updates will be sent following the in-game reset time.</p><br/>
+						<p>If your server has an active webhook and you would like to stop receiving  updates, you must remove the webhook from your Discord server integrations.</p><br/>
+						<p>Note: alternatively there is a followable channel in the <a href="https://cylix.guide/discord" target="_blank">Cylix discord</a> if you are not able to add the webhook directly.</p><br/>
+						${this.renderStatus()}
+						<br/><br/>
 
-					<div class="option_wrapper">
-						<label for="webhook-store">Store (daily): </label>
-						<input class="show-value" type="text" id="webhook-store" name="webhook-store"
-							onchange=${(e) => this.inputStore(e?.target?.value)}
-							disabled=${this?.storeWebhookID}
-							placeholder="https://discord.com/api/webhooks/..."
-						>
-						<button
-							onclick=${() => this.submitStore()}
-							disabled=${this?.storeWebhookID}
-						>Submit</button>
-					</div>
-					<span title=${this?.storeWebhookID ?? '...'}>${this?.storeWebhookID ? `You have registered a store webhook with the ID: ${this.storeWebhookID.substring(0, 9)}...` : ''}</span>
-					<br/>
-					<br/>
+						<div class="option_wrapper">
+							<label for="webhook-store">Store (daily): </label>
+							<input class="show-value" type="text" id="webhook-store" name="webhook-store"
+								onchange=${(e) => this.inputStore(e?.target?.value)}
+								disabled=${this?.storeWebhookID}
+								placeholder="https://discord.com/api/webhooks/..."
+							>
+							<button
+								onclick=${() => this.submitStore()}
+								disabled=${this?.storeWebhookID}
+							>Submit</button>
+						</div>
+						<span title=${this?.storeWebhookID ?? '...'}>${this?.storeWebhookID ? `You have registered a store webhook with the ID: ${this.storeWebhookID.substring(0, 9)}...` : ''}</span>
+						<br/>
+						<br/>
 
-					<div class="option_wrapper">
-						<label for="webhook-capstone">Capstone (weekly): </label>
-						<input class="show-value" type="text" id="webhook-capstone" name="webhook-capstone"
-							onchange=${(e) => this.inputCapstone(e?.target?.value)}
-							disabled=${this?.capstoneWebhookID}
-							placeholder="https://discord.com/api/webhooks/..."
-						>
-						<button
-							onclick=${() => this.submitCapstone()}
-							disabled=${this?.capstoneWebhookID}
-						>Submit</button>
-					</div>
-					<span title=${this?.capstoneWebhookID ?? '...'}>${this?.capstoneWebhookID ? `You have registered a capstone webhook with the ID: ${this.capstoneWebhookID.substring(0, 9)}...` : ''}</span>
+						<div class="option_wrapper">
+							<label for="webhook-capstone">Capstone (weekly): </label>
+							<input class="show-value" type="text" id="webhook-capstone" name="webhook-capstone"
+								onchange=${(e) => this.inputCapstone(e?.target?.value)}
+								disabled=${this?.capstoneWebhookID}
+								placeholder="https://discord.com/api/webhooks/..."
+							>
+							<button
+								onclick=${() => this.submitCapstone()}
+								disabled=${this?.capstoneWebhookID}
+							>Submit</button>
+						</div>
+						<span title=${this?.capstoneWebhookID ?? '...'}>${this?.capstoneWebhookID ? `You have registered a capstone webhook with the ID: ${this.capstoneWebhookID.substring(0, 9)}...` : ''}</span>
+					</article>
 					<br/>
-					<br/>
+					<img src="/bot.jpg">
 					<img src="/storebot.jpg">
 				</section>
 			</div>

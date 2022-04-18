@@ -10,8 +10,11 @@
 		max-width: 600px;
 		max-width: 80ch;
 	}
+	& ul {
+		margin-left: 1rem;
+	}
 	& img {
-		max-width: 80%;
+		max-width: 100%;
 	}
 	& .option_wrapper {
 		display: flex;

@@ -2,15 +2,30 @@ import { emitter } from 'eventEmitter';
 import { settings } from 'ui/settings';
 import { itemPanel } from 'db/itemPanel';
 import { Item } from 'db/item';
+import { urlParams } from 'urlParams';
 
 class Database {
 	constructor() {
 		this.dbPath = 'db';
 		if (settings.data.has('dbPath')) this.dbPath = settings.data.get('dbPath');
 		if (settings.data.has('pathCasing')) this.pathCasing = settings.data.get('pathCasing');
+		if (settings.data.has('revealHidden'))
+		{
+			this.revealHidden = settings.data.get('revealHidden');
+		} else if (urlParams.getSecionSetting('spoilers'))
+		{
+			this.revealHidden = true;
+		}
+	}
 
-		// TODO get manufacturer info
-		// metadata/metadata.json
+	set revealHidden(bool) {
+		if (bool) return (this._revealHidden = true);
+		this._revealHidden = false;
+	}
+
+	get revealHidden() {
+		if (this?._revealHidden) return this._revealHidden;
+		return false;
 	}
 
 	async getMetaData() {
@@ -72,6 +87,38 @@ class Database {
 				console.error(`[db.get] ${response.status} "${this.pathCase(path)}"`)
 				return Promise.reject(response);
 			});
+	}
+
+	async getRelationsByID(id) {
+		try {
+			if (!id) return;
+			if (!this?._relations) this._relations = this.getRelationsIndex();
+			const relations = await this._relations;
+			console.log(`[db.getRelationsByID]`, id, relations)
+	
+			if (!relations || !relations.size)
+			{
+				console.error(`[db.getRelationsByID] No relation index!`);
+				return;
+			}
+
+			if (relations.has(id)) return relations.get(id);
+				console.warn(`[db.getRelationsByID] No relations for "${id}"!`);
+		} catch (error) {
+			console.error(`[db.getRelationsByID] uncaught`, error);
+		}
+	}
+
+	async getRelationsIndex() {
+		const relationsIndex = await this.getJSON('relations.json')
+		if (relationsIndex && Array.isArray(relationsIndex))
+		{
+			const relations = new Map(relationsIndex);
+			console.info(`[db.getRelationsIndex] "${relations.size}" item relations`);
+			this._relations = relations;
+			return relations;
+		}
+		console.error(`[db.getRelationsIndex] No relations index!`);
 	}
 
 	async getOfferings() {

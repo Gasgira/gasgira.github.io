@@ -1,11 +1,24 @@
 import { HTML } from 'lib/HTML';
 import { Component } from 'component';
+import { urlParams } from 'urlParams';
 
 import './index.css';
 
 class Settings extends Component {
 	constructor() {
 		super();
+
+		if (!localStorage) return;
+		let storageTest;
+		try {
+			storageTest = window.localStorage;
+			const testValue = '__storage_test__';
+			storageTest.setItem(testValue, testValue);
+			storageTest.removeItem(testValue);
+		} catch (error) {
+			console.warn(`[settings] localStorage not available!`);
+			return;
+		}
 
 		// lets the user provide an alternate root for the db
 		const dbPath = localStorage.getItem('dbPath');
@@ -23,11 +36,16 @@ class Settings extends Component {
 		const appScale = localStorage.getItem('userAppScale');
 		if (appScale) {
 			this.setAppScale(appScale);
-		} 
+		}
 		
 		const textScale = localStorage.getItem('userTextScale');
 		if (appScale) {
 			this.setTextScale(textScale);
+		}
+		
+		const showSpoilers = localStorage.getItem('revealHidden');
+		if (showSpoilers) {
+			this.data.set('revealHidden', true);
 		} 
 	}
 
@@ -60,6 +78,7 @@ class Settings extends Component {
 				</section>
 				${this.advanced()}
 				<button onclick=${() => this.reset()}>Reset Settings</button>
+				<aside>Note: you will lose any saved favorite items upon reset!</aside>
 			</div>
 		`;
 	}
@@ -157,6 +176,16 @@ class Settings extends Component {
 		localStorage.clear();
 		console.warn(`[skimmer][settings] Cleared settings. Refresh the page to take full effect.`, this.data);
 		this.render();
+	}
+
+	showSpoilers() {
+		localStorage.setItem('revealHidden', true);
+		if (localStorage.getItem('revealHidden'))
+		{
+			console.log(`[settings.showSpoilers] set "revealHidden"`);
+		}
+		urlParams.setSecionSetting('spoilers', 'true');
+		window.location.reload();
 	}
 }
 

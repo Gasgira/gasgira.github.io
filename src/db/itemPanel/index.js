@@ -35,11 +35,13 @@ class ItemPanel extends Component {
 		{
 			this.setState({visible: false});
 			history.pushState(null, 'Halosets', `#`);
+			document.body.style.overflow = 'auto';
 		}
 	}
 
 	toggleVisibility() {
 		this.setState({visible: !this.state.visible});
+		document.body.style.overflow = 'auto';
 	}
 
 	displayItem(item, skipState) {
@@ -52,8 +54,10 @@ class ItemPanel extends Component {
 		
 		this.setState({
 			item,
-			visible: true
+			visible: true,
+			relations: undefined
 		});
+		document.body.style.overflow = 'hidden';
 	}
 
 	get item() {
@@ -205,6 +209,25 @@ class ItemPanel extends Component {
 			// default
 			return value;
 		}, '\t');
+	}
+
+	async getRelations() {
+		if (this.state.relations) return this.state.relations;
+		const relations = await db.getRelationsByID(this.item.id);
+		if (!relations) return;
+		this.state.relations = relations;
+		return relations;
+	}
+
+	async getInternalRelations() {
+		console.log('getInternalRelations!');
+		const relations = await this.getRelations();
+		console.log('getInternalRelations!', relations);
+		if (relations?.internal && relations.internal.length)
+		{
+			// console.log('relations!', relations.internal.join(', '));
+			this.relatedItemIDs = new Set(relations.internal);
+		}
 	}
 }
 

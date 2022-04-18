@@ -59,6 +59,7 @@ class HeaderNav extends Component {
 					</div>
 				</header></a>
 				<ul>
+					${this.spoilersButton()}
 					${pathname.startsWith('/vanity') ? this.shareButton() : this.searchButton()}
 					<li><button
 						aria-label="Settings"
@@ -149,6 +150,22 @@ class HeaderNav extends Component {
 				}}
 			>
 				Items
+			</button></li>
+		`;
+	}
+
+	// class="featured"
+	spoilersButton() {
+		if (settings.data.has('revealHidden')) return;
+		return HTML.wire(this, ':spoilers')`
+			<li><button
+				aria-label="Show spoilers?"
+				title="Reveal Spoilers"
+				onclick=${() => {
+					settings.showSpoilers();
+				}}
+			>
+				Show spoilers?
 			</button></li>
 		`;
 	}

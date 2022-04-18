@@ -34,6 +34,7 @@ export class Item extends Component {
 	}
 
 	get name() {
+		if (this.isRedacted) return '[REDACTED]';
 		let title = this?.data?.CommonData?.Title;
 		if (title && typeof title === 'string')
 		{
@@ -47,17 +48,18 @@ export class Item extends Component {
 		return this.id ?? '???';
 	}
 
+	async getName() {
+		await this.init();
+		if (this.isRedacted) return '[REDACTED]';
+		return this?.data?.CommonData?.Title ?? this.id;
+	}
+
 	get seasonNumber() {
 		const season = this?.data?.CommonData?.Season;
 		if (!season || typeof season !== 'string') return '0';
 		const split = season.split(' ');
 		if (split && split?.[1]) return parseInt(split[1]);
 		return '0';
-	}
-
-	async getName() {
-		await this.init();
-		return this?.data?.CommonData?.Title ?? this.id;
 	}
 
 	get parentPaths() {
@@ -173,6 +175,9 @@ export class Item extends Component {
 
 	get imagePath() {
 		let imagePath = 'progression/default/default.png';
+
+		if (this.isRedacted) return imagePath;
+
 		const displayPath = this?.data?.CommonData?.DisplayPath?.Media?.MediaUrl?.Path;
 		if (displayPath && typeof displayPath === 'string') {
 			imagePath = `${displayPath.toLowerCase().replace('.svg', '.png')}`;
@@ -188,7 +193,10 @@ export class Item extends Component {
 	async getImagePath() {
 		if (this?._imagePath) return this._imagePath;
 		await this.init();
-		let imagePath = '';
+		let imagePath = 'progression/default/default.png';
+
+		if (this.isRedacted) return imagePath;
+		
 		const displayPath = this?.data?.CommonData?.DisplayPath?.Media?.MediaUrl?.Path;
 		if (displayPath && typeof displayPath === 'string') {
 			imagePath = `${displayPath[0].toLowerCase()}${displayPath.substring(1)}`;
@@ -234,11 +242,30 @@ export class Item extends Component {
 		return (this._lastModifiedDate = date);
 	}
 
+	get isRedacted() {
+		if (this?._isRedacted) return this._isRedacted;
+		if (db.revealHidden) return (this._isRedacted = false);
+
+		const visibility = this.visibility;
+		if (visibility.status === 'Hidden') return (this._isRedacted = true);
+		if (visibility.status === 'Seen') return (this._isRedacted = false);
+		return (this._isRedacted = false);
+	}
+
 	get visibility() {
 		if (this?._visibility) return this._visibility;
 		try {
 			const manifest = this.manifestItem;
 			const lastVisible = manifest?.visible;
+
+			if (!manifest.path.startsWith('inventory'))
+			{
+				return (this._visibility = {
+					status: 'Visible',
+					date: new Date(lastVisible)
+				});
+			}
+
 			const isHidden = this?.data?.CommonData.HideUntilOwned;
 	
 			// Now hidden, but was seen before

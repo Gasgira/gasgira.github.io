@@ -14,9 +14,9 @@ class Inventory extends Component {
 		this.pageSize = parseInt(settings.pageSize ?? 100);
 		const favorites = new Favorites({categoryName: 'Favorites'});
 		const search = new Search({categoryName: 'Search'});
-		const offerings = new Offerings({categoryName: 'Offerings'});
+		// const offerings = new Offerings({categoryName: 'Offerings'});
 
-		this.categories = [favorites, search, offerings]; // , offerings
+		this.categories = [favorites, search]; // , offerings
 
 		const paramCategoryName = urlParams.getSecionSetting('inventory');
 		const paramBundle = urlParams.getSecionSetting('bundle');
@@ -398,7 +398,7 @@ class Search extends InventoryCategory {
 							id="inventory-search"
 							name="inventory-search"
 							placeholder="Search..."
-							maxlength="24"
+							maxlength="64"
 							oninput=${(e) => this.input(e?.target?.value ?? '')}
 							onkeydown=${(e) => {
 								if (e?.key === 'Enter') this.submit();
@@ -513,83 +513,88 @@ class Search extends InventoryCategory {
 		// if (!this.state.term || typeof this.state.term !== 'string') return;
 		this.itemIDs = new Set();
 		// console.info(`[search] "${db.index.manifest.size}" items in index`);
-		for (const entry of db.index.manifest.values())
+
+		if (this.state.term && db.index.manifest.has(this.state.term))
 		{
-			const title = entry.title.toLowerCase();
-			if (this.state.term && !title.includes(this.state.term)) continue;
-
-			const filters = this.state.filters;
-
-			// TODO support multiple types
-			if (filters.has('types') && entry?.type)
-			{
-				if (filters.get('types') !== entry.type) continue;
-			}
-
-			if (filters.has('modifiedDate') && Array.isArray(entry?.touched))
-			{
-				const dateString = entry.touched[entry.touched.length-1];
-				if (Date.parse(dateString))
-				{
-					const lastModified = new Date(dateString);
-					if (new Date(filters.get('modifiedDate')) > lastModified)
-					{
-						// console.log(lastModified)
-						continue;
-					}
-				}
-			}
-
-			if (filters.has('modifiedBeforeDate') && Array.isArray(entry?.touched))
-			{
-				const dateString = entry.touched[entry.touched.length-1];
-				if (Date.parse(dateString))
-				{
-					const lastModified = new Date(dateString);
-					if (new Date(filters.get('modifiedBeforeDate')) < lastModified)
-					{
-						// console.log(lastModified)
-						continue;
-					}
-				}
-			}
-
-			if (filters.has('addedDate') && Array.isArray(entry?.touched))
-			{
-				const dateString = entry.touched[0];
-				if (Date.parse(dateString))
-				{
-					const addedDate = new Date(dateString);
-					if (new Date(filters.get('addedDate')) > addedDate)
-					{
-						// console.log(lastModified)
-						continue;
-					}
-				}
-			}
-
-			if (filters.has('addedBeforeDate') && Array.isArray(entry?.touched))
-			{
-				const dateString = entry.touched[0];
-				if (Date.parse(dateString))
-				{
-					const addedDate = new Date(dateString);
-					if (new Date(filters.get('addedBeforeDate')) < addedDate)
-					{
-						// console.log(lastModified)
-						continue;
-					}
-				}
-			}
-
+			const entry = db.index.manifest.get(this.state.term);
 			this.itemIDs.add(entry.name);
+		} else {
+			for (const entry of db.index.manifest.values())
+			{
+				const title = entry.title.toLowerCase();
+				if (this.state.term && !title.includes(this.state.term)) continue;
+	
+				const filters = this.state.filters;
+	
+				// TODO support multiple types
+				if (filters.has('types') && entry?.type)
+				{
+					if (filters.get('types') !== entry.type) continue;
+				}
+	
+				if (filters.has('modifiedDate') && Array.isArray(entry?.touched))
+				{
+					const dateString = entry.touched[entry.touched.length-1];
+					if (Date.parse(dateString))
+					{
+						const lastModified = new Date(dateString);
+						if (new Date(filters.get('modifiedDate')) > lastModified)
+						{
+							// console.log(lastModified)
+							continue;
+						}
+					}
+				}
+	
+				if (filters.has('modifiedBeforeDate') && Array.isArray(entry?.touched))
+				{
+					const dateString = entry.touched[entry.touched.length-1];
+					if (Date.parse(dateString))
+					{
+						const lastModified = new Date(dateString);
+						if (new Date(filters.get('modifiedBeforeDate')) < lastModified)
+						{
+							// console.log(lastModified)
+							continue;
+						}
+					}
+				}
+	
+				if (filters.has('addedDate') && Array.isArray(entry?.touched))
+				{
+					const dateString = entry.touched[0];
+					if (Date.parse(dateString))
+					{
+						const addedDate = new Date(dateString);
+						if (new Date(filters.get('addedDate')) > addedDate)
+						{
+							// console.log(lastModified)
+							continue;
+						}
+					}
+				}
+	
+				if (filters.has('addedBeforeDate') && Array.isArray(entry?.touched))
+				{
+					const dateString = entry.touched[0];
+					if (Date.parse(dateString))
+					{
+						const addedDate = new Date(dateString);
+						if (new Date(filters.get('addedBeforeDate')) < addedDate)
+						{
+							// console.log(lastModified)
+							continue;
+						}
+					}
+				}
+	
+				this.itemIDs.add(entry.name);
+			}
 		}
 		
 		console.info(`[search] Found "${this.itemIDs.size}" items`);
 		if (this.itemIDs.size)
 		{
-			// TODO slice, pagination
-			// this.items = new Set([...this.itemIDs].slice(0, 100).map(id => new Item(db.getItemPathByID(id))));
 			this.getCurrentItemPage();
 			this.render();
 			return;
