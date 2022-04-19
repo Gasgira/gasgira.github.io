@@ -1,5 +1,5 @@
 {
-	"date": "2022-04-12T00:00:00.000Z",
+	"date": "2022-04-19T00:00:00.000Z",
 	"types": [
 		"ArmorCore",
 		"ArmorTheme",
@@ -2162,6 +2162,7 @@
 				"name": "012-001-7c7e0def",
 				"title": "Blackpool",
 				"type": "ArmorVisor",
+				"visible": "2022-01-18T00:00:00.000Z",
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
 					"2022-02-24T00:00:00.000Z"
@@ -4073,6 +4074,7 @@
 				"name": "101-000-menu-stance-o-7ba7d54b",
 				"title": "Claw Patrol",
 				"type": "SpartanActionPose",
+				"visible": "2022-03-08T00:00:00.000Z",
 				"touched": [
 					"2021-11-15T20:00:00.000Z"
 				]
@@ -5609,7 +5611,8 @@
 				"visible": "2022-04-12T00:00:00.000Z",
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
-					"2022-04-12T00:00:00.000Z"
+					"2022-04-12T00:00:00.000Z",
+					"2022-04-19T00:00:00.000Z"
 				]
 			}
 		],
@@ -5793,6 +5796,7 @@
 				"name": "002-001-olympus-b53ae8e6",
 				"title": "Electric Bubblegum",
 				"type": "ArmorCoating",
+				"visible": "2022-01-18T00:00:00.000Z",
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
 					"2022-02-24T00:00:00.000Z"
@@ -5854,6 +5858,7 @@
 				"name": "201-201-2033c871",
 				"title": "Emile",
 				"type": "WeaponCharm",
+				"visible": "2022-03-08T00:00:00.000Z",
 				"touched": [
 					"2021-11-15T20:00:00.000Z"
 				]
@@ -7562,8 +7567,10 @@
 				"name": "002-001-olympus-755f8cdf",
 				"title": "Foxwood Seal",
 				"type": "ArmorCoating",
+				"visible": "2022-04-19T00:00:00.000Z",
 				"touched": [
-					"2021-11-15T20:00:00.000Z"
+					"2021-11-15T20:00:00.000Z",
+					"2022-04-19T00:00:00.000Z"
 				]
 			}
 		],
@@ -10365,6 +10372,7 @@
 				"name": "103-000-ui-background-eb8d24cc",
 				"title": "Lone Wolf",
 				"type": "SpartanBackdropImage",
+				"visible": "2022-03-08T00:00:00.000Z",
 				"touched": [
 					"2021-11-15T20:00:00.000Z"
 				]
@@ -10798,6 +10806,7 @@
 				"name": "005-001-olympus-a551ce3c",
 				"title": "MARK V ZETA",
 				"type": "ArmorHelmet",
+				"visible": "2022-03-08T00:00:00.000Z",
 				"touched": [
 					"2021-11-15T20:00:00.000Z"
 				]
@@ -10910,6 +10919,7 @@
 				"name": "010-001-olympus-3f3bfd13",
 				"title": "MAT-2550/Grenade Pack",
 				"type": "ArmorHipAttachment",
+				"visible": "2022-03-08T00:00:00.000Z",
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
 					"2022-02-24T00:00:00.000Z"
@@ -11391,6 +11401,7 @@
 				"name": "010-001-olympus-707a6bd4",
 				"title": "Myesel Ammo Pouch",
 				"type": "ArmorHipAttachment",
+				"visible": "2021-12-21T00:00:00.000Z",
 				"touched": [
 					"2021-11-15T20:00:00.000Z"
 				]
@@ -11547,6 +11558,7 @@
 				"name": "104-001-olympus-navlo-e5396cee",
 				"title": "NAVLOGCOM",
 				"type": "SpartanEmblem",
+				"visible": "2021-12-21T00:00:00.000Z",
 				"touched": [
 					"2021-11-15T20:00:00.000Z"
 				]
@@ -13120,6 +13132,7 @@
 				"name": "002-001-olympus-e3ca8a4f",
 				"title": "Peppermint Laughter",
 				"type": "ArmorCoating",
+				"visible": "2021-12-21T00:00:00.000Z",
 				"touched": [
 					"2021-11-15T20:00:00.000Z"
 				]
@@ -13132,6 +13145,7 @@
 				"name": "203-200-olympus-e3ca8a4f",
 				"title": "Peppermint Laughter",
 				"type": "WeaponCoating",
+				"visible": "2021-12-21T00:00:00.000Z",
 				"touched": [
 					"2021-11-15T20:00:00.000Z"
 				]
@@ -13144,6 +13158,7 @@
 				"name": "203-201-olympus-e3ca8a4f",
 				"title": "Peppermint Laughter",
 				"type": "WeaponCoating",
+				"visible": "2021-12-21T00:00:00.000Z",
 				"touched": [
 					"2021-11-15T20:00:00.000Z"
 				]
@@ -13367,6 +13382,7 @@
 				"name": "012-001-aca35a00",
 				"title": "Phalanx",
 				"type": "ArmorVisor",
+				"visible": "2022-03-08T00:00:00.000Z",
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
 					"2022-02-24T00:00:00.000Z"
@@ -15254,6 +15270,7 @@
 				"name": "002-001-olympus-ba63ec9a",
 				"title": "Scorpion Punch",
 				"type": "ArmorCoating",
+				"visible": "2022-03-08T00:00:00.000Z",
 				"touched": [
 					"2021-11-15T20:00:00.000Z"
 				]
@@ -16289,6 +16306,7 @@
 				"name": "103-000-ui-background-bb67c3be",
 				"title": "Snowmageddon",
 				"type": "SpartanBackdropImage",
+				"visible": "2021-12-21T00:00:00.000Z",
 				"touched": [
 					"2021-11-15T20:00:00.000Z"
 				]
@@ -17502,6 +17520,7 @@
 				"name": "002-001-olympus-1985d5dc",
 				"title": "Sunset Contessa",
 				"type": "ArmorCoating",
+				"visible": "2021-12-21T00:00:00.000Z",
 				"touched": [
 					"2021-11-15T20:00:00.000Z"
 				]
@@ -17671,6 +17690,7 @@
 				"name": "001-001-olympus-79bee247",
 				"title": "TAC/AHD Type 3ZY",
 				"type": "ArmorChestAttachment",
+				"visible": "2022-03-08T00:00:00.000Z",
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
 					"2022-02-24T00:00:00.000Z"
@@ -18328,6 +18348,7 @@
 				"name": "003-001-olympus-ea1058fb",
 				"title": "Tigris",
 				"type": "ArmorGlove",
+				"visible": "2022-03-08T00:00:00.000Z",
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
 					"2022-02-24T00:00:00.000Z"
@@ -18851,6 +18872,7 @@
 				"name": "004-001-olympus-8e89825e",
 				"title": "UA/Mauros",
 				"type": "ArmorHelmetAttachment",
+				"visible": "2022-03-08T00:00:00.000Z",
 				"touched": [
 					"2021-11-15T20:00:00.000Z"
 				]
@@ -18923,6 +18945,7 @@
 				"name": "008-001-olympus-79816c5d",
 				"title": "UA/Tatius",
 				"type": "ArmorLeftShoulderPad",
+				"visible": "2021-12-21T00:00:00.000Z",
 				"touched": [
 					"2021-11-15T20:00:00.000Z"
 				]
@@ -18935,6 +18958,7 @@
 				"name": "009-001-olympus-79816c5d",
 				"title": "UA/Tatius",
 				"type": "ArmorRightShoulderPad",
+				"visible": "2021-12-21T00:00:00.000Z",
 				"touched": [
 					"2021-11-15T20:00:00.000Z"
 				]
@@ -20840,6 +20864,7 @@
 				"name": "104-001-popculture-de-97b657fe",
 				"title": "Wild Justice",
 				"type": "SpartanEmblem",
+				"visible": "2021-12-21T00:00:00.000Z",
 				"touched": [
 					"2021-11-15T20:00:00.000Z"
 				]

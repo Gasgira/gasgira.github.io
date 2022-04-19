@@ -21,12 +21,13 @@
 	background-color: #141c27;
 	flex-direction: column;
 	overflow: hidden;
+	overflow-y: auto;
 	box-shadow: -1rem 0 1rem #000;
 	animation: slide-in-right var(--time-active) linear;
 	z-index: 999;
 	&::before {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
 		left: 0;
     right: 0;
@@ -155,7 +156,7 @@
 			display: none;
 		}
 	}
-	& header {
+	& header.dbItemPanel_header {
 		margin-bottom: 1em;
 		display: flex;
 		flex-direction: row;
@@ -240,6 +241,26 @@
 		padding: 0 0.2em;
 		margin: 0 0.2em;
 		border-radius: var(--theme-border-radius);
+	}
+	& .page-list {
+		list-style-type: none;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: left;
+		margin-left: 0.5rem;
+	}
+	& .related-items_wrapper {
+		display: flex;
+		flex-direction: column;
+		padding: 0 0.75rem 5rem 0.75em;
+		& .related-items_list {
+			list-style-type: none;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: left;
+		}
 	}
 }
 

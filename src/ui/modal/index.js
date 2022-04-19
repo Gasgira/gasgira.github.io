@@ -12,7 +12,7 @@ class ModalConstructor extends Component {
 	showView(view) {
 		const modal = new Modal(view);
 		this.modals.add(modal);
-		const el = this.render();
+		this.render();
 		document.body.style.overflow = 'hidden';
 	}
 

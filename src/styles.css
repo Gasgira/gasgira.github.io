@@ -266,6 +266,9 @@ button {
 	& .icon-masked {
 		cursor: pointer;
 	}
+	&.active {
+		background-color: hsla(var(--theme-interact-hsl), 0.1);
+	}
 }
 
 .privacy-button {

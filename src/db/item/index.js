@@ -54,6 +54,16 @@ export class Item extends Component {
 		return this?.data?.CommonData?.Title ?? this.id;
 	}
 
+	async getSeasonNumber() {
+		if (this?._seasonNumber) return this._seasonNumber;
+		await this.init();
+		const season = this?.data?.CommonData?.Season;
+		if (!season || typeof season !== 'string') return (this._seasonNumber = 0);
+		const split = season.split(' ');
+		if (split && split?.[1]) return (this._seasonNumber = parseInt(split[1]));
+		return (this._seasonNumber = 0);
+	}
+
 	get seasonNumber() {
 		const season = this?.data?.CommonData?.Season;
 		if (!season || typeof season !== 'string') return '0';
@@ -116,11 +126,12 @@ export class Item extends Component {
 			>
 				<span>${this.name ?? '???'}</span>
 				${itemTypeIcon ? this.renderItemTypeIcon() : ''}
-				${this.seasonNumber > 1 ? HTML.wire(this, ':seasonIcon')`<div
+				${{html: this.seasonNumber > 1 ? `<div
 						class="season-icon"
-						style=${{webkitMaskImage: `url(/seasons.svg#${this.seasonNumber ?? 'default'})`}}
+						data-season="${this.seasonNumber ?? 0}"
+						style="-webkit-mask-image:${`url(/seasons.svg#${this.seasonNumber ?? 0})`}"
 					></div>` : ''
-				}
+				}}
 			</button>
 		`;
 	}
