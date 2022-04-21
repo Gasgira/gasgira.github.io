@@ -165,7 +165,7 @@ class HeaderNav extends Component {
 					settings.showSpoilers();
 				}}
 			>
-				Show spoilers?
+				Reveal All Spoilers
 			</button></li>
 		`;
 	}

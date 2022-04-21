@@ -14,6 +14,7 @@
 	position: fixed;
 	height: 100vh;
 	--panelMaxWidth: 80vw;
+	--padding-edge: 0.5rem;
 	max-width: var(--panelMaxWidth);
 	width: 50em;
 	right: 0;
@@ -50,11 +51,11 @@
 		background: linear-gradient(transparent, #0f161f 60%);
 		mask: var(--noise), linear-gradient(transparent, #000 80%);
 	}
-	& .item-info_wrapper {
+	& .item-meta_wrapper {
 		display: flex;
 		flex-direction: column;
 		justify-content: left;
-		padding: 0 1em;
+		padding: 0 var(--padding-edge);
 		margin-bottom: 1em;
 		& .attribute {
 			font-size: 0.8em;
@@ -100,60 +101,51 @@
 			}
 		}
 	}
-	& .modified-info_wrapper {
+	& .item-info_wrapper {
+		width: 100%;
 		display: flex;
 		flex-direction: row;
-		justify-content: right;
-		align-items: center;
-		padding: 0 1rem;
-		opacity: 0.8;
+		row-wrap: wrap;
+		justify-content: space-between;
+		padding: 0 var(--padding-edge) 1rem;
+		& .modified-info_wrapper {
+			display: flex;
+			flex-direction: row;
+			justify-content: right;
+			align-items: center;
+			opacity: 0.8;
+			& label {
+				opacity: 0.66;
+				font-size: 0.8em;
+				padding-right: 0.2em;
+			}
+		}
+	}
+	& .item-panel_manifest_wrapper {
+		padding: 0 var(--padding-edge) 5rem var(--padding-edge);
 		& label {
 			opacity: 0.66;
 			font-size: 0.8em;
 			padding-right: 0.2em;
 		}
-	}
-	& .json-info_wrapper {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
-		margin-bottom: 1em;
-		padding: 0 0.5em;
-		& .dbItemPanel_path {
-			padding-bottom: 0.5em;
-			font-weight: normal;
-			font-style: italic;
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			& a {
-				opacity: 0.5;
-				font-size: 0.7em;
-			}
-			& .icon-masked {
-				font-size: 1.25em;
-				padding: 0;
-				margin: 0;
-				margin-right: 0.25em;
-			}
+		& span {
+			font-size: 0.9em;
 		}
-	}
-	& .dbItemPanel_json {
-		width: 100%;
-		font-size: 0.7em;
-		line-break: anywhere;
-		overflow-x: auto;
-		overflow-y: auto;
-		padding: 0 1rem 5rem 1em;
-		font-family: monospace;
-		tab-size: 1em;
-		white-space: pre-wrap;
-		word-break: keep-all;
-		position: relative;
-		scrollbar-width: none;
-		&::-webkit-scrollbar {
-			display: none;
+		& .dbItemPanel_json {
+			width: 100%;
+			font-size: 0.7em;
+			line-break: anywhere;
+			overflow-x: auto;
+			overflow-y: auto;
+			font-family: monospace;
+			tab-size: 1em;
+			white-space: pre-wrap;
+			word-break: keep-all;
+			position: relative;
+			scrollbar-width: none;
+			&::-webkit-scrollbar {
+				display: none;
+			}
 		}
 	}
 	& header.dbItemPanel_header {
@@ -248,18 +240,24 @@
 		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: left;
-		margin-left: 0.5rem;
+		margin-left: var(--padding-edge);
 	}
 	& .related-items_wrapper {
 		display: flex;
 		flex-direction: column;
-		padding: 0 0.75rem 5rem 0.75em;
+		padding: 0 var(--padding-edge) 5rem var(--padding-edge);
 		& .related-items_list {
 			list-style-type: none;
 			display: flex;
 			flex-direction: row;
 			flex-wrap: wrap;
 			justify-content: left;
+		}
+		& .related-items_show-more_wrapper {
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
 		}
 	}
 }
@@ -286,6 +284,7 @@
 			}
 			& .dbItemPanel_titles {
 				padding-left: 0.5em;
+				padding-top: 1.5rem;
 			}
 		}
 		& .dbItemPanel_path a {
@@ -294,6 +293,11 @@
 		& .dbItemPanel_json {
 			overflow-x: initial;
 			overflow-y: initial;
+		}
+		& .related-items_wrapper {
+			& button.dbItemIcon {
+				--lengthMax: 30vw;
+			}
 		}
 	}
 }

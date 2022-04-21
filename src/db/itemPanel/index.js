@@ -22,7 +22,8 @@ class RelatedItems extends Component {
 		return {
 			more: false,
 			itemIDs: new Set(),
-			items: new Set()
+			items: new Set(),
+			itemsDisplayed: this.initialItemsDisplayed
 		};
 	}
 
@@ -39,15 +40,14 @@ class RelatedItems extends Component {
 						}}
 					</li>`)}
 				</ul>
-				${!this.state.more && this.state.itemIDs > this.initialItemsDisplayed ? 'Show More' : ''}
+				${this.state.itemIDs.size > this.state.itemsDisplayed ? this.showMoreButton() : ''}
 			</div>
 		`;
 	}
 
 	get displayedItemIDs() {
 		const itemIDs = this.state.itemIDs;
-		if (this.state.more) return itemIDs;
-		return new Set([...itemIDs].slice(0, this.initialItemsDisplayed));
+		return new Set([...itemIDs].slice(0, this.state.itemsDisplayed));
 	}
 
 	getDisplayedItems() {
@@ -55,12 +55,26 @@ class RelatedItems extends Component {
 	}
 
 	get initialItemsDisplayed() {
-		return 25;
+		return 20;
+	}
+
+	showMoreButton() {
+		return HTML.wire(this, ':more')`
+			<div
+				class="related-items_show-more_wrapper"
+			>
+				<button
+					class="hi-box"
+					onclick=${() => this.showMore()}
+				>
+					Show More (${(this.state.itemIDs.size - this.state.itemsDisplayed)})
+				</button>
+			</div>
+		`;
 	}
 
 	showMore() {
-		if (this.state.more) return;
-		this.state.more = true;
+		this.state.itemsDisplayed = this.state.itemsDisplayed + this.initialItemsDisplayed;
 		this.getDisplayedItems();
 		this.render();
 	}
@@ -124,13 +138,24 @@ class ItemPanel extends Component {
 		this.state = {
 			...this.defaultState,
 			item,
-			visible: true
+			visible: true,
+			page: this.state.page
 		}
 		this.render();
 		document.body.style.overflow = 'hidden';
 
 		this.internalRelationsPage.init();
 		this.externalRelationsPage.init();
+
+		if (this.state.page === 'internal')
+		{
+			this.showInternalRelations();
+		}
+
+		if (this.state.page === 'external')
+		{
+			this.showExternalRelations();
+		}
 	}
 
 	get item() {
@@ -164,7 +189,8 @@ class ItemPanel extends Component {
 						></div>
 						<div class=${`dbItemPanel_titles${item?.CommonData?.Quality ? ` ${item.CommonData.Quality?.toLowerCase?.()}` : ''}`}>
 							<h2>${this?.item?.name ?? 'Item'}</h2>
-							<h3>${this?.item?.data?.CommonData?.Description ?? '...'}</h3>
+							${this?.item.isRedacted ? this.unredactButton() : ''}
+							<h3>${this?.item.isRedacted ? '' : this?.item?.data?.CommonData?.Description ?? '...'}</h3>
 						</div>
 						<button
 							class=${'favorite'}
@@ -176,7 +202,7 @@ class ItemPanel extends Component {
 							style=${{backgroundImage: `url(/items.svg#${db.favoriteItemPaths.has(this.state.item.path) ? 'favored' : 'unfavored'})`}}
 						></button>
 					</header>
-					<div class="item-info_wrapper">
+					<div class="item-meta_wrapper">
 						<div class="item-badges">
 							<div class="badge">
 								<div
@@ -220,43 +246,42 @@ class ItemPanel extends Component {
 							})}
 						</span>
 					</div>
-					<div class="modified-info_wrapper">
-							<label for="item-modified-date">Modified: </label><span id="item-modified-date">${this?.item?.lastModifiedDate?.toLocaleDateString(undefined, {
-								year: 'numeric', month: 'numeric', day: 'numeric'
-							}) ?? 'untracked'}</span>
-					</div>
-					<div class="json-info_wrapper">
-						<span class="dbItemPanel_path">
-							<button
-								aria-label="Copy shareable link"
-								title="share"
-								onclick=${() => {
-									navigator.clipboard.writeText(`https://${window?.location?.host ?? 'cylix.guide'}${this.sharePath}`)
-										.then(success => {
-											this.setState({copyStatus: 'Copied!'});
-											setTimeout(() => {
-												this.setState({copyStatus: 'Share'});
-											}, 2000);
-										}, error => {
-											console.error('Copy share link', error);
-											this.setState({copyStatus: 'Error!'});
-											setTimeout(() => {
-												this.setState({copyStatus: 'Share'});
-											}, 2000);
-										})
-								}}
-							><span class="icon-masked icon-share"></span> ${this.state?.copyStatus ?? 'Share'}</button>
-							<a href=${this.sharePath} target="_blank" rel="noopener noreferrer">${this.state.item?.path ?? 'UNK'}</a>
-						</span>
+					<section
+						class="item-info_wrapper"
+					>
 						<button
-							onclick=${() => this.setState({pretty: !this.state.pretty})}
-						>${this.state.pretty ? 'raw' : 'pretty'}</button>
-					</div>
+							class="hi-box"
+							aria-label="Copy shareable link"
+							title="share"
+							onclick=${() => {
+								navigator.clipboard.writeText(`https://${window?.location?.host ?? 'cylix.guide'}${this.sharePath}`)
+									.then(success => {
+										this.setState({copyStatus: 'Copied!'});
+										setTimeout(() => {
+											this.setState({copyStatus: 'Share'});
+										}, 2000);
+									}, error => {
+										console.error('Copy share link', error);
+										this.setState({copyStatus: 'Error!'});
+										setTimeout(() => {
+											this.setState({copyStatus: 'Share'});
+										}, 2000);
+									})
+							}}
+						>
+							<span class="icon-masked icon-share"></span> ${this.state?.copyStatus ?? 'Share'}
+						</button>
+						<div class="modified-info_wrapper">
+								<label for="item-modified-date">Modified: </label><span id="item-modified-date">${this?.item?.lastModifiedDate?.toLocaleDateString(undefined, {
+									year: 'numeric', month: 'numeric', day: 'numeric'
+								}) ?? 'untracked'}</span>
+						</div>
+					</section>
 					<ul class="page-list">
 						<li>
 							<button
 								onclick=${() => this.setState({page: 'api'})}
-								class=${this.state.page === 'api' ? 'active' : null}
+								class=${`hi-box${this.state.page === 'api' ? ' active' : ''}`}
 							>
 								Manifest
 							</button>
@@ -264,7 +289,7 @@ class ItemPanel extends Component {
 						<li>
 							<button
 								onclick=${() => this.showInternalRelations()}
-								class=${this.state.page === 'internal' ? 'active' : null}
+								class=${`hi-box${this.state.page === 'internal' ? ' active' : ''}`}
 							>
 								References
 							</button>
@@ -272,7 +297,7 @@ class ItemPanel extends Component {
 						<li>
 							<button
 								onclick=${() => this.showExternalRelations()}
-								class=${this.state.page === 'external' ? 'active' : null}
+								class=${`hi-box${this.state.page === 'external' ? ' active' : ''}`}
 							>
 								Related
 							</button>
@@ -291,7 +316,24 @@ class ItemPanel extends Component {
 
 	renderAPI() {
 		return HTML.wire(this, ':api')`
-			<pre class="dbItemPanel_json">${{html: this.state.pretty ? this.prettyJson(this.state?.item?.data ?? {}) : JSON.stringify(this.state.item?.data, null, "\t")}}</pre>
+			<section
+				class="item-panel_manifest_wrapper"
+			>
+				<div
+					class="item-panel_manifest-property"
+				>
+					<label class="no-select" for="item-panel_manifest-path">Path: </label><span id="item-panel_manifest-path">${this.state.item?.path ?? 'UNK'}</span>
+				</div>
+				<div
+					class="item-panel_manifest-property"
+				>
+					<label class="no-select" for="item-panel_manifest-path">ID: </label><span id="item-panel_manifest-path">${this.state.item?.id ?? 'UNK'}</span>
+				</div>
+				<button
+					onclick=${() => this.setState({pretty: !this.state.pretty})}
+				>${this.state.pretty ? 'raw' : 'pretty'}</button>
+				<pre class="dbItemPanel_json">${{html: this.state.pretty ? this.prettyJson(this.state?.item?.data ?? {}) : JSON.stringify(this.state.item?.data, null, "\t")}}</pre>
+			</section>
 		`;
 	}
 
@@ -355,6 +397,18 @@ class ItemPanel extends Component {
 			// console.log('relations!', relations.internal.join(', '));
 			this.relatedItemIDs = new Set(relations.internal);
 		}
+	}
+
+	unredactButton() {
+		return HTML.wire(this, ':unredact')`
+			<button
+				class="hi-box"
+				onclick=${() => {
+					this?.item.unredact();
+					this.render();
+				}}
+			>Reveal Spoiler</button>
+		`;
 	}
 }
 

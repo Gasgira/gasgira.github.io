@@ -254,6 +254,7 @@ export class Item extends Component {
 	}
 
 	get isRedacted() {
+		if (this.state.userUnredacted) return false;
 		if (this?._isRedacted) return this._isRedacted;
 		if (db.revealHidden) return (this._isRedacted = false);
 
@@ -301,6 +302,10 @@ export class Item extends Component {
 				date: new Date('2021-11-15T20:00:00.000Z')
 			})
 		}
+	}
+
+	unredact() {
+		this.state.userUnredacted = true;
 	}
 }
 

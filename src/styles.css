@@ -193,7 +193,7 @@ a:not([class]), .parentSocket {
 		transform: scale(1);
 	}
 	50% {
-		transform: scale(1.1);
+		transform: scale(1.05);
 	}
 	100% {
 		transform: scale(1);
@@ -246,6 +246,9 @@ button {
 		opacity: 0.5;
 		cursor: default;
 	}
+	&.active {
+		background-color: hsla(var(--theme-interact-hsl), 0.1);
+	}
 	&.featured {
 		color: #fcba03;
 		font-weight: normal;
@@ -266,8 +269,84 @@ button {
 	& .icon-masked {
 		cursor: pointer;
 	}
-	&.active {
-		background-color: hsla(var(--theme-interact-hsl), 0.1);
+	&.hi-box {
+		margin: 0.5em;
+		border-radius: 0.1em;
+		--rarity: hsla(var(--theme-interact-hsl), 1);
+		transition: transform var(--time-active) linear;
+		&::before {
+			display: block;
+			content: "";
+			--padding: -0.25em;
+			top: var(--padding);
+			left: var(--padding);
+			right: var(--padding);
+			bottom: var(--padding);
+			border-radius: var(--theme-border-radius);
+			position: absolute;
+			border-width: 0.18em;
+			border-style: solid;
+			border-image: linear-gradient(
+				to bottom,
+				hsla(var(--theme-interact-hsl), 1),
+				hsla(var(--theme-interact-hsl), 1) 7%,
+				hsla(var(--theme-interact-hsl), 0) 8%,
+				hsla(var(--theme-interact-hsl), 0) 12%,
+				hsla(var(--theme-interact-hsl), 0.25) 13%,
+				hsla(var(--theme-interact-hsl), 0.25) 87%,
+				hsla(var(--theme-interact-hsl), 0) 88%,
+				hsla(var(--theme-interact-hsl), 0) 92%,
+				var(--rarity) 93%,
+				var(--rarity)
+			) 1 100%;
+			border-image-slice: 1;
+			opacity: 0;
+			transition: opacity var(--time-state) linear,
+				border-width var(--time-active) linear;
+		}
+		&::after {
+			display: block;
+			content: "";
+			--padding: -0.25em;
+			top: var(--padding);
+			left: var(--padding);
+			right: var(--padding);
+			bottom: var(--padding);
+			border-radius: var(--theme-border-radius);
+			position: absolute;
+			border-width: 0.18em;
+			border-style: solid;
+			border-image: linear-gradient(
+				to bottom,
+				transparent,
+				hsla(var(--theme-interact-hsl), 0) 92%,
+				var(--rarity) 93%,
+				var(--rarity)
+			) 1 100%;
+			border-image-slice: 1;
+			opacity: 0.4;
+			transition: opacity var(--time-state) linear,
+				border-width var(--time-active) linear;
+		}
+		&:active {
+			animation: pop-up var(--time-active) linear;
+		}
+		&.active {
+			background-color: transparent;
+		}
+		&.active:hover:not([disabled]) {
+			color: #000;
+			background-color: hsla(var(--theme-interact-hsl), 1);
+		}
+		&.active::before {
+			opacity: 0.25;
+		}
+		&:hover {
+			transform: translate(-0.1em, -0.1em);
+		}
+		&:hover::before, &:focus::before {
+			opacity: 1;
+		}
 	}
 }
 
@@ -473,4 +552,8 @@ button {
 	&.icon-discord {
 		mask-image: url("assets/icons.svg#discord");
 	}
+}
+
+.no-select {
+	user-select: none;
 }
