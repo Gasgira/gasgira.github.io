@@ -148,7 +148,7 @@
 			}
 		}
 	}
-	& header.dbItemPanel_header {
+	& .dbItemPanel_header {
 		margin-bottom: 1em;
 		display: flex;
 		flex-direction: row;
@@ -180,6 +180,7 @@
 			--border: 0.2rem solid var(--rarity-common);
 			width: 100%;
 			padding-left: 1em;
+			padding-bottom: 0.5em;
 			border-left: var(--border);
 			transition: border-color var(--time-state) linear;
 			position: relative;
@@ -275,7 +276,7 @@
 		&::before {
 			display: none;
 		}
-		& header {
+		& .dbItemPanel_header {
 			margin-bottom: 1em;
 			display: flex;
 			flex-direction: column;
@@ -284,7 +285,6 @@
 			}
 			& .dbItemPanel_titles {
 				padding-left: 0.5em;
-				padding-top: 1.5rem;
 			}
 		}
 		& .dbItemPanel_path a {
@@ -298,6 +298,9 @@
 			& button.dbItemIcon {
 				--lengthMax: 30vw;
 			}
+		}
+		& .page-list {
+			font-size: 0.8em;
 		}
 	}
 }
@@ -316,7 +319,7 @@
 		&::before {
 			display: none;
 		}
-		& header {
+		& .dbItemPanel_header {
 			margin-bottom: 1em;
 			display: flex;
 			flex-direction: column;
@@ -333,6 +336,9 @@
 		& .dbItemPanel_json {
 			overflow-x: initial;
 			overflow-y: initial;
+		}
+		& .page-list {
+			font-size: 0.8em;
 		}
 	}
 }
