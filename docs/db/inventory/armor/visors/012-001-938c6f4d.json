@@ -9,7 +9,7 @@
 	},
 	"CommonData": {
 		"Id": "012-001-938c6f4d",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Bell Toll",
 		"Description": "Time marches on.",
 		"FeatureFlag": true,
