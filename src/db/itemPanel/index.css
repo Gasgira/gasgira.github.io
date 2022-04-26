@@ -302,6 +302,21 @@
 				}
 			}
 		}
+		& header {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-items: center;
+			& aside {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				align-items: center;
+				opacity: 0.66;
+				font-size: 0.8rem;
+				margin-left: var(--padding-edge);
+			}
+		}
 	}
 }
 

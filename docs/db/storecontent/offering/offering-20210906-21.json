@@ -1,0 +1,64 @@
+{
+	"OfferingId": "20210906-21",
+	"OfferingDisplayPath": "StoreContent/Display/Offerings/20210906-21.json",
+	"OfferingExpirationDate": null,
+	"IncludedItems": [
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/Coatings/002-001-olympus-12f74a7c.json",
+			"ItemType": "ArmorCoating"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Vehicle/AlternateGeos/401-000-steering-aid-8cc49009.json",
+			"ItemType": "VehicleAlternateGeometryRegion"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Vehicle/Coatings/404-300-olympus-12f74a7c.json",
+			"ItemType": "VehicleCoating"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Vehicle/Coatings/404-301-olympus-12f74a7c.json",
+			"ItemType": "VehicleCoating"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Vehicle/Coatings/404-302-olympus-12f74a7c.json",
+			"ItemType": "VehicleCoating"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Vehicle/Coatings/404-303-olympus-12f74a7c.json",
+			"ItemType": "VehicleCoating"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Vehicle/Coatings/404-304-olympus-12f74a7c.json",
+			"ItemType": "VehicleCoating"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Vehicle/Coatings/404-305-olympus-12f74a7c.json",
+			"ItemType": "VehicleCoating"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Vehicle/Coatings/404-306-olympus-12f74a7c.json",
+			"ItemType": "VehicleCoating"
+		}
+	],
+	"Prices": [
+		{
+			"Cost": 800,
+			"CurrencyPath": "Currency/Currencies/cR.json"
+		}
+	],
+	"IncludedCurrencies": [],
+	"IncludedRewardTracks": [],
+	"BoostPath": null,
+	"OperationXp": 0,
+	"EventXp": 0,
+	"MatchBoosts": null
+}

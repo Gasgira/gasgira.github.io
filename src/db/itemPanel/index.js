@@ -394,7 +394,17 @@ class ItemPanel extends Component {
 			<section
 				class="item-panel_community_wrapper"
 			>
-				<header>Community Notes</header>
+				<header>
+					Community Notes
+					<aside>
+						<button
+							onclick=${() => modalConstructor.showView(this.renderCommunityDisclaimer())}
+						>
+							<div class="icon-masked icon-info"></div>
+							Learn More
+						</button>
+					</aside>
+				</header>
 				<div
 					class="community_content"
 				>
@@ -405,12 +415,20 @@ class ItemPanel extends Component {
 	}
 
 	renderDates() {
-		return HTML.wire(this, ':community')`
+		return HTML.wire(this, ':modDates')`
 			<header>${this.state.item.name}</header>
 			<p>API updates were logged for these dates:</p>
 			<ul>
 				${{html: this.state.item.manifestItem.touched.map(dateString => `${new Date(dateString).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}`).join('<br/>')}}
 			</ul>
+		`;
+	}
+
+	renderCommunityDisclaimer() {
+		return HTML.wire(this, ':communityDisclaimer')`
+			<header><h2>Community Notes</h2></header>
+			<p>Information in this section is maintained by volunteer contributors.</p>
+			<p>To report issues or help maintain this information you may do so in our <a href="https://cylix.guide/discord" target="_blank">discord.</a></p>
 		`;
 	}
 
