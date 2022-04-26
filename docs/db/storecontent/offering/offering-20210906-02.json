@@ -1,0 +1,54 @@
+{
+	"OfferingId": "20210906-02",
+	"OfferingDisplayPath": "StoreContent/Display/Offerings/20210906-02.json",
+	"OfferingExpirationDate": null,
+	"IncludedItems": [
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Spartan/Emblems/104-001-razer-greenho-24439c74.json",
+			"ItemType": "SpartanEmblem"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/Coatings/002-001-olympus-48526ce0.json",
+			"ItemType": "ArmorCoating"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/ShouldersLeft/008-001-olympus-4bb70edf.json",
+			"ItemType": "ArmorLeftShoulderPad"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/ShouldersRight/009-001-olympus-4bb70edf.json",
+			"ItemType": "ArmorRightShoulderPad"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Vehicle/Emblems/405-305-24439c74.json",
+			"ItemType": "VehicleEmblem"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/Emblems/013-001-24439c74.json",
+			"ItemType": "ArmorEmblem"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Weapon/Emblems/205-201-24439c74.json",
+			"ItemType": "WeaponEmblem"
+		}
+	],
+	"Prices": [
+		{
+			"Cost": 500,
+			"CurrencyPath": "Currency/Currencies/cR.json"
+		}
+	],
+	"IncludedCurrencies": [],
+	"IncludedRewardTracks": [],
+	"BoostPath": null,
+	"OperationXp": 0,
+	"EventXp": 0,
+	"MatchBoosts": null
+}

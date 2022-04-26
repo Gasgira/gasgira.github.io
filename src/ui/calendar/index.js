@@ -23,6 +23,9 @@ class Calendar extends Component {
 	}
 
 	async init() {
+		if (this?._init) return;
+		this._init = true;
+
 		const calendarPath = 'Calendars/Seasons/SeasonCalendar.json';
 		this.data = await db.getJSON(calendarPath);
 		this.events = [];
@@ -117,6 +120,7 @@ class Calendar extends Component {
 	}
 
 	async render() {
+		this.init();
 		return this.html`
 			<div class="mica_viewer calendar_wrapper" id="season-calendar">
 				<header class="mica_header-strip"><a class="mica_header-anchor" href="#season-calendar"><h2>Season Calendar</h2></a><span class="header-notice"><div class="icon-masked icon-info"></div> Content and dates subject to change.</span></header>

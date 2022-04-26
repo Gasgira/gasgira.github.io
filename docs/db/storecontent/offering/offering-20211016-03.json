@@ -1,0 +1,44 @@
+{
+	"OfferingId": "20211016-03",
+	"OfferingDisplayPath": "StoreContent/Display/Offerings/20211016-03.json",
+	"OfferingExpirationDate": null,
+	"IncludedItems": [
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Weapon/FXDeath/204-000-samurai_blossom_death.json",
+			"ItemType": "WeaponDeathFx"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Spartan/Emblems/104-001-samurai-grasp-481619d7.json",
+			"ItemType": "SpartanEmblem"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Vehicle/Emblems/405-305-481619d7.json",
+			"ItemType": "VehicleEmblem"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/Emblems/013-001-481619d7.json",
+			"ItemType": "ArmorEmblem"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Weapon/Emblems/205-201-481619d7.json",
+			"ItemType": "WeaponEmblem"
+		}
+	],
+	"Prices": [
+		{
+			"Cost": 700,
+			"CurrencyPath": "Currency/Currencies/cR.json"
+		}
+	],
+	"IncludedCurrencies": [],
+	"IncludedRewardTracks": [],
+	"BoostPath": null,
+	"OperationXp": 0,
+	"EventXp": 0,
+	"MatchBoosts": null
+}

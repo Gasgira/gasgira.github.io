@@ -17,7 +17,7 @@
 	--base-violet: #6c71c4;		--base-violet-hsl: 237, 43%, 60%;
 	--base-cyan: #45a7b9;		--base-cyan-hsl: 189, 46%, 50%;
 	--base-blue: #2e8dcd;		--base-blue-hsl: 204, 63%, 49%;
-	--base-green: #2ecc71;	--base-green-hsl: 145, 63%, 49%;
+	--base-green: #538b41;	--base-green-hsl: 145, 63%, 49%;
 	--base-white: #fff;			--base-white-hsl: 0, 0%, 100%;
 
 	--time-state: 0.2s;
@@ -53,6 +53,7 @@
 	--rarity-rare: #2a71a7;
 	--rarity-common: #808080;
 	--rarity-event: #f15d22;
+	--rarity-store: var(--base-green);
 
 	--bg0: #141c27;
 	--bg1: #0f161f;
@@ -121,13 +122,20 @@ body {
 
 footer {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
 	padding: 2em;
 	opacity: 0.5;
 	font-size: 0.8em;
+	& div {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+	}
 	& a {
 		text-decoration: none;
 	}
@@ -220,6 +228,38 @@ a:not([class]), .parentSocket {
 	}
 }
 
+/* LOADING THROBBER */
+@keyframes loading_path {
+		0% {
+				transform: scale(0) translate(0, 0);
+				opacity: 0
+		}
+		5% {
+				transform: scale(1) translate(128px, 96px);
+				opacity: 1
+		}
+		40% {
+				transform: scale(1) translate(608px, 96px);
+				opacity: 1
+		}
+		43% {
+				opacity: 0
+		}
+		50%,
+		to {
+				transform: scale(1) translate(800px, 96px);
+				opacity: 0
+		}
+}
+
+.placeholder_throbber {
+	margin: 10rem 0;
+	& .loading_dot {
+			fill: currentColor;
+			animation: 2s loading_path cubic-bezier(.1, .7, 1, 1) infinite normal
+	}
+}
+
 button {
 	--rarity: rgba(255,255,255,0.25);
 	position: relative;
@@ -261,6 +301,9 @@ button {
 	}
 	&.legendary {
 		--rarity: var(--rarity-legendary);
+	}
+	&.Offering {
+		--rarity: var(--rarity-store);
 	}
 	&:hover:not([disabled]) {
 		color: #000;

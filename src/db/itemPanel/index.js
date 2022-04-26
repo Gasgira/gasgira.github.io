@@ -3,6 +3,7 @@ import { Item, placeholderItem } from 'db/item';
 import { Component } from 'component';
 import { HTML } from 'lib/HTML';
 import { filenameFromPath } from 'utils/paths.js';
+import { modalConstructor } from 'ui/modal';
 
 import './index.css';
 
@@ -104,7 +105,8 @@ class ItemPanel extends Component {
 			item: {},
 			pretty: true,
 			copyStatus: 'Share',
-			page: 'api'
+			page: 'api',
+			community: false
 		};
 	}
 
@@ -139,7 +141,8 @@ class ItemPanel extends Component {
 			...this.defaultState,
 			item,
 			visible: true,
-			page: this.state.page
+			page: this.state.page,
+			community: this.state.community
 		}
 		this.render();
 		document.body.style.overflow = 'hidden';
@@ -187,7 +190,7 @@ class ItemPanel extends Component {
 							class="item-img"
 							style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(this.item.imagePath)})`}}
 						></div>
-						<div class=${`dbItemPanel_titles${item?.CommonData?.Quality ? ` ${item.CommonData.Quality?.toLowerCase?.()}` : ''}`}>
+						<div class=${`dbItemPanel_titles ${this.state.item.quality}`}>
 							<h2>${this?.item?.name ?? 'Item'}</h2>
 							${this?.item.isRedacted ? this.unredactButton() : ''}
 							<h3>${this?.item.isRedacted ? '' : this?.item?.data?.CommonData?.Description ?? '...'}</h3>
@@ -214,10 +217,10 @@ class ItemPanel extends Component {
 							<div class="badge">
 								<div
 									class="badge-svg"
-									data-icon=${this.state.item?.data?.CommonData?.Type ?? 'default'}
-									style=${{backgroundImage: `url(/items.svg#${this.state.item?.data?.CommonData?.Type ?? 'default'})`}}
+									data-icon=${this.state.item?.type ?? 'default'}
+									style=${{backgroundImage: `url(/items.svg#${this.state.item?.type ?? 'default'})`}}
 								></div>
-								<span class="badge">${db.getItemType(this.state.item?.data?.CommonData?.Type) ?? 'Item'}</span>
+								<span class="badge">${db.getItemType(this.state.item?.type) ?? 'Item'}</span>
 							</div>
 							<div class="badge">
 								<div
@@ -272,11 +275,17 @@ class ItemPanel extends Component {
 							<span class="icon-masked icon-share"></span> ${this.state?.copyStatus ?? 'Share'}
 						</button>
 						<div class="modified-info_wrapper">
-								<label for="item-modified-date">Modified: </label><span id="item-modified-date">${this?.item?.lastModifiedDate?.toLocaleDateString(undefined, {
-									year: 'numeric', month: 'numeric', day: 'numeric'
-								}) ?? 'untracked'}</span>
+								<label for="item-modified-date">Modified: </label>
+								<button id="item-modified-date"
+									onclick=${() => modalConstructor.showView(this.renderDates())}
+								>
+									${this?.item?.lastModifiedDate?.toLocaleDateString(undefined, {
+										year: 'numeric', month: 'numeric', day: 'numeric'
+									}) ?? 'untracked'}
+								</button>
 						</div>
 					</section>
+					${this.renderCommunity()}
 					<ul class="page-list">
 						<li>
 							<button
@@ -303,15 +312,25 @@ class ItemPanel extends Component {
 							</button>
 						</li>
 					</ul>
-					${this.state.page === 'api' ? this.renderAPI() : ''}
-					${this.state.page === 'internal' ? this.internalRelationsPage.render() : ''}
-					${this.state.page === 'external' ? this.externalRelationsPage.render() : ''}
+					${this.renderPage()}
 				</div>
 			`;
 			// <pre class="dbItemPanel_json">${JSON.stringify(this.state.item?.data, null, "\t")}</pre>
 									// style=${{"maskImage": `url("/assets/icons.svg")`}}
 		}
 		return HTML.bind(document.querySelector('.js--item-panel'))``;
+	}
+
+	renderPage() {
+		switch (this.state.page) {
+			case 'internal':
+				return this.internalRelationsPage.render();
+			case 'external':
+				return this.externalRelationsPage.render();
+		
+			default:
+				return this.renderAPI();
+		}
 	}
 
 	renderAPI() {
@@ -337,14 +356,73 @@ class ItemPanel extends Component {
 		`;
 	}
 
-	get sharePath() {
-		if (this.item?.path.startsWith('inventory/'))
+	renderCommunity() {
+		if (!this?.item.community) return;
+		const community = this.item.community;
+		const displays = [];
+		for (const property in community)
 		{
-			const id = filenameFromPath(this.item?.path);
-			if (id) return `/item/${id}`
+			switch (property) {
+				case 'collection':
+					displays.push(`<div class="community_item">
+							<label>Collection</label>
+							<span><a href="https://cylix.guide/collection/${community.collection}" target="_blank">${community.collection}</a></span>
+						</div>`);
+					break;
+				case 'tags':
+					displays.push(`<div class="community_item">
+							<label>Tags</label>
+							<ul class="community_tag-list">
+								${community.tags.map(tag => `<li>${tag}</li>`)}
+							</ul>
+						</div>`);
+					break;
+				case 'availability':
+					displays.push(`<div class="community_item">
+							<label>Availability</label>
+							<ul class="community_tag-list">
+								${community.availability}
+							</ul>
+						</div>`);
+					break;
+			
+				default:
+					break;
+			}
 		}
+		return HTML.wire(this, ':community')`
+			<section
+				class="item-panel_community_wrapper"
+			>
+				<header>Community Notes</header>
+				<div
+					class="community_content"
+				>
+					${{html: displays}}
+				</div>
+			</section>
+		`;
+	}
 
-		return `${this.item?.path.startsWith('inventory/') ? '/share/' : '/#'}${this.item?.path ?? ''}`;
+	renderDates() {
+		return HTML.wire(this, ':community')`
+			<header>${this.state.item.name}</header>
+			<p>API updates were logged for these dates:</p>
+			<ul>
+				${{html: this.state.item.manifestItem.touched.map(dateString => `${new Date(dateString).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}`).join('<br/>')}}
+			</ul>
+		`;
+	}
+
+	get sharePath() {
+		return `/item/${this.item.id}`;
+		// if (this.item?.path.startsWith('inventory/'))
+		// {
+		// 	const id = filenameFromPath(this.item?.path);
+		// 	if (id) return `/item/${id}`
+		// }
+
+		// return `${this.item?.path.startsWith('inventory/') ? '/share/' : '/#'}${this.item?.path ?? ''}`;
 	}
 
 	prettyJson(json) {

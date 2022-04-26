@@ -1,0 +1,27 @@
+{
+	"OfferingId": "20210625-00",
+	"OfferingDisplayPath": "StoreContent/Display/Offerings/20210625-00.json",
+	"OfferingExpirationDate": null,
+	"IncludedItems": [],
+	"Prices": [
+		{
+			"Cost": 200,
+			"CurrencyPath": "Currency/Currencies/cR.json"
+		}
+	],
+	"IncludedCurrencies": [
+		{
+			"Amount": 2,
+			"CurrencyPath": "Currency/Currencies/xpboost.json"
+		},
+		{
+			"Amount": 2,
+			"CurrencyPath": "Currency/Currencies/rerollcurrency.json"
+		}
+	],
+	"IncludedRewardTracks": [],
+	"BoostPath": null,
+	"OperationXp": 0,
+	"EventXp": 0,
+	"MatchBoosts": null
+}

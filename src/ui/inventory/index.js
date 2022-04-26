@@ -1,6 +1,6 @@
 import { Component } from 'component';
 import { db } from 'db';
-import { Item, Offering, placeholderItem } from 'db/item';
+import { Item, placeholderItem } from 'db/item';
 import { emitter } from 'eventEmitter';
 import { HTML } from 'lib/HTML';
 import { settings } from 'ui/settings';
@@ -11,6 +11,9 @@ import './index.css';
 
 class Inventory extends Component {
 	async init() {
+		if (this?._init) return;
+		this._init = true;
+
 		this.pageSize = parseInt(settings.pageSize ?? 100);
 		const favorites = new Favorites({categoryName: 'Favorites'});
 		const search = new Search({categoryName: 'Search'});
@@ -110,7 +113,8 @@ class Inventory extends Component {
 		};
 	}
 
-	render() {
+	async render() {
+		this.init();
 		return this.html`<div class="inventory_wrapper mica_viewer" id="inventory">
 			<header class="inventory mica_header-strip">
 				<a class="mica_header-anchor" href="#inventory"><h2>Inventory</h2></a>
@@ -715,28 +719,5 @@ class Search extends InventoryCategory {
 	focus() {
 		const input = document.querySelector(`#inventory-search`);
 		if (input) input.focus();
-	}
-}
-
-class Offerings extends InventoryCategory {
-	async init() {
-		if (this.items.length) return;
-		try {
-			const offerings = await db.getOfferings();
-			const bundles = new Map(offerings.bundles);
-			if (!bundles || !bundles.size) throw new Error(`[StoreOfferings.init] No bundles!`);
-
-			this.bundles = bundles;
-			console.log('bundles', bundles);
-			this.items = [...this.bundles.entries()].map(([id, offering]) => {
-				console.log('of', id)
-				return new Offering({id, offering})
-			});
-
-			console.log('Offerings items', this.items);
-			this.render();
-		} catch (error) {
-			
-		}
 	}
 }

@@ -29,23 +29,36 @@ export class Item extends Component {
 		this.renderCount = 0;
 	}
 
+	get meta() {
+		if (this?._meta) return this._meta;
+		return (this._meta = db.getItemManifestByID(this.id));
+	}
+
 	get id() {
 		return this?._id ?? (this._id = db.itemPathToID(this.path));
 	}
 
 	get name() {
 		if (this.isRedacted) return '[REDACTED]';
-		let title = this?.data?.CommonData?.Title;
-		if (title && typeof title === 'string')
-		{
-			return title;
-		}
-			else if (db.replacedInfoItems.has(this.path))
+
+		if (db.replacedInfoItems.has(this.path))
 		{
 			const replacedInfo = db.replacedInfoItems.get(this.path);
 			if (replacedInfo.name) return replacedInfo.name;
 		}
+
+		const title = this.meta.title;
+		if (title && typeof title === 'string') return title;
+
 		return this.id ?? '???';
+	}
+
+	get type() {
+		return this.meta.type;
+	}
+
+	get niceType() {
+		return db.getItemType(this.type);
 	}
 
 	async getName() {
@@ -114,10 +127,8 @@ export class Item extends Component {
 		return HTML.wire(this, `:${id ?? 'icon'}`)`
 			<button
 				class=${
-					`dbItem dbItemIcon ${this?.data?.CommonData?.Type ?? 'defaultType'}${
-						this?.data?.CommonData?.Quality ? ` ${this?.data?.CommonData?.Quality?.toLowerCase?.() ?? ''}` : ''
-						}${
-						this?.data?.CommonData?.Type === 'SpartanBackdropImage' ? ' invert-hover' : ''
+					`dbItem dbItemIcon ${this?.type ?? 'defaultType'} ${this.quality}${
+						this.type === 'SpartanBackdropImage' ? ' invert-hover' : ''
 						}`
 				}
 				onclick=${() => this.showItemPanel()}
@@ -145,7 +156,7 @@ export class Item extends Component {
 
 	async renderItemTypeIcon() {
 		const path = this?.data?.CommonData?.ParentPaths?.[0]?.Path ?? this?.data?.CommonData?.ParentTheme ?? '';
-		const type = this?.data?.CommonData?.Type;
+		const type = this?.type;
 		if (!path || !this.itemTypeIcons.has(type)) return '';
 		if (type && type === 'WeaponCoating')
 		{
@@ -186,6 +197,13 @@ export class Item extends Component {
 
 	get imagePath() {
 		let imagePath = 'progression/default/default.png';
+
+		if (this.type === 'Offering')
+		{
+			// offering-20211016-03
+			const id = this.id.substring(9);
+			return `store/${id}.png`;
+		}
 
 		if (this.isRedacted) return imagePath;
 
@@ -307,76 +325,15 @@ export class Item extends Component {
 	unredact() {
 		this.state.userUnredacted = true;
 	}
-}
 
-export class Offering extends Item {
-	constructor({ offering, id }) {
-		if (db.items.has(id))
-		{
-			console.log('dupe offering', id)
-			return db.items.get(id);
-		}
-		if (offering?.title && Array.isArray(offering.touched))
-		{
-			const path = `storecontent/offerings/${id}.json`;
-			super(path);
-			console.log('new offering', path)
-			db.items.set(path, this);
-			this.data = offering;
-			this.path = path;
-		}
+	get community() {
+		if (this.manifestItem.community) return this.manifestItem.community;
 	}
 
-	async renderIcon(id, {
-		itemTypeIcon = false
-	} = {}) {
-		await this.init();
-		return HTML.wire(this, `:${id ?? 'icon'}`)`
-			<button
-				class=${
-					`dbItem dbItemIcon offering ${this?.data?.info?.Type ?? 'defaultType'}${
-						this?.data?.info?.Quality ? ` ${this?.data?.info?.Quality?.toLowerCase?.() ?? ''}` : ''
-						}`
-				}
-				onclick=${() => this.showItemPanel()}
-				style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/store/${db.pathCase(this.data.offering.OfferingId)}.png)`}}
-				title=${this.name ?? 'item'}
-			>
-				<span>${this.name ?? '???'}</span>
-			</button>
-		`;
-	}
-
-	get name() {
-		return this.data.title || this.data?.offering?.OfferingId || 'Offering';
-	}
-
-	async getRelatedItems() {
-		if (this.relatedItems) return this.relatedItems;
-		const items = new Set();
-		this.data.offering.IncludedItems.forEach(offeringItem => {
-			if (offeringItem && offeringItem.ItemPath)
-			{
-				try {
-					const item = new Item(offeringItem.ItemPath);
-					if (item) items.add(item);
-				} catch (error) {
-					console.error(`[Item.Bundle] Invalid item`, error);
-				}
-			}
-		});
-
-		this.relatedItems = items;
-		if (!items.size) console.error(`[Item.Bundle] No valid items`);
-	}
-
-	get cost() {
-		// TODO extract filename as currency name
-		const cost = this.data?.Prices.map(price => `${price?.Cost ?? 0}`).join(', ');
-	}
-	
-	get lastModifiedDate() {
-		const touched = this.data.touched;
-		return new Date(touched[touched.length-1]);
+	get quality() {
+		const quality = this?.data?.CommonData?.Quality;
+		if (quality) return quality.toLowerCase();
+		if (this.type === 'Offering') return 'Offering';
+		return 'common';
 	}
 }

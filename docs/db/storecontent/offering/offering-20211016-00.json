@@ -1,0 +1,64 @@
+{
+	"OfferingId": "20211016-00",
+	"OfferingDisplayPath": "StoreContent/Display/Offerings/20211016-00.json",
+	"OfferingExpirationDate": null,
+	"IncludedItems": [
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/Coatings/002-001-olympus-cd373d05.json",
+			"ItemType": "ArmorCoating"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/Helmets/005-001-olympus-52ac3f9e.json",
+			"ItemType": "ArmorHelmet"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/HelmetAttachments/004-001-olympus-f7f0d548.json",
+			"ItemType": "ArmorHelmetAttachment"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/Gloves/003-001-olympus-f30b69ba.json",
+			"ItemType": "ArmorGlove"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/ChestAttachments/001-001-olympus-04c91602.json",
+			"ItemType": "ArmorChestAttachment"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/ShouldersLeft/008-001-olympus-9767acbe.json",
+			"ItemType": "ArmorLeftShoulderPad"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/ShouldersRight/009-001-olympus-9767acbe.json",
+			"ItemType": "ArmorRightShoulderPad"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/KneePads/006-001-olympus-f30b69ba.json",
+			"ItemType": "ArmorKneePad"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Spartan/ActionPoses/101-000-menu-stance-o-b109a039.json",
+			"ItemType": "SpartanActionPose"
+		}
+	],
+	"Prices": [
+		{
+			"Cost": 1200,
+			"CurrencyPath": "Currency/Currencies/cR.json"
+		}
+	],
+	"IncludedCurrencies": [],
+	"IncludedRewardTracks": [],
+	"BoostPath": null,
+	"OperationXp": 0,
+	"EventXp": 0,
+	"MatchBoosts": null
+}

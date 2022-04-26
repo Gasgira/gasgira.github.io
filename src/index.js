@@ -8,7 +8,8 @@ import { coreViewer } from 'ui/cores';
 import { inventory } from 'ui/inventory';
 import { modalConstructor } from 'ui/modal';
 import { privacy } from 'ui/privacy';
-import { vanity } from 'ui/vanity';
+import { vanity } from 'pages/vanity';
+import { router } from 'pages';
 
 import './styles.css';
 
@@ -17,7 +18,6 @@ console.log('hello world');
 class App {
 	async init() {
 		await db.init();
-		// this.render();
 
 		HTML.bind(document.querySelector('.js--privacy'))`
 			<span
@@ -53,25 +53,26 @@ class App {
 	}
 
 	async handleNavigation(event) {
-		console.log('handleNavigation', this?.pathname)
-		const url = new URL(window.location);
-		const { pathname } = url;
-		console.log(`url ${url}`, pathname);
+		return await router.route();
+		// console.log('handleNavigation', this?.pathname)
+		// const url = new URL(window.location);
+		// const { pathname } = url;
+		// console.log(`url ${url}`, pathname);
 
-		if (this?.pathname === pathname) return;
-		this.pathname = pathname;
+		// if (this?.pathname === pathname) return;
+		// this.pathname = pathname;
 
-		console.log('navigating', this?.pathname)
+		// console.log('navigating', this?.pathname)
 
-		if (pathname.startsWith('/vanity'))
-		{
-			this.page = new VanityExplorer();
-		} else {
-			this.page = new ItemExplorer();
-		}
+		// if (pathname.startsWith('/vanity'))
+		// {
+		// 	this.page = new VanityExplorer();
+		// } else {
+		// 	this.page = new ItemExplorer();
+		// }
 
-		await this.page.init();
-		this.render();
+		// await this.page.init();
+		// this.render();
 	}
 
 	parseUriHash() {
@@ -94,63 +95,3 @@ class App {
 
 const app = new App();
 app.init();
-
-let _explorer;
-class ItemExplorer {
-	constructor() {
-		if (_explorer) return _explorer;
-		_explorer = this;
-	}
-
-	async init() {
-		console.log('Explorer.init');
-		if (this?._init) return await this._init;
-		this._init = Promise.all([
-			coreViewer.init(),
-			calendar.init(),
-			inventory.init()
-		]).then(() => {
-			this.render();
-		})
-	}
-
-	async render() {
-		console.log('Explorer.render');
-		HTML.bind(document.querySelector('.js--main'))`
-			${headerNav.render()}
-			${coreViewer.render()}
-			${calendar.render()}
-			${inventory.render()}
-		`;
-	}
-}
-
-let _vanity;
-class VanityExplorer {
-	constructor() {
-		if (_vanity) return _vanity;
-		_vanity = this;
-	}
-
-	async init() {
-		if (this?._init) return;
-		
-		let gamertag;
-		const { pathname } = new URL(window.location);
-		const pathParts = pathname.split('/');
-		if (pathParts && pathParts.length > 2) gamertag = decodeURIComponent(pathParts[2]);
-		console.log('gt', gamertag);
-		
-		this._init = await vanity.init(gamertag);
-		console.log('App.Vanity.init');
-		this.render();
-	}
-
-	async render() {
-		console.log('App.Vanity.render');
-		HTML.bind(document.querySelector('.js--main'))`
-			${headerNav.render()}
-			${vanity.render()}
-		`;
-	}
-}

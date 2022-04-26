@@ -1,0 +1,49 @@
+{
+	"OfferingId": "20211018-10",
+	"OfferingDisplayPath": "StoreContent/Display/Offerings/20211018-10.json",
+	"OfferingExpirationDate": null,
+	"IncludedItems": [
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Spartan/Emblems/104-001-popculture-de-84d2f996.json",
+			"ItemType": "SpartanEmblem"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/KneePads/006-001-olympus-ea1058fb.json",
+			"ItemType": "ArmorKneePad"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Weapon/Charms/201-201-ce2c8fd6.json",
+			"ItemType": "WeaponCharm"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Vehicle/Emblems/405-305-84d2f996.json",
+			"ItemType": "VehicleEmblem"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/Emblems/013-001-84d2f996.json",
+			"ItemType": "ArmorEmblem"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Weapon/Emblems/205-201-84d2f996.json",
+			"ItemType": "WeaponEmblem"
+		}
+	],
+	"Prices": [
+		{
+			"Cost": 500,
+			"CurrencyPath": "Currency/Currencies/cR.json"
+		}
+	],
+	"IncludedCurrencies": [],
+	"IncludedRewardTracks": [],
+	"BoostPath": null,
+	"OperationXp": 0,
+	"EventXp": 0,
+	"MatchBoosts": null
+}

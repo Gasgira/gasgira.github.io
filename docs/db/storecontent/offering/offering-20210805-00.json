@@ -1,0 +1,44 @@
+{
+	"OfferingId": "20210805-00",
+	"OfferingDisplayPath": "StoreContent/Display/Offerings/20210805-00.json",
+	"OfferingExpirationDate": null,
+	"IncludedItems": [
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/HipAttachments/010-001-samurai-4b488b79.json",
+			"ItemType": "ArmorHipAttachment"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Spartan/Emblems/104-001-samurai-senti-37ba759d.json",
+			"ItemType": "SpartanEmblem"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/Emblems/013-001-37ba759d.json",
+			"ItemType": "ArmorEmblem"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Weapon/Emblems/205-201-37ba759d.json",
+			"ItemType": "WeaponEmblem"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Vehicle/Emblems/405-305-37ba759d.json",
+			"ItemType": "VehicleEmblem"
+		}
+	],
+	"Prices": [
+		{
+			"Cost": 700,
+			"CurrencyPath": "Currency/Currencies/cR.json"
+		}
+	],
+	"IncludedCurrencies": [],
+	"IncludedRewardTracks": [],
+	"BoostPath": null,
+	"OperationXp": 0,
+	"EventXp": 0,
+	"MatchBoosts": null
+}

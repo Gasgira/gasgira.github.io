@@ -1,0 +1,29 @@
+{
+	"OfferingId": "20211022-00",
+	"OfferingDisplayPath": "StoreContent/Display/Offerings/20211022-00.json",
+	"OfferingExpirationDate": null,
+	"IncludedItems": [
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/Coatings/002-001-olympus-da3ba426.json",
+			"ItemType": "ArmorCoating"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/Visors/012-001-a8a475ad.json",
+			"ItemType": "ArmorVisor"
+		}
+	],
+	"Prices": [
+		{
+			"Cost": 400,
+			"CurrencyPath": "Currency/Currencies/cR.json"
+		}
+	],
+	"IncludedCurrencies": [],
+	"IncludedRewardTracks": [],
+	"BoostPath": null,
+	"OperationXp": 0,
+	"EventXp": 0,
+	"MatchBoosts": null
+}

@@ -27,7 +27,7 @@ export class AppearanceCore extends Component {
 	}
 
 	render() {
-		console.log('AppearanceCore render', this.items.length);
+		// console.log('AppearanceCore render', this.items.length);
 		return this.html`
 			<div
 				class ="inventory-category_wrapper mica_content"

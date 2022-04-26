@@ -1,0 +1,39 @@
+{
+	"OfferingId": "20210904-02",
+	"OfferingDisplayPath": "StoreContent/Display/Offerings/20210904-02.json",
+	"OfferingExpirationDate": null,
+	"IncludedItems": [
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/HipAttachments/010-001-olympus-0d0d9f91.json",
+			"ItemType": "ArmorHipAttachment"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/Coatings/002-001-olympus-c9e84fcc.json",
+			"ItemType": "ArmorCoating"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/ShouldersLeft/008-001-olympus-f30b69ba.json",
+			"ItemType": "ArmorLeftShoulderPad"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/ShouldersRight/009-001-olympus-f30b69ba.json",
+			"ItemType": "ArmorRightShoulderPad"
+		}
+	],
+	"Prices": [
+		{
+			"Cost": 500,
+			"CurrencyPath": "Currency/Currencies/cR.json"
+		}
+	],
+	"IncludedCurrencies": [],
+	"IncludedRewardTracks": [],
+	"BoostPath": null,
+	"OperationXp": 0,
+	"EventXp": 0,
+	"MatchBoosts": null
+}

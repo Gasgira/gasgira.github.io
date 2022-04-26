@@ -1,0 +1,29 @@
+{
+	"OfferingId": "20220124-02",
+	"OfferingDisplayPath": "StoreContent/Display/Offerings/20220124-02.json",
+	"OfferingExpirationDate": null,
+	"IncludedItems": [
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/ShouldersLeft/008-001-samurai-7e9788d7.json",
+			"ItemType": "ArmorLeftShoulderPad"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/ShouldersRight/009-001-samurai-7e9788d7.json",
+			"ItemType": "ArmorRightShoulderPad"
+		}
+	],
+	"Prices": [
+		{
+			"Cost": 200,
+			"CurrencyPath": "Currency/Currencies/cR.json"
+		}
+	],
+	"IncludedCurrencies": [],
+	"IncludedRewardTracks": [],
+	"BoostPath": null,
+	"OperationXp": 0,
+	"EventXp": 0,
+	"MatchBoosts": null
+}

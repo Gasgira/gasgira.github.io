@@ -1,4 +1,4 @@
-import { AppearanceCore } from 'ui/vanity/core';
+import { AppearanceCore } from 'pages/vanity/core';
 import { Component } from 'component';
 import { emitter } from 'eventEmitter';
 import { HTML } from 'lib/HTML';

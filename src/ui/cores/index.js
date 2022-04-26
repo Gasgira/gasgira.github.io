@@ -28,6 +28,9 @@ class CoreViewer extends Component {
 	}
 
 	async init() {
+		if (this?._init) return;
+		this._init = true;
+
 		const armor = [...db.getItemIDsByType('ArmorCore')]
 			.sort() // hack... mk7 id puts it ahead of mk5
 			.forEach(id => {
@@ -81,7 +84,8 @@ class CoreViewer extends Component {
 		}
 	}
 
-	render() {
+	async render() {
+		this.init();
 		return this.html`
 			<div id="cores" class ="core-viewer_wrapper mica_viewer">
 				<nav class ="core-viewer_nav"><ul>

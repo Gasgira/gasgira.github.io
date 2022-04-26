@@ -1,0 +1,54 @@
+{
+	"OfferingId": "20210727-01",
+	"OfferingDisplayPath": "StoreContent/Display/Offerings/20210727-01.json",
+	"OfferingExpirationDate": null,
+	"IncludedItems": [
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Weapon/AlternateGeos/210-000-type-2p-flash-4a71df84.json",
+			"ItemType": "WeaponAlternateGeometryRegion"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Weapon/AlternateGeos/210-000-critpoint-shr-863d30c7.json",
+			"ItemType": "WeaponAlternateGeometryRegion"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Weapon/AlternateGeos/210-000-type-2a-barre-4a71df84.json",
+			"ItemType": "WeaponAlternateGeometryRegion"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Weapon/Coatings/203-202-olympus-de53760e.json",
+			"ItemType": "WeaponCoating"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Weapon/Coatings/203-201-olympus-de53760e.json",
+			"ItemType": "WeaponCoating"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Weapon/Coatings/203-200-olympus-de53760e.json",
+			"ItemType": "WeaponCoating"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Weapon/Coatings/203-203-olympus-de53760e.json",
+			"ItemType": "WeaponCoating"
+		}
+	],
+	"Prices": [
+		{
+			"Cost": 800,
+			"CurrencyPath": "Currency/Currencies/cR.json"
+		}
+	],
+	"IncludedCurrencies": [],
+	"IncludedRewardTracks": [],
+	"BoostPath": null,
+	"OperationXp": 0,
+	"EventXp": 0,
+	"MatchBoosts": null
+}

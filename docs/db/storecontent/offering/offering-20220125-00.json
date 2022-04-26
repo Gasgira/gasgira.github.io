@@ -1,0 +1,24 @@
+{
+	"OfferingId": "20220125-00",
+	"OfferingDisplayPath": "StoreContent/Display/Offerings/20220125-00.json",
+	"OfferingExpirationDate": null,
+	"IncludedItems": [
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Vehicle/AlternateGeos/401-000-longhorn-8cc49009.json",
+			"ItemType": "VehicleAlternateGeometryRegion"
+		}
+	],
+	"Prices": [
+		{
+			"Cost": 600,
+			"CurrencyPath": "Currency/Currencies/cR.json"
+		}
+	],
+	"IncludedCurrencies": [],
+	"IncludedRewardTracks": [],
+	"BoostPath": null,
+	"OperationXp": 0,
+	"EventXp": 0,
+	"MatchBoosts": null
+}

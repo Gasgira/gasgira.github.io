@@ -51,6 +51,11 @@
 		background: linear-gradient(transparent, #0f161f 60%);
 		mask: var(--noise), linear-gradient(transparent, #000 80%);
 	}
+	& label {
+		opacity: 0.66;
+		font-size: 0.8em;
+		padding-right: 0.2em;
+	}
 	& .item-meta_wrapper {
 		display: flex;
 		flex-direction: column;
@@ -114,20 +119,10 @@
 			justify-content: right;
 			align-items: center;
 			opacity: 0.8;
-			& label {
-				opacity: 0.66;
-				font-size: 0.8em;
-				padding-right: 0.2em;
-			}
 		}
 	}
 	& .item-panel_manifest_wrapper {
 		padding: 0 var(--padding-edge) 5rem var(--padding-edge);
-		& label {
-			opacity: 0.66;
-			font-size: 0.8em;
-			padding-right: 0.2em;
-		}
 		& span {
 			font-size: 0.9em;
 		}
@@ -162,7 +157,7 @@
 			background-color: rgba(0,0,0,0.66);
 			background-size: contain;
 			background-repeat: no-repeat;
-			background-position: center center;
+			background-position: center bottom;
 		}
 		& h2 {
 			font-size: 1.25em;
@@ -182,6 +177,7 @@
 			padding-left: 1em;
 			padding-bottom: 0.5em;
 			border-left: var(--border);
+			border-left: 0.2rem solid var(--rarity);
 			transition: border-color var(--time-state) linear;
 			position: relative;
 			&::before {
@@ -199,15 +195,15 @@
 			}
 			&.legendary {
 				--rarity: var(--rarity-legendary);
-				border-left: 0.2rem solid var(--rarity);
 			}
 			&.epic {
 				--rarity: var(--rarity-epic);
-				border-left: 0.2rem solid var(--rarity-epic);
 			}
 			&.rare {
 				--rarity: var(--rarity-rare);
-				border-left: 0.2rem solid var(--rarity-rare);
+			}
+			&.Offering {
+				--rarity: var(--rarity-store);
 			}
 		}
 		& .favorite {
@@ -230,6 +226,7 @@
 		}
 	}
 	& .parentSocket {
+		display: inline-block;
 		background-color: hsla(var(--theme-interact-hsl), 0.1);
 		padding: 0 0.2em;
 		margin: 0 0.2em;
@@ -259,6 +256,51 @@
 			display: flex;
 			flex-direction: row;
 			justify-content: center;
+		}
+	}
+	& .item-panel_community_wrapper {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: top;
+		position: relative;
+		padding: var(--padding-edge);
+		margin-bottom: 2rem;
+		box-shadow: 0 1rem 1rem rgba(0,0,0,0.25);
+		&::before, &::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: -1;
+			display: block;
+			pointer-events: none;
+		}
+		&::before {
+			opacity: 0.66;
+			background: linear-gradient(30deg, var(--bg3), rgba(0,0,0,0) 80%);
+			mask: var(--noise), linear-gradient(30deg, #000 10%, transparent 75%);
+		}
+		& .community_content {
+			width: 100%;
+			border-left: 0.2rem solid var(--rarity-common);
+			padding: 0 var(--padding-edge);
+			& .community_tag-list {
+				list-style-type: none;
+				display: inline-flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				& li {
+					display: inline-block;
+					background-color: hsla(var(--theme-interact-hsl), 0.1);
+					padding: 0 0.2em;
+					margin: 0 0.2em;
+					border-radius: var(--theme-border-radius);
+				}
+			}
 		}
 	}
 }

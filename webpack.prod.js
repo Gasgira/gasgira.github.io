@@ -102,6 +102,8 @@ module.exports = {
 			cleanOnceBeforeBuildPatterns: [
 				'**/*',
 				'!CNAME*',
+				'!sitemap.xml*',
+				'!robots.txt*',
 				'!db/**',
 			],
 		}),

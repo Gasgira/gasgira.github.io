@@ -1,0 +1,24 @@
+{
+	"OfferingId": "20220119-03",
+	"OfferingDisplayPath": "StoreContent/Display/Offerings/20220119-03.json",
+	"OfferingExpirationDate": null,
+	"IncludedItems": [
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/Helmets/005-001-olympus-ea1058fb.json",
+			"ItemType": "ArmorHelmet"
+		}
+	],
+	"Prices": [
+		{
+			"Cost": 700,
+			"CurrencyPath": "Currency/Currencies/cR.json"
+		}
+	],
+	"IncludedCurrencies": [],
+	"IncludedRewardTracks": [],
+	"BoostPath": null,
+	"OperationXp": 0,
+	"EventXp": 0,
+	"MatchBoosts": null
+}

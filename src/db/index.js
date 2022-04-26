@@ -68,7 +68,7 @@ class Database {
 		]);
 
 		this.index = index;
-		console.info(`[skimmer.db.init] "${this.index.manifest.size}" items in index.`);
+		console.info(`[db.init] "${this.index.manifest.size}" items in index.`);
 
 		this.metadata = metadata;
 	}
@@ -94,7 +94,7 @@ class Database {
 			if (!id) return;
 			if (!this?._relations) this._relations = this.getRelationsIndex();
 			const relations = await this._relations;
-			console.log(`[db.getRelationsByID]`, id, relations)
+			// console.log(`[db.getRelationsByID]`, id, relations)
 	
 			if (!relations || !relations.size)
 			{
@@ -266,6 +266,7 @@ class Database {
 			['AiModel', 'AI Model'],
 			['AiTheme', 'Kit, AI'],
 			['AiCore', 'Core, AI'],
+			['Offering', 'Offering'],
 			['meta', 'Meta']
 		]))
 	}

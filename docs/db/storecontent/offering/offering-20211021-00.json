@@ -1,0 +1,39 @@
+{
+	"OfferingId": "20211021-00",
+	"OfferingDisplayPath": "StoreContent/Display/Offerings/20211021-00.json",
+	"OfferingExpirationDate": null,
+	"IncludedItems": [
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/Coatings/002-001-olympus-f94a0c5f.json",
+			"ItemType": "ArmorCoating"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/HelmetAttachments/004-001-olympus-c2d72600.json",
+			"ItemType": "ArmorHelmetAttachment"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Weapon/Charms/201-201-eb1241bc.json",
+			"ItemType": "WeaponCharm"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Weapon/Charms/201-201-878d2669.json",
+			"ItemType": "WeaponCharm"
+		}
+	],
+	"Prices": [
+		{
+			"Cost": 1000,
+			"CurrencyPath": "Currency/Currencies/cR.json"
+		}
+	],
+	"IncludedCurrencies": [],
+	"IncludedRewardTracks": [],
+	"BoostPath": null,
+	"OperationXp": 0,
+	"EventXp": 0,
+	"MatchBoosts": null
+}

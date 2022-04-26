@@ -1,0 +1,74 @@
+{
+	"OfferingId": "20210906-19",
+	"OfferingDisplayPath": "StoreContent/Display/Offerings/20210906-19.json",
+	"OfferingExpirationDate": null,
+	"IncludedItems": [
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/Coatings/002-001-samurai-5b06ece8.json",
+			"ItemType": "ArmorCoating"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/ShouldersLeft/008-001-samurai-1afb4dd3.json",
+			"ItemType": "ArmorLeftShoulderPad"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/ShouldersRight/009-001-samurai-1afb4dd3.json",
+			"ItemType": "ArmorRightShoulderPad"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/ChestAttachments/001-001-samurai-e161ac8e.json",
+			"ItemType": "ArmorChestAttachment"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/KneePads/006-001-samurai-55badb14.json",
+			"ItemType": "ArmorKneePad"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Spartan/Emblems/104-001-samurai-house-e30dc8d8.json",
+			"ItemType": "SpartanEmblem"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Vehicle/Emblems/405-305-e30dc8d8.json",
+			"ItemType": "VehicleEmblem"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/Emblems/013-001-e30dc8d8.json",
+			"ItemType": "ArmorEmblem"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Weapon/Emblems/205-201-e30dc8d8.json",
+			"ItemType": "WeaponEmblem"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/Coatings/002-001-olympus-5b06ece8.json",
+			"ItemType": "ArmorCoating"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/Coatings/002-001-reach-5b06ece8.json",
+			"ItemType": "ArmorCoating"
+		}
+	],
+	"Prices": [
+		{
+			"Cost": 1000,
+			"CurrencyPath": "Currency/Currencies/cR.json"
+		}
+	],
+	"IncludedCurrencies": [],
+	"IncludedRewardTracks": [],
+	"BoostPath": null,
+	"OperationXp": 0,
+	"EventXp": 0,
+	"MatchBoosts": null
+}
