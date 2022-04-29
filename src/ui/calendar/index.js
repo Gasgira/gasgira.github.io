@@ -158,7 +158,7 @@ class Calendar extends Component {
 		`;
 	}
 
-	daysLeftInSeason() {
+	remainingTimeInSeason() {
 		try {
 			const operation = this?.operations?.[this.operations.length-1];
 			if (operation)
@@ -168,18 +168,49 @@ class Calendar extends Component {
 				const dayMS = 24 * 60 * 60 * 1000;
 
 				const days = Math.round(Math.abs((today - endDate) / dayMS));
-				return days;
+				if (days > 6) return `${days} days remaining`;
+				return this.renderCountdown(endDate);
 			}
 		} catch (error) {
 			console.error('daysLeftInSeason', error);
-			return 0
+			return `Timey Wimey Error`
 		}
+	}
+
+	renderCountdown(endDate) {
+		const render = () => {
+			const diffTime = Math.abs(new Date().valueOf() - endDate.valueOf());
+			const days = (diffTime / (24*60*60*1000));
+			const hours = (days % 1) * 24;
+			const minutes = (hours % 1) * 60;
+			// const secs = (minutes % 1) * 60;
+			return HTML.wire(this, ':countdown')`
+				${Math.floor(days).toString().padStart(2, '0')} Days, ${Math.floor(hours).toString().padStart(2, '0')} Hours, ${Math.floor(minutes).toString().padStart(2, '0')} Minutes
+			`;
+		};
+
+		let lastTime;
+		const interval = (time) => {
+			if (lastTime !== null)
+			{
+				const deltaTime = time - lastTime;
+				if (deltaTime < 1000) return window.requestAnimationFrame(interval);
+			}
+
+			render();
+
+			lastTime = time;
+			window.requestAnimationFrame(interval);
+		}
+		// setInterval(render, 10000);
+		window.requestAnimationFrame(interval);
+		return render();
 	}
 
 	calendar() {
 		return HTML.wire(this, ':calendar')`
 		<div class="reward-track_wrapper mica_content">
-			<span>Season 1 // ${this.daysLeftInSeason()} days remaining</span>
+			<span>Season 1 // ${this.remainingTimeInSeason()}</span>
 			<div class="timeline_wrapper">
 				<ul class="timeline_list operations">
 					${() => {

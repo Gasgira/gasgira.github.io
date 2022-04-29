@@ -87,6 +87,7 @@ class App {
 			const el = document.querySelector(`#${hash}`);
 			if (el)
 			{
+				console.info(`[parseUriHash.scrollIntoView] "${hash}"`);
 				el.scrollIntoView();
 			}
 		}

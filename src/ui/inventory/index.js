@@ -371,6 +371,13 @@ class Search extends InventoryCategory {
 			console.log('types', types)
 			this.state.filters.set('types', types);
 		}
+		
+		const tags = urlParams.getSecionSetting('sct');
+		if (tags && typeof tags === 'string')
+		{
+			console.log('tags', tags)
+			this.state.filters.set('sct', tags);
+		}
 
 		if (this.state.term || this.state.filters.size) {
 			this.searchItems();
@@ -501,6 +508,17 @@ class Search extends InventoryCategory {
 						${() => [...db.itemTypes.entries()].map(([rawType, niceType]) => `<option value=${rawType}>${niceType}</option>`)}
 					</select>
 				</li>
+				<li class="filter-input_wrapper">
+					<label for="select_types">Tag</label>
+					<select
+						name="select_tags"
+						id="select_tags"
+						onchange=${(e) => this.filterTag(e.target.value)}
+					>
+						<option value="">Any</option>
+						${() => [...db.communityTags].map(tag => `<option value=${tag}>${tag}</option>`)}
+					</select>
+				</li>
 			</ul>
 		`;
 	}
@@ -534,6 +552,11 @@ class Search extends InventoryCategory {
 				if (filters.has('types') && entry?.type)
 				{
 					if (filters.get('types') !== entry.type) continue;
+				}
+
+				if (filters.has('sct') && entry?.type)
+				{
+					if (!Array.isArray(entry?.community?.tags) || !entry.community.tags.includes(filters.get('sct'))) continue;
 				}
 	
 				if (filters.has('modifiedDate') && Array.isArray(entry?.touched))
@@ -618,6 +641,7 @@ class Search extends InventoryCategory {
 			return;
 		}
 		console.log('submit', this.state.term, this.state.filters);
+		this.state.page = 0;
 		urlParams.setSecionSetting('s', this.state.term);
 		this.searchItems();
 		this.render();
@@ -635,6 +659,21 @@ class Search extends InventoryCategory {
 		}
 		if (!value || typeof value !== 'string') return;
 		console.log('filterType', value);
+
+		this.state.filters.set(filterKey, value);
+		urlParams.setSecionSetting(filterKey, value);
+	}
+
+	filterTag(value) {
+		const filterKey = 'sct';
+		if (!value && this.state.filters.has(filterKey))
+		{
+			this.state.filters.delete(filterKey);
+			urlParams.deleteSecionSetting(filterKey);
+			return;
+		}
+		if (!value || typeof value !== 'string') return;
+		console.log('filterTag', value);
 
 		this.state.filters.set(filterKey, value);
 		urlParams.setSecionSetting(filterKey, value);

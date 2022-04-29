@@ -1,10 +1,8 @@
 import { Component } from 'component';
 import { db } from 'db';
 import { Item, placeholderItem } from 'db/item';
-import { emitter } from 'eventEmitter';
 import { HTML } from 'lib/HTML';
-import { settings } from 'ui/settings';
-import { urlParams } from 'urlParams';
+import { filenameFromPath } from 'utils/paths.js';
 
 export class AppearanceCore extends Component {
 	constructor({ type = 'Sockets', core, sockets, gamertag = 'Spartan' } = {}) {
@@ -17,7 +15,7 @@ export class AppearanceCore extends Component {
 			gamertag
 		}
 		this.items = [];
-		this.itemIDs = new Set();
+		this.itemIDs = new Set([...this.meta.sockets.values()].map(path => filenameFromPath(path)));
 	}
 
 	init() {

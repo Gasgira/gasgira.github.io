@@ -27,3 +27,33 @@
 		text-align: center;
 	}
 }
+
+.vanity_feats_wrapper {
+	--content-pad: 0.5rem;
+	& .feats_header {
+		font-size: 1.1rem;
+		margin-left: var(--content-pad);
+	}
+	& .feats_list {
+		margin-left: var(--content-pad);
+		& .feats_feat {
+			margin-left: var(--content-pad);
+			margin-bottom: 2rem;
+			& .feat_feat-type {
+				font-size: 1.1rem;
+				opacity: 0.8;
+				margin: 0.5rem 0;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+			}
+		}
+	}
+	& .feat_reward-link {
+		display: inline-block;
+		background-color: hsla(var(--theme-interact-hsl), 0.1);
+		padding: 0.2em 0.4em;
+		margin: 0.2em;
+		border-radius: var(--theme-border-radius);
+		color: var(--theme-text);
+	}
+}

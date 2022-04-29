@@ -1,5 +1,6 @@
 import { AppearanceCore } from 'pages/vanity/core';
 import { Component } from 'component';
+import { db } from 'db';
 import { emitter } from 'eventEmitter';
 import { HTML } from 'lib/HTML';
 import { MobileMicaMenu } from 'ui/mica';
@@ -84,6 +85,7 @@ class Vanity extends Component {
 				${{html: this.state?.core ? '' : '<div class="vanity-placeholder"><span>Search for a gamertag to see their currently equipped items.</span></div>'}}
 				<div class=${`mica_mobile-menu_container ${this.state.mobileMenu ? 'show-mobile' : 'hide-mobile'}`}>${this?.mobileMicaMenu.render()}</div>
 			</div>
+			${this.state.feats ? this.state.featsRender : ''}
 		</div>`;
 	}
 
@@ -271,6 +273,50 @@ class Vanity extends Component {
 			console.error(`[Vanity.showAppearance] VehicleCores`, error);
 		}
 
+		try {
+			const feats = new Map([
+				['award', new Map()],
+				['memento', new Map()],
+				['capstone', new Map()]
+			]);
+			let hasFeats = false;
+			
+			this.state.cores.forEach(core => {
+				const coreItemIDs = core.itemIDs;
+				if (coreItemIDs && coreItemIDs.size) coreItemIDs.forEach(id => {
+					const community = db.getItemManifestByID(id)?.community;
+
+					if (community && Array.isArray(community?.tags))
+					{
+						community.tags.forEach(tag => {
+							if (feats.has(tag))
+							{
+								const feat = feats.get(tag);
+								const availability = community?.availability ?? '???';
+
+								if (feat.has(availability))
+								{
+									feat.get(availability).add(id);
+								} else {
+									feat.set(availability, new Set([id]));
+									hasFeats = true;
+								}
+							}
+						})
+					}
+				});
+			});
+
+			console.log('feats', feats);
+
+			if (hasFeats){
+				this.state.feats = new Feats({feats, gamertag: this.gamertag, appearance});
+				this.state.featsRender = this.state.feats.render();
+			}
+		} catch (error) {
+			console.error(`[Vanity.showAppearance] feats`, error);
+		}
+
 		this.render();
 	}
 
@@ -292,6 +338,10 @@ class Vanity extends Component {
 				}
 			}
 
+			if (Array.isArray(theme?.Emblems) && theme.Emblems?.[0]?.Path) {
+				sockets.set('Emblem', theme.Emblems[0]?.Path);
+			}
+
 			const appearanceCore = new AppearanceCore({ type, core, sockets, gamertag: this.gamertag });
 			if (appearanceCore) return appearanceCore;
 		} catch (error) {
@@ -301,6 +351,117 @@ class Vanity extends Component {
 }
 
 export const vanity = new Vanity();
+
+class Feats extends Component {
+	constructor({
+		feats,
+		gamertag = 'Spartan',
+		appearance
+	}) {
+		super();
+
+		if (!feats) return;
+		this.feats = feats;
+		this.state.gamertag = gamertag;
+		if (appearance) this.state.appearance = appearance;
+		console.log('this', feats);
+	}
+
+	get defaultState() {
+		return {
+			gamertag: ''
+		};
+	}
+
+	get enlistedDateString() {
+		if (!this.state.appearance) return '...';
+		const firstModifiedDate = this.state.appearance?.ArmorCores?.ArmorCores?.[0]?.Themes?.[0]?.FirstModifiedDateUtc?.ISO8601Date;
+
+		if (Date.parse(firstModifiedDate))
+		{
+			return new Date(firstModifiedDate).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+		}
+		return '...';
+	}
+
+	render() {
+		return this.html`
+			<section class="vanity_feats_wrapper">
+				<header class="mica_header-strip"><h2>Feats</h2></header>
+				<div class="mica_content">
+					<header class="feats_header">
+						<span>${this.state.gamertag} // Enlisted ${this.enlistedDateString}</span>
+					</header>
+					<ul class="feats_list">
+						${this.renderAwards()}
+						${this.renderMementos()}
+						${this.renderCapstones()}
+					</ul>
+				</div>
+			</section>
+		`;
+	}
+
+	renderFeat(availability, itemIDs) {
+		console.log('rf', availability, itemIDs);
+		const titles  = new Set();
+		return HTML.wire()`
+			<li>
+				<header>${availability}</header>
+				<ul>
+					${[...itemIDs].map(id => {
+						const meta = db.getItemManifestByID(id);
+						if (!meta || titles.has(meta.title)) return '';
+						titles.add(meta.title);
+						return `<a class="feat_reward-link" href=${`#${meta.path}`}>${meta.title}</a>`;
+					})}
+				</ul>
+			</li>
+		`;
+	}
+
+	renderAwards() {
+		const featType = 'awards';
+		const feats = this.feats.get(featType);
+		if (!feats || !feats.size) return;
+		return HTML.wire(this, ':awards')`
+			<li class="feats_feat">
+				<header class="feat_feat-type">Awards</header>
+				<ul>
+					${[...feats.entries()].map(([key, value]) => this.renderFeat(key, value))}
+				</ul>
+			</li>
+		`;
+	}
+
+	renderMementos() {
+		const featType = 'memento';
+		const feats = this.feats.get(featType);
+		if (!feats || !feats.size) return;
+		return HTML.wire(this, ':mementos')`
+			<li class="feats_feat">
+				<header class="feat_feat-type">Mementos</header>
+				<ul>
+					${[...feats.entries()].map(([key, value]) => this.renderFeat(key, value))}
+				</ul>
+			</li>
+		`;
+	}
+
+	renderCapstones() {
+		const featType = 'capstone';
+		const feats = this.feats.get(featType);
+		if (!feats || !feats.size) return;
+		return HTML.wire(this, ':capstones')`
+			<li class="feats_feat">
+				<header class="feat_feat-type">Capstones</header>
+				<ul>
+					${[...feats.entries()].map(([key, value]) => this.renderFeat(key, value))}
+				</ul>
+			</li>
+		`;
+	}
+}
 
 const niceTypes = new Map([
 	['WeaponSidekick', 'Sidekick'],
@@ -347,3 +508,9 @@ const pathNames = new Map([
 	['ModelPath', 'AI Model'],
 	['ColorPath', 'AI Color']
 ]);
+
+const featuredCommunityTags = new Map([
+	['award', 'Awards'],
+	['memento', 'Mementos'],
+	['capstone', 'Capstones']
+])

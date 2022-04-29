@@ -67,18 +67,21 @@ class Router {
 
 		if (pathname.startsWith('/vanity'))
 		{
+			if (this.page === this.vanity) return;
 			this.page = this.vanity;
 		}
-			else if (pathname.startsWith('/game'))
+			else if (pathname.startsWith('/play'))
 		{
+			if (this.page === this.items) return;
 			this.page = this.items;
 		}
 			else
 		{
+			if (this.page === this.items) return;
 			this.page = this.items;
 		}
 
-		this.render();
+		await this.render();
 	}
 
 	async render() {

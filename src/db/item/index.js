@@ -336,4 +336,10 @@ export class Item extends Component {
 		if (this.type === 'Offering') return 'Offering';
 		return 'common';
 	}
+
+	get tags() {
+		if (this?._tags) return this._tags;
+		if (Array.isArray(this.community?.tags)) return (this._tags = new Set(this.community.tags));
+		return (this._tags = new Set());
+	}
 }

@@ -373,7 +373,7 @@ class ItemPanel extends Component {
 					displays.push(`<div class="community_item">
 							<label>Tags</label>
 							<ul class="community_tag-list">
-								${community.tags.map(tag => `<li>${tag}</li>`)}
+								${community.tags.map(tag => `<li>${tag}</li>`).join('')}
 							</ul>
 						</div>`);
 					break;

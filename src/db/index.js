@@ -47,6 +47,7 @@ class Database {
 				return {
 					date: new Date(response.date),
 					types: new Set(response?.types ?? []),
+					tags: new Set(response?.tags ?? []),
 					manifest: new Map(response?.manifest ?? [])
 				}
 			})
@@ -215,6 +216,10 @@ class Database {
 		if (!index || index === 0) return defaultMan;
 		if (this.manufacturers.has(index)) return this.manufacturers.get(index);
 		return defaultMan;
+	}
+
+	get communityTags() {
+		return this.index.tags;
 	}
 
 	get itemTypes() {
