@@ -67,6 +67,20 @@ class Settings extends Component {
 						>
 					</div>
 				</section>
+				${this.data.has('revealHidden') ? HTML.wire(this, ':unspoiler')`
+					<button
+						class="hi-box"
+						onclick=${() => {
+							if (this.data.has('revealHidden'))
+							{
+								console.warn('[settings] Removing spoilers setting');
+								this.data.delete('revealHidden');
+								localStorage.removeItem('revealHidden');
+								this.render();
+							}
+						}}
+					>Hide Spoilers</button>
+				` : ''}
 				<section>
 					<header>Inventory</header>
 					<div class="option_wrapper">
@@ -77,7 +91,10 @@ class Settings extends Component {
 					</div>
 				</section>
 				${this.advanced()}
-				<button onclick=${() => this.reset()}>Reset Settings</button>
+				<button
+					class="hi-box"
+					onclick=${() => this.reset()}
+				>Reset Settings</button>
 				<aside>Note: you will lose any saved favorite items upon reset!</aside>
 			</div>
 		`;

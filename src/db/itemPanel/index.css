@@ -123,8 +123,15 @@
 	}
 	& .item-panel_manifest_wrapper {
 		padding: 0 var(--padding-edge) 5rem var(--padding-edge);
-		& span {
+		& .item-panel_manifest-property {
+			display: flex;
+			flex-direction: row;
+			row-wrap: wrap;
 			font-size: 0.9em;
+			align-items: center;
+			& label {
+				margin-right: 0.2em;
+			}
 		}
 		& .dbItemPanel_json {
 			width: 100%;

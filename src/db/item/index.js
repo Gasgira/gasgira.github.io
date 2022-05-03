@@ -10,6 +10,7 @@ export const placeholderItem = HTML.wire()`
 		class='dbItem dbItemIcon dbItemPlaceholder'
 		title='Loading Item...'
 	>
+		<span>...</span>
 	</button>
 `;
 

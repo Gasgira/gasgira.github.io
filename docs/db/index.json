@@ -47,7 +47,9 @@
 	"tags": [
 		"award",
 		"battlepass",
+		"campaign",
 		"capstone",
+		"default",
 		"drop",
 		"event",
 		"memento",
@@ -1256,7 +1258,7 @@
 					"tags": [
 						"capstone"
 					],
-					"availability": "Ultimate reward week of 2021-12-07"
+					"availability": "Ultimate challenge for the week of Dec. 7 2021"
 				}
 			}
 		],
@@ -2152,7 +2154,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in during the week of Nov. 15 2021"
 				}
 			}
 		],
@@ -2171,7 +2173,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in during the week of Nov. 15 2021"
 				}
 			}
 		],
@@ -2190,7 +2192,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in during the week of Nov. 15 2021"
 				}
 			}
 		],
@@ -2209,7 +2211,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in during the week of Nov. 15 2021"
 				}
 			}
 		],
@@ -2669,7 +2671,7 @@
 					"tags": [
 						"capstone"
 					],
-					"availability": "Ultimate reward week of 2022-02-08"
+					"availability": "Ultimate challenge for the week of Feb. 8 2022"
 				}
 			}
 		],
@@ -2777,7 +2779,7 @@
 					"tags": [
 						"capstone"
 					],
-					"availability": "Ultimate reward week of 2022-04-26"
+					"availability": "Ultimate challenge for the week of Apr. 26 2022"
 				}
 			}
 		],
@@ -3092,7 +3094,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in during the week of Nov. 15 2021"
 				}
 			}
 		],
@@ -3153,7 +3155,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "Log in between Feb. 8 - 14 2022"
 				}
 			}
 		],
@@ -3172,7 +3174,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "Log in between Feb. 8 - 14 2022"
 				}
 			}
 		],
@@ -3191,7 +3193,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "Log in between Feb. 8 - 14 2022"
 				}
 			}
 		],
@@ -3210,7 +3212,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "Log in between Feb. 8 - 14 2022"
 				}
 			}
 		],
@@ -6106,7 +6108,7 @@
 					"tags": [
 						"capstone"
 					],
-					"availability": "Ultimate reward week of 2022-03-16"
+					"availability": "Ultimate challenge for the week of Mar. 16 2022"
 				}
 			}
 		],
@@ -7338,7 +7340,12 @@
 				"touched": [
 					"2021-11-15T20:00:00.000Z"
 				],
-				"visible": "2021-11-15T21:00:00.000Z"
+				"visible": "2021-11-15T21:00:00.000Z",
+				"community": {
+					"tags": [
+						"campaign"
+					]
+				}
 			}
 		],
 		[
@@ -7546,7 +7553,7 @@
 					"tags": [
 						"capstone"
 					],
-					"availability": "Ultimate reward week of 2022-03-23"
+					"availability": "Ultimate challenge for the week of Mar. 23 2022"
 				}
 			}
 		],
@@ -7567,7 +7574,7 @@
 					"tags": [
 						"capstone"
 					],
-					"availability": "Ultimate reward week of 2022-04-13"
+					"availability": "Ultimate challenge for the week of Apr. 13 2022"
 				}
 			}
 		],
@@ -7588,7 +7595,7 @@
 					"tags": [
 						"capstone"
 					],
-					"availability": "Ultimate reward week of 2022-03-02"
+					"availability": "Ultimate challenge for the week of Mar. 2 2022"
 				}
 			}
 		],
@@ -7609,7 +7616,7 @@
 					"tags": [
 						"capstone"
 					],
-					"availability": "Ultimate reward week of 2022-02-16"
+					"availability": "Ultimate challenge for the week of Feb. 16 2022"
 				}
 			}
 		],
@@ -8577,7 +8584,7 @@
 					"tags": [
 						"capstone"
 					],
-					"availability": "Ultimate reward week of 2022-03-29"
+					"availability": "Ultimate challenge for the week of Mar. 29 2022"
 				}
 			}
 		],
@@ -9256,7 +9263,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in during the week of Nov. 15 2021"
 				}
 			}
 		],
@@ -9275,7 +9282,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in during the week of Nov. 15 2021"
 				}
 			}
 		],
@@ -9294,7 +9301,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in during the week of Nov. 15 2021"
 				}
 			}
 		],
@@ -9313,7 +9320,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in during the week of Nov. 15 2021"
 				}
 			}
 		],
@@ -10245,7 +10252,7 @@
 					"tags": [
 						"capstone"
 					],
-					"availability": "Ultimate reward week of 2022-04-26"
+					"availability": "Ultimate challenge for the week of Apr. 19 2022"
 				}
 			}
 		],
@@ -10271,7 +10278,13 @@
 				"touched": [
 					"2021-11-15T20:00:00.000Z"
 				],
-				"visible": "2021-11-15T22:00:00.000Z"
+				"visible": "2021-11-15T22:00:00.000Z",
+				"community": {
+					"tags": [
+						"memento"
+					],
+					"availability": "Participate in the first Fracture event, the week of Nov. 23 2021"
+				}
 			}
 		],
 		[
@@ -12341,7 +12354,12 @@
 				"touched": [
 					"2021-11-15T20:00:00.000Z"
 				],
-				"visible": "2021-11-15T21:00:00.000Z"
+				"visible": "2021-11-15T21:00:00.000Z",
+				"community": {
+					"tags": [
+						"default"
+					]
+				}
 			}
 		],
 		[
@@ -12675,7 +12693,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in during the week of Nov. 15 2021"
 				}
 			}
 		],
@@ -12694,7 +12712,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in during the week of Nov. 15 2021"
 				}
 			}
 		],
@@ -12713,7 +12731,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in during the week of Nov. 15 2021"
 				}
 			}
 		],
@@ -12732,7 +12750,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in during the week of Nov. 15 2021"
 				}
 			}
 		],
@@ -13479,7 +13497,7 @@
 					"tags": [
 						"capstone"
 					],
-					"availability": "Ultimate reward week of 2022-04-06"
+					"availability": "Ultimate challenge for the week of Apr. 6 2022"
 				}
 			}
 		],
@@ -14387,7 +14405,13 @@
 				"touched": [
 					"2021-11-15T20:00:00.000Z"
 				],
-				"visible": "2021-11-15T22:00:00.000Z"
+				"visible": "2021-11-15T22:00:00.000Z",
+				"community": {
+					"tags": [
+						"memento"
+					],
+					"availability": "20th Anniversary: Log in during the week of Nov. 15 2021"
+				}
 			}
 		],
 		[
@@ -15737,7 +15761,7 @@
 					"tags": [
 						"capstone"
 					],
-					"availability": "Ultimate reward week of 2022-01-26"
+					"availability": "Ultimate challenge for the week of Jan. 26 2022"
 				}
 			}
 		],
@@ -15946,7 +15970,13 @@
 				"touched": [
 					"2021-11-15T20:00:00.000Z"
 				],
-				"visible": "2022-01-18T22:00:00.000Z"
+				"visible": "2022-01-18T22:00:00.000Z",
+				"community": {
+					"tags": [
+						"memento"
+					],
+					"availability": "Participate in the Jan. 18 - 31 2022 Cyber Showdown event."
+				}
 			}
 		],
 		[
@@ -18192,7 +18222,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in during the week of Nov. 15 2021"
 				}
 			}
 		],
@@ -18211,7 +18241,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in during the week of Nov. 15 2021"
 				}
 			}
 		],
@@ -18230,7 +18260,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in during the week of Nov. 15 2021"
 				}
 			}
 		],
@@ -18249,7 +18279,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in during the week of Nov. 15 2021"
 				}
 			}
 		],
@@ -18268,7 +18298,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in during the week of Nov. 15 2021"
 				}
 			}
 		],
@@ -18287,7 +18317,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in during the week of Nov. 15 2021"
 				}
 			}
 		],
@@ -18784,7 +18814,7 @@
 					"tags": [
 						"capstone"
 					],
-					"availability": "Ultimate reward week of 2022-01-19"
+					"availability": "Ultimate challenge for the week of Jan. 19 2022"
 				}
 			}
 		],
@@ -19495,7 +19525,7 @@
 					"tags": [
 						"capstone"
 					],
-					"availability": "Ultimate reward week of 2022-01-12"
+					"availability": "Ultimate challenge for the week of Jan. 12 2022"
 				}
 			}
 		],
@@ -19514,7 +19544,7 @@
 					"tags": [
 						"capstone"
 					],
-					"availability": "Ultimate reward week of 2021-12-01"
+					"availability": "Ultimate challenge for the week of Dec. 1 2021"
 				}
 			}
 		],
@@ -19546,7 +19576,7 @@
 					"tags": [
 						"capstone"
 					],
-					"availability": "Ultimate reward week of 2021-12-22"
+					"availability": "Ultimate challenge for the week of Dec. 22 2021"
 				}
 			}
 		],
@@ -20421,7 +20451,7 @@
 					"tags": [
 						"capstone"
 					],
-					"availability": "Ultimate reward week of 2021-12-15"
+					"availability": "Ultimate challenge for the week of Dec. 15 2021"
 				}
 			}
 		],
@@ -21020,7 +21050,7 @@
 					"tags": [
 						"capstone"
 					],
-					"availability": "Ultimate reward week of 2022-01-05"
+					"availability": "Ultimate challenge for the week of Jan. 5 2022"
 				}
 			}
 		],
@@ -21189,7 +21219,7 @@
 					"tags": [
 						"capstone"
 					],
-					"availability": "Ultimate reward week of 2021-11-16"
+					"availability": "Ultimate challenge for the week of Nov. 16 2021"
 				}
 			}
 		],
@@ -22674,7 +22704,7 @@
 					"tags": [
 						"capstone"
 					],
-					"availability": "Ultimate reward week of 2021-12-29"
+					"availability": "Ultimate challenge for the week of Dec. 29 2021"
 				}
 			}
 		],
@@ -24794,7 +24824,12 @@
 				"touched": [
 					"2021-11-15T20:00:00.000Z"
 				],
-				"visible": "2021-11-15T21:00:00.000Z"
+				"visible": "2021-11-15T21:00:00.000Z",
+				"community": {
+					"tags": [
+						"default"
+					]
+				}
 			}
 		],
 		[
@@ -24814,7 +24849,7 @@
 					"tags": [
 						"capstone"
 					],
-					"availability": "Ultimate reward week of 2022-03-09"
+					"availability": "Ultimate challenge for the week of Mar. 9 2022"
 				}
 			}
 		],
@@ -26494,10 +26529,12 @@
 				"touched": [
 					"2021-11-15T20:00:00.000Z"
 				],
+				"visible": "2022-04-29T20:00:00.000Z",
 				"community": {
 					"tags": [
 						"award"
-					]
+					],
+					"availability": "Granted by 343 for participating  in an Official Halo Discord giveaway."
 				}
 			}
 		],
@@ -26511,10 +26548,12 @@
 				"touched": [
 					"2021-11-15T20:00:00.000Z"
 				],
+				"visible": "2022-04-29T20:00:00.000Z",
 				"community": {
 					"tags": [
 						"award"
-					]
+					],
+					"availability": "Granted by 343 for participating  in an Official Halo Discord giveaway."
 				}
 			}
 		],
@@ -26528,10 +26567,12 @@
 				"touched": [
 					"2021-11-15T20:00:00.000Z"
 				],
+				"visible": "2022-04-29T20:00:00.000Z",
 				"community": {
 					"tags": [
 						"award"
-					]
+					],
+					"availability": "Granted by 343 for participating  in an Official Halo Discord giveaway."
 				}
 			}
 		],
@@ -26545,10 +26586,12 @@
 				"touched": [
 					"2021-11-15T20:00:00.000Z"
 				],
+				"visible": "2022-04-29T20:00:00.000Z",
 				"community": {
 					"tags": [
 						"award"
-					]
+					],
+					"availability": "Granted by 343 for participating  in an Official Halo Discord giveaway."
 				}
 			}
 		],
@@ -26567,7 +26610,7 @@
 					"tags": [
 						"award"
 					],
-					"availability": "Awarded by 343 for having your art featured in a Waypoint community spotlight."
+					"availability": "Granted by 343 for having your art featured in a Waypoint community spotlight."
 				}
 			}
 		],
@@ -26586,7 +26629,7 @@
 					"tags": [
 						"award"
 					],
-					"availability": "Awarded by 343 for having your art featured in a Waypoint community spotlight."
+					"availability": "Granted by 343 for having your art featured in a Waypoint community spotlight."
 				}
 			}
 		],
@@ -26605,7 +26648,7 @@
 					"tags": [
 						"award"
 					],
-					"availability": "Awarded by 343 for having your art featured in a Waypoint community spotlight."
+					"availability": "Granted by 343 for having your art featured in a Waypoint community spotlight."
 				}
 			}
 		],
@@ -26624,7 +26667,7 @@
 					"tags": [
 						"award"
 					],
-					"availability": "Awarded by 343 for having your art featured in a Waypoint community spotlight."
+					"availability": "Granted by 343 for having your art featured in a Waypoint community spotlight."
 				}
 			}
 		],
@@ -26643,7 +26686,7 @@
 					"tags": [
 						"award"
 					],
-					"availability": "Awarded by 343 for participating in a game featured in a community play date."
+					"availability": "Granted by 343 for participating in a game featured in a community play date."
 				}
 			}
 		],
@@ -26662,7 +26705,7 @@
 					"tags": [
 						"award"
 					],
-					"availability": "Awarded by 343 for participating in a game featured in a community play date."
+					"availability": "Granted by 343 for participating in a game featured in a community play date."
 				}
 			}
 		],
@@ -26681,7 +26724,7 @@
 					"tags": [
 						"award"
 					],
-					"availability": "Awarded by 343 for participating in a game featured in a community play date."
+					"availability": "Granted by 343 for participating in a game featured in a community play date."
 				}
 			}
 		],
@@ -26700,7 +26743,7 @@
 					"tags": [
 						"award"
 					],
-					"availability": "Awarded by 343 for participating in a game featured in a community play date."
+					"availability": "Granted by 343 for participating in a game featured in a community play date."
 				}
 			}
 		],
@@ -28138,7 +28181,7 @@
 					"tags": [
 						"capstone"
 					],
-					"availability": "Ultimate reward week of 2022-02-01"
+					"availability": "Ultimate challenge for the week of Feb. 1 2022"
 				}
 			}
 		],
@@ -28402,7 +28445,7 @@
 					"tags": [
 						"capstone"
 					],
-					"availability": "Ultimate reward week of 2021-11-23"
+					"availability": "Ultimate challenge for the week of Nov. 23 2021"
 				}
 			}
 		],
@@ -28567,7 +28610,7 @@
 					"tags": [
 						"capstone"
 					],
-					"availability": "Ultimate reward week of 2022-02-22"
+					"availability": "Ultimate challenge for the week of Feb. 22 2022"
 				}
 			}
 		],

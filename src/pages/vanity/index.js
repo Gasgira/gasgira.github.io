@@ -364,18 +364,20 @@ class Feats extends Component {
 		this.feats = feats;
 		this.state.gamertag = gamertag;
 		if (appearance) this.state.appearance = appearance;
+		this.state.serviceTag = appearance?.Appearance?.ServiceTag ?? '117';
 		console.log('this', feats);
 	}
 
 	get defaultState() {
 		return {
-			gamertag: ''
+			gamertag: '',
+			serviceTag: ''
 		};
 	}
 
 	get enlistedDateString() {
 		if (!this.state.appearance) return '...';
-		const firstModifiedDate = this.state.appearance?.ArmorCores?.ArmorCores?.[0]?.Themes?.[0]?.FirstModifiedDateUtc?.ISO8601Date;
+		const firstModifiedDate = this.state.appearance?.AiCores?.AiCores?.[0]?.Themes?.[0]?.FirstModifiedDateUtc?.ISO8601Date ?? this.state.appearance?.ArmorCores?.ArmorCores?.[0]?.Themes?.[0]?.FirstModifiedDateUtc?.ISO8601Date;
 
 		if (Date.parse(firstModifiedDate))
 		{
@@ -387,10 +389,10 @@ class Feats extends Component {
 	render() {
 		return this.html`
 			<section class="vanity_feats_wrapper">
-				<header class="mica_header-strip"><h2>Feats</h2></header>
+				<header class="mica_header-strip"><h2>Service Record</h2><span class="beta">BETA</span></header>
 				<div class="mica_content">
 					<header class="feats_header">
-						<span>${this.state.gamertag} // Enlisted ${this.enlistedDateString}</span>
+						<span>${this.state.gamertag} [${this.state.serviceTag}] // Enlisted ${this.enlistedDateString}</span>
 					</header>
 					<ul class="feats_list">
 						${this.renderAwards()}
@@ -421,7 +423,7 @@ class Feats extends Component {
 	}
 
 	renderAwards() {
-		const featType = 'awards';
+		const featType = 'award';
 		const feats = this.feats.get(featType);
 		if (!feats || !feats.size) return;
 		return HTML.wire(this, ':awards')`
@@ -459,6 +461,221 @@ class Feats extends Component {
 					${[...feats.entries()].map(([key, value]) => this.renderFeat(key, value))}
 				</ul>
 			</li>
+		`;
+	}
+}
+
+class ServiceRecord extends Component {
+	constructor({
+		feats,
+		gamertag = 'Spartan',
+		appearance
+	}) {
+		super();
+
+		if (!feats) return;
+		this.feats = feats;
+		this.state.gamertag = gamertag;
+		if (appearance) this.state.appearance = appearance;
+		this.state.serviceTag = appearance?.Appearance?.ServiceTag ?? '117';
+		console.log('this', feats);
+
+		this.init();
+	}
+
+	get defaultState() {
+		return {
+			gamertag: '',
+			serviceTag: ''
+		};
+	}
+
+	get enlistedDateString() {
+		if (!this.state.appearance) return '...';
+		const firstModifiedDate = this.state.appearance?.AiCores?.AiCores?.[0]?.Themes?.[0]?.FirstModifiedDateUtc?.ISO8601Date ?? this.state.appearance?.ArmorCores?.ArmorCores?.[0]?.Themes?.[0]?.FirstModifiedDateUtc?.ISO8601Date;
+
+		if (Date.parse(firstModifiedDate))
+		{
+			return new Date(firstModifiedDate).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+		}
+		return '...';
+	}
+
+	async init() {
+		if (this.stats) return await this.stats;
+		const gamertag = this.state.gamertag;
+		if (!gamertag || typeof gamertag !== 'string')
+		{
+			console.warn(`[ServiceRecord.init] Invalid Gamertag!`);
+		}
+
+		this.stats = this.getStats(gamertag);
+		return await this.stats;
+		// if (stats) this.state.stats = stats;
+	}
+
+	render() {
+		return this.html`
+			<section class="vanity_feats_wrapper">
+				<header class="mica_header-strip"><h2>Service Record</h2><span class="beta">BETA</span></header>
+				<div class="mica_content">
+					<header class="feats_header">
+						<span class="gamertag">${this.state.gamertag}</span><span class="service-tag">[${this.state.serviceTag}]</span><span class="enlisted">Enlisted ${this.enlistedDateString}</span>
+					</header>
+					${{
+						any: this.renderStats(),
+						placeholder: 'stats loading...'
+					}}
+					<ul class="feats_list">
+						${this.renderAwards()}
+						${this.renderMementos()}
+						${this.renderCapstones()}
+					</ul>
+				</div>
+			</section>
+		`;
+	}
+
+	renderFeat(availability, itemIDs) {
+		console.log('rf', availability, itemIDs);
+		const titles  = new Set();
+		return HTML.wire()`
+			<li>
+				<header>${availability}</header>
+				<ul>
+					${[...itemIDs].map(id => {
+						const meta = db.getItemManifestByID(id);
+						if (!meta || titles.has(meta.title)) return '';
+						titles.add(meta.title);
+						return `<a class="feat_reward-link" href=${`#${meta.path}`}>${meta.title}</a>`;
+					})}
+				</ul>
+			</li>
+		`;
+	}
+
+	renderAwards() {
+		const featType = 'award';
+		const feats = this.feats.get(featType);
+		if (!feats || !feats.size) return;
+		return HTML.wire(this, ':awards')`
+			<li class="feats_feat">
+				<header class="feat_feat-type">Awards</header>
+				<ul>
+					${[...feats.entries()].map(([key, value]) => this.renderFeat(key, value))}
+				</ul>
+			</li>
+		`;
+	}
+
+	renderMementos() {
+		const featType = 'memento';
+		const feats = this.feats.get(featType);
+		if (!feats || !feats.size) return;
+		return HTML.wire(this, ':mementos')`
+			<li class="feats_feat">
+				<header class="feat_feat-type">Mementos</header>
+				<ul>
+					${[...feats.entries()].map(([key, value]) => this.renderFeat(key, value))}
+				</ul>
+			</li>
+		`;
+	}
+
+	renderCapstones() {
+		const featType = 'capstone';
+		const feats = this.feats.get(featType);
+		if (!feats || !feats.size) return;
+		return HTML.wire(this, ':capstones')`
+			<li class="feats_feat">
+				<header class="feat_feat-type">Capstones</header>
+				<ul>
+					${[...feats.entries()].map(([key, value]) => this.renderFeat(key, value))}
+				</ul>
+			</li>
+		`;
+	}
+
+	async getStats() {
+		// return testStats;
+		const gamertag = this.state.gamertag;
+		const response = await fetch(new URL(`/api/stats/test/${gamertag}`, `https://${window.location.host}`));
+		console.log('getStats', response.status);
+		if (response && response.ok)
+		{
+			// this.renderStatus('Found!');
+			const json = await response.json();
+			if (json) return json;
+		}
+	}
+
+	async renderStats() {
+		const stats = await this.init();
+		return HTML.wire(this, ':stats')`
+			<section class="service-record_wrapper">
+				${this.renderMatchmaking(stats)}
+				${this.renderMatches(stats)}
+			</section>
+		`;
+	}
+
+	renderMatchmaking(stats) {
+		const matchmaking = stats?.matchmaking;
+		if (!matchmaking) return;
+		return HTML.wire(this, ':stats-mm')`
+			<section class="matchmaking_wrapper">
+				<h2>Matchmaking Stats</h2>
+				<div>
+					<label>Games Played</label>
+					<span>${(matchmaking?.pvp?.matches?.total ?? 0).toLocaleString()} // ${parseInt(matchmaking?.pvp?.matches?.win_rate ?? 0)}% Winrate</span>
+				</div>
+				<div>
+					<label>Play Time</label>
+					<span>${matchmaking?.pvp?.time_played?.human ?? 'None'}</span>
+				</div>
+				<div>
+					<label>Eliminations</label>
+					<span>${(matchmaking?.pvp?.core?.summary?.kills ?? 0).toLocaleString()} // ${parseFloat(matchmaking?.pvp?.core?.kdr ?? 0).toPrecision(3)} KDR</span>
+				</div>
+				<div>
+					<label>Medals</label>
+					<span>${(matchmaking?.pvp?.core?.summary?.medals ?? 0).toLocaleString()}</span>
+				</div>
+				<div>
+					<label>Score</label>
+					<span>${(matchmaking?.pvp?.core?.scores?.personal ?? 0).toLocaleString()}</span>
+				</div>
+			</section>
+		`;
+	}
+
+	renderMatches(stats) {
+		const matches = stats?.matches;
+		if (!matches || !Array.isArray(matches) || !matches.length) return;
+		return HTML.wire(this, ':stats-mm')`
+			<section class="matchmaking_wrapper">
+				<h2>Matchmaking Streaks</h2>
+				<ul>
+					${matches.map(match => {
+						const string = match?.player?.outcome === 'win' ? 'W' : match?.player?.outcome === 'loss' ? 'L' : 'O';
+						return HTML.wire(this, `:match-${match.id}`)`
+							<li
+								onmouseover=${(e) => this.renderMatch(match, e.clientX, e.clientY)}
+								onclick=${(e) => this.renderMatch(match, e.clientX, e.clientY)}
+							>${string}</li>
+						`;
+					})}
+				</ul>
+			</section>
+		`;
+	}
+
+	renderMatch(match, x, y) {
+		if (!match || !match.id) return;
+		HTML.bind(document.querySelector('.js--hover'))`
+			<div>
+				${match.id} ${x} ${y}
+			</div>
 		`;
 	}
 }

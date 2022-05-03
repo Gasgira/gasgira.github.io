@@ -30,6 +30,17 @@
 
 .vanity_feats_wrapper {
 	--content-pad: 0.5rem;
+	& .mica_header-strip {
+		& h2 {
+			font-size: 1.3rem;
+			font-weight: normal;
+		}
+		& .beta {
+			font-size: 0.8rem;
+			opacity: 0.5;
+			margin-left: 0.5rem;
+		}
+	}
 	& .feats_header {
 		font-size: 1.1rem;
 		margin-left: var(--content-pad);
@@ -43,7 +54,6 @@
 				font-size: 1.1rem;
 				opacity: 0.8;
 				margin: 0.5rem 0;
-				letter-spacing: 0.1em;
 				text-transform: uppercase;
 			}
 		}

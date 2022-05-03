@@ -341,12 +341,12 @@ class ItemPanel extends Component {
 				<div
 					class="item-panel_manifest-property"
 				>
-					<label class="no-select" for="item-panel_manifest-path">Path: </label><span id="item-panel_manifest-path">${this.state.item?.path ?? 'UNK'}</span>
+					<label class="no-select" for="item-panel_manifest-path">Path: </label><div id="item-panel_manifest-path">${this.state.item?.path ?? 'UNK'}</div>
 				</div>
 				<div
 					class="item-panel_manifest-property"
 				>
-					<label class="no-select" for="item-panel_manifest-path">ID: </label><span id="item-panel_manifest-path">${this.state.item?.id ?? 'UNK'}</span>
+					<label class="no-select" for="item-panel_manifest-path">ID: </label><div id="item-panel_manifest-path">${this.state.item?.id ?? 'UNK'}</div>
 				</div>
 				<button
 					onclick=${() => this.setState({pretty: !this.state.pretty})}
