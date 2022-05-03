@@ -1,0 +1,73 @@
+{
+	"TagId": 0,
+	"ThemeName": {
+		"m_identifier": 337692005
+	},
+	"EmblemShaderName": {
+		"m_identifier": -1
+	},
+	"AvailableConfigurations": [
+		{
+			"ConfigurationId": -2139982195,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-3f76eb43.json"
+		}
+	],
+	"CommonData": {
+		"Id": "104-001-personalai-ir-d0499881",
+		"HideUntilOwned": true,
+		"Title": "Iratus Unleashed",
+		"Description": "200.0% MAD",
+		"FeatureFlag": true,
+		"ItemAvailability": "",
+		"DateReleased": {
+			"ISO8601Date": ""
+		},
+		"AltName": "104-001-personalai-ir-d0499881",
+		"IconStringId": {
+			"m_identifier": -1
+		},
+		"SpriteBitmap": 0,
+		"SpriteFrameIndex": 0,
+		"AltSpriteBitmap": 0,
+		"AltSpriteFrameIndex": 0,
+		"DisplayPath": {
+			"Width": 1024,
+			"Height": 1024,
+			"Media": {
+				"MediaUrl": {
+					"AuthorityId": "",
+					"Path": "progression/Inventory/Emblems/personalai_iratus2_emblem.png",
+					"RetryPolicyId": "",
+					"TopicName": "",
+					"AcknowledgementTypeId": "NoAcknowledgement",
+					"AuthenticationLifetimeExtensionSupported": false,
+					"ClearanceAware": false
+				},
+				"MimeType": "",
+				"Caption": "",
+				"AlternateText": "",
+				"FolderPath": "",
+				"FileName": ""
+			},
+			"MimeType": "image/png",
+			"FolderPath": "progression/Inventory/Emblems",
+			"FileName": "personalai_iratus2_emblem.png"
+		},
+		"Quality": "Epic",
+		"ManufacturerId": 0,
+		"Type": "SpartanEmblem",
+		"RewardTrack": "",
+		"ParentPaths": [],
+		"SortingMetadata": {
+			"categoryWeight": 0,
+			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 2,
+		"OriginalSeasonNumber": 2,
+		"Season": {
+			"status": "Test",
+			"value": "Season 2",
+			"translations": {}
+		}
+	}
+}

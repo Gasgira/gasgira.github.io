@@ -9,8 +9,8 @@
 	"CommonData": {
 		"Id": "404-305-olympus-5359a4f2",
 		"HideUntilOwned": true,
-		"Title": "Azure",
-		"Description": "Custom paint and materials.",
+		"Title": "Septimal Azure",
+		"Description": "Standing on the shoulders of giants.",
 		"FeatureFlag": true,
 		"ItemAvailability": "",
 		"DateReleased": {
@@ -24,15 +24,6 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 320,
 			"Height": 320,
@@ -59,29 +50,20 @@
 		"Quality": "Epic",
 		"ManufacturerId": 0,
 		"Type": "VehicleCoating",
-		"ParentTheme": "Inventory/Vehicle/Themes/408-305-olympus-aa30213b.json",
 		"RewardTrack": "",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [],
 		"SortingMetadata": {
 			"categoryWeight": 0,
 			"subCategoryWeight": 0
 		},
-		"CustomAvailability": "Available via Halo Infinite partners"
+		"SeasonNumber": 1,
+		"OriginalSeasonNumber": 1,
+		"CustomAvailability": "Available via Halo Infinite partners",
+		"Season": {
+			"status": "Test",
+			"value": "Season 2",
+			"translations": {}
+		}
 	},
 	"LightingScalarOverride": 0
 }

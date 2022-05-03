@@ -1,0 +1,11 @@
+{
+	"Title": "Soldier Armor Set",
+	"Description": "For operatives who bring the heavy gear.",
+	"Quality": "Legendary",
+	"WidthHint": 2,
+	"HeightHint": 4,
+	"FlairText": "Weekly",
+	"FlairIconPath": null,
+	"FlairBackgroundPath": null,
+	"ObjectImagePath": "progression/StoreContent/Offerings/S1_Soldier_HWE.png"
+}

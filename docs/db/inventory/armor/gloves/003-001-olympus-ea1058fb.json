@@ -29,7 +29,7 @@
 	],
 	"CommonData": {
 		"Id": "003-001-olympus-ea1058fb",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Tigris",
 		"Description": "The UNSC Infinity received several samples of these experimental gloves shortly before the Created rebellion, but not the software or documentation to make use of its novel sensor cluster..",
 		"FeatureFlag": true,
@@ -45,15 +45,6 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 320,
 			"Height": 320,
@@ -78,25 +69,9 @@
 			"FileName": "003-001-olympus-ea1058fb-SM.png"
 		},
 		"Quality": "Legendary",
-		"ManufacturerId": 18,
+		"ManufacturerId": 20,
 		"Type": "ArmorGlove",
-		"ParentTheme": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
 		"RewardTrack": "RewardTracks/Operations/Flighting.json",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [
 			{
 				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
@@ -107,6 +82,8 @@
 			"categoryWeight": 0,
 			"subCategoryWeight": 0
 		},
+		"SeasonNumber": 1,
+		"OriginalSeasonNumber": 1,
 		"CustomAvailability": "Available in an upcoming Event"
 	}
 }

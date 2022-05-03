@@ -10,8 +10,8 @@
 	"CommonData": {
 		"Id": "012-001-088496de",
 		"HideUntilOwned": false,
-		"Title": "Optic Gaming",
-		"Description": "Brick by brick",
+		"Title": "OpTic Gaming",
+		"Description": "Show your support for OpTic Gaming!",
 		"FeatureFlag": true,
 		"ItemAvailability": "",
 		"DateReleased": {
@@ -25,22 +25,13 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 320,
 			"Height": 320,
 			"Media": {
 				"MediaUrl": {
 					"AuthorityId": "",
-					"Path": "progression/Inventory/Armor/Visors/012-001-088496de.png",
+					"Path": "progression/Inventory/Armor/Visors/012-001-088496de-SM.png",
 					"RetryPolicyId": "",
 					"TopicName": "",
 					"AcknowledgementTypeId": "NoAcknowledgement",
@@ -55,37 +46,23 @@
 			},
 			"MimeType": "image/png",
 			"FolderPath": "progression/Inventory/Armor/Visors",
-			"FileName": "012-001-088496de.png"
+			"FileName": "012-001-088496de-SM.png"
 		},
 		"Quality": "Epic",
 		"ManufacturerId": 0,
 		"Type": "ArmorVisor",
-		"ParentTheme": "",
 		"RewardTrack": "",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"ParentPaths": [
-			{
-				"Path": "Inventory/Armor/Themes/007-000-optic-gaming-0903655e.json",
-				"Type": "ArmorTheme"
-			}
-		],
+		"ParentPaths": [],
 		"SortingMetadata": {
 			"categoryWeight": 0,
 			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 2,
+		"OriginalSeasonNumber": 2,
+		"Season": {
+			"status": "Test",
+			"value": "Season 2",
+			"translations": {}
 		}
 	},
 	"TagId": 0

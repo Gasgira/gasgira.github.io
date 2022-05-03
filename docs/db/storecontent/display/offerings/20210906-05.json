@@ -1,0 +1,12 @@
+{
+	"Title": "Keep It Clean",
+	"Description": "Vergil is watching.",
+	"Quality": "Rare",
+	"WidthHint": 2,
+	"HeightHint": 1,
+	"FlairText": "Daily",
+	"FlairIconPath": "progression/StoreContent/FlairIcons/RitualIconFlair.png",
+	"FlairBackgroundPath": "progression/StoreContent/FlairBackgrounds/RitualBackgroundFlair.png",
+	"HasFlair": true,
+	"ObjectImagePath": "progression/StoreContent/Offerings/S1_Keep_It_Clean.png"
+}

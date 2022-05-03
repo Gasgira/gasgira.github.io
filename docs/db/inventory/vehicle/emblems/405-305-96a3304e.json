@@ -1,0 +1,114 @@
+{
+	"TagId": 0,
+	"ThemeName": {
+		"m_identifier": -371510496
+	},
+	"EmblemShaderName": {
+		"m_identifier": 0
+	},
+	"CommonData": {
+		"Id": "405-305-96a3304e",
+		"HideUntilOwned": true,
+		"Title": "The Yappening",
+		"Description": "You can't keep a good Grunt down.",
+		"FeatureFlag": true,
+		"ItemAvailability": "",
+		"DateReleased": {
+			"ISO8601Date": ""
+		},
+		"AltName": "405-305-96a3304e",
+		"IconStringId": {
+			"m_identifier": -1
+		},
+		"SpriteBitmap": 0,
+		"SpriteFrameIndex": 0,
+		"AltSpriteBitmap": 0,
+		"AltSpriteFrameIndex": 0,
+		"DisplayPath": {
+			"Width": 1024,
+			"Height": 1024,
+			"Media": {
+				"MediaUrl": {
+					"AuthorityId": "",
+					"Path": "progression/Inventory/Emblems/popculture_theyappening_emblem.png",
+					"RetryPolicyId": "",
+					"TopicName": "",
+					"AcknowledgementTypeId": "NoAcknowledgement",
+					"AuthenticationLifetimeExtensionSupported": false,
+					"ClearanceAware": false
+				},
+				"MimeType": "",
+				"Caption": "",
+				"AlternateText": "",
+				"FolderPath": "",
+				"FileName": ""
+			},
+			"MimeType": "image/png",
+			"FolderPath": "progression/Inventory/Emblems",
+			"FileName": "popculture_theyappening_emblem.png"
+		},
+		"Quality": "Rare",
+		"ManufacturerId": 8,
+		"Type": "VehicleEmblem",
+		"RewardTrack": "",
+		"ParentPaths": [
+			{
+				"Path": "Inventory/Vehicle/Themes/408-300-olympus-aa30213b.json",
+				"Type": "VehicleTheme"
+			},
+			{
+				"Path": "Inventory/Vehicle/Themes/408-301-olympus-aa30213b.json",
+				"Type": "VehicleTheme"
+			},
+			{
+				"Path": "Inventory/Vehicle/Themes/408-302-olympus-aa30213b.json",
+				"Type": "VehicleTheme"
+			},
+			{
+				"Path": "Inventory/Vehicle/Themes/408-303-olympus-aa30213b.json",
+				"Type": "VehicleTheme"
+			},
+			{
+				"Path": "Inventory/Vehicle/Themes/408-304-olympus-aa30213b.json",
+				"Type": "VehicleTheme"
+			},
+			{
+				"Path": "Inventory/Vehicle/Themes/408-305-olympus-aa30213b.json",
+				"Type": "VehicleTheme"
+			},
+			{
+				"Path": "Inventory/Vehicle/Themes/408-306-olympus-aa30213b.json",
+				"Type": "VehicleTheme"
+			}
+		],
+		"SortingMetadata": {
+			"categoryWeight": 0,
+			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 2,
+		"OriginalSeasonNumber": 2,
+		"Season": {
+			"status": "Test",
+			"value": "Season 2",
+			"translations": {}
+		}
+	},
+	"AvailableConfigurations": [
+		{
+			"ConfigurationId": -1979948843,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-a21a435c.json"
+		},
+		{
+			"ConfigurationId": -696499099,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-14abf419.json"
+		},
+		{
+			"ConfigurationId": -1047148648,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-42281ef8.json"
+		},
+		{
+			"ConfigurationId": -292749536,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-d1c53473.json"
+		}
+	]
+}

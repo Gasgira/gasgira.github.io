@@ -24,22 +24,13 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 320,
 			"Height": 320,
 			"Media": {
 				"MediaUrl": {
 					"AuthorityId": "",
-					"Path": "progression/Default/default.png",
+					"Path": "progression/Cores/Vehicle/409-305-olympus-90c5035c-SM.png",
 					"RetryPolicyId": "",
 					"TopicName": "",
 					"AcknowledgementTypeId": "NoAcknowledgement",
@@ -53,35 +44,20 @@
 				"FileName": ""
 			},
 			"MimeType": "image/png",
-			"FolderPath": "progression/Default",
-			"FileName": "default.png"
+			"FolderPath": "progression/Cores/Vehicle",
+			"FileName": "409-305-olympus-90c5035c-SM.png"
 		},
 		"Quality": "Rare",
 		"ManufacturerId": 1,
 		"Type": "VehicleCore",
-		"ParentTheme": "",
 		"RewardTrack": "",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [],
 		"SortingMetadata": {
 			"categoryWeight": 0,
 			"subCategoryWeight": 0
-		}
+		},
+		"SeasonNumber": 1,
+		"OriginalSeasonNumber": 1
 	},
-	"CoreType": "VehicleGungoose",
-	"IsItemOwnershipRequired": null
+	"CoreType": "VehicleGungoose"
 }

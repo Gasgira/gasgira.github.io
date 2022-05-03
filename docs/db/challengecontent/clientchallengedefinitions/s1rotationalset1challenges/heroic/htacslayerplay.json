@@ -1,0 +1,11 @@
+{
+	"Description": "Complete Tactical Slayer PvP Matches",
+	"Difficulty": "heroic",
+	"Category": "ModeBased",
+	"Reward": {
+		"InventoryItems": [],
+		"OperationExperience": 250
+	},
+	"ThresholdForSuccess": 5,
+	"Title": "Practical Tactical"
+}

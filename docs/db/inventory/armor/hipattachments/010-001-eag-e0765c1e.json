@@ -1,0 +1,78 @@
+{
+	"TagId": 1516775442,
+	"MarkerLocation": {
+		"MarkerName": {
+			"m_identifier": -77897853
+		},
+		"VariantId": {
+			"m_identifier": 1120495519
+		}
+	},
+	"StyleId": {
+		"m_identifier": -1
+	},
+	"MeshIndex": 0,
+	"CommonData": {
+		"Id": "010-001-eag-e0765c1e",
+		"HideUntilOwned": false,
+		"Title": "SOLDIER'S FRIEND",
+		"Description": "Standard-issue canteen and canteen cup. Their chemical coatings made water and protein-starch rations taste like dirty socks, but at least it was safe to eat and drink.",
+		"FeatureFlag": true,
+		"ItemAvailability": "",
+		"DateReleased": {
+			"ISO8601Date": ""
+		},
+		"AltName": "010-001-eag-e0765c1e",
+		"IconStringId": {
+			"m_identifier": -1
+		},
+		"SpriteBitmap": 0,
+		"SpriteFrameIndex": 0,
+		"AltSpriteBitmap": 0,
+		"AltSpriteFrameIndex": 0,
+		"DisplayPath": {
+			"Width": 320,
+			"Height": 320,
+			"Media": {
+				"MediaUrl": {
+					"AuthorityId": "",
+					"Path": "progression/Inventory/Armor/HipAttachments/010-001-eag-e0765c1e-SM.png",
+					"RetryPolicyId": "",
+					"TopicName": "",
+					"AcknowledgementTypeId": "NoAcknowledgement",
+					"AuthenticationLifetimeExtensionSupported": false,
+					"ClearanceAware": false
+				},
+				"MimeType": "",
+				"Caption": "",
+				"AlternateText": "",
+				"FolderPath": "",
+				"FileName": ""
+			},
+			"MimeType": "image/png",
+			"FolderPath": "progression/Inventory/Armor/HipAttachments",
+			"FileName": "010-001-eag-e0765c1e-SM.png"
+		},
+		"Quality": "Epic",
+		"ManufacturerId": 7,
+		"Type": "ArmorHipAttachment",
+		"RewardTrack": "/RewardTracks/Events/Rituals/ritualEagleStrike.json",
+		"ParentPaths": [
+			{
+				"Path": "Inventory/Armor/Themes/007-000-eagle-strike-0903655e.json",
+				"Type": "ArmorTheme"
+			}
+		],
+		"SortingMetadata": {
+			"categoryWeight": 0,
+			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 2,
+		"OriginalSeasonNumber": 2,
+		"Season": {
+			"status": "Test",
+			"value": "Season 2",
+			"translations": {}
+		}
+	}
+}

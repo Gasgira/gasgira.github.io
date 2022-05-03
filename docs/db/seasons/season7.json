@@ -1,0 +1,17 @@
+{
+	"DateRange": "May 03, 2022 - November 08, 2022",
+	"Name": "Lone Wolves",
+	"Logo": "progression/RewardTracks/Season_Switcher_S2_LW.png",
+	"Number": 2,
+	"Description": "A red carpet and unexpected guests.",
+	"SummaryBackgroundPath": "progression/ScreenBackgrounds/Summary_Background.png",
+	"ChallengesBackgroundPath": "progression/ScreenBackgrounds/challenges_background.png",
+	"BattlePassLogoImage": "progression/ScreenBackgrounds/battlepass_logo.png",
+	"SeasonLogoImage": "seasons/insignia_s2_lonewolves_512.png",
+	"RitualLogoImage": "progression/ScreenBackgrounds/ritual_logo.png",
+	"StorefrontBackgroundImage": "progression/ScreenBackgrounds/storefront_background.pn",
+	"CardBackgroundImage": "progression/Switcher/Season_Switcher_S2_LW.png",
+	"NarrativeBlurb": "Cortana’s dominion has ended, but the merciless forces of the Banished have rushed to fill the void, decimating all who stand in their way.\n\nSpartan Commander Agryna has enlisted a new generation of Spartans and is preparing them to face the Banished—and perhaps even more dangerous foes.\n\nBut a few scattered Spartans remain in the field. These Spartans are rugged and resourceful. Hunters in the dark. And they call themselves… Lone Wolves.",
+	"BattlePassSeasonUpsellBackgroundImage": "progression/ScreenBackgrounds/season_upsell_background.png",
+	"ProgressionBackgroundImage": "progression/ScreenBackgrounds/progression_background.png"
+}

@@ -1,0 +1,13 @@
+{
+	"Description": "Earn Cumulative Player Score in Last Spartan Standing PvP Matches",
+	"Difficulty": "legendary",
+	"Category": "Ritual",
+	"Reward": {
+		"InventoryItems": [],
+		"OperationExperience": 400,
+		"EventProgress": 1
+	},
+	"IsUserEvent": true,
+	"ThresholdForSuccess": 10000,
+	"Title": "Cutting their Teeth"
+}

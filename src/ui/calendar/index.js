@@ -45,7 +45,8 @@ class Calendar extends Component {
 				rewardTrack
 			});
 		});
-		const launchDate = new Date('2021-11-15T08:00:00');
+		// const launchDate = new Date('2021-11-15T08:00:00');
+		const launchDate = new Date('2022-05-03T08:00:00Z');
 		const today = new Date();
 		let upcoming = false;
 		this.data?.Events?.forEach(ritual => {
@@ -217,7 +218,8 @@ class Calendar extends Component {
 						let startDate = new Date(operation.startDate);
 
 						// Season 1 special case dates for nice display
-						const launchDate = new Date('2021-11-15T08:00:00');
+						// const launchDate = new Date('2021-11-15T08:00:00');
+						const launchDate = new Date('2022-05-03T20:00:00Z');
 						const csrResetDate = new Date('2022-02-23T00:00:00Z');
 
 						if (startDate < csrResetDate) startDate = launchDate;

@@ -1,0 +1,114 @@
+{
+	"TagId": 0,
+	"ThemeName": {
+		"m_identifier": 284238613
+	},
+	"EmblemShaderName": {
+		"m_identifier": 0
+	},
+	"CommonData": {
+		"Id": "405-305-3a2f3b23",
+		"HideUntilOwned": false,
+		"Title": "HVT Target: Bassus",
+		"Description": "Restraining order filed.",
+		"FeatureFlag": true,
+		"ItemAvailability": "",
+		"DateReleased": {
+			"ISO8601Date": ""
+		},
+		"AltName": "405-305-3a2f3b23",
+		"IconStringId": {
+			"m_identifier": -1
+		},
+		"SpriteBitmap": 0,
+		"SpriteFrameIndex": 0,
+		"AltSpriteBitmap": 0,
+		"AltSpriteFrameIndex": 0,
+		"DisplayPath": {
+			"Width": 1024,
+			"Height": 1024,
+			"Media": {
+				"MediaUrl": {
+					"AuthorityId": "",
+					"Path": "progression/Inventory/Emblems/hvt_bassus_emblem.png",
+					"RetryPolicyId": "",
+					"TopicName": "",
+					"AcknowledgementTypeId": "NoAcknowledgement",
+					"AuthenticationLifetimeExtensionSupported": false,
+					"ClearanceAware": false
+				},
+				"MimeType": "",
+				"Caption": "",
+				"AlternateText": "",
+				"FolderPath": "",
+				"FileName": ""
+			},
+			"MimeType": "image/png",
+			"FolderPath": "progression/Inventory/Emblems",
+			"FileName": "hvt_bassus_emblem.png"
+		},
+		"Quality": "Epic",
+		"ManufacturerId": 26,
+		"Type": "VehicleEmblem",
+		"RewardTrack": "",
+		"ParentPaths": [
+			{
+				"Path": "Inventory/Vehicle/Themes/408-300-olympus-aa30213b.json",
+				"Type": "VehicleTheme"
+			},
+			{
+				"Path": "Inventory/Vehicle/Themes/408-301-olympus-aa30213b.json",
+				"Type": "VehicleTheme"
+			},
+			{
+				"Path": "Inventory/Vehicle/Themes/408-302-olympus-aa30213b.json",
+				"Type": "VehicleTheme"
+			},
+			{
+				"Path": "Inventory/Vehicle/Themes/408-303-olympus-aa30213b.json",
+				"Type": "VehicleTheme"
+			},
+			{
+				"Path": "Inventory/Vehicle/Themes/408-304-olympus-aa30213b.json",
+				"Type": "VehicleTheme"
+			},
+			{
+				"Path": "Inventory/Vehicle/Themes/408-305-olympus-aa30213b.json",
+				"Type": "VehicleTheme"
+			},
+			{
+				"Path": "Inventory/Vehicle/Themes/408-306-olympus-aa30213b.json",
+				"Type": "VehicleTheme"
+			}
+		],
+		"SortingMetadata": {
+			"categoryWeight": 0,
+			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 2,
+		"OriginalSeasonNumber": 2,
+		"Season": {
+			"status": "Test",
+			"value": "Season 2",
+			"translations": {}
+		}
+	},
+	"AvailableConfigurations": [
+		{
+			"ConfigurationId": 1637398767,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-f2ffe4bb.json"
+		},
+		{
+			"ConfigurationId": 279744058,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-b263e1c2.json"
+		},
+		{
+			"ConfigurationId": -1249642500,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-94ea0a59.json"
+		},
+		{
+			"ConfigurationId": 1707862500,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-f65133b4.json"
+		}
+	]
+}

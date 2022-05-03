@@ -1,0 +1,184 @@
+{
+	"TrackId": "ritualYappening",
+	"XpPerRank": 1,
+	"Ranks": [
+		{
+			"Rank": 1,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/Spartan/BackdropImages/103-000-ui-s2-backgro-598ad932.json",
+						"Amount": 1,
+						"Type": "SpartanBackdropImage"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 2,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/Ai/Colors/301-100-rare-turquois-ca8b19c9.json",
+						"Amount": 1,
+						"Type": "AiColor"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 3,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/Weapon/Coatings/203-201-olympus-549f0a24.json",
+						"Amount": 1,
+						"Type": "WeaponCoating"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 4,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/Armor/Visors/012-001-80389520.json",
+						"Amount": 1,
+						"Type": "ArmorVisor"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 5,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "inventory/Armor/HelmetAttachments/004-001-wlv-447aa59f.json",
+						"Amount": 1,
+						"Type": "ArmorHelmetAttachment"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 6,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/Weapon/Charms/201-201-ffe1d0bb.json",
+						"Amount": 1,
+						"Type": "WeaponCharm"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 7,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "inventory/Armor/Coatings/002-001-olympus-82c80e4f.json",
+						"Amount": 1,
+						"Type": "ArmorCoating"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 8,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "inventory/Weapon/Coatings/203-200-olympus-549f0a24.json",
+						"Amount": 1,
+						"Type": "WeaponCoating"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 9,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "inventory/spartan/actionposes/101-000-menu-stance-s-5088f1b1.json",
+						"Amount": 1,
+						"Type": "SpartanActionPose"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 10,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "inventory/weapon/fxdeath/204-000-lone-wolf-mis-9935526e.json",
+						"Amount": 1,
+						"Type": "WeaponDeathFx"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		}
+	],
+	"Name": "The Yappening",
+	"Description": "Yappity Yap, Don't Yap Back",
+	"OperationNumber": 2,
+	"DateRange": "September 6th, 2022 - September 19th, 2022",
+	"IsRitual": true,
+	"SummaryImagePath": "progression/RewardTracks/Olympus_Progression_Comps_Summary_CartArt_FauxSeason.png",
+	"WeekNumber": null,
+	"BackgroundImagePath": ""
+}

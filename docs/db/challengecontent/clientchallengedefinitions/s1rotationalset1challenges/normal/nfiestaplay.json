@@ -1,0 +1,11 @@
+{
+	"Description": "Complete Fiesta Matches",
+	"Difficulty": "normal",
+	"Category": "ModeBased",
+	"Reward": {
+		"InventoryItems": [],
+		"OperationExperience": 200
+	},
+	"ThresholdForSuccess": 2,
+	"Title": "Social Soiree"
+}

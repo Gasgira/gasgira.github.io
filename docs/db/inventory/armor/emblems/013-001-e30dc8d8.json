@@ -24,15 +24,6 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 358,
 			"Height": 358,
@@ -57,28 +48,20 @@
 			"FileName": "samurai_houseofwarriors_emblem.png"
 		},
 		"Quality": "Epic",
-		"ManufacturerId": 8,
+		"ManufacturerId": 24,
 		"Type": "ArmorEmblem",
-		"ParentTheme": "Inventory/Armor/Themes/007-001-reach-2564121f.json",
 		"RewardTrack": "",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [
 			{
 				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
+				"Type": "ArmorTheme"
+			},
+			{
+				"Path": "Inventory/Armor/Themes/007-000-lone-wolf-0903655e.json",
+				"Type": "ArmorTheme"
+			},
+			{
+				"Path": "Inventory/Armor/Themes/007-000-eagle-strike-0903655e.json",
 				"Type": "ArmorTheme"
 			},
 			{
@@ -93,44 +76,51 @@
 		"SortingMetadata": {
 			"categoryWeight": 0,
 			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 1,
+		"OriginalSeasonNumber": 1,
+		"Season": {
+			"status": "Test",
+			"value": "",
+			"translations": {}
 		}
 	},
 	"AvailableConfigurations": [
 		{
-			"ConfigurationId": -2070548530,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-02dd7bf3.json"
+			"ConfigurationId": 2045841324,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-d3977b3b.json"
 		},
 		{
 			"ConfigurationId": 1919700909,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-17b7138f.json"
 		},
 		{
-			"ConfigurationId": 651339664,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-1bc64ab2.json"
+			"ConfigurationId": 231794219,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-f443ca44.json"
 		},
 		{
 			"ConfigurationId": 1337929658,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-2bff0b6b.json"
 		},
 		{
-			"ConfigurationId": -1561561067,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-742078a9.json"
-		},
-		{
 			"ConfigurationId": -1788721142,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-86a778c0.json"
 		},
 		{
-			"ConfigurationId": 2045841324,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-d3977b3b.json"
-		},
-		{
-			"ConfigurationId": 231794219,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-f443ca44.json"
+			"ConfigurationId": 651339664,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-1bc64ab2.json"
 		},
 		{
 			"ConfigurationId": -143929135,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-f6c295ad.json"
+		},
+		{
+			"ConfigurationId": -2070548530,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-02dd7bf3.json"
+		},
+		{
+			"ConfigurationId": -1561561067,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-742078a9.json"
 		}
 	]
 }

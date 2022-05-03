@@ -9,7 +9,7 @@
 	"CommonData": {
 		"Id": "404-300-olympus-76a3c3dd",
 		"HideUntilOwned": true,
-		"Title": "Nocturne Star",
+		"Title": "Nocturne Sky",
 		"Description": "Custom paint and materials.",
 		"FeatureFlag": true,
 		"ItemAvailability": "",
@@ -24,15 +24,6 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 320,
 			"Height": 320,
@@ -57,25 +48,9 @@
 			"FileName": "404-300-olympus-76a3c3dd-SM.png"
 		},
 		"Quality": "Epic",
-		"ManufacturerId": 23,
+		"ManufacturerId": 26,
 		"Type": "VehicleCoating",
-		"ParentTheme": "Inventory/Vehicle/Themes/408-300-olympus-aa30213b.json",
 		"RewardTrack": "",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [
 			{
 				"Path": "Inventory/Vehicle/Themes/408-300-olympus-aa30213b.json",
@@ -86,7 +61,14 @@
 			"categoryWeight": 0,
 			"subCategoryWeight": 0
 		},
-		"CustomAvailability": "Available via Halo Infinite partners"
+		"SeasonNumber": 1,
+		"OriginalSeasonNumber": 1,
+		"CustomAvailability": "Available via Halo Infinite partners",
+		"Season": {
+			"status": "Test",
+			"value": "",
+			"translations": {}
+		}
 	},
 	"LightingScalarOverride": 0
 }

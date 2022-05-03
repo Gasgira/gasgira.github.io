@@ -1,0 +1,74 @@
+{
+	"VisorId": {
+		"m_identifier": 1544031111
+	},
+	"Roughness": 4,
+	"Emissive": 0,
+	"ColorVariant": {
+		"m_identifier": -1090547116
+	},
+	"CommonData": {
+		"Id": "012-001-fab569a4",
+		"HideUntilOwned": true,
+		"Title": "Harvest Turquoise",
+		"Description": "The dead will have no peace here.",
+		"FeatureFlag": true,
+		"ItemAvailability": "",
+		"DateReleased": {
+			"ISO8601Date": ""
+		},
+		"AltName": "emerald",
+		"IconStringId": {
+			"m_identifier": -1
+		},
+		"SpriteBitmap": 0,
+		"SpriteFrameIndex": 0,
+		"AltSpriteBitmap": 0,
+		"AltSpriteFrameIndex": 0,
+		"DisplayPath": {
+			"Width": 320,
+			"Height": 320,
+			"Media": {
+				"MediaUrl": {
+					"AuthorityId": "",
+					"Path": "progression/Inventory/Armor/Visors/012-001-fab569a4-SM.png",
+					"RetryPolicyId": "",
+					"TopicName": "",
+					"AcknowledgementTypeId": "NoAcknowledgement",
+					"AuthenticationLifetimeExtensionSupported": false,
+					"ClearanceAware": false
+				},
+				"MimeType": "",
+				"Caption": "",
+				"AlternateText": "",
+				"FolderPath": "",
+				"FileName": ""
+			},
+			"MimeType": "image/png",
+			"FolderPath": "progression/Inventory/Armor/Visors",
+			"FileName": "012-001-fab569a4-SM.png"
+		},
+		"Quality": "Epic",
+		"ManufacturerId": 26,
+		"Type": "ArmorVisor",
+		"RewardTrack": "",
+		"ParentPaths": [
+			{
+				"Path": "Inventory/Armor/Themes/007-001-reach-2564121f.json",
+				"Type": "ArmorTheme"
+			}
+		],
+		"SortingMetadata": {
+			"categoryWeight": 0,
+			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 2,
+		"OriginalSeasonNumber": 2,
+		"Season": {
+			"status": "Test",
+			"value": "Season 2",
+			"translations": {}
+		}
+	},
+	"TagId": 0
+}

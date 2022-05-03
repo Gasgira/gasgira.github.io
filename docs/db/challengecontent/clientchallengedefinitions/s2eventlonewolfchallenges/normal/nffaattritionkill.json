@@ -1,0 +1,13 @@
+{
+	"Description": "Kill Enemy Spartans in Last Spartan Standing",
+	"Difficulty": "normal",
+	"Category": "Ritual",
+	"Reward": {
+		"InventoryItems": [],
+		"OperationExperience": 300,
+		"EventProgress": 1
+	},
+	"IsUserEvent": true,
+	"ThresholdForSuccess": 10,
+	"Title": "To Iritate IRATUS"
+}

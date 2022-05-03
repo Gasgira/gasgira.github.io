@@ -1,0 +1,144 @@
+{
+	"IsItemOwnershipRequired": false,
+	"Coatings": {
+		"IsRequired": true,
+		"DefaultOptionPath": "Inventory/Weapon/Coatings/203-201-olympus-cc26934c.json",
+		"OptionPaths": [
+			"Inventory/Weapon/Coatings/203-201-olympus-cc26934c.json"
+		]
+	},
+	"StatTrackers": {
+		"IsRequired": false,
+		"DefaultOptionPath": "",
+		"OptionPaths": []
+	},
+	"WeaponCharms": {
+		"IsRequired": false,
+		"DefaultOptionPath": "",
+		"OptionPaths": []
+	},
+	"AmmoCounterColors": {
+		"IsRequired": false,
+		"DefaultOptionPath": "",
+		"OptionPaths": []
+	},
+	"DeathFx": {
+		"IsRequired": false,
+		"DefaultOptionPath": "",
+		"OptionPaths": []
+	},
+	"Emblems": {
+		"IsRequired": true,
+		"AvailableLocations": [
+			{
+				"LocationId": -1140904703,
+				"DefaultOption": {
+					"Path": "Inventory/Weapon/Emblems/205-201-21365e7a.json",
+					"ConfigurationId": -849143930
+				}
+			}
+		],
+		"OptionPaths": [
+			"Inventory/Weapon/Emblems/205-201-21365e7a.json"
+		]
+	},
+	"AlternateGeometryRegions": {
+		"IsRequired": false,
+		"DefaultOptionPath": "",
+		"OptionPaths": []
+	},
+	"TagId": 1220648237,
+	"VariantId": {
+		"m_identifier": 1120495519
+	},
+	"CoreRegionData": {
+		"BaseRegionData": [],
+		"BodyTypeSmallOverrides": [],
+		"BodyTypeLargeOverrides": [],
+		"ProstheticLeftArmOverrides": {
+			"Full": [],
+			"Half": [],
+			"Extremity": []
+		},
+		"ProstheticRightArmOverrides": {
+			"Full": [],
+			"Half": [],
+			"Extremity": []
+		},
+		"ProstheticLeftLegOverrides": {
+			"Full": [],
+			"Half": [],
+			"Extremity": []
+		},
+		"ProstheticRightLegOverrides": {
+			"Full": [],
+			"Half": [],
+			"Extremity": []
+		}
+	},
+	"CommonData": {
+		"Id": "207-000-cloud9-ccf87f8c",
+		"HideUntilOwned": false,
+		"Title": "Cloud9",
+		"Description": "Cloud9 is pleased to present a new set of skins to help you crouch-slide corners like a Renegade Pznguin, or ace the enemy team with Stellur accuracy delivering Eco-friendly headshots. You will lock out 250-0 Live Fire style, no Hoax...er, Maybe?",
+		"FeatureFlag": true,
+		"ItemAvailability": "",
+		"DateReleased": {
+			"ISO8601Date": ""
+		},
+		"AltName": "olympus",
+		"IconStringId": {
+			"m_identifier": -1
+		},
+		"SpriteBitmap": 0,
+		"SpriteFrameIndex": 0,
+		"AltSpriteBitmap": 0,
+		"AltSpriteFrameIndex": 0,
+		"DisplayPath": {
+			"Width": 320,
+			"Height": 320,
+			"Media": {
+				"MediaUrl": {
+					"AuthorityId": "",
+					"Path": "progression/Inventory/Weapon/Themes/207-000-cloud9-ccf87f8c-SM.png",
+					"RetryPolicyId": "",
+					"TopicName": "",
+					"AcknowledgementTypeId": "NoAcknowledgement",
+					"AuthenticationLifetimeExtensionSupported": false,
+					"ClearanceAware": false
+				},
+				"MimeType": "",
+				"Caption": "",
+				"AlternateText": "",
+				"FolderPath": "",
+				"FileName": ""
+			},
+			"MimeType": "image/png",
+			"FolderPath": "progression/Inventory/Weapon/Themes",
+			"FileName": "207-000-cloud9-ccf87f8c-SM.png"
+		},
+		"Quality": "Epic",
+		"ManufacturerId": 0,
+		"Type": "WeaponTheme",
+		"RewardTrack": "",
+		"ParentPaths": [
+			{
+				"Path": "Cores/Weapon/209-201-olympus-aa30213b.json",
+				"Type": "WeaponCore"
+			}
+		],
+		"SortingMetadata": {
+			"categoryWeight": 0,
+			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 2,
+		"OriginalSeasonNumber": 2,
+		"Season": {
+			"status": "Test",
+			"value": "Season 2",
+			"translations": {}
+		}
+	},
+	"IsKit": true,
+	"KitBaseThemePath": "Inventory/Weapon/Themes/207-201-olympus-aa30213b.json"
+}

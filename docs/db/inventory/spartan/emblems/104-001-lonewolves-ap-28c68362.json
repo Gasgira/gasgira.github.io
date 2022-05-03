@@ -1,0 +1,85 @@
+{
+	"TagId": 0,
+	"ThemeName": {
+		"m_identifier": 1211990793
+	},
+	"EmblemShaderName": {
+		"m_identifier": -1
+	},
+	"AvailableConfigurations": [
+		{
+			"ConfigurationId": 1183553326,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-85c7cd05.json"
+		},
+		{
+			"ConfigurationId": 1202351983,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-83f09ad5.json"
+		},
+		{
+			"ConfigurationId": -2095749787,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-a8ddc916.json"
+		},
+		{
+			"ConfigurationId": 1613540319,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-d5aa3d53.json"
+		}
+	],
+	"CommonData": {
+		"Id": "104-001-lonewolves-ap-28c68362",
+		"HideUntilOwned": true,
+		"Title": "Fireteam Apex",
+		"Description": "Death from above.",
+		"FeatureFlag": true,
+		"ItemAvailability": "",
+		"DateReleased": {
+			"ISO8601Date": ""
+		},
+		"AltName": "104-001-lonewolves-ap-28c68362",
+		"IconStringId": {
+			"m_identifier": -1
+		},
+		"SpriteBitmap": 0,
+		"SpriteFrameIndex": 0,
+		"AltSpriteBitmap": 0,
+		"AltSpriteFrameIndex": 0,
+		"DisplayPath": {
+			"Width": 1015,
+			"Height": 935,
+			"Media": {
+				"MediaUrl": {
+					"AuthorityId": "",
+					"Path": "progression/Inventory/Emblems/lonewolves_apexfireteam.png",
+					"RetryPolicyId": "",
+					"TopicName": "",
+					"AcknowledgementTypeId": "NoAcknowledgement",
+					"AuthenticationLifetimeExtensionSupported": false,
+					"ClearanceAware": false
+				},
+				"MimeType": "",
+				"Caption": "",
+				"AlternateText": "",
+				"FolderPath": "",
+				"FileName": ""
+			},
+			"MimeType": "image/png",
+			"FolderPath": "progression/Inventory/Emblems",
+			"FileName": "lonewolves_apexfireteam.png"
+		},
+		"Quality": "Epic",
+		"ManufacturerId": 26,
+		"Type": "SpartanEmblem",
+		"RewardTrack": "",
+		"ParentPaths": [],
+		"SortingMetadata": {
+			"categoryWeight": 0,
+			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 2,
+		"OriginalSeasonNumber": 2,
+		"Season": {
+			"status": "Test",
+			"value": "Season 2",
+			"translations": {}
+		}
+	}
+}

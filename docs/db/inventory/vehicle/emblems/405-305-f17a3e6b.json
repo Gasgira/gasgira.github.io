@@ -24,15 +24,6 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 1024,
 			"Height": 1024,
@@ -57,25 +48,9 @@
 			"FileName": "popculture_dealerschoice_masterchef_emblem.png"
 		},
 		"Quality": "Rare",
-		"ManufacturerId": 0,
+		"ManufacturerId": 8,
 		"Type": "VehicleEmblem",
-		"ParentTheme": "",
 		"RewardTrack": "",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [
 			{
 				"Path": "Inventory/Vehicle/Themes/408-300-olympus-aa30213b.json",
@@ -109,28 +84,39 @@
 		"SortingMetadata": {
 			"categoryWeight": 0,
 			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 1,
+		"OriginalSeasonNumber": 1,
+		"Season": {
+			"status": "Test",
+			"value": "",
+			"translations": {}
 		}
 	},
 	"AvailableConfigurations": [
 		{
+			"ConfigurationId": 1488108650,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-fe386583.json"
+		},
+		{
 			"ConfigurationId": 1966579350,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-40adc9ba.json"
-		},
-		{
-			"ConfigurationId": -831056095,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-4ae9bb14.json"
-		},
-		{
-			"ConfigurationId": -1816167792,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-6ef7f3bb.json"
 		},
 		{
 			"ConfigurationId": -1561561067,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-742078a9.json"
 		},
 		{
+			"ConfigurationId": -1816167792,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-6ef7f3bb.json"
+		},
+		{
 			"ConfigurationId": -116825878,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-76e047f3.json"
+		},
+		{
+			"ConfigurationId": -831056095,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-4ae9bb14.json"
 		},
 		{
 			"ConfigurationId": -1771816791,
@@ -139,10 +125,6 @@
 		{
 			"ConfigurationId": 1540133627,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-cf1c5706.json"
-		},
-		{
-			"ConfigurationId": 1488108650,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-fe386583.json"
 		}
 	]
 }

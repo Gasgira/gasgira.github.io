@@ -1,0 +1,82 @@
+{
+	"TagId": -455470005,
+	"MarkerLocation": {
+		"MarkerName": {
+			"m_identifier": 714966513
+		},
+		"VariantId": {
+			"m_identifier": 1120495519
+		}
+	},
+	"StyleId": {
+		"m_identifier": -1
+	},
+	"MeshIndex": 0,
+	"CommonData": {
+		"Id": "004-001-eag-79c9eddb",
+		"HideUntilOwned": true,
+		"Title": "GUMMYTUBE FILTER",
+		"Description": "The crawling mists unleashed by the Covenant in its last offensives killed most of those it touched, and warped those it didn't. UNSC countermeasures took time to develop, and were never fully effective.",
+		"FeatureFlag": true,
+		"ItemAvailability": "",
+		"DateReleased": {
+			"ISO8601Date": ""
+		},
+		"AltName": "004-001-eag-79c9eddb",
+		"IconStringId": {
+			"m_identifier": -1
+		},
+		"SpriteBitmap": 0,
+		"SpriteFrameIndex": 0,
+		"AltSpriteBitmap": 0,
+		"AltSpriteFrameIndex": 0,
+		"DisplayPath": {
+			"Width": 320,
+			"Height": 320,
+			"Media": {
+				"MediaUrl": {
+					"AuthorityId": "",
+					"Path": "progression/Inventory/Armor/HelmetAttachments/004-001-eag-79c9eddb-SM.png",
+					"RetryPolicyId": "",
+					"TopicName": "",
+					"AcknowledgementTypeId": "NoAcknowledgement",
+					"AuthenticationLifetimeExtensionSupported": false,
+					"ClearanceAware": false
+				},
+				"MimeType": "",
+				"Caption": "",
+				"AlternateText": "",
+				"FolderPath": "",
+				"FileName": ""
+			},
+			"MimeType": "image/png",
+			"FolderPath": "progression/Inventory/Armor/HelmetAttachments",
+			"FileName": "004-001-eag-79c9eddb-SM.png"
+		},
+		"Quality": "Legendary",
+		"ManufacturerId": 7,
+		"Type": "ArmorHelmetAttachment",
+		"RewardTrack": "",
+		"ParentPaths": [
+			{
+				"Path": "Inventory/Armor/Themes/007-000-eagle-strike-0903655e.json",
+				"Type": "ArmorTheme"
+			},
+			{
+				"Path": "Inventory/Armor/Helmets/005-001-eag-637c9472.json",
+				"Type": "ArmorHelmet"
+			}
+		],
+		"SortingMetadata": {
+			"categoryWeight": 0,
+			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 2,
+		"OriginalSeasonNumber": 2,
+		"Season": {
+			"status": "Test",
+			"value": "Season 2",
+			"translations": {}
+		}
+	}
+}

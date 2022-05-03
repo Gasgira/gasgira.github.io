@@ -24,15 +24,6 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 926,
 			"Height": 926,
@@ -59,23 +50,7 @@
 		"Quality": "Rare",
 		"ManufacturerId": 0,
 		"Type": "VehicleEmblem",
-		"ParentTheme": "",
 		"RewardTrack": "",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [
 			{
 				"Path": "Inventory/Vehicle/Themes/408-300-olympus-aa30213b.json",
@@ -109,20 +84,26 @@
 		"SortingMetadata": {
 			"categoryWeight": 0,
 			"subCategoryWeight": 0
-		}
+		},
+		"SeasonNumber": 1,
+		"OriginalSeasonNumber": 1
 	},
 	"AvailableConfigurations": [
 		{
-			"ConfigurationId": -2127871006,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-0ea7bd90.json"
+			"ConfigurationId": -1391772538,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-ed8fcaaf.json"
+		},
+		{
+			"ConfigurationId": -1546654162,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-94733d81.json"
 		},
 		{
 			"ConfigurationId": 824330229,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-227adf2f.json"
 		},
 		{
-			"ConfigurationId": 1303196696,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-882b80d9.json"
+			"ConfigurationId": -2127871006,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-0ea7bd90.json"
 		},
 		{
 			"ConfigurationId": -295351287,
@@ -133,8 +114,8 @@
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-e0be28e1.json"
 		},
 		{
-			"ConfigurationId": -1391772538,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-ed8fcaaf.json"
+			"ConfigurationId": 1303196696,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-882b80d9.json"
 		}
 	]
 }

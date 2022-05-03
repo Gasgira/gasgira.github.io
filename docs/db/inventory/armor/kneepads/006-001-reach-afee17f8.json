@@ -45,15 +45,6 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 320,
 			"Height": 320,
@@ -78,25 +69,9 @@
 			"FileName": "006-001-reach-afee17f8-SM.png"
 		},
 		"Quality": "Epic",
-		"ManufacturerId": 2,
+		"ManufacturerId": 3,
 		"Type": "ArmorKneePad",
-		"ParentTheme": "Inventory/Armor/Themes/007-000-carter-a259-k-0903655e.json",
 		"RewardTrack": "RewardTracks/Operations/battlepass-noblesacrifice.json",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 2",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [
 			{
 				"Path": "Inventory/Armor/Themes/007-001-reach-2564121f.json",
@@ -106,6 +81,13 @@
 		"SortingMetadata": {
 			"categoryWeight": 0,
 			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 1,
+		"OriginalSeasonNumber": 1,
+		"Season": {
+			"status": "Test",
+			"value": "",
+			"translations": {}
 		}
 	}
 }

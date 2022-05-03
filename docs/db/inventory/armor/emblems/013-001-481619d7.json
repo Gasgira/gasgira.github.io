@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "013-001-481619d7",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Grasp the Sword",
 		"Description": "The natural environment of a samurai is the battlefield.",
 		"FeatureFlag": true,
@@ -24,15 +24,6 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 720,
 			"Height": 935,
@@ -57,28 +48,20 @@
 			"FileName": "Samurai_Grasp_the_Sword_emblem.png"
 		},
 		"Quality": "Rare",
-		"ManufacturerId": 8,
+		"ManufacturerId": 24,
 		"Type": "ArmorEmblem",
-		"ParentTheme": "",
 		"RewardTrack": "",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [
 			{
 				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
+				"Type": "ArmorTheme"
+			},
+			{
+				"Path": "Inventory/Armor/Themes/007-000-lone-wolf-0903655e.json",
+				"Type": "ArmorTheme"
+			},
+			{
+				"Path": "Inventory/Armor/Themes/007-000-eagle-strike-0903655e.json",
 				"Type": "ArmorTheme"
 			},
 			{
@@ -93,6 +76,13 @@
 		"SortingMetadata": {
 			"categoryWeight": 0,
 			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 1,
+		"OriginalSeasonNumber": 1,
+		"Season": {
+			"status": "Test",
+			"value": "",
+			"translations": {}
 		}
 	},
 	"AvailableConfigurations": [

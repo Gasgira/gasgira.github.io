@@ -16,7 +16,7 @@
 		"DateReleased": {
 			"ISO8601Date": ""
 		},
-		"AltName": "oly_mil_ct_test_07",
+		"AltName": "",
 		"IconStringId": {
 			"m_identifier": -1
 		},
@@ -24,22 +24,13 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 320,
 			"Height": 320,
 			"Media": {
 				"MediaUrl": {
 					"AuthorityId": "",
-					"Path": "progression/Inventory/Weapon/Coatings/203-202-olympus-1dc2f961.png",
+					"Path": "Progression/Inventory/Weapon/Coatings/203-202-olympus-1dc2f961-SM.png",
 					"RetryPolicyId": "",
 					"TopicName": "",
 					"AcknowledgementTypeId": "NoAcknowledgement",
@@ -53,29 +44,13 @@
 				"FileName": ""
 			},
 			"MimeType": "image/png",
-			"FolderPath": "progression/Inventory/Weapon/Coatings",
-			"FileName": "203-202-olympus-1dc2f961.png"
+			"FolderPath": "Progression/Inventory/Weapon/Coatings",
+			"FileName": "203-202-olympus-1dc2f961-SM.png"
 		},
 		"Quality": "Rare",
-		"ManufacturerId": 23,
+		"ManufacturerId": 26,
 		"Type": "WeaponCoating",
-		"ParentTheme": "Inventory/Weapon/Themes/207-202-olympus-aa30213b.json",
 		"RewardTrack": "",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [
 			{
 				"Path": "Inventory/Weapon/Themes/207-202-olympus-aa30213b.json",
@@ -85,6 +60,13 @@
 		"SortingMetadata": {
 			"categoryWeight": 0,
 			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 2,
+		"OriginalSeasonNumber": 2,
+		"Season": {
+			"status": "Test",
+			"value": "Season 2",
+			"translations": {}
 		}
 	},
 	"LightingScalarOverride": 0

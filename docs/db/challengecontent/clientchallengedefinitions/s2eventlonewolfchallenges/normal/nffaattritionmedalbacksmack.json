@@ -1,0 +1,13 @@
+{
+	"Description": "Kill an Enemy Spartan from behind with a Melee Attack in Last Spartan Standing",
+	"Difficulty": "normal",
+	"Category": "Ritual",
+	"Reward": {
+		"InventoryItems": [],
+		"OperationExperience": 300,
+		"EventProgress": 1
+	},
+	"IsUserEvent": true,
+	"ThresholdForSuccess": 1,
+	"Title": "Opportunity to Improvise"
+}

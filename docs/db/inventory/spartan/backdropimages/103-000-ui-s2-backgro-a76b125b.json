@@ -1,0 +1,80 @@
+{
+	"ImagePath": {
+		"Width": 0,
+		"Height": 0,
+		"Media": {
+			"MediaUrl": {
+				"AuthorityId": "",
+				"Path": "Progression/Backgrounds/ui_s2_background_ForerunnerGlyphs.png",
+				"RetryPolicyId": "",
+				"TopicName": "",
+				"AcknowledgementTypeId": "NoAcknowledgement",
+				"AuthenticationLifetimeExtensionSupported": false,
+				"ClearanceAware": false
+			},
+			"MimeType": "",
+			"Caption": "",
+			"AlternateText": "",
+			"FolderPath": "",
+			"FileName": ""
+		}
+	},
+	"CommonData": {
+		"Id": "103-000-ui-s2-backgro-a76b125b",
+		"HideUntilOwned": true,
+		"Title": "Glyphs",
+		"Description": "Simple shapes with incredibly complex meaning.",
+		"FeatureFlag": true,
+		"ItemAvailability": "",
+		"DateReleased": {
+			"ISO8601Date": ""
+		},
+		"AltName": "ui_s2_background_ForerunnerGlyphs.png",
+		"IconStringId": {
+			"m_identifier": -1
+		},
+		"SpriteBitmap": 0,
+		"SpriteFrameIndex": 0,
+		"AltSpriteBitmap": 0,
+		"AltSpriteFrameIndex": 0,
+		"DisplayPath": {
+			"Width": 580,
+			"Height": 450,
+			"Media": {
+				"MediaUrl": {
+					"AuthorityId": "",
+					"Path": "progression/backgrounds/ui_s2_background_ForerunnerGlyphs.png",
+					"RetryPolicyId": "",
+					"TopicName": "",
+					"AcknowledgementTypeId": "NoAcknowledgement",
+					"AuthenticationLifetimeExtensionSupported": false,
+					"ClearanceAware": false
+				},
+				"MimeType": "",
+				"Caption": "",
+				"AlternateText": "",
+				"FolderPath": "",
+				"FileName": ""
+			},
+			"MimeType": "image/png",
+			"FolderPath": "progression/backgrounds",
+			"FileName": "ui_s2_background_ForerunnerGlyphs.png"
+		},
+		"Quality": "Rare",
+		"ManufacturerId": 0,
+		"Type": "SpartanBackdropImage",
+		"RewardTrack": "",
+		"ParentPaths": [],
+		"SortingMetadata": {
+			"categoryWeight": 0,
+			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 2,
+		"OriginalSeasonNumber": 2,
+		"Season": {
+			"status": "Test",
+			"value": "Season 2",
+			"translations": {}
+		}
+	}
+}

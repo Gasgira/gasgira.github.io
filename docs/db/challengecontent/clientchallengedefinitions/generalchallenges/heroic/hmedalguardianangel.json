@@ -1,0 +1,11 @@
+{
+	"Description": "Save an allies' life from far away in PvP",
+	"Difficulty": "heroic",
+	"Category": "General",
+	"Reward": {
+		"InventoryItems": [],
+		"OperationExperience": 250
+	},
+	"ThresholdForSuccess": 1,
+	"Title": "Overwatch"
+}

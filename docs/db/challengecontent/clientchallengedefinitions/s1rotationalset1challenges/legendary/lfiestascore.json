@@ -1,0 +1,11 @@
+{
+	"Description": "Earn Cumulative Player Score in Fiesta PvP Matches",
+	"Difficulty": "legendary",
+	"Category": "ModeBased",
+	"Reward": {
+		"InventoryItems": [],
+		"OperationExperience": 300
+	},
+	"ThresholdForSuccess": 7500,
+	"Title": "Private Party"
+}

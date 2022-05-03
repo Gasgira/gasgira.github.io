@@ -1,0 +1,13 @@
+{
+	"Description": "Kill Enemy Spartans with a Headshot in Last Spartan Standing",
+	"Difficulty": "normal",
+	"Category": "Ritual",
+	"Reward": {
+		"InventoryItems": [],
+		"OperationExperience": 300,
+		"EventProgress": 1
+	},
+	"IsUserEvent": true,
+	"ThresholdForSuccess": 5,
+	"Title": "Vengeance for Vihar"
+}

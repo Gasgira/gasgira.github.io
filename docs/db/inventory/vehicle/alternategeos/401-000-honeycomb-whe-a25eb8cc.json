@@ -17,28 +17,6 @@
 		},
 		{
 			"RegionId": {
-				"m_identifier": -426951920
-			},
-			"PermutationId": {
-				"m_identifier": -1392291542
-			},
-			"StyleIdOverride": {
-				"m_identifier": -1
-			}
-		},
-		{
-			"RegionId": {
-				"m_identifier": -1733714892
-			},
-			"PermutationId": {
-				"m_identifier": -1392291542
-			},
-			"StyleIdOverride": {
-				"m_identifier": -1
-			}
-		},
-		{
-			"RegionId": {
 				"m_identifier": -1733714892
 			},
 			"PermutationId": {
@@ -51,28 +29,6 @@
 		{
 			"RegionId": {
 				"m_identifier": -251990544
-			},
-			"PermutationId": {
-				"m_identifier": -1392291542
-			},
-			"StyleIdOverride": {
-				"m_identifier": -1
-			}
-		},
-		{
-			"RegionId": {
-				"m_identifier": -251990544
-			},
-			"PermutationId": {
-				"m_identifier": -1392291542
-			},
-			"StyleIdOverride": {
-				"m_identifier": -1
-			}
-		},
-		{
-			"RegionId": {
-				"m_identifier": 641790271
 			},
 			"PermutationId": {
 				"m_identifier": -1392291542
@@ -111,15 +67,6 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 320,
 			"Height": 320,
@@ -146,32 +93,26 @@
 		"Quality": "Epic",
 		"ManufacturerId": 13,
 		"Type": "VehicleAlternateGeometryRegion",
-		"ParentTheme": "",
 		"RewardTrack": "RewardTracks/Operations/battlepass-noblesacrifice.json",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [
 			{
 				"Path": "Inventory/Vehicle/Themes/408-300-olympus-aa30213b.json",
+				"Type": "VehicleTheme"
+			},
+			{
+				"Path": "Inventory/Vehicle/Themes/408-304-olympus-aa30213b.json",
+				"Type": "VehicleTheme"
+			},
+			{
+				"Path": "Inventory/Vehicle/Themes/408-306-olympus-aa30213b.json",
 				"Type": "VehicleTheme"
 			}
 		],
 		"SortingMetadata": {
 			"categoryWeight": 0,
 			"subCategoryWeight": 0
-		}
+		},
+		"SeasonNumber": 1,
+		"OriginalSeasonNumber": 1
 	}
 }

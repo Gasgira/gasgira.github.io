@@ -71,19 +71,15 @@ export class Item extends Component {
 	async getSeasonNumber() {
 		if (this?._seasonNumber) return this._seasonNumber;
 		await this.init();
-		const season = this?.data?.CommonData?.Season;
-		if (!season || typeof season !== 'string') return (this._seasonNumber = 0);
-		const split = season.split(' ');
-		if (split && split?.[1]) return (this._seasonNumber = parseInt(split[1]));
-		return (this._seasonNumber = 0);
+		const season = this?.data?.CommonData?.SeasonNumber;
+		if (!season) return (this._seasonNumber = 0);
+		return (this._seasonNumber = parseInt(season));
 	}
 
 	get seasonNumber() {
-		const season = this?.data?.CommonData?.Season;
-		if (!season || typeof season !== 'string') return '0';
-		const split = season.split(' ');
-		if (split && split?.[1]) return parseInt(split[1]);
-		return '0';
+		const season = this?.data?.CommonData?.SeasonNumber;
+		if (!season) return '0';
+		return parseInt(season);
 	}
 
 	get parentPaths() {

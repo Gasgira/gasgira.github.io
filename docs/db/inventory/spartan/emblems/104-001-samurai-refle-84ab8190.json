@@ -8,24 +8,24 @@
 	},
 	"AvailableConfigurations": [
 		{
-			"ConfigurationId": -1561561067,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-742078a9.json"
-		},
-		{
-			"ConfigurationId": -2095749787,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-a8ddc916.json"
-		},
-		{
-			"ConfigurationId": 1193714674,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-a9d9a16f.json"
-		},
-		{
 			"ConfigurationId": -2033884168,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-af96afae.json"
 		},
 		{
 			"ConfigurationId": 692870235,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-bb025c83.json"
+		},
+		{
+			"ConfigurationId": 1193714674,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-a9d9a16f.json"
+		},
+		{
+			"ConfigurationId": -2095749787,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-a8ddc916.json"
+		},
+		{
+			"ConfigurationId": -1561561067,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-742078a9.json"
 		}
 	],
 	"CommonData": {
@@ -46,15 +46,6 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 358,
 			"Height": 358,
@@ -79,29 +70,20 @@
 			"FileName": "samurai_reflection_emblem.png"
 		},
 		"Quality": "Rare",
-		"ManufacturerId": 8,
+		"ManufacturerId": 24,
 		"Type": "SpartanEmblem",
-		"ParentTheme": "",
 		"RewardTrack": "",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [],
 		"SortingMetadata": {
 			"categoryWeight": 1,
 			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 1,
+		"OriginalSeasonNumber": 1,
+		"Season": {
+			"status": "Test",
+			"value": "",
+			"translations": {}
 		}
 	}
 }

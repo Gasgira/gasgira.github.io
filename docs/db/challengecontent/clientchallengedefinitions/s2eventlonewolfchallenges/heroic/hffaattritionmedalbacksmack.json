@@ -1,0 +1,13 @@
+{
+	"Description": "Kill Enemy Spartans from behind with a Melee Attack in Last Spartan Standing PvP",
+	"Difficulty": "heroic",
+	"Category": "Ritual",
+	"Reward": {
+		"InventoryItems": [],
+		"OperationExperience": 350,
+		"EventProgress": 1
+	},
+	"IsUserEvent": true,
+	"ThresholdForSuccess": 3,
+	"Title": "Opportunity to Improvise"
+}

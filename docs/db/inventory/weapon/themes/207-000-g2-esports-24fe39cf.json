@@ -94,15 +94,6 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 320,
 			"Height": 320,
@@ -129,23 +120,7 @@
 		"Quality": "Epic",
 		"ManufacturerId": 0,
 		"Type": "WeaponTheme",
-		"ParentTheme": "cores/weapon/209-202-olympus-aa30213b.json",
 		"RewardTrack": "",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [
 			{
 				"Path": "Cores/Weapon/209-202-olympus-aa30213b.json",
@@ -155,7 +130,9 @@
 		"SortingMetadata": {
 			"categoryWeight": 0,
 			"subCategoryWeight": 0
-		}
+		},
+		"SeasonNumber": 1,
+		"OriginalSeasonNumber": 1
 	},
 	"IsKit": true,
 	"KitBaseThemePath": "Inventory/Weapon/Themes/207-202-olympus-aa30213b.json"

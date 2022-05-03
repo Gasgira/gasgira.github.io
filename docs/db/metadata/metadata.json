@@ -9,6 +9,10 @@
 			"ManufacturerLogoImage": "progression/Manufacturers/AMG.png"
 		},
 		{
+			"ManufacturerName": "Banished",
+			"ManufacturerLogoImage": "progression/Manufacturers/Banished_Logo.png"
+		},
+		{
 			"ManufacturerName": "Beweglichrüstungsysteme",
 			"ManufacturerLogoImage": "progression/Manufacturers/brs.png"
 		},
@@ -25,16 +29,16 @@
 			"ManufacturerLogoImage": "progression/Manufacturers/emerson.png"
 		},
 		{
+			"ManufacturerName": "Fracture: Entrenched",
+			"ManufacturerLogoImage": "progression/Manufacturers/Event_Fracture_Entrenched.png"
+		},
+		{
 			"ManufacturerName": "FOTUS",
 			"ManufacturerLogoImage": "progression/Manufacturers/fotus.png"
 		},
 		{
 			"ManufacturerName": "Fractures",
 			"ManufacturerLogoImage": "progression/Manufacturers/fractures.png"
-		},
-		{
-			"ManufacturerName": "Fractures Samurai",
-			"ManufacturerLogoImage": "progression/Manufacturers/fractures_samurai.png"
 		},
 		{
 			"ManufacturerName": "Hannibal Weapon Systems",
@@ -69,6 +73,10 @@
 			"ManufacturerLogoImage": "progression/Manufacturers/naphtali.png"
 		},
 		{
+			"ManufacturerName": "New Tyne Armory",
+			"ManufacturerLogoImage": "progression/Manufacturers/newtyne.png"
+		},
+		{
 			"ManufacturerName": "Optican",
 			"ManufacturerLogoImage": "progression/Manufacturers/optican.png"
 		},
@@ -81,12 +89,16 @@
 			"ManufacturerLogoImage": "progression/Manufacturers/default.png"
 		},
 		{
-			"ManufacturerName": "Sevine",
+			"ManufacturerName": "Sevine Arms",
 			"ManufacturerLogoImage": "progression/Manufacturers/sevine.png"
 		},
 		{
 			"ManufacturerName": "SinoViet Heavy Machinery",
 			"ManufacturerLogoImage": "progression/Manufacturers/Sinoviet.png"
+		},
+		{
+			"ManufacturerName": "Fracture: Tenrai",
+			"ManufacturerLogoImage": "progression/Manufacturers/fractures_samurai.png"
 		},
 		{
 			"ManufacturerName": "Teotl S.A.B.",
@@ -106,7 +118,7 @@
 		},
 		{
 			"ManufacturerName": "Vestol",
-			"ManufacturerLogoImage": "progression/Manufacturers/default.png"
+			"ManufacturerLogoImage": "progression/Manufacturers/vestol.png"
 		},
 		{
 			"ManufacturerName": "Watershed Division",
@@ -122,8 +134,8 @@
 			"CurrencyId": "Currency/Currencies/cR.json",
 			"Title": "Credits",
 			"Description": "",
-			"Image": "progression/Default/default.png",
-			"IconType": "Consumable"
+			"Image": "progression/Currencies/Credit_Coin-SM.png",
+			"IconType": "VirtualCurrency"
 		},
 		{
 			"CurrencyId": "Currency/Currencies/rerollcurrency.json",

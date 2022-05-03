@@ -1,0 +1,82 @@
+{
+	"TagId": -1,
+	"StyleId": {
+		"m_identifier": -1
+	},
+	"RegionData": [
+		{
+			"RegionId": {
+				"m_identifier": -436735957
+			},
+			"PermutationId": {
+				"m_identifier": 2058761499
+			},
+			"StyleIdOverride": {
+				"m_identifier": -1
+			}
+		}
+	],
+	"CommonData": {
+		"Id": "005-001-eag-352633f4",
+		"HideUntilOwned": false,
+		"Title": "KERBEROS",
+		"Description": "KERBEROS helmets were first used by the notorious Capital Military Authority in their suppression of \"defeatist\" anti-war protesters in the years before the Carver Riots.",
+		"FeatureFlag": true,
+		"ItemAvailability": "",
+		"DateReleased": {
+			"ISO8601Date": ""
+		},
+		"AltName": "005-001-eag-352633f4",
+		"IconStringId": {
+			"m_identifier": -1
+		},
+		"SpriteBitmap": 0,
+		"SpriteFrameIndex": 0,
+		"AltSpriteBitmap": 0,
+		"AltSpriteFrameIndex": 0,
+		"DisplayPath": {
+			"Width": 320,
+			"Height": 320,
+			"Media": {
+				"MediaUrl": {
+					"AuthorityId": "",
+					"Path": "progression/Inventory/Armor/Helmets/005-001-eag-352633f4-SM.png",
+					"RetryPolicyId": "",
+					"TopicName": "",
+					"AcknowledgementTypeId": "NoAcknowledgement",
+					"AuthenticationLifetimeExtensionSupported": false,
+					"ClearanceAware": false
+				},
+				"MimeType": "",
+				"Caption": "",
+				"AlternateText": "",
+				"FolderPath": "",
+				"FileName": ""
+			},
+			"MimeType": "image/png",
+			"FolderPath": "progression/Inventory/Armor/Helmets",
+			"FileName": "005-001-eag-352633f4-SM.png"
+		},
+		"Quality": "Legendary",
+		"ManufacturerId": 7,
+		"Type": "ArmorHelmet",
+		"RewardTrack": "/RewardTracks/Events/Rituals/ritualEagleStrike.json",
+		"ParentPaths": [
+			{
+				"Path": "Inventory/Armor/Themes/007-000-eagle-strike-0903655e.json",
+				"Type": "ArmorTheme"
+			}
+		],
+		"SortingMetadata": {
+			"categoryWeight": 0,
+			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 2,
+		"OriginalSeasonNumber": 2,
+		"Season": {
+			"status": "Test",
+			"value": "Season 2",
+			"translations": {}
+		}
+	}
+}

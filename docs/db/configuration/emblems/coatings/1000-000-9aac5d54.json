@@ -5,8 +5,8 @@
 	"CommonData": {
 		"Id": "1000-000-9aac5d54",
 		"HideUntilOwned": false,
-		"Title": "Optic Gaming",
-		"Description": "Brick by brick",
+		"Title": "Optic Allusion",
+		"Description": "0",
 		"FeatureFlag": true,
 		"ItemAvailability": "",
 		"DateReleased": {
@@ -20,15 +20,6 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 355,
 			"Height": 327,
@@ -55,27 +46,18 @@
 		"Quality": "Common",
 		"ManufacturerId": 0,
 		"Type": "None",
-		"ParentTheme": "",
 		"RewardTrack": "",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [],
 		"SortingMetadata": {
 			"categoryWeight": 0,
 			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 0,
+		"OriginalSeasonNumber": 2,
+		"Season": {
+			"status": "Frozen",
+			"value": "Season 2",
+			"translations": {}
 		}
 	}
 }

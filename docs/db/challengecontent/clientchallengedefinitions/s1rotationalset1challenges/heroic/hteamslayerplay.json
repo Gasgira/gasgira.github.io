@@ -1,0 +1,11 @@
+{
+	"Description": "Complete Team Slayer PvP Matches",
+	"Difficulty": "heroic",
+	"Category": "ModeBased",
+	"Reward": {
+		"InventoryItems": [],
+		"OperationExperience": 250
+	},
+	"ThresholdForSuccess": 5,
+	"Title": "Slayer Player"
+}

@@ -22,22 +22,13 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 320,
 			"Height": 320,
 			"Media": {
 				"MediaUrl": {
 					"AuthorityId": "",
-					"Path": "progression/Inventory/Ai/Colors/301-100-epic-kiwi-914693fc.png",
+					"Path": "progression/Inventory/AI/Colors/301-100-epic-kiwi-914693fc-SM.png",
 					"RetryPolicyId": "",
 					"TopicName": "",
 					"AcknowledgementTypeId": "NoAcknowledgement",
@@ -51,29 +42,13 @@
 				"FileName": ""
 			},
 			"MimeType": "image/png",
-			"FolderPath": "progression/Inventory/Ai/Colors",
-			"FileName": "301-100-epic-kiwi-914693fc.png"
+			"FolderPath": "progression/Inventory/AI/Colors",
+			"FileName": "301-100-epic-kiwi-914693fc-SM.png"
 		},
 		"Quality": "Epic",
-		"ManufacturerId": 23,
+		"ManufacturerId": 26,
 		"Type": "AiColor",
-		"ParentTheme": "Inventory/Ai/Themes/303-100-ai-theme-debb20e3.json",
 		"RewardTrack": "",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [
 			{
 				"Path": "Inventory/Ai/Themes/303-100-ai-theme-debb20e3.json",
@@ -83,6 +58,13 @@
 		"SortingMetadata": {
 			"categoryWeight": 0,
 			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 1,
+		"OriginalSeasonNumber": 1,
+		"Season": {
+			"status": "Test",
+			"value": "",
+			"translations": {}
 		}
 	}
 }

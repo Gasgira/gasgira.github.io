@@ -212,7 +212,7 @@ class ItemPanel extends Component {
 									class="badge-svg"
 									style=${{backgroundImage: `url(/seasons.svg#${this.state.item.seasonNumber ?? 'default'})`}}
 								></div>
-								<span>${this.state.item?.data?.CommonData?.Season ?? 'Season'}</span>
+								<span>Season ${this.state.item.seasonNumber}</span>
 							</div>
 							<div class="badge">
 								<div

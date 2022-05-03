@@ -9,8 +9,8 @@
 	},
 	"CommonData": {
 		"Id": "012-001-101c6e1d",
-		"HideUntilOwned": true,
-		"Title": "Beltane",
+		"HideUntilOwned": false,
+		"Title": "Beltane Flame",
 		"Description": "Light the bonfire of freedom.",
 		"FeatureFlag": true,
 		"ItemAvailability": "",
@@ -25,15 +25,6 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 320,
 			"Height": 320,
@@ -57,26 +48,10 @@
 			"FolderPath": "progression/Inventory/Armor/Visors",
 			"FileName": "012-001-101c6e1d-SM.png"
 		},
-		"Quality": "Epic",
-		"ManufacturerId": 23,
+		"Quality": "Rare",
+		"ManufacturerId": 26,
 		"Type": "ArmorVisor",
-		"ParentTheme": "",
 		"RewardTrack": "",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [
 			{
 				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
@@ -86,6 +61,13 @@
 		"SortingMetadata": {
 			"categoryWeight": 0,
 			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 2,
+		"OriginalSeasonNumber": 2,
+		"Season": {
+			"status": "Test",
+			"value": "Season 2",
+			"translations": {}
 		}
 	},
 	"TagId": 0

@@ -24,15 +24,6 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 358,
 			"Height": 358,
@@ -57,25 +48,9 @@
 			"FileName": "002-001-olympus-c25fbec5-SM.png"
 		},
 		"Quality": "Epic",
-		"ManufacturerId": 23,
+		"ManufacturerId": 26,
 		"Type": "ArmorCoating",
-		"ParentTheme": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
 		"RewardTrack": "",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [
 			{
 				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
@@ -86,7 +61,14 @@
 			"categoryWeight": 0,
 			"subCategoryWeight": 0
 		},
-		"CustomAvailability": "Available in Halo Infinite’s Campaign"
+		"SeasonNumber": 1,
+		"OriginalSeasonNumber": 1,
+		"CustomAvailability": "Available in Halo Infinite’s Campaign",
+		"Season": {
+			"status": "Test",
+			"value": "",
+			"translations": {}
+		}
 	},
 	"LightingScalarOverride": 0
 }

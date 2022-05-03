@@ -24,15 +24,6 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 358,
 			"Height": 358,
@@ -59,26 +50,18 @@
 		"Quality": "Epic",
 		"ManufacturerId": 0,
 		"Type": "ArmorEmblem",
-		"ParentTheme": "Inventory/Armor/Themes/007-001-reach-2564121f.json",
 		"RewardTrack": "",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [
 			{
 				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
+				"Type": "ArmorTheme"
+			},
+			{
+				"Path": "Inventory/Armor/Themes/007-000-lone-wolf-0903655e.json",
+				"Type": "ArmorTheme"
+			},
+			{
+				"Path": "Inventory/Armor/Themes/007-000-eagle-strike-0903655e.json",
 				"Type": "ArmorTheme"
 			},
 			{
@@ -94,7 +77,14 @@
 			"categoryWeight": 0,
 			"subCategoryWeight": 0
 		},
-		"CustomAvailability": "Available via Halo Infinite partners"
+		"SeasonNumber": 1,
+		"OriginalSeasonNumber": 1,
+		"CustomAvailability": "Available via Halo Infinite partners",
+		"Season": {
+			"status": "Test",
+			"value": "Season 2",
+			"translations": {}
+		}
 	},
 	"AvailableConfigurations": [
 		{

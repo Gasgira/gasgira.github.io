@@ -30,22 +30,13 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 320,
 			"Height": 320,
 			"Media": {
 				"MediaUrl": {
 					"AuthorityId": "",
-					"Path": "progression/Inventory/Armor/HelmetAttachments/004-001-olympus-f3050575-SM.png",
+					"Path": "progression/Inventory/Armor/HelmetAttachments/004-001-olympus-11d91e0c-SM.png",
 					"RetryPolicyId": "",
 					"TopicName": "",
 					"AcknowledgementTypeId": "NoAcknowledgement",
@@ -60,38 +51,28 @@
 			},
 			"MimeType": "image/png",
 			"FolderPath": "progression/Inventory/Armor/HelmetAttachments",
-			"FileName": "004-001-olympus-f3050575-SM.png"
+			"FileName": "004-001-olympus-11d91e0c-SM.png"
 		},
 		"Quality": "Epic",
-		"ManufacturerId": 10,
+		"ManufacturerId": 11,
 		"Type": "ArmorHelmetAttachment",
-		"ParentTheme": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
 		"RewardTrack": "RewardTracks/Events/Rituals/ritualOlympus.json",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [
 			{
 				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
 				"Type": "ArmorTheme"
+			},
+			{
+				"Path": "Inventory/Armor/Helmets/005-001-olympus-f30b69ba.json",
+				"Type": "ArmorHelmet"
 			}
 		],
 		"SortingMetadata": {
 			"categoryWeight": 0,
 			"subCategoryWeight": 0
 		},
+		"SeasonNumber": 1,
+		"OriginalSeasonNumber": 1,
 		"CustomAvailability": "Available in an upcoming Event"
 	}
 }

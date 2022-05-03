@@ -12,20 +12,20 @@
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-0f644de9.json"
 		},
 		{
-			"ConfigurationId": 1001724940,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-246a8ef0.json"
-		},
-		{
-			"ConfigurationId": -1897428325,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-8b52a92e.json"
-		},
-		{
 			"ConfigurationId": -1490538315,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-af628c41.json"
 		},
 		{
 			"ConfigurationId": -809699482,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-d9c135d6.json"
+		},
+		{
+			"ConfigurationId": -1897428325,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-8b52a92e.json"
+		},
+		{
+			"ConfigurationId": 1001724940,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-246a8ef0.json"
 		}
 	],
 	"CommonData": {
@@ -46,15 +46,6 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 358,
 			"Height": 358,
@@ -79,29 +70,20 @@
 			"FileName": "reach_wrath_emblem.png"
 		},
 		"Quality": "Epic",
-		"ManufacturerId": 23,
+		"ManufacturerId": 26,
 		"Type": "SpartanEmblem",
-		"ParentTheme": "",
 		"RewardTrack": "RewardTracks/Operations/battlepass-noblesacrifice.json",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [],
 		"SortingMetadata": {
 			"categoryWeight": 1,
 			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 1,
+		"OriginalSeasonNumber": 1,
+		"Season": {
+			"status": "Test",
+			"value": "",
+			"translations": {}
 		}
 	}
 }

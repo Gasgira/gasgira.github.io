@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "010-001-olympus-707a6bd4",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Myesel Ammo Pouch",
 		"Description": "The two smaller containers are made for UNSC pistol magazines, but can also hold small personal items, soil samples, and other esoterica.",
 		"FeatureFlag": true,
@@ -30,15 +30,6 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 320,
 			"Height": 320,
@@ -63,25 +54,9 @@
 			"FileName": "010-001-olympus-707a6bd4-SM.png"
 		},
 		"Quality": "Rare",
-		"ManufacturerId": 15,
+		"ManufacturerId": 16,
 		"Type": "ArmorHipAttachment",
-		"ParentTheme": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
 		"RewardTrack": "",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [
 			{
 				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
@@ -91,6 +66,8 @@
 		"SortingMetadata": {
 			"categoryWeight": 0,
 			"subCategoryWeight": 0
-		}
+		},
+		"SeasonNumber": 1,
+		"OriginalSeasonNumber": 1
 	}
 }

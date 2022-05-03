@@ -30,15 +30,6 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 320,
 			"Height": 320,
@@ -63,32 +54,16 @@
 			"FileName": "201-201-61f823bc-SM.png"
 		},
 		"Quality": "Legendary",
-		"ManufacturerId": 6,
+		"ManufacturerId": 0,
 		"Type": "WeaponCharm",
-		"ParentTheme": "Inventory/Weapon/Themes/207-200-olympus-aa30213b.json",
 		"RewardTrack": "",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [
 			{
-				"Path": "Inventory/Weapon/Themes/207-200-olympus-aa30213b.json",
+				"Path": "Inventory/Weapon/Themes/207-201-olympus-aa30213b.json",
 				"Type": "WeaponTheme"
 			},
 			{
-				"Path": "Inventory/Weapon/Themes/207-201-olympus-aa30213b.json",
+				"Path": "Inventory/Weapon/Themes/207-200-olympus-aa30213b.json",
 				"Type": "WeaponTheme"
 			},
 			{
@@ -119,6 +94,13 @@
 		"SortingMetadata": {
 			"categoryWeight": 0,
 			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 1,
+		"OriginalSeasonNumber": 1,
+		"Season": {
+			"status": "Test",
+			"value": "Season 1",
+			"translations": {}
 		}
 	}
 }

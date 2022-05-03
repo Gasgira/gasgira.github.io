@@ -1,0 +1,82 @@
+{
+	"TagId": -1,
+	"StyleId": {
+		"m_identifier": -1
+	},
+	"RegionData": [
+		{
+			"RegionId": {
+				"m_identifier": -1236654186
+			},
+			"PermutationId": {
+				"m_identifier": 376557734
+			},
+			"StyleIdOverride": {
+				"m_identifier": -1
+			}
+		}
+	],
+	"CommonData": {
+		"Id": "009-001-wlv-715f355a",
+		"HideUntilOwned": true,
+		"Title": "INTERPRES RECEIVER",
+		"Description": "A cunning combination of human engineering and Kig-Yar ingenuity which allows the user to access UEG, UNSC, Covenant, and Venezian datanets with near-perfect anonymity.",
+		"FeatureFlag": true,
+		"ItemAvailability": "",
+		"DateReleased": {
+			"ISO8601Date": ""
+		},
+		"AltName": "009-001-wlv-715f355a",
+		"IconStringId": {
+			"m_identifier": -1
+		},
+		"SpriteBitmap": 0,
+		"SpriteFrameIndex": 0,
+		"AltSpriteBitmap": 0,
+		"AltSpriteFrameIndex": 0,
+		"DisplayPath": {
+			"Width": 320,
+			"Height": 320,
+			"Media": {
+				"MediaUrl": {
+					"AuthorityId": "",
+					"Path": "Progression/Inventory/Armor/ShouldersRight/009-001-wlv-715f355a-SM.png",
+					"RetryPolicyId": "",
+					"TopicName": "",
+					"AcknowledgementTypeId": "NoAcknowledgement",
+					"AuthenticationLifetimeExtensionSupported": false,
+					"ClearanceAware": false
+				},
+				"MimeType": "",
+				"Caption": "",
+				"AlternateText": "",
+				"FolderPath": "",
+				"FileName": ""
+			},
+			"MimeType": "image/png",
+			"FolderPath": "Progression/Inventory/Armor/ShouldersRight",
+			"FileName": "009-001-wlv-715f355a-SM.png"
+		},
+		"Quality": "Epic",
+		"ManufacturerId": 18,
+		"Type": "ArmorRightShoulderPad",
+		"RewardTrack": "",
+		"ParentPaths": [
+			{
+				"Path": "Inventory/Armor/Themes/007-000-lone-wolf-0903655e.json",
+				"Type": "ArmorTheme"
+			}
+		],
+		"SortingMetadata": {
+			"categoryWeight": 0,
+			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 2,
+		"OriginalSeasonNumber": 2,
+		"Season": {
+			"status": "Test",
+			"value": "Season 2",
+			"translations": {}
+		}
+	}
+}

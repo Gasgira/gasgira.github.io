@@ -29,7 +29,7 @@
 	],
 	"CommonData": {
 		"Id": "003-001-olympus-bc4aff7d",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Mirus",
 		"Description": "Specifically made to exactly match the feel of standard UNSC Marine shooting gloves.",
 		"FeatureFlag": true,
@@ -45,15 +45,6 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 320,
 			"Height": 320,
@@ -78,25 +69,9 @@
 			"FileName": "003-001-olympus-bc4aff7d-SM.png"
 		},
 		"Quality": "Epic",
-		"ManufacturerId": 3,
+		"ManufacturerId": 4,
 		"Type": "ArmorGlove",
-		"ParentTheme": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
 		"RewardTrack": "",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [
 			{
 				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
@@ -106,6 +81,13 @@
 		"SortingMetadata": {
 			"categoryWeight": 0,
 			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 2,
+		"OriginalSeasonNumber": 2,
+		"Season": {
+			"status": "Test",
+			"value": "Season 2",
+			"translations": {}
 		}
 	}
 }

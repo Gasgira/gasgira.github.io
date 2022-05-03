@@ -1,0 +1,78 @@
+{
+	"TagId": 1863098532,
+	"MarkerLocation": {
+		"MarkerName": {
+			"m_identifier": -77897853
+		},
+		"VariantId": {
+			"m_identifier": 1120495519
+		}
+	},
+	"StyleId": {
+		"m_identifier": -1
+	},
+	"MeshIndex": 0,
+	"CommonData": {
+		"Id": "010-001-wlv-3cc71684",
+		"HideUntilOwned": true,
+		"Title": "TAC/REDSCAN",
+		"Description": "Highly classified until the final years of the Covenant War, modified REDSCAN devices are now used as a fallback option to interlink with alien machinery if the Spartan's tactical digital assistant is disabled.",
+		"FeatureFlag": true,
+		"ItemAvailability": "",
+		"DateReleased": {
+			"ISO8601Date": ""
+		},
+		"AltName": "010-001-wlv-3cc71684",
+		"IconStringId": {
+			"m_identifier": -1
+		},
+		"SpriteBitmap": 0,
+		"SpriteFrameIndex": 0,
+		"AltSpriteBitmap": 0,
+		"AltSpriteFrameIndex": 0,
+		"DisplayPath": {
+			"Width": 320,
+			"Height": 320,
+			"Media": {
+				"MediaUrl": {
+					"AuthorityId": "",
+					"Path": "progression/Inventory/Armor/HipAttachments/010-001-wlv-3cc71684-SM.png",
+					"RetryPolicyId": "",
+					"TopicName": "",
+					"AcknowledgementTypeId": "NoAcknowledgement",
+					"AuthenticationLifetimeExtensionSupported": false,
+					"ClearanceAware": false
+				},
+				"MimeType": "",
+				"Caption": "",
+				"AlternateText": "",
+				"FolderPath": "",
+				"FileName": ""
+			},
+			"MimeType": "image/png",
+			"FolderPath": "progression/Inventory/Armor/HipAttachments",
+			"FileName": "010-001-wlv-3cc71684-SM.png"
+		},
+		"Quality": "Legendary",
+		"ManufacturerId": 14,
+		"Type": "ArmorHipAttachment",
+		"RewardTrack": "",
+		"ParentPaths": [
+			{
+				"Path": "Inventory/Armor/Themes/007-000-lone-wolf-0903655e.json",
+				"Type": "ArmorTheme"
+			}
+		],
+		"SortingMetadata": {
+			"categoryWeight": 0,
+			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 2,
+		"OriginalSeasonNumber": 2,
+		"Season": {
+			"status": "Test",
+			"value": "Season 2",
+			"translations": {}
+		}
+	}
+}

@@ -1,0 +1,13 @@
+{
+	"Description": "Complete Last Spartan Standing PvP matches",
+	"Difficulty": "legendary",
+	"Category": "Ritual",
+	"Reward": {
+		"InventoryItems": [],
+		"OperationExperience": 400,
+		"EventProgress": 1
+	},
+	"IsUserEvent": true,
+	"ThresholdForSuccess": 6,
+	"Title": "Camber Recon"
+}

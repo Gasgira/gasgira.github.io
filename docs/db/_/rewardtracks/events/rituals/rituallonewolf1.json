@@ -1,0 +1,184 @@
+{
+	"TrackId": "ritualLoneWolf1",
+	"XpPerRank": 1,
+	"Ranks": [
+		{
+			"Rank": 1,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/Spartan/BackdropImages/103-000-ui-s2-backgro-843a3e65.json",
+						"Amount": 1,
+						"Type": "SpartanBackdropImage"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 2,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/Ai/Colors/301-100-rare-maize-ra-09415b0d.json",
+						"Amount": 1,
+						"Type": "AiColor"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 3,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/Spartan/ActionPoses/101-000-menu-stance-i-d0b5b35a.json",
+						"Amount": 1,
+						"Type": "SpartanActionPose"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 4,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/Weapon/Coatings/203-200-olympus-4639abfe.json",
+						"Amount": 1,
+						"Type": "WeaponCoating"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 5,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/Armor/Helmets/005-001-wlv-6844041b.json",
+						"Amount": 1,
+						"Type": "ArmorHelmet"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 6,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/Armor/ChestAttachments/001-001-wlv-d980fae9.json",
+						"Amount": 1,
+						"Type": "ArmorChestAttachment"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 7,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/Armor/KneePads/006-001-wlv-1821e976.json",
+						"Amount": 1,
+						"Type": "ArmorKneePad"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 8,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/Weapon/Coatings/203-205-olympus-4639abfe.json",
+						"Amount": 1,
+						"Type": "WeaponCoating"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 9,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/Armor/Visors/012-001-55599c7b.json",
+						"Amount": 1,
+						"Type": "ArmorVisor"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		},
+		{
+			"Rank": 10,
+			"FreeRewards": {
+				"InventoryRewards": [
+					{
+						"InventoryItemPath": "Inventory/Armor/HelmetAttachments/004-001-wlv-1fc50130.json",
+						"Amount": 1,
+						"Type": "ArmorHelmetAttachment"
+					}
+				],
+				"CurrencyRewards": []
+			},
+			"PaidRewards": {
+				"InventoryRewards": [],
+				"CurrencyRewards": []
+			}
+		}
+	],
+	"Name": "Interference",
+	"Description": "Pending",
+	"OperationNumber": 2,
+	"DateRange": "May 03rd, 2022 - May 16th, 2022",
+	"IsRitual": true,
+	"SummaryImagePath": "progression/RewardTracks/HIMPS2_UI_BP_PROGRESSION_CARD_346x1068.png",
+	"WeekNumber": null,
+	"BackgroundImagePath": ""
+}

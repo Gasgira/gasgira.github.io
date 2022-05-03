@@ -1,0 +1,13 @@
+{
+	"Description": "Complete Last Spartan Standing matches",
+	"Difficulty": "normal",
+	"Category": "Ritual",
+	"Reward": {
+		"InventoryItems": [],
+		"OperationExperience": 300,
+		"EventProgress": 1
+	},
+	"IsUserEvent": true,
+	"ThresholdForSuccess": 2,
+	"Title": "Camber Recon"
+}

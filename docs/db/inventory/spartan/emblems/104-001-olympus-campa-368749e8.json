@@ -8,16 +8,20 @@
 	},
 	"AvailableConfigurations": [
 		{
+			"ConfigurationId": -2070548530,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-02dd7bf3.json"
+		},
+		{
+			"ConfigurationId": -2127871006,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-0ea7bd90.json"
+		},
+		{
+			"ConfigurationId": 824330229,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-227adf2f.json"
+		},
+		{
 			"ConfigurationId": -252222833,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-259de8dd.json"
-		},
-		{
-			"ConfigurationId": 802727239,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-885e047a.json"
-		},
-		{
-			"ConfigurationId": -295351287,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-89343e01.json"
 		},
 		{
 			"ConfigurationId": 48718407,
@@ -28,20 +32,16 @@
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-48c2754f.json"
 		},
 		{
-			"ConfigurationId": 824330229,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-227adf2f.json"
+			"ConfigurationId": 802727239,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-885e047a.json"
 		},
 		{
-			"ConfigurationId": -2070548530,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-02dd7bf3.json"
+			"ConfigurationId": -295351287,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-89343e01.json"
 		},
 		{
 			"ConfigurationId": -1300612690,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-f37482bf.json"
-		},
-		{
-			"ConfigurationId": -2127871006,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-0ea7bd90.json"
 		}
 	],
 	"CommonData": {
@@ -62,15 +62,6 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 358,
 			"Height": 358,
@@ -95,30 +86,21 @@
 			"FileName": "olympus_campaign_banished_emblem.png"
 		},
 		"Quality": "Epic",
-		"ManufacturerId": 23,
+		"ManufacturerId": 0,
 		"Type": "SpartanEmblem",
-		"ParentTheme": "",
 		"RewardTrack": "",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [],
 		"SortingMetadata": {
 			"categoryWeight": 1,
 			"subCategoryWeight": 0
 		},
-		"CustomAvailability": "Available in Halo Infinite’s Campaign"
+		"SeasonNumber": 1,
+		"OriginalSeasonNumber": 1,
+		"CustomAvailability": "Available in Halo Infinite’s Campaign",
+		"Season": {
+			"status": "Test",
+			"value": "",
+			"translations": {}
+		}
 	}
 }

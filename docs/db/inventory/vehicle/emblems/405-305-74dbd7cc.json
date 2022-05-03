@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "405-305-74dbd7cc",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "FaZe Clan",
 		"Description": "Battle in style with the FaZe Clan player skin featuring the classic red camo with obsidian accents, and kit your arsenal for domination with the FaZe Clan Battle Rifle camo. Let's get this Halo party started! Suit up, gear up, FaZe Up!",
 		"FeatureFlag": true,
@@ -24,15 +24,6 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 1120,
 			"Height": 1120,
@@ -59,27 +50,18 @@
 		"Quality": "Epic",
 		"ManufacturerId": 0,
 		"Type": "VehicleEmblem",
-		"ParentTheme": "",
 		"RewardTrack": "",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [],
 		"SortingMetadata": {
 			"categoryWeight": 0,
 			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 1,
+		"OriginalSeasonNumber": 1,
+		"Season": {
+			"status": "Test",
+			"value": "",
+			"translations": {}
 		}
 	},
 	"AvailableConfigurations": [

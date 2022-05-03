@@ -15,8 +15,8 @@
 	"CommonData": {
 		"Id": "104-001-esports-optic-e261d24f",
 		"HideUntilOwned": false,
-		"Title": "Optic Gaming",
-		"Description": "Brick by brick",
+		"Title": "OpTic Gaming",
+		"Description": "Brick by Brick",
 		"FeatureFlag": true,
 		"ItemAvailability": "",
 		"DateReleased": {
@@ -30,22 +30,13 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
-			"Width": 887,
-			"Height": 576,
+			"Width": 896,
+			"Height": 585,
 			"Media": {
 				"MediaUrl": {
 					"AuthorityId": "",
-					"Path": "progression/Inventory/Spartan/Emblems/104-001-esports-optic-e261d24f.svg",
+					"Path": "progression/Inventory/Emblems/esports_optic_emblem.png",
 					"RetryPolicyId": "",
 					"TopicName": "",
 					"AcknowledgementTypeId": "NoAcknowledgement",
@@ -58,34 +49,25 @@
 				"FolderPath": "",
 				"FileName": ""
 			},
-			"MimeType": "image/svg+xml",
-			"FolderPath": "progression/Inventory/Spartan/Emblems",
-			"FileName": "104-001-esports-optic-e261d24f.svg"
+			"MimeType": "image/png",
+			"FolderPath": "progression/Inventory/Emblems",
+			"FileName": "esports_optic_emblem.png"
 		},
 		"Quality": "Epic",
 		"ManufacturerId": 0,
 		"Type": "SpartanEmblem",
-		"ParentTheme": "",
 		"RewardTrack": "",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [],
 		"SortingMetadata": {
-			"categoryWeight": 1,
+			"categoryWeight": 0,
 			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 2,
+		"OriginalSeasonNumber": 2,
+		"Season": {
+			"status": "Test",
+			"value": "Season 2",
+			"translations": {}
 		}
 	}
 }

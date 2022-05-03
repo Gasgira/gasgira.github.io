@@ -31,7 +31,7 @@
 		"Id": "006-001-reach-b6f526b9",
 		"HideUntilOwned": false,
 		"Title": "UA/Type HAZ",
-		"Description": "Supplemental leg armor.",
+		"Description": "Materials Group designed and manufactured a range of supplemental leg armor kits to meet the needs of Spartan field operatives.",
 		"FeatureFlag": true,
 		"ItemAvailability": "",
 		"DateReleased": {
@@ -45,15 +45,6 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 320,
 			"Height": 320,
@@ -78,25 +69,9 @@
 			"FileName": "006-001-reach-b6f526b9-SM.png"
 		},
 		"Quality": "Rare",
-		"ManufacturerId": 13,
+		"ManufacturerId": 14,
 		"Type": "ArmorKneePad",
-		"ParentTheme": "Inventory/Armor/Themes/007-001-reach-2564121f.json",
 		"RewardTrack": "RewardTracks/Operations/battlepass-noblesacrifice.json",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [
 			{
 				"Path": "Inventory/Armor/Themes/007-001-reach-2564121f.json",
@@ -106,6 +81,8 @@
 		"SortingMetadata": {
 			"categoryWeight": 0,
 			"subCategoryWeight": 0
-		}
+		},
+		"SeasonNumber": 1,
+		"OriginalSeasonNumber": 1
 	}
 }

@@ -24,15 +24,6 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 358,
 			"Height": 358,
@@ -57,25 +48,9 @@
 			"FileName": "popculture_dealerschoice_shreddin_emblem.png"
 		},
 		"Quality": "Epic",
-		"ManufacturerId": 6,
+		"ManufacturerId": 8,
 		"Type": "VehicleEmblem",
-		"ParentTheme": "Inventory/Vehicle/Themes/408-300-olympus-aa30213b.json",
 		"RewardTrack": "",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [
 			{
 				"Path": "Inventory/Vehicle/Themes/408-300-olympus-aa30213b.json",
@@ -109,16 +84,35 @@
 		"SortingMetadata": {
 			"categoryWeight": 0,
 			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 1,
+		"OriginalSeasonNumber": 1,
+		"Season": {
+			"status": "Test",
+			"value": "",
+			"translations": {}
 		}
 	},
 	"AvailableConfigurations": [
+		{
+			"ConfigurationId": 1715327144,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-65a30529.json"
+		},
+		{
+			"ConfigurationId": -831056095,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-4ae9bb14.json"
+		},
+		{
+			"ConfigurationId": 1540133627,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-cf1c5706.json"
+		},
 		{
 			"ConfigurationId": -283867365,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-1e0f228a.json"
 		},
 		{
-			"ConfigurationId": 824330229,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-227adf2f.json"
+			"ConfigurationId": -1698878342,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-8a3325cd.json"
 		},
 		{
 			"ConfigurationId": -1735535024,
@@ -129,20 +123,8 @@
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-485b05b7.json"
 		},
 		{
-			"ConfigurationId": -831056095,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-4ae9bb14.json"
-		},
-		{
-			"ConfigurationId": 1715327144,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-65a30529.json"
-		},
-		{
-			"ConfigurationId": -1698878342,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-8a3325cd.json"
-		},
-		{
-			"ConfigurationId": 1540133627,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-cf1c5706.json"
+			"ConfigurationId": 824330229,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-227adf2f.json"
 		}
 	]
 }

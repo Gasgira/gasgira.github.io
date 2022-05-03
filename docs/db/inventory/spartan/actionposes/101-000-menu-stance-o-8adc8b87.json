@@ -4,7 +4,7 @@
 	},
 	"CommonData": {
 		"Id": "101-000-menu-stance-o-8adc8b87",
-		"HideUntilOwned": false,
+		"HideUntilOwned": true,
 		"Title": "Expecting Trouble",
 		"Description": "Spartans don't make trouble, but it has a habit of finding them.",
 		"FeatureFlag": true,
@@ -20,15 +20,6 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 320,
 			"Height": 320,
@@ -53,29 +44,20 @@
 			"FileName": "101-000-menu-stance-o-8adc8b87-SM.png"
 		},
 		"Quality": "Rare",
-		"ManufacturerId": 23,
+		"ManufacturerId": 26,
 		"Type": "SpartanActionPose",
-		"ParentTheme": "",
 		"RewardTrack": "RewardTracks/Operations/battlepass-noblesacrifice.json",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [],
 		"SortingMetadata": {
 			"categoryWeight": 0,
 			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 2,
+		"OriginalSeasonNumber": 2,
+		"Season": {
+			"status": "Test",
+			"value": "Season 2",
+			"translations": {}
 		}
 	},
 	"WeaponTagId": -200795889

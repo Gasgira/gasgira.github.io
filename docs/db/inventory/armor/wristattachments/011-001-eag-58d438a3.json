@@ -1,0 +1,78 @@
+{
+	"TagId": 420382037,
+	"MarkerLocation": {
+		"MarkerName": {
+			"m_identifier": 779860403
+		},
+		"VariantId": {
+			"m_identifier": 1120495519
+		}
+	},
+	"StyleId": {
+		"m_identifier": -1
+	},
+	"MeshIndex": 0,
+	"CommonData": {
+		"Id": "011-001-eag-58d438a3",
+		"HideUntilOwned": false,
+		"Title": "KYTHERA BATTLEPAD",
+		"Description": "A military valet available on-demand, powered by one of the smallest electric reckoners ever made.",
+		"FeatureFlag": true,
+		"ItemAvailability": "",
+		"DateReleased": {
+			"ISO8601Date": ""
+		},
+		"AltName": "011-001-eag-58d438a3",
+		"IconStringId": {
+			"m_identifier": -1
+		},
+		"SpriteBitmap": 0,
+		"SpriteFrameIndex": 0,
+		"AltSpriteBitmap": 0,
+		"AltSpriteFrameIndex": 0,
+		"DisplayPath": {
+			"Width": 320,
+			"Height": 320,
+			"Media": {
+				"MediaUrl": {
+					"AuthorityId": "",
+					"Path": "progression/Inventory/Armor/WristAttachments/011-001-eag-58d438a3-SM.png",
+					"RetryPolicyId": "",
+					"TopicName": "",
+					"AcknowledgementTypeId": "NoAcknowledgement",
+					"AuthenticationLifetimeExtensionSupported": false,
+					"ClearanceAware": false
+				},
+				"MimeType": "",
+				"Caption": "",
+				"AlternateText": "",
+				"FolderPath": "",
+				"FileName": ""
+			},
+			"MimeType": "image/png",
+			"FolderPath": "progression/Inventory/Armor/WristAttachments",
+			"FileName": "011-001-eag-58d438a3-SM.png"
+		},
+		"Quality": "Legendary",
+		"ManufacturerId": 7,
+		"Type": "ArmorWristAttachment",
+		"RewardTrack": "/RewardTracks/Events/Rituals/ritualEagleStrike.json",
+		"ParentPaths": [
+			{
+				"Path": "Inventory/Armor/Themes/007-000-eagle-strike-0903655e.json",
+				"Type": "ArmorTheme"
+			}
+		],
+		"SortingMetadata": {
+			"categoryWeight": 0,
+			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 2,
+		"OriginalSeasonNumber": 2,
+		"Season": {
+			"status": "Test",
+			"value": "Season 2",
+			"translations": {}
+		}
+	}
+}

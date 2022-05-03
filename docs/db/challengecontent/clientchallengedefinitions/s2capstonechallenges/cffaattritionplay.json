@@ -1,0 +1,18 @@
+{
+	"Description": "Complete Last Spartan Standing PvP matches",
+	"Difficulty": "mythic",
+	"Category": "Capstone",
+	"Reward": {
+		"InventoryItems": [],
+		"OperationExperience": 400,
+		"InventoryRewards": [
+			{
+				"InventoryItemPath": "Inventory/Spartan/ActionPoses/101-000-menu-stance-l-9dbddb33.json",
+				"Amount": 1,
+				"Type": "SpartanActionPose"
+			}
+		]
+	},
+	"ThresholdForSuccess": 3,
+	"Title": "Camber Surveillance"
+}

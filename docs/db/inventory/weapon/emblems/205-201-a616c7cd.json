@@ -24,15 +24,6 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 358,
 			"Height": 358,
@@ -59,65 +50,31 @@
 		"Quality": "Epic",
 		"ManufacturerId": 0,
 		"Type": "WeaponEmblem",
-		"ParentTheme": "Inventory/Weapon/Themes/207-200-olympus-aa30213b.json",
 		"RewardTrack": "",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [
-			{
-				"Path": "Inventory/Weapon/Themes/207-200-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
 			{
 				"Path": "Inventory/Weapon/Themes/207-201-olympus-aa30213b.json",
 				"Type": "WeaponTheme"
 			},
 			{
-				"Path": "Inventory/Weapon/Themes/207-202-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-203-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-204-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-205-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-206-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
-				"Path": "Inventory/Weapon/Themes/207-207-olympus-aa30213b.json",
-				"Type": "WeaponTheme"
-			},
-			{
 				"Path": "Inventory/Weapon/Themes/207-000-eunited-24fe39cf.json",
+				"Type": "WeaponTheme"
+			},
+			{
+				"Path": "Inventory/Weapon/Themes/207-000-eunited-ccf87f8c.json",
+				"Type": "WeaponTheme"
+			},
+			{
+				"Path": "Inventory/Weapon/Themes/207-000-eunited-efcde9a6.json",
 				"Type": "WeaponTheme"
 			}
 		],
 		"SortingMetadata": {
 			"categoryWeight": 0,
 			"subCategoryWeight": 0
-		}
+		},
+		"SeasonNumber": 1,
+		"OriginalSeasonNumber": 1
 	},
 	"AvailableConfigurations": [
 		{

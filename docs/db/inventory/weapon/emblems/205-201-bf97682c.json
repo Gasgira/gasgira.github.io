@@ -24,15 +24,6 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 901,
 			"Height": 901,
@@ -57,32 +48,16 @@
 			"FileName": "Samurai_Kabuto_emblem.png"
 		},
 		"Quality": "Epic",
-		"ManufacturerId": 8,
+		"ManufacturerId": 24,
 		"Type": "WeaponEmblem",
-		"ParentTheme": "",
 		"RewardTrack": "",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [
 			{
-				"Path": "Inventory/Weapon/Themes/207-200-olympus-aa30213b.json",
+				"Path": "Inventory/Weapon/Themes/207-201-olympus-aa30213b.json",
 				"Type": "WeaponTheme"
 			},
 			{
-				"Path": "Inventory/Weapon/Themes/207-201-olympus-aa30213b.json",
+				"Path": "Inventory/Weapon/Themes/207-200-olympus-aa30213b.json",
 				"Type": "WeaponTheme"
 			},
 			{
@@ -113,16 +88,23 @@
 		"SortingMetadata": {
 			"categoryWeight": 0,
 			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 1,
+		"OriginalSeasonNumber": 1,
+		"Season": {
+			"status": "Test",
+			"value": "",
+			"translations": {}
 		}
 	},
 	"AvailableConfigurations": [
 		{
-			"ConfigurationId": 863318506,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-0eac22ce.json"
+			"ConfigurationId": 1939033603,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-e39b77e0.json"
 		},
 		{
-			"ConfigurationId": 824330229,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-227adf2f.json"
+			"ConfigurationId": 863318506,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-0eac22ce.json"
 		},
 		{
 			"ConfigurationId": 802727239,
@@ -133,8 +115,8 @@
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-ad8a2b03.json"
 		},
 		{
-			"ConfigurationId": 1939033603,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-e39b77e0.json"
+			"ConfigurationId": 824330229,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-227adf2f.json"
 		}
 	]
 }

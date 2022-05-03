@@ -1,0 +1,74 @@
+{
+	"VisorId": {
+		"m_identifier": -525734060
+	},
+	"Roughness": -1,
+	"Emissive": 1,
+	"ColorVariant": {
+		"m_identifier": -1251751358
+	},
+	"CommonData": {
+		"Id": "012-001-da577901",
+		"HideUntilOwned": true,
+		"Title": "Parasite Ichor",
+		"Description": "Nectar of dead gods.",
+		"FeatureFlag": true,
+		"ItemAvailability": "",
+		"DateReleased": {
+			"ISO8601Date": ""
+		},
+		"AltName": "parasite",
+		"IconStringId": {
+			"m_identifier": -1
+		},
+		"SpriteBitmap": 0,
+		"SpriteFrameIndex": 0,
+		"AltSpriteBitmap": 0,
+		"AltSpriteFrameIndex": 0,
+		"DisplayPath": {
+			"Width": 320,
+			"Height": 320,
+			"Media": {
+				"MediaUrl": {
+					"AuthorityId": "",
+					"Path": "progression/Inventory/Armor/Visors/012-001-da577901-SM.png",
+					"RetryPolicyId": "",
+					"TopicName": "",
+					"AcknowledgementTypeId": "NoAcknowledgement",
+					"AuthenticationLifetimeExtensionSupported": false,
+					"ClearanceAware": false
+				},
+				"MimeType": "",
+				"Caption": "",
+				"AlternateText": "",
+				"FolderPath": "",
+				"FileName": ""
+			},
+			"MimeType": "image/png",
+			"FolderPath": "progression/Inventory/Armor/Visors",
+			"FileName": "012-001-da577901-SM.png"
+		},
+		"Quality": "Legendary",
+		"ManufacturerId": 0,
+		"Type": "ArmorVisor",
+		"RewardTrack": "",
+		"ParentPaths": [
+			{
+				"Path": "Inventory/Armor/Themes/007-001-olympus-c13d0b38.json",
+				"Type": "ArmorTheme"
+			}
+		],
+		"SortingMetadata": {
+			"categoryWeight": 0,
+			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 2,
+		"OriginalSeasonNumber": 2,
+		"Season": {
+			"status": "Test",
+			"value": "Season 2",
+			"translations": {}
+		}
+	},
+	"TagId": 0
+}

@@ -18,7 +18,7 @@
 	],
 	"CommonData": {
 		"Id": "008-001-reach-2564121f",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "SAP/MUT",
 		"Description": "Multi-Utility Threat auxiliary armor.",
 		"FeatureFlag": true,
@@ -34,22 +34,13 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 320,
 			"Height": 320,
 			"Media": {
 				"MediaUrl": {
 					"AuthorityId": "",
-					"Path": "progression/Default/default.png",
+					"Path": "progression/Inventory/Armor/ShouldersLeft/008-001-reach-2564121f-SM.png",
 					"RetryPolicyId": "",
 					"TopicName": "",
 					"AcknowledgementTypeId": "NoAcknowledgement",
@@ -63,33 +54,24 @@
 				"FileName": ""
 			},
 			"MimeType": "image/png",
-			"FolderPath": "progression/Default",
-			"FileName": "default.png"
+			"FolderPath": "progression/Inventory/Armor/ShouldersLeft",
+			"FileName": "008-001-reach-2564121f-SM.png"
 		},
 		"Quality": "Rare",
-		"ManufacturerId": 13,
+		"ManufacturerId": 14,
 		"Type": "ArmorLeftShoulderPad",
-		"ParentTheme": "Inventory/Armor/Themes/007-001-reach-2564121f.json",
 		"RewardTrack": "",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 2",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [],
 		"SortingMetadata": {
 			"categoryWeight": 0,
 			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 1,
+		"OriginalSeasonNumber": 1,
+		"Season": {
+			"status": "Test",
+			"value": "Season 1",
+			"translations": {}
 		}
 	}
 }

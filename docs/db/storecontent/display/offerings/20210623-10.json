@@ -7,5 +7,6 @@
 	"FlairText": "",
 	"FlairIconPath": null,
 	"FlairBackgroundPath": null,
-	"ObjectImagePath": ""
+	"ObjectImagePath": "",
+	"SeasonNumber": 1
 }

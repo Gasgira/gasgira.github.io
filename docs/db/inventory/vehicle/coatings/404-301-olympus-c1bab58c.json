@@ -1,0 +1,73 @@
+{
+	"TagId": 0,
+	"StyleId": {
+		"m_identifier": -42099145
+	},
+	"RegionPartId": {
+		"m_identifier": -1
+	},
+	"CommonData": {
+		"Id": "404-301-olympus-c1bab58c",
+		"HideUntilOwned": false,
+		"Title": "Carbon Tundra",
+		"Description": "Nothing friendly is moving in those wastes.",
+		"FeatureFlag": true,
+		"ItemAvailability": "",
+		"DateReleased": {
+			"ISO8601Date": ""
+		},
+		"AltName": "eag_mil_carbon_tundra",
+		"IconStringId": {
+			"m_identifier": -1
+		},
+		"SpriteBitmap": 0,
+		"SpriteFrameIndex": 0,
+		"AltSpriteBitmap": 0,
+		"AltSpriteFrameIndex": 0,
+		"DisplayPath": {
+			"Width": 320,
+			"Height": 320,
+			"Media": {
+				"MediaUrl": {
+					"AuthorityId": "",
+					"Path": "Progression/Inventory/Vehicle/Coatings/404-301-olympus-c1bab58c-SM.png",
+					"RetryPolicyId": "",
+					"TopicName": "",
+					"AcknowledgementTypeId": "NoAcknowledgement",
+					"AuthenticationLifetimeExtensionSupported": false,
+					"ClearanceAware": false
+				},
+				"MimeType": "",
+				"Caption": "",
+				"AlternateText": "",
+				"FolderPath": "",
+				"FileName": ""
+			},
+			"MimeType": "image/png",
+			"FolderPath": "Progression/Inventory/Vehicle/Coatings",
+			"FileName": "404-301-olympus-c1bab58c-SM.png"
+		},
+		"Quality": "Rare",
+		"ManufacturerId": 7,
+		"Type": "VehicleCoating",
+		"RewardTrack": "/RewardTracks/Events/Rituals/ritualEagleStrike.json",
+		"ParentPaths": [
+			{
+				"Path": "Inventory/Vehicle/Themes/408-301-olympus-aa30213b.json",
+				"Type": "VehicleTheme"
+			}
+		],
+		"SortingMetadata": {
+			"categoryWeight": 0,
+			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 2,
+		"OriginalSeasonNumber": 2,
+		"Season": {
+			"status": "Test",
+			"value": "Season 2",
+			"translations": {}
+		}
+	},
+	"LightingScalarOverride": 0
+}

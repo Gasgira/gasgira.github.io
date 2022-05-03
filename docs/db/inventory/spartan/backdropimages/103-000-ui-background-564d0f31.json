@@ -21,7 +21,7 @@
 	},
 	"CommonData": {
 		"Id": "103-000-UI-Background-564d0f31",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Mantle",
 		"Description": "The Mantle of Responsibility shelters all.",
 		"FeatureFlag": true,
@@ -37,15 +37,6 @@
 		"SpriteFrameIndex": 0,
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
-		"FocusMarker": {
-			"m_identifier": -1
-		},
-		"FocalDistance": 0,
-		"FocusMarkerOffset": 0,
-		"DOFType": "None",
-		"DOFFocalLength": 0,
-		"DOFFocalDistance": 0,
-		"DOFFStop": 0,
 		"DisplayPath": {
 			"Width": 3840,
 			"Height": 2160,
@@ -69,30 +60,21 @@
 			"FolderPath": "progression/Backgrounds",
 			"FileName": "UI_Background_Mantle.png"
 		},
-		"Quality": "Rare",
+		"Quality": "Epic",
 		"ManufacturerId": 0,
 		"Type": "SpartanBackdropImage",
-		"ParentTheme": "",
 		"RewardTrack": "",
-		"CameraPositions": [],
-		"CameraOffset": 0,
-		"CameraFOV": 0,
-		"CameraTransition": 0,
-		"Orientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
-		"Season": "Season 1",
-		"FocusedObjectOrientation": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-		},
 		"ParentPaths": [],
 		"SortingMetadata": {
 			"categoryWeight": 0,
 			"subCategoryWeight": 0
+		},
+		"SeasonNumber": 2,
+		"OriginalSeasonNumber": 2,
+		"Season": {
+			"status": "Test",
+			"value": "Season 2",
+			"translations": {}
 		}
 	}
 }
