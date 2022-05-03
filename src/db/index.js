@@ -335,7 +335,7 @@ class Database {
 				name: 'XP Boost'
 			}],
 			['currency/currencies/cr.json', {
-				mediaPath: 'progression/Default/default.png',
+				mediaPath: 'progression/currencies/credit_coin-sm.png',
 				name: 'cR'
 			}]
 		]))
