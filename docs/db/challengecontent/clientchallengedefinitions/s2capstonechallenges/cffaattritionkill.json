@@ -1,0 +1,18 @@
+{
+	"Description": "Kill Enemy Spartans in Last Spartan Standing PvP",
+	"Difficulty": "mythic",
+	"Category": "Capstone",
+	"Reward": {
+		"InventoryItems": [],
+		"OperationExperience": 400,
+		"InventoryRewards": [
+			{
+				"InventoryItemPath": "Inventory/Weapon/Coatings/203-201-olympus-4c5a20c1.json",
+				"Amount": 1,
+				"Type": "WeaponCoating"
+			}
+		]
+	},
+	"ThresholdForSuccess": 30,
+	"Title": "Under the Gaze of IRATUS"
+}

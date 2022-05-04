@@ -1,0 +1,18 @@
+{
+	"Description": "Complete Matches of Rumble Pit",
+	"Difficulty": "mythic",
+	"Category": "Capstone",
+	"Reward": {
+		"OperationExperience": 400,
+		"InventoryItems": [],
+		"InventoryRewards": [
+			{
+				"InventoryItemPath": "inventory/vehicle/coatings/404-300-olympus-0f25fbdc.json",
+				"Amount": 1,
+				"Type": "VehicleCoating"
+			}
+		]
+	},
+	"ThresholdForSuccess": 3,
+	"Title": "Pit Fighter"
+}

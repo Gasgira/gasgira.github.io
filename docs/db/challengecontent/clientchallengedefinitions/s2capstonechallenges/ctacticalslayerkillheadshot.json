@@ -1,0 +1,18 @@
+{
+	"Description": "Kill Enemy Spartans with Headshots in Tactical Slayer",
+	"Difficulty": "mythic",
+	"Category": "Capstone",
+	"Reward": {
+		"OperationExperience": 400,
+		"InventoryItems": [],
+		"InventoryRewards": [
+			{
+				"InventoryItemPath": "inventory/Armor/HelmetAttachments/004-001-wlv-6ba22661.json",
+				"Amount": 1,
+				"Type": "ArmorHelmetAttachment"
+			}
+		]
+	},
+	"ThresholdForSuccess": 30,
+	"Title": "Right Between the Eyes"
+}

@@ -31,19 +31,21 @@ class CoreViewer extends Component {
 		if (this?._init) return;
 		this._init = true;
 
-		const armor = [...db.getItemIDsByType('ArmorCore')]
-			.sort() // hack... mk7 id puts it ahead of mk5
+		// HACK: MK 7 ID statically first
+		const armor = new Set(['017-001-olympus-c13d0b38', ...db.getItemIDsByType('ArmorCore')])
 			.forEach(id => {
 				const core = new Core(db.getItemPathByID(id));
 				this.cores.push(core);
 				this.coreTypes.get('ArmorCore').push(core);
 			});
+
 		db.getItemIDsByType('WeaponCore')
 			.forEach(id => {
 				const core = new Core(db.getItemPathByID(id));
 				this.cores.push(core);
 				this.coreTypes.get('WeaponCore').push(core);
 			});
+
 		db.getItemIDsByType('VehicleCore')
 			.forEach(id => {
 				const core = new Core(db.getItemPathByID(id));

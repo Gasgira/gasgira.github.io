@@ -1,0 +1,12 @@
+{
+	"Title": "Mechanized Support",
+	"Description": "These squads will not be forgotten.",
+	"Quality": "Rare",
+	"WidthHint": 2,
+	"HeightHint": 1,
+	"FlairText": "",
+	"FlairIconPath": null,
+	"FlairBackgroundPath": null,
+	"ObjectImagePath": "progression/StoreContent/Offerings/mechanized-support.png",
+	"HasFlair": false
+}

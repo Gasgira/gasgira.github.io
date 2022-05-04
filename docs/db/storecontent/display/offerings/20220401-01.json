@@ -1,0 +1,12 @@
+{
+	"Title": "Halite Arms",
+	"Description": "Their big guns may have gone silent, but the arms lockers on derelict warships are still a rich prize.",
+	"Quality": "Epic",
+	"WidthHint": 2,
+	"HeightHint": 1,
+	"FlairText": "Daily",
+	"FlairIconPath": "progression/StoreContent/FlairIcons/RitualIconFlair.png",
+	"FlairBackgroundPath": "progression/StoreContent/FlairBackgrounds/RitualBackgroundFlair.png",
+	"ObjectImagePath": "",
+	"HasFlair": true
+}

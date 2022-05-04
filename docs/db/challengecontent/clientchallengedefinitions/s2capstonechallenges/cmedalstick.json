@@ -1,0 +1,18 @@
+{
+	"Description": "Kill an Enemy Spartan with a Stuck Grenade",
+	"Difficulty": "mythic",
+	"Category": "Capstone",
+	"Reward": {
+		"OperationExperience": 400,
+		"InventoryItems": [],
+		"InventoryRewards": [
+			{
+				"InventoryItemPath": "inventory/Armor/Coatings/002-001-olympus-70b3bac0.json",
+				"Amount": 1,
+				"Type": "ArmorCoating"
+			}
+		]
+	},
+	"ThresholdForSuccess": 1,
+	"Title": "Tag, You're Dead"
+}

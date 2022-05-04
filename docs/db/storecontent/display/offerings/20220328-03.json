@@ -1,0 +1,12 @@
+{
+	"Title": "Ultramarine Brick",
+	"Description": "Painting victory by the numbers.",
+	"Quality": "Rare",
+	"WidthHint": 2,
+	"HeightHint": 1,
+	"FlairText": "Daily",
+	"FlairIconPath": "progression/StoreContent/FlairIcons/RitualIconFlair.png",
+	"FlairBackgroundPath": "progression/StoreContent/FlairBackgrounds/RitualBackgroundFlair.png",
+	"ObjectImagePath": "",
+	"HasFlair": true
+}

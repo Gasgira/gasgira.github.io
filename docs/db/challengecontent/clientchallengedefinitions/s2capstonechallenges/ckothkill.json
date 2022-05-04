@@ -1,0 +1,18 @@
+{
+	"Description": "Kill Enemy Spartans in King of the Hill",
+	"Difficulty": "mythic",
+	"Category": "Capstone",
+	"Reward": {
+		"OperationExperience": 400,
+		"InventoryItems": [],
+		"InventoryRewards": [
+			{
+				"InventoryItemPath": "inventory/Armor/Visors/012-001-d372cb1b.json",
+				"Amount": 1,
+				"Type": "ArmorVisor"
+			}
+		]
+	},
+	"ThresholdForSuccess": 20,
+	"Title": "Regicide"
+}

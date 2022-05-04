@@ -1,0 +1,18 @@
+{
+	"Description": "Complete Matches of King of the Hill",
+	"Difficulty": "mythic",
+	"Category": "Capstone",
+	"Reward": {
+		"OperationExperience": 400,
+		"InventoryItems": [],
+		"InventoryRewards": [
+			{
+				"InventoryItemPath": "inventory/Armor/Visors/012-001-60c9bbf4.json",
+				"Amount": 1,
+				"Type": "ArmorVisor"
+			}
+		]
+	},
+	"ThresholdForSuccess": 3,
+	"Title": "For King and Country"
+}

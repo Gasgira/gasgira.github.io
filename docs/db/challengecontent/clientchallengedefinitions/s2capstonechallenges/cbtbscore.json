@@ -1,0 +1,18 @@
+{
+	"Description": "Earn Cumulative Personal Score in Big Team Battle",
+	"Difficulty": "mythic",
+	"Category": "Capstone",
+	"Reward": {
+		"OperationExperience": 400,
+		"InventoryItems": [],
+		"InventoryRewards": [
+			{
+				"InventoryItemPath": "inventory/Armor/Gloves/003-001-olympus-8e7c9dff.json",
+				"Amount": 1,
+				"Type": "ArmorGlove"
+			}
+		]
+	},
+	"ThresholdForSuccess": 5000,
+	"Title": "Go Big or Go Home"
+}

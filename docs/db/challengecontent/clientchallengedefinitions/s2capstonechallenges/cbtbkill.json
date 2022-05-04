@@ -1,0 +1,18 @@
+{
+	"Description": "Kill Enemy Spartains in Big Team Battle",
+	"Difficulty": "mythic",
+	"Category": "Capstone",
+	"Reward": {
+		"OperationExperience": 400,
+		"InventoryItems": [],
+		"InventoryRewards": [
+			{
+				"InventoryItemPath": "inventory/Armor/hipattachments/010-001-olympus-938eb21f.json",
+				"Amount": 1,
+				"Type": "ArmorHipAttachment"
+			}
+		]
+	},
+	"ThresholdForSuccess": 30,
+	"Title": "Kill or Be Killed"
+}

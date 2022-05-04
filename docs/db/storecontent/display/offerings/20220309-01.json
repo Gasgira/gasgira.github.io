@@ -1,0 +1,12 @@
+{
+	"Title": "Sky Marshal",
+	"Description": "Gear for an astro rocket-propelled hero.",
+	"Quality": "Legendary",
+	"WidthHint": 2,
+	"HeightHint": 2,
+	"FlairText": "",
+	"FlairIconPath": null,
+	"FlairBackgroundPath": null,
+	"ObjectImagePath": "progression/StoreContent/Offerings/sky_marshal.png",
+	"HasFlair": null
+}

@@ -1,0 +1,18 @@
+{
+	"Description": "Earn any Killing Spree Medal",
+	"Difficulty": "mythic",
+	"Category": "Capstone",
+	"Reward": {
+		"OperationExperience": 400,
+		"InventoryItems": [],
+		"InventoryRewards": [
+			{
+				"InventoryItemPath": "inventory/Armor/Coatings/002-001-olympus-f40912ad.json",
+				"Amount": 1,
+				"Type": "ArmorCoating"
+			}
+		]
+	},
+	"ThresholdForSuccess": 1,
+	"Title": "Juggernaut"
+}

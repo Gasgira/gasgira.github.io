@@ -179,6 +179,12 @@ export class Item extends Component {
 				case 'Inventory/Armor/Themes/007-001-samurai-55badb14.json':
 					svgId = 'YOROI'
 					break;
+				case 'Inventory/Armor/Themes/007-000-eagle-strike-0903655e.json':
+					svgId = 'ENTRENCHED'
+					break;
+				case 'Inventory/Armor/Themes/007-000-lone-wolf-0903655e.json':
+					svgId = 'RAKSHASA'
+					break;
 			
 				default:
 					break;

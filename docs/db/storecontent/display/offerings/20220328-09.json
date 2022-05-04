@@ -1,0 +1,12 @@
+{
+	"Title": "Nevergreen Oil",
+	"Description": "The UNSC was not above using scorched-earth tactics of its own.",
+	"Quality": "Rare",
+	"WidthHint": 2,
+	"HeightHint": 1,
+	"FlairText": "Daily",
+	"FlairIconPath": "progression/StoreContent/FlairIcons/RitualIconFlair.png",
+	"FlairBackgroundPath": "progression/StoreContent/FlairBackgrounds/RitualBackgroundFlair.png",
+	"ObjectImagePath": "progression/StoreContent/Offerings/nevergreen_oil.png",
+	"HasFlair": true
+}
