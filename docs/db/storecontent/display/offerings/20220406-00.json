@@ -1,0 +1,12 @@
+{
+	"Title": "Timeless Gravel",
+	"Description": "Grist for the mill.",
+	"Quality": "Legendary",
+	"WidthHint": 2,
+	"HeightHint": 2,
+	"FlairText": "",
+	"FlairIconPath": null,
+	"FlairBackgroundPath": null,
+	"ObjectImagePath": "progression/StoreContent/Offerings/timeless-gravel.png",
+	"HasFlair": null
+}

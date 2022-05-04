@@ -1,5 +1,5 @@
 {
-	"date": "2022-05-03T00:00:00.000Z",
+	"date": "2022-05-04T00:00:00.000Z",
 	"types": [
 		"ArmorCore",
 		"ArmorTheme",
@@ -47,14 +47,14 @@
 	"tags": [
 		"award",
 		"battlepass",
+		"campaign",
 		"capstone",
+		"default",
 		"drop",
 		"event",
 		"memento",
 		"season",
-		"store",
-		"campaign",
-		"default"
+		"store"
 	],
 	"manifest": [
 		[
@@ -1272,6 +1272,426 @@
 				"type": "meta",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220404-00",
+			{
+				"path": "storecontent/display/offerings/20220404-00.json",
+				"name": "20220404-00",
+				"title": "20220404-00",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220404-01",
+			{
+				"path": "storecontent/display/offerings/20220404-01.json",
+				"name": "20220404-01",
+				"title": "20220404-01",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220404-02",
+			{
+				"path": "storecontent/display/offerings/20220404-02.json",
+				"name": "20220404-02",
+				"title": "20220404-02",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220404-03",
+			{
+				"path": "storecontent/display/offerings/20220404-03.json",
+				"name": "20220404-03",
+				"title": "20220404-03",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220404-04",
+			{
+				"path": "storecontent/display/offerings/20220404-04.json",
+				"name": "20220404-04",
+				"title": "20220404-04",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220404-05",
+			{
+				"path": "storecontent/display/offerings/20220404-05.json",
+				"name": "20220404-05",
+				"title": "20220404-05",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220404-06",
+			{
+				"path": "storecontent/display/offerings/20220404-06.json",
+				"name": "20220404-06",
+				"title": "20220404-06",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220404-07",
+			{
+				"path": "storecontent/display/offerings/20220404-07.json",
+				"name": "20220404-07",
+				"title": "20220404-07",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220404-08",
+			{
+				"path": "storecontent/display/offerings/20220404-08.json",
+				"name": "20220404-08",
+				"title": "20220404-08",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220404-09",
+			{
+				"path": "storecontent/display/offerings/20220404-09.json",
+				"name": "20220404-09",
+				"title": "20220404-09",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220404-10",
+			{
+				"path": "storecontent/display/offerings/20220404-10.json",
+				"name": "20220404-10",
+				"title": "20220404-10",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220404-11",
+			{
+				"path": "storecontent/display/offerings/20220404-11.json",
+				"name": "20220404-11",
+				"title": "20220404-11",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220406-00",
+			{
+				"path": "storecontent/display/offerings/20220406-00.json",
+				"name": "20220406-00",
+				"title": "20220406-00",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220408-00",
+			{
+				"path": "storecontent/display/offerings/20220408-00.json",
+				"name": "20220408-00",
+				"title": "20220408-00",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220408-01",
+			{
+				"path": "storecontent/display/offerings/20220408-01.json",
+				"name": "20220408-01",
+				"title": "20220408-01",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220408-02",
+			{
+				"path": "storecontent/display/offerings/20220408-02.json",
+				"name": "20220408-02",
+				"title": "20220408-02",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220408-03",
+			{
+				"path": "storecontent/display/offerings/20220408-03.json",
+				"name": "20220408-03",
+				"title": "20220408-03",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220408-04",
+			{
+				"path": "storecontent/display/offerings/20220408-04.json",
+				"name": "20220408-04",
+				"title": "20220408-04",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220408-05",
+			{
+				"path": "storecontent/display/offerings/20220408-05.json",
+				"name": "20220408-05",
+				"title": "20220408-05",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220408-06",
+			{
+				"path": "storecontent/display/offerings/20220408-06.json",
+				"name": "20220408-06",
+				"title": "20220408-06",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220408-07",
+			{
+				"path": "storecontent/display/offerings/20220408-07.json",
+				"name": "20220408-07",
+				"title": "20220408-07",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220408-08",
+			{
+				"path": "storecontent/display/offerings/20220408-08.json",
+				"name": "20220408-08",
+				"title": "20220408-08",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220408-09",
+			{
+				"path": "storecontent/display/offerings/20220408-09.json",
+				"name": "20220408-09",
+				"title": "20220408-09",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220408-10",
+			{
+				"path": "storecontent/display/offerings/20220408-10.json",
+				"name": "20220408-10",
+				"title": "20220408-10",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220408-11",
+			{
+				"path": "storecontent/display/offerings/20220408-11.json",
+				"name": "20220408-11",
+				"title": "20220408-11",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220408-12",
+			{
+				"path": "storecontent/display/offerings/20220408-12.json",
+				"name": "20220408-12",
+				"title": "20220408-12",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220411-00",
+			{
+				"path": "storecontent/display/offerings/20220411-00.json",
+				"name": "20220411-00",
+				"title": "20220411-00",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220411-01",
+			{
+				"path": "storecontent/display/offerings/20220411-01.json",
+				"name": "20220411-01",
+				"title": "20220411-01",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220411-02",
+			{
+				"path": "storecontent/display/offerings/20220411-02.json",
+				"name": "20220411-02",
+				"title": "20220411-02",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220411-03",
+			{
+				"path": "storecontent/display/offerings/20220411-03.json",
+				"name": "20220411-03",
+				"title": "20220411-03",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220411-04",
+			{
+				"path": "storecontent/display/offerings/20220411-04.json",
+				"name": "20220411-04",
+				"title": "20220411-04",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220418-00",
+			{
+				"path": "storecontent/display/offerings/20220418-00.json",
+				"name": "20220418-00",
+				"title": "20220418-00",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220418-01",
+			{
+				"path": "storecontent/display/offerings/20220418-01.json",
+				"name": "20220418-01",
+				"title": "20220418-01",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220418-02",
+			{
+				"path": "storecontent/display/offerings/20220418-02.json",
+				"name": "20220418-02",
+				"title": "20220418-02",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"20220418-03",
+			{
+				"path": "storecontent/display/offerings/20220418-03.json",
+				"name": "20220418-03",
+				"title": "20220418-03",
+				"type": "meta",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
 				]
 			}
 		],
@@ -3539,6 +3959,24 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
 				]
+			}
+		],
+		[
+			"offering-20220224-05",
+			{
+				"path": "storecontent/offering/offering-20220224-05.json",
+				"name": "offering-20220224-05",
+				"title": "Aureate Midnight",
+				"type": "Offering",
+				"touched": [
+					"2022-05-03T00:00:00.000Z"
+				],
+				"community": {
+					"collection": "qlsFG0IEW9",
+					"tags": [
+						"source"
+					]
+				}
 			}
 		],
 		[
@@ -6842,6 +7280,24 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
 				]
+			}
+		],
+		[
+			"offering-20220224-00",
+			{
+				"path": "storecontent/offering/offering-20220224-00.json",
+				"name": "offering-20220224-00",
+				"title": "Celox Armor Set",
+				"type": "Offering",
+				"touched": [
+					"2022-05-03T00:00:00.000Z"
+				],
+				"community": {
+					"collection": "gkOPXOG61j",
+					"tags": [
+						"source"
+					]
+				}
 			}
 		],
 		[
@@ -14697,8 +15153,10 @@
 				"name": "013-001-55569618",
 				"title": "Fireteam Crimson",
 				"type": "ArmorEmblem",
+				"visible": "2022-05-04T00:00:00.000Z",
 				"touched": [
-					"2022-05-03T00:00:00.000Z"
+					"2022-05-03T00:00:00.000Z",
+					"2022-05-04T00:00:00.000Z"
 				]
 			}
 		],
@@ -14709,8 +15167,10 @@
 				"name": "104-001-lonewolves-fi-55569618",
 				"title": "Fireteam Crimson",
 				"type": "SpartanEmblem",
+				"visible": "2022-05-04T00:00:00.000Z",
 				"touched": [
-					"2022-05-03T00:00:00.000Z"
+					"2022-05-03T00:00:00.000Z",
+					"2022-05-04T00:00:00.000Z"
 				]
 			}
 		],
@@ -14721,8 +15181,10 @@
 				"name": "405-305-55569618",
 				"title": "Fireteam Crimson",
 				"type": "VehicleEmblem",
+				"visible": "2022-05-04T00:00:00.000Z",
 				"touched": [
-					"2022-05-03T00:00:00.000Z"
+					"2022-05-03T00:00:00.000Z",
+					"2022-05-04T00:00:00.000Z"
 				]
 			}
 		],
@@ -14733,8 +15195,10 @@
 				"name": "205-201-55569618",
 				"title": "Fireteam Crimson",
 				"type": "WeaponEmblem",
+				"visible": "2022-05-04T00:00:00.000Z",
 				"touched": [
-					"2022-05-03T00:00:00.000Z"
+					"2022-05-03T00:00:00.000Z",
+					"2022-05-04T00:00:00.000Z"
 				]
 			}
 		],
@@ -22151,8 +22615,10 @@
 				"name": "002-001-olympus-4dbf275e",
 				"title": "Lava Burst",
 				"type": "ArmorCoating",
+				"visible": "2022-05-04T00:00:00.000Z",
 				"touched": [
-					"2022-05-03T00:00:00.000Z"
+					"2022-05-03T00:00:00.000Z",
+					"2022-05-04T00:00:00.000Z"
 				]
 			}
 		],
@@ -22677,6 +23143,24 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
 				]
+			}
+		],
+		[
+			"offering-20220224-01",
+			{
+				"path": "storecontent/offering/offering-20220224-01.json",
+				"name": "offering-20220224-01",
+				"title": "Loathe Letter",
+				"type": "Offering",
+				"touched": [
+					"2022-05-03T00:00:00.000Z"
+				],
+				"community": {
+					"collection": "smDvk_wxbj",
+					"tags": [
+						"source"
+					]
+				}
 			}
 		],
 		[
@@ -24202,7 +24686,8 @@
 				"type": "meta",
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
-					"2022-05-03T00:00:00.000Z"
+					"2022-05-03T00:00:00.000Z",
+					"2022-05-04T00:00:00.000Z"
 				]
 			}
 		],
@@ -24891,18 +25376,6 @@
 				"name": "201-201-ccc62f99",
 				"title": "Monument to Glory",
 				"type": "WeaponCharm",
-				"touched": [
-					"2022-05-03T00:00:00.000Z"
-				]
-			}
-		],
-		[
-			"battlepass-insignificantsacrifice",
-			{
-				"path": "rewardtracks/operations/battlepass-insignificantsacrifice.json",
-				"name": "battlepass-insignificantsacrifice",
-				"title": "Moochers of Reach",
-				"type": "meta",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
 				]
@@ -28944,6 +29417,24 @@
 					"2022-02-24T00:00:00.000Z",
 					"2022-05-03T00:00:00.000Z"
 				]
+			}
+		],
+		[
+			"offering-20220224-04",
+			{
+				"path": "storecontent/offering/offering-20220224-04.json",
+				"name": "offering-20220224-04",
+				"title": "Perfect Sublimity",
+				"type": "Offering",
+				"touched": [
+					"2022-05-03T00:00:00.000Z"
+				],
+				"community": {
+					"collection": "K6Y2I8MljG",
+					"tags": [
+						"source"
+					]
+				}
 			}
 		],
 		[
@@ -33735,7 +34226,8 @@
 					"2022-02-22T00:00:00.000Z",
 					"2022-03-15T00:00:00.000Z",
 					"2022-04-26T00:00:00.000Z",
-					"2022-05-03T00:00:00.000Z"
+					"2022-05-03T00:00:00.000Z",
+					"2022-05-04T00:00:00.000Z"
 				]
 			}
 		],
@@ -39851,6 +40343,19 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"battlepass-insignificantsacrifice",
+			{
+				"path": "rewardtracks/operations/battlepass-insignificantsacrifice.json",
+				"name": "battlepass-insignificantsacrifice",
+				"title": "Test Pass",
+				"type": "meta",
+				"touched": [
+					"2022-05-03T00:00:00.000Z",
+					"2022-05-04T00:00:00.000Z"
 				]
 			}
 		],
@@ -46587,78 +47092,6 @@
 				"community": {
 					"tags": [
 						"store"
-					]
-				}
-			}
-		],
-		[
-			"offering-20220224-00",
-			{
-				"path": "storecontent/offering/offering-20220224-00.json",
-				"name": "offering-20220224-00",
-				"title": "Celox Armor Set",
-				"type": "Offering",
-				"touched": [
-					"2022-05-03T00:00:00.000Z"
-				],
-				"community": {
-					"collection": "gkOPXOG61j",
-					"tags": [
-						"source"
-					]
-				}
-			}
-		],
-		[
-			"offering-20220224-05",
-			{
-				"path": "storecontent/offering/offering-20220224-05.json",
-				"name": "offering-20220224-05",
-				"title": "Aureate Midnight",
-				"type": "Offering",
-				"touched": [
-					"2022-05-03T00:00:00.000Z"
-				],
-				"community": {
-					"collection": "qlsFG0IEW9",
-					"tags": [
-						"source"
-					]
-				}
-			}
-		],
-		[
-			"offering-20220224-04",
-			{
-				"path": "storecontent/offering/offering-20220224-04.json",
-				"name": "offering-20220224-04",
-				"title": "Perfect Sublimity",
-				"type": "Offering",
-				"touched": [
-					"2022-05-03T00:00:00.000Z"
-				],
-				"community": {
-					"collection": "K6Y2I8MljG",
-					"tags": [
-						"source"
-					]
-				}
-			}
-		],
-		[
-			"offering-20220224-01",
-			{
-				"path": "storecontent/offering/offering-20220224-01.json",
-				"name": "offering-20220224-01",
-				"title": "Loathe Letter",
-				"type": "Offering",
-				"touched": [
-					"2022-05-03T00:00:00.000Z"
-				],
-				"community": {
-					"collection": "smDvk_wxbj",
-					"tags": [
-						"source"
 					]
 				}
 			}

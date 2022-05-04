@@ -1,0 +1,12 @@
+{
+	"Title": "Gunner",
+	"Description": "Pet the dog!",
+	"Quality": "Epic",
+	"WidthHint": 2,
+	"HeightHint": 1,
+	"FlairText": "Daily",
+	"FlairIconPath": "progression/StoreContent/FlairIcons/RitualIconFlair.png",
+	"FlairBackgroundPath": "progression/StoreContent/FlairBackgrounds/RitualBackgroundFlair.png",
+	"ObjectImagePath": "",
+	"HasFlair": true
+}

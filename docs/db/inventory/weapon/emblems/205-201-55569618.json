@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "205-201-55569618",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Fireteam Crimson",
 		"Description": "You can depend on us.",
 		"FeatureFlag": true,
@@ -99,16 +99,16 @@
 	},
 	"AvailableConfigurations": [
 		{
-			"ConfigurationId": -758468323,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-469deb92.json"
-		},
-		{
 			"ConfigurationId": -531379543,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-15364c66.json"
 		},
 		{
 			"ConfigurationId": -802658653,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-436cebe0.json"
+		},
+		{
+			"ConfigurationId": -758468323,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-469deb92.json"
 		},
 		{
 			"ConfigurationId": -1910316293,
