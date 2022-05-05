@@ -54,7 +54,8 @@
 		"event",
 		"memento",
 		"season",
-		"store"
+		"store",
+		"promotional"
 	],
 	"manifest": [
 		[
@@ -259,7 +260,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "Log in between Feb. 8 - 14 2022"
 				}
 			}
 		],
@@ -279,7 +280,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "Log in between Feb. 8 - 14 2022"
 				}
 			}
 		],
@@ -2297,7 +2298,13 @@
 				"type": "WeaponCharm",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -2437,7 +2444,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -2450,7 +2463,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -2920,7 +2939,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -2933,7 +2958,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -2946,7 +2977,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -3299,7 +3336,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -3603,7 +3646,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -3616,7 +3665,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -3737,7 +3792,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in between Nov. 15 - 22 2021"
 				}
 			}
 		],
@@ -3757,7 +3812,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in between Nov. 15 - 22 2021"
 				}
 			}
 		],
@@ -3777,7 +3832,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in between Nov. 15 - 22 2021"
 				}
 			}
 		],
@@ -3797,7 +3852,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in between Nov. 15 - 22 2021"
 				}
 			}
 		],
@@ -3810,7 +3865,13 @@
 				"type": "ArmorVisor",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -3919,7 +3980,12 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -3932,7 +3998,12 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -3945,7 +4016,12 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -3958,7 +4034,12 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -4550,7 +4631,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -4563,7 +4650,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -4745,7 +4838,12 @@
 					"2021-11-15T20:00:00.000Z",
 					"2022-02-24T00:00:00.000Z",
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -4795,7 +4893,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -4858,7 +4962,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -4917,7 +5027,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -5057,7 +5173,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -5332,7 +5454,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in between Nov. 15 - 22 2021"
 				}
 			}
 		],
@@ -5345,7 +5467,14 @@
 				"type": "ArmorCoating",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"visible": "2022-05-03T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -5369,7 +5498,14 @@
 				"type": "VehicleCoating",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"visible": "2022-05-03T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -5394,7 +5530,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -5481,7 +5623,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "Log in between Feb. 8 - 14 2022"
 				}
 			}
 		],
@@ -5501,7 +5643,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "Log in between Feb. 8 - 14 2022"
 				}
 			}
 		],
@@ -5544,7 +5686,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -5605,7 +5753,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -5657,7 +5811,13 @@
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -6312,7 +6472,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -6854,7 +7020,13 @@
 				"type": "SpartanActionPose",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -6879,7 +7051,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -6892,7 +7070,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -6905,7 +7089,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -7028,7 +7218,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -7054,7 +7250,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -7087,7 +7289,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -7117,7 +7325,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -7279,7 +7493,12 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -7584,7 +7803,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -8807,7 +9032,13 @@
 				"type": "ArmorCoating",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -9900,7 +10131,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -10073,7 +10310,12 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -10392,7 +10634,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -10405,7 +10653,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -10902,7 +11156,13 @@
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -11556,7 +11816,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -11610,7 +11876,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -12538,7 +12810,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -12577,7 +12855,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -12651,7 +12935,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -12696,7 +12986,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -13269,7 +13565,13 @@
 				"type": "AiColor",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -13913,7 +14215,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -14710,7 +15018,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -14915,7 +15229,13 @@
 				"type": "WeaponCoating",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -14934,7 +15254,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in between Nov. 15 - 22 2021"
 				}
 			}
 		],
@@ -14954,7 +15274,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in between Nov. 15 - 22 2021"
 				}
 			}
 		],
@@ -14974,7 +15294,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in between Nov. 15 - 22 2021"
 				}
 			}
 		],
@@ -14994,7 +15314,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in between Nov. 15 - 22 2021"
 				}
 			}
 		],
@@ -15008,7 +15328,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -15107,7 +15433,12 @@
 				"type": "ArmorEmblem",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -15119,7 +15450,12 @@
 				"type": "SpartanEmblem",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -15131,7 +15467,12 @@
 				"type": "VehicleEmblem",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -15143,7 +15484,12 @@
 				"type": "WeaponEmblem",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -15157,7 +15503,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-04T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -15171,7 +15522,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-04T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -15185,7 +15541,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-04T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -15199,7 +15560,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-04T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -15308,7 +15674,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -15321,7 +15693,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -15334,7 +15712,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -15347,7 +15731,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -15360,7 +15750,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -15373,7 +15769,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -15386,7 +15788,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -15399,7 +15807,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -16732,7 +17146,13 @@
 				"type": "ArmorVisor",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -16785,7 +17205,12 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -16811,7 +17236,12 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -20185,7 +20615,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -20198,7 +20634,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -20582,7 +21024,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -20634,7 +21082,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -20681,7 +21135,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -20741,7 +21201,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -21068,7 +21534,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in between Nov. 15 - 22 2021"
 				}
 			}
 		],
@@ -21088,7 +21554,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in between Nov. 15 - 22 2021"
 				}
 			}
 		],
@@ -21108,7 +21574,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in between Nov. 15 - 22 2021"
 				}
 			}
 		],
@@ -21128,7 +21594,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in between Nov. 15 - 22 2021"
 				}
 			}
 		],
@@ -21434,7 +21900,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -21447,7 +21919,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -21534,7 +22012,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -21547,7 +22031,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -21619,7 +22109,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -22087,7 +22583,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -22363,7 +22865,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -22413,7 +22921,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -22619,7 +23133,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-04T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -23026,7 +23545,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -23053,7 +23578,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -23090,7 +23621,12 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -23103,7 +23639,12 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -23116,7 +23657,12 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -23129,7 +23675,12 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -23315,7 +23866,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -24119,7 +24676,13 @@
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -24164,7 +24727,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in between Nov. 15 - 22 2021"
 				}
 			}
 		],
@@ -24553,7 +25116,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -24614,7 +25183,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -24715,7 +25290,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -24975,7 +25556,13 @@
 					"2021-11-15T20:00:00.000Z",
 					"2022-02-24T00:00:00.000Z",
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -25116,7 +25703,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -25274,7 +25867,13 @@
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -25300,7 +25899,13 @@
 				"type": "ArmorHelmetAttachment",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -25390,7 +25995,13 @@
 				"type": "ArmorHelmet",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -26676,7 +27287,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -27393,7 +28010,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -27765,7 +28388,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -27884,7 +28513,14 @@
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"visible": "2022-05-03T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -28051,7 +28687,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -28064,7 +28706,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -28687,7 +29335,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -29416,7 +30070,12 @@
 					"2022-02-15T00:00:00.000Z",
 					"2022-02-24T00:00:00.000Z",
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -29971,7 +30630,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in between Nov. 15 - 22 2021"
 				}
 			}
 		],
@@ -29991,7 +30650,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in between Nov. 15 - 22 2021"
 				}
 			}
 		],
@@ -30011,7 +30670,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in between Nov. 15 - 22 2021"
 				}
 			}
 		],
@@ -30031,7 +30690,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in between Nov. 15 - 22 2021"
 				}
 			}
 		],
@@ -30051,7 +30710,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in between Nov. 15 - 22 2021"
 				}
 			}
 		],
@@ -30071,7 +30730,7 @@
 					"tags": [
 						"memento"
 					],
-					"availability": "20th Anniversary: Log in between Nov. 15 - Nov. 22 2021"
+					"availability": "20th Anniversary: Log in between Nov. 15 - 22 2021"
 				}
 			}
 		],
@@ -30084,7 +30743,13 @@
 				"type": "WeaponCoating",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -30096,7 +30761,13 @@
 				"type": "WeaponCoating",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -30505,7 +31176,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -30938,7 +31615,12 @@
 				"type": "ArmorEmblem",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"promotional"
+					]
+				}
 			}
 		],
 		[
@@ -31107,7 +31789,13 @@
 				"type": "ArmorHelmetAttachment",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -31297,7 +31985,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -31330,7 +32024,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -31343,7 +32043,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -31581,7 +32287,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -31594,7 +32306,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -31607,7 +32325,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -31620,7 +32344,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -31633,7 +32363,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -32156,7 +32892,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -32922,7 +33664,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -33936,7 +34684,13 @@
 				"type": "ArmorCoating",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -34199,7 +34953,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -34733,7 +35493,8 @@
 				"community": {
 					"tags": [
 						"capstone"
-					]
+					],
+					"availability": "Ultimate challenge for the week of May. 3 2022"
 				}
 			}
 		],
@@ -35170,7 +35931,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -35866,7 +36633,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -36136,7 +36909,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -36301,7 +37080,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -36314,7 +37099,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -36371,7 +37162,13 @@
 				"type": "SpartanBackdropImage",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -36791,7 +37588,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -37825,7 +38628,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -38386,7 +39195,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -38471,7 +39286,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -39022,7 +39843,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -39325,7 +40152,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -39416,7 +40249,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -39518,7 +40357,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -39656,7 +40501,13 @@
 				"type": "ArmorWristAttachment",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -39682,7 +40533,13 @@
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -39884,7 +40741,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -39936,7 +40799,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -39949,7 +40818,12 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -39962,7 +40836,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -39975,7 +40855,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -40479,7 +41365,13 @@
 				"type": "WeaponDeathFx",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -41037,7 +41929,13 @@
 				"type": "ArmorFx",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -41081,7 +41979,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -41289,7 +42193,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -41302,7 +42212,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -41315,7 +42231,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -41503,7 +42425,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -41516,7 +42444,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -41529,7 +42463,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -41605,7 +42545,13 @@
 				"type": "ArmorLeftShoulderPad",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -41617,7 +42563,13 @@
 				"type": "ArmorRightShoulderPad",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -41694,7 +42646,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -41707,7 +42665,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -41832,7 +42796,12 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -41845,7 +42814,12 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -41936,7 +42910,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -41949,7 +42929,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -41981,7 +42967,12 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -42114,7 +43105,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -42127,7 +43124,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -42313,7 +43316,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -42326,7 +43335,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -42339,7 +43354,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -42352,7 +43373,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -42384,7 +43411,12 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -42417,7 +43449,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -42471,7 +43509,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -42674,7 +43718,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -42721,7 +43771,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -42960,7 +44016,13 @@
 					"2021-11-15T20:00:00.000Z",
 					"2022-02-24T00:00:00.000Z",
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -42975,7 +44037,13 @@
 					"2021-11-15T20:00:00.000Z",
 					"2022-02-24T00:00:00.000Z",
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -43090,7 +44158,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -43967,7 +45041,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -44006,7 +45086,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -44019,7 +45105,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -44032,7 +45124,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -44085,7 +45183,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -44117,7 +45221,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -44129,7 +45239,13 @@
 				"type": "ArmorHipAttachment",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -44142,7 +45258,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -44155,7 +45277,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -44168,7 +45296,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -44798,7 +45932,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -45311,7 +46451,13 @@
 					"2021-11-15T20:00:00.000Z",
 					"2022-02-24T00:00:00.000Z",
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -45564,7 +46710,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -46134,7 +47286,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -46579,7 +47737,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"event"
+					]
+				}
 			}
 		],
 		[
@@ -46689,7 +47853,13 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"battlepass",
+						"season"
+					]
+				}
 			}
 		],
 		[
@@ -46847,7 +48017,12 @@
 				"type": "SpartanBackdropImage",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"promotional"
+					]
+				}
 			}
 		],
 		[
@@ -47092,6 +48267,24 @@
 				"community": {
 					"tags": [
 						"store"
+					]
+				}
+			}
+		],
+		[
+			"offering-20220323-05",
+			{
+				"path": "storecontent/offering/offering-20220323-05.json",
+				"name": "offering-20220323-05",
+				"title": "Fret",
+				"type": "Offering",
+				"touched": [
+					"2022-05-04T00:00:00.000Z"
+				],
+				"community": {
+					"collection": "jtWRirMnU_",
+					"tags": [
+						"source"
 					]
 				}
 			}

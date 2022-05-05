@@ -1,0 +1,29 @@
+{
+	"OfferingId": "20220323-05",
+	"OfferingDisplayPath": "StoreContent/Display/Offerings/20220323-05.json",
+	"OfferingExpirationDate": null,
+	"IncludedItems": [
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Spartan/Emblems/104-001-personalai-fr-3dbdafac.json",
+			"ItemType": "SpartanEmblem"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Spartan/BackdropImages/103-000-ui-s2-backgro-e26b0b6e.json",
+			"ItemType": "SpartanBackdropImage"
+		}
+	],
+	"Prices": [
+		{
+			"Cost": 100,
+			"CurrencyPath": "Currency/Currencies/cR.json"
+		}
+	],
+	"IncludedCurrencies": [],
+	"IncludedRewardTracks": [],
+	"BoostPath": null,
+	"OperationXp": 0,
+	"EventXp": 0,
+	"MatchBoosts": null
+}
