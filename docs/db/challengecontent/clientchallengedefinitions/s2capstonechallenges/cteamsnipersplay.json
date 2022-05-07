@@ -1,5 +1,5 @@
 {
-	"Description": "Complete Matches of Team Snipers",
+	"Description": "Complete Matches of Team Snipers in PvP",
 	"Difficulty": "mythic",
 	"Category": "Capstone",
 	"Reward": {
@@ -14,5 +14,5 @@
 		]
 	},
 	"ThresholdForSuccess": 3,
-	"Title": "Sniper Fight"
+	"Title": "Kovan's Concern"
 }

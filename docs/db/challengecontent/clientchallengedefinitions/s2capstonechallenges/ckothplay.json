@@ -1,5 +1,5 @@
 {
-	"Description": "Complete Matches of King of the Hill",
+	"Description": "Complete Matches of King of the Hill in PvP",
 	"Difficulty": "mythic",
 	"Category": "Capstone",
 	"Reward": {
@@ -14,5 +14,5 @@
 		]
 	},
 	"ThresholdForSuccess": 3,
-	"Title": "For King and Country"
+	"Title": "For the King!"
 }

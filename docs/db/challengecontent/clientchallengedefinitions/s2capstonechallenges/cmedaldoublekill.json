@@ -1,5 +1,5 @@
 {
-	"Description": "Earn Double Kill Medals",
+	"Description": "Earn Double Kill Medals in PvP",
 	"Difficulty": "mythic",
 	"Category": "Capstone",
 	"Reward": {
@@ -14,5 +14,5 @@
 		]
 	},
 	"ThresholdForSuccess": 3,
-	"Title": "Toil and Trouble"
+	"Title": "Toil and Double"
 }

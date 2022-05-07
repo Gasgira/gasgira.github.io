@@ -42,7 +42,7 @@ class Database {
 			.then(response => {
 				if (!response || !Array.isArray(response?.types) || !Array.isArray(response?.manifest))
 				{
-					throw new Error(`[skimmer] index malformed...`)
+					throw new Error(`[db.getIndex] index malformed...`)
 				}
 				return {
 					date: new Date(response.date),
@@ -52,14 +52,11 @@ class Database {
 				}
 			})
 			.catch(error => {
-				console.error(`[skimmer] index did not load...`, error);
-				this.index = {
-					date: new Date(),
-					types: new Set(),
-					manifest: new Map()
-				}
+				console.error('[db.getIndex]', error)
+				throw new Error(`[db.getIndex] Fetch Error! "${error?.message ?? error?.statusText ?? error?.status}" "${error?.url}"`);
 			});
 		if (index) return index;
+		throw new Error(`[db.getIndex] No index!`);
 	}
 
 	async init() {

@@ -51,13 +51,23 @@
 		"ManufacturerId": 6,
 		"Type": "VehicleCoating",
 		"RewardTrack": "",
-		"ParentPaths": [],
+		"ParentPaths": [
+			{
+				"Path": "Inventory/Vehicle/Themes/408-304-olympus-aa30213b.json",
+				"Type": "VehicleTheme"
+			}
+		],
 		"SortingMetadata": {
 			"categoryWeight": 0,
 			"subCategoryWeight": 0
 		},
 		"SeasonNumber": 1,
-		"OriginalSeasonNumber": 1
+		"OriginalSeasonNumber": 1,
+		"Season": {
+			"status": "Test",
+			"value": "",
+			"translations": {}
+		}
 	},
 	"LightingScalarOverride": 0
 }

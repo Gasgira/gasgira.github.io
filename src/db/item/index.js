@@ -147,6 +147,7 @@ export class Item extends Component {
 	get itemTypeIcons() {
 		return this?._itemTypeIcons ?? (this._itemTypeIcons = new Set([
 			'ArmorCoating',
+			'VehicleCoating',
 			'WeaponCoating'
 		]));
 	}
@@ -161,12 +162,23 @@ export class Item extends Component {
 			const imagePath = `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(parent)})`;
 			return HTML.wire(this, `:itemType-${path}`)`
 				<div
-					class=${`item-type-icon ${this?.data?.CommonData?.Type ?? 'default-type'}`}
+					class=${`item-type-icon WeaponCoating`}
 					style=${{webkitMaskImage: imagePath, maskImage: imagePath}}
 				></div>
 			`;
-		}
-		if (type && type === 'ArmorCoating')
+		} else if (type && type === 'VehicleCoating')
+		{
+			const parentCore = await new Item(path).getParentCoreItem();
+			if (!parentCore) return;
+			const parent = await parentCore?.getImagePath?.();
+			const imagePath = `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(parent)})`;
+			return HTML.wire(this, `:itemType-${path}`)`
+				<div
+					class=${`item-type-icon VehicleCoating`}
+					style=${{webkitMaskImage: imagePath, maskImage: imagePath}}
+				></div>
+			`;
+		} else if (type && type === 'ArmorCoating')
 		{
 			let svgId = 'ArmorCoating';
 			switch (path) {
@@ -239,9 +251,22 @@ export class Item extends Component {
 
 	async getParentItem() {
 		if (this?._parentItem) return this._parentItem;
+		await this.init();
 		if (this?.data?.CommonData?.ParentTheme)
 		{
 			this._parentItem = new Item(this?.data?.CommonData?.ParentTheme);
+			await this._parentItem.init();
+			return this._parentItem;
+		}
+		// const test = async path => `<a class="parentSocket" href=${`#${path}`}>${await new Item(path).getName()}</a>`
+	}
+
+	async getParentCoreItem() {
+		if (this?._parentItem) return this._parentItem;
+		await this.init();
+		if (this?.data?.CommonData?.ParentPaths)
+		{
+			this._parentItem = new Item(this?.data?.CommonData?.ParentPaths?.[0]?.Path);
 			await this._parentItem.init();
 			return this._parentItem;
 		}
