@@ -5,7 +5,7 @@
 	"Reward": {
 		"InventoryItems": [],
 		"OperationExperience": 300,
-		"EventProgress": 1
+		"EventProgress": 2
 	},
 	"IsUserEvent": true,
 	"ThresholdForSuccess": 1,

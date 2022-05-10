@@ -1,5 +1,5 @@
 {
-	"Title": "S2 EUnited",
+	"Title": "S2 eUnited",
 	"Description": "Bundle includes customization kits for the MA40 Assault Rifle and MK50 Sidekick, vehicle coatings for the Warthog, Razorback and Rockethog, and a weapon charm.",
 	"Quality": "Epic",
 	"WidthHint": 2,
@@ -7,7 +7,7 @@
 	"FlairText": "",
 	"FlairIconPath": null,
 	"FlairBackgroundPath": null,
-	"ObjectImagePath": "progression/StoreContent/Offerings/s2_hcs_eunited.png.png",
+	"ObjectImagePath": "",
 	"HasFlair": null,
 	"HCSTeamIndex": 4
 }

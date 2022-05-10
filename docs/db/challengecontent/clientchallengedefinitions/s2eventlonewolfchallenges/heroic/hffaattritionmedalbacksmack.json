@@ -5,9 +5,9 @@
 	"Reward": {
 		"InventoryItems": [],
 		"OperationExperience": 350,
-		"EventProgress": 1
+		"EventProgress": 2
 	},
 	"IsUserEvent": true,
-	"ThresholdForSuccess": 3,
+	"ThresholdForSuccess": 1,
 	"Title": "Hunt from the Back"
 }

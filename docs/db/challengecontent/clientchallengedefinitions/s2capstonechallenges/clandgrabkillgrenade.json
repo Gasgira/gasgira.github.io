@@ -1,0 +1,18 @@
+{
+	"Description": "Kill an Enemy Spartan with a Grenade in Land Grab PvP",
+	"Difficulty": "mythic",
+	"Category": "Capstone",
+	"Reward": {
+		"InventoryItems": [],
+		"OperationExperience": 400,
+		"InventoryRewards": [
+			{
+				"InventoryItemPath": "inventory/armor/coatings/002-001-eag-e90ac8a6.json",
+				"Amount": 1,
+				"Type": "ArmorCoating"
+			}
+		]
+	},
+	"ThresholdForSuccess": 1,
+	"Title": "Fire in the Hole!"
+}
