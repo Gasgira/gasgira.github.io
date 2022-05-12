@@ -1,0 +1,18 @@
+{
+	"Description": "Finish in the Top Three in Last Spartan Standing PvP",
+	"Difficulty": "mythic",
+	"Category": "Capstone",
+	"Reward": {
+		"OperationExperience": 400,
+		"InventoryItems": [],
+		"InventoryRewards": [
+			{
+				"InventoryItemPath": "inventory/Armor/Coatings/002-001-wlv-8535e654.json",
+				"Amount": 1,
+				"Type": "ArmorCoating"
+			}
+		]
+	},
+	"ThresholdForSuccess": 1,
+	"Title": "Podium Party"
+}

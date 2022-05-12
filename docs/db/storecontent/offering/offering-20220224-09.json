@@ -1,0 +1,84 @@
+{
+	"OfferingId": "20220224-09",
+	"OfferingDisplayPath": "StoreContent/Display/Offerings/20220224-09.json",
+	"OfferingExpirationDate": null,
+	"IncludedItems": [
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/Helmets/005-001-wlv-b494a67a.json",
+			"ItemType": "ArmorHelmet"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/Coatings/002-001-wlv-8bb61bbd.json",
+			"ItemType": "ArmorCoating"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/HelmetAttachments/004-001-wlv-8d8bed25.json",
+			"ItemType": "ArmorHelmetAttachment"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/ChestAttachments/001-001-wlv-1c4b69c9.json",
+			"ItemType": "ArmorChestAttachment"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/ShouldersLeft/008-001-wlv-fbd530bd.json",
+			"ItemType": "ArmorLeftShoulderPad"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/ShouldersRight/009-001-wlv-fbd530bd.json",
+			"ItemType": "ArmorRightShoulderPad"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/Gloves/003-001-wlv-e2ce01fc.json",
+			"ItemType": "ArmorGlove"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/KneePads/006-001-wlv-ad8f973b.json",
+			"ItemType": "ArmorKneePad"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Spartan/ActionPoses/101-000-menu-stance-l-ea182b38.json",
+			"ItemType": "SpartanActionPose"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/Emblems/013-001-0402255b.json",
+			"ItemType": "ArmorEmblem"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Spartan/Emblems/104-001-olympus-firet-0402255b.json",
+			"ItemType": "SpartanEmblem"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Vehicle/Emblems/405-305-0402255b.json",
+			"ItemType": "VehicleEmblem"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Weapon/Emblems/205-201-0402255b.json",
+			"ItemType": "WeaponEmblem"
+		}
+	],
+	"Prices": [
+		{
+			"Cost": 1200,
+			"CurrencyPath": "Currency/Currencies/cR.json"
+		}
+	],
+	"IncludedCurrencies": [],
+	"IncludedRewardTracks": [],
+	"BoostPath": null,
+	"OperationXp": 0,
+	"EventXp": 0,
+	"MatchBoosts": null
+}

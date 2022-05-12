@@ -1,5 +1,5 @@
 {
-	"date": "2022-05-10T00:00:00.000Z",
+	"date": "2022-05-11T00:00:00.000Z",
 	"types": [
 		"ArmorCore",
 		"ArmorTheme",
@@ -3335,12 +3335,7 @@
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
 					"2022-05-03T00:00:00.000Z"
-				],
-				"community": {
-					"tags": [
-						"default"
-					]
-				}
+				]
 			}
 		],
 		[
@@ -3373,12 +3368,7 @@
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
 					"2022-05-03T00:00:00.000Z"
-				],
-				"community": {
-					"tags": [
-						"default"
-					]
-				}
+				]
 			}
 		],
 		[
@@ -3411,12 +3401,7 @@
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
 					"2022-05-03T00:00:00.000Z"
-				],
-				"community": {
-					"tags": [
-						"default"
-					]
-				}
+				]
 			}
 		],
 		[
@@ -3449,12 +3434,7 @@
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
 					"2022-05-03T00:00:00.000Z"
-				],
-				"community": {
-					"tags": [
-						"default"
-					]
-				}
+				]
 			}
 		],
 		[
@@ -3487,12 +3467,7 @@
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
 					"2022-05-03T00:00:00.000Z"
-				],
-				"community": {
-					"tags": [
-						"default"
-					]
-				}
+				]
 			}
 		],
 		[
@@ -3525,12 +3500,7 @@
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
 					"2022-05-03T00:00:00.000Z"
-				],
-				"community": {
-					"tags": [
-						"default"
-					]
-				}
+				]
 			}
 		],
 		[
@@ -3563,12 +3533,7 @@
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
 					"2022-05-03T00:00:00.000Z"
-				],
-				"community": {
-					"tags": [
-						"default"
-					]
-				}
+				]
 			}
 		],
 		[
@@ -3601,12 +3566,7 @@
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
 					"2022-05-03T00:00:00.000Z"
-				],
-				"community": {
-					"tags": [
-						"default"
-					]
-				}
+				]
 			}
 		],
 		[
@@ -3639,12 +3599,7 @@
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
 					"2022-05-03T00:00:00.000Z"
-				],
-				"community": {
-					"tags": [
-						"default"
-					]
-				}
+				]
 			}
 		],
 		[
@@ -3677,12 +3632,7 @@
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
 					"2022-05-03T00:00:00.000Z"
-				],
-				"community": {
-					"tags": [
-						"default"
-					]
-				}
+				]
 			}
 		],
 		[
@@ -11886,6 +11836,66 @@
 			}
 		],
 		[
+			"offering-20220325-04",
+			{
+				"path": "storecontent/offering/offering-20220325-04.json",
+				"name": "offering-20220325-04",
+				"title": "Aureate Noon",
+				"type": "Offering",
+				"touched": [
+					"2022-05-10T00:00:00.000Z"
+				],
+				"community": {
+					"collection": "aureate-noon",
+					"tags": [
+						"source"
+					]
+				}
+			}
+		],
+		[
+			"cffaattritionscore",
+			{
+				"path": "challengecontent/clientchallengedefinitions/s2capstonechallenges/cffaattritionscore.json",
+				"name": "cffaattritionscore",
+				"title": "cffaattritionscore",
+				"type": "meta",
+				"touched": [
+					"2022-05-11T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"cffaattritiontop3",
+			{
+				"path": "challengecontent/clientchallengedefinitions/s2capstonechallenges/cffaattritiontop3.json",
+				"name": "cffaattritiontop3",
+				"title": "cffaattritiontop3",
+				"type": "meta",
+				"touched": [
+					"2022-05-11T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"offering-20220224-06",
+			{
+				"path": "storecontent/offering/offering-20220224-06.json",
+				"name": "offering-20220224-06",
+				"title": "Clippy",
+				"type": "Offering",
+				"touched": [
+					"2022-05-10T00:00:00.000Z"
+				],
+				"community": {
+					"collection": "clippy",
+					"tags": [
+						"source"
+					]
+				}
+			}
+		],
+		[
 			"203-201-olympus-66499403",
 			{
 				"path": "inventory/weapon/coatings/203-201-olympus-66499403.json",
@@ -12124,6 +12134,24 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
 				]
+			}
+		],
+		[
+			"offering-20220325-03",
+			{
+				"path": "storecontent/offering/offering-20220325-03.json",
+				"name": "offering-20220325-03",
+				"title": "Deepcore Red",
+				"type": "Offering",
+				"touched": [
+					"2022-05-10T00:00:00.000Z"
+				],
+				"community": {
+					"collection": "deepcore-red",
+					"tags": [
+						"source"
+					]
+				}
 			}
 		],
 		[
@@ -20942,12 +20970,7 @@
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
 					"2022-05-03T00:00:00.000Z"
-				],
-				"community": {
-					"tags": [
-						"default"
-					]
-				}
+				]
 			}
 		],
 		[
@@ -21949,7 +21972,12 @@
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"campaign"
+					]
+				}
 			}
 		],
 		[
@@ -23020,7 +23048,12 @@
 					"2021-11-15T20:00:00.000Z",
 					"2022-02-24T00:00:00.000Z",
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"capstone"
+					]
+				}
 			}
 		],
 		[
@@ -23437,6 +23470,24 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
 				]
+			}
+		],
+		[
+			"offering-20220224-09",
+			{
+				"path": "storecontent/offering/offering-20220224-09.json",
+				"name": "offering-20220224-09",
+				"title": "LECHUZA Armor Set",
+				"type": "Offering",
+				"touched": [
+					"2022-05-10T00:00:00.000Z"
+				],
+				"community": {
+					"collection": "lechuza-armor-se",
+					"tags": [
+						"source"
+					]
+				}
 			}
 		],
 		[
@@ -33708,6 +33759,30 @@
 			}
 		],
 		[
+			"s2lonewolf2weeklydeck1",
+			{
+				"path": "challengecontent/clientchallengedeckdefinitions/s2lonewolf2weeklydeck1.json",
+				"name": "s2lonewolf2weeklydeck1",
+				"title": "s2lonewolf2weeklydeck1",
+				"type": "meta",
+				"touched": [
+					"2022-05-11T00:00:00.000Z"
+				]
+			}
+		],
+		[
+			"s2lonewolf2weeklydeck2",
+			{
+				"path": "challengecontent/clientchallengedeckdefinitions/s2lonewolf2weeklydeck2.json",
+				"name": "s2lonewolf2weeklydeck2",
+				"title": "s2lonewolf2weeklydeck2",
+				"type": "meta",
+				"touched": [
+					"2022-05-11T00:00:00.000Z"
+				]
+			}
+		],
+		[
 			"s2vanillaweeklydeck1",
 			{
 				"path": "challengecontent/clientchallengedeckdefinitions/s2vanillaweeklydeck1.json",
@@ -35479,7 +35554,8 @@
 					"2022-03-15T00:00:00.000Z",
 					"2022-04-26T00:00:00.000Z",
 					"2022-05-03T00:00:00.000Z",
-					"2022-05-04T00:00:00.000Z"
+					"2022-05-04T00:00:00.000Z",
+					"2022-05-11T00:00:00.000Z"
 				]
 			}
 		],
@@ -41037,7 +41113,12 @@
 				"type": "WeaponCharm",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"capstone"
+					]
+				}
 			}
 		],
 		[
@@ -41414,7 +41495,12 @@
 				"type": "ArmorCoating",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"capstone"
+					]
+				}
 			}
 		],
 		[
@@ -48804,6 +48890,24 @@
 				"community": {
 					"tags": [
 						"store"
+					]
+				}
+			}
+		],
+		[
+			"offering-20220224-08",
+			{
+				"path": "storecontent/offering/offering-20220224-08.json",
+				"name": "offering-20220224-08",
+				"title": "Vibrant Horizon",
+				"type": "Offering",
+				"touched": [
+					"2022-05-11T00:00:00.000Z"
+				],
+				"community": {
+					"collection": "vibrant-horizon",
+					"tags": [
+						"source"
 					]
 				}
 			}

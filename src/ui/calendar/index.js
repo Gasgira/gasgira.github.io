@@ -1,6 +1,6 @@
 import { Component } from 'component';
 import { emitter } from 'eventEmitter';
-import { HTML } from 'lib/HTML';
+import { HTML, throbber } from 'lib/HTML';
 import { db } from 'db';
 import { Item, placeholderItem } from 'db/item';
 import { urlParams } from 'urlParams';
@@ -129,7 +129,7 @@ class Calendar extends Component {
 					<nav><ul class=${`mica_nav-list ${this.state.mobileMenu ? 'show-mobile' : 'hide-mobile'}`}>
 						${this.renderEventList()}
 					</ul></nav>
-					${this.state?.rewardTrack?.render() ?? this.calendar()}
+					${this.state?.rewardTrack === 'capstone' ? this.renderCapstoneCalendar() : this.state?.rewardTrack?.render() ?? this.calendar()}
 					<div class=${`mica_mobile-menu_container ${this.state.mobileMenu ? 'show-mobile' : 'hide-mobile'}`}>${this?.mobileMicaMenu.render()}</div>
 				</div>
 			</div>
@@ -145,6 +145,13 @@ class Calendar extends Component {
 				class=${!this.state?.rewardTrack ? 'active' : null}
 			>
 				<span>Timeline</span>
+			</button></li>
+			<li
+			><button
+				onclick=${() => this.showCapstoneCalendar()}
+				class=${this.state?.rewardTrack === 'capstone' ? 'active' : null}
+			>
+				<span>Capstones</span>
 			</button></li>
 			${[...this?.rewardTracks.values()].map(rewardTrack => HTML.wire(rewardTrack)`
 				<li
@@ -289,6 +296,76 @@ class Calendar extends Component {
 		`;
 	}
 
+	async renderCapstoneCalendar() {
+		if (this?._capstoneCalendarWire) return this._capstoneCalendarWire;
+		const calendar = await this.getCapstoneCalendar();
+		if (!calendar) return `The capstone calendar could not be loaded`;
+
+		const weekToCalendarItem = async (week) => {
+			if (!week.deck) return;
+
+			const deck = new Item(week?.deck ?? 'unknown');
+			if (!deck) return;
+
+			await deck.init();
+			const capstoneChallengePath = deck?.data?.CapstoneChallengePath;
+			if (!capstoneChallengePath) return;
+
+			const capstoneChallenge = new Item(capstoneChallengePath);
+			await capstoneChallenge.init();
+			if (!capstoneChallenge) return;
+
+			const inventoryReward = new Item(capstoneChallenge?.data?.Reward?.InventoryRewards?.[0]?.InventoryItemPath);
+			if (!inventoryReward) return;
+
+			const startDate = new Date(week.startDate);
+			const endDate = new Date(week.endDate);
+
+			const today = new Date();
+
+			const active = startDate <= today && endDate >= today;
+
+			return HTML.wire(week)`
+				<li class=${`calendar-item${endDate <= today ? ' past' : active ? ' active' : ' future'}`}>
+					${
+						active ? HTML.wire()`
+							<span
+								class="ritual-icon"
+								style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/progression/storecontent/flairicons/ritualiconflair.png)`}}
+							></span>
+						`
+						: ''
+					}
+					<span class="date">${new Date(week.startDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
+					${{
+						any: inventoryReward.renderIcon('capstone', {itemTypeIcon: true}),
+						placeholder: throbber.cloneNode(true)
+					}}
+					<a class="challenge-link" href=${`#${capstoneChallengePath}`}>${capstoneChallenge?.data?.Title}</a>
+				</li>
+			`;
+		}
+
+		return (this._capstoneCalendarWire = HTML.wire(this, ':capstone')`
+			<div class="reward-track_wrapper mica_content">
+				<span>Season 2 Capstones // ${calendar.length}</span>
+				<ul class="capstone-calendar_wrapper">
+					${{
+						any: calendar.map(week => weekToCalendarItem(week)),
+						placeholder: throbber.cloneNode(true)
+					}}
+				</ul>
+			</div>
+		`);
+	}
+
+	async getCapstoneCalendar() {
+		if (this?._capstoneCalendar) return await this._capstoneCalendar;
+		const calendarPath = 'capstones.json';
+		this._capstoneCalendar = db.getJSON(calendarPath);
+		return await this._capstoneCalendar;
+	}
+
 	showRewardTrack(rewardTrack) {
 		this.state.mobileMenu = false;
 		if (this.state?.rewardTrack === rewardTrack) {
@@ -301,6 +378,11 @@ class Calendar extends Component {
 	}
 
 	showRewardTrackByName(name) {
+		if (name === 'capstone')
+		{
+			this.setState({rewardTrack: 'capstone'});
+			return;
+		}
 		for (const rewardTrack of [...this?.rewardTracks.values()])
 		{
 			if (rewardTrack?.name === name)
@@ -315,6 +397,13 @@ class Calendar extends Component {
 		this.state.mobileMenu = false;
 		this.setState({rewardTrack: undefined});
 		urlParams.deleteSecionSetting('calendar');
+		this.scrollIntoView();
+	}
+
+	showCapstoneCalendar() {
+		this.state.mobileMenu = false;
+		this.setState({rewardTrack: 'capstone'});
+		urlParams.setSecionSetting('calendar', 'capstone');
 		this.scrollIntoView();
 	}
 

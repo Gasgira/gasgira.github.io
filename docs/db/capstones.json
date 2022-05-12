@@ -1,0 +1,137 @@
+[
+	{
+		"startDate": "2022-05-03T18:00:00.000Z",
+		"endDate": "2022-05-10T18:00:00.000Z",
+		"deck": "challengecontent/clientchallengedeckdefinitions/s2lonewolf1weeklydeck1.json"
+	},
+	{
+		"startDate": "2022-05-10T18:00:00.000Z",
+		"endDate": "2022-05-17T18:00:00.000Z",
+		"deck": "challengecontent/clientchallengedeckdefinitions/s2lonewolf1weeklydeck2.json"
+	},
+	{
+		"startDate": "2022-05-17T18:00:00.000Z",
+		"endDate": "2022-05-24T18:00:00.000Z",
+		"deck": "challengecontent/clientchallengedeckdefinitions/s2vanillaweeklydeck1.json"
+	},
+	{
+		"startDate": "2022-05-24T18:00:00.000Z",
+		"endDate": "2022-05-31T18:00:00.000Z",
+		"deck": "challengecontent/clientchallengedeckdefinitions/s2entrenchedweeklydeck1.json"
+	},
+	{
+		"startDate": "2022-05-31T18:00:00.000Z",
+		"endDate": "2022-06-07T18:00:00.000Z",
+		"deck": "challengecontent/clientchallengedeckdefinitions/s2vanillaweeklydeck2.json"
+	},
+	{
+		"startDate": "2022-06-07T18:00:00.000Z",
+		"endDate": "2022-06-14T18:00:00.000Z",
+		"deck": "challengecontent/clientchallengedeckdefinitions/s2vanillaweeklydeck3.json"
+	},
+	{
+		"startDate": "2022-06-14T18:00:00.000Z",
+		"endDate": "2022-06-21T18:00:00.000Z",
+		"deck": "challengecontent/clientchallengedeckdefinitions/s2entrenchedweeklydeck2.json"
+	},
+	{
+		"startDate": "2022-06-21T18:00:00.000Z",
+		"endDate": "2022-06-28T18:00:00.000Z",
+		"deck": "challengecontent/clientchallengedeckdefinitions/s2vanillaweeklydeck4.json"
+	},
+	{
+		"startDate": "2022-06-28T18:00:00.000Z",
+		"endDate": "2022-07-05T18:00:00.000Z",
+		"deck": "challengecontent/clientchallengedeckdefinitions/s2vanillaweeklydeck5.json"
+	},
+	{
+		"startDate": "2022-07-05T18:00:00.000Z",
+		"endDate": "2022-07-12T18:00:00.000Z",
+		"deck": "challengecontent/clientchallengedeckdefinitions/s2entrenchedweeklydeck3.json"
+	},
+	{
+		"startDate": "2022-07-12T18:00:00.000Z",
+		"endDate": "2022-07-19T18:00:00.000Z",
+		"deck": "challengecontent/clientchallengedeckdefinitions/s2vanillaweeklydeck6.json"
+	},
+	{
+		"startDate": "2022-07-19T18:00:00.000Z",
+		"endDate": "2022-07-26T18:00:00.000Z",
+		"deck": "challengecontent/clientchallengedeckdefinitions/s2lonewolf2weeklydeck1.json"
+	},
+	{
+		"startDate": "2022-07-26T18:00:00.000Z",
+		"endDate": "2022-08-02T18:00:00.000Z",
+		"deck": "challengecontent/clientchallengedeckdefinitions/s2lonewolf2weeklydeck2.json"
+	},
+	{
+		"startDate": "2022-08-02T18:00:00.000Z",
+		"endDate": "2022-08-09T18:00:00.000Z",
+		"deck": "challengecontent/clientchallengedeckdefinitions/s2vanillaweeklydeck7.json"
+	},
+	{
+		"startDate": "2022-08-09T18:00:00.000Z",
+		"endDate": "2022-08-16T18:00:00.000Z",
+		"deck": "challengecontent/clientchallengedeckdefinitions/s2vanillaweeklydeck8.json"
+	},
+	{
+		"startDate": "2022-08-16T18:00:00.000Z",
+		"endDate": "2022-08-23T18:00:00.000Z",
+		"deck": "challengecontent/clientchallengedeckdefinitions/s2entrenchedweeklydeck4.json"
+	},
+	{
+		"startDate": "2022-08-23T18:00:00.000Z",
+		"endDate": "2022-08-30T18:00:00.000Z",
+		"deck": "challengecontent/clientchallengedeckdefinitions/s2vanillaweeklydeck9.json"
+	},
+	{
+		"startDate": "2022-08-30T18:00:00.000Z",
+		"endDate": "2022-09-06T18:00:00.000Z",
+		"deck": "challengecontent/clientchallengedeckdefinitions/s2vanillaweeklydeck10.json"
+	},
+	{
+		"startDate": "2022-09-06T18:00:00.000Z",
+		"endDate": "2022-09-13T18:00:00.000Z",
+		"deck": "challengecontent/clientchallengedeckdefinitions/s2yappeningweeklydeck1.json"
+	},
+	{
+		"startDate": "2022-09-13T18:00:00.000Z",
+		"endDate": "2022-09-20T18:00:00.000Z",
+		"deck": "challengecontent/clientchallengedeckdefinitions/s2yappeningweeklydeck2.json"
+	},
+	{
+		"startDate": "2022-09-20T18:00:00.000Z",
+		"endDate": "2022-09-27T18:00:00.000Z",
+		"deck": "challengecontent/clientchallengedeckdefinitions/s2vanillaweeklydeck11.json"
+	},
+	{
+		"startDate": "2022-09-27T18:00:00.000Z",
+		"endDate": "2022-10-04T18:00:00.000Z",
+		"deck": "challengecontent/clientchallengedeckdefinitions/s2entrenchedweeklydeck5.json"
+	},
+	{
+		"startDate": "2022-10-04T18:00:00.000Z",
+		"endDate": "2022-10-11T18:00:00.000Z",
+		"deck": "challengecontent/clientchallengedeckdefinitions/s2vanillaweeklydeck12.json"
+	},
+	{
+		"startDate": "2022-10-11T18:00:00.000Z",
+		"endDate": "2022-10-18T18:00:00.000Z",
+		"deck": "challengecontent/clientchallengedeckdefinitions/s2vanillaweeklydeck13.json"
+	},
+	{
+		"startDate": "2022-10-18T18:00:00.000Z",
+		"endDate": "2022-10-25T18:00:00.000Z",
+		"deck": "challengecontent/clientchallengedeckdefinitions/s2vanillaweeklydeck14.json"
+	},
+	{
+		"startDate": "2022-10-25T18:00:00.000Z",
+		"endDate": "2022-11-01T18:00:00.000Z",
+		"deck": "challengecontent/clientchallengedeckdefinitions/s2entrenchedweeklydeck6.json"
+	},
+	{
+		"startDate": "2022-11-01T18:00:00.000Z",
+		"endDate": "2022-11-08T18:00:00.000Z",
+		"deck": "challengecontent/clientchallengedeckdefinitions/s2vanillaweeklydeck15.json"
+	}
+]

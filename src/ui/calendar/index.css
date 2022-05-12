@@ -243,3 +243,60 @@
 		justify-content: center !important;
 	}
 }
+
+.capstone-calendar_wrapper {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: left;
+	--padding: 0.5rem;
+	padding: var(--padding);
+	& .calendar-item {
+		position: relative;
+		border-radius: var(--theme-border-radius);
+		padding: 0.2em;
+		margin-bottom: 1rem;
+		transition: background-color var(--time-active) linear;
+		&:hover {
+			background-color: hsla(var(--theme-interact-hsl), 0.05);
+		}
+		&.active {
+			& .date {
+				color: var(--rarity-event);
+			}
+			& .ritual-icon {
+				content: "";
+				display: inline-block;
+				width: 1em;
+				height: 1em;
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+				pointer-events: none;
+				/* background-color: var(--rarity-event); */
+				/* background-image: url("/db/images/progression/storecontent/flairicons/ritualiconflair.png"); */
+			}
+		}
+		&.past {
+			filter: grayscale(50%);
+			opacity: 0.8;
+			& a {
+				text-decoration: line-through;
+			}
+		}
+		& .challenge-link {
+			display: inline-block;
+			padding: 0.2em 0.4em;
+			margin: 0.2em;
+			border-radius: var(--theme-border-radius);
+			color: var(--theme-text);
+			text-decoration: none;
+			width: 100%;
+			text-align: center;
+			position: relative;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
