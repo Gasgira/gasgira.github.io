@@ -1,0 +1,24 @@
+{
+	"OfferingId": "20220224-17",
+	"OfferingDisplayPath": "StoreContent/Display/Offerings/20220224-17.json",
+	"OfferingExpirationDate": null,
+	"IncludedItems": [
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Spartan/ActionPoses/101-000-menu-stance-p-8fe6c1b9.json",
+			"ItemType": "SpartanActionPose"
+		}
+	],
+	"Prices": [
+		{
+			"Cost": 300,
+			"CurrencyPath": "Currency/Currencies/cR.json"
+		}
+	],
+	"IncludedCurrencies": [],
+	"IncludedRewardTracks": [],
+	"BoostPath": null,
+	"OperationXp": 0,
+	"EventXp": 0,
+	"MatchBoosts": null
+}

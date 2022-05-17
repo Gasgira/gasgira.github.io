@@ -50521,6 +50521,78 @@
 					]
 				}
 			}
+		],
+		[
+			"offering-20220224-15",
+			{
+				"path": "storecontent/offering/offering-20220224-15.json",
+				"name": "offering-20220224-15",
+				"title": "War Master Armor Set",
+				"type": "Offering",
+				"touched": [
+					"2022-05-17T00:00:00.000Z"
+				],
+				"community": {
+					"collection": "war-master-armor",
+					"tags": [
+						"source"
+					]
+				}
+			}
+		],
+		[
+			"offering-20220224-16",
+			{
+				"path": "storecontent/offering/offering-20220224-16.json",
+				"name": "offering-20220224-16",
+				"title": "Cordovan Thunder",
+				"type": "Offering",
+				"touched": [
+					"2022-05-17T00:00:00.000Z"
+				],
+				"community": {
+					"collection": "cordovan-thunder",
+					"tags": [
+						"source"
+					]
+				}
+			}
+		],
+		[
+			"offering-20220224-17",
+			{
+				"path": "storecontent/offering/offering-20220224-17.json",
+				"name": "offering-20220224-17",
+				"title": "Crush Your Enemies",
+				"type": "Offering",
+				"touched": [
+					"2022-05-17T00:00:00.000Z"
+				],
+				"community": {
+					"collection": "crush-your-enemi",
+					"tags": [
+						"source"
+					]
+				}
+			}
+		],
+		[
+			"offering-20220224-12",
+			{
+				"path": "storecontent/offering/offering-20220224-12.json",
+				"name": "offering-20220224-12",
+				"title": "High Value Targets",
+				"type": "Offering",
+				"touched": [
+					"2022-05-17T00:00:00.000Z"
+				],
+				"community": {
+					"collection": "high-value-targe",
+					"tags": [
+						"source"
+					]
+				}
+			}
 		]
 	]
 }

@@ -3,7 +3,7 @@ import { db } from 'db';
 import { emitter } from 'eventEmitter';
 import { HTML } from 'lib/HTML';
 import { MobileMicaMenu } from 'ui/mica';
-import { compositor } from 'pages/vanity/compositor';
+import { Compositor } from 'pages/vanity/compositor';
 
 import './index.css';
 
@@ -40,7 +40,8 @@ class ArmorHall extends Component {
 
 		this.initCores(this._vanity);
 
-		compositor.setCanvas(this.renderCanvas());
+		if (!this?._compositor) this._compositor = new Compositor();
+		this._compositor.setCanvas(this.renderCanvas());
 	}
 
 	get vanityIndex() {
@@ -68,8 +69,8 @@ class ArmorHall extends Component {
 			profile
 		}
 
-		await compositor.initProfile(profile);
-		compositor.render();
+		await this._compositor.initProfile(profile);
+		this._compositor.render();
 	}
 
 	async render() {

@@ -54,7 +54,7 @@ class PageVanity {
 
 		await this.init();
 
-		if (true) // showArmorHall
+		if (showArmorHall) // showArmorHall
 		{
 			return [
 				await profile.render(),

@@ -1,14 +1,30 @@
 const CANVAS_WIDTH = 512;
 const CANVAS_HEIGHT = 1024;
 
-class Compositor {
+export class Compositor {
 	constructor() {
 		this.drawSceneDepth = false;
 
 		this.renderCount = 0;
-		this.scratchCanvas = new OffscreenCanvas(CANVAS_WIDTH, CANVAS_HEIGHT);
-		this.bufferCanvas = new OffscreenCanvas(CANVAS_WIDTH, CANVAS_HEIGHT);
-		this.sceneDepthCanvas = new OffscreenCanvas(CANVAS_WIDTH, CANVAS_HEIGHT);
+		if (window?.OffscreenCanvas)
+		{
+			this.scratchCanvas = new OffscreenCanvas(CANVAS_WIDTH, CANVAS_HEIGHT);
+			this.bufferCanvas = new OffscreenCanvas(CANVAS_WIDTH, CANVAS_HEIGHT);
+			this.sceneDepthCanvas = new OffscreenCanvas(CANVAS_WIDTH, CANVAS_HEIGHT);
+		} else {
+			this.scratchCanvas = document.createElement('canvas');
+			this.scratchCanvas.width = CANVAS_WIDTH;
+			this.scratchCanvas.height = CANVAS_HEIGHT;
+
+			this.bufferCanvas = document.createElement('canvas');
+			this.bufferCanvas.width = CANVAS_WIDTH;
+			this.bufferCanvas.height = CANVAS_HEIGHT;
+			
+			this.sceneDepthCanvas = document.createElement('canvas');
+			this.sceneDepthCanvas.width = CANVAS_WIDTH;
+			this.sceneDepthCanvas.height = CANVAS_HEIGHT;
+			
+		}
 		this.defaultState();
 	}
 
@@ -383,4 +399,4 @@ class Compositor {
 	}
 }
 
-export const compositor = new Compositor();
+// export const compositor = new Compositor();
