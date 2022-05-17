@@ -26,7 +26,7 @@
 	],
 	"CommonData": {
 		"Id": "104-001-mcc-1-emblem-ac1b9aa8",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Creative Spark",
 		"Description": "Building the future, one tag at a time.",
 		"FeatureFlag": true,

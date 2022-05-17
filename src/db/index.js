@@ -7,6 +7,7 @@ import { urlParams } from 'urlParams';
 class Database {
 	constructor() {
 		this.dbPath = 'db';
+		this.assetPath = '7';
 		if (settings.data.has('dbPath')) this.dbPath = settings.data.get('dbPath');
 		if (settings.data.has('pathCasing')) this.pathCasing = settings.data.get('pathCasing');
 		if (settings.data.has('revealHidden'))
@@ -82,7 +83,23 @@ class Database {
 		return await fetch(`/${this?.dbPath ?? 'db'}/${this.pathCase(path)}`)
 			.then(response => {
 				if (response.ok) return response.json();
-				console.error(`[db.get] ${response.status} "${this.pathCase(path)}"`)
+				console.error(`[db.getJSON] ${response.status} "${this.pathCase(path)}"`)
+				return Promise.reject(response);
+			});
+	}
+
+	async getAssetJSON(path) {
+		// console.log(`[db.get] "${path}"`);
+		if (!path || typeof path !== 'string')
+		{
+			console.warn(`[db.get] Bad path! "${path}"`);
+			return;
+		}
+		
+		return await fetch(`/${this?.assetPath ?? '7'}/${this.pathCase(path)}`)
+			.then(response => {
+				if (response.ok) return response.json();
+				console.error(`[db.getAssetJSON] ${response.status} "${this.pathCase(path)}"`)
 				return Promise.reject(response);
 			});
 	}

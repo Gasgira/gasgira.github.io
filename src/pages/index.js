@@ -6,6 +6,9 @@ import { calendar } from 'ui/calendar';
 import { coreViewer } from 'ui/cores';
 import { inventory } from 'ui/inventory';
 import { vanity } from 'pages/vanity';
+import { armorHall } from 'pages/vanity/customization';
+import { profile } from 'pages/vanity/Profile';
+import { urlParams } from 'urlParams';
 
 class PageItems {
 	async init() {
@@ -39,13 +42,29 @@ class PageVanity {
 		const pathParts = pathname.split('/');
 		if (pathParts && pathParts.length > 2) gamertag = decodeURIComponent(pathParts[2]);
 		
-		this._init = vanity.init(gamertag);
+		this._init = profile.init(gamertag);
 		await this._init;
 	}
+	
 
 	async render() {
+		let showArmorHall = false;
+		const beta = urlParams.getSecionSetting('vanity-beta');
+		if (beta) showArmorHall = true;
+
 		await this.init();
+
+		if (true) // showArmorHall
+		{
+			return [
+				await profile.render(),
+				await armorHall.render(),
+				await vanity.render()
+			];
+		}
+
 		return [
+			await profile.render(),
 			await vanity.render()
 		];
 	}
@@ -60,9 +79,9 @@ class Router {
 	async route() {
 		const url = new URL(window.location);
 		const { pathname } = url;
-		console.info(`[Router.route] "${this?.pathname ?? 'initial'}" -> "${pathname}"`);
 
 		if (this?.pathname === pathname) return;
+		console.info(`[Router.route] "${this?.pathname ?? 'initial'}" -> "${pathname}"`);
 		this.pathname = pathname;
 
 		if (pathname.startsWith('/vanity'))

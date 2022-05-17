@@ -1,0 +1,14 @@
+.armorhall_wrapper {
+	& .armorhall-canvas_wrapper {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 3rem 0;
+		& .vanity-canvas_armor-hall {
+			max-height: 100vh;
+			max-width: 100vw;
+		}
+	}
+}

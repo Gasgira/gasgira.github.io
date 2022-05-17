@@ -1,0 +1,109 @@
+{
+	"cores": {
+		"defaultOption": "017-001-olympus-c13d0b38",
+		"options": [
+			"017-001-olympus-c13d0b38",
+			"017-001-reach-2564121f",
+			"017-001-samurai-55badb14",
+			"017-001-wlv-c13d0b38",
+			"017-001-eag-c13d0b38"
+		]
+	},
+	"coatings": {
+		"isRequired": true,
+		"defaultOption": "002-001-olympus-c0122ae6",
+		"options": [
+			"002-001-olympus-c0122ae6"
+		]
+	},
+	"helmets": {
+		"isRequired": true,
+		"defaultOption": "005-001-olympus-c13d0b38",
+		"options": [
+			"005-001-olympus-c13d0b38"
+		]
+	},
+	"helmetAttachments": {
+		"isRequired": false,
+		"defaultOption": "",
+		"options": [
+			""
+		]
+	},
+	"visors": {
+		"isRequired": true,
+		"defaultOption": "012-001-6dae39c2",
+		"options": [
+			"012-001-6dae39c2"
+		]
+	},
+	"leftShoulderPads": {
+		"isRequired": false,
+		"defaultOption": "008-001-olympus-c13d0b38",
+		"options": [
+			"008-001-olympus-c13d0b38"
+		]
+	},
+	"rightShoulderPads": {
+		"isRequired": false,
+		"defaultOption": "009-001-olympus-c13d0b38",
+		"options": [
+			"009-001-olympus-c13d0b38"
+		]
+	},
+	"gloves": {
+		"isRequired": true,
+		"defaultOption": "003-001-olympus-c13d0b38",
+		"options": [
+			"003-001-olympus-c13d0b38"
+		]
+	},
+	"kneePads": {
+		"isRequired": true,
+		"defaultOption": "006-001-olympus-c13d0b38",
+		"options": [
+			"006-001-olympus-c13d0b38"
+		]
+	},
+	"chestAttachments": {
+		"isRequired": false,
+		"defaultOption": "",
+		"options": [
+		]
+	},
+	"wristAttachments": {
+		"isRequired": false,
+		"defaultOption": "",
+		"options": [
+		]
+	},
+	"hipAttachments": {
+		"isRequired": false,
+		"defaultOption": "",
+		"options": [
+		]
+	},
+	"emblems": {
+		"isRequired": false,
+		"options": []
+	},
+	"armorFx": {
+		"isRequired": false,
+		"defaultOption": "",
+		"options": []
+	},
+	"mythicFx": {
+		"isRequired": false,
+		"defaultOption": "",
+		"options": [
+		]
+	},
+	"weapon": {
+		"isRequired": true,
+		"theme": "207-201-olympus-aa30213b",
+		"defaultOption": "203-201-olympus-aa30213b",
+		"options": [
+			"203-201-olympus-aa30213b"
+		]
+	}
+}

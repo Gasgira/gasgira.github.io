@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "405-305-284c4165",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Brain Teaser",
 		"Description": "Style IS substance!",
 		"FeatureFlag": true,

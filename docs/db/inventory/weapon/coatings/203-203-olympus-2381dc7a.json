@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "203-203-olympus-2381dc7a",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Olympus Tactical",
 		"Description": "Practical and aesthetic.",
 		"FeatureFlag": true,

@@ -4,6 +4,13 @@
 	"Logo": "seasons/Season1.jpg",
 	"Number": 1,
 	"Description": "Because of you, we found Halo, unlocked its secrets, shattered our enemy's resolve.",
-	"SummaryBackgroundPath": "progression/RewardTracks/HaloInfinite_Season01_BPVariant_ED_v01_5040x2160_dark.png",
-	"ChallengesBackgroundPath": "progression/ScreenBackgrounds/ProgressionChallengesBackgroundTemp.png"
+	"SummaryBackgroundPath": "progression/ScreenBackgrounds/Summary_Background.png",
+	"BattlePassSeasonUpsellBackgroundImage": "progression/ScreenBackgrounds/season_upsell_background_S1.png",
+	"ChallengesBackgroundPath": "progression/ScreenBackgrounds/ProgressionChallengesBackgroundTemp.png",
+	"BattlePassLogoImage": "progression/ScreenBackgrounds/battlepass_logo.png",
+	"SeasonLogoImage": "seasons/insignia_s1_RCH_512.png",
+	"RitualLogoImage": "progression/ScreenBackgrounds/ritual_logo.png",
+	"StorefrontBackgroundImage": "progression/ScreenBackgrounds/storefront_background.png",
+	"CardBackgroundImage": "progression/Switcher/Season_Switcher_S1_RCH.png",
+	"ProgressionBackgroundImage": "progression/ScreenBackgrounds/progression_background.png"
 }

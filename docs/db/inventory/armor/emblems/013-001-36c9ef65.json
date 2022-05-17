@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "013-001-36c9ef65",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Queen of Gambits",
 		"Description": "A thousand steps ahead.",
 		"FeatureFlag": true,

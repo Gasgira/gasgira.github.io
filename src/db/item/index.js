@@ -15,17 +15,30 @@ export const placeholderItem = HTML.wire()`
 `;
 
 export class Item extends Component {
-	constructor(path) {
+	constructor(properties) {
 		super();
-		if (!path || path.length < 10) return console.error(`[Item] Bad path ${path}`);
-		const pathLowercase = path.toLowerCase();
-		if (db.items.has(pathLowercase))
+		if (!properties) throw new Error(`[Item.constructor] No props!`);
+
+		let path = '';
+
+		if (typeof properties === 'string')
+		{
+			path = properties.toLowerCase();
+		} else if (properties.id) {
+			const meta = db.getItemManifestByID(properties.id);
+			if (!meta) throw new Error(`[Item.constructor] No meta for "${id}"!`);
+			this._meta = meta;
+			this._id = meta.name;
+			path = meta.path;
+		}
+
+		if (db.items.has(path))
 		{
 			// console.warn('[skimmer][db.item] Duplicate', path);
-			return db.items.get(pathLowercase);
+			return db.items.get(path);
 		}
-		this.path = pathLowercase;
-		db.items.set(`${pathLowercase}`, this);
+		this.path = path;
+		db.items.set(`${path}`, this);
 
 		this.renderCount = 0;
 	}

@@ -20,59 +20,28 @@ class Vanity extends Component {
 			if (this.state.mobileMenu) this.setState({mobileMenu: false});
 		});
 
+		emitter.on('announceProfile', ({profile, gamertag}) => {
+			this.initProfile({profile, gamertag});
+		});
+
 		this.wrongGamertags = new Set();
-	}
-
-	async init(gamertag) {
-		if (!gamertag?.trim())
-		{
-			if (this.state.gamertag) this.setUrlPathToGamertag(this.state.gamertag);
-			return;
-		}
-
-		const appearance = await this.requestAppearance(gamertag);
-		if (appearance)
-		{
-			this.state = this.defaultState;
-			return await this.initAppearance(appearance, gamertag);
-		}
 	}
 
 	get defaultState() {
 		return {
-			gamertag: '',
-			search: '',
-			failedSearch: '',
 			mobileMenu: false,
-			cores: [],
-			status: '',
-			fetching: false
+			cores: []
 		};
 	}
 
 	get gamertag() {
-		return this.dashDecodeURIComponent(this.state.gamertag);
+		return this.state?.profile?.gamertag ?? '';
 	}
 
 	render() {
 		return this.html`<div class="inventory_wrapper vanity_wrapper mica_viewer" id="inventory">
 			<header class="mica_header-strip">
-				<button aria-label="Search" title="Search" onclick=${() => this.submitSearch()}><div class="icon-masked icon-search"></div></button>
-				<input
-					aria-label="Search Input"
-					type="search"
-					class="vanity-search_input"
-					id="vanity-search"
-					name="vanity-search"
-					placeholder="Search..."
-					maxlength="32"
-					oninput=${(e) => this.inputSearch(e?.target?.value ?? '')}
-					onkeydown=${(e) => {
-						if (e?.key === 'Enter') this.submitSearch();
-					}}
-					value=${this.state.term}
-				>
-				<div class="vanity-status">${this.renderStatus()}</div>
+				<h2>${this.gamertag ? `${this.gamertag}'s Inventory` : 'Inventory'}</h2>
 			</header>
 			<div class="inventory_content mica_main-content">
 				<ul class=${`inventory-catergories mica_nav-list ${this.state.mobileMenu ? 'show-mobile' : 'hide-mobile'}`}>
@@ -89,10 +58,6 @@ class Vanity extends Component {
 		</div>`;
 	}
 
-	renderStatus(status) {
-		return HTML.wire(this, ':status')`${status ?? this.state.status}`;
-	}
-
 	showCore(appearanceCore) {
 		this.state.mobileMenu = false;
 		if (this.state.core === appearanceCore) return;
@@ -101,135 +66,18 @@ class Vanity extends Component {
 		this.setState({core: appearanceCore});
 	}
 
-	inputSearch(string) {
-		if (typeof string === 'string') this.state.search = string;
-	}
-
-	async submitSearch() {
-		if (this.state.fetching) return;
-		if (!this.state.search || typeof this.state.search !== 'string') return;
-
-		const search = this.state.search;
-		if (search === this.state.failedSearch) return;
-		console.info(`[Vanity.submitSearch]`, search);
-
-		const appearance = await this.requestAppearance(search.trim());
-		if (appearance)
-		{
-			this.state = this.defaultState;
-			return await this.initAppearance(appearance, search);
-		}
-
-		this.state.failedSearch = search;
-	}
-
-	async requestAppearance(gamertag) {
-		// return testAppearance;
-		try {
-			if (this.state.disabled) throw new Error(`System offline. Please come back later.`);
-			if (!gamertag || typeof gamertag !== 'string') throw new Error(`No gamertag "${gamertag}"`);
-			if (this.wrongGamertags.has(gamertag.toLowerCase()))
-			{
-				this.setState({status: 'Not Found!'});
-				return console.error('Repeated 404 GT', gamertag);
-			}
-
-			// throw new Error(`host https://${window.location.host}`);
-			this.setState({
-				fetching: true,
-				status: 'Searching...'
-			});
-			// const response = await fetch(new URL(`/api/vanity/${gamertag}`, `https://cylix.guide`));
-			const response = await fetch(new URL(`/api/vanity/${gamertag}`, `https://${window.location.host}`));
-			console.log('requestAppearance', response.status);
-			this.state.fetching = false;
-			if (response && response.ok)
-			{
-				// this.renderStatus('Found!');
-				const json = await response.json();
-				if (json && json.ArmorCores) return json;
-			}
-
-			if (!response)
-			{
-				this.setState({status: 'Network Error!'});
-				return;
-			}
-
-			if (response.status === 404)
-			{
-				this.wrongGamertags.add(gamertag.toLowerCase());
-				console.log('404', gamertag, this.wrongGamertags);
-				this.setState({status: 'Not Found!'});
-				return;
-			}
-
-			if (response.status === 405)
-			{
-				console.log('405', gamertag);
-				this.setState({
-					status: 'System Offline!',
-					disabled: true
-				});
-				return;
-			}
-
-			if (response.status >= 500)
-			{
-				this.setState({status: 'Server Error!'});
-				return;
-			}
-		} catch (error) {
-			console.error(`[Vanity.requestAppearance] Fetch error`, error);
-		}
-		this.setState({
-			fetching: false,
-			status: 'Error!'
-		});
-	}
-
-	setUrlPathToGamertag(gamertag) {
-		if (gamertag && typeof gamertag === 'string')
-		{
-			this.state.gamertag = gamertag;
-			history.pushState(null, null, `/vanity/${this.dashEncodeURIComponent(gamertag.trim())}`);
-
-			this.renderStatus('');
-		}
-	}
-
-	dashEncodeURIComponent(string) {
-		try {
-			if (!string || typeof string !== 'string') return '';
-			if (!string.includes(' ')) return encodeURIComponent(string);
-			return encodeURIComponent(string.replaceAll(' ', '-'));
-		} catch (error) {
-			return encodeURIComponent(string);
-		}
-	}
-
-	dashDecodeURIComponent(string) {
-		try {
-			if (!string || typeof string !== 'string') return '';
-			if (!string.includes('-')) return decodeURIComponent(string);
-			return decodeURIComponent(string.replaceAll('-', ' '));
-		} catch (error) {
-			return decodeURIComponent(string);
-		}
-	}
-
-	async initAppearance(appearance, gamertag) {
-		this.state.appearance = appearance;
-		this.setUrlPathToGamertag(gamertag);
+	async initProfile({profile}) {
+		if (!profile?.gamertag || !profile?.armor) throw new Error('Invalid profile!');
+		this.state = this.defaultState;
+		this.state.profile = profile;
+		const gamertag = profile.gamertag;
 
 		try {
-			const armorCore = appearance?.ArmorCores?.ArmorCores?.[0];
-			const appearanceCore = this.makeAppearanceCore(armorCore);
+			const appearanceCore = new AppearanceCore({ core: profile.armor, gamertag });
 			if (appearanceCore)
 			{
 				this.state.cores.push(appearanceCore);
 				appearanceCore.init();
-				// this.state.core = appearanceCore;
 				this.setState({core: appearanceCore})
 			}
 		} catch (error) {
@@ -237,38 +85,28 @@ class Vanity extends Component {
 		}
 
 		try {
-			const sockets = new Map();
-			const spartan = appearance?.Appearance;
-			if (spartan.ActionPosePath) sockets.set('Stance', spartan.ActionPosePath);
-			if (spartan.BackdropImagePath) sockets.set('Background', spartan.BackdropImagePath);
-			if (spartan?.Emblem.EmblemPath) sockets.set('Emblem', spartan.Emblem.EmblemPath);
-			
-			const aiCore = appearance?.AiCores?.AiCores?.[0]?.Themes?.[0];
-			if (aiCore && aiCore.ModelPath) sockets.set('AI Model', aiCore.ModelPath);
-			if (aiCore && aiCore.ColorPath) sockets.set('AI Color', aiCore.ColorPath);
-
-			const appearanceCore = new AppearanceCore({ type: 'Spartan ID', sockets, gamertag: this.gamertag });
+			const appearanceCore = new AppearanceCore({ type: 'Spartan ID', core: profile.spartan, gamertag });
 			if (appearanceCore) this.state.cores.push(appearanceCore);
 		} catch (error) {
 			console.error(`[Vanity.showAppearance] spartan`, error);
 		}
 
 		try {
-			const weaponCores = appearance.WeaponCores.WeaponCores;
+			const weaponCores = profile?.weapons ?? [];
 			weaponCores?.forEach(weaponCore => {
-				const appearanceCore = this.makeAppearanceCore(weaponCore);
+				const appearanceCore = new AppearanceCore({ core: weaponCore, gamertag });
 				if (appearanceCore) this.state.cores.push(appearanceCore);
-			})
+			});
 		} catch (error) {
 			console.error(`[Vanity.showAppearance] weaponCores`, error);
 		}
 
 		try {
-			const vehicleCores = appearance.VehicleCores.VehicleCores;
+			const vehicleCores = profile?.vehicles ?? [];
 			vehicleCores?.forEach(vehicleCore => {
-				const appearanceCore = this.makeAppearanceCore(vehicleCore);
+				const appearanceCore = new AppearanceCore({ core: vehicleCore, gamertag });
 				if (appearanceCore) this.state.cores.push(appearanceCore);
-			})
+			});
 		} catch (error) {
 			console.error(`[Vanity.showAppearance] VehicleCores`, error);
 		}
@@ -307,10 +145,8 @@ class Vanity extends Component {
 				});
 			});
 
-			console.log('feats', feats);
-
 			if (hasFeats){
-				this.state.feats = new Feats({feats, gamertag: this.gamertag, appearance});
+				this.state.feats = new Feats({feats, profile});
 				this.state.featsRender = this.state.feats.render();
 			}
 		} catch (error) {
@@ -319,35 +155,6 @@ class Vanity extends Component {
 
 		this.render();
 	}
-
-	makeAppearanceCore(coreData) {
-		try {
-			// TODO CoreType branching
-			const type = niceTypes.get(coreData.CoreType) ?? coreData.CoreType;
-			const core = coreData.CorePath;
-			const theme = coreData.Themes[0];
-			const sockets = new Map();
-
-			for (const property in theme)
-			{
-				// console.log('prop', property)
-				const value = theme[property];
-				if (pathNames.has(property) && value?.trim())
-				{
-					sockets.set(pathNames.get(property), value);
-				}
-			}
-
-			if (Array.isArray(theme?.Emblems) && theme.Emblems?.[0]?.Path) {
-				sockets.set('Emblem', theme.Emblems[0]?.Path);
-			}
-
-			const appearanceCore = new AppearanceCore({ type, core, sockets, gamertag: this.gamertag });
-			if (appearanceCore) return appearanceCore;
-		} catch (error) {
-			console.error(`[Vanity.makeAppearanceCore]`, error);
-		}
-	}
 }
 
 export const vanity = new Vanity();
@@ -355,17 +162,16 @@ export const vanity = new Vanity();
 class Feats extends Component {
 	constructor({
 		feats,
-		gamertag = 'Spartan',
-		appearance
+		profile
 	}) {
 		super();
 
 		if (!feats) return;
 		this.feats = feats;
-		this.state.gamertag = gamertag;
-		if (appearance) this.state.appearance = appearance;
-		this.state.serviceTag = appearance?.Appearance?.ServiceTag ?? '117';
-		console.log('this', feats);
+		this.state.gamertag = profile?.gamertag ?? 'Gamertag...';
+		this.state.profile = profile;
+		this.state.serviceTag = profile?.spartan?.serviceTag ?? '117';
+		// console.log('this', feats);
 	}
 
 	get defaultState() {
@@ -376,8 +182,8 @@ class Feats extends Component {
 	}
 
 	get enlistedDateString() {
-		if (!this.state.appearance) return '...';
-		const firstModifiedDate = this.state.appearance?.AiCores?.AiCores?.[0]?.Themes?.[0]?.FirstModifiedDateUtc?.ISO8601Date ?? this.state.appearance?.ArmorCores?.ArmorCores?.[0]?.Themes?.[0]?.FirstModifiedDateUtc?.ISO8601Date;
+		if (!this.state.profile) return '...';
+		const firstModifiedDate = this.state.profile?.enlistedDate;
 
 		if (Date.parse(firstModifiedDate))
 		{
@@ -392,7 +198,17 @@ class Feats extends Component {
 				<header class="mica_header-strip"><h2>Service Record</h2><span class="beta">BETA</span></header>
 				<div class="mica_content">
 					<header class="feats_header">
-						<span>${this.state.gamertag} [${this.state.serviceTag}] // Enlisted ${this.enlistedDateString}</span>
+						<div>
+							<span class="feats_gamertag">${this.state.gamertag}</span>
+							<span class="feats_servicetag">
+								<span class="feats_servicetag-bracket">[</span>
+								${this.state.serviceTag}
+								<span class="feats_servicetag-bracket">]</span>
+							</span>
+						</div>
+						<div>
+							<span class="feats_enlisted">Enlisted // ${this.enlistedDateString}</span>
+						</div>
 					</header>
 					<ul class="feats_list">
 						${this.renderAwards()}
@@ -405,7 +221,7 @@ class Feats extends Component {
 	}
 
 	renderFeat(availability, itemIDs) {
-		console.log('rf', availability, itemIDs);
+		// console.log('rf', availability, itemIDs);
 		const titles  = new Set();
 		return HTML.wire()`
 			<li>
@@ -476,7 +292,7 @@ class ServiceRecord extends Component {
 		if (!feats) return;
 		this.feats = feats;
 		this.state.gamertag = gamertag;
-		if (appearance) this.state.appearance = appearance;
+		if (appearance) this.state.profile = appearance;
 		this.state.serviceTag = appearance?.Appearance?.ServiceTag ?? '117';
 		console.log('this', feats);
 
@@ -491,8 +307,8 @@ class ServiceRecord extends Component {
 	}
 
 	get enlistedDateString() {
-		if (!this.state.appearance) return '...';
-		const firstModifiedDate = this.state.appearance?.AiCores?.AiCores?.[0]?.Themes?.[0]?.FirstModifiedDateUtc?.ISO8601Date ?? this.state.appearance?.ArmorCores?.ArmorCores?.[0]?.Themes?.[0]?.FirstModifiedDateUtc?.ISO8601Date;
+		if (!this.state.profile) return '...';
+		const firstModifiedDate = this.state.profile?.AiCores?.AiCores?.[0]?.Themes?.[0]?.FirstModifiedDateUtc?.ISO8601Date ?? this.state.profile?.ArmorCores?.ArmorCores?.[0]?.Themes?.[0]?.FirstModifiedDateUtc?.ISO8601Date;
 
 		if (Date.parse(firstModifiedDate))
 		{
@@ -679,55 +495,3 @@ class ServiceRecord extends Component {
 		`;
 	}
 }
-
-const niceTypes = new Map([
-	['WeaponSidekick', 'Sidekick'],
-	['WeaponAR', 'Assault Rifle'],
-	['WeaponBR', 'Battle Rifle'],
-	['WeaponCommando', 'Commando'],
-	['WeaponSPnKr', 'SPnKr'],
-	['WeaponSniper', 'Sniper'],
-	['WeaponShotgun', 'Bulldog'],
-	['WeaponHydra', 'Hydra'],
-	['Ai', 'AI'],
-	['VehicleWarthog', 'Warthog'],
-	['VehicleMongoose', 'Mongoose'],
-	['VehicleScorpion', 'Scorpion'],
-	['VehicleWasp', 'Wasp'],
-	['VehicleRazorBack', 'RazorBack'],
-	['VehicleGungoose', 'Gungoose'],
-	['VehicleRockethog', 'Rockethog']
-]);
-
-const pathNames = new Map([
-	['ThemePath', 'Kit'],
-	['CoatingPath', 'Coating'],
-	['GlovePath', 'Gloves'],
-	['HelmetPath', 'Helmet'],
-	['HelmetAttachmentPath', 'Helmet Atch.'],
-	['ChestAttachmentPath', 'Chest Atch.'],
-	['KneePadPath', 'Knee Pads'],
-	['LeftShoulderPadPath', 'Shoulder, Left'],
-	['RightShoulderPadPath', 'Shoulder, Right'],
-	// ['Emblems', 'Emblem'],
-	// ['Emblem', 'Emblem'],
-	['ArmorFxPath', 'Armor FX'],
-	['MythicFxPath', 'Mythic FX'],
-	['VisorPath', 'Visor'],
-	['HipAttachmentPath', 'Hip Atch.'],
-	['WristAttachmentPath', 'Wrist Atch.'],
-	['ActionPosePath', 'Stance'],
-	['BackdropImagePath', 'Backdrop'],
-	// ['ServiceTag', 'Service Tag'],
-	['DeathFxPath', 'Death FX'],
-	['WeaponCharmPath', 'Charm'],
-	['AlternateGeometryRegionPath', 'Model'],
-	['ModelPath', 'AI Model'],
-	['ColorPath', 'AI Color']
-]);
-
-const featuredCommunityTags = new Map([
-	['award', 'Awards'],
-	['memento', 'Mementos'],
-	['capstone', 'Capstones']
-])

@@ -1,4 +1,4 @@
-.vanity_wrapper {
+.vanity-profile_wrapper {
 	& .mica_header-strip {
 		justify-content: left !important;
 	}
@@ -11,6 +11,19 @@
 		color: var(--theme-text);
 		font-size: 1.25em;
 		flex-grow: 2;
+	}
+}
+
+#vanity-profile-search {
+	margin-bottom: 0;
+}
+
+.vanity_wrapper {
+	& .mica_header-strip {
+		& h2 {
+			font-size: 1.3rem;
+			font-weight: normal;
+		}
 	}
 	& .vanity-placeholder {
 		display: flex;
@@ -30,7 +43,8 @@
 
 .vanity_feats_wrapper {
 	--content-pad: 0.5rem;
-	& .mica_header-strip {
+	& header.mica_header-strip {
+		justify-content: left;
 		& h2 {
 			font-size: 1.3rem;
 			font-weight: normal;
@@ -42,8 +56,26 @@
 		}
 	}
 	& .feats_header {
-		font-size: 1.1rem;
 		margin-left: var(--content-pad);
+		& div {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+		}
+		& .feats_gamertag {
+			font-size: 1.3rem;
+		}
+		& .feats_servicetag {
+			margin-left: 1rem;
+			font-size: 1.1rem;
+			opacity: 0.66;
+			& .feats_servicetag-bracket {
+				opacity: 0.33;
+			}
+		}
+		& .feats_enlisted {
+			opacity: 0.8;
+		}
 	}
 	& .feats_list {
 		margin-left: var(--content-pad);

@@ -105,6 +105,7 @@ module.exports = {
 				'!sitemap.xml*',
 				'!robots.txt*',
 				'!db/**',
+				'!7/**'
 			],
 		}),
 		new HtmlWebpackPlugin({

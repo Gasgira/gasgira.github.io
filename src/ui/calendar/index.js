@@ -248,8 +248,8 @@ class Calendar extends Component {
 									onclick=${() => this.showRewardTrack(operation.rewardTrack)}
 								>
 									<span class="date-range">
-									${startDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
-									${' - '}${endDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+									${startDate.toLocaleDateString(undefined, { month: 'short', day: 'numeric' })}
+									${' - '}${endDate.toLocaleDateString(undefined, { month: 'short', day: 'numeric' })}
 									</span>
 									<span class="event-name">${operation.rewardTrack.name}</span>
 								</button>
@@ -281,8 +281,8 @@ class Calendar extends Component {
 									onclick=${() => this.showRewardTrack(event.rewardTrack)}
 								>
 									<span class="date-range">
-										${startDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
-										${' - '}${endDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+										${startDate.toLocaleDateString(undefined, { month: 'short', day: 'numeric' })}
+										${' - '}${endDate.toLocaleDateString(undefined, { month: 'short', day: 'numeric' })}
 										<br><span class="upcoming">${event.isNext ? 'Up Next' : ''}</span>
 									</span>
 									<span class="event-name">${event.rewardTrack.name}</span>
@@ -327,19 +327,21 @@ class Calendar extends Component {
 
 			return HTML.wire(week)`
 				<li class=${`calendar-item${endDate <= today ? ' past' : active ? ' active' : ' future'}`}>
-					${
-						active ? HTML.wire()`
-							<span
-								class="ritual-icon"
-								style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/progression/storecontent/flairicons/ritualiconflair.png)`}}
-							></span>
-						`
-						: ''
-					}
-					<span class="date">${new Date(week.startDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
+					<div class="date-wrapper">
+						${
+							active ? HTML.wire()`
+								<span
+									class="ritual-icon"
+									style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/progression/storecontent/flairicons/ritualiconflair.png)`}}
+								></span>
+							`
+							: ''
+						}
+						<span class="date">${new Date(week.startDate).toLocaleDateString(undefined, { month: 'long', day: 'numeric' })}</span>
+					</div>
 					${{
 						any: inventoryReward.renderIcon('capstone', {itemTypeIcon: true}),
-						placeholder: throbber.cloneNode(true)
+						placeholder: placeholderItem.cloneNode(true)
 					}}
 					<a class="challenge-link" href=${`#${capstoneChallengePath}`}>${capstoneChallenge?.data?.Title}</a>
 				</li>
@@ -439,9 +441,9 @@ class RewardTrack extends Component {
 					<li class="event-header">${this.name} // </li>
 					${{html: this.dates.map(dates => `
 						<li><span>
-							${dates.startDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+							${dates.startDate.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}
 							${' - '}
-							${dates.endDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+							${dates.endDate.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}
 						</span></li>
 					`)}}
 				</ul>

@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "405-305-674aebc7",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Fireteam Colossus",
 		"Description": "Holding it all together.",
 		"FeatureFlag": true,

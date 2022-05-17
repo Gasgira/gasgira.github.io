@@ -48,7 +48,7 @@
 			"FolderPath": "progression/Inventory/Armor/Visors",
 			"FileName": "012-001-a9eba0c9-SM.png"
 		},
-		"Quality": "Rare",
+		"Quality": "Epic",
 		"ManufacturerId": 26,
 		"Type": "ArmorVisor",
 		"RewardTrack": "",
@@ -67,7 +67,12 @@
 			"subCategoryWeight": 0
 		},
 		"SeasonNumber": 1,
-		"OriginalSeasonNumber": 1
+		"OriginalSeasonNumber": 1,
+		"Season": {
+			"status": "Test",
+			"value": "",
+			"translations": {}
+		}
 	},
 	"TagId": 0
 }

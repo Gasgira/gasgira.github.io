@@ -26,7 +26,7 @@
 	],
 	"CommonData": {
 		"Id": "104-001-popculture-st-284c4165",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Brain Teaser",
 		"Description": "Style IS substance!",
 		"FeatureFlag": true,

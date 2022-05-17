@@ -1,11 +1,11 @@
 {
 	"Seasons": [
 		{
-			"CsrSeasonFilePath": "Csr/Seasons/CsrSeason1.json",
+			"CsrSeasonFilePath": "Csr/Seasons/CsrSeason1-2.json",
 			"OperationTrackPath": "RewardTracks/Operations/battlepass-noblesacrifice.json",
-			"SeasonMetadata": "Seasons/Season6.json",
+			"SeasonMetadata": "Seasons/Season6-2.json",
 			"StartDate": {
-				"ISO8601Date": "2020-09-23T17:00:00.000Z"
+				"ISO8601Date": "2021-06-20T17:00:00.000Z"
 			},
 			"EndDate": {
 				"ISO8601Date": "2021-10-20T17:00:00.000Z"

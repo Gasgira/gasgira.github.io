@@ -21,7 +21,7 @@
 	},
 	"CommonData": {
 		"Id": "103-000-ui-s2-backgro-0bd71ce2",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "CIRC",
 		"Description": "Soon, the ciphers will align and I will emerge triumphant!",
 		"FeatureFlag": true,
