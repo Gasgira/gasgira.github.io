@@ -1,5 +1,5 @@
 {
-	"date": "2022-05-14T00:00:00.000Z",
+	"date": "2022-05-17T00:00:00.000Z",
 	"types": [
 		"ArmorCore",
 		"ArmorTheme",
@@ -431,7 +431,13 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"memento"
+					],
+					"availability": "Log in during the month of May"
+				}
 			}
 		],
 		[
@@ -444,7 +450,13 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"memento"
+					],
+					"availability": "Log in during the month of May"
+				}
 			}
 		],
 		[
@@ -457,7 +469,13 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"memento"
+					],
+					"availability": "Log in during the month of May"
+				}
 			}
 		],
 		[
@@ -470,7 +488,13 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"memento"
+					],
+					"availability": "Log in during the month of May"
+				}
 			}
 		],
 		[
@@ -792,7 +816,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -806,7 +835,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -820,7 +854,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -834,7 +873,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -988,7 +1032,8 @@
 				"community": {
 					"tags": [
 						"capstone"
-					]
+					],
+					"availability": "Ultimate challenge for the week of Nov. 1 2022"
 				}
 			}
 		],
@@ -1489,7 +1534,8 @@
 				"community": {
 					"tags": [
 						"capstone"
-					]
+					],
+					"availability": "Ultimate challenge for the week of May 10 2022"
 				}
 			}
 		],
@@ -2179,7 +2225,8 @@
 				"community": {
 					"tags": [
 						"capstone"
-					]
+					],
+					"availability": "Ultimate challenge for the week of Oct. 4 2022"
 				}
 			}
 		],
@@ -2270,7 +2317,8 @@
 				"community": {
 					"tags": [
 						"capstone"
-					]
+					],
+					"availability": "Ultimate challenge for the week of Jun. 14 2022"
 				}
 			}
 		],
@@ -2350,7 +2398,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -3265,7 +3318,12 @@
 				"visible": "2022-05-03T00:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -4158,7 +4216,8 @@
 				"community": {
 					"tags": [
 						"capstone"
-					]
+					],
+					"availability": "Ultimate challenge for the week of Oct. 11 2022"
 				}
 			}
 		],
@@ -6340,7 +6399,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -6354,7 +6418,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -6368,7 +6437,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -6382,7 +6456,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -6396,7 +6475,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -7851,7 +7935,12 @@
 					"2022-05-07T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-14T00:00:00.000Z"
+				"visible": "2022-05-14T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -7866,7 +7955,12 @@
 					"2022-05-07T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-14T00:00:00.000Z"
+				"visible": "2022-05-14T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -7881,7 +7975,12 @@
 					"2022-05-07T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-14T00:00:00.000Z"
+				"visible": "2022-05-14T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -7896,7 +7995,12 @@
 					"2022-05-07T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-14T00:00:00.000Z"
+				"visible": "2022-05-14T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -9372,7 +9476,8 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-10T00:00:00.000Z",
-					"2022-05-14T00:00:00.000Z"
+					"2022-05-14T00:00:00.000Z",
+					"2022-05-17T00:00:00.000Z"
 				]
 			}
 		],
@@ -11595,7 +11700,8 @@
 				"community": {
 					"tags": [
 						"capstone"
-					]
+					],
+					"availability": "Ultimate challenge for the week of May 17 2022"
 				}
 			}
 		],
@@ -11720,7 +11826,8 @@
 				"community": {
 					"tags": [
 						"capstone"
-					]
+					],
+					"availability": "Ultimate challenge for the week of May 24  2022"
 				}
 			}
 		],
@@ -11748,7 +11855,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -12136,7 +12248,9 @@
 				"title": "Clippy",
 				"type": "Offering",
 				"touched": [
-					"2022-05-10T00:00:00.000Z"
+					"2022-05-10T00:00:00.000Z",
+					"2022-05-13T00:00:00.000Z",
+					"2022-05-16T00:00:00.000Z"
 				],
 				"community": {
 					"collection": "clippy",
@@ -12297,7 +12411,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -12311,7 +12430,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -12326,7 +12450,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-10T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -12340,7 +12469,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -12354,7 +12488,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -12368,7 +12507,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -12382,7 +12526,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -12396,7 +12545,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -12864,7 +13018,8 @@
 				"community": {
 					"tags": [
 						"capstone"
-					]
+					],
+					"availability": "Ultimate challenge for the week of Jun. 7 2022"
 				}
 			}
 		],
@@ -16165,7 +16320,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-14T00:00:00.000Z"
+				"visible": "2022-05-14T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -16179,7 +16339,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-14T00:00:00.000Z"
+				"visible": "2022-05-14T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -16193,7 +16358,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-14T00:00:00.000Z"
+				"visible": "2022-05-14T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -16207,7 +16377,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-14T00:00:00.000Z"
+				"visible": "2022-05-14T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -20433,7 +20608,8 @@
 				"community": {
 					"tags": [
 						"capstone"
-					]
+					],
+					"availability": "Ultimate challenge for the week of Sep. 20 2022"
 				}
 			}
 		],
@@ -21781,7 +21957,8 @@
 				"community": {
 					"tags": [
 						"capstone"
-					]
+					],
+					"availability": "Ultimate challenge for the week of Jun. 21 2022"
 				}
 			}
 		],
@@ -23353,7 +23530,8 @@
 				"community": {
 					"tags": [
 						"capstone"
-					]
+					],
+					"availability": "Ultimate challenge for the week of Aug. 16 2022"
 				}
 			}
 		],
@@ -23447,7 +23625,13 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-07T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"promotional"
+					],
+					"availability": "Halo Series: Log in during the week of May 10 2022"
+				}
 			}
 		],
 		[
@@ -23461,7 +23645,13 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-07T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"promotional"
+					],
+					"availability": "Halo Series: Log in during the week of May 10 2022"
+				}
 			}
 		],
 		[
@@ -23475,7 +23665,13 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-07T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"promotional"
+					],
+					"availability": "Halo Series: Log in during the week of May 10 2022"
+				}
 			}
 		],
 		[
@@ -23487,7 +23683,13 @@
 				"type": "WeaponCharm",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"promotional"
+					],
+					"availability": "Halo Series: Log in during the week of May 10 2022"
+				}
 			}
 		],
 		[
@@ -23501,7 +23703,13 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-07T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"promotional"
+					],
+					"availability": "Halo Series: Log in during the week of May 10 2022"
+				}
 			}
 		],
 		[
@@ -23616,7 +23824,8 @@
 				"community": {
 					"tags": [
 						"capstone"
-					]
+					],
+					"availability": "Ultimate challenge for the week of Aug. 9 2022"
 				}
 			}
 		],
@@ -24047,7 +24256,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -26098,7 +26312,13 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"memento"
+					],
+					"availability": "Log in during the month of May"
+				}
 			}
 		],
 		[
@@ -26111,7 +26331,13 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"memento"
+					],
+					"availability": "Log in during the month of May"
+				}
 			}
 		],
 		[
@@ -26124,7 +26350,13 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"memento"
+					],
+					"availability": "Log in during the month of May"
+				}
 			}
 		],
 		[
@@ -26137,7 +26369,13 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"memento"
+					],
+					"availability": "Log in during the month of May"
+				}
 			}
 		],
 		[
@@ -26999,7 +27237,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -27013,7 +27256,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -27027,7 +27275,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -27041,7 +27294,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -29046,7 +29304,8 @@
 				"community": {
 					"tags": [
 						"capstone"
-					]
+					],
+					"availability": "Ultimate challenge for the week of Jul. 5 2022"
 				}
 			}
 		],
@@ -30610,7 +30869,8 @@
 				"community": {
 					"tags": [
 						"capstone"
-					]
+					],
+					"availability": "Ultimate challenge for the week of Sep. 13 2022"
 				}
 			}
 		],
@@ -32357,7 +32617,12 @@
 				"touched": [
 					"2021-11-15T20:00:00.000Z",
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"promotional"
+					]
+				}
 			}
 		],
 		[
@@ -32921,7 +33186,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-14T00:00:00.000Z"
+				"visible": "2022-05-14T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -32935,7 +33205,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-14T00:00:00.000Z"
+				"visible": "2022-05-14T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -32949,7 +33224,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-14T00:00:00.000Z"
+				"visible": "2022-05-14T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -32963,7 +33243,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-14T00:00:00.000Z"
+				"visible": "2022-05-14T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -35419,7 +35704,8 @@
 				"community": {
 					"tags": [
 						"capstone"
-					]
+					],
+					"availability": "Ultimate challenge for the week of Aug. 23 2022"
 				}
 			}
 		],
@@ -36073,7 +36359,8 @@
 				"community": {
 					"tags": [
 						"capstone"
-					]
+					],
+					"availability": "Ultimate challenge for the week of Jul. 12 2022"
 				}
 			}
 		],
@@ -36168,7 +36455,8 @@
 				"community": {
 					"tags": [
 						"capstone"
-					]
+					],
+					"availability": "Ultimate challenge for the week of Oct. 25 2022"
 				}
 			}
 		],
@@ -38254,7 +38542,13 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"promotional"
+					],
+					"availability": "Halo Series: Log in during the week of May 10 2022"
+				}
 			}
 		],
 		[
@@ -38267,7 +38561,13 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"promotional"
+					],
+					"availability": "Halo Series: Log in during the week of May 10 2022"
+				}
 			}
 		],
 		[
@@ -38280,7 +38580,13 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"promotional"
+					],
+					"availability": "Halo Series: Log in during the week of May 10 2022"
+				}
 			}
 		],
 		[
@@ -38292,7 +38598,13 @@
 				"type": "WeaponCharm",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"promotional"
+					],
+					"availability": "Halo Series: Log in during the week of May 10 2022"
+				}
 			}
 		],
 		[
@@ -38305,7 +38617,13 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"promotional"
+					],
+					"availability": "Halo Series: Log in during the week of May 10 2022"
+				}
 			}
 		],
 		[
@@ -40219,7 +40537,8 @@
 				"community": {
 					"tags": [
 						"capstone"
-					]
+					],
+					"availability": "Ultimate challenge for the week of May 31 2022"
 				}
 			}
 		],
@@ -41253,7 +41572,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-14T00:00:00.000Z"
+				"visible": "2022-05-14T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -41419,7 +41743,13 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-07T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"promotional"
+					],
+					"availability": "Halo Series: Log in during the week of May 10 2022"
+				}
 			}
 		],
 		[
@@ -41433,7 +41763,13 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-07T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"promotional"
+					],
+					"availability": "Halo Series: Log in during the week of May 10 2022"
+				}
 			}
 		],
 		[
@@ -41447,7 +41783,13 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-07T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"promotional"
+					],
+					"availability": "Halo Series: Log in during the week of May 10 2022"
+				}
 			}
 		],
 		[
@@ -41461,7 +41803,13 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-07T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"promotional"
+					],
+					"availability": "Halo Series: Log in during the week of May 10 2022"
+				}
 			}
 		],
 		[
@@ -41656,7 +42004,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -42010,7 +42363,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -42024,7 +42382,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -42098,7 +42461,8 @@
 				"community": {
 					"tags": [
 						"capstone"
-					]
+					],
+					"availability": "Ultimate challenge for the week of Jul. 19 2022"
 				}
 			}
 		],
@@ -42490,7 +42854,8 @@
 				"community": {
 					"tags": [
 						"capstone"
-					]
+					],
+					"availability": "Ultimate challenge for the week of Jul. 26 2022"
 				}
 			}
 		],
@@ -42796,7 +43161,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -42892,7 +43262,8 @@
 				"community": {
 					"tags": [
 						"capstone"
-					]
+					],
+					"availability": "Ultimate challenge for the week of Oct. 18 2022"
 				}
 			}
 		],
@@ -43390,7 +43761,13 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-07T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"promotional"
+					],
+					"availability": "Halo Series: Log in during the week of May 10 2022"
+				}
 			}
 		],
 		[
@@ -43404,7 +43781,13 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-07T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"promotional"
+					],
+					"availability": "Halo Series: Log in during the week of May 10 2022"
+				}
 			}
 		],
 		[
@@ -43418,7 +43801,13 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-07T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"promotional"
+					],
+					"availability": "Halo Series: Log in during the week of May 10 2022"
+				}
 			}
 		],
 		[
@@ -43432,7 +43821,13 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-07T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"promotional"
+					],
+					"availability": "Halo Series: Log in during the week of May 10 2022"
+				}
 			}
 		],
 		[
@@ -45257,7 +45652,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -46678,7 +47078,8 @@
 				"community": {
 					"tags": [
 						"capstone"
-					]
+					],
+					"availability": "Ultimate challenge for the week of Sep. 27 2022"
 				}
 			}
 		],
@@ -47071,7 +47472,8 @@
 				"community": {
 					"tags": [
 						"capstone"
-					]
+					],
+					"availability": "Ultimate challenge for the week of Aug. 30 2022"
 				}
 			}
 		],
@@ -47208,7 +47610,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-10T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -47219,7 +47626,8 @@
 				"title": "Vibrant Horizon",
 				"type": "Offering",
 				"touched": [
-					"2022-05-11T00:00:00.000Z"
+					"2022-05-11T00:00:00.000Z",
+					"2022-05-14T00:00:00.000Z"
 				],
 				"community": {
 					"collection": "vibrant-horizon",
@@ -47756,7 +48164,8 @@
 				"community": {
 					"tags": [
 						"capstone"
-					]
+					],
+					"availability": "Ultimate challenge for the week of Aug. 2 2022"
 				}
 			}
 		],
@@ -49014,6 +49423,19 @@
 			}
 		],
 		[
+			"201-201-3f61c0e0",
+			{
+				"path": "inventory/weapon/charms/201-201-3f61c0e0.json",
+				"name": "201-201-3f61c0e0",
+				"title": "winter_charm_snowflake_001",
+				"type": "WeaponCharm",
+				"visible": "2022-05-17T00:00:00.000Z",
+				"touched": [
+					"2022-05-17T00:00:00.000Z"
+				]
+			}
+		],
+		[
 			"012-001-6c1e51f8",
 			{
 				"path": "inventory/armor/visors/012-001-6c1e51f8.json",
@@ -49086,7 +49508,8 @@
 				"community": {
 					"tags": [
 						"capstone"
-					]
+					],
+					"availability": "Ultimate challenge for the week of Jun. 28 2022"
 				}
 			}
 		],
@@ -49424,7 +49847,8 @@
 				"community": {
 					"tags": [
 						"capstone"
-					]
+					],
+					"availability": "Ultimate challenge for the week of Sep. 6 2022"
 				}
 			}
 		],
@@ -50075,6 +50499,25 @@
 				"community": {
 					"tags": [
 						"store"
+					]
+				}
+			}
+		],
+		[
+			"offering-20220224-07",
+			{
+				"path": "storecontent/offering/offering-20220224-07.json",
+				"name": "offering-20220224-07",
+				"title": "Misty Drab",
+				"type": "Offering",
+				"touched": [
+					"2022-05-12T00:00:00.000Z",
+					"2022-05-15T00:00:00.000Z"
+				],
+				"community": {
+					"collection": "misty-drab",
+					"tags": [
+						"source"
 					]
 				}
 			}
