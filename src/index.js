@@ -1,14 +1,9 @@
 import { HTML } from 'lib/HTML';
 import { emitter } from 'eventEmitter';
-import { headerNav } from 'ui/nav';
 import { db } from 'db';
 import { itemPanel } from 'db/itemPanel';
-import { calendar } from 'ui/calendar';
-import { coreViewer } from 'ui/cores';
-import { inventory } from 'ui/inventory';
 import { modalConstructor } from 'ui/modal';
 import { privacy } from 'ui/privacy';
-import { vanity } from 'pages/vanity';
 import { router } from 'pages';
 
 import './styles.css';
@@ -44,6 +39,10 @@ class App {
 				if (hash && typeof hash === 'string' && hash.length > 6 && hash.substring(hash.length -5) === '.json')
 				{
 					return db.showItemPanelByPath(hash, true);
+				}
+				if (hash && typeof hash === 'string' && hash.startsWith('item/') && hash.length > 5)
+				{
+					return db.showItemPanelByID(hash.substring(5, hash.length).trim(), true);
 				}
 	
 				return itemPanel.hide();
@@ -93,6 +92,12 @@ class App {
 		if (hash && typeof hash === 'string' && hash.substring(hash.length-5, hash.length) === '.json') {
 			try {
 				db.showItemPanelByPath(hash, true);
+			} catch (error) {
+				console.error(`[skimmer][parseUri]`, error)
+			}
+		} else if (hash && typeof hash === 'string' && hash.startsWith('item/') && hash.length > 5) {
+			try {
+				db.showItemPanelByID(hash.substring(5, hash.length).trim(), true);
 			} catch (error) {
 				console.error(`[skimmer][parseUri]`, error)
 			}

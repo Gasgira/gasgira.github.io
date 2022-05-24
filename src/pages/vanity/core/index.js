@@ -33,7 +33,7 @@ export class AppearanceCore extends Component {
 			if (SKIP_TYPES.has(socketType)) continue;
 
 			const itemID = profileCore[socketType];
-			if (!itemID) continue;
+			if (!itemID || !db.manifestHasID(itemID)) continue;
 
 			this.sockets.set(pathNames.get(socketType) ?? socketType, itemID);
 		}

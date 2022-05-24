@@ -6,9 +6,24 @@
 		justify-content: center;
 		align-items: center;
 		padding: 3rem 0;
+		background-color: var(--vanity-matte);
 		& .vanity-canvas_armor-hall {
 			max-height: 100vh;
+			min-height: 512px;
 			max-width: 100vw;
+			min-width: 256px;
+		}
+	}
+}
+
+.vanity-menu_wrapper {
+	display: flex;
+	flex-direction: column;
+	& .option-wrapper {
+		display: flex;
+		flex-direction: column;
+		& input[type="range"] {
+			width: 8rem;
 		}
 	}
 }

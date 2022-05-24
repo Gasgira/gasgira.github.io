@@ -2,18 +2,15 @@
 	"cores": {
 		"defaultOption": "017-001-olympus-c13d0b38",
 		"options": [
-			"017-001-olympus-c13d0b38",
-			"017-001-reach-2564121f",
-			"017-001-samurai-55badb14",
-			"017-001-wlv-c13d0b38",
-			"017-001-eag-c13d0b38"
+			"017-001-olympus-c13d0b38"
 		]
 	},
 	"coatings": {
 		"isRequired": true,
 		"defaultOption": "002-001-olympus-c0122ae6",
 		"options": [
-			"002-001-olympus-c0122ae6"
+			"002-001-olympus-c0122ae6",
+			"002-001-olympus-bc220d04"
 		]
 	},
 	"helmets": {
@@ -31,17 +28,18 @@
 		]
 	},
 	"visors": {
-		"isRequired": true,
-		"defaultOption": "012-001-6dae39c2",
+		"isRequired": false,
+		"defaultOption": "",
 		"options": [
-			"012-001-6dae39c2"
 		]
 	},
 	"leftShoulderPads": {
 		"isRequired": false,
 		"defaultOption": "008-001-olympus-c13d0b38",
 		"options": [
-			"008-001-olympus-c13d0b38"
+			"008-001-olympus-c13d0b38",
+			"008-001-olympus-10ffb071",
+			"008-001-olympus-8e7c9dff"
 		]
 	},
 	"rightShoulderPads": {
@@ -52,17 +50,15 @@
 		]
 	},
 	"gloves": {
-		"isRequired": true,
-		"defaultOption": "003-001-olympus-c13d0b38",
+		"isRequired": false,
+		"defaultOption": "",
 		"options": [
-			"003-001-olympus-c13d0b38"
 		]
 	},
 	"kneePads": {
-		"isRequired": true,
-		"defaultOption": "006-001-olympus-c13d0b38",
+		"isRequired": false,
+		"defaultOption": "",
 		"options": [
-			"006-001-olympus-c13d0b38"
 		]
 	},
 	"chestAttachments": {

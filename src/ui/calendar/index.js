@@ -104,7 +104,7 @@ class Calendar extends Component {
 			.then(() => {
 				this.render();
 				this.renderEventList();
-				const paramEvent = urlParams.getSecionSetting('calendar');
+				const paramEvent = urlParams.getSecionSetting('calendar', { dash: true });
 				if (paramEvent) this.showRewardTrackByName(paramEvent);
 			})
 		return this;
@@ -330,10 +330,7 @@ class Calendar extends Component {
 					<div class="date-wrapper">
 						${
 							active ? HTML.wire()`
-								<span
-									class="ritual-icon"
-									style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/progression/storecontent/flairicons/ritualiconflair.png)`}}
-								></span>
+								<span class="icon-masked icon-ritual"></span>
 							`
 							: ''
 						}
@@ -375,7 +372,7 @@ class Calendar extends Component {
 			return;
 		}
 		this.setState({rewardTrack});
-		urlParams.setSecionSetting('calendar', rewardTrack?.name);
+		urlParams.setSecionSetting('calendar', rewardTrack?.name, { dash: true });
 		this.scrollIntoView();
 	}
 
@@ -405,7 +402,7 @@ class Calendar extends Component {
 	showCapstoneCalendar() {
 		this.state.mobileMenu = false;
 		this.setState({rewardTrack: 'capstone'});
-		urlParams.setSecionSetting('calendar', 'capstone');
+		urlParams.setSecionSetting('calendar', 'capstone', { dash: true });
 		this.scrollIntoView();
 	}
 

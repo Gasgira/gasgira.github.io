@@ -272,17 +272,8 @@
 			& .date {
 				color: var(--rarity-event);
 			}
-			& .ritual-icon {
-				content: "";
-				display: inline-block;
-				width: 1em;
-				height: 1em;
-				background-size: contain;
-				background-repeat: no-repeat;
-				background-position: center;
-				pointer-events: none;
-				/* background-color: var(--rarity-event); */
-				/* background-image: url("/db/images/progression/storecontent/flairicons/ritualiconflair.png"); */
+			& .icon-ritual {
+				background-color: var(--rarity-event);
 			}
 		}
 		&:not(:hover).past {

@@ -8,7 +8,7 @@ class Settings extends Component {
 	constructor() {
 		super();
 
-		if (!localStorage) return;
+		if (!window?.localStorage) return;
 		let storageTest;
 		try {
 			storageTest = window.localStorage;
@@ -50,6 +50,10 @@ class Settings extends Component {
 	}
 
 	render() {
+		if (!window?.localStorage)
+		{
+			return 'You browser does not support localstorage, settings are not available.';
+		}
 		return this.html`
 			<div class="settings_wrapper">
 				<section>

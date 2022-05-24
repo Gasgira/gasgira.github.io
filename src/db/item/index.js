@@ -26,7 +26,11 @@ export class Item extends Component {
 			path = properties.toLowerCase();
 		} else if (properties.id) {
 			const meta = db.getItemManifestByID(properties.id);
-			if (!meta) throw new Error(`[Item.constructor] No meta for "${id}"!`);
+			if (!meta)
+			{
+				console.error(`[Item.constructor] No meta for "${id}"!`);
+				return 'Bad item id!';
+			}
 			this._meta = meta;
 			this._id = meta.name;
 			path = meta.path;
@@ -163,6 +167,50 @@ export class Item extends Component {
 			'VehicleCoating',
 			'WeaponCoating'
 		]));
+	}
+
+	get isSelected() {
+		if (db.selectedItemIDs.has(this.id)) return true;
+		return false;
+	}
+
+	async renderSelectable(id, {
+		itemTypeIcon = false
+	} = {}) {
+		await this.init();
+		return HTML.wire(this, `:${id ?? 'icon'}`)`
+			<button
+				class=${
+					`dbItem dbItemIcon ${this?.type ?? 'defaultType'} ${this.quality}${
+						this.type === 'SpartanBackdropImage' ? ' invert-hover' : ''
+						}${
+						this.isSelected ? ' selected' : ''
+						}`
+				}
+				onclick=${() => this.onclick()}
+				style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(this.imagePath)})`}}
+				title=${this.name ?? 'item'}
+			>
+				<span>${this.name ?? '???'}</span>
+				${itemTypeIcon ? this.renderItemTypeIcon() : ''}
+				${{html: this.seasonNumber > 1 ? `<div
+						class="season-icon"
+						data-season="${this.seasonNumber ?? 0}"
+						style="-webkit-mask-image:${`url(/seasons.svg#${this.seasonNumber ?? 0})`}"
+					></div>` : ''
+				}}
+			</button>
+		`;
+	}
+
+	selectHandler(callback) {
+		this._selectHandler = callback;
+		return this;
+	}
+
+	onclick() {
+		if (this?._selectHandler) return this._selectHandler(this);
+		this.showItemPanel();
 	}
 
 	async renderItemTypeIcon() {

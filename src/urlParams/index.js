@@ -1,4 +1,5 @@
 import { Component } from 'component';
+import { dashEncodeURIComponent, dashDecodeURIComponent } from 'utils/strings.js';
 
 class Params extends Component {
 	constructor() {
@@ -30,12 +31,18 @@ class Params extends Component {
 		return false;
 	}
 
-	setSecionSetting(name, value) {
+	setSecionSetting(name, value, {
+		dash = false
+	} = {}) {
 		try {
 			if (typeof name !== 'string' || typeof value !== 'string') return;
-			const currentSetting = this.getSecionSetting(name);
+			const currentSetting = this.getSecionSetting(name, { dash });
+
 			if (currentSetting && currentSetting === value) return;
-			this.params.set(encodeURIComponent(name), encodeURIComponent(value));
+
+			const encodedName = dash ? dashEncodeURIComponent(name) : encodeURIComponent(name);
+			const encodedValue = dash ? dashEncodeURIComponent(value) : encodeURIComponent(value);
+			this.params.set(encodedName, encodedValue);
 			// console.log(`params`, this.params.toString());
 			history.replaceState({}, `Skimmer`, `?${this.params.toString()}`);
 		} catch (error) {
@@ -43,11 +50,17 @@ class Params extends Component {
 		}
 	}
 
-	getSecionSetting(name) {
+	getSecionSetting(name, {
+		dash = false
+	} = {}) {
 		try {
 			if (typeof name !== 'string') return;
-			const encodedName = encodeURIComponent(name);
-			if (this.params.has(encodedName)) return decodeURIComponent(this.params.get(encodedName));
+			const encodedName = dash ? dashEncodeURIComponent(name) : encodeURIComponent(name);
+			if (this.params.has(encodedName))
+			{
+				const value = this.params.get(encodedName);
+				return dash ? dashDecodeURIComponent(value) : decodeURIComponent(value);
+			}
 			return false;
 		} catch (error) {
 			console.error(`[skimmer] getSecionSetting`, error);

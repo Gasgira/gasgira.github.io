@@ -34,37 +34,32 @@ class CoreViewer extends Component {
 		// HACK: MK 7 ID statically first
 		const armor = new Set(['017-001-olympus-c13d0b38', ...db.getItemIDsByType('ArmorCore')])
 			.forEach(id => {
-				const core = new Core(db.getItemPathByID(id));
+				const core = new Core(id);
 				this.cores.push(core);
 				this.coreTypes.get('ArmorCore').push(core);
 			});
 
 		db.getItemIDsByType('WeaponCore')
 			.forEach(id => {
-				const core = new Core(db.getItemPathByID(id));
+				const core = new Core(id);
 				this.cores.push(core);
 				this.coreTypes.get('WeaponCore').push(core);
 			});
 
 		db.getItemIDsByType('VehicleCore')
 			.forEach(id => {
-				const core = new Core(db.getItemPathByID(id));
+				const core = new Core(id);
 				this.cores.push(core);
 				this.coreTypes.get('VehicleCore').push(core);
 			});
 
-		const paramCoreType = urlParams.getSecionSetting('coreType');
+		const paramCoreType = urlParams.getSecionSetting('coreType', { dash: true });
 		if (paramCoreType && this.coreTypes.has(paramCoreType))
 		{
 			this.showCoreType(paramCoreType, true)
 			// console.log('ct init', paramCoreType);
-			const coreName = urlParams.getSecionSetting('coreName');
-			if (coreName)
-			{
-				// console.log('ct corename', coreName);
-				await this.initAllCores();
-				this.showCoreByName(coreName)
-			};
+			const coreName = urlParams.getSecionSetting('coreName', { dash: true });
+			if (coreName) this.showCoreByName(coreName);
 		} else {
 			this.showCoreType('ArmorCore', true);
 			this.showCore(this.state?.coreType?.[0], true);
@@ -91,9 +86,24 @@ class CoreViewer extends Component {
 		return this.html`
 			<div id="cores" class ="core-viewer_wrapper mica_viewer">
 				<nav class ="core-viewer_nav"><ul>
-					<li><button class=${`core-tab${this.state?.coreTypeName === 'ArmorCore' ? ' active' : ''}`} onclick=${() => this.showCoreType('ArmorCore')}>Armor</button></li>
-					<li><button class=${`core-tab${this.state?.coreTypeName === 'WeaponCore' ? ' active' : ''}`} onclick=${() => this.showCoreType('WeaponCore')}>Weapons</button></li>
-					<li><button class=${`core-tab${this.state?.coreTypeName === 'VehicleCore' ? ' active' : ''}`} onclick=${() => this.showCoreType('VehicleCore')}>Vehicles</button></li>
+					<li>
+						<button
+							class=${`core-tab${this.state?.coreTypeName === 'ArmorCore' ? ' active' : ''}`}
+							onclick=${() => this.showCoreType('ArmorCore')}
+						>Armor</button>
+					</li>
+					<li>
+						<button
+							class=${`core-tab${this.state?.coreTypeName === 'WeaponCore' ? ' active' : ''}`}
+							onclick=${() => this.showCoreType('WeaponCore')}
+						>Weapons</button>
+					</li>
+					<li>
+						<button
+							class=${`core-tab${this.state?.coreTypeName === 'VehicleCore' ? ' active' : ''}`}
+							onclick=${() => this.showCoreType('VehicleCore')}
+						>Vehicles</button>
+					</li>
 				</ul></nav>
 				<nav class ="cores-list_nav"><ul>
 					${this.coreList()}
@@ -114,11 +124,11 @@ class CoreViewer extends Component {
 	}
 
 	updateParams() {
-		urlParams.setSecionSetting('coreType', this.state?.coreTypeName ?? 'unk');
-		urlParams.setSecionSetting('coreName', this.state?.core?.name ?? 'unk');
+		urlParams.setSecionSetting('coreType', this.state?.coreTypeName ?? 'unk', { dash: true });
+		urlParams.setSecionSetting('coreName', this.state?.core?.name ?? 'unk', { dash: true });
 		if (this.state?.core?.state?.socket)
 		{
-			urlParams.setSecionSetting('coreSocket', this.state?.core?.state?.socket?.socketName ?? 'unk');
+			urlParams.setSecionSetting('coreSocket', this.state?.core?.state?.socket?.socketName ?? 'unk', { dash: true });
 		} else {
 			urlParams.deleteSecionSetting('coreSocket');
 		}
@@ -132,7 +142,6 @@ class CoreViewer extends Component {
 		{
 			this.updateParams();
 		}
-		// console.warn('c', urlParams.getSecionSetting('coreName'))
 	}
 
 	showCoreByName(coreName) {
@@ -152,36 +161,35 @@ class CoreViewer extends Component {
 		const coreType = this.coreTypes.get(type);
 		this.state.coreType = coreType;
 		this.state.coreTypeName = type;
-		coreType.forEach(async core => {
-			await core.init();
-			this.coreList();
-		});
+		this.coreList();
 	}
 }
 
 export const coreViewer = new CoreViewer();
 
 class Core extends Component {
-	constructor(corePath) {
+	constructor(id) {
 		super();
-		this.corePath = corePath;
+		this.id = id;
+		this.meta = db.getItemManifestByID(id);
 
 		this.sockets = [];
 	}
 
 	get name() {
-		return this?.item?.data?.CommonData?.Title ?? '...';
+		return this?.meta?.title ?? '...';
 	}
 
 	async init() {
+		// console.log('initCore', this.name)
 		if (this.core) return;
 		this.core = {};
-		this.core = await new Item(this.corePath).init();
+		this.core = await new Item({ id: this.id }).init();
 		this.item = await new Item(this.core.data?.Themes?.DefaultOptionPath).init();
 
 		const item = this.item.data;
 
-		const paramSocketName = urlParams.getSecionSetting('coreSocket');
+		const paramSocketName = urlParams.getSecionSetting('coreSocket', { dash: true });
 
 		for (const socketName in item) {
 			let socket;
@@ -190,6 +198,7 @@ class Core extends Component {
 				const OptionPaths = item[socketName]?.OptionPaths;
 				socket = new Socket({OptionPaths, socketName});
 				this.sockets.push(socket);
+
 			} else if (socketName === 'Helmets' && item[socketName]?.Options?.length) {
 				const attachmentPaths = new Set();
 				const OptionPaths = item[socketName]?.Options.map(option => {
@@ -213,6 +222,7 @@ class Core extends Component {
 			}
 
 			if (paramSocketName && socketName === paramSocketName) this.state.socket = socket;
+			if (!this.state.socket && socketName.includes('Coating')) this.state.socket = socket;
 		}
 
 		this.mobileMicaMenu = new MobileMicaMenu(`MobileMicaMenu-${this.name}`, 'Sockets');
@@ -236,6 +246,7 @@ class Core extends Component {
 	}
 
 	async render() {
+		// console.log('renderCore', this.name)
 		if (!this.core) await this.init();
 		return this.html`
 			<div
@@ -297,6 +308,7 @@ class Socket extends Component {
 	}
 
 	render() {
+		// console.log('renderSocket', this.socketName)
 		return this.html`
 			<div
 				class ="core-sockets_wrapper mica_content"

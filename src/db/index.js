@@ -3,6 +3,7 @@ import { settings } from 'ui/settings';
 import { itemPanel } from 'db/itemPanel';
 import { Item } from 'db/item';
 import { urlParams } from 'urlParams';
+import { filenameFromPath } from 'utils/paths.js';
 
 class Database {
 	constructor() {
@@ -186,6 +187,12 @@ class Database {
 		console.warn(`[db.getItemIDsByType] Type not found! "${type}"`);
 	}
 
+	manifestHasID(id) {
+		if (!id || typeof id !== 'string') return false;
+		if (this.index.manifest.has(id)) return true;
+		return false;
+	}
+
 	getItemManifestByID(id) {
 		if (!id || typeof id !== 'string') return;
 		if (this.index.manifest.has(id)) return this.index.manifest.get(id);
@@ -301,9 +308,37 @@ class Database {
 		if (response) itemPanel.displayItem(item, skipState);
 	}
 
+	async showItemPanelByID(id, skipState) {
+		console.log('showItemPanelByID', id);
+		if (!this.manifestHasID(id))
+		{
+			console.warn(`[db.showItemPanelByID] No ID in manifest "${id}"`);
+		}
+		const item = new Item({ id });
+		const response = await item?.init();
+		if (response) itemPanel.displayItem(item, skipState);
+	}
+
 	pathCase(path) {
 		if (!path || typeof path !== 'string') return '';
 		return `${(this?.pathCasing ?? true) ? path.toLowerCase() : path}`
+	}
+
+	get selectedItemIDs() {
+		if (this?._selectedItemIDs) return this?._selectedItemIDs;
+		return (this._selectedItemIDs = new Set());
+	}
+
+	set selectedItemIDs(set) {
+		if (!set || !set instanceof Set || !set.size) return;
+		this._selectedItemIDs = set;
+	}
+
+	get favoriteItemIDs() {
+		if (this?._favoriteItemIDs) return this._favoriteItemIDs;
+		const paths = [...this.favoriteItemPaths];
+		this._favoriteItemIDs = new Set(paths.map(path => filenameFromPath(path)));
+		return this._favoriteItemIDs;
 	}
 
 	get favoriteItemPaths() {
@@ -320,6 +355,7 @@ class Database {
 	toggleFavorite(path) {
 		console.log('fav', path);
 		if (!path) return;
+		this._favoriteItemIDs = undefined;
 		if (this.favoriteItemPaths.has(`${path}`))
 		{
 			console.info(`[skimmer] Removing favorite path ${path}`);

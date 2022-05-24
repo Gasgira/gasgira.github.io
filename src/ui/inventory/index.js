@@ -26,7 +26,7 @@ class Inventory extends Component {
 
 		if (paramBundle)
 		{
-			const bundleSet = new Set(paramBundle.split('~'));
+			const bundleSet = new Set(paramBundle.split('~').filter(id => db.manifestHasID(id)));
 			if (bundleSet.size)
 			{
 				const bundleCategory = new InventoryCategory({

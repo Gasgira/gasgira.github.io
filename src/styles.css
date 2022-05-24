@@ -61,6 +61,8 @@
 	--bg3: rgba(16,33,80,0.66);
 	--bg4: rgb(40,49,64);
 	
+	--vanity-matte: transparent;
+	
 	/* --bg0: #2b4165;
 	--bg1: #394f76;
 	--bg2: #fff;
@@ -440,14 +442,14 @@ button {
 		min-height: 100%;
 		max-height: 100%;
 		scrollbar-width: none;
-		padding: 1em;
+		padding: 0.25rem;
 		background-color: rgba(0,0,0,0.15);
 		&::-webkit-scrollbar {
 			display: none;
 		}
 		& button:not(.mica_mobile-menu_button) {
 			display: flex;
-			width: 9.5em;
+			width: 10rem;
 			overflow: hidden;
 			white-space: nowrap;
 			font-size: 0.9em;
@@ -594,6 +596,9 @@ button {
 	}
 	&.icon-discord {
 		mask-image: url("assets/icons.svg#discord");
+	}
+	&.icon-ritual {
+		mask-image: url("assets/icons.svg#ritual");
 	}
 }
 

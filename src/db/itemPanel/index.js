@@ -127,9 +127,9 @@ class ItemPanel extends Component {
 	displayItem(item, skipState) {
 		// check if is of class Item...
 		if (skipState) {
-			history.replaceState({path: `${item?.path}`}, `Halosets`, `#${item?.path}`);
+			history.replaceState({path: `${item?.path}`}, `Halosets`, `#item/${item?.id}`);
 		} else {
-			history.pushState({path: `${item?.path}`}, `Halosets`, `#${item?.path}`);
+			history.pushState({path: `${item?.path}`}, `Halosets`, `#item/${item?.id}`);
 		}
 		
 		// this.setState({

@@ -33,6 +33,18 @@
 	</head>
 	<body>
 		<main class="js--main"><div class="placeholder-loading">
+			<script>
+				window.addEventListener('error', function (e) {
+					console.error('windowCatch', e);
+					const el = document.querySelector('.js--main');
+					el.innerHTML = `<div>
+							<span>Cylix Guide has encountered a browser compatibility error. Please screenshot or copy all of the text on this page and send it to the contact email listed at the bottom so that the issue can be addressed.</span><br/><br/>
+							<span>${e.error.name}</span><br/>
+							<span>${e.error.message}</span><br/>
+							<span>${e.error.stack}</span><br/><br/>
+						</div>`;
+				})
+			</script>
 			<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 256" preserveAspectRatio="xMidYMid meet" width="100%" height="32px">
 				<defs>
 						<style>

@@ -64,6 +64,19 @@ button.dbItemIcon {
     bottom: 0px;
     left: 0px;
 	}
+	&.selected::before {
+		border-image: linear-gradient(
+			to bottom,
+			hsla(var(--theme-interact-hsl), 1),
+			hsla(var(--theme-interact-hsl), 1) 87%,
+			hsla(var(--theme-interact-hsl), 0) 88%,
+			hsla(var(--theme-interact-hsl), 0) 92%,
+			var(--rarity) 93%,
+			var(--rarity)
+		) 1 100%;
+		border-image-slice: 1;
+		opacity: 1;
+	}
 	&>span {
 		width: 100%;
 		opacity: 1;
