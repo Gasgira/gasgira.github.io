@@ -1,0 +1,44 @@
+{
+	"OfferingId": "20220224-13",
+	"OfferingDisplayPath": "StoreContent/Display/Offerings/20220224-13.json",
+	"OfferingExpirationDate": null,
+	"IncludedItems": [
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/Coatings/002-001-olympus-56e6f35c.json",
+			"ItemType": "ArmorCoating"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Spartan/Emblems/104-001-popculture-st-284c4165.json",
+			"ItemType": "SpartanEmblem"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/Emblems/013-001-284c4165.json",
+			"ItemType": "ArmorEmblem"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Weapon/Emblems/205-201-284c4165.json",
+			"ItemType": "WeaponEmblem"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Vehicle/Emblems/405-305-284c4165.json",
+			"ItemType": "VehicleEmblem"
+		}
+	],
+	"Prices": [
+		{
+			"Cost": 300,
+			"CurrencyPath": "Currency/Currencies/cR.json"
+		}
+	],
+	"IncludedCurrencies": [],
+	"IncludedRewardTracks": [],
+	"BoostPath": null,
+	"OperationXp": 0,
+	"EventXp": 0,
+	"MatchBoosts": null
+}

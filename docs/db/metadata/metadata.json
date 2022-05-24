@@ -9,8 +9,8 @@
 			"ManufacturerLogoImage": "progression/Manufacturers/AMG.png"
 		},
 		{
-			"ManufacturerName": "Lux Voluspa",
-			"ManufacturerLogoImage": "progression/Manufacturers/lux_voluspa.png"
+			"ManufacturerName": "Banished",
+			"ManufacturerLogoImage": "progression/Manufacturers/Banished_Logo.png"
 		},
 		{
 			"ManufacturerName": "Beweglichrüstungsysteme",
@@ -127,6 +127,10 @@
 		{
 			"ManufacturerName": "Weapon System Technology",
 			"ManufacturerLogoImage": "progression/Manufacturers/WST.png"
+		},
+		{
+			"ManufacturerName": "Lux Voluspa",
+			"ManufacturerLogoImage": "progression/Manufacturers/lux_voluspa.png"
 		}
 	],
 	"Currencies": [
