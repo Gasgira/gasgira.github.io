@@ -88,26 +88,30 @@ class App {
 	}
 
 	parseUriHash() {
-		const hash = window.location.hash?.substring?.(1);
-		if (hash && typeof hash === 'string' && hash.substring(hash.length-5, hash.length) === '.json') {
-			try {
-				db.showItemPanelByPath(hash, true);
-			} catch (error) {
-				console.error(`[skimmer][parseUri]`, error)
+		try {
+			const hash = window.location.hash?.substring?.(1);
+			if (hash && typeof hash === 'string' && hash.substring(hash.length-5, hash.length) === '.json') {
+				try {
+					db.showItemPanelByPath(hash, true);
+				} catch (error) {
+					console.error(`[skimmer][parseUri]`, error)
+				}
+			} else if (hash && typeof hash === 'string' && hash.startsWith('item/') && hash.length > 5) {
+				try {
+					db.showItemPanelByID(hash.substring(5, hash.length).trim(), true);
+				} catch (error) {
+					console.error(`[skimmer][parseUri]`, error)
+				}
+			} else if (hash && typeof hash === 'string') {
+				const el = document.querySelector(`#${hash}`);
+				if (el)
+				{
+					console.info(`[parseUriHash.scrollIntoView] "${hash}"`);
+					el.scrollIntoView();
+				}
 			}
-		} else if (hash && typeof hash === 'string' && hash.startsWith('item/') && hash.length > 5) {
-			try {
-				db.showItemPanelByID(hash.substring(5, hash.length).trim(), true);
-			} catch (error) {
-				console.error(`[skimmer][parseUri]`, error)
-			}
-		} else if (hash && typeof hash === 'string') {
-			const el = document.querySelector(`#${hash}`);
-			if (el)
-			{
-				console.info(`[parseUriHash.scrollIntoView] "${hash}"`);
-				el.scrollIntoView();
-			}
+		} catch (error) {
+			console.error(`[Cylix.parseUriHash]`, error);
 		}
 	}
 }

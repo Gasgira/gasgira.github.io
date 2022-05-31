@@ -1,6 +1,6 @@
-# skimmer
+# Cylix Guide
  
-Skimmer is a compendium of items and experiences found within Halo Infinite.
+Cylix Guide is a compendium of items and experiences found within Halo Infinite.
 
 This project is not operated by nor affiliated with Microsoft and 343 Industries.
 

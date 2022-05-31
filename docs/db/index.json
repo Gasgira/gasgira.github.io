@@ -192,6 +192,24 @@
 			}
 		],
 		[
+			"offering-20220321-01",
+			{
+				"path": "storecontent/offering/offering-20220321-01.json",
+				"name": "offering-20220321-01",
+				"title": "Airborne",
+				"type": "Offering",
+				"touched": [
+					"2022-05-24T00:00:00.000Z"
+				],
+				"community": {
+					"collection": "airborne",
+					"tags": [
+						"source"
+					]
+				}
+			}
+		],
+		[
 			"1000-000-557d5bf5",
 			{
 				"path": "configuration/emblems/coatings/1000-000-557d5bf5.json",
@@ -12259,6 +12277,25 @@
 			}
 		],
 		[
+			"offering-20220224-14",
+			{
+				"path": "storecontent/offering/offering-20220224-14.json",
+				"name": "offering-20220224-14",
+				"title": "Circ of Life",
+				"type": "Offering",
+				"touched": [
+					"2022-05-19T00:00:00.000Z",
+					"2022-05-22T00:00:00.000Z"
+				],
+				"community": {
+					"collection": "circ-of-life",
+					"tags": [
+						"source"
+					]
+				}
+			}
+		],
+		[
 			"offering-20220224-06",
 			{
 				"path": "storecontent/offering/offering-20220224-06.json",
@@ -20056,6 +20093,25 @@
 			}
 		],
 		[
+			"offering-20220224-13",
+			{
+				"path": "storecontent/offering/offering-20220224-13.json",
+				"name": "offering-20220224-13",
+				"title": "Gunsmoke Gold",
+				"type": "Offering",
+				"touched": [
+					"2022-05-18T00:00:00.000Z",
+					"2022-05-21T00:00:00.000Z"
+				],
+				"community": {
+					"collection": "gunsmoke-gold",
+					"tags": [
+						"source"
+					]
+				}
+			}
+		],
+		[
 			"404-300-olympus-997b5480",
 			{
 				"path": "inventory/vehicle/coatings/404-300-olympus-997b5480.json",
@@ -24416,6 +24472,24 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				]
+			}
+		],
+		[
+			"offering-20220309-05",
+			{
+				"path": "storecontent/offering/offering-20220309-05.json",
+				"name": "offering-20220309-05",
+				"title": "Legacy of War",
+				"type": "Offering",
+				"touched": [
+					"2022-05-24T00:00:00.000Z"
+				],
+				"community": {
+					"collection": "legacy-of-war",
+					"tags": [
+						"source"
+					]
+				}
 			}
 		],
 		[
@@ -32833,6 +32907,24 @@
 			}
 		],
 		[
+			"offering-20220309-00",
+			{
+				"path": "storecontent/offering/offering-20220309-00.json",
+				"name": "offering-20220309-00",
+				"title": "Praetorian Zephyr",
+				"type": "Offering",
+				"touched": [
+					"2022-05-24T00:00:00.000Z"
+				],
+				"community": {
+					"collection": "praetorian-zephy",
+					"tags": [
+						"source"
+					]
+				}
+			}
+		],
+		[
 			"201-201-1430dde4",
 			{
 				"path": "inventory/weapon/charms/201-201-1430dde4.json",
@@ -39010,6 +39102,24 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				]
+			}
+		],
+		[
+			"offering-20220309-01",
+			{
+				"path": "storecontent/offering/offering-20220309-01.json",
+				"name": "offering-20220309-01",
+				"title": "Sky Marshal",
+				"type": "Offering",
+				"touched": [
+					"2022-05-24T00:00:00.000Z"
+				],
+				"community": {
+					"collection": "sky-marshal",
+					"tags": [
+						"source"
+					]
+				}
 			}
 		],
 		[
@@ -50603,44 +50713,6 @@
 				"community": {
 					"tags": [
 						"store"
-					]
-				}
-			}
-		],
-		[
-			"offering-20220224-13",
-			{
-				"path": "storecontent/offering/offering-20220224-13.json",
-				"name": "offering-20220224-13",
-				"title": "Gunsmoke Gold",
-				"type": "Offering",
-				"touched": [
-					"2022-05-18T00:00:00.000Z",
-					"2022-05-21T00:00:00.000Z"
-				],
-				"community": {
-					"collection": "gunsmoke-gold",
-					"tags": [
-						"source"
-					]
-				}
-			}
-		],
-		[
-			"offering-20220224-14",
-			{
-				"path": "storecontent/offering/offering-20220224-14.json",
-				"name": "offering-20220224-14",
-				"title": "Circ of Life",
-				"type": "Offering",
-				"touched": [
-					"2022-05-19T00:00:00.000Z",
-					"2022-05-22T00:00:00.000Z"
-				],
-				"community": {
-					"collection": "circ-of-life",
-					"tags": [
-						"source"
 					]
 				}
 			}

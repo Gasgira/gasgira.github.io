@@ -25,7 +25,7 @@ class ArmorHall extends Component {
 		return {
 			debugMenu: true,
 			mobileMenu: false,
-			currentMenu: this.mainMenu
+			currentMenu: this?.mainMenu ?? ''
 		};
 	}
 
@@ -44,10 +44,16 @@ class ArmorHall extends Component {
 
 		this.initCores(this._vanity);
 
-		if (!this?._compositor) this._compositor = new Compositor();
-		this._compositor.setCanvas(this.renderCanvas());
+		if (!this.compositor) this._compositor = new Compositor();
+		if (!this.compositor) return;
+
+		this.compositor.setUniCore(vanity);
+
+		this.compositor.setCanvas(this.renderCanvas());
 		this.mainMenu.setCanvas(this.renderCanvas());
 		this.debugMenu.setCanvas(this.renderCanvas());
+
+		await this.compositor.initProfile();
 	}
 
 	get vanityIndex() {
@@ -82,8 +88,13 @@ class ArmorHall extends Component {
 		if (this.compositor)
 		{
 			await this.compositor.initProfile(profile);
-			this.compositor.render();
+			// this.compositor.render();
 		}
+	}
+
+	async setProfile(profile) {
+		db.selectedItemIDs = new Set(Object.values(profile.armor));
+		if (profile && profile?.armor) await this.compositor.initProfile(profile);
 	}
 
 	async render() {
@@ -182,7 +193,55 @@ class ArmorHall extends Component {
 
 			console.info(`[ArmorHall.supportedItemIDs] "${supportedItemIDs.size}" items`);
 
+			if (this.compositor) this.compositor.setSupportedItems(supportedItemIDs);
 			return (this._supportedItemIDs = supportedItemIDs);
+		}
+	}
+
+	get defaultProfile() {
+		return {
+			"title": "untitled",
+			"created": new Date().toJSON(),
+			"spartan": {
+				"emblem": "",
+				"backdrop": "",
+				"bodyType": "Small",
+				"prosthetics": {
+					"leftArm": "None",
+					"rightArm": "None",
+					"leftLeg": "None",
+					"rightLeg": "None"
+				}
+			},
+			"armor": {
+				"core": "017-001-olympus-c13d0b38",
+				"theme": "007-001-olympus-c13d0b38",
+				"coating": "",
+				"helmet": "",
+				"helmetAttachment": "",
+				"visor": "",
+				"chestAttachment": "",
+				"leftShoulderPad": "",
+				"rightShoulderPad": "",
+				"gloves": "",
+				"wristAttachment": "",
+				"kneepads": "",
+				"hipAttachment": "",
+				"emblem": "",
+				"armorFX": "",
+				"mythicFX": ""
+			},
+			"weapons": [
+				{
+					"core": "209-201-olympus-aa30213b",
+					"theme": "207-201-olympus-aa30213b",
+					"coating": "203-201-olympus-aa30213b",
+					"emblem": "",
+					"deathFX": "",
+					"charm": "",
+					"model": ""
+				}
+			]
 		}
 	}
 }
@@ -398,22 +457,81 @@ class Core extends Component {
 		});
 	}
 
+	get currentHelmetID() {
+		return '005-001-olympus-c13d0b38';
+	}
+	
+	get helmetAttachments() {
+		return this._helmetAttachments ??= new Map([['any', []]]);
+	}
+
+	get currentHelmetAttachments() {
+		if (this.helmetAttachments.size) return this.helmetAttachments.get(this.currentHelmetID);
+		return new Set();
+	}
+
 	async initSockets() {
 		if (!this.theme) return;
 
 		this.sockets = [];
 		const item = this.theme.data;
+		const defaultProfile = armorHall.defaultProfile;
+		defaultProfile.armor.core = this.id;
+		defaultProfile.armor.theme = this.theme.id;
+
+		const skipSockets = new Set([
+			'Emblems',
+			'ArmorFx',
+			'MythicFx'
+		]);
 
 		for (const socketName in item)
 		{
-			let socket;
+			if (skipSockets.has(socketName)) continue;
+			
 			if (item[socketName]?.OptionPaths?.length)
 			{
-				const OptionPaths = item[socketName]?.OptionPaths;
-				socket = new Socket({OptionPaths, socketName});
-				this.sockets.push(socket);
+				const socket = item[socketName];
+				const OptionPaths = socket?.OptionPaths;
+				this.sockets.push(new Socket({core: this, OptionPaths, socketName}));
+
+				const profileType = socketNameToProfileType.get(socketName) ?? socketName;
+				if (socket.DefaultOptionPath && socket.IsRequired && defaultProfile.armor.hasOwnProperty(profileType))
+				{
+					defaultProfile.armor[profileType] = filenameFromPath(socket.DefaultOptionPath);
+				}
+			} else if (socketName === 'Helmets' && item[socketName]?.Options?.length) {
+				const helmetOptions = item[socketName]?.Options;
+				const helmetPaths = [];
+
+				const defaultID = item[socketName].DefaultOptionPath;
+				defaultProfile.armor.helmet = filenameFromPath(defaultID);
+
+				for (const helmetOption of helmetOptions)
+				{
+					const helmetPath = helmetOption?.HelmetPath;
+					if (helmetPath) helmetPaths.push(helmetPath);
+
+					if (helmetOption?.HelmetAttachments?.OptionPaths?.length)
+					{
+						const helmetID = filenameFromPath(helmetPath);
+						const attachmentIDs = new Set(helmetOption.HelmetAttachments.OptionPaths.map(path => filenameFromPath(path)));
+						if (attachmentIDs.size)
+						{
+							this.helmetAttachments.set(helmetID, attachmentIDs);
+							this.helmetAttachments.set('any', new Set([...this.helmetAttachments.get('any'), ...attachmentIDs]));
+						}
+					}
+				}
+
+				this.sockets.push(new Socket({core: this, OptionPaths: helmetPaths, socketName}));
+
+				this.sockets.push(new Socket({core: this, socketName: 'ArmorHelmetAttachment'}));
 			}
 		}
+
+		this._defaultProfile = defaultProfile;
+		console.log('defaultProfile', this.defaultProfile);
 	}
 
 	showSocket(socket) {
@@ -429,6 +547,41 @@ class Core extends Component {
 
 	scrollIntoView() {
 
+	}
+
+	socketDefault(socketName) {
+		const defaultItem = this.defaultProfile?.armor?.[socketName];
+		if (defaultItem) return defaultItem;
+		return '';
+	}
+
+	setSocket({
+		socketName,
+		item
+	}) {
+		if (!socketName || !item) return;
+
+		if (this?.profile?.armor.hasOwnProperty(socketName))
+		{
+			const currentItem = this.profile.armor[socketName];
+			if (currentItem === item)
+			{
+				this.profile.armor[socketName] = this.socketDefault(socketName) ?? '';
+			} else {
+				this.profile.armor[socketName] = item;
+			}
+			console.log(`[Core.setSocket]`, socketName, item, this.profile);
+			armorHall.setProfile(this.profile);
+		}
+	}
+
+	get defaultProfile() {
+		if (this?._defaultProfile) return this._defaultProfile;
+	}
+
+	get profile() {
+		if (this?._profile) return this._profile;
+		return (this._profile = {...this.defaultProfile, armor: {...this.defaultProfile.armor}});
 	}
 
 	get title() {
@@ -461,15 +614,19 @@ class UniCore extends Core {
 
 class Socket extends Component {
 	constructor({
+		core,
 		OptionPaths,
-		socketName
+		socketName,
+		required
 	}) {
 		super();
 
-		this.OptionPaths = OptionPaths;
+		this.core = core;
+		this.OptionPaths = OptionPaths ?? [];
 		this.socketName = socketName;
+		this.profileSocketName = socketNameToProfileType.get(socketName) ?? socketName;
 
-		this.itemIDs = new Set(OptionPaths.map(path => filenameFromPath(path)));
+		this._itemIDs = new Set(this.OptionPaths.map(path => filenameFromPath(path)));
 		this.items = [];
 	}
 
@@ -477,6 +634,11 @@ class Socket extends Component {
 		return {
 			page: 0
 		};
+	}
+
+	get itemIDs() {
+		if (this.socketName !== 'ArmorHelmetAttachment') return this._itemIDs ?? new Set();
+		return this.core.currentHelmetAttachments ?? new Set();
 	}
 
 	async render() {
@@ -525,6 +687,10 @@ class Socket extends Component {
 
 	selectHandler(item) {
 		db.selectedItemIDs.add(item.id);
+		this.core.setSocket({
+			socketName: this.profileSocketName,
+			item: item.id
+		})
 	}
 
 	getCurrentItemPage() {
@@ -573,6 +739,7 @@ class Socket extends Component {
 		const selected = [];
 		const favorites = [];
 		const others = [];
+		const unsupported = [];
 
 		this.itemIDs.forEach(id => {
 			if (armorHall.supportedItemIDs.has(id))
@@ -587,11 +754,31 @@ class Socket extends Component {
 				{
 					others.push(id);
 				}
+			} else {
+				unsupported.push(id);
 			}
 		});
 
-		return new Set([...selected, ...favorites, ...others]);
+		return new Set([...selected, ...favorites, ...others]); // , ...unsupported
 	}
 }
 
 export const armorHall = new ArmorHall();
+
+const socketNameToProfileType = new Map([
+	['Themes', 'theme'],
+	['Coatings', 'coating'],
+	['Helmets', 'helmet'],
+	['HelmetAttachments', 'helmetAttachment'],
+	['Visors', 'visor'],
+	['ChestAttachments', 'chestAttachment'],
+	['LeftShoulderPads', 'leftShoulderPad'],
+	['RightShoulderPads', 'rightShoulderPad'],
+	['Gloves', 'gloves'],
+	['WristAttachments', 'wristAttachment'],
+	['KneePads', 'kneepads'],
+	['HipAttachments', 'hipAttachment'],
+	['Emblems', 'emblem'],
+	['ArmorFx', 'armorFX'],
+	['MythicFx', 'mythicFX']
+])

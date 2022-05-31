@@ -37,21 +37,23 @@ export class Compositor {
 		return 13;
 	}
 
+	setUniCore(unicore) {
+		console.log(`[Compositor.setUniCore]`);
+		if (unicore) this.unicore = unicore;
+	}
+
+	get vanity() {
+		if (this.unicore) return this.unicore;
+	}
+
+	setSupportedItems(items) {
+		this._supportedItemIDs = items;
+	}
+
 	setCanvas(canvas) {
 		console.log(`[Compositor.setCanvas]`, canvas);
 		if (canvas) this.canvas = canvas;
-		this.test();
-	}
-
-	async initProfile(profile) {
-		if (!profile || !profile?.armor?.core)
-		{
-			console.warn(`[Compositor.initProfile] Invalid profile`, profile);
-			return;
-		}
-
-		console.log(`[Compositor.initProfile]`, profile?.gamertag ?? profile?.name ?? 'Unnamed Profile');
-		// this.defaultState();
+		// this.test();
 	}
 
 	async render() {
@@ -188,6 +190,7 @@ export class Compositor {
 		ctxBuffer.restore();
 		this._isRendering = false;
 	}
+
 	/*
 	 * depthComposite implementation based on a post by /u/Agumander
 	 * https://old.reddit.com/r/gamedev/comments/35v3lw/zbuffering_in_html5_canvas_without_iterating_over/
@@ -268,24 +271,29 @@ export class Compositor {
 		coating,
 		hasDepth = true
 	} = {}) {
-		const assetPrefix = '/7/vanity/';
-
-		if (!hasDepth)
-		{
-			const colorRequest = await this.loadImg(`${assetPrefix}${item}/${coating ?? item}.png`);
-			return {
-				color: colorRequest
+		try {
+			const assetPrefix = '/7/vanity/';
+	
+			if (!hasDepth)
+			{
+				const colorRequest = await this.loadImg(`${assetPrefix}${item}/${coating ?? item}.png`);
+				return {
+					color: colorRequest,
+					useDepth: false
+				}
 			}
-		}
-
-		const [color, depth] = await Promise.all([
-			this.loadImg(`${assetPrefix}${item}/${coating ?? item}.png`),
-			this.loadImg(`${assetPrefix}${item}/depth.png`)
-		]);
-
-		return {
-			color,
-			depth
+	
+			const [color, depth] = await Promise.all([
+				this.loadImg(`${assetPrefix}${item}/${coating ?? item}.png`),
+				this.loadImg(`${assetPrefix}${item}/depth.png`)
+			]);
+	
+			return {
+				color,
+				depth
+			}
+		} catch (error) {
+			console.error(`[Compositor.requestImageLayer]`, error);
 		}
 	}
 
@@ -299,6 +307,132 @@ export class Compositor {
 			};
 			img.src = path;
 		})
+	}
+
+	get supportedItemIDs() {
+		if (this?._supportedItemIDs) return this._supportedItemIDs;
+
+		let supportedItemIDs = new Set();
+		
+		const vanityIndex = this.unicore;
+		if (vanityIndex)
+		{
+			for (const property in vanityIndex)
+			{
+				if (Array.isArray(vanityIndex?.[property]?.options))
+				{
+					const options = vanityIndex?.[property]?.options;
+					supportedItemIDs = new Set([...supportedItemIDs, ...options]);
+				}
+			}
+
+			console.info(`[Compositor.supportedItemIDs] "${supportedItemIDs.size}" items`, supportedItemIDs);
+
+			if (supportedItemIDs.size) return (this._supportedItemIDs = supportedItemIDs);
+			return supportedItemIDs;
+		}
+	}
+
+	async initProfile(profile = {armor: {core: '017-001-olympus-c13d0b38'}}) {
+		if (!profile || !profile?.armor?.core)
+		{
+			console.warn(`[Compositor.initProfile] Invalid profile`, profile);
+			await this.test();
+			return;
+		}
+
+		console.log(`[Compositor.initProfile]`, profile?.gamertag ?? profile?.title ?? 'Untitled Profile', profile);
+		// this.defaultState();
+
+		const layers = new Map([
+			['coating', '002-001-olympus-c0122ae6'],
+			['core', '017-001-olympus-c13d0b38'],
+			['helmet', '005-001-olympus-c13d0b38'],
+			['visor', ''],
+			['helmetAttachment', ''],
+			['rightShoulderPad', ''], // 009-001-olympus-c13d0b38
+			['leftShoulderPad', ''], // 008-001-olympus-c13d0b38
+			['chestAttachment', ''],
+			['hipAttachment', ''],
+			['kneepads', ''], // 006-001-olympus-c13d0b38
+			['weaponCoating', ''], // 203-201-olympus-aa30213b
+			['gloves', ''], // 003-001-olympus-c13d0b38
+			['wristAttachment', '']
+		]);
+
+		for (const socket in profile.armor)
+		{
+			if (!layers.has(socket))
+			{
+				console.warn(`[Compositor.initProfile] No socket "${socket}"`);
+				continue;
+			}
+
+			const itemID = profile.armor[socket];
+			if (!this.supportedItemIDs.has(itemID))
+			{
+				console.warn(`[Compositor.initProfile] Item "${itemID}" not supported!`);
+				continue;
+			}
+
+			layers.set(socket, itemID);
+		}
+
+		// TODO weapon coating
+
+		console.log(`[Compositor.initProfile] assigned`, layers);
+
+		await this.loadProfileLayers(layers);
+	}
+
+	async loadProfileLayers(layerMap) {
+		if (!layerMap.size) return;
+
+		const coating = layerMap.get('coating');
+		if (!coating) return;
+
+		const promises = [];
+		this.defaultState();
+
+		[...layerMap.entries()].forEach(([socket, item], index) => {
+			if (index > 0 && item)
+			{
+				const props = {
+					socket,
+					coating
+				}
+
+				if (typeof item === 'string')
+				{
+					props.item = item;
+				}
+					else if (item?.id && item?.coating)
+				{
+					props.coating = item.coating;
+					props.item = item.id;
+				}
+
+				const skipDepth = new Set(['core', 'helmet']);
+
+				promises.push(this.requestImageLayer(props)
+					.then(result => {
+						this.submitLayer({
+							index,
+							...result,
+							useDepth: !skipDepth.has(socket)
+						});
+						// this.render();
+					})
+					.catch(error => console.error(`[Compositor.loadProfileLayers]`, error))
+				)
+			}
+		});
+
+		Promise.all(promises)
+			.then(() => {
+				console.log('done loading');
+				this.render();
+			})
 	}
 
 	async test() {
@@ -395,7 +529,7 @@ export class Compositor {
 		// 	...shoulder
 		// });
 
-		await this.render();
+		// await this.render();
 	}
 }
 

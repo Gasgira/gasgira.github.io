@@ -26,8 +26,7 @@ class Database {
 	}
 
 	get revealHidden() {
-		if (this?._revealHidden) return this._revealHidden;
-		return false;
+		return this._revealHidden ??= false;
 	}
 
 	async getMetaData() {

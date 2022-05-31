@@ -106,14 +106,12 @@ export class Component {
 	 */
 	render() {}
 
-	#html;
 	get html() {
-		return this.#html ??= HTML.wire(this);
+		return this._html ??= HTML.wire(this);
 	}
 
-	#messenger;
 	get messenger() {
-		return this.#messenger ??= new EventEmitter();
+		return this._messenger ??= new EventEmitter();
 	}
 
 	adoptState(component) {
