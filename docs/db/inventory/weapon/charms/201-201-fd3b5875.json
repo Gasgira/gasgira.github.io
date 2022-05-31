@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "201-201-fd3b5875",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Big Galoot",
 		"Description": "Brawn over brains.",
 		"FeatureFlag": true,

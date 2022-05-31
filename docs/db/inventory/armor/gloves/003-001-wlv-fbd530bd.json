@@ -29,7 +29,7 @@
 	],
 	"CommonData": {
 		"Id": "003-001-wlv-fbd530bd",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Abzug",
 		"Description": "Eyes. Hand. Gun. Results.",
 		"FeatureFlag": true,

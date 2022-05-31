@@ -29,7 +29,7 @@
 	],
 	"CommonData": {
 		"Id": "006-001-wlv-e2ce01fc",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "UA/Type HRP",
 		"Description": "If it's any consolation, your knee will shatter before the armor plate.",
 		"FeatureFlag": true,

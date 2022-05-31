@@ -4,7 +4,7 @@
 	},
 	"CommonData": {
 		"Id": "101-000-menu-stance-o-c8816916",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Steppin' Razor",
 		"Description": "Straight to the point.",
 		"FeatureFlag": true,

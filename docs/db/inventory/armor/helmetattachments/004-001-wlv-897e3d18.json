@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "004-001-wlv-897e3d18",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "TAC/RS/FARLIGHT",
 		"Description": "Assembled in limited numbers aboard the UNSC Infinity, this rebuild of the classic AN/PZY-990T sensor suite uses a custom battlenet channel and full-spectrum machine link to take advantage of modern communication hardware.",
 		"FeatureFlag": true,

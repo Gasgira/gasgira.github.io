@@ -26,7 +26,7 @@
 	],
 	"CommonData": {
 		"Id": "104-001-entrenched-ri-e92ce1ef",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Ridgeback Cantonment Patrol",
 		"Description": "Sniffing out trouble, dealing it back double\" was the motto of volunteers who kept the peace long after the rubble of Seattle stopped smouldering.",
 		"FeatureFlag": true,

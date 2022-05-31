@@ -26,7 +26,7 @@
 	],
 	"CommonData": {
 		"Id": "104-001-olympus-spart-515d9b53",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Pioneer Group Zeta",
 		"Description": "Reclaim what was lost, swords in hand.",
 		"FeatureFlag": true,

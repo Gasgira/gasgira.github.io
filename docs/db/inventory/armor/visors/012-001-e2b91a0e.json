@@ -9,7 +9,7 @@
 	},
 	"CommonData": {
 		"Id": "012-001-e2b91a0e",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Heroic Intervention",
 		"Description": "Leap into the fray.",
 		"FeatureFlag": true,

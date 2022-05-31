@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "002-001-olympus-ab9c37e8",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Timeless Gravel",
 		"Description": "Grist for the mill.",
 		"FeatureFlag": true,

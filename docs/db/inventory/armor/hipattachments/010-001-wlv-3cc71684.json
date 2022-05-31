@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "010-001-wlv-3cc71684",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "TAC/REDSCAN",
 		"Description": "Highly classified until the final years of the Covenant War, modified REDSCAN devices are now used as a fallback option to interlink with alien machinery if the Spartan's tactical digital assistant is disabled.",
 		"FeatureFlag": true,

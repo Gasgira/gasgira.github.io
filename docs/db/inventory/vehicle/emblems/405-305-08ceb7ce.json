@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "405-305-08ceb7ce",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Eye See You",
 		"Description": "The monitors are marvelous instruments of surveillance and control.",
 		"FeatureFlag": true,

@@ -18,7 +18,7 @@
 	],
 	"CommonData": {
 		"Id": "009-001-wlv-715f355a",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "INTERPRES RECEIVER",
 		"Description": "A cunning combination of human engineering and Kig-Yar ingenuity which allows the user to access UEG, UNSC, Covenant, and Venezian datanets with near-perfect anonymity.",
 		"FeatureFlag": true,

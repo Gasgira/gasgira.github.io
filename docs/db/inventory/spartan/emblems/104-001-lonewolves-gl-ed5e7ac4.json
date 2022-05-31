@@ -26,7 +26,7 @@
 	],
 	"CommonData": {
 		"Id": "104-001-lonewolves-gl-ed5e7ac4",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Emerald Nightmare",
 		"Description": "Strike at what they value most, when they expect it the least.",
 		"FeatureFlag": true,

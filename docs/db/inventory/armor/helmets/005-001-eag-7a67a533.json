@@ -18,7 +18,7 @@
 	],
 	"CommonData": {
 		"Id": "005-001-eag-7a67a533",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "LEADBELCHER",
 		"Description": "Produced from scraps and leftover mechatronics, the LEADBELCHER helmet was beloved by UNSC tunnel rats tasked with investigating Covenant \"root-gnawer\" archaeotech digger teams.",
 		"FeatureFlag": true,

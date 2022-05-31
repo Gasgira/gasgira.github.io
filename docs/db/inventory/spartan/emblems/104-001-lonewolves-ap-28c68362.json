@@ -26,7 +26,7 @@
 	],
 	"CommonData": {
 		"Id": "104-001-lonewolves-ap-28c68362",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Fireteam Apex",
 		"Description": "Death from above.",
 		"FeatureFlag": true,

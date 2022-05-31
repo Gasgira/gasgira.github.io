@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "002-001-eag-d7972708",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Hazard Zone",
 		"Description": "The Covenant's crawling mists gnaw at the flesh and corrode the soul, but leave valuable salvage untouched.",
 		"FeatureFlag": true,

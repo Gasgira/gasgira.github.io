@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "205-201-a5d65799",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Wyld Hogs",
 		"Description": "The 902nd Reconnaissance Cluster played fast and loose with UNSC military regulations and protocol, but never shirked their duty.",
 		"FeatureFlag": true,

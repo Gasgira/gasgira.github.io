@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "004-001-eag-960b86e5",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "SPELUNKER LIGHT",
 		"Description": "The worst terrors of the underdark and gloaming depths do not shy away from the light.",
 		"FeatureFlag": true,

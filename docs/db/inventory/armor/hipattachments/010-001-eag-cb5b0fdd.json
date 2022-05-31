@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "010-001-eag-cb5b0fdd",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "TWIN TEETH",
 		"Description": "UNSC soldiers developed an entire subculture and elborate rituals around knives and other blades. Though it did help build knifefighting skills, their true purpose was for passing the time and entertaining comrades.",
 		"FeatureFlag": true,

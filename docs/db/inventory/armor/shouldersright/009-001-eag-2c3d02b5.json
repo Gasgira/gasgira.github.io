@@ -18,7 +18,7 @@
 	],
 	"CommonData": {
 		"Id": "009-001-eag-2c3d02b5",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "GROGNARDS",
 		"Description": "The acoustic screamers and knives mark these as field kits manufactured for veteran trenchfighters. Between battles the screamers were used to play music, and the knives were used as cutlery.",
 		"FeatureFlag": true,

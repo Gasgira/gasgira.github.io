@@ -18,7 +18,7 @@
 	],
 	"CommonData": {
 		"Id": "008-001-wlv-5a726699",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "UA/DEMIL CAT-III",
 		"Description": "Prototype and damaged Mjolnir components illicitly recovered from salvage depots and upcycled by Sevine as up-armor for well-heeled Venezian mercenaries.",
 		"FeatureFlag": true,

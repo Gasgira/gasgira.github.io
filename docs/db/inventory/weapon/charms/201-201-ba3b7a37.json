@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "201-201-ba3b7a37",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Wyld Hogs",
 		"Description": "Let the brass fly!",
 		"FeatureFlag": true,

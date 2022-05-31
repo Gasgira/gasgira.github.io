@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "205-201-a6f31a69",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Sanitation Engineer",
 		"Description": "You did NOT keep it clean.",
 		"FeatureFlag": true,

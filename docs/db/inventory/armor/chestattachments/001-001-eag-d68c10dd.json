@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "001-001-eag-d68c10dd",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "CLOUDJUMPER",
 		"Description": "The trooper this belonged to won't be needing it anymore.",
 		"FeatureFlag": true,

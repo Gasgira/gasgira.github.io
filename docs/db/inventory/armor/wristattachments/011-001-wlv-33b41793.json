@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "011-001-wlv-33b41793",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "MONASTIR FENCE",
 		"Description": "Wrist armor in the style used by New Harmony veterans.",
 		"FeatureFlag": true,

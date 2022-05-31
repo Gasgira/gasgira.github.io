@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "201-201-d5cd9792",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Forky",
 		"Description": "Lifting up heroes.",
 		"FeatureFlag": true,

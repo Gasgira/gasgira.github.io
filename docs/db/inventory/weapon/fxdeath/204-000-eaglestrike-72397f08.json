@@ -4,7 +4,7 @@
 	],
 	"CommonData": {
 		"Id": "204-000-eaglestrike-72397f08",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Eagle Claw",
 		"Description": "A sharp pain, then oblivion.",
 		"FeatureFlag": false,

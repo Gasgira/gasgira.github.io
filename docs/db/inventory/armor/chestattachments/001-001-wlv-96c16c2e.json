@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "001-001-wlv-96c16c2e",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "UTIL/AN/BQC-552C UCOM",
 		"Description": "Adaptation of the CDIESS underwater communications system used by UNSC Army divers.",
 		"FeatureFlag": true,

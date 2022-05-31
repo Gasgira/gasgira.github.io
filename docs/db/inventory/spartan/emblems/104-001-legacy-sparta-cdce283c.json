@@ -30,7 +30,7 @@
 	],
 	"CommonData": {
 		"Id": "104-001-legacy-sparta-cdce283c",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Built for War",
 		"Description": "The next-generation of super-soldiers.",
 		"FeatureFlag": true,

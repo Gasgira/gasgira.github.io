@@ -14,7 +14,7 @@
 	],
 	"CommonData": {
 		"Id": "104-001-personalai-lu-c5d90206",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Lumu Whisper",
 		"Description": "Nothing personal, Spartan.",
 		"FeatureFlag": true,

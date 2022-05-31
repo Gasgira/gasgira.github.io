@@ -18,7 +18,7 @@
 	],
 	"CommonData": {
 		"Id": "008-001-olympus-0f5806b7",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "HIGHCOM Sentinel",
 		"Description": "Issued to Spartans assigned as HIGHCOM honor guards on Earth. Now worn to honor their memory.",
 		"FeatureFlag": true,

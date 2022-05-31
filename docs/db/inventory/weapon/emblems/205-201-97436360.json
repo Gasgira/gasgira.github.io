@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "205-201-97436360",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Fireteam Lancer",
 		"Description": "Locate. Observe. Attack. Win.",
 		"FeatureFlag": true,

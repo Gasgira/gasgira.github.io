@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "404-305-olympus-d69fb80b",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Point Bombardment",
 		"Description": "This storm of blood consumed us all.",
 		"FeatureFlag": true,

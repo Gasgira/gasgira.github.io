@@ -1,0 +1,18 @@
+{
+	"Description": "Kill Enemy Spartans in Team Slayer",
+	"Difficulty": "mythic",
+	"Category": "Capstone",
+	"Reward": {
+		"OperationExperience": 400,
+		"InventoryItems": [],
+		"InventoryRewards": [
+			{
+				"InventoryItemPath": "inventory/spartan/actionposes/101-000-menu-stance-o-d849bc84.json",
+				"Amount": 1,
+				"Type": "SpartanActionPose"
+			}
+		]
+	},
+	"ThresholdForSuccess": 30,
+	"Title": "Got Your Back"
+}

@@ -18,7 +18,7 @@
 	],
 	"CommonData": {
 		"Id": "005-001-wlv-86a2c4f8",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "ULLR",
 		"Description": "ULLR was a demonstration program for generation-after-next observation technologies and evaluation of the experimental Mímir interface; both of which require a smart AI to function at their full potential.",
 		"FeatureFlag": true,

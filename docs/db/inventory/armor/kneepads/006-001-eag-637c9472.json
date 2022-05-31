@@ -29,7 +29,7 @@
 	],
 	"CommonData": {
 		"Id": "006-001-eag-637c9472",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "KNEE SHOVELS",
 		"Description": "Not actually made from discarded shovels, despite rumors.",
 		"FeatureFlag": true,

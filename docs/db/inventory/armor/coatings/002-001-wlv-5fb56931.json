@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "002-001-wlv-5fb56931",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Shimmering Blush",
 		"Description": "Best used when the delta between ally and enemy is imperceptible.",
 		"FeatureFlag": true,

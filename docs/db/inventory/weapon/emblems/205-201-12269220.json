@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "205-201-12269220",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Shards of Glass",
 		"Description": "Planets can be broken. Resolve cannot.",
 		"FeatureFlag": true,

@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "404-306-olympus-d69fb80b",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Point Bombardment",
 		"Description": "The UNSC stopped taking Covenant prisoners long ago. Bombard and bypass is far safer.",
 		"FeatureFlag": true,

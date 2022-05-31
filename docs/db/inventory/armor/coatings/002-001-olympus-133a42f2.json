@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "002-001-olympus-133a42f2",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Foggy Rust",
 		"Description": "Not afraid to get your hands dirty.",
 		"FeatureFlag": true,

@@ -9,7 +9,7 @@
 	},
 	"CommonData": {
 		"Id": "012-001-965c881c",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Citrine Wind",
 		"Description": "What was once a mark of rank and prestige is now simply another adornment for those still standing.",
 		"FeatureFlag": true,

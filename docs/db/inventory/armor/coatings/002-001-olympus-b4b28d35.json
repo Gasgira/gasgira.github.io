@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "002-001-olympus-b4b28d35",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Vampire Mirage",
 		"Description": "Sanguine obsessions.",
 		"FeatureFlag": true,

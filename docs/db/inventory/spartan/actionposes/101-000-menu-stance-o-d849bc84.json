@@ -4,7 +4,7 @@
 	},
 	"CommonData": {
 		"Id": "101-000-menu-stance-o-d849bc84",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Spring Mountain",
 		"Description": "One hand open, one fist closed.",
 		"FeatureFlag": true,

@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "405-305-5099745c",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Shadow Scorpion",
 		"Description": "The 52nd Destroyer Battalion were experts in striking from ambush, and adept at preserving their fighting strength under even the most austere conditions imaginable.",
 		"FeatureFlag": true,

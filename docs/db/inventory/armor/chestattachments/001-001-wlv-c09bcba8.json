@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "001-001-wlv-c09bcba8",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "RUCKAMUCK HIPPOTOOTH",
 		"Description": "Get Tactical with chemlights, extra magazines, and five Soellkraft \"MultiEdge 40\" loitering munitions.",
 		"FeatureFlag": true,

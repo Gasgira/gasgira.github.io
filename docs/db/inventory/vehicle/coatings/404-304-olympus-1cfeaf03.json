@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "404-304-olympus-1cfeaf03",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Grullo Orange",
 		"Description": "Time to shine.",
 		"FeatureFlag": true,
