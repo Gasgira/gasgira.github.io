@@ -50,15 +50,17 @@
 		]
 	},
 	"gloves": {
-		"isRequired": false,
-		"defaultOption": "",
+		"isRequired": true,
+		"defaultOption": "003-001-olympus-c13d0b38",
 		"options": [
+			"003-001-olympus-c13d0b38"
 		]
 	},
 	"kneePads": {
-		"isRequired": false,
-		"defaultOption": "",
+		"isRequired": true,
+		"defaultOption": "006-001-olympus-c13d0b38",
 		"options": [
+			"006-001-olympus-c13d0b38"
 		]
 	},
 	"chestAttachments": {

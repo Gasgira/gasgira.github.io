@@ -354,9 +354,12 @@ export class Compositor {
 			['leftShoulderPad', ''], // 008-001-olympus-c13d0b38
 			['chestAttachment', ''],
 			['hipAttachment', ''],
-			['kneepads', ''], // 006-001-olympus-c13d0b38
-			['weaponCoating', ''], // 203-201-olympus-aa30213b
-			['gloves', ''], // 003-001-olympus-c13d0b38
+			['kneepads', '006-001-olympus-c13d0b38'], // 006-001-olympus-c13d0b38
+			['weaponCoating', {
+				id: '209-201-olympus-aa30213b',
+				coating: '203-201-olympus-aa30213b'
+			}], // 203-201-olympus-aa30213b
+			['gloves', '003-001-olympus-c13d0b38'], // 003-001-olympus-c13d0b38
 			['wristAttachment', '']
 		]);
 
@@ -383,6 +386,11 @@ export class Compositor {
 		console.log(`[Compositor.initProfile] assigned`, layers);
 
 		await this.loadProfileLayers(layers);
+	}
+
+	get weaponCore() {
+		// TODO get this from vanity.json
+		return '209-201-olympus-aa30213b';
 	}
 
 	async loadProfileLayers(layerMap) {
