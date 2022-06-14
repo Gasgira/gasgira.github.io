@@ -30,7 +30,7 @@
 			"Media": {
 				"MediaUrl": {
 					"AuthorityId": "",
-					"Path": "progression/Inventory/Emblems/343unicorns_ducttapeunicorn.png",
+					"Path": "progression/Inventory/Emblems/343UNICORNS_DUCTTAPEUNICORN_EMBLEM.PNG",
 					"RetryPolicyId": "",
 					"TopicName": "",
 					"AcknowledgementTypeId": "NoAcknowledgement",
@@ -45,7 +45,7 @@
 			},
 			"MimeType": "image/png",
 			"FolderPath": "progression/Inventory/Emblems",
-			"FileName": "343unicorns_ducttapeunicorn.png"
+			"FileName": "343UNICORNS_DUCTTAPEUNICORN_EMBLEM.PNG"
 		},
 		"Quality": "Legendary",
 		"ManufacturerId": 0,
@@ -99,12 +99,12 @@
 	},
 	"AvailableConfigurations": [
 		{
-			"ConfigurationId": 726761566,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-63563fd6.json"
-		},
-		{
 			"ConfigurationId": 1337929658,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-2bff0b6b.json"
+		},
+		{
+			"ConfigurationId": 726761566,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-63563fd6.json"
 		},
 		{
 			"ConfigurationId": 2002320468,

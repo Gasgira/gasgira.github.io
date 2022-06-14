@@ -30,7 +30,7 @@
 			"Media": {
 				"MediaUrl": {
 					"AuthorityId": "",
-					"Path": "progression/Inventory/Emblems/343unicorns_ducttapeunicorn.png",
+					"Path": "progression/Inventory/Emblems/343UNICORNS_DUCTTAPEUNICORN_EMBLEM.PNG",
 					"RetryPolicyId": "",
 					"TopicName": "",
 					"AcknowledgementTypeId": "NoAcknowledgement",
@@ -45,7 +45,7 @@
 			},
 			"MimeType": "image/png",
 			"FolderPath": "progression/Inventory/Emblems",
-			"FileName": "343unicorns_ducttapeunicorn.png"
+			"FileName": "343UNICORNS_DUCTTAPEUNICORN_EMBLEM.PNG"
 		},
 		"Quality": "Legendary",
 		"ManufacturerId": 0,

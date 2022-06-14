@@ -51,7 +51,12 @@
 		"ManufacturerId": 0,
 		"Type": "VehicleCoating",
 		"RewardTrack": "",
-		"ParentPaths": [],
+		"ParentPaths": [
+			{
+				"Path": "Inventory/Vehicle/Themes/408-306-olympus-aa30213b.json",
+				"Type": "VehicleTheme"
+			}
+		],
 		"SortingMetadata": {
 			"categoryWeight": 0,
 			"subCategoryWeight": 0

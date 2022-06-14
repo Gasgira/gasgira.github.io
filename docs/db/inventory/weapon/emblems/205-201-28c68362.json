@@ -25,12 +25,12 @@
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
 		"DisplayPath": {
-			"Width": 1015,
-			"Height": 935,
+			"Width": 1024,
+			"Height": 1024,
 			"Media": {
 				"MediaUrl": {
 					"AuthorityId": "",
-					"Path": "progression/Inventory/Emblems/lonewolves_apexfireteam.png",
+					"Path": "progression/Inventory/Emblems/LONEWOLVES_APEXFIRETEAM_EMBLEM.PNG",
 					"RetryPolicyId": "",
 					"TopicName": "",
 					"AcknowledgementTypeId": "NoAcknowledgement",
@@ -45,10 +45,10 @@
 			},
 			"MimeType": "image/png",
 			"FolderPath": "progression/Inventory/Emblems",
-			"FileName": "lonewolves_apexfireteam.png"
+			"FileName": "LONEWOLVES_APEXFIRETEAM_EMBLEM.PNG"
 		},
 		"Quality": "Epic",
-		"ManufacturerId": 26,
+		"ManufacturerId": 25,
 		"Type": "WeaponEmblem",
 		"RewardTrack": "",
 		"ParentPaths": [
@@ -99,12 +99,12 @@
 	},
 	"AvailableConfigurations": [
 		{
-			"ConfigurationId": 1183553326,
-			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-85c7cd05.json"
-		},
-		{
 			"ConfigurationId": 1202351983,
 			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-83f09ad5.json"
+		},
+		{
+			"ConfigurationId": 1183553326,
+			"ConfigurationPath": "Configuration/Emblems/Coatings/1000-000-85c7cd05.json"
 		},
 		{
 			"ConfigurationId": -2095749787,

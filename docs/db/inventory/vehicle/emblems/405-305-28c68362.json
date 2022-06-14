@@ -25,12 +25,12 @@
 		"AltSpriteBitmap": 0,
 		"AltSpriteFrameIndex": 0,
 		"DisplayPath": {
-			"Width": 1015,
-			"Height": 935,
+			"Width": 1024,
+			"Height": 1024,
 			"Media": {
 				"MediaUrl": {
 					"AuthorityId": "",
-					"Path": "progression/Inventory/Emblems/lonewolves_apexfireteam.png",
+					"Path": "progression/Inventory/Emblems/LONEWOLVES_APEXFIRETEAM_EMBLEM.PNG",
 					"RetryPolicyId": "",
 					"TopicName": "",
 					"AcknowledgementTypeId": "NoAcknowledgement",
@@ -45,10 +45,10 @@
 			},
 			"MimeType": "image/png",
 			"FolderPath": "progression/Inventory/Emblems",
-			"FileName": "lonewolves_apexfireteam.png"
+			"FileName": "LONEWOLVES_APEXFIRETEAM_EMBLEM.PNG"
 		},
 		"Quality": "Epic",
-		"ManufacturerId": 26,
+		"ManufacturerId": 25,
 		"Type": "VehicleEmblem",
 		"RewardTrack": "",
 		"ParentPaths": [
