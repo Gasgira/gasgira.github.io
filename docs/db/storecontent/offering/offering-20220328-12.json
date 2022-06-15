@@ -1,0 +1,24 @@
+{
+	"OfferingId": "20220328-12",
+	"OfferingDisplayPath": "StoreContent/Display/Offerings/20220328-12.json",
+	"OfferingExpirationDate": null,
+	"IncludedItems": [
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Weapon/FXDeath/204-000-eaglestrike-72397f08.json",
+			"ItemType": "WeaponDeathFx"
+		}
+	],
+	"Prices": [
+		{
+			"Cost": 700,
+			"CurrencyPath": "Currency/Currencies/cR.json"
+		}
+	],
+	"IncludedCurrencies": [],
+	"IncludedRewardTracks": [],
+	"BoostPath": null,
+	"OperationXp": 0,
+	"EventXp": 0,
+	"MatchBoosts": null
+}
