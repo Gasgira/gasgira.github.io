@@ -381,7 +381,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 28, Paid"
 				}
 			}
 		],
@@ -401,7 +402,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 80, Paid"
 				}
 			}
 		],
@@ -634,7 +636,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Alpha Pack - Rank 2, Free"
 				}
 			}
 		],
@@ -981,7 +984,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 30, Paid"
 				}
 			}
 		],
@@ -1439,7 +1443,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 88, Paid"
 				}
 			}
 		],
@@ -1459,7 +1464,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 89, Paid"
 				}
 			}
 		],
@@ -1707,7 +1713,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Entrenched - Rank 1, Free"
 				}
 			}
 		],
@@ -1777,7 +1784,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 21, Free"
 				}
 			}
 		],
@@ -1843,7 +1851,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 10, Paid"
 				}
 			}
 		],
@@ -1997,7 +2006,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Cyber Showdown - Rank 8, Free"
 				}
 			}
 		],
@@ -2030,7 +2040,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 54, Paid"
 				}
 			}
 		],
@@ -2147,7 +2158,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -2278,7 +2294,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 5, Paid"
 				}
 			}
 		],
@@ -2332,7 +2349,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 29, Free"
 				}
 			}
 		],
@@ -2372,7 +2390,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 64, Free"
 				}
 			}
 		],
@@ -2404,7 +2423,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Entrenched - Rank 15, Free"
 				}
 			}
 		],
@@ -2613,7 +2633,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 79, Paid"
 				}
 			}
 		],
@@ -2629,7 +2650,12 @@
 					"2022-05-07T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-14T00:00:00.000Z"
+				"visible": "2022-05-14T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -2644,7 +2670,12 @@
 					"2022-05-07T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-14T00:00:00.000Z"
+				"visible": "2022-05-14T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -2659,7 +2690,12 @@
 					"2022-05-07T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-14T00:00:00.000Z"
+				"visible": "2022-05-14T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -2674,7 +2710,12 @@
 					"2022-05-07T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-14T00:00:00.000Z"
+				"visible": "2022-05-14T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -2693,7 +2734,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 2, Paid"
 				}
 			}
 		],
@@ -2752,7 +2794,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 1, Free"
 				}
 			}
 		],
@@ -2888,7 +2931,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Cyber Showdown - Rank 4, Free"
 				}
 			}
 		],
@@ -2988,7 +3032,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 6, Free"
 				}
 			}
 		],
@@ -3111,7 +3156,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -3126,7 +3176,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -3141,7 +3196,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -3156,7 +3216,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -3402,7 +3467,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -3416,7 +3486,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -3430,7 +3505,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -3444,7 +3524,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -3463,7 +3548,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 59, Free"
 				}
 			}
 		],
@@ -3858,7 +3944,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 16, Free"
 				}
 			}
 		],
@@ -3961,7 +4048,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "The Yappening - Rank 9, Free"
 				}
 			}
 		],
@@ -3993,7 +4081,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Entrenched - Rank 17, Free"
 				}
 			}
 		],
@@ -4013,7 +4102,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Entrenched - Rank 7, Free"
 				}
 			}
 		],
@@ -4033,7 +4123,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Entrenched - Rank 12, Free"
 				}
 			}
 		],
@@ -4143,7 +4234,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 20, Paid"
 				}
 			}
 		],
@@ -4163,7 +4255,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 49, Free"
 				}
 			}
 		],
@@ -4196,7 +4289,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Interference - Rank 2, Free"
 				}
 			}
 		],
@@ -4236,7 +4330,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 43, Paid"
 				}
 			}
 		],
@@ -4274,7 +4369,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 32, Paid"
 				}
 			}
 		],
@@ -4331,7 +4427,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 60, Paid"
 				}
 			}
 		],
@@ -4664,7 +4761,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 48, Paid"
 				}
 			}
 		],
@@ -4778,7 +4876,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 47, Paid"
 				}
 			}
 		],
@@ -5977,7 +6076,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-14T00:00:00.000Z"
+				"visible": "2022-05-14T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -5992,7 +6096,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-07T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -6007,7 +6116,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-07T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -6022,7 +6136,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-07T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -6037,7 +6156,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-07T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -6051,7 +6175,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -6068,7 +6197,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "The Yappening - Rank 7, Free"
 				}
 			}
 		],
@@ -6341,7 +6471,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 86, Free"
 				}
 			}
 		],
@@ -6361,7 +6492,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Tactical Ops - Rank 1, Free"
 				}
 			}
 		],
@@ -6922,7 +7054,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -7245,7 +7382,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 15, Paid"
 				}
 			}
 		],
@@ -7343,7 +7481,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 72, Paid"
 				}
 			}
 		],
@@ -7391,7 +7530,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -7405,7 +7549,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -7419,7 +7568,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -7433,7 +7587,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -7447,7 +7606,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -7461,7 +7625,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -7475,7 +7644,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -7604,7 +7778,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -7874,7 +8053,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Entrenched - Rank 13, Free"
 				}
 			}
 		],
@@ -7894,7 +8074,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Entrenched - Rank 14, Free"
 				}
 			}
 		],
@@ -8378,7 +8559,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 49, Paid"
 				}
 			}
 		],
@@ -8417,7 +8599,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Cyber Showdown - Rank 3, Free"
 				}
 			}
 		],
@@ -8438,7 +8621,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 27, Paid"
 				}
 			}
 		],
@@ -8533,7 +8717,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -8547,7 +8736,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -11102,7 +11296,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "The Yappening - Rank 6, Free"
 				}
 			}
 		],
@@ -11235,7 +11430,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -11254,7 +11454,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 90, Paid"
 				}
 			}
 		],
@@ -11274,7 +11475,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Interference - Rank 6, Free"
 				}
 			}
 		],
@@ -11342,7 +11544,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -11739,7 +11946,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 55, Paid"
 				}
 			}
 		],
@@ -11759,7 +11967,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 63, Paid"
 				}
 			}
 		],
@@ -11779,7 +11988,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 24, Free"
 				}
 			}
 		],
@@ -11799,7 +12009,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 9, Free"
 				}
 			}
 		],
@@ -12010,7 +12221,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 31, Free"
 				}
 			}
 		],
@@ -12176,7 +12388,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 37, Paid"
 				}
 			}
 		],
@@ -12502,7 +12715,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 100, Free"
 				}
 			}
 		],
@@ -12566,7 +12780,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 18, Paid"
 				}
 			}
 		],
@@ -13241,7 +13456,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Tenrai - Rank 12, Free"
 				}
 			}
 		],
@@ -13261,7 +13477,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Tenrai - Rank 16, Free"
 				}
 			}
 		],
@@ -13281,7 +13498,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Tenrai - Rank 17, Free"
 				}
 			}
 		],
@@ -13320,7 +13538,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Tenrai - Rank 22, Free"
 				}
 			}
 		],
@@ -13364,7 +13583,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 94, Free"
 				}
 			}
 		],
@@ -13549,7 +13769,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 51, Free"
 				}
 			}
 		],
@@ -13564,7 +13785,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -13620,7 +13846,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Entrenched - Rank 3, Free"
 				}
 			}
 		],
@@ -13666,7 +13893,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Entrenched - Rank 5, Free"
 				}
 			}
 		],
@@ -13751,7 +13979,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Entrenched - Rank 10, Free"
 				}
 			}
 		],
@@ -13783,7 +14012,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Tenrai - Rank 13, Free"
 				}
 			}
 		],
@@ -13803,7 +14033,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 89, Free"
 				}
 			}
 		],
@@ -14032,7 +14263,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Cyber Showdown - Rank 6, Free"
 				}
 			}
 		],
@@ -14052,7 +14284,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Cyber Showdown - Rank 2, Free"
 				}
 			}
 		],
@@ -14192,7 +14425,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Tactical Ops - Rank 3, Free"
 				}
 			}
 		],
@@ -14212,7 +14446,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 95, Paid"
 				}
 			}
 		],
@@ -14406,7 +14641,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "The Yappening - Rank 2, Free"
 				}
 			}
 		],
@@ -15051,7 +15287,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 10, Paid"
 				}
 			}
 		],
@@ -15071,7 +15308,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 90, Paid"
 				}
 			}
 		],
@@ -15115,7 +15353,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 19, Free"
 				}
 			}
 		],
@@ -15135,7 +15374,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Cyber Showdown - Rank 1, Free"
 				}
 			}
 		],
@@ -15170,7 +15410,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -15185,7 +15430,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -15200,7 +15450,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -15215,7 +15470,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -15898,7 +16158,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 25, Paid"
 				}
 			}
 		],
@@ -15918,7 +16179,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 84, Free"
 				}
 			}
 		],
@@ -15957,7 +16219,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 19, Paid"
 				}
 			}
 		],
@@ -16174,7 +16437,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Alpha Pack - Rank 9, Free"
 				}
 			}
 		],
@@ -16278,7 +16542,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 83, Paid"
 				}
 			}
 		],
@@ -16334,7 +16599,12 @@
 					"2022-05-31T00:00:00.000Z",
 					"2022-06-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -16350,7 +16620,12 @@
 					"2022-05-31T00:00:00.000Z",
 					"2022-06-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -16366,7 +16641,12 @@
 					"2022-05-31T00:00:00.000Z",
 					"2022-06-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -16382,7 +16662,12 @@
 					"2022-05-31T00:00:00.000Z",
 					"2022-06-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -16628,7 +16913,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-14T00:00:00.000Z"
+				"visible": "2022-05-14T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -16642,7 +16932,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-14T00:00:00.000Z"
+				"visible": "2022-05-14T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -16656,7 +16951,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-14T00:00:00.000Z"
+				"visible": "2022-05-14T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -16670,7 +16970,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-14T00:00:00.000Z"
+				"visible": "2022-05-14T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -16689,7 +16994,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 33, Paid"
 				}
 			}
 		],
@@ -16709,7 +17015,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 42, Paid"
 				}
 			}
 		],
@@ -16729,7 +17036,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 22, Paid"
 				}
 			}
 		],
@@ -16749,7 +17057,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 12, Paid"
 				}
 			}
 		],
@@ -16769,7 +17078,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 73, Paid"
 				}
 			}
 		],
@@ -16789,7 +17099,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 82, Paid"
 				}
 			}
 		],
@@ -16809,7 +17120,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 52, Paid"
 				}
 			}
 		],
@@ -16829,7 +17141,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 62, Paid"
 				}
 			}
 		],
@@ -16845,7 +17158,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -16860,7 +17178,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -16875,7 +17198,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -16890,7 +17218,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -16904,7 +17237,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-14T00:00:00.000Z"
+				"visible": "2022-05-14T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -16918,7 +17256,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-14T00:00:00.000Z"
+				"visible": "2022-05-14T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -16932,7 +17275,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-14T00:00:00.000Z"
+				"visible": "2022-05-14T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -16946,7 +17294,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-14T00:00:00.000Z"
+				"visible": "2022-05-14T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -17368,7 +17721,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -17805,7 +18163,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Tenrai - Rank 18, Free"
 				}
 			}
 		],
@@ -17820,7 +18179,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -17994,7 +18358,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -18272,7 +18641,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "The Yappening - Rank 4, Free"
 				}
 			}
 		],
@@ -18530,7 +18900,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 1, Free"
 				}
 			}
 		],
@@ -18550,7 +18921,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Tenrai - Rank 27, Free"
 				}
 			}
 		],
@@ -18901,7 +19273,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Tenrai - Rank 11, Free"
 				}
 			}
 		],
@@ -18921,7 +19294,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Tenrai - Rank 10, Free"
 				}
 			}
 		],
@@ -19033,7 +19407,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 56, Free"
 				}
 			}
 		],
@@ -19886,7 +20261,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 75, Paid"
 				}
 			}
 		],
@@ -20103,7 +20479,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -20117,7 +20498,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -20145,7 +20531,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -20159,7 +20550,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -20173,7 +20569,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -20366,7 +20767,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -20997,7 +21403,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -21602,7 +22013,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 64, Paid"
 				}
 			}
 		],
@@ -21806,7 +22218,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -21965,7 +22382,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 94, Paid"
 				}
 			}
 		],
@@ -21985,7 +22403,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 17, Paid"
 				}
 			}
 		],
@@ -22033,7 +22452,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -22047,7 +22471,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -22402,7 +22831,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 51, Free"
 				}
 			}
 		],
@@ -22422,7 +22852,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 37, Paid"
 				}
 			}
 		],
@@ -22461,7 +22892,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 24, Paid"
 				}
 			}
 		],
@@ -22495,7 +22927,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 18, Paid"
 				}
 			}
 		],
@@ -22515,7 +22948,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 81, Free"
 				}
 			}
 		],
@@ -22548,7 +22982,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Cyber Showdown - Rank 9, Free"
 				}
 			}
 		],
@@ -22582,7 +23017,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 98, Paid"
 				}
 			}
 		],
@@ -22597,7 +23033,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -22611,7 +23052,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -22625,7 +23071,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -22639,7 +23090,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -22653,7 +23109,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -22667,7 +23128,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -22681,7 +23147,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -22695,7 +23166,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -22709,7 +23185,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -22723,7 +23204,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -22737,7 +23223,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -22751,7 +23242,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -22765,7 +23261,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -22779,7 +23280,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -22793,7 +23299,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -22807,7 +23318,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -22821,7 +23337,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -22835,7 +23356,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -22849,7 +23375,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -22863,7 +23394,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -23218,7 +23754,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -23232,7 +23773,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -23324,7 +23870,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 50, Paid"
 				}
 			}
 		],
@@ -23344,7 +23891,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Interference - Rank 1, Free"
 				}
 			}
 		],
@@ -23442,7 +23990,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 7, Paid"
 				}
 			}
 		],
@@ -23462,7 +24011,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 8, Paid"
 				}
 			}
 		],
@@ -23542,7 +24092,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Entrenched - Rank 25, Free"
 				}
 			}
 		],
@@ -23562,7 +24113,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Tenrai - Rank 23, Free"
 				}
 			}
 		],
@@ -23629,7 +24181,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 80, Paid"
 				}
 			}
 		],
@@ -23661,7 +24214,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 100, Paid"
 				}
 			}
 		],
@@ -23681,7 +24235,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 97, Paid"
 				}
 			}
 		],
@@ -23701,7 +24256,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 85, Paid"
 				}
 			}
 		],
@@ -23721,7 +24277,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 50, Paid"
 				}
 			}
 		],
@@ -23761,7 +24318,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 40, Paid"
 				}
 			}
 		],
@@ -23789,7 +24347,13 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"memento"
+					],
+					"availability": "Log in during the week of June 19"
+				}
 			}
 		],
 		[
@@ -23802,7 +24366,13 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"memento"
+					],
+					"availability": "Log in during the week of June 19"
+				}
 			}
 		],
 		[
@@ -23815,7 +24385,13 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"memento"
+					],
+					"availability": "Log in during the week of June 19"
+				}
 			}
 		],
 		[
@@ -23828,7 +24404,13 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"memento"
+					],
+					"availability": "Log in during the week of June 19"
+				}
 			}
 		],
 		[
@@ -23869,7 +24451,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Tenrai - Rank 15, Free"
 				}
 			}
 		],
@@ -23972,7 +24555,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 66, Free"
 				}
 			}
 		],
@@ -24011,7 +24595,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 68, Paid"
 				}
 			}
 		],
@@ -24031,7 +24616,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Entrenched - Rank 20, Free"
 				}
 			}
 		],
@@ -24214,7 +24800,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 61, Free"
 				}
 			}
 		],
@@ -24229,7 +24816,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -24321,7 +24913,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Cyber Showdown - Rank 7, Free"
 				}
 			}
 		],
@@ -24360,7 +24953,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Entrenched - Rank 30, Free"
 				}
 			}
 		],
@@ -24417,7 +25011,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Entrenched - Rank 21, Free"
 				}
 			}
 		],
@@ -24654,7 +25249,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -24801,7 +25401,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -25130,7 +25735,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 71, Free"
 				}
 			}
 		],
@@ -25164,7 +25770,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 64, Paid"
 				}
 			}
 		],
@@ -25283,7 +25890,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-07T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -25412,7 +26024,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Tactical Ops - Rank 4, Free"
 				}
 			}
 		],
@@ -25471,7 +26084,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 3, Paid"
 				}
 			}
 		],
@@ -25705,7 +26319,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 36, Free"
 				}
 			}
 		],
@@ -25823,7 +26438,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 87, Paid"
 				}
 			}
 		],
@@ -26035,7 +26651,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 53, Paid"
 				}
 			}
 		],
@@ -26323,7 +26940,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 98, Free"
 				}
 			}
 		],
@@ -26462,7 +27080,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 1, Paid"
 				}
 			}
 		],
@@ -26482,7 +27101,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Tactical Ops - Rank 5, Free"
 				}
 			}
 		],
@@ -26523,7 +27143,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 84, Paid"
 				}
 			}
 		],
@@ -26627,7 +27248,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 96, Free"
 				}
 			}
 		],
@@ -26680,7 +27302,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Tactical Ops - Rank 7, Free"
 				}
 			}
 		],
@@ -26786,7 +27409,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 67, Paid"
 				}
 			}
 		],
@@ -26882,7 +27506,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 23, Paid"
 				}
 			}
 		],
@@ -26909,7 +27534,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-14T00:00:00.000Z"
+				"visible": "2022-05-14T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -26923,7 +27553,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-14T00:00:00.000Z"
+				"visible": "2022-05-14T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -26937,7 +27572,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-14T00:00:00.000Z"
+				"visible": "2022-05-14T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -26951,7 +27591,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
 				],
-				"visible": "2022-05-14T00:00:00.000Z"
+				"visible": "2022-05-14T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -26999,7 +27644,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 74, Paid"
 				}
 			}
 		],
@@ -27019,7 +27665,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 98, Paid"
 				}
 			}
 		],
@@ -27266,7 +27913,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 26, Free"
 				}
 			}
 		],
@@ -27338,7 +27986,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -27352,7 +28005,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -27366,7 +28024,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -27418,7 +28081,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -27437,7 +28105,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 4, Paid"
 				}
 			}
 		],
@@ -27525,7 +28194,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 47, Paid"
 				}
 			}
 		],
@@ -27602,7 +28272,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 61, Free"
 				}
 			}
 		],
@@ -27634,7 +28305,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Alpha Pack - Rank 5, Free"
 				}
 			}
 		],
@@ -27732,7 +28404,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Alpha Pack - Rank 4, Free"
 				}
 			}
 		],
@@ -27893,7 +28566,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Winter Contingency - Rank 9, Free"
 				}
 			}
 		],
@@ -28309,7 +28983,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Winter Contingency - Rank 7, Free"
 				}
 			}
 		],
@@ -28474,7 +29149,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Cyber Showdown - Rank 10, Free"
 				}
 			}
 		],
@@ -28514,7 +29190,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Cyber Showdown - Rank 5, Free"
 				}
 			}
 		],
@@ -29108,7 +29785,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Entrenched - Rank 23, Free"
 				}
 			}
 		],
@@ -29123,7 +29801,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -29206,7 +29889,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 42, Paid"
 				}
 			}
 		],
@@ -29226,7 +29910,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 17, Paid"
 				}
 			}
 		],
@@ -29247,7 +29932,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 22, Paid"
 				}
 			}
 		],
@@ -29268,7 +29954,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 57, Paid"
 				}
 			}
 		],
@@ -29288,7 +29975,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 23, Paid"
 				}
 			}
 		],
@@ -29323,7 +30011,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 19, Paid"
 				}
 			}
 		],
@@ -29343,7 +30032,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 59, Paid"
 				}
 			}
 		],
@@ -29363,7 +30053,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 74, Paid"
 				}
 			}
 		],
@@ -29395,7 +30086,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 89, Paid"
 				}
 			}
 		],
@@ -29436,7 +30128,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 94, Paid"
 				}
 			}
 		],
@@ -29456,7 +30149,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 54, Paid"
 				}
 			}
 		],
@@ -29476,7 +30170,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 79, Paid"
 				}
 			}
 		],
@@ -29515,7 +30210,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 34, Paid"
 				}
 			}
 		],
@@ -29547,7 +30243,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 76, Free"
 				}
 			}
 		],
@@ -29567,7 +30264,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 14, Paid"
 				}
 			}
 		],
@@ -29713,7 +30411,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 39, Paid"
 				}
 			}
 		],
@@ -29843,7 +30542,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Entrenched - Rank 4, Free"
 				}
 			}
 		],
@@ -30128,7 +30828,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 65, Paid"
 				}
 			}
 		],
@@ -30232,7 +30933,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 69, Free"
 				}
 			}
 		],
@@ -30363,7 +31065,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 93, Paid"
 				}
 			}
 		],
@@ -30549,7 +31252,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Interference - Rank 4, Free"
 				}
 			}
 		],
@@ -30569,7 +31273,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Interference - Rank 8, Free"
 				}
 			}
 		],
@@ -31234,7 +31939,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 70, Paid"
 				}
 			}
 		],
@@ -31680,7 +32386,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Winter Contingency - Rank 2, Free"
 				}
 			}
 		],
@@ -31700,7 +32407,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Winter Contingency - Rank 8, Free"
 				}
 			}
 		],
@@ -31720,7 +32428,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Winter Contingency - Rank 5, Free"
 				}
 			}
 		],
@@ -32081,7 +32790,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-24T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -32096,7 +32810,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-24T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -32111,7 +32830,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-24T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -32125,7 +32849,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -32140,7 +32869,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-24T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -32160,7 +32894,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Tactical Ops - Rank 2, Free"
 				}
 			}
 		],
@@ -32439,7 +33174,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -32455,7 +33195,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -32471,7 +33216,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -32487,7 +33237,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -32712,7 +33467,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "The Yappening - Rank 8, Free"
 				}
 			}
 		],
@@ -32730,7 +33486,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "The Yappening - Rank 3, Free"
 				}
 			}
 		],
@@ -32840,7 +33597,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -32854,7 +33616,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -32868,7 +33635,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -32882,7 +33654,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -32896,7 +33673,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -32910,7 +33692,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -32924,7 +33711,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -32938,7 +33730,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -33186,7 +33983,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 29, Paid"
 				}
 			}
 		],
@@ -33233,7 +34031,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -33247,7 +34050,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -33262,7 +34070,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-10T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -33276,7 +34089,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -33290,7 +34108,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -33304,7 +34127,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -33318,7 +34146,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -33332,7 +34165,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -33537,7 +34375,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -33584,7 +34427,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -33904,7 +34752,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "The Yappening - Rank 5, Free"
 				}
 			}
 		],
@@ -34113,7 +34962,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 6, Free"
 				}
 			}
 		],
@@ -34153,7 +35003,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 34, Paid"
 				}
 			}
 		],
@@ -34173,7 +35024,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 11, Free"
 				}
 			}
 		],
@@ -34374,7 +35226,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 45, Paid"
 				}
 			}
 		],
@@ -34427,7 +35280,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Entrenched - Rank 24, Free"
 				}
 			}
 		],
@@ -34448,7 +35302,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Entrenched - Rank 11, Free"
 				}
 			}
 		],
@@ -34469,7 +35324,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Entrenched - Rank 16, Free"
 				}
 			}
 		],
@@ -34490,7 +35346,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Entrenched - Rank 2, Free"
 				}
 			}
 		],
@@ -34511,7 +35368,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Entrenched - Rank 6, Free"
 				}
 			}
 		],
@@ -34551,7 +35409,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 99, Paid"
 				}
 			}
 		],
@@ -34795,7 +35654,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -34810,7 +35674,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -34825,7 +35694,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -34840,7 +35714,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -35038,7 +35917,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -35065,7 +35949,12 @@
 					"2022-05-31T00:00:00.000Z",
 					"2022-06-14T00:00:00.000Z"
 				],
-				"visible": "2022-06-14T00:00:00.000Z"
+				"visible": "2022-06-14T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -35084,7 +35973,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Entrenched - Rank 28, Free"
 				}
 			}
 		],
@@ -36019,7 +36909,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Interference - Rank 3, Free"
 				}
 			}
 		],
@@ -36177,7 +37068,10 @@
 					"2021-11-15T20:00:00.000Z",
 					"2022-05-03T00:00:00.000Z",
 					"2022-06-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"availability": "Fracture: Tenrai - Rank 14, Free"
+				}
 			}
 		],
 		[
@@ -36192,7 +37086,10 @@
 					"2021-11-15T20:00:00.000Z",
 					"2022-05-03T00:00:00.000Z",
 					"2022-06-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"availability": "Fracture: Tenrai - Rank 4, Free"
+				}
 			}
 		],
 		[
@@ -36207,7 +37104,10 @@
 					"2021-11-15T20:00:00.000Z",
 					"2022-05-03T00:00:00.000Z",
 					"2022-06-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"availability": "Fracture: Tenrai - Rank 9, Free"
+				}
 			}
 		],
 		[
@@ -36222,7 +37122,10 @@
 					"2021-11-15T20:00:00.000Z",
 					"2022-05-03T00:00:00.000Z",
 					"2022-06-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"availability": "Fracture: Tenrai - Rank 19, Free"
+				}
 			}
 		],
 		[
@@ -36324,7 +37227,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -36339,7 +37247,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -36354,7 +37267,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -36369,7 +37287,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -36386,7 +37309,7 @@
 					"tags": [
 						"capstone"
 					],
-					"availability": "Ultimate challenge for the week of Aug. 23 2022"
+					"availability": "Ultimate challenge for the week of Jun. 28 2022"
 				}
 			}
 		],
@@ -36488,7 +37411,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 7, Paid"
 				}
 			}
 		],
@@ -36508,7 +37432,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 8, Paid"
 				}
 			}
 		],
@@ -36750,7 +37675,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 82, Paid"
 				}
 			}
 		],
@@ -36770,7 +37696,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 83, Paid"
 				}
 			}
 		],
@@ -36856,7 +37783,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 62, Paid"
 				}
 			}
 		],
@@ -36876,7 +37804,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 63, Paid"
 				}
 			}
 		],
@@ -37003,7 +37932,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 32, Paid"
 				}
 			}
 		],
@@ -37023,7 +37953,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 33, Paid"
 				}
 			}
 		],
@@ -37059,7 +37990,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Alpha Pack - Rank 8, Free"
 				}
 			}
 		],
@@ -37262,7 +38194,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Tactical Ops - Rank 9, Free"
 				}
 			}
 		],
@@ -37282,7 +38215,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 35, Paid"
 				}
 			}
 		],
@@ -37315,7 +38249,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 44, Paid"
 				}
 			}
 		],
@@ -37336,7 +38271,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 40, Paid"
 				}
 			}
 		],
@@ -38141,7 +39077,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -38156,7 +39097,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -38171,7 +39117,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -38186,7 +39137,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -38247,7 +39203,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -38263,7 +39224,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -38279,7 +39245,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -38295,7 +39266,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -38380,7 +39356,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Interference - Rank 5, Free"
 				}
 			}
 		],
@@ -39113,7 +40090,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 30, Paid"
 				}
 			}
 		],
@@ -39432,7 +40410,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 79, Free"
 				}
 			}
 		],
@@ -39612,7 +40591,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 99, Paid"
 				}
 			}
 		],
@@ -39632,7 +40612,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 100, Paid"
 				}
 			}
 		],
@@ -39647,7 +40628,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -39714,7 +40700,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "The Yappening - Rank 1, Free"
 				}
 			}
 		],
@@ -39889,7 +40876,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Winter Contingency - Rank 6, Free"
 				}
 			}
 		],
@@ -40028,7 +41016,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Tenrai - Rank 20, Free"
 				}
 			}
 		],
@@ -40151,7 +41140,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Entrenched - Rank 19, Free"
 				}
 			}
 		],
@@ -40719,7 +41709,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 91, Free"
 				}
 			}
 		],
@@ -40877,7 +41868,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -41238,7 +42234,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 57, Paid"
 				}
 			}
 		],
@@ -41271,7 +42268,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Tenrai - Rank 26, Free"
 				}
 			}
 		],
@@ -41312,7 +42310,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Tenrai - Rank 29, Free"
 				}
 			}
 		],
@@ -41426,7 +42425,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 77, Paid"
 				}
 			}
 		],
@@ -41785,7 +42785,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -41817,7 +42822,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 92, Paid"
 				}
 			}
 		],
@@ -41837,7 +42843,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 11, Free"
 				}
 			}
 		],
@@ -41909,7 +42916,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 20, Paid"
 				}
 			}
 		],
@@ -41937,7 +42945,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -41951,7 +42964,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -41967,7 +42985,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -41981,7 +43004,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -41995,7 +43023,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -42009,7 +43042,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -42023,7 +43061,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -42037,7 +43080,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -42355,7 +43403,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Winter Contingency - Rank 10, Free"
 				}
 			}
 		],
@@ -42394,7 +43443,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 69, Paid"
 				}
 			}
 		],
@@ -42414,7 +43464,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 70, Paid"
 				}
 			}
 		],
@@ -42526,7 +43577,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 1, Paid"
 				}
 			}
 		],
@@ -42626,7 +43678,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Tenrai - Rank 30, Free"
 				}
 			}
 		],
@@ -42727,7 +43780,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 28, Paid"
 				}
 			}
 		],
@@ -42767,7 +43821,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Tactical Ops - Rank 6, Free"
 				}
 			}
 		],
@@ -42787,7 +43842,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 88, Paid"
 				}
 			}
 		],
@@ -42878,7 +43934,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 38, Paid"
 				}
 			}
 		],
@@ -42898,7 +43955,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 12, Paid"
 				}
 			}
 		],
@@ -42918,7 +43976,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 13, Paid"
 				}
 			}
 		],
@@ -42976,7 +44035,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 46, Free"
 				}
 			}
 		],
@@ -42998,7 +44058,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 39, Free"
 				}
 			}
 		],
@@ -43042,7 +44103,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 43, Paid"
 				}
 			}
 		],
@@ -43057,7 +44119,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -43071,7 +44138,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -43090,7 +44162,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 53, Paid"
 				}
 			}
 		],
@@ -43110,7 +44183,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 58, Paid"
 				}
 			}
 		],
@@ -43130,7 +44204,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 9, Paid"
 				}
 			}
 		],
@@ -43150,7 +44225,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 93, Paid"
 				}
 			}
 		],
@@ -43208,7 +44284,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 27, Paid"
 				}
 			}
 		],
@@ -43228,7 +44305,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 29, Paid"
 				}
 			}
 		],
@@ -43246,7 +44324,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Alpha Pack - Rank 3, Free"
 				}
 			}
 		],
@@ -43285,7 +44364,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 91, Free"
 				}
 			}
 		],
@@ -43502,7 +44582,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Interference - Rank 10, Free"
 				}
 			}
 		],
@@ -43561,7 +44642,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 69, Paid"
 				}
 			}
 		],
@@ -43600,7 +44682,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 39, Paid"
 				}
 			}
 		],
@@ -43620,7 +44703,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 84, Paid"
 				}
 			}
 		],
@@ -43886,7 +44970,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Tenrai - Rank 21, Free"
 				}
 			}
 		],
@@ -43920,7 +45005,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 41, Free"
 				}
 			}
 		],
@@ -44154,7 +45240,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "The Yappening - Rank 10, Free"
 				}
 			}
 		],
@@ -44437,7 +45524,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Tactical Ops - Rank 8, Free"
 				}
 			}
 		],
@@ -44466,7 +45554,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -44699,7 +45792,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Tenrai - Rank 1, Free"
 				}
 			}
 		],
@@ -44764,7 +45858,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 81, Free"
 				}
 			}
 		],
@@ -44782,7 +45877,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Alpha Pack - Rank 10, Free"
 				}
 			}
 		],
@@ -44833,7 +45929,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Entrenched - Rank 9, Free"
 				}
 			}
 		],
@@ -44977,7 +46074,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -45054,7 +46156,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Entrenched - Rank 26, Free"
 				}
 			}
 		],
@@ -45074,7 +46177,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Entrenched - Rank 27, Free"
 				}
 			}
 		],
@@ -45094,7 +46198,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Entrenched - Rank 8, Free"
 				}
 			}
 		],
@@ -45190,7 +46295,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 46, Free"
 				}
 			}
 		],
@@ -45211,7 +46317,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 49, Free"
 				}
 			}
 		],
@@ -45269,7 +46376,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 98, Free"
 				}
 			}
 		],
@@ -45289,7 +46397,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 44, Paid"
 				}
 			}
 		],
@@ -45309,7 +46418,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 14, Free"
 				}
 			}
 		],
@@ -45329,7 +46439,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 15, Free"
 				}
 			}
 		],
@@ -45382,7 +46493,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -45396,7 +46512,12 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -45413,7 +46534,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Alpha Pack - Rank 6, Free"
 				}
 			}
 		],
@@ -45431,7 +46553,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Alpha Pack - Rank 7, Free"
 				}
 			}
 		],
@@ -45451,7 +46574,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 3, Paid"
 				}
 			}
 		],
@@ -45471,7 +46595,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 24, Paid"
 				}
 			}
 		],
@@ -45519,7 +46644,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 94, Free"
 				}
 			}
 		],
@@ -45539,7 +46665,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 95, Free"
 				}
 			}
 		],
@@ -45787,7 +46914,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 54, Free"
 				}
 			}
 		],
@@ -45807,7 +46935,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 55, Free"
 				}
 			}
 		],
@@ -45865,7 +46994,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 89, Free"
 				}
 			}
 		],
@@ -45885,7 +47015,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 71, Free"
 				}
 			}
 		],
@@ -45925,7 +47056,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Tactical Ops - Rank 10, Free"
 				}
 			}
 		],
@@ -45945,7 +47077,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 67, Paid"
 				}
 			}
 		],
@@ -45965,7 +47098,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 4, Paid"
 				}
 			}
 		],
@@ -45985,7 +47119,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 48, Paid"
 				}
 			}
 		],
@@ -46005,7 +47140,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 49, Paid"
 				}
 			}
 		],
@@ -46120,7 +47256,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Winter Contingency - Rank 3, Free"
 				}
 			}
 		],
@@ -46140,7 +47277,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Winter Contingency - Rank 4, Free"
 				}
 			}
 		],
@@ -46198,7 +47336,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 34, Free"
 				}
 			}
 		],
@@ -46218,7 +47357,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 35, Free"
 				}
 			}
 		],
@@ -46238,7 +47378,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 84, Free"
 				}
 			}
 		],
@@ -46258,7 +47399,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 85, Free"
 				}
 			}
 		],
@@ -46316,7 +47458,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 2, Paid"
 				}
 			}
 		],
@@ -46336,7 +47479,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 66, Free"
 				}
 			}
 		],
@@ -46397,7 +47541,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 4, Free"
 				}
 			}
 		],
@@ -46417,7 +47562,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 78, Paid"
 				}
 			}
 		],
@@ -46437,7 +47583,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 52, Paid"
 				}
 			}
 		],
@@ -46457,7 +47604,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 72, Paid"
 				}
 			}
 		],
@@ -46549,7 +47697,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -46568,7 +47721,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 100, Free"
 				}
 			}
 		],
@@ -46616,7 +47770,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 87, Paid"
 				}
 			}
 		],
@@ -46670,7 +47825,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Interference - Rank 7, Free"
 				}
 			}
 		],
@@ -46780,7 +47936,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 73, Paid"
 				}
 			}
 		],
@@ -46916,7 +48073,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 74, Free"
 				}
 			}
 		],
@@ -46938,7 +48096,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 75, Free"
 				}
 			}
 		],
@@ -47009,7 +48168,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -47072,7 +48236,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Entrenched - Rank 29, Free"
 				}
 			}
 		],
@@ -47878,7 +49043,13 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"memento"
+					],
+					"availability": "Log in during the month of June 2022"
+				}
 			}
 		],
 		[
@@ -47891,7 +49062,13 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"memento"
+					],
+					"availability": "Log in during the month of June 2022"
+				}
 			}
 		],
 		[
@@ -47904,7 +49081,13 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"memento"
+					],
+					"availability": "Log in during the month of June 2022"
+				}
 			}
 		],
 		[
@@ -47917,7 +49100,13 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"tags": [
+						"memento"
+					],
+					"availability": "Log in during the month of June 2022"
+				}
 			}
 		],
 		[
@@ -48000,7 +49189,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 44, Free"
 				}
 			}
 		],
@@ -48048,7 +49238,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 60, Paid"
 				}
 			}
 		],
@@ -48068,7 +49259,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 58, Paid"
 				}
 			}
 		],
@@ -48088,7 +49280,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 59, Paid"
 				}
 			}
 		],
@@ -48108,7 +49301,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 38, Paid"
 				}
 			}
 		],
@@ -48128,7 +49322,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 21, Free"
 				}
 			}
 		],
@@ -48148,7 +49343,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 97, Paid"
 				}
 			}
 		],
@@ -48187,7 +49383,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 68, Paid"
 				}
 			}
 		],
@@ -48205,7 +49402,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Alpha Pack - Rank 1, Free"
 				}
 			}
 		],
@@ -48225,7 +49423,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 9, Paid"
 				}
 			}
 		],
@@ -48245,7 +49444,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 77, Paid"
 				}
 			}
 		],
@@ -48265,7 +49465,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 78, Paid"
 				}
 			}
 		],
@@ -48313,7 +49514,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 26, Free"
 				}
 			}
 		],
@@ -48693,7 +49895,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -48726,7 +49933,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Heroes of Reach - Rank 92, Paid"
 				}
 			}
 		],
@@ -48940,7 +50148,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 31, Free"
 				}
 			}
 		],
@@ -49499,7 +50708,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 41, Free"
 				}
 			}
 		],
@@ -49676,7 +50886,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Tenrai - Rank 24, Free"
 				}
 			}
 		],
@@ -49718,7 +50929,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Tenrai - Rank 28, Free"
 				}
 			}
 		],
@@ -49766,7 +50978,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Entrenched - Rank 22, Free"
 				}
 			}
 		],
@@ -49919,7 +51132,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Winter Contingency - Rank 1, Free"
 				}
 			}
 		],
@@ -50384,7 +51598,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Entrenched - Rank 18, Free"
 				}
 			}
 		],
@@ -50403,7 +51618,7 @@
 					"tags": [
 						"capstone"
 					],
-					"availability": "Ultimate challenge for the week of Jun. 28 2022"
+					"availability": "Ultimate challenge for the week of Aug. 23 2022"
 				}
 			}
 		],
@@ -50847,7 +52062,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Interference - Rank 9, Free"
 				}
 			}
 		],
@@ -50864,7 +52080,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -50880,7 +52101,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -50896,7 +52122,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -50910,7 +52141,12 @@
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -50926,7 +52162,12 @@
 					"2022-05-14T00:00:00.000Z",
 					"2022-05-31T00:00:00.000Z"
 				],
-				"visible": "2022-05-31T00:00:00.000Z"
+				"visible": "2022-05-31T00:00:00.000Z",
+				"community": {
+					"tags": [
+						"store"
+					]
+				}
 			}
 		],
 		[
@@ -50964,7 +52205,10 @@
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
-				]
+				],
+				"community": {
+					"availability": "Lone Wolves - Rank 14, Paid"
+				}
 			}
 		],
 		[
@@ -50983,7 +52227,8 @@
 					"tags": [
 						"battlepass",
 						"season"
-					]
+					],
+					"availability": "Lone Wolves - Rank 13, Paid"
 				}
 			}
 		],
@@ -51099,7 +52344,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Tenrai - Rank 25, Free"
 				}
 			}
 		],
@@ -51133,7 +52379,8 @@
 					"tags": [
 						"battlepass",
 						"event"
-					]
+					],
+					"availability": "Fracture: Tenrai - Rank 5, Free"
 				}
 			}
 		],
