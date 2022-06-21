@@ -24344,6 +24344,7 @@
 				"name": "013-001-dad43bff",
 				"title": "Juneteenth",
 				"type": "ArmorEmblem",
+				"visible": "2022-06-01T20:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
@@ -24363,6 +24364,7 @@
 				"name": "104-001-diversity-jun-dad43bff",
 				"title": "Juneteenth",
 				"type": "SpartanEmblem",
+				"visible": "2022-06-01T20:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
@@ -24382,6 +24384,7 @@
 				"name": "405-305-dad43bff",
 				"title": "Juneteenth",
 				"type": "VehicleEmblem",
+				"visible": "2022-06-01T20:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
@@ -24401,6 +24404,7 @@
 				"name": "205-201-dad43bff",
 				"title": "Juneteenth",
 				"type": "WeaponEmblem",
+				"visible": "2022-06-01T20:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
@@ -40233,6 +40237,7 @@
 				"name": "013-001-4c04f796",
 				"title": "Silver Team",
 				"type": "ArmorEmblem",
+				"visible": "2022-06-01T20:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
@@ -40252,6 +40257,7 @@
 				"name": "104-001-343other-silv-4c04f796",
 				"title": "Silver Team",
 				"type": "SpartanEmblem",
+				"visible": "2022-06-01T20:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
@@ -40271,6 +40277,7 @@
 				"name": "405-305-4c04f796",
 				"title": "Silver Team",
 				"type": "VehicleEmblem",
+				"visible": "2022-06-01T20:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
@@ -40290,6 +40297,7 @@
 				"name": "201-201-5e364379",
 				"title": "Silver Team",
 				"type": "WeaponCharm",
+				"visible": "2022-06-01T20:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z"
 				],
@@ -40308,6 +40316,7 @@
 				"name": "205-201-4c04f796",
 				"title": "Silver Team",
 				"type": "WeaponEmblem",
+				"visible": "2022-06-01T20:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
@@ -49040,6 +49049,7 @@
 				"name": "013-001-198e44c9",
 				"title": "Unity",
 				"type": "ArmorEmblem",
+				"visible": "2022-06-01T20:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
@@ -49059,6 +49069,7 @@
 				"name": "104-001-diversity-pri-198e44c9",
 				"title": "Unity",
 				"type": "SpartanEmblem",
+				"visible": "2022-06-01T20:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
@@ -49078,6 +49089,7 @@
 				"name": "405-305-198e44c9",
 				"title": "Unity",
 				"type": "VehicleEmblem",
+				"visible": "2022-06-01T20:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"
@@ -49097,6 +49109,7 @@
 				"name": "205-201-198e44c9",
 				"title": "Unity",
 				"type": "WeaponEmblem",
+				"visible": "2022-06-01T20:00:00.000Z",
 				"touched": [
 					"2022-05-03T00:00:00.000Z",
 					"2022-05-14T00:00:00.000Z"

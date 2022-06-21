@@ -104,6 +104,7 @@ module.exports = {
 				'!CNAME*',
 				'!sitemap.xml*',
 				'!robots.txt*',
+				'!404.html*',
 				'!db/**',
 				'!7/**'
 			],
