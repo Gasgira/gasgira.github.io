@@ -1,0 +1,64 @@
+{
+	"OfferingId": "20220328-06",
+	"OfferingDisplayPath": "StoreContent/Display/Offerings/20220328-06.json",
+	"OfferingExpirationDate": null,
+	"IncludedItems": [
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/Coatings/002-001-wlv-5fb56931.json",
+			"ItemType": "ArmorCoating"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/ShouldersLeft/008-001-wlv-5a726699.json",
+			"ItemType": "ArmorLeftShoulderPad"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/ShouldersRight/009-001-wlv-5a726699.json",
+			"ItemType": "ArmorRightShoulderPad"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/ChestAttachments/001-001-wlv-96c16c2e.json",
+			"ItemType": "ArmorChestAttachment"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/WristAttachments/011-001-wlv-33b41793.json",
+			"ItemType": "ArmorWristAttachment"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Spartan/Emblems/104-001-lonewolves-gl-ed5e7ac4.json",
+			"ItemType": "SpartanEmblem"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/Emblems/013-001-ed5e7ac4.json",
+			"ItemType": "ArmorEmblem"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Weapon/Emblems/205-201-ed5e7ac4.json",
+			"ItemType": "WeaponEmblem"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Vehicle/Emblems/405-305-ed5e7ac4.json",
+			"ItemType": "VehicleEmblem"
+		}
+	],
+	"Prices": [
+		{
+			"Cost": 800,
+			"CurrencyPath": "Currency/Currencies/cR.json"
+		}
+	],
+	"IncludedCurrencies": [],
+	"IncludedRewardTracks": [],
+	"BoostPath": null,
+	"OperationXp": 0,
+	"EventXp": 0,
+	"MatchBoosts": null
+}
