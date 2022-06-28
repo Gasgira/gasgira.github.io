@@ -29,7 +29,7 @@
 	],
 	"CommonData": {
 		"Id": "006-001-wlv-1821e976",
-		"HideUntilOwned": false,
+		"HideUntilOwned": true,
 		"Title": "UA/Type PTL",
 		"Description": "Butterfly\" attachment with small thruster module, for use in microgravity boarding actions or emergency close-range incendiary attacks.",
 		"FeatureFlag": true,

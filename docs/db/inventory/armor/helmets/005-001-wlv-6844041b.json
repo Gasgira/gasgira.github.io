@@ -18,7 +18,7 @@
 	],
 	"CommonData": {
 		"Id": "005-001-wlv-6844041b",
-		"HideUntilOwned": false,
+		"HideUntilOwned": true,
 		"Title": "SHIKARI",
 		"Description": "Locating, identifying, tracking, and communicating the status of highly elusive targets of opportunity are tasks at which the SHIKARI excels. Among lone wolf operatives, the helmet systems make it highly effective in the ambush predator role.",
 		"FeatureFlag": true,

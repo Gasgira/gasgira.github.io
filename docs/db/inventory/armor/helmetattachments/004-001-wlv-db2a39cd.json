@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "004-001-wlv-db2a39cd",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "FCI-X/BANE",
 		"Description": "Emerson employees are war-smith's and strategists who find their highest calling in the ideation and creation of tools by which humanity will overcome its countless enemies and secure its place in the galaxy.",
 		"FeatureFlag": true,

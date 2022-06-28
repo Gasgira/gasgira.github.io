@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "004-001-wlv-1fc50130",
-		"HideUntilOwned": false,
+		"HideUntilOwned": true,
 		"Title": "TAS[2]/PATTERNWOLF",
 		"Description": "A miniaturized and improved version of the revolutionary information fusion system fitted to the ARGUS helmet. Unfortunately, Spartan-IV's lack the cognitive flexibility to make use of the PATTERNWOLF for more then a few minutes at a time.",
 		"FeatureFlag": true,

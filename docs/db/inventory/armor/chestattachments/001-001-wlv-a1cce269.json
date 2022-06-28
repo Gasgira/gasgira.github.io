@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "001-001-wlv-a1cce269",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Wolf Fang",
 		"Description": "The Wolf Fang is a tool of death, sharpened on Covenant armor and wetted with Banished lifeblood. Similar master-crafted Pattern-2 composite swords serve Spartans well in the grim business of assassination and close-range melee.",
 		"FeatureFlag": true,

@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "201-201-e84da82f",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Meowlnir",
 		"Description": "Never fur-get.",
 		"FeatureFlag": true,

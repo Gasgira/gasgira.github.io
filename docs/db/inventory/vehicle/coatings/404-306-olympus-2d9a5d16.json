@@ -8,9 +8,9 @@
 	},
 	"CommonData": {
 		"Id": "404-306-olympus-2d9a5d16",
-		"HideUntilOwned": true,
-		"Title": "Northam Patriot",
-		"Description": "Life in the ruins of war was quite agreeable to some.",
+		"HideUntilOwned": false,
+		"Title": "Liberty Clad",
+		"Description": "Find time to celebrate victories great and small.",
 		"FeatureFlag": true,
 		"ItemAvailability": "",
 		"DateReleased": {

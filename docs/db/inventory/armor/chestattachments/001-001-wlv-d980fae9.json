@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "001-001-wlv-d980fae9",
-		"HideUntilOwned": false,
+		"HideUntilOwned": true,
 		"Title": "AAP/KARD PLATE",
 		"Description": "Simple and cheap armor plating fabricated using frontier minifacturing equipment.",
 		"FeatureFlag": true,

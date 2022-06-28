@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "004-001-eag-79c9eddb",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "GUMMYTUBE FILTER",
 		"Description": "The crawling mists unleashed by the Covenant in its last offensives killed most of those it touched, and warped those it didn't. UNSC countermeasures took time to develop, and were never fully effective.",
 		"FeatureFlag": true,

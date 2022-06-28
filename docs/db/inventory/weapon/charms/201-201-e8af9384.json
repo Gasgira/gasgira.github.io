@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "201-201-e8af9384",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Gunner",
 		"Description": "Pet the dog!",
 		"FeatureFlag": true,

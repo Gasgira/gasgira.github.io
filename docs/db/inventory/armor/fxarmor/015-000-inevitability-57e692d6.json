@@ -4,7 +4,7 @@
 	],
 	"CommonData": {
 		"Id": "015-000-inevitability-57e692d6",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Inevitability of War",
 		"Description": "The landslide has already started.",
 		"FeatureFlag": false,

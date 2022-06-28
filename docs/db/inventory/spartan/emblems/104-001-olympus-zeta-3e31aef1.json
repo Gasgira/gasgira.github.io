@@ -26,7 +26,7 @@
 	],
 	"CommonData": {
 		"Id": "104-001-olympus-zeta-3e31aef1",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Lucky Number Seven",
 		"Description": "0 days since our last major incident.",
 		"FeatureFlag": true,

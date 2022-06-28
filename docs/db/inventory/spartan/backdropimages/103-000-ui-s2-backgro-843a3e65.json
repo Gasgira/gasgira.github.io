@@ -21,7 +21,7 @@
 	},
 	"CommonData": {
 		"Id": "103-000-ui-s2-backgro-843a3e65",
-		"HideUntilOwned": false,
+		"HideUntilOwned": true,
 		"Title": "IRATUS",
 		"Description": "Even contained, diminished, and leashed, Iratus rages against its limitations.",
 		"FeatureFlag": true,

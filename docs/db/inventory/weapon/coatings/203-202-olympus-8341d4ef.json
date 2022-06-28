@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "203-202-olympus-8341d4ef",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Watermelon Slice",
 		"Description": "Nutritious, yet delicious.",
 		"FeatureFlag": true,

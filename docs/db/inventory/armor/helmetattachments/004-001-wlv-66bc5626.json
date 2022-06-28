@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "004-001-wlv-66bc5626",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "MOD-P CBRN",
 		"Description": "Filter packs and air conditioning modules in the Morrigan can be swapped out to maximize their endurance and efficacy in specific atmospheric conditions, or to key in on specific biochemical traces.",
 		"FeatureFlag": true,

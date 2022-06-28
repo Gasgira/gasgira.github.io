@@ -8,9 +8,9 @@
 	},
 	"CommonData": {
 		"Id": "404-300-olympus-2d9a5d16",
-		"HideUntilOwned": true,
-		"Title": "Northam Patriot",
-		"Description": "Don't mess with success.",
+		"HideUntilOwned": false,
+		"Title": "Liberty Clad",
+		"Description": "These colors might fade, but freedom is forever.",
 		"FeatureFlag": true,
 		"ItemAvailability": "",
 		"DateReleased": {

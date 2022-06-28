@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "002-001-eag-83c0ceea",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Halcyon Days",
 		"Description": "You cannot eat gold or forge it into bullets, so what worth does it really have?",
 		"FeatureFlag": true,

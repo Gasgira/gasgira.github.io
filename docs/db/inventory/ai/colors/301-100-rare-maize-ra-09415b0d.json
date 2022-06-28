@@ -6,7 +6,7 @@
 	"DefaultScanlineIdex": 0,
 	"CommonData": {
 		"Id": "301-100-rare-maize-ra-09415b0d",
-		"HideUntilOwned": false,
+		"HideUntilOwned": true,
 		"Title": "Castor's Keeper",
 		"Description": "The first AI to feature this avatar option were created for agricultural support services on far-flung Outer Colony worlds.",
 		"FeatureFlag": true,

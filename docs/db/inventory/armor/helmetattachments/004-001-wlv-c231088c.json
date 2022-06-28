@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "004-001-wlv-c231088c",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "FCI-X/CIBO",
 		"Description": "Experimental array of sensors and threat monitors undergoing evaluation by Spartans tasked with exploring the interiors of Forerunner megastructures.",
 		"FeatureFlag": true,

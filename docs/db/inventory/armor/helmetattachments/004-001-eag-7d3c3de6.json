@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "004-001-eag-7d3c3de6",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "NOCTURNE GOGGLES",
 		"Description": "Even as the Final War ground civilization into dust, the UNSC claimed it did not build killers. Those caught in the middle of the conflict begged to differ.",
 		"FeatureFlag": true,

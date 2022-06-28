@@ -9,7 +9,7 @@
 	},
 	"CommonData": {
 		"Id": "012-001-a8eae863",
-		"HideUntilOwned": false,
+		"HideUntilOwned": true,
 		"Title": "Amber Yesterday",
 		"Description": "The worst is truly yet to come.",
 		"FeatureFlag": true,

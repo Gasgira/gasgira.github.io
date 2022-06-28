@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "013-001-3e31aef1",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Lucky Number Seven",
 		"Description": "0 days since our last major incident.",
 		"FeatureFlag": true,

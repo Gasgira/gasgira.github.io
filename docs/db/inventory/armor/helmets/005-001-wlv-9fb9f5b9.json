@@ -18,7 +18,7 @@
 	],
 	"CommonData": {
 		"Id": "005-001-wlv-9fb9f5b9",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "MORRIGAN",
 		"Description": "MORRIGAN helmets use the latest reverse-engineered Jiralhanae stalker sensors captured from Banished raiders. The upgrades are welcomed by Spartan combat trackers, who find the alien systems surprisingly intuitive and highly efficient.",
 		"FeatureFlag": true,

@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "013-001-79723599",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Eggcellent",
 		"Description": "All out of carrot-flavored bubblegum.",
 		"FeatureFlag": true,

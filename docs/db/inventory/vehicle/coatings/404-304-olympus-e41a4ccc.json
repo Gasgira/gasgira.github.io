@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "404-304-olympus-e41a4ccc",
-		"HideUntilOwned": false,
+		"HideUntilOwned": true,
 		"Title": "Alabaster Cognac",
 		"Description": "One part rebel fighter, one part megacorp employee.",
 		"FeatureFlag": true,

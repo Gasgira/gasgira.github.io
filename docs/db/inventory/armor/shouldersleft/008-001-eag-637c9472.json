@@ -18,7 +18,7 @@
 	],
 	"CommonData": {
 		"Id": "008-001-eag-637c9472",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "TYPE-11 DEFENDERS",
 		"Description": "Issued to troops late in the war, treasonous rumors claimed these used shoddy materials and were crudely assembled. That was true, but it was also the best UNSC forces could procure from their bombed-out industry and exhausted conscript-workers.",
 		"FeatureFlag": true,

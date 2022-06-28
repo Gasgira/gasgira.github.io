@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "404-300-olympus-15d17786",
-		"HideUntilOwned": false,
+		"HideUntilOwned": true,
 		"Title": "Bluewood Bole",
 		"Description": "A real hero for the 26th century.",
 		"FeatureFlag": true,

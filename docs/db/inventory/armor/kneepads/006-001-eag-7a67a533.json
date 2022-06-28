@@ -29,7 +29,7 @@
 	],
 	"CommonData": {
 		"Id": "006-001-eag-7a67a533",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "RIGGED",
 		"Description": "Improvised armor pieces held together by welding flux and hope.",
 		"FeatureFlag": true,

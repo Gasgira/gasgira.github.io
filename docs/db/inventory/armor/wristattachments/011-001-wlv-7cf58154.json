@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "011-001-wlv-7cf58154",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "TACSTAR MODEL 2490",
 		"Description": "Salvaged wrist-comms from old CMA depots have found new life with the UNSC; archaic protocols and old satellite constellations are highly resilient against Created monitoring and intrusion.",
 		"FeatureFlag": true,

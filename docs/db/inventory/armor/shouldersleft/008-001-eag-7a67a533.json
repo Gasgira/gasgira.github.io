@@ -18,7 +18,7 @@
 	],
 	"CommonData": {
 		"Id": "008-001-eag-7a67a533",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Rat Pack",
 		"Description": "Veterans quickly learned to keep precious items close at hand, safe from sticky fingers and hungry vermin of all kinds.",
 		"FeatureFlag": true,

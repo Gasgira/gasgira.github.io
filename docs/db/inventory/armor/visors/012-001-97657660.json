@@ -9,7 +9,7 @@
 	},
 	"CommonData": {
 		"Id": "012-001-97657660",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Athena's Mirror",
 		"Description": "Ethical violence is the domain of ONI assets well-versed in mode training and objective self-adjustment.",
 		"FeatureFlag": true,

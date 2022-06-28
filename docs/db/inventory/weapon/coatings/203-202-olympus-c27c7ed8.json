@@ -10,7 +10,7 @@
 		"Id": "203-202-olympus-c27c7ed8",
 		"HideUntilOwned": false,
 		"Title": "S2 Europe",
-		"Description": "Sun and sea.",
+		"Description": "Build the next chapter in Halo's legendary esports journey!",
 		"FeatureFlag": true,
 		"ItemAvailability": "",
 		"DateReleased": {
@@ -47,7 +47,7 @@
 			"FolderPath": "progression/Inventory/Weapon/Coatings",
 			"FileName": "203-202-olympus-c27c7ed8-SM.png"
 		},
-		"Quality": "Rare",
+		"Quality": "Epic",
 		"ManufacturerId": 0,
 		"Type": "WeaponCoating",
 		"RewardTrack": "",

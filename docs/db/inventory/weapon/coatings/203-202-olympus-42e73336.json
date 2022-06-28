@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "203-202-olympus-42e73336",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Fire Gunmetal",
 		"Description": "Exceed thermal tolerances with some sustained suppressive fire.",
 		"FeatureFlag": true,

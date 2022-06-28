@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "004-001-wlv-6ba22661",
-		"HideUntilOwned": false,
+		"HideUntilOwned": true,
 		"Title": "HUL-I/BNR/DEWSPRING",
 		"Description": "DEWSPRING is an uplink co-processor which provides hardware-acceleration for interpreting deep-layer Covenant proselytization network protocols, which remain in widespread use by various remnant forces and pocket empires.",
 		"FeatureFlag": true,

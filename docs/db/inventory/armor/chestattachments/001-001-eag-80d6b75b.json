@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "001-001-eag-80d6b75b",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "JOURNEYMAN",
 		"Description": "Supplemental flux generator and ammo for lengthy patrols.",
 		"FeatureFlag": true,

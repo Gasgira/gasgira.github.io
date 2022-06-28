@@ -9,7 +9,7 @@
 	},
 	"CommonData": {
 		"Id": "012-001-49615efa",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Graphite Soul",
 		"Description": "The Final War will continue until even the ashes are scattered.",
 		"FeatureFlag": true,

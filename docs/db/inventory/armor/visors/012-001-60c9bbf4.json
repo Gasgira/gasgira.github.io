@@ -9,7 +9,7 @@
 	},
 	"CommonData": {
 		"Id": "012-001-60c9bbf4",
-		"HideUntilOwned": false,
+		"HideUntilOwned": true,
 		"Title": "Double Zeroes",
 		"Description": "Countdown to extinction.",
 		"FeatureFlag": true,

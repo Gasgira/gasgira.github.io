@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "010-001-wlv-0ef17406",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "UTIL/NULL BAG",
 		"Description": "A product of the ARC DREAM research group, these seemingly mundane containers completely and utterly block all signals, including esoteric energy bursts used by Forerunner mechanisms. Users are warned to never place living creatures in the bags.",
 		"FeatureFlag": true,

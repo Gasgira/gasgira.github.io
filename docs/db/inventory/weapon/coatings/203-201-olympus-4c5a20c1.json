@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "203-201-olympus-4c5a20c1",
-		"HideUntilOwned": false,
+		"HideUntilOwned": true,
 		"Title": "Battleship Haze",
 		"Description": "Boarding parties will be answered with bullets and the vacuum of space.",
 		"FeatureFlag": true,

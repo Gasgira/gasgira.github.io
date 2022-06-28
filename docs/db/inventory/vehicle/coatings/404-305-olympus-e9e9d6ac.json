@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "404-305-olympus-e9e9d6ac",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Old Ironstone",
 		"Description": "It's what's under the hood that matters.",
 		"FeatureFlag": true,

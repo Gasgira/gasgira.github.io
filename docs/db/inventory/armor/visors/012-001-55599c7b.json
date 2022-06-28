@@ -9,7 +9,7 @@
 	},
 	"CommonData": {
 		"Id": "012-001-55599c7b",
-		"HideUntilOwned": false,
+		"HideUntilOwned": true,
 		"Title": "Wulfenite Eyes",
 		"Description": "Modern problems require modern solutions.",
 		"FeatureFlag": true,

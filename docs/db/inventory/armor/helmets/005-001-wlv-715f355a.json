@@ -18,7 +18,7 @@
 	],
 	"CommonData": {
 		"Id": "005-001-wlv-715f355a",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "CAMBION",
 		"Description": "The CAMBION was designed to hunt the deadliest of human prey, but it has been turned to other, ostensibly more noble, tasks out of necessity.",
 		"FeatureFlag": true,

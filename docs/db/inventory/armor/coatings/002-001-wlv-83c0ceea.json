@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "002-001-wlv-83c0ceea",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Halcyon Days",
 		"Description": "Worn as a dare, or a statement.",
 		"FeatureFlag": true,

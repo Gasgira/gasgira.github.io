@@ -18,7 +18,7 @@
 	],
 	"CommonData": {
 		"Id": "009-001-olympus-a843d714",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "UA/Renfu",
 		"Description": "Supplemental deltoid/shoulder armor.",
 		"FeatureFlag": true,

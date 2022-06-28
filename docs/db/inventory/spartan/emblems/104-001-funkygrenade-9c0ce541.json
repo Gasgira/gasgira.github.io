@@ -14,7 +14,7 @@
 	],
 	"CommonData": {
 		"Id": "104-001-funkygrenade-9c0ce541",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Fastball",
 		"Description": "Oh, you're a tricky one.",
 		"FeatureFlag": true,

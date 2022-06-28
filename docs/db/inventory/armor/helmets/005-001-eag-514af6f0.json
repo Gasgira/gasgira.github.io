@@ -18,7 +18,7 @@
 	],
 	"CommonData": {
 		"Id": "005-001-eag-514af6f0",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "M199X",
 		"Description": "The iconic M199X helmet was produced by the Hefley Radiator Company and Misriah Bathworks to outfit troops sent to overthrow the Kig-Yar Thalassocracy.",
 		"FeatureFlag": true,

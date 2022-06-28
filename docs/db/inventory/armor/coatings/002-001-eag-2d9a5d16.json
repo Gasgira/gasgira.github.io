@@ -8,9 +8,9 @@
 	},
 	"CommonData": {
 		"Id": "002-001-eag-2d9a5d16",
-		"HideUntilOwned": true,
-		"Title": "Northam Patriot",
-		"Description": "The UNSC promoted strength through unity, though some regional chauvinism survived.",
+		"HideUntilOwned": false,
+		"Title": "Liberty Clad",
+		"Description": "The UNSC promoted strength through unity, though some regional rivalries persisted.",
 		"FeatureFlag": true,
 		"ItemAvailability": "",
 		"DateReleased": {

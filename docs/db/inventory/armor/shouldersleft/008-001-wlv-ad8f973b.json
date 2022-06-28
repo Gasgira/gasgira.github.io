@@ -18,7 +18,7 @@
 	],
 	"CommonData": {
 		"Id": "008-001-wlv-ad8f973b",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "UA/CMA SN5 TYPE 11",
 		"Description": "Spartans are not above using CMA war surplus to create improvised \"Spartan Armor Kit\" up-armor packs.",
 		"FeatureFlag": true,

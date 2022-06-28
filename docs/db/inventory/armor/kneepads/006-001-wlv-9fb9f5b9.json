@@ -29,7 +29,7 @@
 	],
 	"CommonData": {
 		"Id": "006-001-wlv-9fb9f5b9",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "UA/Type GRF",
 		"Description": "Professional Grifball players swear by it.",
 		"FeatureFlag": true,

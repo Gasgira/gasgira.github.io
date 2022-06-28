@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "001-001-eag-cf97219c",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "DOG HARNESS",
 		"Description": "A typical chest rig used by Army soldiers. The gas mask canister can safely store fresh food and - if extraordinarily lucky - tea.",
 		"FeatureFlag": true,

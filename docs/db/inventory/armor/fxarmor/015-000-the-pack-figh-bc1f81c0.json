@@ -4,7 +4,7 @@
 	],
 	"CommonData": {
 		"Id": "015-000-the-pack-figh-bc1f81c0",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Trapmaster's Map",
 		"Description": "You can run, but not hide.",
 		"FeatureFlag": false,
