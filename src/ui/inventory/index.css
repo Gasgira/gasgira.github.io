@@ -112,12 +112,15 @@
 			align-items: center;
 			align-content: center;
 			justify-content: center;
+			position: relative;
+			border: 0;
+			border-bottom: 0.2rem solid hsla(var(--theme-text-hsl), 0.25);
+			background-color: rgba(0,0,0,0.15);
 			& .inventory-search_input {
 				padding: 0.5em;
 				margin: 0 0.25rem;
 				border: 0;
-				border-bottom: 0.2rem solid hsla(var(--theme-text-hsl), 0.25);
-				background-color: rgba(0,0,0,0.15);
+				background-color: transparent;
 				width: 100%;
 				color: var(--theme-text);
 				font-size: 1.25em;
@@ -125,6 +128,29 @@
 			& .inventory-search_submit {
 				font-size: 1.25em;
 				padding: 0.5em;
+			}
+			& .inventory-search_suggestions {
+				opacity: 0;
+				pointer-events: none;
+				display: none;
+			}
+			&:focus-within .inventory-search_suggestions {
+				opacity: 1;
+				pointer-events: initial;
+				display: flex;
+				flex-direction: column;
+				justify-content: left;
+				width: 100%;
+				padding: 0.5em;
+				margin: 0 0.25rem;
+				background: black;
+				position: absolute;
+				bottom: 100%;
+				background-color: var(--bg0);
+				animation: fade-in var(--time-active) linear;
+				& button {
+					width: 100%;
+				}
 			}
 		}
 	}

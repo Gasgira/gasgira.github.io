@@ -20,6 +20,7 @@
     "html-webpack-plugin": "^5.5.0",
     "http-server": "^14.1.0",
     "hyperhtml": "^2.34.0",
+    "minisearch": "^5.0.0",
     "postcss": "^8.4.5",
     "postcss-loader": "^6.2.1",
     "postcss-preset-env": "^7.2.3",

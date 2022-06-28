@@ -2,10 +2,11 @@ import { Component } from 'component';
 import { db } from 'db';
 import { Item, placeholderItem } from 'db/item';
 import { emitter } from 'eventEmitter';
-import { HTML } from 'lib/HTML';
+import { HTML, throbber } from 'lib/HTML';
 import { settings } from 'ui/settings';
 import { urlParams } from 'urlParams';
 import { MobileMicaMenu } from 'ui/mica';
+import MiniSearch from 'minisearch';
 
 import './index.css';
 
@@ -36,7 +37,7 @@ class Inventory extends Component {
 				this.categories.push(bundleCategory);
 				if (!paramCategoryName || paramCategoryName === 'Collection')
 				{
-					bundleCategory.init();
+					await bundleCategory.init();
 					this.state.inventoryCategory = bundleCategory;
 				}
 			}
@@ -133,7 +134,7 @@ class Inventory extends Component {
 		</div>`;
 	}
 
-	showCategory(inventoryCategory) {
+	async showCategory(inventoryCategory) {
 		this.state.mobileMenu = false;
 		if (this.state?.inventoryCategory === inventoryCategory) {
 			this.scrollIntoView();
@@ -141,7 +142,7 @@ class Inventory extends Component {
 			// urlParams.deleteSecionSetting('inventory');
 			return;
 		}
-		inventoryCategory.init();
+		await inventoryCategory.init();
 		this.setState({inventoryCategory});
 		urlParams.setSecionSetting('inventory', inventoryCategory?.categoryName ?? 'unk');
 		this.scrollIntoView();
@@ -343,35 +344,42 @@ class Search extends InventoryCategory {
 		{
 			this.state.term = term;
 		}
-		
-		const modifiedDateString = urlParams.getSecionSetting('smd');
+
+		const modifiedDateString = urlParams.getSecionSetting('sma');
 		if (modifiedDateString && typeof modifiedDateString === 'string' && Date.parse(`${modifiedDateString}T00:00:00Z`))
 		{
 			console.log('sdm', modifiedDateString)
-			this.state.filters.set('modifiedDate', new Date(`${modifiedDateString}T00:00:00Z`));
+			this.state.filters.set('sma', new Date(`${modifiedDateString}T17:00:00Z`));
 		}
-		
+
+		const modifiedBeforeDateString = urlParams.getSecionSetting('smb');
+		if (modifiedBeforeDateString && typeof modifiedBeforeDateString === 'string' && Date.parse(`${modifiedBeforeDateString}T00:00:00Z`))
+		{
+			console.log('smb', modifiedBeforeDateString)
+			this.state.filters.set('smb', new Date(`${modifiedBeforeDateString}T17:00:00Z`));
+		}
+
 		const addedDateString = urlParams.getSecionSetting('saa');
 		if (addedDateString && typeof addedDateString === 'string' && Date.parse(`${addedDateString}T00:00:00Z`))
 		{
 			console.log('saa', addedDateString)
-			this.state.filters.set('addedDate', new Date(`${addedDateString}T00:00:00Z`));
+			this.state.filters.set('saa', new Date(`${addedDateString}T17:00:00Z`));
 		}
-		
+
 		const addedBeforeDateString = urlParams.getSecionSetting('sab');
 		if (addedBeforeDateString && typeof addedBeforeDateString === 'string' && Date.parse(`${addedBeforeDateString}T00:00:00Z`))
 		{
-			console.log('saa', addedBeforeDateString)
-			this.state.filters.set('addedBeforeDate', new Date(`${addedBeforeDateString}T00:00:00Z`));
+			console.log('sab', addedBeforeDateString)
+			this.state.filters.set('sab', new Date(`${addedBeforeDateString}T17:00:00Z`));
 		}
-		
+
 		const types = urlParams.getSecionSetting('types');
 		if (types && typeof types === 'string')
 		{
 			console.log('types', types)
 			this.state.filters.set('types', types);
 		}
-		
+
 		const tags = urlParams.getSecionSetting('sct');
 		if (tags && typeof tags === 'string')
 		{
@@ -379,8 +387,17 @@ class Search extends InventoryCategory {
 			this.state.filters.set('sct', tags);
 		}
 
+		const manufacturer = urlParams.getSecionSetting('smf');
+		if (manufacturer !== false)
+		{
+			console.log('manufacturer urlParams', manufacturer)
+			this.state.filters.set('smf', manufacturer);
+		}
+
 		if (this.state.term || this.state.filters.size) {
 			this.searchItems();
+		} else {
+			this.loadSearchIndex();
 		}
 	}
 
@@ -411,16 +428,17 @@ class Search extends InventoryCategory {
 							placeholder="Search..."
 							maxlength="64"
 							oninput=${(e) => this.input(e?.target?.value ?? '')}
-							onkeydown=${(e) => {
-								if (e?.key === 'Enter') this.submit();
+							onkeydown=${async (e) => {
+								if (e?.key === 'Enter') await this.submit();
 							}}
 							value=${this.state.term}
 						>
 						<button
 							class="inventory-search_submit"
-							onclick=${() => this.submit()}
+							onclick=${async () => await this.submit()}
 							aria-label="Submit Search"
 						><label for="inventory-search" class="icon-masked icon-search"></label></button>
+						${this.renderSuggestions()}
 					</div>
 					<div class="inventory-search-filter_wrapper">
 						<button
@@ -433,8 +451,9 @@ class Search extends InventoryCategory {
 					</div>
 				</div>
 				<div class="inventory-search_info">
-					${{html: this.state.term && !this?.itemIDs?.size ? '<div class="icon-masked icon-alert"></div> No results' : ''}}
+					${{html: this.state.term && !this?.itemIDs?.size && !this.state.loading ? '<div class="icon-masked icon-alert"></div> No results' : ''}}
 				</div>
+				${this.renderThrobber()}
 				${this.renderPageControls('upper')}
 				<ul
 					class="inventory-category_items"
@@ -447,6 +466,7 @@ class Search extends InventoryCategory {
 	}
 
 	renderFilters() {
+		const filters = this.state.filters;
 		return HTML.wire(this, ':filters')`
 			<ul class="inventory-search-filters">
 				<li class="filter-input_wrapper">
@@ -455,10 +475,7 @@ class Search extends InventoryCategory {
 						type="date"
 						id="date_modified-after"
 						onchange=${(e) => this.filterModifiedDate(e.target.value)}
-						value=${urlParams.getSecionSetting('smd')
-							? `${urlParams.getSecionSetting('smd')}`
-							: ''
-						}
+						value=${filters.get('sma')?.toLocaleDateString?.('sv') || ''}
 					>
 				</li>
 				<li class="filter-input_wrapper">
@@ -467,10 +484,7 @@ class Search extends InventoryCategory {
 						type="date"
 						id="date_modified-before"
 						onchange=${(e) => this.filterModifiedBeforeDate(e.target.value)}
-						value=${urlParams.getSecionSetting('smb')
-							? `${urlParams.getSecionSetting('smb')}`
-							: ''
-						}
+						value=${filters.get('smb')?.toLocaleDateString?.('sv') || ''}
 					>
 				</li>
 				<li class="filter-input_wrapper">
@@ -479,10 +493,7 @@ class Search extends InventoryCategory {
 						type="date"
 						id="date_added-after"
 						onchange=${(e) => this.filterAddedDate(e.target.value)}
-						value=${urlParams.getSecionSetting('saa')
-							? `${urlParams.getSecionSetting('saa')}`
-							: ''
-						}
+						value=${filters.get('saa')?.toLocaleDateString?.('sv') || ''}
 					>
 				</li>
 				<li class="filter-input_wrapper">
@@ -491,10 +502,7 @@ class Search extends InventoryCategory {
 						type="date"
 						id="date_added-before"
 						onchange=${(e) => this.filterAddedBeforeDate(e.target.value)}
-						value=${urlParams.getSecionSetting('sab')
-							? `${urlParams.getSecionSetting('sab')}`
-							: ''
-						}
+						value=${filters.get('sab')?.toLocaleDateString?.('sv') || ''}
 					>
 				</li>
 				<li class="filter-input_wrapper">
@@ -506,19 +514,78 @@ class Search extends InventoryCategory {
 					>
 						<option value="">Any</option>
 						${() => [...db.itemTypes.entries()].map(([rawType, niceType]) => `<option value=${rawType}>${niceType}</option>`)}
+						${() => [...db.itemTypes.entries()].map(([rawType, niceType]) => {
+							const selected = `${filters.get('types')}` === `${rawType}` ? true : false;
+							if (selected) return `<option value=${rawType} selected>${niceType}</option>`
+							return `<option value=${rawType}>${niceType}</option>`
+						})}
 					</select>
 				</li>
 				<li class="filter-input_wrapper">
-					<label for="select_types">Tag</label>
+					<label for="select_tags">Tag</label>
 					<select
 						name="select_tags"
 						id="select_tags"
 						onchange=${(e) => this.filterTag(e.target.value)}
 					>
 						<option value="">Any</option>
-						${() => [...db.communityTags].map(tag => `<option value=${tag}>${tag}</option>`)}
+						${() => [...db.communityTags].map(tag => {
+							const selected = `${filters.get('sct')}` === `${tag}` ? true : false;
+							if (selected) return `<option value=${tag} selected>${tag}</option>`
+							return `<option value=${tag}>${tag}</option>`
+						})}
 					</select>
 				</li>
+				<li class="filter-input_wrapper">
+					<label for="select_mf">Manufacturer</label>
+					<select
+						name="select_mf"
+						id="select_mf"
+						onchange=${(e) => this.filterManufacturer(e.target.value)}
+					>
+						<option value="">Any</option>
+						${() => [...db.manufacturers].map(mf => {
+							const selected = `${filters.get('smf')}` === `${mf[0]}` ? true : false;
+							if (selected) return `<option value=${mf[0]} selected>${mf[1]?.ManufacturerName ?? '???'}</option>`
+							return `<option value=${mf[0]}>${mf[1]?.ManufacturerName ?? '???'}</option>`
+						})}
+					</select>
+				</li>
+				<li>
+					<button
+						onclick=${() => {
+							// TODO iterate filters to remove url params
+							this.state.filters.clear();
+							this.renderFilters();
+						}}
+					>
+						Clear Filters
+					</button>
+				</li>
+			</ul>
+		`;
+	}
+
+	renderThrobber() {
+		return HTML.wire(this, ':throbber')`
+			<div>${this.state.loading ? throbber.cloneNode(true) : ''}</div>
+		`;
+	}
+
+	renderSuggestions(suggestions = []) {
+		console.log('suggestions red', suggestions);
+		return HTML.wire(this, ':suggestions')`
+			<ul class="inventory-search_suggestions">
+				${suggestions.map((suggestion, index) => HTML.wire(this, `:sug-${index}`)`<li>
+					<button
+						onclick=${() => {
+							this.setState({term: suggestion});
+							this.submit();
+						}}
+					>
+						${suggestion}
+					</button>
+				</li>`)}
 			</ul>
 		`;
 	}
@@ -526,12 +593,21 @@ class Search extends InventoryCategory {
 	input(value) {
 		if (value && typeof value === 'string')
 		{
-			return this.state.term = value.toLowerCase();
+			this.state.term = value.toLowerCase();
+			if (this.miniSearch && this.state.term.length > 2)
+			{
+				const suggestions = this.miniSearch.autoSuggest(this.state.term, {
+					fuzzy: 0.2
+				});
+				this.renderSuggestions(suggestions.slice(0, 5).map(res => res?.suggestion));
+			}
+			return this.state.term;
 		}
+		if (this.miniSearch) this.renderSuggestions();
 		return this.state.term = '';
 	}
 
-	searchItems() {
+	async searchItems_old() {
 		// if (!this.state.term || typeof this.state.term !== 'string') return;
 		this.itemIDs = new Set();
 		// console.info(`[search] "${db.index.manifest.size}" items in index`);
@@ -545,9 +621,9 @@ class Search extends InventoryCategory {
 			{
 				const title = entry.title.toLowerCase();
 				if (this.state.term && !title.includes(this.state.term)) continue;
-	
+
 				const filters = this.state.filters;
-	
+
 				// TODO support multiple types
 				if (filters.has('types') && entry?.type)
 				{
@@ -558,7 +634,7 @@ class Search extends InventoryCategory {
 				{
 					if (!Array.isArray(entry?.community?.tags) || !entry.community.tags.includes(filters.get('sct'))) continue;
 				}
-	
+
 				if (filters.has('modifiedDate') && Array.isArray(entry?.touched))
 				{
 					const dateString = entry.touched[entry.touched.length-1];
@@ -600,7 +676,7 @@ class Search extends InventoryCategory {
 						}
 					}
 				}
-	
+
 				if (filters.has('addedBeforeDate') && Array.isArray(entry?.touched))
 				{
 					const dateString = entry.touched[0];
@@ -614,11 +690,11 @@ class Search extends InventoryCategory {
 						}
 					}
 				}
-	
+
 				this.itemIDs.add(entry.name);
 			}
 		}
-		
+
 		console.info(`[search] Found "${this.itemIDs.size}" items`);
 		if (this.itemIDs.size)
 		{
@@ -631,7 +707,180 @@ class Search extends InventoryCategory {
 		this.render();
 	}
 
-	submit() {
+	async loadSearchIndex() { 
+		if (this.miniSearch) return;
+		this.state.loading = true;
+		this.renderThrobber();
+
+		this.miniSearch = new MiniSearch({
+			fields: ['title'],
+			storeFields: [
+				'id',
+				'type',
+				'visible',
+				'added',
+				'lastModified',
+				'season',
+				'manufacturer',
+				'quality',
+				'availability',
+				'tags',
+				'popCurrent',
+				'popDelta',
+				'popRank'
+			]
+		});
+
+		const path = 'search.json';
+		const json = await db.getJSON(path);
+
+		if (json && Array.isArray(json) && json[0].id)
+		{
+			this.documents = json;
+			console.log(`[Inventory.Search.loadSearchIndex] "${this.documents.length}" documents`);
+			await this.miniSearch.addAllAsync(this.documents, { chunkSize: 128 });
+			console.log(`[Inventory.Search.loadSearchIndex] loaded!`);
+			this.state.loading = false;
+			this.renderThrobber();
+			return this.documents;
+		}
+	}
+
+	async searchItems() {
+		if (!this.miniSearch)
+		{
+			await this.loadSearchIndex();
+		}
+		console.log('filters', this.state.filters);
+		// if (!this.state.term || typeof this.state.term !== 'string') return;
+		this.itemIDs = new Set();
+		// console.info(`[search] "${db.index.manifest.size}" items in index`);
+
+		const filterResult = (result) => {
+			if (!this.state.filters.size) return true;
+
+			const filters = this.state.filters;
+
+			// TODO support multiple types
+			if (filters.has('types') && result?.type)
+			{
+				if (filters.get('types') !== result.type) return false;
+			}
+
+			// Community Tags
+			if (filters.has('sct'))
+			{
+				if (!result.tags) return false;
+				const tagArray = result.tags.split(', ');
+				if (!tagArray || !tagArray.includes(filters.get('sct'))) return false;
+			}
+
+			// Modified After Date
+			if (filters.has('sma'))
+			{
+				const dateString = result?.lastModified;
+				if (Date.parse(dateString))
+				{
+					const lastModified = new Date(dateString);
+					if (new Date(filters.get('sma')) > lastModified)
+					{
+						return false;
+					}
+				}
+			}
+
+			// Modified Before Date
+			if (filters.has('smb'))
+			{
+				const dateString = result?.lastModified;
+				if (Date.parse(dateString))
+				{
+					const lastModified = new Date(dateString);
+					if (new Date(filters.get('smb')) < lastModified)
+					{
+						return false;
+					}
+				}
+			}
+
+			// Added After Date
+			if (filters.has('saa'))
+			{
+				const dateString = result?.added;
+				if (Date.parse(dateString))
+				{
+					const addedDate = new Date(dateString);
+					if (new Date(filters.get('saa')) > addedDate)
+					{
+						return false;
+					}
+				}
+			}
+
+			// Added Before Date
+			if (filters.has('sab'))
+			{
+				const dateString = result?.added;
+				if (Date.parse(dateString))
+				{
+					const addedDate = new Date(dateString);
+					if (new Date(filters.get('sab')) < addedDate)
+					{
+						return false;
+					}
+				}
+			}
+
+			// Manufacturer
+			if (filters.has('smf'))
+			{
+				console.log('manufilter', parseInt(filters.get('smf')), result.manufacturer);
+				if (typeof result.manufacturer === 'undefined') return false;
+				if (parseInt(filters.get('smf')) !== parseInt(result.manufacturer)) return false;
+			}
+
+			// Default
+			return true;
+		}
+
+		if (this.state.term && db.index.manifest.has(this.state.term))
+		{
+			console.log(`[Inventory.Search] Getting item ID from index`, this.state.term);
+			// Short circuit for ID lookups
+			const entry = db.index.manifest.get(this.state.term);
+			this.itemIDs.add(entry.name);
+		}
+			else if (this.state.term)
+		{
+			console.log(`[Inventory.Search] Searching with MiniSearch`, this.state.term);
+			const results = this.miniSearch.search(this.state.term, {
+				fuzzy: 0.2,
+				filter: (result) => filterResult(result)
+			});
+			console.log('miniSearch res', results);
+			results.forEach(result => this.itemIDs.add(result.id));
+		}
+			else if (!this.state.term && this.state.filters.size)
+		{
+			console.log(`[Inventory.Search] Searching raw documents with filters`, this.state.filters.size);
+			this.documents.forEach(result => {
+				if (filterResult(result)) this.itemIDs.add(result.id);
+			})
+		}
+
+		console.info(`[search] Found "${this.itemIDs.size}" items`);
+		if (this.itemIDs.size)
+		{
+			this.getCurrentItemPage();
+			this.render();
+			return;
+		}
+
+		this.items = new Set();
+		this.render();
+	}
+
+	async submit() {
 		if ((!this.state.term || typeof this.state.term !== 'string') && !this.state.filters.size)
 		{
 			this.items = new Set();
@@ -643,7 +892,7 @@ class Search extends InventoryCategory {
 		console.log('submit', this.state.term, this.state.filters);
 		this.state.page = 0;
 		urlParams.setSecionSetting('s', this.state.term);
-		this.searchItems();
+		await this.searchItems();
 		this.render();
 
 		inventory.scrollIntoView();
@@ -680,12 +929,13 @@ class Search extends InventoryCategory {
 	}
 
 	filterModifiedDate(dateString) {
+		const filterKey = 'sma';
 		console.log('date', dateString)
 		if (!dateString || !Date.parse(dateString))
 		{
 			// console.log('del', dateString)
-			if (this.state.filters.has('modifiedDate')) this.state.filters.delete('modifiedDate');
-			urlParams.deleteSecionSetting('smd');
+			if (this.state.filters.has(filterKey)) this.state.filters.delete(filterKey);
+			urlParams.deleteSecionSetting(filterKey);
 			return;
 		}
 		const date = new Date(`${dateString}T00:00:00Z`);
@@ -693,11 +943,12 @@ class Search extends InventoryCategory {
 		console.log('datep', date)
 		// date.setDate(date.getDate() + 1);
 		// console.log(date);
-		this.state.filters.set('modifiedDate', date);
-		urlParams.setSecionSetting('smd', `${dateString}`);
+		this.state.filters.set(filterKey, date);
+		urlParams.setSecionSetting(filterKey, `${dateString}`);
 	}
 
 	filterModifiedBeforeDate(dateString) {
+		const filterKey = 'smb';
 		console.log('date', dateString)
 		if (!dateString || !Date.parse(dateString))
 		{
@@ -717,13 +968,12 @@ class Search extends InventoryCategory {
 
 	filterAddedDate(dateString) {
 		console.log('filterAddedDate', dateString)
-		const filterKey = 'addedDate';
-		const filterParam = 'saa';
+		const filterKey = 'saa';
 		if (!dateString || !Date.parse(dateString))
 		{
 			// console.log('del', dateString)
 			if (this.state.filters.has(filterKey)) this.state.filters.delete(filterKey);
-			urlParams.deleteSecionSetting(filterParam);
+			urlParams.deleteSecionSetting(filterKey);
 			return;
 		}
 		const date = new Date(`${dateString}T00:00:00Z`);
@@ -732,13 +982,12 @@ class Search extends InventoryCategory {
 		// date.setDate(date.getDate() + 1);
 		// console.log(date);
 		this.state.filters.set(filterKey, date);
-		urlParams.setSecionSetting(filterParam, `${dateString}`);
+		urlParams.setSecionSetting(filterKey, `${dateString}`);
 	}
 
 	filterAddedBeforeDate(dateString) {
 		console.log('filterAddedBeforeDate', dateString)
-		const filterKey = 'addedBeforeDate';
-		const filterParam = 'sab';
+		const filterKey = 'sab';
 		if (!dateString || !Date.parse(dateString))
 		{
 			// console.log('del', dateString)
@@ -752,7 +1001,23 @@ class Search extends InventoryCategory {
 		// date.setDate(date.getDate() + 1);
 		// console.log(date);
 		this.state.filters.set(filterKey, date);
-		urlParams.setSecionSetting(filterParam, `${dateString}`);
+		urlParams.setSecionSetting(filterKey, `${dateString}`);
+	}
+
+	filterManufacturer(value) {
+		const filterKey = 'smf';
+		if (!value && this.state.filters.has(filterKey))
+		{
+			this.state.filters.delete(filterKey);
+			urlParams.deleteSecionSetting(filterKey);
+			return;
+		}
+		const number = parseInt(value);
+		if (typeof number !== 'number') return;
+		console.log('filterManufacturer', number);
+
+		this.state.filters.set(filterKey, number);
+		urlParams.setSecionSetting(filterKey, `${number}`);
 	}
 
 	focus() {

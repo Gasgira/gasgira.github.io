@@ -47,5 +47,8 @@
 		& h2 {
 			margin-top: 0.5em;
 		}
+		& ul {
+			margin-left: 1rem;
+		}
 	}
 }

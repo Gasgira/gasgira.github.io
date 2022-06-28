@@ -148,6 +148,15 @@ class Profile extends Component {
 				return;
 			}
 
+			if (response.status === 429)
+			{
+				console.log('429', gamertag);
+				this.setState({
+					status: 'Please send less requests.'
+				});
+				return;
+			}
+
 			if (response.status >= 500)
 			{
 				this.setState({status: 'Server Error!'});

@@ -19,7 +19,7 @@
 	width: 50em;
 	right: 0;
 	top: 0;
-	background-color: #141c27;
+	background-color: var(--bg0);
 	flex-direction: column;
 	overflow: hidden;
 	overflow-y: auto;
@@ -305,6 +305,26 @@
 					background-color: hsla(var(--theme-interact-hsl), 0.1);
 					padding: 0 0.2em;
 					margin: 0 0.2em;
+					border-radius: var(--theme-border-radius);
+				}
+			}
+			& .community_pop {
+				& .community_pop-delta {
+					font-size: 0.7em;
+					vertical-align: center;
+					&.pos {
+						color: var(--base-green);
+						vertical-align: top;
+					}
+					&.neg {
+						color: var(--base-orange);
+						vertical-align: bottom;
+					}
+				}
+				& .community_pop-type {
+					display: inline-block;
+					background-color: hsla(var(--theme-interact-hsl), 0.1);
+					padding: 0 0.2em;
 					border-radius: var(--theme-border-radius);
 				}
 			}

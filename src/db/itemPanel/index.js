@@ -327,7 +327,7 @@ class ItemPanel extends Component {
 				return this.internalRelationsPage.render();
 			case 'external':
 				return this.externalRelationsPage.render();
-		
+
 			default:
 				return this.renderAPI();
 		}
@@ -356,6 +356,22 @@ class ItemPanel extends Component {
 		`;
 	}
 
+	popularityBucket(cur = 0) {
+		if (cur >= 0.2) return 'Ubiquitous';
+		if (cur >= 0.1) return 'Basic';
+		if (cur >= 0.025) return 'Common';
+		if (cur >= 0.0025) return 'Rare';
+		if (cur > 0) return 'Exotic';
+		return 'Unknown';
+	}
+
+	popularityRank(rank = 0) {
+		if (rank === 1) return 'first';
+		if (rank === 2) return 'second';
+		if (rank === 3) return 'third';
+		return 'Unknown';
+	}
+
 	renderCommunity() {
 		if (!this?.item.community) return;
 		const community = this.item.community;
@@ -380,12 +396,27 @@ class ItemPanel extends Component {
 				case 'availability':
 					displays.push(`<div class="community_item">
 							<label>Availability</label>
-							<ul class="community_tag-list">
+							<span class="community_tag-list">
 								${community.availability}
-							</ul>
+							</span>
 						</div>`);
 					break;
-			
+				case 'stats':
+					const cur = community?.stats?.cur ?? 0;
+					const delta = (parseFloat(community?.stats?.delta ?? 0) * 100).toFixed(2);
+					const deltaSymbol = delta > 0 ? '+' : delta < 0 ? '' : '~';
+					const deltaClass = delta > 0 ? 'pos' : delta < 0 ? 'neg' : 'neut';
+
+					displays.push(`<div class="community_item">
+							<label>Popularity as Equipped by Recent Players</label>
+							<br/>
+							<span class="community_pop">
+								<span>${this.popularityBucket(cur)} — ${(parseFloat(cur) * 100).toFixed(2)}%</span>
+								<span class="community_pop-delta ${deltaClass}">${deltaSymbol} ${delta}%</span>
+								${!community?.stats?.rank ? '' : `<br/>Ranked ${this.popularityRank(community?.stats?.rank ?? 0)} for type <span class="community_pop-type">${db.getItemType(this.state.item?.type)}</span>`}
+							</span>
+						</div>`);
+					break;
 				default:
 					break;
 			}
@@ -426,9 +457,19 @@ class ItemPanel extends Component {
 
 	renderCommunityDisclaimer() {
 		return HTML.wire(this, ':communityDisclaimer')`
-			<header><h2>Community Notes</h2></header>
+			<header><h1>Community Notes</h1></header>
 			<p>Information in this section is maintained by volunteer contributors.</p>
-			<p>To report issues or help maintain this information you may do so in our <a href="https://cylix.guide/discord" target="_blank">discord.</a></p>
+			<p>To report issues or help maintain this information you may visit the <a href="https://cylix.guide/discord" target="_blank">discord.</a></p>
+			<h2>Popularity</h2>
+			<p>Item popularity represents a statistical sample of what active players are wearing in-game. Updated regularly, these stats represent fashion trends - showing the percentage of players wearing the item and the delta from the previous sample.</p>
+			<p>Named breaks are given to better understand how often an item may show up in an average match.</p>
+			<ul>
+				<li>Ubiquitous — Many players.</li>
+				<li>Basic — Several players.</li>
+				<li>Common — At least one player.</li>
+				<li>Rare — Once every couple matches.</li>
+				<li>Exotic — It would be strange to see someone wear this.</li>
+			</ul>
 		`;
 	}
 
