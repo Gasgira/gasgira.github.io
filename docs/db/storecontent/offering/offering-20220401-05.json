@@ -1,0 +1,24 @@
+{
+	"OfferingId": "20220401-05",
+	"OfferingDisplayPath": "StoreContent/Display/Offerings/20220401-05.json",
+	"OfferingExpirationDate": null,
+	"IncludedItems": [
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/FXArmor/015-000-inevitability-57e692d6.json",
+			"ItemType": "ArmorFx"
+		}
+	],
+	"Prices": [
+		{
+			"Cost": 500,
+			"CurrencyPath": "Currency/Currencies/cR.json"
+		}
+	],
+	"IncludedCurrencies": [],
+	"IncludedRewardTracks": [],
+	"BoostPath": null,
+	"OperationXp": 0,
+	"EventXp": 0,
+	"MatchBoosts": null
+}

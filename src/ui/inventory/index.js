@@ -37,7 +37,7 @@ class Inventory extends Component {
 				this.categories.push(bundleCategory);
 				if (!paramCategoryName || paramCategoryName === 'Collection')
 				{
-					await bundleCategory.init();
+					bundleCategory.init();
 					this.state.inventoryCategory = bundleCategory;
 				}
 			}
