@@ -134,7 +134,7 @@ class Inventory extends Component {
 		</div>`;
 	}
 
-	async showCategory(inventoryCategory) {
+	showCategory(inventoryCategory) {
 		this.state.mobileMenu = false;
 		if (this.state?.inventoryCategory === inventoryCategory) {
 			this.scrollIntoView();
@@ -142,7 +142,7 @@ class Inventory extends Component {
 			// urlParams.deleteSecionSetting('inventory');
 			return;
 		}
-		await inventoryCategory.init();
+		inventoryCategory.init();
 		this.setState({inventoryCategory});
 		urlParams.setSecionSetting('inventory', inventoryCategory?.categoryName ?? 'unk');
 		this.scrollIntoView();
@@ -394,6 +394,34 @@ class Search extends InventoryCategory {
 			this.state.filters.set('smf', manufacturer);
 		}
 
+		const popularityMin = urlParams.getSecionSetting('spmin');
+		if (popularityMin !== false)
+		{
+			console.log('popularityMin urlParams', popularityMin)
+			this.state.filters.set('spmin', parseFloat(popularityMin));
+		}
+
+		const popularityMax = urlParams.getSecionSetting('spmax');
+		if (popularityMax !== false)
+		{
+			console.log('popularityMax urlParams', popularityMax)
+			this.state.filters.set('spmax', parseFloat(popularityMax));
+		}
+
+		const itemQuality = urlParams.getSecionSetting('siq');
+		if (itemQuality !== false && db.qualities.has(itemQuality))
+		{
+			console.log('itemQuality urlParams', itemQuality)
+			this.state.filters.set('siq', itemQuality);
+		}
+
+		const seasonNumber = urlParams.getSecionSetting('ssn');
+		if (seasonNumber !== false)
+		{
+			console.log('seasonNumber urlParams', seasonNumber)
+			this.state.filters.set('ssn', parseInt(seasonNumber));
+		}
+
 		if (this.state.term || this.state.filters.size) {
 			this.searchItems();
 		} else {
@@ -443,11 +471,12 @@ class Search extends InventoryCategory {
 					<div class="inventory-search-filter_wrapper">
 						<button
 							class="inventory-search_toggle-filters"
+							id="inventory-search_toggle-filters"
 							onclick=${() => this.setState({showFilters: !this.state.showFilters})}
 							aria-label="Toggle Search Filter Menu"
 							disabled=${this.state.filters.size}
 						><div class="icon-masked icon-filter"></div></button>
-						${(this.state.showFilters || this.state.filters.size) ? this.renderFilters() : ''}
+						${this.renderFilters()}
 					</div>
 				</div>
 				<div class="inventory-search_info">
@@ -458,7 +487,10 @@ class Search extends InventoryCategory {
 				<ul
 					class="inventory-category_items"
 				>
-					${[...this.items].map(item => HTML.wire()`<li>${item.renderIcon('inventory', {itemTypeIcon: true})}</li>`)}
+					${[...this.items].map(item => HTML.wire()`<li>${{
+							any: item.renderIcon('inventory', {itemTypeIcon: true}),
+							placeholder: placeholderItem.cloneNode(true)
+						}}</li>`)}
 				</ul>
 				${this.renderPageControls('lower')}
 			</div>
@@ -467,8 +499,41 @@ class Search extends InventoryCategory {
 
 	renderFilters() {
 		const filters = this.state.filters;
+		if (!this.state.showFilters && !this.state.filters.size)
+		{
+			return HTML.wire(this, ':filters')`
+				<label for="inventory-search_toggle-filters">Filters</label>
+			`;
+		}
 		return HTML.wire(this, ':filters')`
 			<ul class="inventory-search-filters">
+				<li>
+					<button
+						onclick=${() => {
+							this.state.filters.forEach((value, key) => urlParams.deleteSecionSetting(key));
+							this.state.filters.clear();
+							this.renderFilters();
+						}}
+					>
+						Clear Filters
+					</button>
+				</li>
+				<li class="filter-input_wrapper">
+					<label for="select_season">Season</label>
+					<select
+						name="select_season"
+						id="select_season"
+						onchange=${(e) => this.filterSeason(e.target.value)}
+					>
+						<option value="">Any</option>
+						${() => [...db.seasons.entries()].map(season => {
+							const [ number, seasonName ] = season;
+							const selected = `${filters.get('ssn')}` === `${number}` ? true : false;
+							if (selected) return `<option value=${number} selected>${number} - ${seasonName}</option>`
+							return `<option value=${number}>${number} - ${seasonName}</option>`
+						})}
+					</select>
+				</li>
 				<li class="filter-input_wrapper">
 					<label for="date_modified-after">Last Modified After</label>
 					<input
@@ -551,16 +616,51 @@ class Search extends InventoryCategory {
 						})}
 					</select>
 				</li>
-				<li>
-					<button
-						onclick=${() => {
-							// TODO iterate filters to remove url params
-							this.state.filters.clear();
-							this.renderFilters();
-						}}
+				<li class="filter-input_wrapper">
+					<label for="select_quality">Quality</label>
+					<select
+						name="select_quality"
+						id="select_quality"
+						onchange=${(e) => this.filterQuality(e.target.value)}
 					>
-						Clear Filters
-					</button>
+						<option value="">Any</option>
+						${() => [...db.qualities].map(quality => {
+							const selected = `${filters.get('siq')}` === quality ? true : false;
+							if (selected) return `<option value=${quality} selected>${quality}</option>`
+							return `<option value=${quality}>${quality}</option>`
+						})}
+					</select>
+				</li>
+				<li class="filter-input_wrapper">
+					<label>Popularity</label>
+					<div class="filter-popularity_wrapper">
+						<label for="range_pop-min">Min</label>
+						<input
+							class="filter_popularity"
+							id="filter_popularity-min"
+							type="number"
+							min="0"
+							max="100"
+							step="0.01"
+							placeholder="0"
+							value=${parseFloat(filters.get('spmin') || 0) * 100}
+							onchange=${(e) => this.filterPopularityCurrentMin(e.target.value)}
+						>
+					</div>
+					<div class="filter-popularity_wrapper">
+						<label for="range_pop-max">Max</label>
+						<input
+							class="filter_popularity"
+							id="filter_popularity-max"
+							type="number"
+							min="0"
+							max="100"
+							step="0.01"
+							placeholder="100"
+							value=${parseFloat(filters.get('spmax') || 1) * 100}
+							onchange=${(e) => this.filterPopularityCurrentMax(e.target.value)}
+						>
+					</div>
 				</li>
 			</ul>
 		`;
@@ -573,7 +673,7 @@ class Search extends InventoryCategory {
 	}
 
 	renderSuggestions(suggestions = []) {
-		console.log('suggestions red', suggestions);
+		// console.log('suggestions red', suggestions);
 		return HTML.wire(this, ':suggestions')`
 			<ul class="inventory-search_suggestions">
 				${suggestions.map((suggestion, index) => HTML.wire(this, `:sug-${index}`)`<li>
@@ -594,7 +694,7 @@ class Search extends InventoryCategory {
 		if (value && typeof value === 'string')
 		{
 			this.state.term = value.toLowerCase();
-			if (this.miniSearch && this.state.term.length > 2)
+			if (this.miniSearch && this.state.term.length > 1)
 			{
 				const suggestions = this.miniSearch.autoSuggest(this.state.term, {
 					fuzzy: 0.2
@@ -607,113 +707,13 @@ class Search extends InventoryCategory {
 		return this.state.term = '';
 	}
 
-	async searchItems_old() {
-		// if (!this.state.term || typeof this.state.term !== 'string') return;
-		this.itemIDs = new Set();
-		// console.info(`[search] "${db.index.manifest.size}" items in index`);
-
-		if (this.state.term && db.index.manifest.has(this.state.term))
-		{
-			const entry = db.index.manifest.get(this.state.term);
-			this.itemIDs.add(entry.name);
-		} else {
-			for (const entry of db.index.manifest.values())
-			{
-				const title = entry.title.toLowerCase();
-				if (this.state.term && !title.includes(this.state.term)) continue;
-
-				const filters = this.state.filters;
-
-				// TODO support multiple types
-				if (filters.has('types') && entry?.type)
-				{
-					if (filters.get('types') !== entry.type) continue;
-				}
-
-				if (filters.has('sct') && entry?.type)
-				{
-					if (!Array.isArray(entry?.community?.tags) || !entry.community.tags.includes(filters.get('sct'))) continue;
-				}
-
-				if (filters.has('modifiedDate') && Array.isArray(entry?.touched))
-				{
-					const dateString = entry.touched[entry.touched.length-1];
-					if (Date.parse(dateString))
-					{
-						const lastModified = new Date(dateString);
-						if (new Date(filters.get('modifiedDate')) > lastModified)
-						{
-							// console.log(lastModified)
-							continue;
-						}
-					}
-				}
-	
-				if (filters.has('modifiedBeforeDate') && Array.isArray(entry?.touched))
-				{
-					const dateString = entry.touched[entry.touched.length-1];
-					if (Date.parse(dateString))
-					{
-						const lastModified = new Date(dateString);
-						if (new Date(filters.get('modifiedBeforeDate')) < lastModified)
-						{
-							// console.log(lastModified)
-							continue;
-						}
-					}
-				}
-	
-				if (filters.has('addedDate') && Array.isArray(entry?.touched))
-				{
-					const dateString = entry.touched[0];
-					if (Date.parse(dateString))
-					{
-						const addedDate = new Date(dateString);
-						if (new Date(filters.get('addedDate')) > addedDate)
-						{
-							// console.log(lastModified)
-							continue;
-						}
-					}
-				}
-
-				if (filters.has('addedBeforeDate') && Array.isArray(entry?.touched))
-				{
-					const dateString = entry.touched[0];
-					if (Date.parse(dateString))
-					{
-						const addedDate = new Date(dateString);
-						if (new Date(filters.get('addedBeforeDate')) < addedDate)
-						{
-							// console.log(lastModified)
-							continue;
-						}
-					}
-				}
-
-				this.itemIDs.add(entry.name);
-			}
-		}
-
-		console.info(`[search] Found "${this.itemIDs.size}" items`);
-		if (this.itemIDs.size)
-		{
-			this.getCurrentItemPage();
-			this.render();
-			return;
-		}
-
-		this.items = new Set();
-		this.render();
-	}
-
 	async loadSearchIndex() { 
 		if (this.miniSearch) return;
 		this.state.loading = true;
 		this.renderThrobber();
 
 		this.miniSearch = new MiniSearch({
-			fields: ['title'],
+			fields: ['title', 'availability'],
 			storeFields: [
 				'id',
 				'type',
@@ -834,9 +834,41 @@ class Search extends InventoryCategory {
 			// Manufacturer
 			if (filters.has('smf'))
 			{
-				console.log('manufilter', parseInt(filters.get('smf')), result.manufacturer);
 				if (typeof result.manufacturer === 'undefined') return false;
 				if (parseInt(filters.get('smf')) !== parseInt(result.manufacturer)) return false;
+				// console.log('manufilter', parseInt(filters.get('smf')), result.manufacturer);
+			}
+
+			// Current Popularity Max
+			if (filters.has('spmax'))
+			{
+				if (typeof result.popCurrent === 'undefined') return false;
+				if (parseFloat(result.popCurrent) > parseFloat(filters.get('spmax'))) return false;
+				// console.log('pop current max', parseFloat(filters.get('spmax')), result.popCurrent);
+			}
+
+			// Current Popularity Min
+			if (filters.has('spmin'))
+			{
+				if (typeof result.popCurrent === 'undefined') return false;
+				if (parseFloat(result.popCurrent) < parseFloat(filters.get('spmin'))) return false;
+				// console.log('pop current min', parseFloat(filters.get('spmin')), result.popCurrent);
+			}
+
+			// Quality
+			if (filters.has('siq'))
+			{
+				if (typeof result.quality === 'undefined') return false;
+				if (filters.get('siq') !== result.quality) return false;
+				// console.log('Quality', filters.get('siq'), result.manufacturer);
+			}
+
+			// Season
+			if (filters.has('ssn'))
+			{
+				if (typeof result.season === 'undefined') return false;
+				if (parseInt(filters.get('ssn')) !== parseInt(result.season)) return false;
+				// console.log('manufilter', parseInt(filters.get('ssn')), result.season);
 			}
 
 			// Default
@@ -854,7 +886,9 @@ class Search extends InventoryCategory {
 		{
 			console.log(`[Inventory.Search] Searching with MiniSearch`, this.state.term);
 			const results = this.miniSearch.search(this.state.term, {
+				boost: { title: 2 },
 				fuzzy: 0.2,
+				prefix: true,
 				filter: (result) => filterResult(result)
 			});
 			console.log('miniSearch res', results);
@@ -1015,6 +1049,67 @@ class Search extends InventoryCategory {
 		const number = parseInt(value);
 		if (typeof number !== 'number') return;
 		console.log('filterManufacturer', number);
+
+		this.state.filters.set(filterKey, number);
+		urlParams.setSecionSetting(filterKey, `${number}`);
+	}
+
+	filterPopularityCurrentMax(value) {
+		const filterKey = 'spmax';
+		if (!value || value > 1 && this.state.filters.has(filterKey))
+		{
+			this.state.filters.delete(filterKey);
+			urlParams.deleteSecionSetting(filterKey);
+			return;
+		}
+		const scalar = parseFloat(value) / 100;
+		console.log('filterPopularityCurrentMax', scalar);
+
+		this.state.filters.set(filterKey, scalar);
+		urlParams.setSecionSetting(filterKey, `${scalar}`);
+	}
+
+	filterPopularityCurrentMin(value) {
+		const filterKey = 'spmin';
+		if (!value || value < 0.0001 && this.state.filters.has(filterKey))
+		{
+			this.state.filters.delete(filterKey);
+			urlParams.deleteSecionSetting(filterKey);
+			return;
+		}
+		const scalar = parseFloat(value) / 100;
+		console.log('filterPopularityCurrentMax', scalar);
+
+		this.state.filters.set(filterKey, scalar);
+		urlParams.setSecionSetting(filterKey, `${scalar}`);
+	}
+
+	filterQuality(value) {
+		const filterKey = 'siq';
+		if (!value && this.state.filters.has(filterKey))
+		{
+			this.state.filters.delete(filterKey);
+			urlParams.deleteSecionSetting(filterKey);
+			return;
+		}
+		if (!db.qualities.has(value)) return;
+		console.log('filterQuality', value);
+
+		this.state.filters.set(filterKey, value);
+		urlParams.setSecionSetting(filterKey, `${value}`);
+	}
+
+	filterSeason(value) {
+		const filterKey = 'ssn';
+		if (!value && this.state.filters.has(filterKey))
+		{
+			this.state.filters.delete(filterKey);
+			urlParams.deleteSecionSetting(filterKey);
+			return;
+		}
+		const number = parseInt(value);
+		if (typeof number !== 'number' || !db.seasons.has(number)) return;
+		console.log('filterSeason', number);
 
 		this.state.filters.set(filterKey, number);
 		urlParams.setSecionSetting(filterKey, `${number}`);

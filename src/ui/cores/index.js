@@ -313,7 +313,7 @@ class Socket extends Component {
 			<div
 				class ="core-sockets_wrapper mica_content"
 			>
-			${this.name?.replace('Atch.', 'Attachments') ?? 'Socket'} // ${this?.items?.length ?? '#'}
+				<span class="mica_content-title">${this.name?.replace('Atch.', 'Attachments') ?? 'Socket'} // ${this?.items?.length ?? '#'}</span>
 				<ul
 					class="socket-items"
 				>

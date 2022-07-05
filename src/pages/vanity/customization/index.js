@@ -294,6 +294,10 @@ class Menu extends Component {
 					class="hi-box"
 					onclick=${async () => await this.downloadCanvas()}
 				>Blob</button>
+				<button
+					class="hi-box"
+					onclick=${async () => await this.testBucket()}
+				>Test</button>
 			</div>
 		`;
 	}
@@ -362,6 +366,13 @@ class Menu extends Component {
 		document.documentElement.style.setProperty('--vanity-matte',
 			`rgba(${red}, ${green}, ${blue}, ${opacity})`
 		);
+	}
+
+	async testBucket() {
+		const response = await fetch(`https://hi.cylix.guide/capstones.json`);
+		if (!response || !response.ok) return console.error(`Fetch failed ${response.status}`, response);
+		const json = await response.json();
+		console.log(`[testBucket]`, json);
 	}
 }
 

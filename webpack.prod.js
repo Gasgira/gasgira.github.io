@@ -74,7 +74,8 @@ module.exports = {
 		hot: true,
 		historyApiFallback: true,
 		allowedHosts: [
-			'cylix.guide'
+			'cylix.guide',
+			'hi.cylix.guide'
 		],
 		headers: {
 				'Access-Control-Allow-Origin': '*',
@@ -106,7 +107,8 @@ module.exports = {
 				'!robots.txt*',
 				'!404.html*',
 				'!db/**',
-				'!7/**'
+				'!7/**',
+				'!i18n/**'
 			],
 		}),
 		new HtmlWebpackPlugin({

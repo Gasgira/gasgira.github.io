@@ -2,6 +2,7 @@ import { db } from 'db';
 import { itemPanel } from 'db/itemPanel';
 import { Component } from 'component';
 import { HTML } from 'lib/HTML';
+import { i18n } from 'ui/i18n';
 
 import './index.css';
 
@@ -65,8 +66,9 @@ export class Item extends Component {
 			if (replacedInfo.name) return replacedInfo.name;
 		}
 
+		// const title = i18n.resolveItemTitle(this.id) ?? this.meta.title;
 		const title = this.meta.title;
-		if (title && typeof title === 'string') return title;
+		if (typeof title === 'string') return title;
 
 		return this.id ?? '???';
 	}
@@ -80,9 +82,12 @@ export class Item extends Component {
 	}
 
 	async getName() {
-		await this.init();
 		if (this.isRedacted) return '[REDACTED]';
-		return this?.data?.CommonData?.Title ?? this.id;
+		// return i18n.resolveItemTitle(this.id) ?? this.meta.title;
+		return this.meta.title;
+		// await this.init();
+		// if (this.isRedacted) return '[REDACTED]';
+		// return this?.data?.CommonData?.Title ?? this.id;
 	}
 
 	async getSeasonNumber() {
@@ -110,6 +115,10 @@ export class Item extends Component {
 
 	get manufacturerImage() {
 		return db.getManufacturerByIndex(this?.data?.CommonData?.ManufacturerId ?? 0)?.ManufacturerLogoImage ?? '';
+	}
+
+	get description() {
+		return i18n.resolveItemDescription(this.id) ?? this?.data?.CommonData?.Description ?? '???';
 	}
 
 	async init() {

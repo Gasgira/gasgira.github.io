@@ -15,23 +15,23 @@ class App {
 		try {
 			await db.init();
 			// throw new Error('tEst')
-	
+
 			HTML.bind(document.querySelector('.js--privacy'))`
 				<span
 					class="privacy-button"
 					onclick=${() => modalConstructor.showView(privacy.render())}
 				>Privacy</span>
 			`;
-	
+
 			await this.handleNavigation();
 			this.parseUriHash();
-			
+
 			window.addEventListener('popstate', async (event) => {
 				// event?.preventDefault();
 				console.log('popstate', event.state);
 				if (event?.state?.path) db.showItemPanelByPath(event.state.path, true);
 				emitter.emit('popstate');
-	
+
 				await this.handleNavigation(event);
 			});
 			window.addEventListener('hashchange', (event) => {
@@ -44,12 +44,12 @@ class App {
 				{
 					return db.showItemPanelByID(hash.substring(5, hash.length).trim(), true);
 				}
-	
+
 				return itemPanel.hide();
 			});
 		} catch (error) {
 			console.error(`[init] Fatal Error!`, error);
-		
+
 			HTML.bind(document.querySelector('.js--main'))`
 				<h2>Error :(</h2>
 				<p>Sorry, the page could not be initialized by your browser. Please consider sending a message with the below information so that the issue can be fixed.</p>

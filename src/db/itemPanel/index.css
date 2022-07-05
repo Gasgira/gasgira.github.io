@@ -165,13 +165,20 @@
 			background-size: contain;
 			background-repeat: no-repeat;
 			background-position: center bottom;
+			padding: 0;
+			margin: 0;
+			border-radius: 0;
+			transition: background-color var(--time-active) linear;
+			&:hover {
+				background-color: #fff;
+			}
 		}
 		& h2 {
 			font-size: 1.25em;
 			padding-top: 1rem;
 		}
 		& h3 {
-			font-size: 0.8em;
+			font-size: 0.9em;
 			font-weight: normal;
 			font-style: italic;
 			opacity: 0.75;
@@ -347,6 +354,11 @@
 	}
 }
 
+.dbItemPanel_image-modal img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
 @media(max-width: 500px) {
 	.dbItemPanel_wrapper {
 		min-height: 100vh;
@@ -364,7 +376,7 @@
 			margin-bottom: 1em;
 			display: flex;
 			flex-direction: column;
-			& .item-img {
+			& button.item-img {
 				--length: var(--panelMaxWidth);
 			}
 			& .dbItemPanel_titles {

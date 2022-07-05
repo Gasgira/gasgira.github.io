@@ -76,6 +76,7 @@
 		}
 		& .core-socket-title {
 			opacity: 0.66;
+			margin-left: 0.5em;
 		}
 	}
 	& .core-sockets_wrapper {

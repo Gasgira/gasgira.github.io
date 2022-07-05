@@ -101,6 +101,7 @@ class HeaderNav extends Component {
 					aria-label="Copy shareable link"
 					title="Share"
 					onclick=${() => {
+						if (!navigator.clipboard) return this.setState({copyStatus: 'Browser Error!'});
 						navigator.clipboard.writeText(`${window?.location ?? 'https://cylix.guide/'}`)
 							.then(success => {
 								this.setState({copyStatus: 'Copied!'});

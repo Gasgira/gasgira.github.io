@@ -1,0 +1,39 @@
+{
+	"OfferingId": "20220404-03",
+	"OfferingDisplayPath": "StoreContent/Display/Offerings/20220404-03.json",
+	"OfferingExpirationDate": null,
+	"IncludedItems": [
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Armor/Coatings/002-001-eag-2d9a5d16.json",
+			"ItemType": "ArmorCoating"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Vehicle/Coatings/404-306-olympus-2d9a5d16.json",
+			"ItemType": "VehicleCoating"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Vehicle/Coatings/404-304-olympus-2d9a5d16.json",
+			"ItemType": "VehicleCoating"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Vehicle/Coatings/404-300-olympus-2d9a5d16.json",
+			"ItemType": "VehicleCoating"
+		}
+	],
+	"Prices": [
+		{
+			"Cost": 700,
+			"CurrencyPath": "Currency/Currencies/cR.json"
+		}
+	],
+	"IncludedCurrencies": [],
+	"IncludedRewardTracks": [],
+	"BoostPath": null,
+	"OperationXp": 0,
+	"EventXp": 0,
+	"MatchBoosts": null
+}

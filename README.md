@@ -6,10 +6,11 @@ This project is not operated by nor affiliated with Microsoft and 343 Industries
 
 This project displays content owned or licensed by Microsoft for the purpose of education and information archiving.
 
+Halo Infinite © Microsoft Corporation. Cylix Guide was created under Microsoft's "[Game Content Usage Rules](https://www.xbox.com/en-US/developers/rules)" using assets from Halo Infinite, and it is not endorsed by or affiliated with Microsoft.
 
 
 The original assets (e.g. code) used for this website, not associated with Microsoft, are available under the ISC license.
-		
+
 
 ISC License
 

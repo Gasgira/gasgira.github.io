@@ -37,8 +37,13 @@ nav.toolbar {
 		gap: 0.5rem;
 		opacity: 0.66;
 		transition: opacity var(--time-state) linear;
+		& h1 {
+			font-size: 1.5rem;
+			font-style: bold;
+		}
 		& span {
 			font-size: 0.8rem;
+			font-style: italic;
 		}
 		& .logo {
 			margin-top: 0.5rem;

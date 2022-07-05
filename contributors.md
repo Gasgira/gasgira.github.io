@@ -1,3 +1,3 @@
-Kwatzy - Project Lead
-Jared - Community Notes
-Senful - Community Notes
+- Kwatzy - Project Maintainer
+- Jared - Community Notes
+- Senful - Community Notes

@@ -126,9 +126,9 @@ class Calendar extends Component {
 			<div class="mica_viewer calendar_wrapper" id="season-calendar">
 				<header class="mica_header-strip"><a class="mica_header-anchor" href="#season-calendar"><h2>Season Calendar</h2></a><span class="header-notice"><div class="icon-masked icon-info"></div> Content and dates subject to change.</span></header>
 				<div class="mica_main-content">
-					<nav><ul class=${`mica_nav-list ${this.state.mobileMenu ? 'show-mobile' : 'hide-mobile'}`}>
+					<ul class=${`mica_nav-list ${this.state.mobileMenu ? 'show-mobile' : 'hide-mobile'}`}>
 						${this.renderEventList()}
-					</ul></nav>
+					</ul>
 					${this.state?.rewardTrack === 'capstone' ? this.renderCapstoneCalendar() : this.state?.rewardTrack?.render() ?? this.calendar()}
 					<div class=${`mica_mobile-menu_container ${this.state.mobileMenu ? 'show-mobile' : 'hide-mobile'}`}>${this?.mobileMicaMenu.render()}</div>
 				</div>

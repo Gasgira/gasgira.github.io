@@ -68,7 +68,8 @@ module.exports = {
 		hot: true,
 		historyApiFallback: true,
 		allowedHosts: [
-			'cylix.guide'
+			'cylix.guide',
+			'hi.cylix.guide'
 		],
 		headers: {
 				'Access-Control-Allow-Origin': '*',

@@ -145,13 +145,15 @@ button.dbItemIcon {
 		left: 0.2rem;
 		opacity: 1;
 		background-color: #808080;
-		background-color: var(--rarity-event);
 		mask-size: contain;
 		mask-repeat: no-repeat;
 		mask-position: center center;
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center center;
+		&[data-season="2"] {
+			background-color: var(--rarity-event);
+		}
 	}
 }
 

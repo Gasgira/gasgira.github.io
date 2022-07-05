@@ -67,7 +67,8 @@
 			"status": "Test",
 			"value": "",
 			"translations": {}
-		}
+		},
+		"CustomAvailability": "Available in Halo Infinite’s Campaign"
 	},
 	"LightingScalarOverride": 0
 }

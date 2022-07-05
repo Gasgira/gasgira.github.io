@@ -87,7 +87,6 @@ class ItemPanel extends Component {
 
 		window.addEventListener("keydown", (event) => {
 			if (event.defaultPrevented) return;
-		
 			if (this.state.visible === true && event.key === 'Escape')
 			{
 				this.hide();
@@ -104,7 +103,7 @@ class ItemPanel extends Component {
 			visible: false,
 			item: {},
 			pretty: true,
-			copyStatus: 'Share',
+			copyStatus: 'Copy Link',
 			page: 'api',
 			community: false
 		};
@@ -131,7 +130,6 @@ class ItemPanel extends Component {
 		} else {
 			history.pushState({path: `${item?.path}`}, `Halosets`, `#item/${item?.id}`);
 		}
-		
 		// this.setState({
 		// 	item,
 		// 	visible: true,
@@ -186,14 +184,15 @@ class ItemPanel extends Component {
 					<header
 						class="dbItemPanel_header"
 					>
-						<div
+						<button
 							class="item-img"
 							style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(this.item.imagePath)})`}}
-						></div>
+							onclick=${() => modalConstructor.showView(this.renderImageModal())}
+						></button>
 						<div class=${`dbItemPanel_titles ${this.state.item.quality}`}>
 							<h2>${this?.item?.name ?? 'Item'}</h2>
 							${this?.item.isRedacted ? this.unredactButton() : ''}
-							<h3>${this?.item.isRedacted ? '' : this?.item?.data?.CommonData?.Description ?? '...'}</h3>
+							<h3>${this?.item.isRedacted ? '' : this?.item.description ?? '...'}</h3>
 						</div>
 						<button
 							class=${'favorite'}
@@ -255,24 +254,25 @@ class ItemPanel extends Component {
 						<button
 							class="hi-box"
 							aria-label="Copy shareable link"
-							title="share"
+							title="Copy Link"
 							onclick=${() => {
+								if (!navigator.clipboard) return this.setState({copyStatus: 'Browser Error!'});
 								navigator.clipboard.writeText(`https://${window?.location?.host ?? 'cylix.guide'}${this.sharePath}`)
 									.then(success => {
 										this.setState({copyStatus: 'Copied!'});
 										setTimeout(() => {
-											this.setState({copyStatus: 'Share'});
+											this.setState({copyStatus: 'Copy Link'});
 										}, 2000);
 									}, error => {
 										console.error('Copy share link', error);
 										this.setState({copyStatus: 'Error!'});
 										setTimeout(() => {
-											this.setState({copyStatus: 'Share'});
+											this.setState({copyStatus: 'Copy Link'});
 										}, 2000);
 									})
 							}}
 						>
-							<span class="icon-masked icon-share"></span> ${this.state?.copyStatus ?? 'Share'}
+							<span class="icon-masked icon-share"></span> ${this.state?.copyStatus ?? 'Copy Link'}
 						</button>
 						<div class="modified-info_wrapper">
 								<label for="item-modified-date">Modified: </label>
@@ -338,16 +338,6 @@ class ItemPanel extends Component {
 			<section
 				class="item-panel_manifest_wrapper"
 			>
-				<div
-					class="item-panel_manifest-property"
-				>
-					<label class="no-select" for="item-panel_manifest-path">Path: </label><div id="item-panel_manifest-path">${this.state.item?.path ?? 'UNK'}</div>
-				</div>
-				<div
-					class="item-panel_manifest-property"
-				>
-					<label class="no-select" for="item-panel_manifest-path">ID: </label><div id="item-panel_manifest-path">${this.state.item?.id ?? 'UNK'}</div>
-				</div>
 				<button
 					onclick=${() => this.setState({pretty: !this.state.pretty})}
 				>${this.state.pretty ? 'raw' : 'pretty'}</button>
@@ -462,6 +452,7 @@ class ItemPanel extends Component {
 			<p>To report issues or help maintain this information you may visit the <a href="https://cylix.guide/discord" target="_blank">discord.</a></p>
 			<h2>Popularity</h2>
 			<p>Item popularity represents a statistical sample of what active players are wearing in-game. Updated regularly, these stats represent fashion trends - showing the percentage of players wearing the item and the delta from the previous sample.</p>
+			<p>This information encompasses publicly visible equipped items, not private player inventories, and thus should not be interpreted in any other context than momentary fashion.</p>
 			<p>Named breaks are given to better understand how often an item may show up in an average match.</p>
 			<ul>
 				<li>Ubiquitous — Many players.</li>
@@ -475,13 +466,6 @@ class ItemPanel extends Component {
 
 	get sharePath() {
 		return `/item/${this.item.id}`;
-		// if (this.item?.path.startsWith('inventory/'))
-		// {
-		// 	const id = filenameFromPath(this.item?.path);
-		// 	if (id) return `/item/${id}`
-		// }
-
-		// return `${this.item?.path.startsWith('inventory/') ? '/share/' : '/#'}${this.item?.path ?? ''}`;
 	}
 
 	prettyJson(json) {
@@ -545,6 +529,15 @@ class ItemPanel extends Component {
 					this.render();
 				}}
 			>Reveal Spoiler</button>
+		`;
+	}
+
+	renderImageModal() {
+		return HTML.wire(this, ':imageModal')`
+			<div class="dbItemPanel_image-modal">
+				<h1>${this?.item?.name ?? 'Item'}</h1>
+				<img src=${`/${db?.dbPath ?? 'db'}/images/${db.pathCase(this.item.imagePath)}`}>
+			</div>
 		`;
 	}
 }

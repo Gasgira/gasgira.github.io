@@ -4,6 +4,7 @@ import { itemPanel } from 'db/itemPanel';
 import { Item } from 'db/item';
 import { urlParams } from 'urlParams';
 import { filenameFromPath } from 'utils/paths.js';
+import { i18n } from 'ui/i18n';
 
 class Database {
 	constructor() {
@@ -63,7 +64,8 @@ class Database {
 	async init() {
 		const [index, metadata] = await Promise.all([
 			this.getIndex(),
-			this.getMetaData()
+			this.getMetaData(),
+			// i18n.init('fr-FR')
 		]);
 
 		this.index = index;
@@ -236,6 +238,22 @@ class Database {
 		if (!index || index === 0) return defaultMan;
 		if (this.manufacturers.has(index)) return this.manufacturers.get(index);
 		return defaultMan;
+	}
+
+	get qualities() {
+		return this._qualities ??= new Set([
+			'Common',
+			'Rare',
+			'Epic',
+			'Legendary'
+		])
+	}
+
+	get seasons() {
+		return this._seasons ??= new Map([
+			[1, 'Heroes of Reach'],
+			[2, 'Lone Wolves']
+		])
 	}
 
 	get communityTags() {

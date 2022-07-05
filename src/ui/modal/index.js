@@ -43,7 +43,15 @@ class Modal extends Component {
 	render() {
 		return this.html`
 			<div class="modal_clickout" onclick=${() => modalConstructor.closeView(this)}></div>
-			<div class="modal_wrapper"><div class="modal_content">${this?.view ?? '...'}</div></div>
+			<div class="modal_wrapper">
+				<div class="modal_content">
+					<button
+						class="modal_close"
+						onclick=${() => modalConstructor.closeView(this)}
+					><div class="icon-masked icon-close"></div></button>
+					${this?.view ?? '...'}
+				</div>
+			</div>
 		`;
 	}
 }
