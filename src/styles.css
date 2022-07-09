@@ -47,6 +47,7 @@
 	--theme-active: var(--base-blue);		--theme-active-hsl: var(--base-blue-hsl);
 	--theme-error: var(--base-red);			--theme-error-hsl: var(--base-red-hsl);
 	--theme-blank: #000;
+	--theme-activate: #2ec3e5;
 
 	--rarity-legendary: #a6701b;
 	--rarity-epic: #5948b0;

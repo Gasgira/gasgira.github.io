@@ -148,6 +148,14 @@
 			&::-webkit-scrollbar {
 				display: none;
 			}
+			& a {
+				font-size: 1.2em;
+				display: inline-block;
+				background-color: hsla(var(--theme-interact-hsl), 0.1);
+				padding: 0.2em 0.4em;
+				margin: 0 0.2em;
+				border-radius: var(--theme-border-radius);
+			}
 		}
 	}
 	& .dbItemPanel_header {

@@ -130,6 +130,7 @@ class ItemPanel extends Component {
 		} else {
 			history.pushState({path: `${item?.path}`}, `Halosets`, `#item/${item?.id}`);
 		}
+		this.scrollToTop();
 		// this.setState({
 		// 	item,
 		// 	visible: true,
@@ -159,6 +160,14 @@ class ItemPanel extends Component {
 		}
 	}
 
+	scrollToTop() {
+		const el = document.querySelector(`#dbItemPanel_header`);
+		if (el)
+		{
+			el.scrollIntoView();
+		}
+	}
+
 	get item() {
 		if (this.state.item) return this.state.item;
 	}
@@ -183,6 +192,7 @@ class ItemPanel extends Component {
 				>
 					<header
 						class="dbItemPanel_header"
+						id="dbItemPanel_header"
 					>
 						<button
 							class="item-img"
@@ -338,9 +348,6 @@ class ItemPanel extends Component {
 			<section
 				class="item-panel_manifest_wrapper"
 			>
-				<button
-					onclick=${() => this.setState({pretty: !this.state.pretty})}
-				>${this.state.pretty ? 'raw' : 'pretty'}</button>
 				<pre class="dbItemPanel_json">${{html: this.state.pretty ? this.prettyJson(this.state?.item?.data ?? {}) : JSON.stringify(this.state.item?.data, null, "\t")}}</pre>
 			</section>
 		`;
@@ -475,14 +482,30 @@ class ItemPanel extends Component {
 				// item links
 				if (value.substring(value.length -5) === '.json')
 				{
-					return `<a href=${`#${value}`}>${value}</a>`;
+					const name = filenameFromPath(value);
+					const meta = db.getItemManifestByID(name);
+					if (meta)
+					{
+						return `<a href=${`#item/${meta.name}`}>${meta.title}</a>`;
+					} else {
+						return `<a href=${`#${value}`}>${value}</a>`;
+					}
 				}
 				// image links
 				if (value.substring(value.length -4) === '.png')
 				{
-					return `<a href=${`/${db?.dbPath ?? 'db'}/images/${db.pathCase(value)}`} target="_blank">${value}</a>`;
+					return `<a href=${`/${db?.dbPath ?? 'db'}/images/${db.pathCase(value)}`} target="_blank">PNG</a>`;
 				}
 			}
+			if ((key === 'Id' || key === 'AltName') && value && typeof value === 'string')
+			{
+				const meta = db.getItemManifestByID(value);
+				if (meta)
+				{
+					return `<a href=${`#item/${meta.name}`}>${meta.title}</a>`;
+				}
+			}
+			if (key === 'FileName') return '';
 
 			// default
 			return value;
