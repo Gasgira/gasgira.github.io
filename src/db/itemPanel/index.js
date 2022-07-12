@@ -126,9 +126,9 @@ class ItemPanel extends Component {
 	displayItem(item, skipState) {
 		// check if is of class Item...
 		if (skipState) {
-			history.replaceState({path: `${item?.path}`}, `Halosets`, `#item/${item?.id}`);
+			history.replaceState({path: `${item?.path}`}, `Halosets`, `#item/${item.rid}`);
 		} else {
-			history.pushState({path: `${item?.path}`}, `Halosets`, `#item/${item?.id}`);
+			history.pushState({path: `${item?.path}`}, `Halosets`, `#item/${item.rid}`);
 		}
 		this.scrollToTop();
 		// this.setState({
@@ -494,7 +494,8 @@ class ItemPanel extends Component {
 				// image links
 				if (value.substring(value.length -4) === '.png')
 				{
-					return `<a href=${`/${db?.dbPath ?? 'db'}/images/${db.pathCase(value)}`} target="_blank">PNG</a>`;
+					// return `<a href=${`/${db?.dbPath ?? 'db'}/images/${db.pathCase(value)}`} target="_blank">PNG</a>`;
+					return '';
 				}
 			}
 			if ((key === 'Id' || key === 'AltName') && value && typeof value === 'string')
@@ -502,7 +503,8 @@ class ItemPanel extends Component {
 				const meta = db.getItemManifestByID(value);
 				if (meta)
 				{
-					return `<a href=${`#item/${meta.name}`}>${meta.title}</a>`;
+					// return `<a href=${`#item/${meta.name}`}>${meta.title}</a>`;
+					return `${meta.title}`;
 				}
 			}
 			if (key === 'FileName') return '';

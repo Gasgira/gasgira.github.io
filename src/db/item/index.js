@@ -3,6 +3,7 @@ import { itemPanel } from 'db/itemPanel';
 import { Component } from 'component';
 import { HTML } from 'lib/HTML';
 import { i18n } from 'ui/i18n';
+import { nanohash } from 'utils/strings.js';
 
 import './index.css';
 
@@ -55,6 +56,17 @@ export class Item extends Component {
 
 	get id() {
 		return this?._id ?? (this._id = db.itemPathToID(this.path));
+	}
+
+	get rid() {
+		if (this._rid) return this._rid;
+		const id = this?._id ?? (this._id = db.itemPathToID(this.path));
+		const split = id.split('-');
+		if (split.length === 4)
+		{
+			return (this._rid = `${split.slice(0,3).join('-')}-${nanohash()}`);
+		}
+		return (this._rid = id);
 	}
 
 	get name() {
