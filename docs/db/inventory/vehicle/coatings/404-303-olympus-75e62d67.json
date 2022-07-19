@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "404-303-olympus-75e62d67",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Banished Deception",
 		"Description": "Custom paint and materials.",
 		"FeatureFlag": true,
