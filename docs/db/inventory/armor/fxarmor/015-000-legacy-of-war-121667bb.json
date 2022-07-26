@@ -4,7 +4,7 @@
 	],
 	"CommonData": {
 		"Id": "015-000-legacy-of-war-121667bb",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "March of War",
 		"Description": "Die on your feet.",
 		"FeatureFlag": false,

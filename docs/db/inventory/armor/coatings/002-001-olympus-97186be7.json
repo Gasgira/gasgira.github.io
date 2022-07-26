@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "002-001-olympus-97186be7",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Kaolin Strand",
 		"Description": "The \"sand\" of the Kaolin Strand is comprised of countless inert Forerunner machine-cells.",
 		"FeatureFlag": true,

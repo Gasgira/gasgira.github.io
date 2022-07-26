@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "002-001-eag-81fa849a",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Frontier Outrider",
 		"Description": "A specialist in spotting danger before it arrives on the doorstep.",
 		"FeatureFlag": true,

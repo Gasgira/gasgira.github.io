@@ -9,7 +9,7 @@
 	},
 	"CommonData": {
 		"Id": "012-001-cbabd291",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Knife Dancer",
 		"Description": "That's a killer move.",
 		"FeatureFlag": true,

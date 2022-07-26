@@ -14,7 +14,7 @@
 	],
 	"CommonData": {
 		"Id": "104-001-funkygrenade-a9ff1c93",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Pineapple Surprise",
 		"Description": "Do not serve to pilots.",
 		"FeatureFlag": true,

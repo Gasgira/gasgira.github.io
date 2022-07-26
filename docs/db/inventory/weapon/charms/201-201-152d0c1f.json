@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "201-201-152d0c1f",
-		"HideUntilOwned": false,
+		"HideUntilOwned": true,
 		"Title": "Tactical Clippy",
 		"Description": "It looks like you're trying to defeat the Banished. Need some help?",
 		"FeatureFlag": true,

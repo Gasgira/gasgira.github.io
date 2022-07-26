@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "405-305-efba5839",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Tagdaemon",
 		"Description": "Straight from the mean streets of Redmond.",
 		"FeatureFlag": true,

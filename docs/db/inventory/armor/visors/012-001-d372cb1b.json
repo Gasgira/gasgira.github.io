@@ -9,7 +9,7 @@
 	},
 	"CommonData": {
 		"Id": "012-001-d372cb1b",
-		"HideUntilOwned": false,
+		"HideUntilOwned": true,
 		"Title": "Sapphire Front",
 		"Description": "There are not enough Spartans left to waste on anything but the most ambitious heroics.",
 		"FeatureFlag": true,

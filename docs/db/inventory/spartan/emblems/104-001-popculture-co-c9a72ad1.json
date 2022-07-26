@@ -26,7 +26,7 @@
 	],
 	"CommonData": {
 		"Id": "104-001-popculture-co-c9a72ad1",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Riveting",
 		"Description": "We can hack it!",
 		"FeatureFlag": true,

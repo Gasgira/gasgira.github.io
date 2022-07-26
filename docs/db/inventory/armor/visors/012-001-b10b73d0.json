@@ -9,7 +9,7 @@
 	},
 	"CommonData": {
 		"Id": "012-001-b10b73d0",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Tactical Recursion",
 		"Description": "For there to be a tomorrow, we must win today.",
 		"FeatureFlag": true,

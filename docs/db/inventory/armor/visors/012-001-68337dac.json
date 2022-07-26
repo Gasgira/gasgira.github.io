@@ -9,7 +9,7 @@
 	},
 	"CommonData": {
 		"Id": "012-001-68337dac",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Desert Gold",
 		"Description": "The finest materials, for the finest warriors.",
 		"FeatureFlag": true,

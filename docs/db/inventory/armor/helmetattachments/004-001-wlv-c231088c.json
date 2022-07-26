@@ -36,7 +36,7 @@
 			"Media": {
 				"MediaUrl": {
 					"AuthorityId": "",
-					"Path": "progression/Inventory/Armor/HelmetAttachments/004-001-wlv-c231088c-SM.png",
+					"Path": "progression/Inventory/Armor/HelmetAttachments/004-001-wlv-db2a39cd-SM.png",
 					"RetryPolicyId": "",
 					"TopicName": "",
 					"AcknowledgementTypeId": "NoAcknowledgement",
@@ -51,7 +51,7 @@
 			},
 			"MimeType": "image/png",
 			"FolderPath": "progression/Inventory/Armor/HelmetAttachments",
-			"FileName": "004-001-wlv-c231088c-SM.png"
+			"FileName": "004-001-wlv-db2a39cd-SM.png"
 		},
 		"Quality": "Epic",
 		"ManufacturerId": 6,

@@ -8,7 +8,7 @@
 	},
 	"CommonData": {
 		"Id": "404-304-olympus-1c0c790c",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Mystic Shark",
 		"Description": "With Cortana eliminated, there is blood in the water.",
 		"FeatureFlag": true,

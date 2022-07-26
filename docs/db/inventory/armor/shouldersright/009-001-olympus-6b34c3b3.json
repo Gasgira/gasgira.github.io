@@ -18,7 +18,7 @@
 	],
 	"CommonData": {
 		"Id": "009-001-olympus-6b34c3b3",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "UA/Farah",
 		"Description": "Supplemental deltoid/shoulder armor.",
 		"FeatureFlag": true,

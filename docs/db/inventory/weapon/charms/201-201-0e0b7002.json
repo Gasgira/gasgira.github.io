@@ -14,7 +14,7 @@
 	"MeshIndex": 0,
 	"CommonData": {
 		"Id": "201-201-0e0b7002",
-		"HideUntilOwned": true,
+		"HideUntilOwned": false,
 		"Title": "Chiefster",
 		"Description": "Get 'em!",
 		"FeatureFlag": true,
