@@ -1,0 +1,34 @@
+{
+	"OfferingId": "20220408-03",
+	"OfferingDisplayPath": "StoreContent/Display/Offerings/20220408-03.json",
+	"OfferingExpirationDate": null,
+	"IncludedItems": [
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Vehicle/Coatings/404-306-olympus-1c0c790c.json",
+			"ItemType": "VehicleCoating"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Vehicle/Coatings/404-304-olympus-1c0c790c.json",
+			"ItemType": "VehicleCoating"
+		},
+		{
+			"Amount": 1,
+			"ItemPath": "Inventory/Vehicle/Coatings/404-300-olympus-1c0c790c.json",
+			"ItemType": "VehicleCoating"
+		}
+	],
+	"Prices": [
+		{
+			"Cost": 400,
+			"CurrencyPath": "Currency/Currencies/cR.json"
+		}
+	],
+	"IncludedCurrencies": [],
+	"IncludedRewardTracks": [],
+	"BoostPath": null,
+	"OperationXp": 0,
+	"EventXp": 0,
+	"MatchBoosts": null
+}
