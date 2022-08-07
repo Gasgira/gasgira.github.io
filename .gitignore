@@ -1,6 +1,8 @@
 /db/
 /dump/
 /assets/
+/staging/
+*.code-workspace
 
 # Logs
 logs

@@ -5,6 +5,8 @@ import { db } from 'db';
 import { Item, placeholderItem } from 'db/item';
 import { urlParams } from 'urlParams';
 import { MobileMicaMenu } from 'ui/mica';
+import { filenameFromPath } from 'utils/paths.js';
+import { STATIC_ROOT } from 'environment';
 
 import './index.css';
 
@@ -26,8 +28,9 @@ class Calendar extends Component {
 		if (this?._init) return;
 		this._init = true;
 
-		const calendarPath = 'Calendars/Seasons/SeasonCalendar.json';
-		this.data = await db.getJSON(calendarPath);
+		const calendarMeta = db.getItemManifestByID('seasoncalendar');
+		if (!calendarMeta) return;
+		this.data = await db.getJSON(`item/${calendarMeta.name}/${calendarMeta.res}.json`);
 		this.events = [];
 		this.operations = [];
 
@@ -242,7 +245,7 @@ class Calendar extends Component {
 							>
 								<div
 									class="event-bg"
-									style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(operation.rewardTrack?.data?.SummaryImagePath)})`}}
+									style=${{backgroundImage: `url(${STATIC_ROOT}images/${db.pathCase(operation.rewardTrack?.data?.SummaryImagePath)})`}}
 								></div>
 								<button
 									onclick=${() => this.showRewardTrack(operation.rewardTrack)}
@@ -275,7 +278,7 @@ class Calendar extends Component {
 							>
 								<div
 									class=${`event-bg${event.isPast ? ' past' : ''}`}
-									style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(event.rewardTrack?.data?.SummaryImagePath)})`}}
+									style=${{backgroundImage: `url(${STATIC_ROOT}images/${db.pathCase(event.rewardTrack?.data?.SummaryImagePath)})`}}
 								></div>
 								<button
 									onclick=${() => this.showRewardTrack(event.rewardTrack)}
@@ -304,18 +307,18 @@ class Calendar extends Component {
 		const weekToCalendarItem = async (week) => {
 			if (!week.deck) return;
 
-			const deck = new Item(week?.deck ?? 'unknown');
+			const deck = new Item({ path: week?.deck ?? 'unknown' });
 			if (!deck) return;
 
 			await deck.init();
 			const capstoneChallengePath = deck?.data?.CapstoneChallengePath;
 			if (!capstoneChallengePath) return;
 
-			const capstoneChallenge = new Item(capstoneChallengePath);
+			const capstoneChallenge = new Item({ path: capstoneChallengePath });
 			await capstoneChallenge.init();
 			if (!capstoneChallenge) return;
 
-			const inventoryReward = new Item(capstoneChallenge?.data?.Reward?.InventoryRewards?.[0]?.InventoryItemPath);
+			const inventoryReward = new Item({ path: capstoneChallenge?.data?.Reward?.InventoryRewards?.[0]?.InventoryItemPath });
 			if (!inventoryReward) return;
 
 			const startDate = new Date(week.startDate);
@@ -340,7 +343,7 @@ class Calendar extends Component {
 						any: inventoryReward.renderIcon('capstone', {itemTypeIcon: true}),
 						placeholder: placeholderItem.cloneNode(true)
 					}}
-					<a class="challenge-link" href=${`#${capstoneChallengePath}`}>${capstoneChallenge?.data?.Title}</a>
+					<a class="challenge-link" href=${`#item/${filenameFromPath(capstoneChallengePath)}`}>${capstoneChallenge?.data?.Title}</a>
 				</li>
 			`;
 		}
@@ -427,7 +430,9 @@ class RewardTrack extends Component {
 	}
 
 	async init() {
-		this.data = await db.getJSON(this.path);
+		this.item = new Item({ path: this.path });
+		await this.item.init();
+		this.data = this.item.data;
 		// this.renderRewardList();
 	}
 
@@ -460,13 +465,13 @@ class RewardTrack extends Component {
 						<ul class="rank_reward-items free">
 							${rank?.FreeRewards?.InventoryRewards?.map(reward => {
 								return HTML.wire()`<li>${{
-									any: new Item(reward?.InventoryItemPath).renderIcon('reward', {itemTypeIcon: true}),
+									any: new Item({ path: reward?.InventoryItemPath }).renderIcon('reward', {itemTypeIcon: true}),
 									placeholder: placeholderItem.cloneNode(true)
 								}}</li>`
 							})}
 							${rank?.FreeRewards?.CurrencyRewards?.map(reward => {
 								return HTML.wire()`<li class="currency" data-quantity=${parseInt(reward?.Amount)}>${{
-									any: new Item(reward?.CurrencyPath).renderIcon(`${rank.Rank}-${performance.now()}`),
+									any: new Item({ path: reward?.CurrencyPath }).renderIcon(`${rank.Rank}-${performance.now()}`),
 									placeholder: placeholderItem.cloneNode(true)
 								}}</li>`
 							})}
@@ -474,13 +479,13 @@ class RewardTrack extends Component {
 						<ul class="rank_reward-items paid">
 							${rank?.PaidRewards?.InventoryRewards?.map(reward => {
 								return HTML.wire()`<li>${{
-									any: new Item(reward?.InventoryItemPath).renderIcon('reward', {itemTypeIcon: true}),
+									any: new Item({ path: reward?.InventoryItemPath }).renderIcon('reward', {itemTypeIcon: true}),
 									placeholder: placeholderItem.cloneNode(true)
 								}}</li>`
 							})}
 							${rank?.PaidRewards?.CurrencyRewards?.map(reward => {
 								return HTML.wire()`<li class="currency" data-quantity=${parseInt(reward?.Amount)}>${{
-									any: new Item(reward?.CurrencyPath).renderIcon(`${rank.Rank}-${performance.now()}`),
+									any: new Item({ path: reward?.CurrencyPath }).renderIcon(`${rank.Rank}-${performance.now()}`),
 									placeholder: placeholderItem.cloneNode(true)
 								}}</li>`
 							})}

@@ -76,6 +76,14 @@ export class EventEmitter {
 		return this;
 	}
 
+	clearAll() {
+		if (this.listeners.size)
+		{
+			// this.listeners.forEach((value, key) => this.listeners.delete(key));
+			this.listeners.clear();
+		}
+	}
+
 	/**
 	 *
 	 *

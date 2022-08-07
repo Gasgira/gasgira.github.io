@@ -434,18 +434,18 @@ class Core extends Component {
 		try {
 			if (this.core) return;
 			this._core = {};
-			const core = new Item({ id: this.id });
+			// const core = new Item({ id: this.id });
+			const core = await db.getItem({ id: this.id });
 			if (core)
 			{
-				await core.init();
 				this._core = core;
 				console.log('coreinit', this.core);
 		
 				const themeID = filenameFromPath(this.core?.data?.Themes?.DefaultOptionPath);
 				if (themeID && db.manifestHasID(themeID))
 				{
-					const theme = new Item({ id: themeID });
-					await theme.init();
+					// const theme = new Item({ id: themeID });
+					const theme = await db.getItem({ id: themeID });
 					this._theme = theme;
 					console.log('themeinit', this.theme);
 

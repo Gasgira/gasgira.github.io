@@ -135,6 +135,11 @@ button.dbItemIcon {
 			right: 0.1rem;
 			--typeLength: 1.7rem;
 		}
+		&.emblem {
+			top: 0.2rem;
+			right: 0.2rem;
+			--typeLength: 1.2rem;
+		}
 	}
 	& .season-icon {
 		--seasonLength: 1rem;

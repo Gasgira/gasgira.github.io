@@ -4,12 +4,13 @@ const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
 	mode: 'production',
 	entry: './src',
 	output: {
-		filename: '[name].[hash].js', // contenthash
+		filename: '[name].[contenthash].js',
 		path: path.resolve(__dirname, './docs'),
 		publicPath: '/'
 	},
@@ -91,13 +92,13 @@ module.exports = {
 		}
 	},
 	plugins: [
-		new webpack.DefinePlugin({
-			'process.env': {
-				__BUILD__: JSON.stringify(new Date()),
-				__VERSION__: JSON.stringify(process.env.npm_package_version),
-				__DEBUG__: JSON.stringify(true)
-			}
-		}),
+		// new webpack.DefinePlugin({
+		// 	'process.env': {
+		// 		__BUILD__: JSON.stringify(new Date()),
+		// 		__VERSION__: JSON.stringify(process.env.npm_package_version),
+		// 		__DEBUG__: JSON.stringify(true)
+		// 	}
+		// }),
 		new webpack.HotModuleReplacementPlugin(),
 		new CleanWebpackPlugin({
 			cleanOnceBeforeBuildPatterns: [
@@ -106,6 +107,7 @@ module.exports = {
 				'!sitemap.xml*',
 				'!robots.txt*',
 				'!404.html*',
+				'!_redirects',
 				'!db/**',
 				'!7/**',
 				'!i18n/**'
@@ -125,6 +127,9 @@ module.exports = {
 					context: 'src/assets/'
 				}
 			],
+		}),
+		new Dotenv({
+			path: './.env'
 		})
 	]
 }

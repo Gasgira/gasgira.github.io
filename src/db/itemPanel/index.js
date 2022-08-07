@@ -4,6 +4,7 @@ import { Component } from 'component';
 import { HTML } from 'lib/HTML';
 import { filenameFromPath } from 'utils/paths.js';
 import { modalConstructor } from 'ui/modal';
+import { STATIC_ROOT } from 'environment';
 
 import './index.css';
 
@@ -52,7 +53,7 @@ class RelatedItems extends Component {
 	}
 
 	getDisplayedItems() {
-		return (this.state.items = [...this.displayedItemIDs].map(id => new Item(db.getItemPathByID(id))));
+		return (this.state.items = [...this.displayedItemIDs].map(id => new Item({ id })));
 	}
 
 	get initialItemsDisplayed() {
@@ -81,6 +82,156 @@ class RelatedItems extends Component {
 	}
 }
 
+class Palettes extends Component {
+	constructor() {
+		super();
+		this.types = new Set([
+			'SpartanEmblem',
+			// 'ArmorEmblem',
+			// 'WeaponEmblem',
+			// 'VehicleEmblem'
+		]);
+
+		this.playerTag = 'Cylix Guide'
+	}
+
+	get defaultState() {
+		return {
+			configs: new Map(),
+			expanded: false
+		};
+	}
+
+	get item() {
+		if (this.state.item) return this.state.item;
+	}
+
+	getEmblemColor(config) {
+		if (this.emblemColors && this.emblemColors.has(config)) return this.emblemColors.get(config);
+		return '#FFFFFF';
+	}
+
+	async init() {
+		if (this.emblemColors) return;
+		this.emblemColors = await db.getEmblemColorIndex();
+	}
+
+	display(item) {
+		const expanded = this.state.expanded;
+		this.state = this.defaultState;
+		this.state.expanded = expanded;
+		if (!this.types.has(item?.type)) return;
+		try {
+			if (item && item?.data?.AvailableConfigurations)
+			{
+				const configurations = item.data.AvailableConfigurations;
+				configurations.forEach(configuration => {
+					this.state.configs.set(`${configuration.ConfigurationId}`, {
+						title: this.resolveConfigName(configuration.ConfigurationPath) ?? configuration.ConfigurationId
+					})
+				});
+				this.state.item = item;
+			}
+		} catch (error) {
+			console.error(`[ItemPanel.Palettes]`, error);
+		}
+	}
+
+	get configs() {
+		return this.state.expanded ? [...this.state.configs] : [...this.state.configs].slice(0, 1);
+	}
+
+	render() {
+		if (this.state.item && this.state.item.type === 'SpartanEmblem')
+		{
+			return this.html`
+				<div class="palettes_wrapper">
+					<header>Emblem Palettes // ${this.state.configs.size}</header>
+					<ul class="palettes_list">
+						${this.configs.map(([config, properties]) => HTML.wire(this, `:${config}`)`
+							<li>
+								<div class="palettes_nameplate_wrapper">
+									<img
+										class="palettes_nameplate"
+										src=${`${STATIC_ROOT}images/nameplates/${this.nameplateFilename(config)}.png`}
+										width="1280"
+										height="240"
+									>
+									<div class="nameplate_content">
+										<img
+											class="palettes_emblem"
+											src=${`${STATIC_ROOT}images/emblems/${this.nameplateFilename(config)}.png`}
+											width="240"
+											height="240"
+										>
+										<div class="nametag_wrapper" style=${{color: this.getEmblemColor(config)}}>
+											<span class="nametag_player">${this.playerName ?? properties?.title ?? '...'}</span>
+											<span class="nametag_service">${this.playerTag ?? config}</span>
+										</div>
+									</div>
+								</div>
+							</li>
+						`)}
+					</ul>
+					${this.state.configs.size > 1 ? this.showMoreButton() : ''}
+				</div>
+			`;
+		}
+		if (this.state.item)
+		{
+			return this.html`
+				<div class="palettes_wrapper">
+					<header>Emblem Palettes // ${this.state.configs.size}</header>
+					<ul class="palettes_list">
+						${[...this.state.configs].map(([config, properties]) => HTML.wire(this, `:${config}`)`
+							<li class="palettes_emblem_wrapper">
+								<img
+									src=${`${STATIC_ROOT}images/nameplates/${this.nameplateFilename(config)}.png`}
+								>
+								<span class="nametag_player">${this.playerName ?? properties?.title ?? '...'}</span>
+							</li>
+						`)}
+					</ul>
+				</div>
+			`;
+		}
+	}
+
+	resolveConfigName(path) {
+		try {
+			if (path)
+			{
+				const id = db.itemPathToID(path);
+				const meta = db.getItemManifestByID(id);
+				if (meta) return meta.title;
+			}
+		} catch (error) {
+			console.error(`[Palettes.resolveConfigName]`, error);
+		}
+	}
+
+	nameplateFilename(config) {
+		const configName = `${config}`.replace('-', 'n');
+		const id = this.item.id;
+		if (this.item.type === 'SpartanEmblem') return `${id}_${configName}`;
+	}
+
+	showMoreButton() {
+		return HTML.wire(this, ':more')`
+			<div
+				class="related-items_show-more_wrapper"
+			>
+				<button
+					class="hi-box"
+					onclick=${() => this.setState({expanded: !this.state.expanded})}
+				>
+					${this.state.expanded ? 'Show Less Emblems' : 'Show More Emblems'}
+				</button>
+			</div>
+		`;
+	}
+}
+
 class ItemPanel extends Component {
 	constructor() {
 		super();
@@ -96,6 +247,8 @@ class ItemPanel extends Component {
 
 		this.internalRelationsPage = new RelatedItems('Internal');
 		this.externalRelationsPage = new RelatedItems('External');
+
+		this.palettes = new Palettes();
 	}
 
 	get defaultState() {
@@ -131,11 +284,6 @@ class ItemPanel extends Component {
 			history.pushState({path: `${item?.path}`}, `Halosets`, `#item/${item?.id}`);
 		}
 		this.scrollToTop();
-		// this.setState({
-		// 	item,
-		// 	visible: true,
-		// 	relations: undefined
-		// });
 		this.state = {
 			...this.defaultState,
 			item,
@@ -143,29 +291,25 @@ class ItemPanel extends Component {
 			page: this.state.page,
 			community: this.state.community
 		}
-		this.render();
 		document.body.style.overflow = 'hidden';
 
 		this.internalRelationsPage.init();
 		this.externalRelationsPage.init();
 
-		if (this.state.page === 'internal')
-		{
-			this.showInternalRelations();
-		}
+		this.palettes.display(item);
 
-		if (this.state.page === 'external')
-		{
-			this.showExternalRelations();
-		}
+		this.render();
+
+		if (this.palettes.types.has(item.type)) this.palettes.init();
+
+		if (this.state.page === 'internal') this.showInternalRelations();
+		if (this.state.page === 'external') this.showExternalRelations();
+		if (this.state.page === 'palettes') this.showPalettes();
 	}
 
 	scrollToTop() {
 		const el = document.querySelector(`#dbItemPanel_header`);
-		if (el)
-		{
-			el.scrollIntoView();
-		}
+		if (el) el.scrollIntoView();
 	}
 
 	get item() {
@@ -196,22 +340,25 @@ class ItemPanel extends Component {
 					>
 						<button
 							class="item-img"
-							style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(this.item.imagePath)})`}}
+							style=${{backgroundImage: `url(${STATIC_ROOT}images/${db.pathCase(this.item.imagePath)})`}}
 							onclick=${() => modalConstructor.showView(this.renderImageModal())}
 						></button>
 						<div class=${`dbItemPanel_titles ${this.state.item.quality}`}>
-							<h2>${this?.item?.name ?? 'Item'}</h2>
+							<span class="titles_wrapper">
+								<h2>${this?.item?.name ?? 'Item'}</h2>
+								<h3>${this?.item?.untranslatedName ?? '...'}</h3>
+							</span>
 							${this?.item.isRedacted ? this.unredactButton() : ''}
-							<h3>${this?.item.isRedacted ? '' : this?.item.description ?? '...'}</h3>
+							<span class="description">${this?.item.isRedacted ? '' : this?.item.description ?? '...'}</span>
 						</div>
 						<button
 							class=${'favorite'}
 							onclick=${() => {
 								if (!this.state.item?.data?.CommonData) return;
-								db.toggleFavorite(this.state.item.path);
+								db.toggleFavorite(this.item);
 								this.render();
 							}}
-							style=${{backgroundImage: `url(/items.svg#${db.favoriteItemPaths.has(this.state.item.path) ? 'favored' : 'unfavored'})`}}
+							style=${{backgroundImage: `url(/items.svg#${db.favoriteItemIDs.has(this.item.id) ? 'favored' : 'unfavored'})`}}
 						></button>
 					</header>
 					<div class="item-meta_wrapper">
@@ -234,7 +381,7 @@ class ItemPanel extends Component {
 							<div class="badge">
 								<div
 									class="badge-icon"
-									style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(this.state.item?.manufacturerImage)})`}}
+									style=${{backgroundImage: `url(${STATIC_ROOT}images/${db.pathCase(this.state.item?.manufacturerImage)})`}}
 								></div>
 								<span class="badge">${this.state.item?.manufacturerName ?? ''}</span>
 							</div>
@@ -250,11 +397,11 @@ class ItemPanel extends Component {
 						<span class="attribute">
 							${this.state.item?.parentPaths ? `Applies to: ` : ''}
 							${[...this.state.item?.parentPaths ?? []].map(async path => {
-								const id = filenameFromPath(path);
+								const id = db.itemPathToID(path);
 								const meta = db.getItemManifestByID(id);
 								if (!meta) return '';
 
-								return `<a class="parentSocket" href=${`#${meta.path}`}>${meta.title}</a>`
+								return `<a class="parentSocket" href=${`#item/${meta.name}`}>${db.getItemTitleById(id)}</a>`
 							})}
 						</span>
 					</div>
@@ -284,18 +431,9 @@ class ItemPanel extends Component {
 						>
 							<span class="icon-masked icon-share"></span> ${this.state?.copyStatus ?? 'Copy Link'}
 						</button>
-						<div class="modified-info_wrapper">
-								<label for="item-modified-date">Modified: </label>
-								<button id="item-modified-date"
-									onclick=${() => modalConstructor.showView(this.renderDates())}
-								>
-									${this?.item?.lastModifiedDate?.toLocaleDateString(undefined, {
-										year: 'numeric', month: 'numeric', day: 'numeric'
-									}) ?? 'untracked'}
-								</button>
-						</div>
 					</section>
 					${this.renderCommunity()}
+					${() => this.palettes.types.has(this.item.type) ? this.palettes.render() : ''}
 					<ul class="page-list">
 						<li>
 							<button
@@ -348,6 +486,18 @@ class ItemPanel extends Component {
 			<section
 				class="item-panel_manifest_wrapper"
 			>
+				<div
+					class="item-panel_manifest-property"
+				>
+					<label class="no-select" for="item-panel_manifest-path">Last Modified: </label>
+					<div id="item-panel_manifest-path">${this?.item?.lastModifiedDate?.toLocaleDateString(undefined, {
+						year: 'numeric', month: 'numeric', day: 'numeric'
+					}) ?? 'untracked'}
+					</div>
+				<button
+					onclick=${async () => modalConstructor.showView(await this.renderHistoryMenu())}
+				>Compare Versions</button>
+				</div>
 				<pre class="dbItemPanel_json">${{html: this.state.pretty ? this.prettyJson(this.state?.item?.data ?? {}) : JSON.stringify(this.state.item?.data, null, "\t")}}</pre>
 			</section>
 		`;
@@ -366,7 +516,7 @@ class ItemPanel extends Component {
 		if (rank === 1) return 'first';
 		if (rank === 2) return 'second';
 		if (rank === 3) return 'third';
-		return 'Unknown';
+		return rank;
 	}
 
 	renderCommunity() {
@@ -409,7 +559,7 @@ class ItemPanel extends Component {
 							<br/>
 							<span class="community_pop">
 								<span>${this.popularityBucket(cur)} — ${(parseFloat(cur) * 100).toFixed(2)}%</span>
-								<span class="community_pop-delta ${deltaClass}">${deltaSymbol} ${delta}%</span>
+								<span class="community_pop-delta ${deltaClass}" title="Change from last week.">${deltaSymbol} ${delta}%</span>
 								${!community?.stats?.rank ? '' : `<br/>Ranked ${this.popularityRank(community?.stats?.rank ?? 0)} for type <span class="community_pop-type">${db.getItemType(this.state.item?.type)}</span>`}
 							</span>
 						</div>`);
@@ -423,7 +573,7 @@ class ItemPanel extends Component {
 				class="item-panel_community_wrapper"
 			>
 				<header>
-					Community Notes
+					Cylix Guide Community Notes
 					<aside>
 						<button
 							onclick=${() => modalConstructor.showView(this.renderCommunityDisclaimer())}
@@ -442,12 +592,19 @@ class ItemPanel extends Component {
 		`;
 	}
 
-	renderDates() {
+	async renderHistoryMenu() {
+		const history = new Map(await db.getHistoryByID(this.item.id) ?? []);
 		return HTML.wire(this, ':modDates')`
 			<header>${this.state.item.name}</header>
-			<p>API updates were logged for these dates:</p>
+			<p>[Diffing tool coming soon] API updates were logged for these dates:</p>
 			<ul>
-				${{html: this.state.item.manifestItem.touched.map(dateString => `${new Date(dateString).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}`).join('<br/>')}}
+				${[...history].map(([date, hash]) => HTML.wire(this.item, `:history-${date}`)`
+					<li>
+						<button
+							onclick=${() => console.log(hash)}
+						>${new Date(date).toLocaleDateString()}</button>
+					</li>
+				`)}
 			</ul>
 		`;
 	}
@@ -482,11 +639,11 @@ class ItemPanel extends Component {
 				// item links
 				if (value.substring(value.length -5) === '.json')
 				{
-					const name = filenameFromPath(value);
+					const name = db.itemPathToID(value);
 					const meta = db.getItemManifestByID(name);
 					if (meta)
 					{
-						return `<a href=${`#item/${meta.name}`}>${meta.title}</a>`;
+						return `<a href=${`#item/${meta.name}`}>${db.getItemTitleById(meta.name)}</a>`;
 					} else {
 						return `<a href=${`#${value}`}>${value}</a>`;
 					}
@@ -494,7 +651,7 @@ class ItemPanel extends Component {
 				// image links
 				if (value.substring(value.length -4) === '.png')
 				{
-					return `<a href=${`/${db?.dbPath ?? 'db'}/images/${db.pathCase(value)}`} target="_blank">PNG</a>`;
+					return `<a href=${`${STATIC_ROOT}images/${db.pathCase(value)}`} target="_blank">PNG</a>`;
 				}
 			}
 			if ((key === 'Id' || key === 'AltName') && value && typeof value === 'string')
@@ -502,7 +659,7 @@ class ItemPanel extends Component {
 				const meta = db.getItemManifestByID(value);
 				if (meta)
 				{
-					return `<a href=${`#item/${meta.name}`}>${meta.title}</a>`;
+					return `<a href=${`#item/${meta.name}`}>${db.getItemTitleById(meta.name)}</a>`;
 				}
 			}
 			if (key === 'FileName') return '';
@@ -522,6 +679,11 @@ class ItemPanel extends Component {
 		const relations = await this.getRelations();
 		this.externalRelationsPage.init(new Set(relations?.external ?? []));
 		this.setState({page: 'external'});
+	}
+
+	async showPalettes() {
+		this.palettes.display(this.item);
+		this.setState({page: 'palettes'});
 	}
 
 	async getRelations() {
@@ -559,7 +721,7 @@ class ItemPanel extends Component {
 		return HTML.wire(this, ':imageModal')`
 			<div class="dbItemPanel_image-modal">
 				<h1>${this?.item?.name ?? 'Item'}</h1>
-				<img src=${`/${db?.dbPath ?? 'db'}/images/${db.pathCase(this.item.imagePath)}`}>
+				<img src=${`${STATIC_ROOT}images/${db.pathCase(this.item.imagePath)}`}>
 			</div>
 		`;
 	}

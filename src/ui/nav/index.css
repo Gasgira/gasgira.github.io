@@ -89,4 +89,40 @@ nav.toolbar {
 			transition: transform var(--time-active) linear;
 		}
 	}
+	& .menu_wrapper {
+		position: relative;
+		cursor: pointer;
+		& .menu_list_wrapper {
+			padding: 0.5rem 0;
+			position: absolute;
+			right: 0;
+			top: 80%;
+			z-index: 9999;
+			& .menu_list {
+				display: flex;
+				flex-direction: column;
+				justify-content: right;
+				align-items: flex-end;
+				padding: 0.2rem;
+				background-color: var(--bg0);
+				width: 12em;
+				max-width: 80vw;
+				box-shadow: 0 1rem 1rem rgba(0,0,0,0.25);
+				animation: fade-in var(--time-active) linear;
+				border-radius: var(--theme-border-radius);
+				& li {
+					width: 100%;
+					& button {
+						width: 100%;
+						display: flex;
+						flex-direction: row;
+						justify-content: flex-end;
+						& span {
+							margin-right: 0.2em;
+						}
+					}
+				}
+			}
+		}
+	}
 }

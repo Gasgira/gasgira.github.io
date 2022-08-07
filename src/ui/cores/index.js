@@ -60,7 +60,10 @@ class CoreViewer extends Component {
 			// console.log('ct init', paramCoreType);
 			const coreName = urlParams.getSecionSetting('coreName', { dash: true });
 			if (coreName) this.showCoreByName(coreName);
-		} else {
+		}
+
+		if (!this.state.core)
+		{
 			this.showCoreType('ArmorCore', true);
 			this.showCore(this.state?.coreType?.[0], true);
 		}
@@ -113,7 +116,7 @@ class CoreViewer extends Component {
 			</div>
 		`;
 	}
-  
+
 	coreList() {
 		return HTML.wire(this, ':coreList')`
 			${this.state.coreType.map(core => HTML.wire(core, ':nav')`<li><button
@@ -125,7 +128,7 @@ class CoreViewer extends Component {
 
 	updateParams() {
 		urlParams.setSecionSetting('coreType', this.state?.coreTypeName ?? 'unk', { dash: true });
-		urlParams.setSecionSetting('coreName', this.state?.core?.name ?? 'unk', { dash: true });
+		urlParams.setSecionSetting('coreName', this.state?.core?.urlName ?? 'unk', { dash: true });
 		if (this.state?.core?.state?.socket)
 		{
 			urlParams.setSecionSetting('coreSocket', this.state?.core?.state?.socket?.socketName ?? 'unk', { dash: true });
@@ -148,7 +151,7 @@ class CoreViewer extends Component {
 		if (!coreName || typeof coreName !== 'string' || !this.state.coreType) return;
 		for (const core of this.state.coreType)
 		{
-			if (core && core.name && core.name === coreName)
+			if (core && core.urlName && core.urlName === coreName)
 			{
 				this.setState({core});
 				break;
@@ -176,8 +179,13 @@ class Core extends Component {
 		this.sockets = [];
 	}
 
+	get urlName() {
+		return this.meta.title.replace(/[^-\w]+/g, '');
+	}
+
 	get name() {
-		return this?.meta?.title ?? '...';
+		return this._title ??= (db.getItemTitleById(this.id) ?? '...');
+		// return this?.meta?.title ?? '...';
 	}
 
 	async init() {
@@ -185,7 +193,7 @@ class Core extends Component {
 		if (this.core) return;
 		this.core = {};
 		this.core = await new Item({ id: this.id }).init();
-		this.item = await new Item(this.core.data?.Themes?.DefaultOptionPath).init();
+		this.item = await new Item({ path: this.core.data?.Themes?.DefaultOptionPath }).init();
 
 		const item = this.item.data;
 
@@ -253,7 +261,7 @@ class Core extends Component {
 				class ="core_wrapper mica_main-content"
 			>
 				<ul class=${`core-socket-list mica_nav-list ${this.state.mobileMenu ? 'show-mobile' : 'hide-mobile'}`}>
-					<li class="core-socket-title">${this?.item?.data?.CommonData?.Title ?? 'Loading core...'}</li>
+					<li class="core-socket-title">${this?.item?.name ?? 'Loading core...'}</li>
 					${this.sockets.map(socket => HTML.wire(socket)`
 						<li><button
 							onclick=${() => this.showSocket(socket)}
@@ -302,7 +310,7 @@ class Socket extends Component {
 		this.OptionPaths = OptionPaths;
 		this.socketName = socketName;
 
-		this.items = this.OptionPaths.map(path => new Item(path))
+		this.items = this.OptionPaths.map(path => new Item({ path }));
 
 		// return this.render();
 	}

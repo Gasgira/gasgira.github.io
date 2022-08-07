@@ -392,6 +392,9 @@ button {
 		&:hover::before, &:focus::before {
 			opacity: 1;
 		}
+		& .icon-masked {
+			margin-left: -0.25rem;
+		}
 	}
 }
 
@@ -594,6 +597,9 @@ button {
 	&.icon-menu {
 		mask-image: url("assets/icons.svg#menu");
 	}
+	&.icon-menu-open {
+		mask-image: url("assets/icons.svg#menu-open");
+	}
 	&.icon-dots-v {
 		mask-image: url("assets/icons.svg#dots-v");
 	}
@@ -630,6 +636,45 @@ button {
 	&.icon-close {
 		mask-image: url("assets/icons.svg#close-x");
 	}
+	&.icon-forge {
+		mask-image: url("assets/icons.svg#forge");
+	}
+	&.icon-quote {
+		mask-image: url("assets/icons.svg#quote");
+	}
+	&.icon-eye {
+		mask-image: url("assets/icons.svg#eye");
+	}
+	&.icon-download {
+		mask-image: url("assets/icons.svg#download");
+	}
+	&.icon-save {
+		mask-image: url("assets/icons.svg#save");
+	}
+	&.icon-trash {
+		mask-image: url("assets/icons.svg#trash");
+	}
+	&.icon-upload {
+		mask-image: url("assets/icons.svg#upload");
+	}
+	&.icon-play {
+		mask-image: url("assets/icons.svg#play");
+	}
+	&.icon-stop {
+		mask-image: url("assets/icons.svg#stop");
+	}
+	&.icon-step {
+		mask-image: url("assets/icons.svg#step");
+	}
+	&.icon-help {
+		mask-image: url("assets/icons.svg#help");
+	}
+	&.icon-minimize {
+		mask-image: url("assets/icons.svg#minimize");
+	}
+	&.icon-maximize {
+		mask-image: url("assets/icons.svg#maximize");
+	}
 }
 
 .no-select {
@@ -663,8 +708,8 @@ select {
 		color: #000;
 	}
 	&:focus {
-		background-color: rgba(0,0,0,0.25);
-		color: var(--base-text);
+		background-color: initial;
+		color: initial;
 		transition: none;
 	}
 }

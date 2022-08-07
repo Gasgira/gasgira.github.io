@@ -1,9 +1,11 @@
 import { Component } from 'component';
+import { STATIC_ROOT } from 'environment';
 
 class I18n extends Component {
 	async init(countryCode) {
 		if (countryCode && this.countryCodes.has(countryCode))
 		{
+			console.info(`[I18n.init] "${countryCode}"`);
 			const translations = await this.requestTranslations(countryCode);
 			if (translations) this.translations = translations;
 		}
@@ -39,7 +41,7 @@ class I18n extends Component {
 			return;
 		}
 
-		const response = await fetch(`/i18n/progression_${countryCode}.json`);
+		const response = await fetch(`${STATIC_ROOT}i18n/progression_${countryCode}.json`);
 		if (!response || !response.ok)
 		{
 			console.error(`[I18n.requestTranslations] error getting  "${countryCode}"`);

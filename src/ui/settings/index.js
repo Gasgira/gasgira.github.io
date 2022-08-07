@@ -1,6 +1,8 @@
 import { HTML } from 'lib/HTML';
 import { Component } from 'component';
 import { urlParams } from 'urlParams';
+import { emitter } from 'eventEmitter';
+import { i18n } from 'ui/i18n';
 
 import './index.css';
 
@@ -9,50 +11,80 @@ class Settings extends Component {
 		super();
 
 		if (!window?.localStorage) return;
-		let storageTest;
+
 		try {
-			storageTest = window.localStorage;
-			const testValue = '__storage_test__';
-			storageTest.setItem(testValue, testValue);
-			storageTest.removeItem(testValue);
+			const storedSettings = localStorage.getItem('user_settings');
+			if (storedSettings)
+			{
+				const settings = JSON.parse(storedSettings);
+				if (settings.date) console.log(`[Settings] loaded settings created "${new Date(settings.dateCreated).toLocaleString()}", updated "${new Date(settings.dateCreated).toLocaleString()}"`);
+				if (settings.data && Array.isArray(settings.data))
+				{
+					settings.data = new Map(settings.data);
+				} else {
+					settings.data = new Map();
+				}
+
+				this._settings = settings;
+
+				if (settings.data.has('countryCode')) this.setLanguage(settings.data.get('countryCode'));
+				if (settings.data.has('appScale')) this.setAppScale(settings.data.get('appScale'));
+				if (settings.data.has('textScale')) this.setTextScale(settings.data.get('textScale'));
+				if (settings.data.has('revealHidden')) this.revealHidden();
+			} else {
+				let storageTest;
+				try {
+					storageTest = window.localStorage;
+					const testValue = '__storage_test__';
+					storageTest.setItem(testValue, testValue);
+					storageTest.removeItem(testValue);
+				} catch (error) {
+					console.warn(`[Settings.constructor] localStorage not available!`);
+					this.disabled = true;
+					return;
+				}
+			}
 		} catch (error) {
-			console.warn(`[settings] localStorage not available!`);
-			return;
+			console.error(`[Settings.constructor]`, error);
 		}
 
-		// lets the user provide an alternate root for the db
-		const dbPath = localStorage.getItem('dbPath');
-		if (dbPath) this.data.set('dbPath', dbPath);
-
-		// enabling pathCasing with normalize all paths as lower case
-		const pathCasing = localStorage.getItem('pathCasing');
-		// console.error('pathc', pathCasing, pathCasing === 'false')
-		if (!pathCasing || pathCasing === 'true') {
-			this.data.set('pathCasing', true);
-		} else {
-			this.data.set('pathCasing', false);
+		if (!this._settings) this._settings = {
+			dateCreated: new Date().toISOString(),
+			data: new Map()
 		}
 
+		if (!this.data.has('countryCode'))
+		{
+			try {
+				const countryCode = navigator.languages && navigator.languages.length
+				? navigator.languages[0]
+				: navigator.language;
+				console.info(`[settings.i18n] init "${countryCode}"`);
+				if (i18n.countryCodes.has(countryCode)) this.setLanguage(countryCode);
+			} catch (error) {
+				console.error(`[settings.i18n] init`, error);
+			}
+		}
+
+		// TODO delete next major push
 		const appScale = localStorage.getItem('userAppScale');
 		if (appScale) {
-			this.setAppScale(appScale);
+			localStorage.removeItem('userAppScale');
 		}
-		
 		const textScale = localStorage.getItem('userTextScale');
-		if (appScale) {
-			this.setTextScale(textScale);
+		if (textScale) {
+			localStorage.removeItem('userTextScale');
 		}
-		
 		const showSpoilers = localStorage.getItem('revealHidden');
 		if (showSpoilers) {
-			this.data.set('revealHidden', true);
-		} 
+			localStorage.removeItem('revealHidden');
+		}
 	}
 
 	render() {
 		if (!window?.localStorage)
 		{
-			return 'You browser does not support localstorage, settings are not available.';
+			return 'Your browser does not support localstorage, settings are not available.';
 		}
 		return this.html`
 			<div class="settings_wrapper">
@@ -70,6 +102,18 @@ class Settings extends Component {
 							onchange=${(e) => this.setTextScale(parseFloat(e?.target?.value ?? 1))}
 						>
 					</div>
+					<div class="option_wrapper">
+						<label for="set-language">Language: ${this.countryCode ?? '(Default)'}</label>
+						<select class="set-language" id="set-language" name="set-language" value=${this.countryCode}
+							onchange=${(e) => {
+								this.setLanguage(e.target.value);
+								this.render();
+							}}
+						>
+							<option value="">Default</option>
+							${[...i18n.countryCodes].map(countryCode => `<option value="${countryCode}"${this.countryCode === countryCode ? ' selected' : ''}>${countryCode}</option>`)}
+						</select
+					</div>
 				</section>
 				${this.data.has('revealHidden') ? HTML.wire(this, ':unspoiler')`
 					<button
@@ -78,8 +122,7 @@ class Settings extends Component {
 							if (this.data.has('revealHidden'))
 							{
 								console.warn('[settings] Removing spoilers setting');
-								this.data.delete('revealHidden');
-								localStorage.removeItem('revealHidden');
+								this.clearSetting('revealHidden');
 								this.render();
 							}
 						}}
@@ -94,12 +137,10 @@ class Settings extends Component {
 						>
 					</div>
 				</section>
-				${this.advanced()}
 				<button
 					class="hi-box"
 					onclick=${() => this.reset()}
 				>Reset Settings</button>
-				<aside>Note: you will lose any saved favorite items upon reset!</aside>
 			</div>
 		`;
 	}
@@ -126,7 +167,40 @@ class Settings extends Component {
 	}
 
 	get data() {
-		return this._data ?? (this._data = new Map());
+		return this._settings.data;
+	}
+
+	save() {
+		try {
+			const string = JSON.stringify({
+				...this._settings,
+				date: new Date().toISOString(),
+				data: Array.from(this.data)
+			});
+
+			if (string) localStorage.setItem('user_settings', string);
+		} catch (error) {
+			console.error(`[Settings.save]`, error);
+		}
+	}
+
+	getSetting(settingName) {
+		if (this.data.has(settingName)) return this.data.get(settingName);
+	}
+
+	setSetting(settingName, value) {
+		if (this.data.has(settingName))
+		{
+			const settingValue = this.data.get(settingName);
+			if (settingValue === value) return;
+		}
+		this.data.set(settingName, value);
+		this.save();
+	}
+
+	clearSetting(settingName) {
+		this.data.delete(settingName);
+		this.save();
 	}
 
 	setRootProperty(key, value) {
@@ -134,78 +208,84 @@ class Settings extends Component {
 		root.style.setProperty(`--${key}`, `${value}`);
 	}
 
+	revealHidden() {
+		this.setSetting('revealHidden', true);
+	}
+
+	get countryCode() {
+		return this.getSetting('countryCode');
+	}
+	get isTranslated() {
+		return this.getSetting('countryCode') ? true : false;
+	}
+
+	setLanguage(countryCode) {
+		console.info(`[Settings.setLanguage]`, countryCode);
+		if (!countryCode && this.data.has('countryCode'))
+		{
+			this.data.delete('countryCode');
+			this.save();
+			return;
+		}
+
+		if (countryCode && i18n.countryCodes.has(countryCode))
+		{
+			this.setSetting('countryCode', countryCode);
+			emitter.emit(`Settings.setLanguage`, countryCode);
+		}
+	}
+
 	get appScale() {
-		return localStorage.getItem('userAppScale') ?? 1;
+		return this.getSetting('appScale') ?? 1;
 	}
 
 	setAppScale(value = 1) {
 		const float = parseFloat(value ?? 1);
 		console.info(`[skimmer] settings -> appScale "${float}"`);
-		localStorage.setItem('userAppScale', float);
+		this.setSetting('appScale', float);
 
 		this.setRootProperty('app-size', `${float}rem`);
 		this.render();
 	}
 
 	get textScale() {
-		return localStorage.getItem('userTextScale') ?? 1;
+		return this.getSetting('textScale') ?? 1;
 	}
 
 	setTextScale(value = 1) {
 		const float = parseFloat(value ?? 1);
 		console.info(`[skimmer] settings -> textScale "${float}"`);
-		localStorage.setItem('userTextScale', float);
+		this.setSetting('textScale', float);
 
 		this.setRootProperty('app-font-size', `${float}rem`);
 		this.render();
 	}
 
 	get pageSize() {
-		return localStorage.getItem('userPageSize') ?? 100;
+		return this.getSetting('pageSize') ?? 100;
 	}
 
 	setPageSize(value = 100) {
 		let int = parseInt(value ?? 100);
 		if (int > 1000) int = 1000;
 		if (int < 10) int = 10;
-		console.info(`[skimmer] settings -> pageSize "${int}"`);
-		localStorage.setItem('userPageSize', int);
+		console.info(`[Settings] pageSize "${int}"`);
+		this.setSetting('pageSize', int);
 
 		this.render();
-	}
-
-	setDbPath(path) {
-		if (path && typeof path === 'string') {
-			localStorage.setItem('dbPath', `${path}`);
-			console.info(`[skimmer][settings] Set dbPath to custom value! Refresh the page to take full effect.`, localStorage.getItem('dbPath'));
-		}
-	}
-
-	setPathCasing(value) {
-		if (value) {
-			localStorage.setItem('pathCasing', true);
-		} else {
-			localStorage.setItem('pathCasing', false);
-		}
-		
-		console.info(`[skimmer][settings] Set normalize path casing! Refresh the page to take full effect.`, localStorage.getItem('pathCasing'));
-
 	}
 
 	reset() {
 		this.data.clear();
-		localStorage.clear();
-		console.warn(`[skimmer][settings] Cleared settings. Refresh the page to take full effect.`, this.data);
+		// localStorage.clear();
+		localStorage.removeItem('user_settings');
+		console.warn(`[Settings] Cleared settings. Refresh the page to take full effect.`, this.data);
 		this.render();
 	}
 
 	showSpoilers() {
-		localStorage.setItem('revealHidden', true);
-		if (localStorage.getItem('revealHidden'))
-		{
-			console.log(`[settings.showSpoilers] set "revealHidden"`);
-		}
-		urlParams.setSecionSetting('spoilers', 'true');
+		this.setSetting('revealHidden', true);
+		// urlParams.setSecionSetting('spoilers', 'true');
 		window.location.reload();
 	}
 }

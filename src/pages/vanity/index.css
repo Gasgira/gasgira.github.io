@@ -55,6 +55,21 @@
 			margin-left: 0.5rem;
 		}
 	}
+	& .mica_content {
+		position: relative;
+		& .feats_nameplate-header {
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 240px;
+			position: absolute;
+			opacity: 0.5;
+			background-position: center;
+			background-size: cover;
+			mask-image: linear-gradient(-3deg, transparent 0%, transparent 33%, #FFF 100%);
+			pointer-events: none;
+		}
+	}
 	& .feats_header {
 		margin-left: var(--content-pad);
 		& div {
@@ -75,6 +90,55 @@
 		}
 		& .feats_enlisted {
 			opacity: 0.8;
+		}
+		& .feats_nameplate_wrapper {
+			--height: 120px;
+			--width: 640px;
+			display: flex;
+			flex-direction: row;
+			margin: 2rem 0;
+			position: relative;
+			user-select: none;
+			pointer-events: none;
+			overflow: hidden;
+			& .nameplate {
+				width: 100%;
+				height: auto;
+				max-width: var(--width);
+				max-height: var(--height);
+				pointer-events: initial;
+				border-radius: var(--theme-border-radius);
+			}
+			& .nameplate_content {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				& .emblem {
+					width: 18.75%;
+					height: 100%;
+					max-width: var(--height);
+					max-height: var(--height);
+					margin: 0 4% 0 2.5%;
+					pointer-events: initial;
+				}
+				& .nameplate_text {
+					display: flex;
+					flex-direction: column;
+					justify-content: left;
+					align-items: flex-start;
+					& .gamertag {
+						font-size: 1.5em;
+					}
+					& .servicetag {
+						font-size: 1rem;
+						font-style: italic;
+					}
+				}
+			}
 		}
 	}
 	& .feats_list {

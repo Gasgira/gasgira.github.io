@@ -5,6 +5,7 @@ import { Item } from 'db/item';
 import { urlParams } from 'urlParams';
 import { filenameFromPath } from 'utils/paths.js';
 import { i18n } from 'ui/i18n';
+import { STATIC_ROOT } from 'environment';
 
 class Database {
 	constructor() {
@@ -21,6 +22,26 @@ class Database {
 		}
 	}
 
+	async init() {
+		const promises = [
+			this.getIndex()
+		];
+
+		const countryCode = settings.countryCode;
+		if (countryCode) promises.push(i18n.init(countryCode));
+
+		const [ index ] = await Promise.all(promises);
+
+		this.index = index;
+		console.info(`[db.init] "${this.index.manifest.size}" items in index.`);
+
+		this.metadata = await this.getMetaData();
+	}
+
+	get items() {
+		return this?._items ?? (this._items = new Map());
+	}
+
 	set revealHidden(bool) {
 		if (bool) return (this._revealHidden = true);
 		this._revealHidden = false;
@@ -31,7 +52,9 @@ class Database {
 	}
 
 	async getMetaData() {
-		const metadata = await this.getJSON('metadata/metadata.json')
+		const meta = this.getItemManifestByID('metadata');
+		// const metadata = await this.getJSON('metadata/metadata.json')
+		const metadata = await this.getJSON(`item/metadata/${meta.res}.json`)
 			.catch(error => {
 				console.warn(`[skimmer] metadata did not load...`, error);
 				this.metadata = {}
@@ -61,19 +84,6 @@ class Database {
 		throw new Error(`[db.getIndex] No index!`);
 	}
 
-	async init() {
-		const [index, metadata] = await Promise.all([
-			this.getIndex(),
-			this.getMetaData(),
-			// i18n.init('fr-FR')
-		]);
-
-		this.index = index;
-		console.info(`[db.init] "${this.index.manifest.size}" items in index.`);
-
-		this.metadata = metadata;
-	}
-
 	async getJSON(path) {
 		// console.log(`[db.get] "${path}"`);
 		if (!path || typeof path !== 'string')
@@ -81,8 +91,8 @@ class Database {
 			console.warn(`[db.get] Bad path! "${path}"`);
 			return;
 		}
-		
-		return await fetch(`/${this?.dbPath ?? 'db'}/${this.pathCase(path)}`)
+
+		return await fetch(`${STATIC_ROOT}${this.pathCase(path)}`)
 			.then(response => {
 				if (response.ok) return response.json();
 				console.error(`[db.getJSON] ${response.status} "${this.pathCase(path)}"`)
@@ -94,10 +104,10 @@ class Database {
 		// console.log(`[db.get] "${path}"`);
 		if (!path || typeof path !== 'string')
 		{
-			console.warn(`[db.get] Bad path! "${path}"`);
+			console.warn(`[db.getAssetJSON] Bad path! "${path}"`);
 			return;
 		}
-		
+
 		return await fetch(`/${this?.assetPath ?? '7'}/${this.pathCase(path)}`)
 			.then(response => {
 				if (response.ok) return response.json();
@@ -106,45 +116,23 @@ class Database {
 			});
 	}
 
-	async getRelationsByID(id) {
+	async getItem({ id }) {
+		if (!id || typeof id !== 'string') return;
+		if (this.items.has(id)) return this.items.get(id);
+
 		try {
-			if (!id) return;
-			if (!this?._relations) this._relations = this.getRelationsIndex();
-			const relations = await this._relations;
-			// console.log(`[db.getRelationsByID]`, id, relations)
-	
-			if (!relations || !relations.size)
-			{
-				console.error(`[db.getRelationsByID] No relation index!`);
-				return;
-			}
+			if (!this.manifestHasID(id)) return;
 
-			if (relations.has(id)) return relations.get(id);
-				console.warn(`[db.getRelationsByID] No relations for "${id}"!`);
+			const meta = this.getItemManifestByID(id);
+			if (!meta?.res) throw new Error('No current item hash!');
+
+			const json = await this.getJSON(`item/${meta.name}/${meta.res}.json`);
+			if (!json) throw new Error('Failed to fetch item!');
+
+			return new Item({ item: json, meta });
 		} catch (error) {
-			console.error(`[db.getRelationsByID] uncaught`, error);
+			console.error(`[db.getItem] "${id}"`, error);
 		}
-	}
-
-	async getRelationsIndex() {
-		const relationsIndex = await this.getJSON('relations.json')
-		if (relationsIndex && Array.isArray(relationsIndex))
-		{
-			const relations = new Map(relationsIndex);
-			console.info(`[db.getRelationsIndex] "${relations.size}" item relations`);
-			this._relations = relations;
-			return relations;
-		}
-		console.error(`[db.getRelationsIndex] No relations index!`);
-	}
-
-	async getOfferings() {
-		const offerings = await this.getJSON('offerings.json')
-		if (offerings && Array.isArray(offerings?.bundles)) return offerings;
-	}
-
-	get items() {
-		return this?._items ?? (this._items = new Map());
 	}
 
 	// cache items IDs by type
@@ -156,12 +144,9 @@ class Database {
 		if (!path || typeof path !== 'string') return;
 		try {
 			const pathLowercase = path.toLowerCase();
-			const pathParts = pathLowercase.split('/');
-			if (!pathParts.length) return;
-
-			const fileName = pathParts[pathParts.length-1];
-			const name = fileName.substring(0, fileName.length-5); // remove '.json'
+			const name = filenameFromPath(pathLowercase);
 			if (name) return name;
+			return path;
 		} catch (error) {
 			console.error(`[db.itemPathToID] Bad id/path for "${path}"`);
 			return '???';
@@ -173,7 +158,7 @@ class Database {
 		if (this.typeIDs.has(type)) return this.typeIDs.get(type);
 
 		if (type === 'Favorites') {
-			return new Set([...this.favoriteItemPaths].map(path => this.itemPathToID(path)));
+			return this.favoriteItemIDs;
 		}
 
 		if (this.index.types.has(type))
@@ -200,20 +185,21 @@ class Database {
 		console.warn(`[db.getItemManifestByID] Not found! "${id}"`);
 	}
 
+	getItemTitleById(id) {
+		if (!id || typeof id !== 'string') return '???';
+		if (this.index.manifest.has(id))
+		{
+			const meta = this.index.manifest.get(id);
+			if (!settings.isTranslated) return meta.title;
+			return i18n.resolveItemTitle(id) ?? meta.title;
+		}
+	}
+
 	getItemPathByID(id) {
 		if (!id || typeof id !== 'string') return;
 		const path = this.getItemManifestByID(id)?.path;
 		if (path) return path;
 		console.warn(`[db.getItemPathByID] Not found! "${id}"`);
-	}
-
-	getItemByID(id) {
-		if (!id || typeof id !== 'string') return;
-		const path = this.getItemPathByID(id);
-		if (path)
-		{
-			// TODO
-		}
 	}
 
 	getCorePaths() {
@@ -223,11 +209,91 @@ class Database {
 		});
 	}
 
+	async getRelationsByID(id) {
+		try {
+			if (!id) return;
+			if (!this?._relations) this._relations = await this.getRelationsIndex();
+			const relations = await this._relations;
+			// console.log(`[db.getRelationsByID]`, id, relations)
+
+			if (!relations || !relations.size)
+			{
+				console.error(`[db.getRelationsByID] No relation index!`);
+				return;
+			}
+
+			if (relations.has(id)) return relations.get(id);
+				console.warn(`[db.getRelationsByID] No relations for "${id}"!`);
+		} catch (error) {
+			console.error(`[db.getRelationsByID] uncaught`, error);
+		}
+	}
+
+	async getRelationsIndex() {
+		const relationsIndex = await this.getJSON('relations.json')
+		if (relationsIndex && Array.isArray(relationsIndex))
+		{
+			const relations = new Map(relationsIndex);
+			console.info(`[db.getRelationsIndex] "${relations.size}" item relations`);
+			this._relations = relations;
+			return relations;
+		}
+		console.error(`[db.getRelationsIndex] No relations index!`);
+	}
+
+	async getHistoryIndex() {
+		const history = await this.getJSON('history.json')
+		if (history && Array.isArray(history.items))
+		{
+			this._history = new Map(history.items);
+			console.info(`[db.getHistoryIndex] loading history with "${this._history.size}" items from "${history.date}"`);
+			return this._history;
+		}
+		console.error(`[db.getHistoryIndex] No history index!`);
+	}
+
+	async getHistoryByID(id) {
+		try {
+			if (!id) return;
+			if (!this?._history) await this.getHistoryIndex();
+
+			if (!this._history || !this._history.size)
+			{
+				console.error(`[db.getHistoryByID] No history index!`);
+				return;
+			}
+
+			if (this._history.has(id)) return this._history.get(id);
+			console.warn(`[db.getHistoryByID] No history for "${id}"!`);
+		} catch (error) {
+			console.error(`[db.getHistoryByID] uncaught`, error);
+		}
+	}
+
+	async getEmblemColorIndex() {
+		if (this._emblemColors) return this._emblemColors;
+		const json = await this.getJSON('emblemColors.json');
+		if (json && Array.isArray(json))
+		{
+			const emblemColors = new Map(json);
+			console.info(`[db.getEmblemColorIndex] "${emblemColors.size}" emblem colors`);
+			this._emblemColors = emblemColors;
+			return this._emblemColors;
+		}
+		console.error(`[db.getEmblemColorIndex] No emblemColors index!`);
+	}
+
+	getEmblemColor(config) {
+		const index = this._emblemColors ?? new Map();
+		if (index.has(config)) return index.get(config);
+		return '#FFFFFF';
+	}
+
 	get manufacturers() {
 		if (!this.metadata) return new Map();
-		return this?._manufacturers ?? (this._manufacturers = new Map(
+		return this._manufacturers ??= new Map(
 			this?.metadata?.Manufacturers.map((properties, index) => [index, properties])
-		))
+		);
 	}
 
 	getManufacturerByIndex(index) {
@@ -235,7 +301,7 @@ class Database {
 			"ManufacturerName": "",
 			"ManufacturerLogoImage": ""
 		}
-		if (!index || index === 0) return defaultMan;
+		// if (!index || index === 0) return defaultMan;
 		if (this.manufacturers.has(index)) return this.manufacturers.get(index);
 		return defaultMan;
 	}
@@ -320,7 +386,8 @@ class Database {
 	}
 
 	async showItemPanelByPath(path, skipState) {
-		const item = new Item(path);
+		const id = this.itemPathToID(path);
+		const item = new Item({ id });
 		const response = await item?.init();
 		if (response) itemPanel.displayItem(item, skipState);
 	}
@@ -353,55 +420,70 @@ class Database {
 
 	get favoriteItemIDs() {
 		if (this?._favoriteItemIDs) return this._favoriteItemIDs;
-		const paths = [...this.favoriteItemPaths];
-		this._favoriteItemIDs = new Set(paths.map(path => filenameFromPath(path)));
-		return this._favoriteItemIDs;
-	}
-
-	get favoriteItemPaths() {
-		if (this?._favoriteItemPaths) return this._favoriteItemPaths;
-		const stored = localStorage.getItem('userFavorites');
-		if (!stored) return (this._favoriteItemPaths = new Set());
-		// console.log('stored!')
-		// TODO process for is a path? etc
-		const paths = JSON.parse(stored);
-		if (!Array.isArray(paths)) return (this._favoriteItemPaths = new Set());
-		return (this._favoriteItemPaths = new Set(paths.map(path => path.toLowerCase())));
-	}
-
-	toggleFavorite(path) {
-		console.log('fav', path);
-		if (!path) return;
-		this._favoriteItemIDs = undefined;
-		if (this.favoriteItemPaths.has(`${path}`))
+		const stored = localStorage.getItem('user_favorites');
+		if (!stored)
 		{
-			console.info(`[skimmer] Removing favorite path ${path}`);
-			this.favoriteItemPaths.delete(`${path}`);
-		} else {
-			console.info(`[skimmer] Adding favorite path ${path}`);
-			this.favoriteItemPaths.add(`${path}`);
+			const legacyStored = localStorage.getItem('userFavorites');
+			if (legacyStored)
+			{
+				try {
+					console.warn(`[db.favoriteItemIDs] Recovering legacy favorite paths!`, legacyStored);
+					const paths = JSON.parse(legacyStored);
+					this._favoriteItemIDs = new Set();
+					if (Array.isArray(paths)) paths.forEach(path => ids.add(this.itemPathToID(path)));
+
+					localStorage.setItem('user_favorites', JSON.stringify([...this._favoriteItemIDs]));
+					localStorage.removeItem('userFavorites');
+					return this._favoriteItemIDs;
+				} catch (error) {
+					console.error(`[db.favoriteItemIDs] Error recovering legacy favorite paths!`, error);
+				}
+			}
 		}
 
-		localStorage.setItem('userFavorites', JSON.stringify([...this.favoriteItemPaths]));
-		console.warn(localStorage.getItem('userFavorites'))
-		emitter.emit('favoriteItemPaths', `${path}`)
+		if (stored)
+		{
+			const favoriteIds = JSON.parse(stored);
+			this._favoriteItemIDs = new Set([...favoriteIds]);
+			return this._favoriteItemIDs;
+		}
+
+		return (this._favoriteItemIDs = new Set());
+	}
+
+	toggleFavorite(item) {
+		if (!item) return;
+		const id = item.id;
+		if (!id || typeof id !== 'string') return;
+		if (this.favoriteItemIDs.has(id))
+		{
+			// console.info(`[db.toggleFavorite] Removing favorite ${id}`);
+			this.favoriteItemIDs.delete(id);
+		} else {
+			// console.info(`[db.toggleFavorite] Adding favorite ${id}`);
+			this.favoriteItemIDs.add(id);
+		}
+
+		localStorage.setItem('user_favorites', JSON.stringify([...this.favoriteItemIDs]));
+		// console.log('[db.toggleFavorite] favorites:', localStorage.getItem('user_favorites'));
+		emitter.emit('favoriteItems', id);
 	}
 
 	get replacedInfoItems() {
 		return this?._replacedInfoItems ?? (this._replacedInfoItems = new Map([
-			['currency/currencies/rerollcurrency.json', {
+			['rerollcurrency', {
 				mediaPath: 'progression/currencies/1104-000-data-pad-e39bef84-sm.png',
 				name: 'Challenge Swap'
 			}],
-			['currency/currencies/xpgrant.json', {
+			['xpgrant', {
 				mediaPath: 'progression/currencies/1102-000-xp-grant-c77c6396-sm.png',
 				name: 'XP Grant'
 			}],
-			['currency/currencies/xpboost.json', {
+			['xpboost', {
 				mediaPath: 'progression/currencies/1103-000-xp-boost-5e92621a-sm.png',
 				name: 'XP Boost'
 			}],
-			['currency/currencies/cr.json', {
+			['cr', {
 				mediaPath: 'progression/currencies/credit_coin-sm.png',
 				name: 'cR'
 			}]

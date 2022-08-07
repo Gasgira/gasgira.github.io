@@ -3,6 +3,9 @@ import { itemPanel } from 'db/itemPanel';
 import { Component } from 'component';
 import { HTML } from 'lib/HTML';
 import { i18n } from 'ui/i18n';
+import { filenameFromPath } from 'utils/paths.js';
+import { settings } from 'ui/settings';
+import { STATIC_ROOT } from 'environment';
 
 import './index.css';
 
@@ -20,13 +23,17 @@ export class Item extends Component {
 		super();
 		if (!properties) throw new Error(`[Item.constructor] No props!`);
 
-		let path = '';
-
-		if (typeof properties === 'string')
+		if (properties.item && properties.meta)
 		{
-			path = properties.toLowerCase();
+			this._meta = properties.meta;
+			this._id = properties.meta.name;
+			this.data = properties.item;
+
+			db.items.set(this.meta.name, this);
 		} else if (properties.id) {
-			const meta = db.getItemManifestByID(properties.id);
+			const id = properties.id.toLowerCase();
+			if (db.items.has(id)) return db.items.get(id);
+			const meta = db.getItemManifestByID(id);
 			if (!meta)
 			{
 				console.error(`[Item.constructor] No meta for "${id}"!`);
@@ -34,16 +41,49 @@ export class Item extends Component {
 			}
 			this._meta = meta;
 			this._id = meta.name;
-			path = meta.path;
+
+			db.items.set(this.meta.name, this);
+		} else if (properties.path) {
+			const id = filenameFromPath(properties.path).toLowerCase();
+			if (!id) return;
+
+			if (db.items.has(id)) return db.items.get(id);
+			const meta = db.getItemManifestByID(id);
+			if (!meta)
+			{
+				console.error(`[Item.constructor] No meta for "${id}"!`);
+				return 'Bad item id!';
+			}
+			this._meta = meta;
+			this._id = meta.name;
+
+			db.items.set(this.meta.name, this);
 		}
 
-		if (db.items.has(path))
-		{
-			// console.warn('[skimmer][db.item] Duplicate', path);
-			return db.items.get(path);
-		}
-		this.path = path;
-		db.items.set(`${path}`, this);
+		// let path = '';
+
+		// if (typeof properties === 'string')
+		// {
+		// 	path = properties.toLowerCase();
+		// } else if (properties.id) {
+		// 	const meta = db.getItemManifestByID(properties.id);
+		// 	if (!meta)
+		// 	{
+		// 		console.error(`[Item.constructor] No meta for "${id}"!`);
+		// 		return 'Bad item id!';
+		// 	}
+		// 	this._meta = meta;
+		// 	this._id = meta.name;
+		// 	path = meta.path;
+		// }
+
+		// if (db.items.has(path))
+		// {
+		// 	// console.warn('[skimmer][db.item] Duplicate', path);
+		// 	return db.items.get(path);
+		// }
+		// this.path = path;
+		// db.items.set(`${path}`, this);
 
 		this.renderCount = 0;
 	}
@@ -54,23 +94,35 @@ export class Item extends Component {
 	}
 
 	get id() {
-		return this?._id ?? (this._id = db.itemPathToID(this.path));
+		return this?._id ?? (this._id = this.meta.name);
+	}
+
+	get cylixPath() {
+		return `item/${this.id}/${this.meta.res}.json`;
 	}
 
 	get name() {
 		if (this.isRedacted) return '[REDACTED]';
 
-		if (db.replacedInfoItems.has(this.path))
+		if (db.replacedInfoItems.has(this.id))
 		{
-			const replacedInfo = db.replacedInfoItems.get(this.path);
+			const replacedInfo = db.replacedInfoItems.get(this.id);
 			if (replacedInfo.name) return replacedInfo.name;
 		}
 
-		// const title = i18n.resolveItemTitle(this.id) ?? this.meta.title;
-		const title = this.meta.title;
-		if (typeof title === 'string') return title;
+		const title = i18n.resolveItemTitle(this.id);
+		// const title = this.meta.title;
+		if (title && typeof title === 'string') return title;
+		if (this?.data?.Title) return this.data.Title;
 
-		return this.id ?? '???';
+		return this.meta?.title || this.id || '???';
+	}
+
+	get untranslatedName() {
+		if (!settings.isTranslated) return '';
+		if (this.isRedacted) return '';
+		const title = this.meta.title;
+		return title === this.name ? '' : title;
 	}
 
 	get type() {
@@ -118,7 +170,16 @@ export class Item extends Component {
 	}
 
 	get description() {
-		return i18n.resolveItemDescription(this.id) ?? this?.data?.CommonData?.Description ?? '???';
+		const itemDescription = i18n.resolveItemDescription(this.id) ?? this?.data?.CommonData?.Description;
+		if (itemDescription) return itemDescription;
+		if (this.type === 'Offering' && Array.isArray(this?.data?.Prices))
+		{
+			return this.data.Prices.map(price => `${price?.Cost ?? '???'} ${filenameFromPath(price?.CurrencyPath)}`).join(', ');
+		}
+		if (this.type === 'meta' && this?.data?.Description)
+		{
+			return this.data.Description;
+		}
 	}
 
 	async init() {
@@ -128,7 +189,7 @@ export class Item extends Component {
 			return this;
 		}
 		try {
-			this.data = db.getJSON(this.path)
+			this.data = db.getJSON(this.cylixPath)
 				.then(res => this.data = res);
 			await this.data;
 		} catch (error) {
@@ -155,7 +216,7 @@ export class Item extends Component {
 						}`
 				}
 				onclick=${() => this.showItemPanel()}
-				style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(this.imagePath)})`}}
+				style=${{backgroundImage: `url(${STATIC_ROOT}images/${db.pathCase(this.imagePath)})`}}
 				title=${this.name ?? 'item'}
 			>
 				<span>${this.name ?? '???'}</span>
@@ -168,14 +229,6 @@ export class Item extends Component {
 				}}
 			</button>
 		`;
-	}
-
-	get itemTypeIcons() {
-		return this?._itemTypeIcons ?? (this._itemTypeIcons = new Set([
-			'ArmorCoating',
-			'VehicleCoating',
-			'WeaponCoating'
-		]));
 	}
 
 	get isSelected() {
@@ -197,7 +250,7 @@ export class Item extends Component {
 						}`
 				}
 				onclick=${() => this.onclick()}
-				style=${{backgroundImage: `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(this.imagePath)})`}}
+				style=${{backgroundImage: `url(${STATIC_ROOT}images/${db.pathCase(this.imagePath)})`}}
 				title=${this.name ?? 'item'}
 			>
 				<span>${this.name ?? '???'}</span>
@@ -222,34 +275,51 @@ export class Item extends Component {
 		this.showItemPanel();
 	}
 
+	get itemTypeIcons() {
+		return this?._itemTypeIcons ?? (this._itemTypeIcons = new Set([
+			'ArmorCoating',
+			'VehicleCoating',
+			'WeaponCoating',
+			'SpartanEmblem',
+			'ArmorEmblem',
+			'WeaponEmblem',
+			'VehicleEmblem'
+		]));
+	}
+
 	async renderItemTypeIcon() {
+		const type = this?.type ?? 'default';
+		if (!this.itemTypeIcons.has(type)) return '';
+
 		const path = this?.data?.CommonData?.ParentPaths?.[0]?.Path ?? this?.data?.CommonData?.ParentTheme ?? '';
-		const type = this?.type;
-		if (!path || !this.itemTypeIcons.has(type)) return '';
-		if (type && type === 'WeaponCoating')
+		const parentID = db.itemPathToID(path);
+		if (type === 'WeaponCoating')
 		{
-			const parent = await new Item(path).getImagePath();
-			const imagePath = `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(parent)})`;
-			return HTML.wire(this, `:itemType-${path}`)`
+			if (!path) return '';
+			const parent = await new Item({ id: parentID }).getImagePath();
+			const imagePath = `url(${STATIC_ROOT}images/${db.pathCase(parent)})`;
+			return HTML.wire()`
 				<div
 					class=${`item-type-icon WeaponCoating`}
 					style=${{webkitMaskImage: imagePath, maskImage: imagePath}}
 				></div>
 			`;
-		} else if (type && type === 'VehicleCoating')
+		} else if (type === 'VehicleCoating')
 		{
-			const parentCore = await new Item(path).getParentCoreItem();
+			if (!path) return '';
+			const parentCore = await new Item({ id: parentID }).getParentCoreItem();
 			if (!parentCore) return;
 			const parent = await parentCore?.getImagePath?.();
-			const imagePath = `url(/${db?.dbPath ?? 'db'}/images/${db.pathCase(parent)})`;
-			return HTML.wire(this, `:itemType-${path}`)`
+			const imagePath = `url(${STATIC_ROOT}images/${db.pathCase(parent)})`;
+			return HTML.wire()`
 				<div
 					class=${`item-type-icon VehicleCoating`}
 					style=${{webkitMaskImage: imagePath, maskImage: imagePath}}
 				></div>
 			`;
-		} else if (type && type === 'ArmorCoating')
+		} else if (type === 'ArmorCoating')
 		{
+			if (!path) return '';
 			let svgId = 'ArmorCoating';
 			switch (path) {
 				case 'Inventory/Armor/Themes/007-001-olympus-c13d0b38.json':
@@ -267,14 +337,22 @@ export class Item extends Component {
 				case 'Inventory/Armor/Themes/007-000-lone-wolf-0903655e.json':
 					svgId = 'RAKSHASA'
 					break;
-			
+
 				default:
 					break;
 			}
-			return HTML.wire(this, `:itemType-${performance.now()}`)`
+			return HTML.wire()`
 				<div
-					class=${`item-type-icon ${this?.data?.CommonData?.Type ?? 'default-type'}`}
+					class=${`item-type-icon ${this.type ?? 'default-type'}`}
 					style=${{backgroundImage: `url(/items.svg#${svgId ?? 'default'})`}}
+				></div>
+			`;
+		} else if (type.includes('Emblem'))
+		{
+			return HTML.wire()`
+				<div
+					class=${`item-type-icon emblem ${this.type}`}
+					style=${{backgroundImage: `url(/items.svg#${type})`}}
 				></div>
 			`;
 		}
@@ -296,9 +374,9 @@ export class Item extends Component {
 		if (displayPath && typeof displayPath === 'string') {
 			imagePath = `${displayPath.toLowerCase().replace('.svg', '.png')}`;
 		}
-			else if (db.replacedInfoItems.has(this.path))
+			else if (db.replacedInfoItems.has(this.id))
 		{
-			const replacedInfo = db.replacedInfoItems.get(this.path);
+			const replacedInfo = db.replacedInfoItems.get(this.id);
 			if (replacedInfo.mediaPath) return replacedInfo.mediaPath;
 		}
 		return imagePath;
@@ -324,11 +402,11 @@ export class Item extends Component {
 		await this.init();
 		if (this?.data?.CommonData?.ParentTheme)
 		{
-			this._parentItem = new Item(this?.data?.CommonData?.ParentTheme);
+			const id = filenameFromPath(this.data.CommonData.ParentTheme);
+			this._parentItem = new Item({ id });
 			await this._parentItem.init();
 			return this._parentItem;
 		}
-		// const test = async path => `<a class="parentSocket" href=${`#${path}`}>${await new Item(path).getName()}</a>`
 	}
 
 	async getParentCoreItem() {
@@ -336,11 +414,11 @@ export class Item extends Component {
 		await this.init();
 		if (this?.data?.CommonData?.ParentPaths)
 		{
-			this._parentItem = new Item(this?.data?.CommonData?.ParentPaths?.[0]?.Path);
+			const id = filenameFromPath(this?.data?.CommonData?.ParentPaths?.[0]?.Path);
+			this._parentItem = new Item({ id });
 			await this._parentItem.init();
 			return this._parentItem;
 		}
-		// const test = async path => `<a class="parentSocket" href=${`#${path}`}>${await new Item(path).getName()}</a>`
 	}
 
 	get icon() {
@@ -351,22 +429,17 @@ export class Item extends Component {
 		itemPanel.displayItem(this);
 	}
 
-	get manifestItem() {
-		if (this?._manifestItem) return this._manifestItem;
-		const manifest = db.getItemManifestByID(this.id);
-		if (manifest) return (this._manifestItem = manifest);
-	}
-
 	get lastModifiedDate() {
-		if (this?._lastModifiedDate) return this._lastModifiedDate;
-		if (!Array.isArray(this?.manifestItem?.touched)) return new Date('2021-11-15T20:00:00.000Z');
+		return this._lastModifiedDate ??= new Date(this?.meta?.touched ?? '2021-11-15T20:00:00.000Z');
+		// if (this?._lastModifiedDate) return this._lastModifiedDate;
+		// if (!Array.isArray(this.meta?.touched)) return new Date('2021-11-15T20:00:00.000Z');
 		
-		const dateString = this?.manifestItem?.touched[this.manifestItem.touched.length-1];
-		if (!Date.parse(dateString)) new Date('2021-11-15T20:00:00.000Z');
+		// const dateString = this.meta?.touched[this.meta.touched.length-1];
+		// if (!Date.parse(dateString)) new Date('2021-11-15T20:00:00.000Z');
 
-		const date = new Date(dateString);
-		date.setUTCHours(20);
-		return (this._lastModifiedDate = date);
+		// const date = new Date(dateString);
+		// date.setUTCHours(20);
+		// return (this._lastModifiedDate = date);
 	}
 
 	get isRedacted() {
@@ -383,14 +456,19 @@ export class Item extends Component {
 	get visibility() {
 		if (this?._visibility) return this._visibility;
 		try {
-			const manifest = this.manifestItem;
+			const manifest = this.meta;
 			const lastVisible = manifest?.visible;
 
-			if (!manifest.path.startsWith('inventory'))
+			const unredactedTypes = new Set([
+				'meta',
+				'None',
+				'Offering'
+			])
+			if (unredactedTypes.has(this.meta.type))
 			{
 				return (this._visibility = {
 					status: 'Visible',
-					date: new Date(lastVisible)
+					date: new Date(lastVisible ?? new Date())
 				});
 			}
 
@@ -413,6 +491,7 @@ export class Item extends Component {
 				date: new Date('2021-11-15T20:00:00.000Z')
 			})
 		} catch (error) {
+			console.error(`[Item.visibility]`, error);
 			return (this._visibility = {
 				status: 'Hidden',
 				date: new Date('2021-11-15T20:00:00.000Z')
@@ -425,13 +504,14 @@ export class Item extends Component {
 	}
 
 	get community() {
-		if (this.manifestItem.community) return this.manifestItem.community;
+		if (this.meta.community) return this.meta.community;
 	}
 
 	get quality() {
 		const quality = this?.data?.CommonData?.Quality;
 		if (quality) return quality.toLowerCase();
 		if (this.type === 'Offering') return 'Offering';
+		if (this?.data?.Quality) return `${this.data.Quality || 'common'}`.toLowerCase();
 		return 'common';
 	}
 

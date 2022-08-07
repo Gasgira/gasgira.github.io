@@ -1,0 +1,175 @@
+.graph_container {
+	/* height: 80vh;
+	width: 100vw; */
+	/* height: calc(100vh - 4rem); */
+	max-height: 90vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	& .forge-canvas {
+		/* background-color: red; */
+		height: 100%;
+		width: 100%;
+	}
+}
+
+@media all and (display-mode: fullscreen) {
+  .graph_container {
+		max-height: calc(100vh - 3rem);
+  }
+}
+
+.graph_toolbar_container {
+	display: flex;
+	flex-direction: row;
+	background-color: rgba(0,0,0,0.1);
+	& .control_list {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: center;
+		padding-left: 0.5em;
+		& .hi-box {
+			margin: 0.25em 0.2em;
+		}
+		& .spacer {
+			margin: 0 0.5rem;
+			pointer-events: none;
+		}
+		& .graph_start {
+			min-width: 9ch;
+			justify-content: center;
+		}
+	}
+}
+
+.litegraph.dialog {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -150px;
+	margin-left: -200px;
+
+	background-color: #2A2A2A;
+
+	min-width: 400px;
+	min-height: 200px;
+	box-shadow: 0 0 4px #111;
+	border-radius: 6px;
+	&.settings {
+		left: 10px;
+		top: 6rem;
+		bottom: 2rem;
+		margin: auto;
+	}
+	& .close{
+		float: right;
+		margin: 4px;
+		margin-right: 10px;
+		cursor: pointer;
+		font-size: 1.4em;
+		&:hover {
+			color: white;
+		}
+	}
+	& .dialog-header {
+		color: #AAA;
+		border-bottom: 1px solid #161616;
+		height: 40px;
+		& .dialog-title {
+			font: 20px "Arial";
+			margin: 4px;
+			padding: 4px 10px;
+			display: inline-block;
+		}
+	}
+	& .dialog-footer { height: 50px; padding: 10px; border-top: 1px solid #1a1a1a;}
+	& .dialog-content {
+		height: calc(100% - 90px);
+		width: 100%;
+		min-height: 100px;
+		display: inline-block;
+		color: #AAA;
+		/*background-color: black;*/
+		& h3 {
+			margin: 10px;
+		}
+		& .connections {
+			flex-direction: row;
+			& .connections_side {
+				width: calc(50% - 5px);
+				min-height: 100px;
+				background-color: black;
+				display: flex;
+			}
+		}
+	}
+	& .node_type {
+		font-size: 1.2em;
+		display: block;
+		margin: 10px;
+	}
+	& .node_desc {
+		opacity: 0.5;
+		display: block;
+		margin: 10px;
+	}
+	& .separator {
+		display: block;
+		width: calc( 100% - 4px );
+		height: 1px;
+		border-top: 1px solid #000;
+		border-bottom: 1px solid #333;
+		margin: 10px 2px;
+		padding: 0;
+	}
+	& .property {
+		margin-bottom: 2px;
+		padding: 4px;
+		& .property_name {
+			color: #737373;
+			display: inline-block;
+			text-align: left;
+			vertical-align: top;
+			width: 120px;
+			padding-left: 4px;
+			overflow: hidden;
+		}
+		& .property_value {
+			display: inline-block;
+			text-align: right;
+			color: #AAA;
+			background-color: #1A1A1A;
+			width: calc( 100% - 122px );
+			max-height: 300px;
+			padding: 4px;
+			padding-right: 12px;
+			overflow: hidden;
+			cursor: pointer;
+			border-radius: 3px;
+			&:hover {
+				color: white;
+			}
+		}
+		&.boolean .property_value {
+			padding-right: 30px;
+		}
+	}
+	& .btn {
+		border: 0;
+		border-radius: 4px;
+		padding: 4px 20px;
+		margin-left: 0px;
+		background-color: #060606;
+		color: #8e8e8e;
+		&:hover {
+			background-color: #111;
+			color: #FFF;
+		}
+		&.delete:hover {
+			background-color: #F33;
+			color: black;
+		}
+	}
+}

@@ -17,7 +17,7 @@
 	bottom: 0;
 	background-color: rgba(0,0,0,0.5);
 	cursor: pointer;
-	animation: fade-in var(--time-active) linear;
+	animation: fade-in var(--time-state) linear;
 	pointer-events: auto;
 }
 
@@ -41,7 +41,7 @@
 		overflow: auto;
 		background-color: var(--theme-primary);
 		border-radius: var(--theme-border-radius);
-		animation: pop-up var(--time-active) linear;
+		animation: fade-in var(--time-active) linear;
 		& .modal_close {
 			position: absolute;
 			top: 0;

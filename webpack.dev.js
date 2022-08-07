@@ -5,6 +5,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
 	mode: 'development',
@@ -76,22 +77,22 @@ module.exports = {
 				'Access-Control-Allow-Headers': '*',
 				'Access-Control-Allow-Methods': '*',
 		},
-		proxy: {
-			'/api': {
-				target: 'https://cylix.guide',
-				changeOrigin: true,
-				secure: false,
-			}
-		}
+		// proxy: {
+		// 	'/api': {
+		// 		target: 'https://cylix.guide',
+		// 		changeOrigin: true,
+		// 		secure: false,
+		// 	}
+		// }
 	},
 	plugins: [
-		new webpack.DefinePlugin({
-			'process.env': {
-				__BUILD__: JSON.stringify(new Date()),
-				__VERSION__: JSON.stringify(process.env.npm_package_version),
-				__DEBUG__: JSON.stringify(true)
-			}
-		}),
+		// new webpack.DefinePlugin({
+		// 	'process.env': {
+		// 		__BUILD__: JSON.stringify(new Date()),
+		// 		__VERSION__: JSON.stringify(process.env.npm_package_version),
+		// 		__DEBUG__: JSON.stringify(true)
+		// 	}
+		// }),
 		new webpack.HotModuleReplacementPlugin(),
 		// new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
@@ -108,6 +109,9 @@ module.exports = {
 					context: 'src/assets/'
 				}
 			],
+		}),
+		new Dotenv({
+			path: './.env.local'
 		})
 	]
 }

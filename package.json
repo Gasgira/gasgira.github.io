@@ -1,12 +1,14 @@
 {
-  "name": "skimmer",
-  "version": "1.0.0",
+  "name": "cylixguide",
+  "version": "2.0.0",
   "description": "",
   "main": "src/index.js",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
+    "staging": "webpack --config webpack.staging.js",
     "dev": "webpack serve --config webpack.dev.js --https --hot",
-    "serve": "http-server docs -p 8080 --cors=*"
+    "serve": "http-server staging -p 8081 --cors=*",
+    "cdn": "http-server ../hi-db/dist -p 8082 --cors=*"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +22,7 @@
     "html-webpack-plugin": "^5.5.0",
     "http-server": "^14.1.0",
     "hyperhtml": "^2.34.0",
+    "litegraph.js": "jagenjo/litegraph.js",
     "minisearch": "^5.0.0",
     "postcss": "^8.4.5",
     "postcss-loader": "^6.2.1",
@@ -28,5 +31,8 @@
     "webpack": "^5.66.0",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.7.3"
+  },
+  "devDependencies": {
+    "dotenv-webpack": "^8.0.0"
   }
 }

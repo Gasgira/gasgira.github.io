@@ -44,7 +44,7 @@ export class AppearanceCore extends Component {
 	init() {
 		if (this.items.length) return;
 		// console.log('AppearanceCore init', this.sockets);
-		this.items = [...this.itemIDs].map(id => new Item({id}));
+		this.items = [...this.itemIDs].map(id => new Item({ id }));
 	}
 
 	render() {

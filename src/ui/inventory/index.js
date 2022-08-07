@@ -101,7 +101,7 @@ class Inventory extends Component {
 		// }, true);
 
 		// Listen for updates to favorites list, render on change
-		emitter.on('favoriteItemPaths', (path) => {
+		emitter.on('favoriteItems', (id) => {
 			// console.log('fav update', path);
 			favorites.init();
 			if (this.state?.inventoryCategory === favorites) favorites.render();
@@ -196,7 +196,7 @@ class InventoryCategory extends Component {
 	}
 
 	getCurrentItemPage() {
-		return (this.items = [...this.currentPageIDs].map(id => new Item(db.getItemPathByID(id))));
+		return (this.items = [...this.currentPageIDs].map(id => new Item({ id })));
 	}
 
 	nextPage() {
@@ -286,7 +286,7 @@ class InventoryCategory extends Component {
 class Favorites extends InventoryCategory {
 	init() {
 		this.itemIDs = db.getItemIDsByType(this.categoryName);
-		this.items = [...this.itemIDs].map(id => new Item(db.getItemPathByID(id)));
+		this.items = [...this.itemIDs].map(id => new Item({ id }));
 	}
 
 	renderFavoritesManager() {
@@ -550,24 +550,6 @@ class Search extends InventoryCategory {
 						id="date_modified-before"
 						onchange=${(e) => this.filterModifiedBeforeDate(e.target.value)}
 						value=${filters.get('smb')?.toLocaleDateString?.('sv') || ''}
-					>
-				</li>
-				<li class="filter-input_wrapper">
-					<label for="date_added-after">Added After</label>
-					<input
-						type="date"
-						id="date_added-after"
-						onchange=${(e) => this.filterAddedDate(e.target.value)}
-						value=${filters.get('saa')?.toLocaleDateString?.('sv') || ''}
-					>
-				</li>
-				<li class="filter-input_wrapper">
-					<label for="date_added-before">Added Before</label>
-					<input
-						type="date"
-						id="date_added-before"
-						onchange=${(e) => this.filterAddedBeforeDate(e.target.value)}
-						value=${filters.get('sab')?.toLocaleDateString?.('sv') || ''}
 					>
 				</li>
 				<li class="filter-input_wrapper">

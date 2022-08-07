@@ -20,6 +20,11 @@
 		<line x1="4" y1="12" x2="20" y2="12" />
 		<line x1="4" y1="18" x2="20" y2="18" />
 	</g>
+	<g id="menu-open">
+		<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+		<line x1="4" y1="8" x2="20" y2="8" />
+		<line x1="4" y1="16" x2="20" y2="16" />
+	</g>
 	<g id="dots-v">
 		<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
 		<circle cx="12" cy="12" r="1" />
@@ -107,5 +112,93 @@
 	<g id="caret-down">
 		<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   	<path d="M18 15l-6 -6l-6 6h12" transform="rotate(180 12 12)" />
+	</g>
+	<g id="forge" fill="#fff" stroke="none">
+		<path d="M18,9.12l.42,1.46.77.44H16.13Zm.36-2.67-4.9,4.9L7.1,4.9,12,0,14.64,2.7,17.35,0l1.13,1.13L15.83,3.89ZM12,3.12,10.28,5l3.27,3.36,1.81-1.81ZM5.88,8.71H7.25V7l4,4H5.79l.5-.5v-1Zm1.19,4.22H21.51v1.38H20.8l-5.44,5.44v1.7h2.33V24H6.42V21.46H8.55V19.73H7.13s-1.67-1-2.86-1.87a6.51,6.51,0,0,1-1.78-2v-2.2H7.07ZM5,14.86A1.85,1.85,0,0,0,5.47,16a7.7,7.7,0,0,0,1.78,1.28h3.59v4.14h2.32V18.93l3.42-3.42v-.65Z"/>
+	</g>
+	<g id="quote">
+		<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+		<path d="M6 15h15" />
+		<path d="M21 19h-15" />
+		<path d="M15 11h6" />
+		<path d="M21 7h-6" />
+		<path d="M9 9h1a1 1 0 1 1 -1 1v-2.5a2 2 0 0 1 2 -2" />
+		<path d="M3 9h1a1 1 0 1 1 -1 1v-2.5a2 2 0 0 1 2 -2" />
+	</g>
+	<g id="eye">
+		<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+		<circle cx="12" cy="12" r="2" />
+		<path d="M22 12c-2.667 4.667 -6 7 -10 7s-7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7" />
+	</g>
+	<g id="eye-off">
+		<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+		<line x1="3" y1="3" x2="21" y2="21" />
+		<path d="M10.584 10.587a2 2 0 0 0 2.828 2.83" />
+		<path d="M9.363 5.365a9.466 9.466 0 0 1 2.637 -.365c4 0 7.333 2.333 10 7c-.778 1.361 -1.612 2.524 -2.503 3.488m-2.14 1.861c-1.631 1.1 -3.415 1.651 -5.357 1.651c-4 0 -7.333 -2.333 -10 -7c1.369 -2.395 2.913 -4.175 4.632 -5.341" />
+	</g>
+	<g id="eye-check">
+		<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+		<circle cx="12" cy="12" r="2" />
+		<path d="M12 19c-4 0 -7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7c-.42 .736 -.858 1.414 -1.311 2.033" />
+		<path d="M15 19l2 2l4 -4" />
+	</g>
+	<g id="download">
+		<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+		<path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
+		<polyline points="7 11 12 16 17 11" />
+		<line x1="12" y1="4" x2="12" y2="16" />
+	</g>
+	<g id="save">
+		<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+		<path d="M6 4h10l4 4v10a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2" />
+		<circle cx="12" cy="14" r="2" />
+		<polyline points="14 4 14 8 8 8 8 4" />
+	</g>
+	<g id="trash">
+		<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+		<path d="M4 7h16" />
+		<path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+		<path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+		<path d="M10 12l4 4m0 -4l-4 4" />
+	</g>
+	<g id="upload">
+		<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+		<path d="M14 3v4a1 1 0 0 0 1 1h4" />
+		<path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+		<line x1="12" y1="11" x2="12" y2="17" />
+		<polyline points="9 14 12 11 15 14" />
+	</g>
+	<g id="play">
+		<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+		<path d="M7 4v16l13 -8z" />
+	</g>
+	<g id="stop">
+		<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+		<rect x="5" y="5" width="14" height="14" rx="2" />
+	</g>
+	<g id="step">
+		<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+		<path d="M4 5v14l12 -7z" />
+		<line x1="20" y1="5" x2="20" y2="19" />
+	</g>
+	<g id="help">
+		<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+		<circle cx="12" cy="12" r="9" />
+		<line x1="12" y1="17" x2="12" y2="17.01" />
+		<path d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4" />
+	</g>
+	<g id="maximize">
+		<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+		<path d="M4 8v-2a2 2 0 0 1 2 -2h2" />
+		<path d="M4 16v2a2 2 0 0 0 2 2h2" />
+		<path d="M16 4h2a2 2 0 0 1 2 2v2" />
+		<path d="M16 20h2a2 2 0 0 0 2 -2v-2" />
+	</g>
+	<g id="minimize">
+		<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+		<path d="M15 19v-2a2 2 0 0 1 2 -2h2" />
+		<path d="M15 5v2a2 2 0 0 0 2 2h2" />
+		<path d="M5 15h2a2 2 0 0 1 2 2v2" />
+		<path d="M5 9h2a2 2 0 0 0 2 -2v-2" />
 	</g>
 </svg>

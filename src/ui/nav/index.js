@@ -16,14 +16,21 @@ class HeaderNav extends Component {
 
 	get defaultState() {
 		return {
-			copyStatus: 'Share'
+			copyStatus: 'Share',
+			showMenu: false
 		};
+	}
+
+	get pathname() {
+		const { pathname } = new URL(window.location);
+		if (pathname) return pathname;
+		return '/';
 	}
 
 	render() {
 		const url = new URL(window.location);
 		const { pathname } = url;
-		
+
 		return this.html`
 			<nav class="toolbar">
 			<a class="header-logo" href="/"><header>
@@ -59,42 +66,110 @@ class HeaderNav extends Component {
 					</div>
 				</header></a>
 				<ul>
-					${this.spoilersButton()}
-					${pathname.startsWith('/vanity') ? this.shareButton() : this.searchButton()}
-					<li><button
-						aria-label="Settings"
-						title="Settings"
-						onclick=${() => modalConstructor.showView(settings.render())}
-					>
-							<div class="icon-masked icon-settings"></div>
-					</button></li>
-					<li><button
-						aria-label="Discord"
-						title="Discord"
-						onclick=${() => modalConstructor.showView(discord.render())}
-					>
-						<div class="icon-masked icon-discord"></div>
-					</button></li>
-					${pathname.startsWith('/vanity') ? this.itemsButton() : this.vanityButton()}
-					<li><button
-					aria-label="About"
-					title="About"
-					onclick=${() => modalConstructor.showView(about.render())}
-					>
-						About
-					</button></li>
+					${this.shareButton()}
+					${this.searchButton()}
+					${this.itemsButton()}
+					${this.vanityButton()}
+					${this.menuButton()}
 				</ul>
 			</nav>
 		`;
 	}
 
-	searchButton() {
-		return HTML.wire(this, ':search')`
-			<li><button aria-label="Search" title="Search" onclick=${() => emitter.emit('nav-search')}><div class="icon-masked icon-search"></div></button></li>
+	handleMenuMouseEvent(e) {
+		const { target, currentTarget, relatedTarget } = e;
+		// console.log(relatedTarget, currentTarget)
+		if (
+			e.type === 'mouseover'
+			&& currentTarget instanceof HTMLElement
+			&& relatedTarget instanceof Node
+			&& target instanceof Node
+			&& currentTarget.contains(target)
+		)
+		{
+			console.log('open', e.type);
+			this.state.showMenu = true;
+			return currentTarget.setAttribute("open", "")
+		}
+		currentTarget.removeAttribute("open");
+		this.state.hideMenu = false;
+		console.log('close', e.type);
+	}
+
+	menuButton2() {
+		console.log(this.state.showMenu)
+		return HTML.wire(this, ':menu')`
+			<li>
+				<details class="menu_wrapper"
+					onMouseOver=${(e) => this.handleMenuMouseEvent(e)}
+					onMouseLeave=${(e) => this.handleMenuMouseEvent(e)}
+					onToggle=${(e) => console.log('tog', e)}
+				>
+					<summary
+						aria-label="Menu"
+						title="Additional Options"
+						class="icon-masked icon-menu"
+					>
+					</summary>
+					<div class="menu_list_wrapper">
+						<ul class="menu_list">
+							<li>${this.spoilersButton()}</li>
+							<li>${this.discordButton()}</li>
+							<li>${this.settingsButton()}</li>
+							<li>${this.forgeButton()}</li>
+							<li>${this.aboutButton()}</li>
+						</ul>
+					</div>
+				</details>
+			</li>
+		`;
+	}
+
+	menuButton() {
+		if (!this.state.showMenu)
+		{
+			return HTML.wire(this, ':menu')`
+				<li>
+					<div class="menu_wrapper">
+						<button
+							aria-label="Menu"
+							title="Additional Options"
+							onclick=${() => this.setState({showMenu: !this.state.showMenu})}
+						>
+							<div class="icon-masked icon-menu"></div>
+						</button>
+					</div>
+				</li>
+			`;
+		}
+		return HTML.wire(this, ':menu')`
+			<li>
+				<div class="menu_wrapper"
+					onblur=${() => console.log('blur')}
+				>
+					<button
+						aria-label="Menu"
+						title="Additional Options"
+						onclick=${() => this.setState({showMenu: !this.state.showMenu})}
+					>
+						<div class="icon-masked icon-close"></div>
+					</button>
+					<div class="menu_list_wrapper">
+						<ul class="menu_list">
+							<li>${this.spoilersButton()}</li>
+							<li>${this.discordButton()}</li>
+							<li>${this.settingsButton()}</li>
+							<li>${this.forgeButton()}</li>
+							<li>${this.aboutButton()}</li>
+						</ul>
+					</div>
+				</div>
+			</li>
 		`;
 	}
 
 	shareButton() {
+		if (!this.pathname.startsWith('/vanity')) return '';
 		return HTML.wire(this, ':share')`
 			<li>
 				<button
@@ -124,6 +199,7 @@ class HeaderNav extends Component {
 	}
 
 	vanityButton() {
+		if (this.pathname.startsWith('/vanity')) return '';
 		return HTML.wire(this, ':vanity')`
 			<li><button
 				aria-label="Vanity"
@@ -140,6 +216,7 @@ class HeaderNav extends Component {
 	}
 
 	itemsButton() {
+		if (this.pathname === '/') return '';
 		return HTML.wire(this, ':items')`
 			<li><button
 				aria-label="Items"
@@ -155,19 +232,93 @@ class HeaderNav extends Component {
 		`;
 	}
 
+	searchButton() {
+		if (this.pathname === '/')
+		{
+			return HTML.wire(this, ':search')`
+				<li><button aria-label="Search" title="Search" onclick=${() => emitter.emit('nav-search')}><div class="icon-masked icon-search"></div></button></li>
+			`;
+		}
+	}
+
+	forgeButton() {
+		return '';
+		// if (this.pathname.startsWith('/forge')) return '';
+		// return HTML.wire(this, ':forge')`
+		// 	<button
+		// 		aria-label="Forge"
+		// 		title="Forge Tools"
+		// 		onclick=${() => {
+		// 			this.setState({showMenu: false});
+		// 			history.pushState(null, null, '/forge/');
+		// 			const popStateEvent = new PopStateEvent('popstate', null);
+		// 			dispatchEvent(popStateEvent);
+		// 		}}
+		// 	>
+		// 		<span>Forge</span><div class="icon-masked icon-forge"></div>
+		// 	</button>
+		// `;
+	}
+
 	// class="featured"
 	spoilersButton() {
 		if (settings.data.has('revealHidden')) return;
 		return HTML.wire(this, ':spoilers')`
-			<li><button
+			<button
 				aria-label="Show spoilers?"
 				title="Reveal Spoilers"
 				onclick=${() => {
 					settings.showSpoilers();
 				}}
 			>
-				Reveal All Spoilers
-			</button></li>
+				<span>Reveal All Spoilers</span><div class="icon-masked icon-eye"></div>
+			</button>
+		`;
+	}
+
+	aboutButton() {
+		return HTML.wire(this, ':about')`
+			<button
+				aria-label="About"
+				title="About"
+				onclick=${() => {
+					this.setState({showMenu: false});
+					modalConstructor.showView(about.render())
+				}}
+			>
+				<span>About</span><div class="icon-masked icon-quote"></div>
+			</button>
+		`;
+	}
+
+	discordButton() {
+		return HTML.wire(this, ':discord')`
+			<button
+				aria-label="Discord"
+				title="Discord"
+				onclick=${() => {
+					this.setState({showMenu: false});
+					modalConstructor.showView(discord.render())
+				}}
+			>
+				<span>Discord & Bots</span><div class="icon-masked icon-discord"></div>
+			</button>
+		`;
+	}
+
+	settingsButton() {
+		return HTML.wire(this, ':settings')`
+			<button
+				aria-label="Settings"
+				title="Settings"
+				onclick=${() => {
+					this.setState({showMenu: false});
+					modalConstructor.showView(settings.render())
+				}}
+				autofocus
+			>
+				<span>Settings</span><div class="icon-masked icon-settings"></div>
+			</button>
 		`;
 	}
 }
