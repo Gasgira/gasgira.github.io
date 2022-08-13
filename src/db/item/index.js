@@ -98,19 +98,12 @@ export class Item extends Component {
 		return this?._id ?? (this._id = this.meta.name);
 	}
 
-	get cylixPath() {
-		return `item/${this.id}/${this.meta.res}.json`;
+	get altName() {
+		return this?._altName ?? (this._altName = this?.data?.CommonData?.AltName || this.id);
 	}
 
-	get rid() {
-		if (this._rid) return this._rid;
-		const id = this?._id ?? (this._id = db.itemPathToID(this.path));
-		const split = id.split('-');
-		if (split.length === 4)
-		{
-			return (this._rid = `${split.slice(0,3).join('-')}-${nanohash()}`);
-		}
-		return (this._rid = id);
+	get cylixPath() {
+		return `item/${this.id}/${this.meta.res}.json`;
 	}
 
 	get name() {
@@ -173,6 +166,21 @@ export class Item extends Component {
 		return this?._parentPaths ?? (this._parentPaths = new Set([...this?.data?.CommonData?.ParentPaths.map(parent => parent?.Path)]));
 	}
 
+	get parentIDs() {
+		if (this._parentIDs) return this._parentIDs;
+
+		const parentPaths = this.parentPaths;
+		if (!parentPaths || !parentPaths.size) return (this._parentIDs = new Set());
+
+		const parentIDs = new Set();
+		parentPaths.forEach(path => {
+			const id = db.itemPathToID(path);
+			if (id) parentIDs.add(id);
+		})
+
+		return parentIDs;
+	}
+
 	get manufacturerName() {
 		return db.getManufacturerByIndex(this?.data?.CommonData?.ManufacturerId ?? 0)?.ManufacturerName ?? '';
 	}
@@ -216,10 +224,59 @@ export class Item extends Component {
 		console.warn('render', this);
 	}
 
+	get tempUnsupportedCores() {
+		return this._tempUnsupportedCores ??= new Set([
+			'007-001-reach-2564121f',
+			'007-000-eagle-strike-0903655e',
+			'007-000-lone-wolf-0903655e',
+			'007-001-samurai-55badb14'
+		])
+	}
+
+	get showCoatingRenderIcon() {
+		const parentIDs = this.parentIDs;
+		const unsupportedIDs = this.tempUnsupportedCores;
+
+		let supported = true;
+
+		parentIDs.forEach(id => {
+			if (unsupportedIDs.has(id))  supported = false;
+		});
+
+		return supported;
+	}
+
 	async renderIcon(id, {
 		itemTypeIcon = false
 	} = {}) {
 		await this.init();
+		if (this.type === 'ArmorCoating' && this.seasonNumber < 3 && !this.isRedacted && this.showCoatingRenderIcon)
+		{
+			return HTML.wire(this, `:${id ?? 'icon'}`)`
+				<button
+					class=${
+						`dbItem dbItemIcon ${this?.type ?? 'defaultType'} ${this.quality}${
+							this.type === 'SpartanBackdropImage' ? ' invert-hover' : ''
+							}`
+					}
+					onclick=${() => this.showItemPanel()}
+					style=${{backgroundImage: `url(${STATIC_ROOT}7/render/icon/${this.altName.toLowerCase()}_icon.png)`}}
+					title=${this.name ?? 'item'}
+				>
+					<div
+						class="dbItem-coating-icon"
+						style=${{backgroundImage: `url(${STATIC_ROOT}images/${db.pathCase(this.imagePath)})`}}
+					></div>
+					<span>${this.name ?? '???'}</span>
+					${this.renderItemTypeIcon()}
+					<div
+						class="season-icon"
+						data-season="${this.seasonNumber ?? 0}"
+						style="-webkit-mask-image:${`url(/seasons.svg#${this.seasonNumber ?? 0})`}"
+					></div>
+				</button>
+			`;
+		}
 		return HTML.wire(this, `:${id ?? 'icon'}`)`
 			<button
 				class=${

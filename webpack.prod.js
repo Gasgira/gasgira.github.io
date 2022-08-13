@@ -108,6 +108,7 @@ module.exports = {
 				'!robots.txt*',
 				'!404.html*',
 				'!_redirects',
+				'!_headers',
 				'!db/**',
 				'!7/**',
 				'!i18n/**'

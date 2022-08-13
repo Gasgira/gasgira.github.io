@@ -15,7 +15,7 @@ button.dbItemIcon {
 	align-items: center;
 	background-color: rgba(0,0,0,0.25);
 	font-weight: bold;
-	text-shadow: 0.1rem 0.1rem 0.2rem #000;
+	text-shadow: -0.1rem 0.1rem 0.1rem #000, 0.1rem 0.1rem 0.1rem #000;
 	/* animation: fade-in var(--time-state) linear; */
 	position: relative;
 	&.ArmorVisor {
@@ -82,7 +82,7 @@ button.dbItemIcon {
 		opacity: 1;
 		transition: opacity var(--time-active) linear;
 		font-size: 0.9em;
-		margin-bottom: 0.25em;
+		margin-bottom: 0.7rem;
 		word-wrap: break-word;
 	}
 	&:hover {
@@ -131,9 +131,9 @@ button.dbItemIcon {
 			background-color: rgb(128,128,128);
 		}
 		&.ArmorCoating {
-			top: 0.3rem;
-			right: 0.1rem;
-			--typeLength: 1.7rem;
+			top: 0.7rem;
+			right: 0.4rem;
+			--typeLength: 1.5rem;
 		}
 		&.emblem {
 			top: 0.2rem;
@@ -142,11 +142,11 @@ button.dbItemIcon {
 		}
 	}
 	& .season-icon {
-		--seasonLength: 1rem;
+		--seasonLength: 1em;
 		width: var(--seasonLength);
 		height: var(--seasonLength);
 		position: absolute;
-		top: 0.2rem;
+		bottom: 0.2rem;
 		left: 0.2rem;
 		opacity: 1;
 		background-color: #808080;
@@ -159,6 +159,17 @@ button.dbItemIcon {
 		&[data-season="2"] {
 			background-color: var(--rarity-event);
 		}
+	}
+	& .dbItem-coating-icon {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 33%;
+		height: 33%;
+		background-size: contain;
+		background-repeat: no-repeat;
+		pointer-events: none;
 	}
 }
 

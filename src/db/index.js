@@ -149,7 +149,7 @@ class Database {
 			return path;
 		} catch (error) {
 			console.error(`[db.itemPathToID] Bad id/path for "${path}"`);
-			return '???';
+			return;
 		}
 	}
 
@@ -376,7 +376,8 @@ class Database {
 			['AiTheme', 'Kit, AI'],
 			['AiCore', 'Core, AI'],
 			['Offering', 'Offering'],
-			['meta', 'Meta']
+			['meta', 'Meta'],
+			['None', 'Emblem Palette']
 		]))
 	}
 

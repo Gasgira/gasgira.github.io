@@ -232,6 +232,80 @@ class Palettes extends Component {
 	}
 }
 
+class Screenshots extends Component {
+	constructor() {
+		super();
+		this.types = new Set([
+			'ArmorCoating'
+		]);
+
+		this.author = 'Cylix Guide'
+	}
+
+	get defaultState() {
+		return {
+			expanded: false
+		};
+	}
+
+	get item() {
+		if (this.state.item) return this.state.item;
+	}
+
+	display(item) {
+		const expanded = this.state.expanded;
+		this.state = this.defaultState;
+		this.state.expanded = expanded;
+		if (!this.types.has(item?.type)) return;
+		try {
+			if (item)
+			{
+				this.state.item = item;
+			}
+		} catch (error) {
+			console.error(`[ItemPanel.Screenshots]`, error);
+		}
+	}
+
+	get configs() {
+		return this.state.expanded ? [...this.state.configs] : [...this.state.configs].slice(0, 1);
+	}
+
+	render() {
+		if (this.state.item && this.state.item.type === 'ArmorCoating')
+		{
+			// style=${{backgroundImage: `url(${STATIC_ROOT}7/screens/${type}/${renderName}.png)`}}
+			const type = this.state.item.type.toLowerCase();
+			const renderName = this.state.item.altName.toLowerCase();
+			return this.html`
+				<div class="screenshots-wrapper">
+					<ul class="screenshots_list">
+						<li class="screenshot-wrapper">
+							<button
+								class="screenshot-expand-thumb"
+								onclick=${() => modalConstructor.showView(this.renderGallery())}
+								style=${{backgroundImage: `url(${STATIC_ROOT}7/render/icon/${renderName}_icon.png)`}}
+							>
+								View Screenshots
+							</button>
+						</li>
+					</ul>
+				</div>
+			`;
+		}
+	}
+
+	renderGallery() {
+		const type = this.state.item.type.toLowerCase();
+		const renderName = this.state.item.altName.toLowerCase();
+		return HTML.wire(this, ':imageModal')`
+			<div class="dbItemPanel_image-modal">
+				<img src=${`${STATIC_ROOT}7/screens/${type}/${renderName}.png`}>
+			</div>
+		`;
+	}
+}
+
 class ItemPanel extends Component {
 	constructor() {
 		super();
@@ -249,6 +323,7 @@ class ItemPanel extends Component {
 		this.externalRelationsPage = new RelatedItems('External');
 
 		this.palettes = new Palettes();
+		this.screenshots = new Screenshots();
 	}
 
 	get defaultState() {
@@ -297,6 +372,7 @@ class ItemPanel extends Component {
 		this.externalRelationsPage.init();
 
 		this.palettes.display(item);
+		this.screenshots.display(item);
 
 		this.render();
 
@@ -434,6 +510,7 @@ class ItemPanel extends Component {
 					</section>
 					${this.renderCommunity()}
 					${() => this.palettes.types.has(this.item.type) ? this.palettes.render() : ''}
+					${() => this.screenshots.types.has(this.item.type) && this.item.showCoatingRenderIcon && !this.item.isRedacted ? this.screenshots.render() : ''}
 					<ul class="page-list">
 						<li>
 							<button

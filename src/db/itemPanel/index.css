@@ -377,6 +377,35 @@
 			}
 		}
 	}
+	& .screenshots-wrapper {
+		margin-bottom: 1rem;
+		& .screenshots_list {
+			list-style-type: none;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+		}
+		& .screenshot-expand-thumb {
+			width: 100%;
+			height: 6rem;
+			background-size: 125%;
+			background-repeat: no-repeat;
+			background-position: center 10%;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			padding-bottom: 1rem;
+			mask-image: linear-gradient(0deg, transparent 0%, #FFF 20%, #FFF 100%);
+			text-shadow: -0.1rem 0.1rem 0.1rem #000, 0.1rem 0.1rem 0.1rem #000;
+			font-weight: bold;
+			&:hover {
+				text-shadow: 0 0 1rem #fff, 0 0 0.5rem #fff;
+				mask-image: initial;
+			}
+		}
+	}
 }
 
 .dbItemPanel_image-modal img {
