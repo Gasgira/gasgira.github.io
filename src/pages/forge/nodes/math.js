@@ -4,10 +4,10 @@ import { LiteGraph } from 'lib/LiteGraph';
 export class SubtractVectors extends ForgeNode {
 	constructor() {
 		super();
-		this.addInput("Operand A", forge.type.vector);
-		this.addInput("Operand B", forge.type.vector);
+		this.addStaticInput("Operand A", forge.type.vector);
+		this.addStaticInput("Operand B", forge.type.vector);
 
-		this.addOutput("Result", forge.type.vector);
+		this.addStaticOutput("Result", forge.type.vector);
 
 		this.color = forge.nodeColor.variable;
 	}

@@ -31,6 +31,7 @@ class Settings extends Component {
 				if (settings.data.has('appScale')) this.setAppScale(settings.data.get('appScale'));
 				if (settings.data.has('textScale')) this.setTextScale(settings.data.get('textScale'));
 				if (settings.data.has('revealHidden')) this.revealHidden();
+				if (settings.data.has('userSort')) this.setSort(settings.data.get('userSort'));
 			} else {
 				let storageTest;
 				try {
@@ -273,6 +274,16 @@ class Settings extends Component {
 		this.setSetting('pageSize', int);
 
 		this.render();
+	}
+
+	setSort(value = 'alphanumeric') {
+		console.info(`[Settings] setSort "${value}"`);
+		this.setSetting('userSort', value);
+	}
+
+	setSortOrder(value = false) {
+		console.info(`[Settings] setSortOrder "${value}"`);
+		this.setSetting('userSortOrder', value ? true : false);
 	}
 
 	reset() {

@@ -179,7 +179,7 @@ class Calendar extends Component {
 				const dayMS = 24 * 60 * 60 * 1000;
 
 				const days = Math.round(Math.abs((today - endDate) / dayMS));
-				if (days > 6) return `${days} days remaining`;
+				if (days > 7) return `${days} days remaining`;
 				return this.renderCountdown(endDate);
 			}
 		} catch (error) {

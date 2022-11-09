@@ -32,7 +32,7 @@ LiteGraph.registerNodeType("debug/game", DebugGame);
 export class Watch extends ForgeNode {
 	constructor() {
 		super();
-		this.addInput("", 0, { label: "" });
+		this.addStaticInput("", 0, { label: "" });
 		this.value = 0;
 
 		this.color = forge.nodeColor.variable;

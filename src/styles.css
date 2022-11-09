@@ -519,6 +519,23 @@ button {
 		padding: 0.5rem;
 		--mica-content-inset: 0.5rem;
 	}
+	& .page-controls_wrapper {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+		& span {
+			width: 4rem;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			align-content: center;
+			justify-content: center;
+			pointer-events: none;
+			user-select: none;
+		}
+	}
 }
 
 .mica_mobile-menu_button {
@@ -675,6 +692,51 @@ button {
 	&.icon-maximize {
 		mask-image: url("assets/icons.svg#maximize");
 	}
+	&.icon-checked {
+		mask-image: url("assets/icons.svg#checked");
+	}
+	&.icon-unchecked {
+		mask-image: url("assets/icons.svg#unchecked");
+	}
+	&.icon-arrow-left {
+		mask-image: url("assets/icons.svg#arrow-left");
+	}
+	&.icon-arrow-right {
+		mask-image: url("assets/icons.svg#arrow-right");
+	}
+	&.icon-ugc-0 {
+		mask-image: url("assets/icons.svg#forge");
+	}
+	&.icon-ugc-1 {
+		mask-image: url("assets/icons.svg#forge");
+	}
+	&.icon-ugc-2 {
+		mask-image: url("assets/icons.svg#ugc-2");
+	}
+	&.icon-ugc-3 {
+		mask-image: url("assets/icons.svg#forge");
+	}
+	&.icon-ugc-4 {
+		mask-image: url("assets/icons.svg#forge");
+	}
+	&.icon-ugc-5 {
+		mask-image: url("assets/icons.svg#forge");
+	}
+	&.icon-ugc-6 {
+		mask-image: url("assets/icons.svg#ugc-6");
+	}
+	&.icon-ugc-7 {
+		mask-image: url("assets/icons.svg#forge");
+	}
+	&.icon-ugc-8 {
+		mask-image: url("assets/icons.svg#forge");
+	}
+	&.icon-ugc-9 {
+		mask-image: url("assets/icons.svg#forge");
+	}
+	&.icon-ugc-10 {
+		mask-image: url("assets/icons.svg#forge");
+	}
 }
 
 .no-select {
@@ -700,16 +762,27 @@ select {
 	position: relative;
 	font-size: 1em;
 	padding: 0.2rem;
+	padding-right: 2rem;
 	margin: 0.1rem 0;
+	background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGNsYXNzPSJpY29uIGljb24tdGFibGVyIGljb24tdGFibGVyLWNoZXZyb24tZG93biIgd2lkdGg9IjQ0IiBoZWlnaHQ9IjQ0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2U9IiNmZmYiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+DQogIDxwYXRoIHN0cm9rZT0ibm9uZSIgZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPg0KICA8cG9seWxpbmUgcG9pbnRzPSI2IDkgMTIgMTUgMTggOSIgLz4NCjwvc3ZnPg==");
+	background-position: right 10px center;
+  background-repeat: no-repeat;
+  background-size: auto 50%;
 	transition: background-color var(--time-active) linear,
 		color var(--time-active) linear;
-	&:hover {
-		background-color: var(--theme-interact);
-		color: #000;
-	}
-	&:focus {
-		background-color: initial;
+	&:hover, &:active, &:focus {
 		color: initial;
-		transition: none;
+		background-color: #fff;
+	}
+}
+
+details {
+	background-color: rgba(0,0,0, 0.1);
+	border-radius: var(--theme-border-radius);
+	padding: 0.5rem;
+	margin: 0.5rem 0;
+	max-width: 50ch;
+	& summary {
+		cursor: pointer;
 	}
 }

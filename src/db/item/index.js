@@ -6,7 +6,6 @@ import { i18n } from 'ui/i18n';
 import { filenameFromPath } from 'utils/paths.js';
 import { settings } from 'ui/settings';
 import { STATIC_ROOT } from 'environment';
-import { nanohash } from 'utils/strings.js';
 
 import './index.css';
 
@@ -22,7 +21,7 @@ export const placeholderItem = HTML.wire()`
 export class Item extends Component {
 	constructor(properties) {
 		super();
-		if (!properties) throw new Error(`[Item.constructor] No props!`);
+		if (!properties) return;
 
 		if (properties.item && properties.meta)
 		{
@@ -38,7 +37,8 @@ export class Item extends Component {
 			if (!meta)
 			{
 				console.error(`[Item.constructor] No meta for "${id}"!`);
-				return 'Bad item id!';
+				// return 'Bad item id!';
+				return new emptyItem(id);
 			}
 			this._meta = meta;
 			this._id = meta.name;
@@ -53,7 +53,8 @@ export class Item extends Component {
 			if (!meta)
 			{
 				console.error(`[Item.constructor] No meta for "${id}"!`);
-				return 'Bad item id!';
+				// return 'Bad item id!';
+				return new emptyItem(id);
 			}
 			this._meta = meta;
 			this._id = meta.name;
@@ -588,5 +589,34 @@ export class Item extends Component {
 		if (this?._tags) return this._tags;
 		if (Array.isArray(this.community?.tags)) return (this._tags = new Set(this.community.tags));
 		return (this._tags = new Set());
+	}
+}
+
+class emptyItem extends Item {
+	constructor(id) {
+		super();
+		this._id = id;
+	}
+
+	get meta() {
+		return {
+			"name": this._id,
+			"title": "???",
+			"type": "???",
+			"touched": "2021-11-15T21:00:00.000Z",
+			"res": "831ef64146b867245232326064642228642b6ab6464bae3bd4085aa6b61cef87",
+			"added": [
+				"2021-11-15T20:00:00.000Z",
+				""
+			]
+		}
+	}
+
+	get data() {
+		return {}
+	}
+
+	get description() {
+		return `ERROR: This item is corrupted, unavailable, or does not exist! "${this._id}"`
 	}
 }

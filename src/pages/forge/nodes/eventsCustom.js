@@ -11,10 +11,10 @@ export class EveryNSeconds extends ForgeNode {
 			initialDelay: 10
 		}
 
-    this.addInput("Seconds", forge.type.number);
-		this.addInput("Initial Delay", forge.type.number);
+    this.addStaticInput("Seconds", forge.type.number);
+		this.addStaticInput("Initial Delay", forge.type.number);
 
-		this.addOutput("Event", LiteGraph.EVENT);
+		this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.time = 0;
 		this.lastInterval = 1;
@@ -77,9 +77,9 @@ export class OnCustomEquipmentUsed extends ForgeNode {
 			equipmentType: forge.equipmentTypes.get('customEquipmentA')
 		}
 
-    this.addOutput("Event", LiteGraph.EVENT);
-		this.addOutput("Activating Player", forge.type.player);
-		this.addOutput("Equipment Type", forge.type.equipmentType);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
+		this.addStaticOutput("Activating Player", forge.type.player);
+		this.addStaticOutput("Equipment Type", forge.type.equipmentType);
 
 		this.triggerButton = this.addWidget("button", "[DEBUG] Trigger", undefined, () => this.onTrigger());
 
@@ -111,12 +111,12 @@ export class OnCustomEvent extends ForgeNode {
 			customEvent: undefined
 		}
 
-		this.addInput("Identifier", forge.type.identifier);
+		this.addStaticInput("Identifier", forge.type.identifier);
 
-    this.addOutput("Event", LiteGraph.EVENT);
-		this.addOutput("Object", forge.type.object);
-		this.addOutput("Number", forge.type.number);
-		this.addOutput("Object List", forge.type.objects);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
+		this.addStaticOutput("Object", forge.type.object);
+		this.addStaticOutput("Number", forge.type.number);
+		this.addStaticOutput("Object List", forge.type.objects);
 	}
 
 	static get title() {
@@ -171,13 +171,13 @@ export class TriggerCustomEvent extends ForgeNode {
 			identifier: ''
 		}
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("Identifier", forge.type.identifier);
-		this.addInput("Object", forge.type.object);
-		this.addInput("Number", forge.type.number);
-		this.addInput("Object List", forge.type.objects);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Identifier", forge.type.identifier);
+		this.addStaticInput("Object", forge.type.object);
+		this.addStaticInput("Number", forge.type.number);
+		this.addStaticInput("Object List", forge.type.objects);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}

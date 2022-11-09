@@ -692,7 +692,7 @@ class ItemPanel extends Component {
 			<p>Information in this section is maintained by volunteer contributors.</p>
 			<p>To report issues or help maintain this information you may visit the <a href="https://cylix.guide/discord" target="_blank">discord.</a></p>
 			<h2>Popularity</h2>
-			<p>Item popularity represents a statistical sample of what active players are wearing in-game. Updated regularly, these stats represent fashion trends - showing the percentage of players wearing the item and the delta from the previous sample.</p>
+			<p>Item popularity represents a statistical sample of what active players are wearing in-game. Updated weekly, these stats represent fashion trends - showing the percentage of players wearing the item and the delta from the previous sample. The sample is composed of 25,000 random matchmaking players from recent games as well as 1,000 random cylix.guide/vanity users. Players that have never customized any aspect of their spartan are dropped from the sample.</p>
 			<p>This information encompasses publicly visible equipped items, not private player inventories, and thus should not be interpreted in any other context than momentary fashion.</p>
 			<p>Named breaks are given to better understand how often an item may show up in an average match.</p>
 			<ul>

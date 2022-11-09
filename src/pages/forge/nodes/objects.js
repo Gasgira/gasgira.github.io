@@ -5,7 +5,7 @@ export class ObjectReference extends ForgeNode {
 	constructor() {
 		super();
 		this._value = new FOOD();
-    this.addOutput("Object", forge.type.object);
+    this.addStaticOutput("Object", forge.type.object);
 		this.addProperty("value", `${JSON.stringify(this._value)}`);
 
 		this.color = forge.nodeColor.variable;
@@ -26,8 +26,8 @@ LiteGraph.registerNodeType("objects/get", ObjectReference);
 export class GetObjectsInPrefab extends ForgeNode {
 	constructor() {
 		super();
-		this.addInput("Object", forge.type.object);
-    this.addOutput("Objects", forge.type.objects);
+		this.addStaticInput("Object", forge.type.object);
+    this.addStaticOutput("Objects", forge.type.objects);
 
 		this.color = forge.nodeColor.object;
 	}

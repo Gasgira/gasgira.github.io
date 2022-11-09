@@ -10,10 +10,10 @@ export class OnEquipmentPickup extends ForgeNode {
 			player: game.defaultPlayer,
 			equipment: new FOOD()
 		}
-    this.addOutput("Event", LiteGraph.EVENT);
-    this.addOutput("Acquiring Player", forge.type.player);
-    this.addOutput("Equipment Type", forge.type.equipmentType);
-    this.addOutput("Equipment Position", forge.type.position);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Acquiring Player", forge.type.player);
+    this.addStaticOutput("Equipment Type", forge.type.equipmentType);
+    this.addStaticOutput("Equipment Position", forge.type.position);
 
 		this.triggerButton = this.addWidget("button", "[DEBUG] Trigger", undefined, () => this.onTrigger());
 
@@ -47,9 +47,9 @@ export class OnEquipmentUsed extends ForgeNode {
 			player: game.defaultPlayer,
 			equipment: new FOOD()
 		}
-    this.addOutput("Event", LiteGraph.EVENT);
-    this.addOutput("Activating Player", forge.type.player);
-    this.addOutput("Equipment Type", forge.type.equipmentType);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Activating Player", forge.type.player);
+    this.addStaticOutput("Equipment Type", forge.type.equipmentType);
 
 		this.triggerButton = this.addWidget("button", "[DEBUG] Trigger", undefined, () => this.onTrigger());
 
@@ -82,10 +82,10 @@ export class OnGrenadePickup extends ForgeNode {
 			player: game.defaultPlayer,
 			equipment: new FOOD()
 		}
-    this.addOutput("Event", LiteGraph.EVENT);
-    this.addOutput("Player", forge.type.player);
-    this.addOutput("Grenade Type", forge.type.equipmentType);
-    this.addOutput("Grenade Position", forge.type.position);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Player", forge.type.player);
+    this.addStaticOutput("Grenade Type", forge.type.equipmentType);
+    this.addStaticOutput("Grenade Position", forge.type.position);
 
 		this.triggerButton = this.addWidget("button", "[DEBUG] Trigger", undefined, () => this.onTrigger());
 
@@ -119,9 +119,9 @@ export class OnGrenadeThrow extends ForgeNode {
 			player: game.defaultPlayer,
 			equipment: new FOOD()
 		}
-    this.addOutput("Event", LiteGraph.EVENT);
-    this.addOutput("Player", forge.type.player);
-    this.addOutput("Grenade Type", forge.type.equipmentType);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Player", forge.type.player);
+    this.addStaticOutput("Grenade Type", forge.type.equipmentType);
 
 		this.triggerButton = this.addWidget("button", "[DEBUG] Trigger", undefined, () => this.onTrigger());
 
@@ -154,9 +154,9 @@ export class OnWeaponAdded extends ForgeNode {
 			player: game.defaultPlayer,
 			weapon: new FOOD()
 		}
-    this.addOutput("Event", LiteGraph.EVENT);
-    this.addOutput("Acquiring Player", forge.type.player);
-    this.addOutput("Weapon", forge.type.object);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Acquiring Player", forge.type.player);
+    this.addStaticOutput("Weapon", forge.type.object);
 
 		this.triggerButton = this.addWidget("button", "[DEBUG] Trigger", undefined, () => this.onTrigger());
 
@@ -189,9 +189,9 @@ export class OnWeaponDropped extends ForgeNode {
 			player: game.defaultPlayer,
 			weapon: new FOOD()
 		}
-    this.addOutput("Event", LiteGraph.EVENT);
-    this.addOutput("Player", forge.type.player);
-    this.addOutput("Weapon", forge.type.object);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Player", forge.type.player);
+    this.addStaticOutput("Weapon", forge.type.object);
 
 		this.triggerButton = this.addWidget("button", "[DEBUG] Trigger", undefined, () => this.onTrigger());
 
@@ -224,9 +224,9 @@ export class OnWeaponLowAmmo extends ForgeNode {
 			player: game.defaultPlayer,
 			weapon: new FOOD()
 		}
-    this.addOutput("Event", LiteGraph.EVENT);
-    this.addOutput("Player", forge.type.player);
-    this.addOutput("Weapon", forge.type.object);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Player", forge.type.player);
+    this.addStaticOutput("Weapon", forge.type.object);
 
 		this.triggerButton = this.addWidget("button", "[DEBUG] Trigger", undefined, () => this.onTrigger());
 
@@ -259,9 +259,9 @@ export class OnWeaponNoAmmo extends ForgeNode {
 			player: game.defaultPlayer,
 			weapon: new FOOD()
 		}
-    this.addOutput("Event", LiteGraph.EVENT);
-    this.addOutput("Player", forge.type.player);
-    this.addOutput("Weapon", forge.type.object);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Player", forge.type.player);
+    this.addStaticOutput("Weapon", forge.type.object);
 
 		this.triggerButton = this.addWidget("button", "[DEBUG] Trigger", undefined, () => this.onTrigger());
 
@@ -294,10 +294,10 @@ export class OnWeaponPickup extends ForgeNode {
 			player: game.defaultPlayer,
 			weapon: new FOOD()
 		}
-    this.addOutput("Event", LiteGraph.EVENT);
-    this.addOutput("Acquiring Player", forge.type.player);
-    this.addOutput("Weapon", forge.type.object);
-    this.addOutput("Weapon Position", forge.type.position);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Acquiring Player", forge.type.player);
+    this.addStaticOutput("Weapon", forge.type.object);
+    this.addStaticOutput("Weapon Position", forge.type.position);
 
 		this.triggerButton = this.addWidget("button", "[DEBUG] Trigger", undefined, () => this.onTrigger());
 
@@ -331,11 +331,11 @@ export class OnWeaponRefillPickup extends ForgeNode {
 			player: game.defaultPlayer,
 			weapon: new FOOD()
 		}
-    this.addOutput("Event", LiteGraph.EVENT);
-    this.addOutput("Acquiring Player", forge.type.player);
-    this.addOutput("Weapon", forge.type.object);
-    this.addOutput("Weapon Position", forge.type.position);
-    this.addOutput("Is Fully Picked Up", forge.type.boolean);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Acquiring Player", forge.type.player);
+    this.addStaticOutput("Weapon", forge.type.object);
+    this.addStaticOutput("Weapon Position", forge.type.position);
+    this.addStaticOutput("Is Fully Picked Up", forge.type.boolean);
 
 		this.triggerButton = this.addWidget("button", "[DEBUG] Trigger", undefined, () => this.onTrigger());
 

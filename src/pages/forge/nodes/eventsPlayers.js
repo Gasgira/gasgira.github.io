@@ -10,9 +10,9 @@ export class OnPlayerCrouch extends ForgeNode {
 		this.properties = {
 			player: game.defaultPlayer
 		}
-    this.addOutput("Event", LiteGraph.EVENT);
-    this.addOutput("Player", forge.type.player);
-    this.addOutput("Is Crouching", forge.type.boolean);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Player", forge.type.player);
+    this.addStaticOutput("Is Crouching", forge.type.boolean);
 
 		this.triggerButton = this.addWidget("button", "[DEBUG] Trigger", undefined, () => {
 			const player = game.defaultPlayer;
@@ -57,9 +57,9 @@ export class OnPlayerExited extends ForgeNode {
 		this.properties = {
 			player: game.defaultPlayer
 		}
-    this.addOutput("Event", LiteGraph.EVENT);
-    this.addOutput("Player", forge.type.player);
-    this.addOutput("Team", forge.type.team);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Player", forge.type.player);
+    this.addStaticOutput("Team", forge.type.team);
 
 		this.triggerButton = this.addWidget("button", "[DEBUG] Trigger", undefined, () => this.onTrigger());
 
@@ -91,9 +91,9 @@ export class OnPlayerJoined extends ForgeNode {
 		this.properties = {
 			player: game.defaultPlayer
 		}
-    this.addOutput("Event", LiteGraph.EVENT);
-    this.addOutput("Player", forge.type.player);
-    this.addOutput("Joined In Progress", forge.type.boolean);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Player", forge.type.player);
+    this.addStaticOutput("Joined In Progress", forge.type.boolean);
 
 		this.triggerButton = this.addWidget("button", "[DEBUG] Trigger", undefined, () => this.onTrigger());
 
@@ -127,10 +127,10 @@ export class OnPlayerKilled extends ForgeNode {
 			killedPlayer: game.defaultPlayer,
 			killingPlayer: game.defaultPlayer
 		}
-    this.addOutput("Event", LiteGraph.EVENT);
-    this.addOutput("Killed Player", forge.type.player);
-    this.addOutput("Killing Player", forge.type.boolean);
-    this.addOutput("Death Context", forge.type.deathContext);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Killed Player", forge.type.player);
+    this.addStaticOutput("Killing Player", forge.type.boolean);
+    this.addStaticOutput("Death Context", forge.type.deathContext);
 
 		this.triggerButton = this.addWidget("button", "[DEBUG] Trigger", undefined, () => this.onTrigger());
 
@@ -166,10 +166,10 @@ export class OnPlayerMark extends ForgeNode {
 		}
 		this.properties.mark.targetList = [];
 
-    this.addOutput("Event", LiteGraph.EVENT);
-    this.addOutput("Player", forge.type.player);
-    this.addOutput("Callout Position", forge.type.position);
-    this.addOutput("Target List", forge.type.objects);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Player", forge.type.player);
+    this.addStaticOutput("Callout Position", forge.type.position);
+    this.addStaticOutput("Target List", forge.type.objects);
 
 		this.triggerButton = this.addWidget("button", "[DEBUG] Trigger", undefined, () => this.onTrigger());
 
@@ -203,8 +203,8 @@ export class OnPlayerSpawned extends ForgeNode {
 			player: game.defaultPlayer
 		}
 
-    this.addOutput("Event", LiteGraph.EVENT);
-    this.addOutput("Player", forge.type.player);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Player", forge.type.player);
 
 		this.triggerButton = this.addWidget("button", "[DEBUG] Trigger", undefined, () => this.onTrigger());
 
@@ -236,10 +236,10 @@ export class OnPlayerTeamChange extends ForgeNode {
 			player: game.defaultPlayer
 		}
 
-    this.addOutput("Event", LiteGraph.EVENT);
-    this.addOutput("Player", forge.type.player);
-    this.addOutput("Old Team", forge.type.team);
-    this.addOutput("New Team", forge.type.team);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Player", forge.type.player);
+    this.addStaticOutput("Old Team", forge.type.team);
+    this.addStaticOutput("New Team", forge.type.team);
 
 		this.triggerButton = this.addWidget("button", "[DEBUG] Trigger", undefined, () => this.onTrigger());
 
@@ -270,10 +270,10 @@ export class WasAssistedKill extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Death Context", forge.type.deathContext);
+		this.addStaticInput("Death Context", forge.type.deathContext);
 
-    this.addOutput("Was Assisted Kill", forge.type.boolean);
-    this.addOutput("Assisting Players", forge.type.players);
+    this.addStaticOutput("Was Assisted Kill", forge.type.boolean);
+    this.addStaticOutput("Assisting Players", forge.type.players);
 	}
 
 	static get title() {
@@ -301,9 +301,9 @@ export class WasGrenadeKill extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Death Context", forge.type.deathContext);
+		this.addStaticInput("Death Context", forge.type.deathContext);
 
-    this.addOutput("Was Grenade Kill", forge.type.boolean);
+    this.addStaticOutput("Was Grenade Kill", forge.type.boolean);
 	}
 
 	static get title() {
@@ -330,10 +330,10 @@ export class WasMeleeKill extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Death Context", forge.type.deathContext);
+		this.addStaticInput("Death Context", forge.type.deathContext);
 
-    this.addOutput("Was Melee Kill", forge.type.boolean);
-    this.addOutput("Was Backsmack", forge.type.boolean);
+    this.addStaticOutput("Was Melee Kill", forge.type.boolean);
+    this.addStaticOutput("Was Backsmack", forge.type.boolean);
 	}
 
 	static get title() {
@@ -361,10 +361,10 @@ export class WasWeaponKill extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Death Context", forge.type.deathContext);
+		this.addStaticInput("Death Context", forge.type.deathContext);
 
-    this.addOutput("Was Weapon Kill", forge.type.boolean);
-    this.addOutput("Was Headshot", forge.type.boolean);
+    this.addStaticOutput("Was Weapon Kill", forge.type.boolean);
+    this.addStaticOutput("Was Headshot", forge.type.boolean);
 	}
 
 	static get title() {
@@ -392,10 +392,10 @@ export class WasWithGrenadeType extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Death Context", forge.type.deathContext);
-		this.addInput("Grenade Type", forge.type.grenadeType);
+		this.addStaticInput("Death Context", forge.type.deathContext);
+		this.addStaticInput("Grenade Type", forge.type.grenadeType);
 
-    this.addOutput("Was With Grenade Type", forge.type.boolean);
+    this.addStaticOutput("Was With Grenade Type", forge.type.boolean);
 	}
 
 	static get title() {
@@ -422,10 +422,10 @@ export class WasWithSpecificVehicle extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Death Context", forge.type.deathContext);
-		this.addInput("Vehicle", forge.type.object);
+		this.addStaticInput("Death Context", forge.type.deathContext);
+		this.addStaticInput("Vehicle", forge.type.object);
 
-    this.addOutput("Was With Specific Vehicle", forge.type.boolean);
+    this.addStaticOutput("Was With Specific Vehicle", forge.type.boolean);
 	}
 
 	static get title() {
@@ -452,10 +452,10 @@ export class WasWithSpecificWeapon extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Death Context", forge.type.deathContext);
-		this.addInput("Weapon", forge.type.object);
+		this.addStaticInput("Death Context", forge.type.deathContext);
+		this.addStaticInput("Weapon", forge.type.object);
 
-    this.addOutput("Was With Specific Weapon", forge.type.boolean);
+    this.addStaticOutput("Was With Specific Weapon", forge.type.boolean);
 	}
 
 	static get title() {
@@ -482,10 +482,10 @@ export class WasWithVehicleType extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Death Context", forge.type.deathContext);
-		this.addInput("Vehicle Type", forge.type.vehicleType);
+		this.addStaticInput("Death Context", forge.type.deathContext);
+		this.addStaticInput("Vehicle Type", forge.type.vehicleType);
 
-    this.addOutput("Was With Vehicle Type", forge.type.boolean);
+    this.addStaticOutput("Was With Vehicle Type", forge.type.boolean);
 	}
 
 	static get title() {
@@ -512,10 +512,10 @@ export class WasWithWeaponType extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Death Context", forge.type.deathContext);
-		this.addInput("Weapon Type", forge.type.weaponType);
+		this.addStaticInput("Death Context", forge.type.deathContext);
+		this.addStaticInput("Weapon Type", forge.type.weaponType);
 
-    this.addOutput("Was With Weapon Type", forge.type.boolean);
+    this.addStaticOutput("Was With Weapon Type", forge.type.boolean);
 	}
 
 	static get title() {

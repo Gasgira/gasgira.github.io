@@ -180,7 +180,7 @@ class Discord extends Component {
 
 			if (response.status === 200)
 			{
-				this.setState({status: `Duplicate webhook not accepted for "${audience}"!`});
+				this.setState({status: `Not accepted, this webhook is already registered for "${audience}"!`});
 				return;
 			}
 

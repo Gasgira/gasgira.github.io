@@ -102,11 +102,35 @@ class PageForge {
 	}
 }
 
+class PageDiscovery {
+	async init() {
+		if (this._Discovery) return;
+		this._Discovery = true;
+		const { Discovery } = await import('pages/discovery');
+		this._Discovery = Discovery;
+		console.warn(Discovery)
+		this.discovery = new Discovery();
+		this.discovery.init();
+	}
+
+	async render() {
+		try {
+			await this.init();
+			return [
+				this.discovery.render()
+			];
+		} catch (error) {
+			console.error(`[PageDiscovery.render]`, error);
+		}
+	}
+}
+
 class Router {
 	constructor() {
 		this.items = new PageItems();
 		this.vanity = new PageVanity();
 		this.forge = new PageForge();
+		this.discovery = new PageDiscovery();
 	}
 
 	async route() {
@@ -132,6 +156,11 @@ class Router {
 			{
 				if (this.page === this.forge) return;
 				this.page = this.forge;
+			}
+				else if (pathname.startsWith('/discovery'))
+			{
+				if (this.page === this.discovery) return;
+				this.page = this.discovery;
 			}
 				else
 			{

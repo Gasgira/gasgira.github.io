@@ -70,6 +70,7 @@ class HeaderNav extends Component {
 					${this.searchButton()}
 					${this.itemsButton()}
 					${this.vanityButton()}
+					${this.discoveryButton()}
 					${this.menuButton()}
 				</ul>
 			</nav>
@@ -241,23 +242,40 @@ class HeaderNav extends Component {
 		}
 	}
 
+	discoveryButton() {
+		if (this.pathname.startsWith('/discovery')) return '';
+		return HTML.wire(this, ':vanity')`
+			<li><button
+				aria-label="Discovery"
+				title="User Generated Content"
+				onclick=${() => {
+					history.pushState(null, null, '/discovery/');
+					const popStateEvent = new PopStateEvent('popstate', null);
+					dispatchEvent(popStateEvent);
+				}}
+			>
+				Discovery
+			</button></li>
+		`;
+	}
+
 	forgeButton() {
-		return '';
-		// if (this.pathname.startsWith('/forge')) return '';
-		// return HTML.wire(this, ':forge')`
-		// 	<button
-		// 		aria-label="Forge"
-		// 		title="Forge Tools"
-		// 		onclick=${() => {
-		// 			this.setState({showMenu: false});
-		// 			history.pushState(null, null, '/forge/');
-		// 			const popStateEvent = new PopStateEvent('popstate', null);
-		// 			dispatchEvent(popStateEvent);
-		// 		}}
-		// 	>
-		// 		<span>Forge</span><div class="icon-masked icon-forge"></div>
-		// 	</button>
-		// `;
+		// return '';
+		if (this.pathname.startsWith('/forge')) return '';
+		return HTML.wire(this, ':forge')`
+			<button
+				aria-label="Forge"
+				title="Forge Tools"
+				onclick=${() => {
+					this.setState({showMenu: false});
+					history.pushState(null, null, '/forge/');
+					const popStateEvent = new PopStateEvent('popstate', null);
+					dispatchEvent(popStateEvent);
+				}}
+			>
+				<span>Forge</span><div class="icon-masked icon-forge"></div>
+			</button>
+		`;
 	}
 
 	// class="featured"

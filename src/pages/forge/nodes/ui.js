@@ -7,12 +7,12 @@ export class PushSplashToPlayer extends ForgeNode {
 		this.properties = {
 			duration: 0
 		}
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("Player", forge.type.object);
-		this.addInput("Duration In Seconds", forge.type.number);
-		this.addInput("Message", forge.type.uiMessage);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Player", forge.type.object);
+		this.addStaticInput("Duration In Seconds", forge.type.number);
+		this.addStaticInput("Message", forge.type.uiMessage);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_TRIGGER;
 
@@ -34,12 +34,12 @@ LiteGraph.registerNodeType("ui/event", PushSplashToPlayer);
 export class CreateUiMessage extends ForgeNode {
 	constructor() {
 		super();
-		this.addInput("Message Template", forge.type.uiMessageTemplate);
-		this.addInput("String 1", forge.type.string);
-		this.addInput("String 2", forge.type.string);
-		this.addInput("Player", forge.type.object);
+		this.addStaticInput("Message Template", forge.type.uiMessageTemplate);
+		this.addStaticInput("String 1", forge.type.string);
+		this.addStaticInput("String 2", forge.type.string);
+		this.addStaticInput("Player", forge.type.object);
 
-    this.addOutput("Message", forge.type.uiMessage);
+    this.addStaticOutput("Message", forge.type.uiMessage);
 
 		this.color = forge.nodeColor.object;
 	}

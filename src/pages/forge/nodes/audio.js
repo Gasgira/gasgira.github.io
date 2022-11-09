@@ -10,10 +10,10 @@ export class Play3DAudioForAllPlayers extends ForgeNode {
 			audio: ''
 		}
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("Position", forge.type.position);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Position", forge.type.position);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}
@@ -42,11 +42,11 @@ export class Play3DAudioForOpposingTeams extends ForgeNode {
 			team: 0
 		}
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("Team", forge.type.team);
-		this.addInput("Position", forge.type.position);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Team", forge.type.team);
+		this.addStaticInput("Position", forge.type.position);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}
@@ -75,11 +75,11 @@ export class Play3DAudioForTeam extends ForgeNode {
 			team: 0
 		}
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("Team", forge.type.team);
-		this.addInput("Position", forge.type.position);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Team", forge.type.team);
+		this.addStaticInput("Position", forge.type.position);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}
@@ -103,11 +103,11 @@ export class RegisterAudioZone extends ForgeNode {
 		super();
 		this.color = forge.nodeColor.event;
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("Area Monitor", forge.type.areaMonitor);
-		this.addInput("Audio Zone Effect", forge.type.audioZoneEffect);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Area Monitor", forge.type.areaMonitor);
+		this.addStaticInput("Audio Zone Effect", forge.type.audioZoneEffect);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}
@@ -131,10 +131,10 @@ export class UnregisterAudioZone extends ForgeNode {
 		super();
 		this.color = forge.nodeColor.event;
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("Area Monitor", forge.type.areaMonitor);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Area Monitor", forge.type.areaMonitor);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}
@@ -158,11 +158,11 @@ export class SetObject3DAudioLoop extends ForgeNode {
 		super();
 		this.color = forge.nodeColor.event;
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("Object", forge.type.object);
-		this.addInput("Play For Allies", forge.type.boolean);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Object", forge.type.object);
+		this.addStaticInput("Play For Allies", forge.type.boolean);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}
@@ -186,12 +186,12 @@ export class StopObject3DAudioLoop extends ForgeNode {
 		super();
 		this.color = forge.nodeColor.event;
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("Object", forge.type.object);
-		this.addInput("Stop For Allies", forge.type.boolean);
-		this.addInput("Stop For Enemies", forge.type.boolean);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Object", forge.type.object);
+		this.addStaticInput("Stop For Allies", forge.type.boolean);
+		this.addStaticInput("Stop For Enemies", forge.type.boolean);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}

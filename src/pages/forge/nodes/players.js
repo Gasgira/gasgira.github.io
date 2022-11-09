@@ -4,7 +4,7 @@ import { LiteGraph } from 'lib/LiteGraph';
 export class GetAllPlayers extends ForgeNode {
 	constructor() {
 		super();
-    this.addOutput("Players", forge.type.players);
+    this.addStaticOutput("Players", forge.type.players);
 
 		this.color = forge.nodeColor.object;
 	}
@@ -25,7 +25,7 @@ LiteGraph.registerNodeType("players/getAll", GetAllPlayers);
 export class GetRandomPlayer extends ForgeNode {
 	constructor() {
 		super();
-    this.addOutput("player", forge.type.player);
+    this.addStaticOutput("player", forge.type.player);
 
 		this.color = forge.nodeColor.object;
 	}

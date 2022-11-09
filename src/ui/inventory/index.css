@@ -1,4 +1,11 @@
 .inventory_wrapper {
+	& header .sort-controls_wrapper {
+		list-style-type: none;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: center;
+	}
 	& .inventory-category_wrapper {
 		width: 100%;
 	}
@@ -180,23 +187,6 @@
 					width: 100%;
 				}
 			}
-		}
-	}
-	& .page-controls_wrapper {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		align-content: center;
-		justify-content: center;
-		& span {
-			width: 4rem;
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			align-content: center;
-			justify-content: center;
-			pointer-events: none;
-			user-select: none;
 		}
 	}
 }

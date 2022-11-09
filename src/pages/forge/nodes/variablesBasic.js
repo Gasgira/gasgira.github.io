@@ -1,6 +1,38 @@
 import { forge, game, FOOD, ForgeNode } from './index.js';
 import { LiteGraph } from 'lib/LiteGraph';
 
+const nodeColor = forge.nodeColor.variable;
+
+export class Number extends ForgeNode {
+	constructor() {
+		super();
+		this.properties = {
+			value: 0
+		}
+
+		this.addStaticOutput("", forge.type.number);
+
+		this.addWidget("number","",this.properties.value,"value");
+		this.widgets_up = true;
+	}
+
+	static get title() {
+		return 'Number';
+	}
+	get title() {
+		return Number.title;
+	}
+
+	get color() {
+		return nodeColor;
+	}
+
+	onExecute() {
+		this.setOutputData(0, this.properties.value);
+	}
+}
+LiteGraph.registerNodeType("variables/Number", Number);
+
 export class String extends ForgeNode {
 	constructor() {
 		super();
@@ -8,12 +40,10 @@ export class String extends ForgeNode {
 			value: ''
 		}
 
-		this.addOutput("String", forge.type.string);
+		this.addStaticOutput("String", forge.type.string);
 
 		this.addWidget("string","string",this.properties.value,"value");
 		this.widgets_up = true;
-
-		this.color = forge.nodeColor.variable;
 	}
 
 	static get title() {
@@ -23,11 +53,15 @@ export class String extends ForgeNode {
 		return String.title;
 	}
 
+	get color() {
+		return nodeColor;
+	}
+
 	onExecute() {
 		this.setOutputData(0, this.properties.value);
 	}
 }
-LiteGraph.registerNodeType("variables/constant", String);
+LiteGraph.registerNodeType("variables/String", String);
 
 export class Vector3 extends ForgeNode {
 	constructor() {
@@ -38,8 +72,8 @@ export class Vector3 extends ForgeNode {
 			z: 0
 		}
 
-		this.addInput("x", forge.type.number);
-		this.addInput("y", forge.type.number);
+		this.addStaticInput("x", forge.type.number);
+		this.addStaticInput("y", forge.type.number);
 		this.addInput("z", forge.type.number);
 
 		this.addWidget("number","X",this.properties.x,"x");
@@ -47,9 +81,7 @@ export class Vector3 extends ForgeNode {
 		this.addWidget("number","Z",this.properties.z,"z");
 		this.widgets_up = true;
 
-		this.addOutput("Vector", forge.type.vector);
-
-		this.color = forge.nodeColor.variable;
+		this.addStaticOutput("Vector", forge.type.vector);
 	}
 
 	static get title() {
@@ -59,17 +91,20 @@ export class Vector3 extends ForgeNode {
 		return Vector3.title;
 	}
 
+	get color() {
+		return nodeColor;
+	}
+
 	onExecute() {
 		const { x, y, z } = this.properties;
 		this.setOutputData(0, [x, y, z]);
 	}
 }
-LiteGraph.registerNodeType("variables/vector3", Vector3);
+LiteGraph.registerNodeType("variables/Vector3", Vector3);
 
 export class Identifier extends ForgeNode {
 	constructor() {
 		super();
-		this.color = forge.nodeColor.variable;
 		this.properties = {
 			identifier: ''
 		}
@@ -85,6 +120,10 @@ export class Identifier extends ForgeNode {
 	}
 	get title() {
 		return Identifier.title;
+	}
+
+	get color() {
+		return nodeColor;
 	}
 
 	onExecute() {

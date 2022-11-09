@@ -32,7 +32,8 @@ class Inventory extends Component {
 			{
 				const bundleCategory = new InventoryCategory({
 					categoryName: 'Collection',
-					itemIDs: bundleSet
+					itemIDs: bundleSet,
+					revealSpoilers: true
 				});
 				this.categories.push(bundleCategory);
 				if (!paramCategoryName || paramCategoryName === 'Collection')
@@ -114,11 +115,44 @@ class Inventory extends Component {
 		};
 	}
 
+	get userSort() {
+		return settings.getSetting('userSort') ?? 'alphanumeric';
+	}
+
+	get userSortOrder() {
+		return settings.getSetting('userSortOrder') ?? false;
+	}
+
+	get sortOptions() {
+		return this._sortOptions ??= new Map([
+			['alphanumeric', 'Alphanumeric'],
+			['popularity', 'Popularity'],
+			['popularityDelta', 'Popularity Delta'],
+			['dateAdded', 'Date Added'],
+			['dateModified', 'Date Modified'],
+			['dateVisible', 'Date Visible']
+		])
+	}
+
 	async render() {
 		this.init();
 		return this.html`<div class="inventory_wrapper mica_viewer" id="inventory">
 			<header class="inventory mica_header-strip">
 				<a class="mica_header-anchor" href="#inventory"><h2>Inventory</h2></a>
+				<ul class="sort-controls_wrapper">
+					<li class="option">
+						<label for="inv-sort">Sort</label>
+						<select
+							onchange=${(e) => this.setSort(e.target.value)}
+						>
+							${() => [...this.sortOptions.entries()].map(([value, title]) => {
+								const selected = `${this.userSort}` === `${value}` ? true : false;
+								if (selected) return `<option value=${value} selected>${title}</option>`
+								return `<option value=${value}>${title}</option>`
+							})}
+						</select>
+					</li>
+				</ul>
 			</header>
 			<div class="inventory_content mica_main-content">
 				<ul class=${`inventory-catergories mica_nav-list ${this.state.mobileMenu ? 'show-mobile' : 'hide-mobile'}`}>
@@ -132,6 +166,19 @@ class Inventory extends Component {
 				<div class=${`mica_mobile-menu_container ${this.state.mobileMenu ? 'show-mobile' : 'hide-mobile'}`}>${this?.mobileMicaMenu.render()}</div>
 			</div>
 		</div>`;
+	}
+
+	setSort(value) {
+		settings.setSort(value);
+		console.log(`[Inventory.setSort]`, settings.getSetting('userSort'));
+		emitter.emit('Inventory.setSort');
+	}
+
+	toggleSortOrder() {
+		const current = settings.getSetting('userSortOrder') ?? false;
+		settings.setSortOrder(current ? false : true);
+		console.log(`[Inventory.toggleSortOrder]`, settings.getSetting('userSortOrder'));
+		this.render();
 	}
 
 	showCategory(inventoryCategory) {
@@ -163,19 +210,24 @@ export const inventory = new Inventory();
 class InventoryCategory extends Component {
 	constructor({
 		categoryName,
-		itemIDs
+		itemIDs,
+		revealSpoilers
 	}) {
 		super();
 		this.categoryName = categoryName;
 		this.items = [];
-		this.itemIDs = new Set();
+		if (revealSpoilers) this.revealSpoilers = true;
 
 		if (itemIDs && itemIDs.size)
 		{
 			// TODO get items
 			console.log('TEST Bundle', itemIDs);
 			this.itemIDs = new Set(itemIDs);
+		} else {
+			this.itemIDs = new Set();
 		}
+
+		emitter.on('Inventory.setSort', () => this.sortItemIDs());
 	}
 
 	get defaultState() {
@@ -184,11 +236,93 @@ class InventoryCategory extends Component {
 		};
 	}
 
+	set itemIDs(unsortedArray) {
+		const unsortedSet = new Set([...unsortedArray]);
+		if (!unsortedSet || !unsortedSet.size) return (this._itemIDs = unsortedSet);
+		this._unsortedItemIDs = unsortedSet;
+		const userSort = settings.getSetting('userSort') ?? 'default';
+		let sorted = this._unsortedItemIDs;
+		switch (userSort) {
+			case 'dateAdded':
+				console.log('Sort: dateAdded');
+				sorted = new Set([...unsortedSet].sort((a, b) => {
+					const aMeta = db.getItemManifestByID(a);
+					const bMeta = db.getItemManifestByID(b);
+					return (new Date(bMeta.added) - new Date(aMeta.added))
+				}));
+				break;
+			case 'dateModified':
+				console.log('Sort: dateModified');
+				sorted = new Set([...unsortedSet].sort((a, b) => {
+					const aMeta = db.getItemManifestByID(a);
+					const bMeta = db.getItemManifestByID(b);
+					return (new Date(bMeta.touched) - new Date(aMeta.touched))
+				}));
+				break;
+			case 'dateVisible':
+				console.log('Sort: dateVisible');
+				sorted = new Set([...unsortedSet].sort((a, b) => {
+					const aMeta = db.getItemManifestByID(a);
+					const bMeta = db.getItemManifestByID(b);
+					return (new Date(bMeta?.visible ?? new Date('2021-11-10')) - new Date(aMeta?.visible ?? new Date('2021-11-10')))
+				}));
+				break;
+			case 'popularity':
+				console.log('Sort: popularity');
+				sorted = new Set([...unsortedSet].sort((a, b) => {
+					const aMeta = db.getItemManifestByID(a);
+					const bMeta = db.getItemManifestByID(b);
+
+					const aPop = parseFloat(aMeta?.community?.stats?.cur ?? 0);
+					const bPop = parseFloat(bMeta?.community?.stats?.cur ?? 0);
+					return (bPop - aPop);
+				}));
+				break;
+			case 'popularityDelta':
+				console.log('Sort: popularityDelta');
+				sorted = new Set([...unsortedSet].sort((a, b) => {
+					const aMeta = db.getItemManifestByID(a);
+					const bMeta = db.getItemManifestByID(b);
+
+					const aPop = Math.abs(parseFloat(aMeta?.community?.stats?.delta ?? 0));
+					const bPop = Math.abs(parseFloat(bMeta?.community?.stats?.delta ?? 0));
+					return (bPop - aPop);
+				}));
+				break;
+			case 'alphanumeric':
+				console.log('Sort: alphanumeric');
+			default:
+				console.warn('Sort: default');
+				sorted = new Set([...unsortedSet].sort((a, b) => {
+					const aMeta = db.getItemManifestByID(a);
+					const bMeta = db.getItemManifestByID(b);
+					return (aMeta.title.localeCompare(bMeta.title, 'en', { ignorePunctuation: true }))
+				}));
+		}
+
+		console.warn('sorted!', sorted)
+		return (this._itemIDs = sorted);
+	}
+	get itemIDs() {
+		return (this._itemIDs ??= new Set());
+	}
+
+	sortItemIDs() {
+		// TODO this is really bad
+		if (this.items.length)
+		{
+			this.items = [];
+			this.itemIDs = this.itemIDs;
+			this.init();
+			this.render();
+		}
+	}
+
 	init() {
 		if (this.items.length) return;
 
 		if (!this.itemIDs.size) this.itemIDs = db.getItemIDsByType(this.categoryName);
-		
+
 		if (!this.itemIDs.size) return;
 		// console.info('IDs', this.itemIDs);
 
@@ -238,17 +372,18 @@ class InventoryCategory extends Component {
 				<button
 					onclick=${() => this.previousPage()}
 					disabled=${this.pageNumber === 0}
-				>Prev Page</button>
+				><div class=${`icon-masked icon-arrow-left`}></div>Prev</button>
 				<span>${this.pageNumber+1} of ${this.pages}</span>
 				<button
 					onclick=${() => this.nextPage()}
 					disabled=${this.pageNumber + 1 === this.pages}
-				>Next Page</button>
+				>Next<div class=${`icon-masked icon-arrow-right`}></div></button>
 			</div>
 		`;
 	}
 
 	render() {
+		if (this.revealSpoilers && this.items.length) this.items.forEach(item => item.unredact())
 		return this.html`
 			<div
 				class ="inventory-category_wrapper mica_content"
@@ -333,6 +468,17 @@ class Favorites extends InventoryCategory {
 
 	appendFavorites() {
 		console.log('app', this.state?.awaitingImport)
+	}
+
+	sortItemIDs() {
+		// TODO this is really bad
+		if (this.items.length)
+		{
+			// this.items = [];
+			// this.itemIDs = this.itemIDs;
+			this.init();
+			this.render();
+		}
 	}
 }
 
@@ -420,6 +566,13 @@ class Search extends InventoryCategory {
 		{
 			console.log('seasonNumber urlParams', seasonNumber)
 			this.state.filters.set('ssn', parseInt(seasonNumber));
+		}
+
+		const visibility = urlParams.getSecionSetting('svis');
+		if (visibility)
+		{
+			console.log('visibility urlParams', visibility)
+			this.state.filters.set('svis', parseInt(visibility));
 		}
 
 		if (this.state.term || this.state.filters.size) {
@@ -535,6 +688,19 @@ class Search extends InventoryCategory {
 					</select>
 				</li>
 				<li class="filter-input_wrapper">
+					<label for="select_visibility">Visibility</label>
+					<select
+						name="select_visibility"
+						id="select_visibility"
+						onchange=${(e) => this.filterVisibility(e.target.value)}
+					>
+						<option value="-1">Any</option>
+						<option value="0">Hidden</option>
+						<option value="1">Visible</option>
+						<option value="2">Seen</option>
+					</select>
+				</li>
+				<li class="filter-input_wrapper">
 					<label for="date_modified-after">Last Modified After</label>
 					<input
 						type="date"
@@ -641,6 +807,38 @@ class Search extends InventoryCategory {
 							placeholder="100"
 							value=${parseFloat(filters.get('spmax') || 1) * 100}
 							onchange=${(e) => this.filterPopularityCurrentMax(e.target.value)}
+						>
+					</div>
+				</li>
+				</li>
+				<li class="filter-input_wrapper">
+					<label>Popularity Delta</label>
+					<div class="filter-popularity_wrapper">
+						<label for="range_pop-delta-min">Min</label>
+						<input
+							class="filter_popularity"
+							id="range_pop-delta-min"
+							type="number"
+							min="0"
+							max="100"
+							step="0.01"
+							placeholder="-100"
+							value=${parseFloat(filters.get('spdmin') || 0) * 100}
+							onchange=${(e) => this.filterPopularityDeltaMin(e.target.value)}
+						>
+					</div>
+					<div class="filter-popularity_wrapper">
+						<label for="range_pop-delta-max">Max</label>
+						<input
+							class="filter_popularity"
+							id="range_pop-delta-max"
+							type="number"
+							min="0"
+							max="100"
+							step="0.01"
+							placeholder="100"
+							value=${parseFloat(filters.get('spdmax') || 1) * 100}
+							onchange=${(e) => this.filterPopularityDeltaMax(e.target.value)}
 						>
 					</div>
 				</li>
@@ -837,6 +1035,22 @@ class Search extends InventoryCategory {
 				// console.log('pop current min', parseFloat(filters.get('spmin')), result.popCurrent);
 			}
 
+			// Current Popularity Delta Max
+			if (filters.has('spdmax'))
+			{
+				if (typeof result.popDelta === 'undefined') return false;
+				if (Math.abs(parseFloat(result.popDelta)) > parseFloat(filters.get('spdmax'))) return false;
+				// console.log('pop current max', parseFloat(filters.get('spmax')), result.popCurrent);
+			}
+
+			// Current Popularity Delta Min
+			if (filters.has('spdmin'))
+			{
+				if (typeof result.popDelta === 'undefined') return false;
+				if (Math.abs(parseFloat(result.popDelta)) < parseFloat(filters.get('spdmin'))) return false;
+				// console.log('pop current min', parseFloat(filters.get('spmin')), result.popCurrent);
+			}
+
 			// Quality
 			if (filters.has('siq'))
 			{
@@ -851,6 +1065,13 @@ class Search extends InventoryCategory {
 				if (typeof result.season === 'undefined') return false;
 				if (parseInt(filters.get('ssn')) !== parseInt(result.season)) return false;
 				// console.log('manufilter', parseInt(filters.get('ssn')), result.season);
+			}
+
+			// Visibility
+			if (filters.has('svis'))
+			{
+				const status = parseInt(result?.visible ?? 0);
+				if (parseInt(filters.get('svis')) !== status) return false;
 			}
 
 			// Default
@@ -887,12 +1108,14 @@ class Search extends InventoryCategory {
 		console.info(`[search] Found "${this.itemIDs.size}" items`);
 		if (this.itemIDs.size)
 		{
+			this.itemIDs = this.itemIDs;
 			this.getCurrentItemPage();
 			this.render();
 			return;
 		}
 
 		this.items = new Set();
+		// this.sortItemIDs();
 		this.render();
 	}
 
@@ -912,6 +1135,17 @@ class Search extends InventoryCategory {
 		this.render();
 
 		inventory.scrollIntoView();
+	}
+
+	sortItemIDs() {
+		// TODO this is really bad
+		if (this.items.length)
+		{
+			this.items = [];
+			this.itemIDs = this.itemIDs;
+			this.getCurrentItemPage();
+			this.render();
+		}
 	}
 
 	filterType(value) {
@@ -1066,6 +1300,36 @@ class Search extends InventoryCategory {
 		urlParams.setSecionSetting(filterKey, `${scalar}`);
 	}
 
+	filterPopularityDeltaMax(value) {
+		const filterKey = 'spdmax';
+		if (value === undefined && this.state.filters.has(filterKey))
+		{
+			this.state.filters.delete(filterKey);
+			urlParams.deleteSecionSetting(filterKey);
+			return;
+		}
+		const scalar = parseFloat(value) / 100;
+		console.log('filterPopularityDeltaMax', scalar);
+
+		this.state.filters.set(filterKey, scalar);
+		urlParams.setSecionSetting(filterKey, `${scalar}`);
+	}
+
+	filterPopularityDeltaMin(value) {
+		const filterKey = 'spdmin';
+		if (value === undefined && this.state.filters.has(filterKey))
+		{
+			this.state.filters.delete(filterKey);
+			urlParams.deleteSecionSetting(filterKey);
+			return;
+		}
+		const scalar = parseFloat(value) / 100;
+		console.log('filterPopularityDeltaMin', scalar);
+
+		this.state.filters.set(filterKey, scalar);
+		urlParams.setSecionSetting(filterKey, `${scalar}`);
+	}
+
 	filterQuality(value) {
 		const filterKey = 'siq';
 		if (!value && this.state.filters.has(filterKey))
@@ -1092,6 +1356,21 @@ class Search extends InventoryCategory {
 		const number = parseInt(value);
 		if (typeof number !== 'number' || !db.seasons.has(number)) return;
 		console.log('filterSeason', number);
+
+		this.state.filters.set(filterKey, number);
+		urlParams.setSecionSetting(filterKey, `${number}`);
+	}
+
+	filterVisibility(value) {
+		const filterKey = 'svis';
+		if ((value === undefined || value < 0) && this.state.filters.has(filterKey))
+		{
+			this.state.filters.delete(filterKey);
+			urlParams.deleteSecionSetting(filterKey);
+			return;
+		}
+		const number = parseInt(value);
+		console.log('filterVisibility', number);
 
 		this.state.filters.set(filterKey, number);
 		urlParams.setSecionSetting(filterKey, `${number}`);

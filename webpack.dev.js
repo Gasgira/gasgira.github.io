@@ -69,21 +69,21 @@ module.exports = {
 		hot: true,
 		historyApiFallback: true,
 		allowedHosts: [
-			'cylix.guide',
-			'hi.cylix.guide'
+			'.cylix.guide',
+			'.halowaypoint.com'
 		],
 		headers: {
 				'Access-Control-Allow-Origin': '*',
 				'Access-Control-Allow-Headers': '*',
 				'Access-Control-Allow-Methods': '*',
 		},
-		// proxy: {
-		// 	'/api': {
-		// 		target: 'https://cylix.guide',
-		// 		changeOrigin: true,
-		// 		secure: false,
-		// 	}
-		// }
+		proxy: {
+			'/api': {
+				target: 'https://cylix.guide',
+				changeOrigin: true,
+				secure: false,
+			}
+		}
 	},
 	plugins: [
 		// new webpack.DefinePlugin({

@@ -120,6 +120,13 @@ module.exports = {
 			// hash: true
 			inject: true
 		}),
+		new HtmlWebpackPlugin({
+			template: 'src/index.html',
+			date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
+			// hash: true
+			inject: true,
+			filename: '404.html'
+		}),
 		new CopyPlugin({
 			patterns: [
 				{

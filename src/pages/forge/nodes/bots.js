@@ -10,11 +10,11 @@ export class AddBot extends ForgeNode {
 			botDifficulty: ''
 		}
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("Bot Difficulty", forge.type.botDifficulty);
-		this.addInput("Team", forge.type.team);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Bot Difficulty", forge.type.botDifficulty);
+		this.addStaticInput("Team", forge.type.team);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}
@@ -42,7 +42,7 @@ export class BotDifficulty extends ForgeNode {
 			botDifficulty: ''
 		}
 
-    this.addOutput("Bot Difficulty", forge.type.botDifficulty);
+    this.addStaticOutput("Bot Difficulty", forge.type.botDifficulty);
 	}
 
 	static get title() {
@@ -66,10 +66,10 @@ export class GetBotIsDifficulty extends ForgeNode {
 			botDifficulty: ''
 		}
 
-		this.addInput("Bot Player", forge.type.player);
-		this.addInput("Bot Difficulty", forge.type.botDifficulty);
+		this.addStaticInput("Bot Player", forge.type.player);
+		this.addStaticInput("Bot Difficulty", forge.type.botDifficulty);
 
-    this.addOutput("Bot Is Difficulty", forge.type.boolean);
+    this.addStaticOutput("Bot Is Difficulty", forge.type.boolean);
 	}
 
 	static get title() {
@@ -89,9 +89,9 @@ export class RemoveAllBots extends ForgeNode {
 		super();
 		this.color = forge.nodeColor.event;
 
-		this.addInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Event", LiteGraph.ACTION);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}
@@ -115,10 +115,10 @@ export class RemoveSpecificBotFromMatch extends ForgeNode {
 		super();
 		this.color = forge.nodeColor.event;
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("Bot Player", forge.type.player);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Bot Player", forge.type.player);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}

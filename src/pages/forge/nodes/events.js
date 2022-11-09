@@ -6,7 +6,7 @@ export class OnGameStart extends ForgeNode {
 		super();
 		this.color = forge.nodeColor.event;
 
-    this.addOutput("Event", LiteGraph.ACTION);
+    this.addStaticOutput("Event", LiteGraph.ACTION);
 
 		this.triggered = false;
 	}
@@ -36,8 +36,8 @@ export class OnGameplayStart extends ForgeNode {
 		this.properties = {
 			roundNumber: 1
 		}
-    this.addOutput("Event", LiteGraph.ACTION);
-    this.addOutput("Round Number", forge.type.number);
+    this.addStaticOutput("Event", LiteGraph.ACTION);
+    this.addStaticOutput("Round Number", forge.type.number);
 		this.color = forge.nodeColor.event;
 
 		this.triggerButton = this.addWidget("button", "[DEBUG] Trigger", undefined, () => this.onTrigger());
@@ -63,11 +63,11 @@ export class OnObjectDamaged extends ForgeNode {
 			damageAmount: 1,
 			attackingObject: game.defaultPlayer
 		}
-		this.addInput("Object", forge.type.object);
+		this.addStaticInput("Object", forge.type.object);
 
-    this.addOutput("Event", LiteGraph.EVENT);
-    this.addOutput("Attacking Object", forge.type.object);
-    this.addOutput("Damage Amount", forge.type.number);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Attacking Object", forge.type.object);
+    this.addStaticOutput("Damage Amount", forge.type.number);
 		this.color = forge.nodeColor.event;
 
 		this.triggerButton = this.addWidget("button", "[DEBUG] Trigger", undefined, () => this.onTrigger());
@@ -90,9 +90,9 @@ LiteGraph.registerNodeType("events/OnObjectDamaged", OnObjectDamaged);
 export class OnObjectDestroyed extends ForgeNode {
 	constructor() {
 		super();
-		this.addInput("Object", forge.type.object);
+		this.addStaticInput("Object", forge.type.object);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 		this.color = forge.nodeColor.event;
 
 		this.triggerButton = this.addWidget("button", "[DEBUG] Trigger", undefined, () => this.onTrigger());
@@ -118,10 +118,10 @@ export class OnObjectEnteredArea extends ForgeNode {
 		super();
 		this.color = forge.nodeColor.event;
 
-		this.addInput("Area Monitor", forge.type.areaMonitor);
+		this.addStaticInput("Area Monitor", forge.type.areaMonitor);
 
-    this.addOutput("Event", LiteGraph.EVENT);
-    this.addOutput("Object", forge.type.object);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Object", forge.type.object);
 
 		this.triggerButton = this.addWidget("button", "[DEBUG] Trigger", undefined, () => this.onTrigger());
 
@@ -146,10 +146,10 @@ export class OnObjectExitedArea extends ForgeNode {
 		super();
 		this.color = forge.nodeColor.event;
 
-		this.addInput("Area Monitor", forge.type.areaMonitor);
+		this.addStaticInput("Area Monitor", forge.type.areaMonitor);
 
-    this.addOutput("Event", LiteGraph.EVENT);
-    this.addOutput("Object", forge.type.object);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Object", forge.type.object);
 
 		this.triggerButton = this.addWidget("button", "[DEBUG] Trigger", undefined, () => this.onTrigger());
 
@@ -174,9 +174,9 @@ export class OnObjectSpawned extends ForgeNode {
 		super();
 		this.color = forge.nodeColor.event;
 
-		this.addInput("Object", forge.type.object);
+		this.addStaticInput("Object", forge.type.object);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.triggerButton = this.addWidget("button", "[DEBUG] Trigger", undefined, () => this.onTrigger());
 
@@ -201,8 +201,8 @@ export class OnRoundEnd extends ForgeNode {
 		super();
 		this.color = forge.nodeColor.event;
 
-    this.addOutput("Event", LiteGraph.EVENT);
-    this.addOutput("Round Number", forge.type.number);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Round Number", forge.type.number);
 
 		game.messenger.on('roundEnd', () => this.onTrigger());
 
@@ -228,8 +228,8 @@ export class OnRoundStart extends ForgeNode {
 		super();
 		this.color = forge.nodeColor.event;
 
-    this.addOutput("Event", LiteGraph.EVENT);
-    this.addOutput("Round Number", forge.type.number);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Round Number", forge.type.number);
 
 		game.messenger.on('roundStart', () => this.onTrigger());
 
@@ -260,9 +260,9 @@ export class OnVehicleEntered extends ForgeNode {
 			vehicle: new FOOD({ title: 'Vehicle' })
 		}
 
-    this.addOutput("Event", LiteGraph.EVENT);
-		this.addOutput("Entering Player", forge.type.player);
-		this.addOutput("Vehicle", forge.type.vehicle);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
+		this.addStaticOutput("Entering Player", forge.type.player);
+		this.addStaticOutput("Vehicle", forge.type.vehicle);
 
 		this.triggerButton = this.addWidget("button", "[DEBUG] Trigger", undefined, () => this.onTrigger());
 
@@ -294,9 +294,9 @@ export class OnVehicleExited extends ForgeNode {
 			vehicle: new FOOD({ title: 'Vehicle' })
 		}
 
-    this.addOutput("Event", LiteGraph.EVENT);
-		this.addOutput("Exiting Player", forge.type.player);
-		this.addOutput("Vehicle", forge.type.vehicle);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
+		this.addStaticOutput("Exiting Player", forge.type.player);
+		this.addStaticOutput("Vehicle", forge.type.vehicle);
 
 		this.triggerButton = this.addWidget("button", "[DEBUG] Trigger", undefined, () => this.onTrigger());
 
@@ -328,9 +328,9 @@ export class OnVehicleHijacked extends ForgeNode {
 			vehicle: new FOOD({ title: 'Vehicle' })
 		}
 
-    this.addOutput("Event", LiteGraph.EVENT);
-		this.addOutput("Entering Player", forge.type.player);
-		this.addOutput("Vehicle", forge.type.vehicle);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
+		this.addStaticOutput("Entering Player", forge.type.player);
+		this.addStaticOutput("Vehicle", forge.type.vehicle);
 
 		this.triggerButton = this.addWidget("button", "[DEBUG] Trigger", undefined, () => this.onTrigger());
 
@@ -362,9 +362,9 @@ export class OnVehicleOverturned extends ForgeNode {
 			vehicle: new FOOD({ title: 'Vehicle' })
 		}
 
-    this.addOutput("Event", LiteGraph.EVENT);
-		this.addOutput("Evicted Player", forge.type.player);
-		this.addOutput("Vehicle", forge.type.vehicle);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
+		this.addStaticOutput("Evicted Player", forge.type.player);
+		this.addStaticOutput("Vehicle", forge.type.vehicle);
 
 		this.triggerButton = this.addWidget("button", "[DEBUG] Trigger", undefined, () => this.onTrigger());
 

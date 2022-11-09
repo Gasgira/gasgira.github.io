@@ -135,6 +135,10 @@ export class Player extends FOOD {
 	get unEquippedWeapon() {
 		return this._weapons?.[1];
 	}
+
+	get equipment() {
+		if (this._equipment) return this._equipment;
+	}
 }
 
 export class Weapon extends FOOD {
@@ -178,6 +182,10 @@ export class Equipment extends FOOD {
 
 	get isEquipment() {
 		return true;
+	}
+
+	get isPowerup() {
+		return false;
 	}
 
 	get type() {
@@ -354,6 +362,24 @@ export class ForgeNode {
 
 	toJSON() {
 		return this.title ?? 'Node';
+	}
+
+	get staticInputs() {
+		return this._staticInputs ??= new Map();
+	}
+
+	get staticOutputs() {
+		return this._staticOutputs ??= new Map();
+	}
+
+	addStaticInput(name, type) {
+		this.staticInputs.set(name, type);
+		this.addInput(name, type);
+	}
+
+	addStaticOutput(name, type) {
+		this.staticOutputs.set(name, type);
+		this.addOutput(name, type);
 	}
 }
 

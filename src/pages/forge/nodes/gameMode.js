@@ -7,11 +7,11 @@ export class AdjustPersonalScore extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("Player", forge.type.player);
-		this.addInput("Score Adjustment", forge.type.number);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Player", forge.type.player);
+		this.addStaticInput("Score Adjustment", forge.type.number);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}
@@ -38,11 +38,11 @@ export class AdjustTeamPoints extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("Team", forge.type.team);
-		this.addInput("Score Adjustment", forge.type.number);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Team", forge.type.team);
+		this.addStaticInput("Score Adjustment", forge.type.number);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}
@@ -69,10 +69,10 @@ export class EndRound extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("End Game", forge.type.boolean);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("End Game", forge.type.boolean);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}
@@ -102,10 +102,10 @@ export class EndRoundAllLose extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("End Game", forge.type.boolean);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("End Game", forge.type.boolean);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}
@@ -136,10 +136,10 @@ export class EndRoundAllTie extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("End Game", forge.type.boolean);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("End Game", forge.type.boolean);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}
@@ -170,11 +170,11 @@ export class EndRoundWinningPlayer extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("Player", forge.type.player);
-		this.addInput("End Game", forge.type.boolean);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Player", forge.type.player);
+		this.addStaticInput("End Game", forge.type.boolean);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}
@@ -205,11 +205,11 @@ export class EndRoundWinningTeam extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("Team", forge.type.team);
-		this.addInput("End Game", forge.type.boolean);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Team", forge.type.team);
+		this.addStaticInput("End Game", forge.type.boolean);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}
@@ -240,7 +240,7 @@ export class GetCurrentRound extends ForgeNode {
 	constructor() {
 		super();
 
-    this.addOutput("Current Round", forge.type.number);
+    this.addStaticOutput("Current Round", forge.type.number);
 	}
 
 	static get title() {
@@ -264,7 +264,7 @@ export class GetMaxRounds extends ForgeNode {
 	constructor() {
 		super();
 
-    this.addOutput("Current Round", forge.type.number);
+    this.addStaticOutput("Current Round", forge.type.number);
 	}
 
 	static get title() {
@@ -288,10 +288,10 @@ export class GetPersonalScore extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Player", forge.type.player);
+		this.addStaticInput("Player", forge.type.player);
 
-    this.addOutput("Total Score", forge.type.number);
-    this.addOutput("Round Score", forge.type.number);
+    this.addStaticOutput("Total Score", forge.type.number);
+    this.addStaticOutput("Round Score", forge.type.number);
 	}
 
 	static get title() {
@@ -319,10 +319,10 @@ export class GetPlayerPoints extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Player", forge.type.player);
+		this.addStaticInput("Player", forge.type.player);
 
-    this.addOutput("Total Score", forge.type.number);
-    this.addOutput("Round Score", forge.type.number);
+    this.addStaticOutput("Total Score", forge.type.number);
+    this.addStaticOutput("Round Score", forge.type.number);
 	}
 
 	static get title() {
@@ -350,7 +350,7 @@ export class GetPointsToWin extends ForgeNode {
 	constructor() {
 		super();
 
-    this.addOutput("Score To Win", forge.type.number);
+    this.addStaticOutput("Score To Win", forge.type.number);
 	}
 
 	static get title() {
@@ -374,7 +374,7 @@ export class GetRoundTime extends ForgeNode {
 	constructor() {
 		super();
 
-    this.addOutput("Seconds Remaining", forge.type.number);
+    this.addStaticOutput("Seconds Remaining", forge.type.number);
 	}
 
 	static get title() {
@@ -398,10 +398,10 @@ export class GetTeamPoints extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Team", forge.type.team);
+		this.addStaticInput("Team", forge.type.team);
 
-    this.addOutput("Total Score", forge.type.number);
-    this.addOutput("Round Score", forge.type.number);
+    this.addStaticOutput("Total Score", forge.type.number);
+    this.addStaticOutput("Round Score", forge.type.number);
 	}
 
 	static get title() {
@@ -429,10 +429,10 @@ export class SetPointsToWin extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("Score To Win", forge.type.number);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Score To Win", forge.type.number);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}
@@ -462,10 +462,10 @@ export class SetRoundTime extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("Seconds Remaining", forge.type.number);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Seconds Remaining", forge.type.number);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}

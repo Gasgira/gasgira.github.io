@@ -4,8 +4,8 @@ import { LiteGraph } from 'lib/LiteGraph';
 export class GetObjectPosition extends ForgeNode {
 	constructor() {
 		super();
-		this.addInput("Object", forge.type.object);
-    this.addOutput("Position", forge.type.vector);
+		this.addStaticInput("Object", forge.type.object);
+    this.addStaticOutput("Position", forge.type.vector);
 
 		this.color = forge.nodeColor.object;
 	}
@@ -25,12 +25,12 @@ LiteGraph.registerNodeType("objectTransforms/getPos", GetObjectPosition);
 export class SetObjectPosition extends ForgeNode {
 	constructor() {
 		super();
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("Object", forge.type.object);
-    this.addInput("Position", forge.type.vector);
-    this.addInput("Is Relative", forge.type.boolean);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Object", forge.type.object);
+    this.addStaticInput("Position", forge.type.vector);
+    this.addStaticInput("Is Relative", forge.type.boolean);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.color = forge.nodeColor.object;
 

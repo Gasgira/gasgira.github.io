@@ -29,7 +29,7 @@ class App {
 			window.addEventListener('popstate', async (event) => {
 				// event?.preventDefault();
 				console.log('popstate', event.state);
-				if (event?.state?.path) db.showItemPanelByPath(event.state.path, true);
+				// if (event?.state?.path) db.showItemPanelByPath(event.state.path, true);
 				emitter.emit('popstate');
 
 				await this.handleNavigation(event);
@@ -45,6 +45,7 @@ class App {
 					return db.showItemPanelByID(hash.substring(5, hash.length).trim(), true);
 				}
 
+				emitter.emit('hide-panel');
 				return itemPanel.hide();
 			});
 		} catch (error) {

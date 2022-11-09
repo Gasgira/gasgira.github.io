@@ -7,11 +7,11 @@ export class AddPlayerAmmoEquipped extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("Player", forge.type.player);
-		this.addInput("Refill Percent", forge.type.percent);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Player", forge.type.player);
+		this.addStaticInput("Refill Percent", forge.type.percent);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}
@@ -39,11 +39,11 @@ export class AddPlayerAmmoUnequipped extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("Player", forge.type.player);
-		this.addInput("Refill Percent", forge.type.percent);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Player", forge.type.player);
+		this.addStaticInput("Refill Percent", forge.type.percent);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}
@@ -71,11 +71,11 @@ export class AreSameWeaponType extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Weapon A", forge.type.weapon);
-		this.addInput("Weapon B", forge.type.weapon);
+		this.addStaticInput("Weapon A", forge.type.weapon);
+		this.addStaticInput("Weapon B", forge.type.weapon);
 
-    this.addOutput("Are Same Base Weapon Type", forge.type.boolean);
-    this.addOutput("Are Same Weapon Type", forge.type.boolean);
+    this.addStaticOutput("Are Same Base Weapon Type", forge.type.boolean);
+    this.addStaticOutput("Are Same Weapon Type", forge.type.boolean);
 	}
 
 	static get title() {
@@ -101,11 +101,11 @@ export class DropSpecificWeapon extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("Player", forge.type.player);
-		this.addInput("Weapon", forge.type.weapon);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Player", forge.type.player);
+		this.addStaticInput("Weapon", forge.type.weapon);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}
@@ -132,11 +132,11 @@ export class DropWeaponOfType extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("Player", forge.type.player);
-		this.addInput("Weapon Type", forge.type.weaponType);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Player", forge.type.player);
+		this.addStaticInput("Weapon Type", forge.type.weaponType);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}
@@ -163,10 +163,10 @@ export class EmptyPlayerAmmo extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("Player", forge.type.player);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Player", forge.type.player);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}
@@ -193,10 +193,10 @@ export class GetIsHoldingSpecificWeapon extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Player", forge.type.player);
-		this.addInput("Weapon", forge.type.weapon);
+		this.addStaticInput("Player", forge.type.player);
+		this.addStaticInput("Weapon", forge.type.weapon);
 
-    this.addOutput("Is Holding Specific Weapon", forge.type.boolean);
+    this.addStaticOutput("Is Holding Specific Weapon", forge.type.boolean);
 	}
 
 	static get title() {
@@ -221,10 +221,10 @@ export class GetIsHoldingWeaponType extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Player", forge.type.player);
-		this.addInput("Weapon Type", forge.type.weaponType);
+		this.addStaticInput("Player", forge.type.player);
+		this.addStaticInput("Weapon Type", forge.type.weaponType);
 
-    this.addOutput("Is Holding Weapon Type", forge.type.boolean);
+    this.addStaticOutput("Is Holding Weapon Type", forge.type.boolean);
 	}
 
 	static get title() {
@@ -249,10 +249,10 @@ export class GetPlayerWeapons extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Player", forge.type.player);
+		this.addStaticInput("Player", forge.type.player);
 
-    this.addOutput("Equipped Weapon", forge.type.weapon);
-    this.addOutput("Unequipped Weapon", forge.type.weapon);
+    this.addStaticOutput("Equipped Weapon", forge.type.weapon);
+    this.addStaticOutput("Unequipped Weapon", forge.type.weapon);
 	}
 
 	static get title() {
@@ -280,9 +280,9 @@ export class GetWeaponMagazineCapacity extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Weapon", forge.type.weapon);
+		this.addStaticInput("Weapon", forge.type.weapon);
 
-    this.addOutput("Maximum Rounds", forge.type.weapon);
+    this.addStaticOutput("Maximum Rounds", forge.type.weapon);
 	}
 
 	static get title() {
@@ -309,9 +309,9 @@ export class GetWeaponMagazineRounds extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Weapon", forge.type.weapon);
+		this.addStaticInput("Weapon", forge.type.weapon);
 
-    this.addOutput("Rounds", forge.type.weapon);
+    this.addStaticOutput("Rounds", forge.type.weapon);
 	}
 
 	static get title() {
@@ -338,11 +338,11 @@ export class GetWeaponType extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Weapon", forge.type.weapon);
+		this.addStaticInput("Weapon", forge.type.weapon);
 
-    this.addOutput("Weapon Type", forge.type.weaponType);
-    this.addOutput("Base Weapon", forge.type.weapon);
-    this.addOutput("Configuration", forge.type.weaponConfiguration);
+    this.addStaticOutput("Weapon Type", forge.type.weaponType);
+    this.addStaticOutput("Base Weapon", forge.type.weapon);
+    this.addStaticOutput("Configuration", forge.type.weaponConfiguration);
 	}
 
 	static get title() {
@@ -371,13 +371,13 @@ export class GivePlayerNewWeapon extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("Player", forge.type.player);
-		this.addInput("Weapon Type", forge.type.weaponType);
-		this.addInput("Weapon Addition Method", forge.type.weaponAdditionMethod);
-		this.addInput("Wait Until Completion", forge.type.boolean);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Player", forge.type.player);
+		this.addStaticInput("Weapon Type", forge.type.weaponType);
+		this.addStaticInput("Weapon Addition Method", forge.type.weaponAdditionMethod);
+		this.addStaticInput("Wait Until Completion", forge.type.boolean);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}
@@ -404,13 +404,13 @@ export class GivePlayerSpecificWeapon extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("Player", forge.type.player);
-		this.addInput("Weapon", forge.type.weapon);
-		this.addInput("Weapon Addition Method", forge.type.weaponAdditionMethod);
-		this.addInput("Wait Until Completion", forge.type.boolean);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Player", forge.type.player);
+		this.addStaticInput("Weapon", forge.type.weapon);
+		this.addStaticInput("Weapon Addition Method", forge.type.weaponAdditionMethod);
+		this.addStaticInput("Wait Until Completion", forge.type.boolean);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}
@@ -437,10 +437,10 @@ export class RefillPlayerAmmo extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("Player", forge.type.player);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Player", forge.type.player);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}
@@ -467,11 +467,11 @@ export class SetPlayerWeaponLowered extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("Player", forge.type.player);
-		this.addInput("Enabled", forge.type.boolean);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Player", forge.type.player);
+		this.addStaticInput("Enabled", forge.type.boolean);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}
@@ -498,11 +498,11 @@ export class SetWeaponMagazineAmmo extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("Weapon", forge.type.weapon);
-		this.addInput("Rounds", forge.type.number);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Weapon", forge.type.weapon);
+		this.addStaticInput("Rounds", forge.type.number);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}
@@ -529,11 +529,11 @@ export class SetWeaponReserveAmmo extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("Weapon", forge.type.weapon);
-		this.addInput("Percent", forge.type.percent);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Weapon", forge.type.weapon);
+		this.addStaticInput("Percent", forge.type.percent);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}
@@ -560,11 +560,11 @@ export class SetWeaponTotalRounds extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("Weapon", forge.type.weapon);
-		this.addInput("Rounds", forge.type.number);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Weapon", forge.type.weapon);
+		this.addStaticInput("Rounds", forge.type.number);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}
@@ -591,11 +591,11 @@ export class SwitchToFirstWeaponOfType extends ForgeNode {
 	constructor() {
 		super();
 
-		this.addInput("Event", LiteGraph.ACTION);
-		this.addInput("Player", forge.type.player);
-		this.addInput("Weapon Type", forge.type.weaponType);
+		this.addStaticInput("Event", LiteGraph.ACTION);
+		this.addStaticInput("Player", forge.type.player);
+		this.addStaticInput("Weapon Type", forge.type.weaponType);
 
-    this.addOutput("Event", LiteGraph.EVENT);
+    this.addStaticOutput("Event", LiteGraph.EVENT);
 
 		this.mode = LiteGraph.ON_EVENT;
 	}
