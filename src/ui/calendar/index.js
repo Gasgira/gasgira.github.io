@@ -229,8 +229,8 @@ class Calendar extends Component {
 
 						// Season 1 special case dates for nice display
 						// const launchDate = new Date('2021-11-15T08:00:00');
-						const launchDate = new Date('2022-05-03T20:00:00Z');
-						const csrResetDate = new Date('2022-02-23T00:00:00Z');
+						const launchDate = new Date('2022-11-08T20:00:00Z');
+						const csrResetDate = new Date('2022-11-08T00:00:00Z');
 
 						if (startDate < csrResetDate) startDate = launchDate;
 						const endDate = new Date(operation.endDate);
@@ -292,7 +292,7 @@ class Calendar extends Component {
 								</button>
 							</li>
 						`;
-					}) ?? 'Could not load events...'}
+					}) ?? '...'}
 				</ul>
 			</div>
 		</div>
@@ -302,7 +302,7 @@ class Calendar extends Component {
 	async renderCapstoneCalendar() {
 		if (this?._capstoneCalendarWire) return this._capstoneCalendarWire;
 		const calendar = await this.getCapstoneCalendar();
-		if (!calendar) return `The capstone calendar could not be loaded`;
+		if (!calendar) return `...`;
 
 		const weekToCalendarItem = async (week) => {
 			if (!week.deck) return;
@@ -340,7 +340,7 @@ class Calendar extends Component {
 						<span class="date">${new Date(week.startDate).toLocaleDateString(undefined, { month: 'long', day: 'numeric' })}</span>
 					</div>
 					${{
-						any: inventoryReward.renderIcon('capstone', {itemTypeIcon: true}),
+						any: inventoryReward.renderIcon(`capstone-${startDate}`, {itemTypeIcon: true}),
 						placeholder: placeholderItem.cloneNode(true)
 					}}
 					<a class="challenge-link" href=${`#item/${filenameFromPath(capstoneChallengePath)}`}>${capstoneChallenge?.data?.Title}</a>

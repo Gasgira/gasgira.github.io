@@ -556,6 +556,10 @@ class UGCAsset extends Component {
 		return `/hi/${discovery.getAssetStorageTypeByIndex(this.assetKindIndex)}/${this?.id}/versions/${this?.version}`;
 	}
 
+	get waypointBrowserURI() {
+		return `/halo-infinite/ugc/${this.cylixUGCKind}s/${this?.id}`;
+	}
+
 	get title() {
 		return this.asset?.Name ?? this.asset?.PublicName ?? '???';
 	}

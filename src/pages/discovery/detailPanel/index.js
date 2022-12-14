@@ -134,7 +134,9 @@ class UGCDetailPanel extends Component {
 					</div>
 				</div>
 				<div class="links">
-					<a href=${this.xugcLink}>View & bookmark this asset at XUGC</a>
+					<h3>Find & Bookmark</h3>
+					<a href=${this.waypointLink}>Waypoint</a><br/>
+					<a href=${this.xugcLink}>XUGC</a>
 				</div>
 				<div class="details">
 					<h3>Details</h3>
@@ -205,9 +207,13 @@ class UGCDetailPanel extends Component {
 	}
 
 	get xugcLink() {
-		// https://xugc.halo.info/ugc/halo-infinite/mode/eadc1d70-52a1-493e-8007-676ba60900c7?gamertag=steaveherobrine&v=6bf9f043-0561-490b-8307-345e24e874ae
 		const path = `/ugc/halo-infinite/${this.state.asset?.cylixUGCKind}/${this.state.asset?.id}?v=${this.state.asset?.version}`;
 		const url = new URL(path, 'https://xugc.halo.info');
+		return `${url}`;
+	}
+
+	get waypointLink() {
+		const url = new URL(this.state.asset.waypointBrowserURI, 'https://www.halowaypoint.com');
 		return `${url}`;
 	}
 }
