@@ -220,6 +220,14 @@
 					<option value="false">No</option>
 				</select>
 			</div>
+			<div class="option">
+				<label for="ugc_search-tag">Tag</label>
+				<input
+					id="ugc_search-tag"
+					type="text"
+					onchange=${t=>this.setQuery("tag",t.target.value)}
+				>
+			</div>
 		</div>
 		`}renderPageControls(t=upper){return this.pages<2?"":a.k9.wire(this,`:${t}`)`
 			<div class="page-controls_wrapper">

@@ -49,7 +49,7 @@ class Calendar extends Component {
 			});
 		});
 		// const launchDate = new Date('2021-11-15T08:00:00');
-		const launchDate = new Date('2022-05-03T08:00:00Z');
+		const launchDate = new Date('2023-03-07T08:00:00Z');
 		const today = new Date();
 		let upcoming = false;
 		this.data?.Events?.forEach(ritual => {
@@ -217,7 +217,7 @@ class Calendar extends Component {
 	calendar() {
 		return HTML.wire(this, ':calendar')`
 		<div class="reward-track_wrapper mica_content">
-			<span>Season 2 // ${this.remainingTimeInSeason()}</span>
+			<span>Season 3 // ${this.remainingTimeInSeason()}</span>
 			<div class="timeline_wrapper">
 				<ul class="timeline_list operations">
 					${() => {
@@ -229,8 +229,8 @@ class Calendar extends Component {
 
 						// Season 1 special case dates for nice display
 						// const launchDate = new Date('2021-11-15T08:00:00');
-						const launchDate = new Date('2022-11-08T20:00:00Z');
-						const csrResetDate = new Date('2022-11-08T00:00:00Z');
+						const launchDate = new Date('2023-03-07T20:00:00Z');
+						const csrResetDate = new Date('2023-03-07T20:00:00Z');
 
 						if (startDate < csrResetDate) startDate = launchDate;
 						const endDate = new Date(operation.endDate);
@@ -265,7 +265,7 @@ class Calendar extends Component {
 					${this?.events?.map(event => {
 						let active = false;
 						let startDate = new Date(event.startDate);
-						const launchDate = new Date('2021-11-15T08:00:00');
+						const launchDate = new Date('2023-03-07T08:00:00');
 						if (startDate < launchDate) startDate = launchDate;
 						const endDate = new Date(event.endDate);
 						endDate.setDate(endDate.getDate() - 1);

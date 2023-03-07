@@ -557,3 +557,24 @@
 		}
 	}
 }
+
+.json-diff-wrapper {
+	background-color: var(--bg0);
+	padding: 0.5rem;
+}
+
+.history_dates-list {
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin: 1rem 0;
+	& li {
+		font-size: 0.8em;
+		display: inline-block;
+		background-color: hsla(var(--theme-interact-hsl), 0.1);
+		padding: 0.2em;
+		margin: 0.2em;
+		border-radius: var(--theme-border-radius);
+	}
+}

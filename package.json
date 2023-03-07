@@ -23,6 +23,7 @@
     "html-webpack-plugin": "^5.5.0",
     "http-server": "^14.1.0",
     "hyperhtml": "^2.34.0",
+    "jsondiffpatch": "^0.4.1",
     "litegraph.js": "jagenjo/litegraph.js",
     "minisearch": "^5.0.0",
     "postcss": "^8.4.5",

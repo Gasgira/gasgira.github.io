@@ -289,21 +289,20 @@ class UGCSearch extends Component {
 					<option value="false">No</option>
 				</select>
 			</div>
+			<div class="option">
+				<label for="ugc_search-tag">Tag</label>
+				<input
+					id="ugc_search-tag"
+					type="text"
+					onchange=${(e) => this.setQuery('tag', e.target.value)}
+				>
+			</div>
 		</div>
 		`;
-		// <div class="option">
-		// 	<label for="ugc_search-tag">Tag</label>
-		// 	<input disabled
-		// 		id="ugc_search-tag"
-		// 		type="text"
-		// 		placeholder="broken"
-		// 		onchange=${(e) => this.setQuery('tag', e.target.value)}
-		// 	>
-		// </div>
-		// <div class="option">
-		// 	<label for="ugc_search-sortOrder">Date Published</label>
-		// 	TODO date range
-		// </div>
+			// <div class="option">
+			// 	<label for="ugc_search-sortOrder">Date Published</label>
+			// 	TODO date range
+			// </div>
 	}
 
 	renderPageControls(id = upper) {

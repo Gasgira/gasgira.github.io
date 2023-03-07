@@ -5,8 +5,10 @@ import { HTML } from 'lib/HTML';
 import { filenameFromPath } from 'utils/paths.js';
 import { modalConstructor } from 'ui/modal';
 import { STATIC_ROOT } from 'environment';
+import { diff as createDiff, formatters as renderDiff } from 'jsondiffpatch';
 
 import './index.css';
+import './diff.css';
 
 class RelatedItems extends Component {
 	constructor(description) {
@@ -306,6 +308,97 @@ class Screenshots extends Component {
 	}
 }
 
+class JsonDiff extends Component {
+	constructor() {
+		super();
+		this.state.delta = createDiff(this.state.left, this.state.right);
+		renderDiff.html.hideUnchanged();
+	}
+
+	get defaultState() {
+		return {
+			leftHash: '',
+			rightHash: '',
+			left: { dust: 'echoes' },
+			right: { dustin: 'echoes' }
+		};
+	}
+
+	get default() {
+		return { dust: 'echoes' }
+	}
+
+	render() {
+		return this.html`
+			<div class="json-diff-wrapper">
+				${this.state.error}
+				${{ html: renderDiff.html.format(this.state.delta, this.state.left) || 'No Diff!' }}
+			</div>
+		`;
+	}
+
+	async setRight(request, hash) {
+		try {
+			const json = await request;
+
+			if (json) this.state.right = json;
+			this.state.delta = createDiff(this.state.left, this.state.right);
+			if (hash) this.state.rightHash = hash;
+			this.render();
+			console.log('setRight', json);
+		} catch (error) {
+			this.state.error = `Error! ${error}`;
+		}
+	}
+
+	async setLeft(request, hash) {
+		try {
+			const json = await request;
+
+			if (json) this.state.left = json;
+			this.state.delta = createDiff(this.state.left, this.state.right);
+			if (hash) this.state.leftHash = hash;
+			this.render();
+			console.log('setLeft', json);
+		} catch (error) {
+			this.state.error = `Error! ${error}`;
+		}
+	}
+
+	async setBoth({
+		right,
+		rightHash,
+		left,
+		leftHash
+	}) {
+		if (!right || !left) return;
+		const rightJson = await right;
+		const leftJson = await left;
+
+		if (rightJson)
+		{
+			this.state.right = rightJson;
+		} else {
+			this.state.left = {...this.default}
+		}
+		if (leftJson)
+		{
+			this.state.left = leftJson;
+		} else {
+			this.state.left = {...this.default}
+		}
+
+		this.state.rightHash = rightHash || '';
+		this.state.leftHash = leftHash || '';
+
+		console.log('sb', this.state.leftHash);
+
+		this.state.delta = createDiff(this.state.left, this.state.right);
+
+		this.render();
+	}
+}
+
 class ItemPanel extends Component {
 	constructor() {
 		super();
@@ -324,6 +417,7 @@ class ItemPanel extends Component {
 
 		this.palettes = new Palettes();
 		this.screenshots = new Screenshots();
+		this.jsonDiff = new JsonDiff();
 	}
 
 	get defaultState() {
@@ -671,18 +765,48 @@ class ItemPanel extends Component {
 
 	async renderHistoryMenu() {
 		const history = new Map(await db.getHistoryByID(this.item.id) ?? []);
+		const historyArray = Array.from(history.values());
+		const current = historyArray.pop();
+		const previous = historyArray.pop();
+		console.warn(current, previous);
+		this.jsonDiff.setBoth({
+			right: this.state?.item?.data,
+			rightHash: current,
+			left: previous ? db.getItemVersion({ id: this.item.id, hash: previous }) : {},
+			leftHash: previous ? previous : ''
+		});
+		console.warn(this.jsonDiff.state.leftHash);
 		return HTML.wire(this, ':modDates')`
 			<header>${this.state.item.name}</header>
-			<p>[Diffing tool coming soon] API updates were logged for these dates:</p>
-			<ul>
+			<p>API updates were logged for these dates:</p>
+			<ul class="history_dates-list">
 				${[...history].map(([date, hash]) => HTML.wire(this.item, `:history-${date}`)`
 					<li>
-						<button
-							onclick=${() => console.log(hash)}
-						>${new Date(date).toLocaleDateString()}</button>
+						${new Date(date).toLocaleDateString()}
 					</li>
 				`)}
 			</ul>
+			<div class="option_wrapper">
+				<label for="set-verion-old">Old:</label>
+				<select class="set-version" id="set-verion-old" name="set-verion-old"
+					onchange=${(e) => {
+						this.jsonDiff.setLeft(db.getItemVersion({ id: this.item.id, hash: e.target.value }));
+					}}
+				>
+					${[...history].reverse().filter(([date, hash]) => hash).map(([date, hash], index) => `<option value="${hash}"${index === 1 ? ' selected' : ''}>${new Date(date).toLocaleDateString()}</option>`)}
+				</select
+			</div>
+			<div class="option_wrapper">
+				<label for="set-verion-new">New:</label>
+				<select class="set-version" id="set-verion-new" name="set-verion-new"
+					onchange=${(e) => {
+						this.jsonDiff.setRight(db.getItemVersion({ id: this.item.id, hash: e.target.value }));
+					}}
+				>
+					${[...history].reverse().filter(([date, hash]) => hash).map(([date, hash], index) => `<option value="${hash}">${new Date(date).toLocaleDateString()}</option>`)}
+				</select
+			</div>
+			${this.jsonDiff.render()}
 		`;
 	}
 

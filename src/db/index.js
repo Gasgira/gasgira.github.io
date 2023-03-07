@@ -135,6 +135,24 @@ class Database {
 		}
 	}
 
+	async getItemVersion({ id, hash }) {
+		if (!id || typeof id !== 'string') return;
+		if (!hash || typeof hash !== 'string') return;
+
+		try {
+			if (!this.manifestHasID(id)) return;
+
+			const meta = this.getItemManifestByID(id);
+
+			const json = await this.getJSON(`item/${meta.name}/${hash}.json`);
+			if (!json) throw new Error('Failed to fetch item!');
+
+			return json;
+		} catch (error) {
+			console.error(`[db.getItemVersion] "${id}", "${hash}"`, error);
+		}
+	}
+
 	// cache items IDs by type
 	get typeIDs() {
 		return this?._typeIDs ?? (this._typeIDs = new Map());
