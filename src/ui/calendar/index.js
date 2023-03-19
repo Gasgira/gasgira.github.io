@@ -302,12 +302,16 @@ class Calendar extends Component {
 	async renderCapstoneCalendar() {
 		if (this?._capstoneCalendarWire) return this._capstoneCalendarWire;
 		const calendar = await this.getCapstoneCalendar();
-		if (!calendar) return `...`;
+		if (!calendar) return `...pardon the dust...`;
 
-		const weekToCalendarItem = async (week) => {
-			if (!week.deck) return;
+		const startDate = new Date(calendar.startDate);
+		const finalDate = new Date(calendar.endDate);
+		const today = new Date();
 
-			const deck = new Item({ path: week?.deck ?? 'unknown' });
+		const weekToCalendarItem = async (deckPath, week) => {
+			if (!deckPath) return;
+
+			const deck = new Item({ path: deckPath });
 			if (!deck) return;
 
 			await deck.init();
@@ -321,15 +325,15 @@ class Calendar extends Component {
 			const inventoryReward = new Item({ path: capstoneChallenge?.data?.Reward?.InventoryRewards?.[0]?.InventoryItemPath });
 			if (!inventoryReward) return;
 
-			const startDate = new Date(week.startDate);
-			const endDate = new Date(week.endDate);
+			const weekStartDate = new Date(startDate);
+			weekStartDate.setDate(startDate.getDate() + (7 * (week)));
+			const weekEndDate = new Date(weekStartDate);
+			weekEndDate.setDate(weekStartDate.getDate() + 7);
 
-			const today = new Date();
+			const active = weekStartDate <= today && weekEndDate >= today;
 
-			const active = startDate <= today && endDate >= today;
-
-			return HTML.wire(week)`
-				<li class=${`calendar-item${endDate <= today ? ' past' : active ? ' active' : ' future'}`}>
+			return HTML.wire(weekStartDate)`
+				<li class=${`calendar-item${weekEndDate <= today ? ' past' : active ? ' active' : weekEndDate > finalDate ? ' past' : ' future'}`}>
 					<div class="date-wrapper">
 						${
 							active ? HTML.wire()`
@@ -337,23 +341,23 @@ class Calendar extends Component {
 							`
 							: ''
 						}
-						<span class="date">${new Date(week.startDate).toLocaleDateString(undefined, { month: 'long', day: 'numeric' })}</span>
+						<span class="date">${new Date(weekStartDate).toLocaleDateString(undefined, { month: 'long', day: 'numeric' })}</span>
 					</div>
 					${{
-						any: inventoryReward.renderIcon(`capstone-${startDate}`, {itemTypeIcon: true}),
+						any: inventoryReward.renderIcon(`capstone-${weekStartDate}`, {itemTypeIcon: true}),
 						placeholder: placeholderItem.cloneNode(true)
 					}}
-					<a class="challenge-link" href=${`#item/${filenameFromPath(capstoneChallengePath)}`}>${capstoneChallenge?.data?.Title}</a>
+					<a class="challenge-link" href=${`#item/${filenameFromPath(capstoneChallengePath)}`}>${capstoneChallenge?.name ?? '???'}</a>
 				</li>
 			`;
 		}
 
 		return (this._capstoneCalendarWire = HTML.wire(this, ':capstone')`
 			<div class="reward-track_wrapper mica_content">
-				<span>Season 2 Capstones // ${calendar.length}</span>
+				<span>${calendar.title} Capstones // ${calendar.weeks.length}</span>
 				<ul class="capstone-calendar_wrapper">
 					${{
-						any: calendar.map(week => weekToCalendarItem(week)),
+						any: calendar.weeks.map((path, week) => weekToCalendarItem(path, week)),
 						placeholder: throbber.cloneNode(true)
 					}}
 				</ul>

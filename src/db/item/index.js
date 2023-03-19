@@ -367,7 +367,9 @@ export class Item extends Component {
 		{
 			if (!path) return '';
 			const parent = await new Item({ id: parentID }).getImagePath();
-			const imagePath = `url(${STATIC_ROOT}images/${db.pathCase(parent)})`;
+
+			// TODO temp bandit override
+			const imagePath = parentID === '207-208-olympus-aa30213b' ? `url(${STATIC_ROOT}images/progression/inventory/weapon/themes/207-208-olympus-aa30213b.png)` : `url(${STATIC_ROOT}images/${db.pathCase(parent)})`;
 			return HTML.wire()`
 				<div
 					class=${`item-type-icon WeaponCoating`}
@@ -406,6 +408,12 @@ export class Item extends Component {
 					break;
 				case 'Inventory/Armor/Themes/007-000-lone-wolf-0903655e.json':
 					svgId = 'RAKSHASA'
+					break;
+				case 'Inventory/Armor/Themes/007-001-spi-c13d0b38.json':
+					svgId = 'SPI'
+					break;
+				case 'Inventory/Armor/Themes/007-001-fwl-7f58d7f6.json':
+					svgId = 'CHIMERA'
 					break;
 
 				default:
