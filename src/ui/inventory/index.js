@@ -125,6 +125,7 @@ class Inventory extends Component {
 
 	get sortOptions() {
 		return this._sortOptions ??= new Map([
+			['unsorted', 'Default'],
 			['alphanumeric', 'Alphanumeric'],
 			['popularity', 'Popularity'],
 			['popularityDelta', 'Popularity Delta'],
@@ -243,6 +244,10 @@ class InventoryCategory extends Component {
 		const userSort = settings.getSetting('userSort') ?? 'default';
 		let sorted = this._unsortedItemIDs;
 		switch (userSort) {
+			case 'unsorted':
+				console.log('Sort: unsorted');
+				return (this._itemIDs = unsortedSet);
+				break;
 			case 'dateAdded':
 				console.log('Sort: dateAdded');
 				sorted = new Set([...unsortedSet].sort((a, b) => {

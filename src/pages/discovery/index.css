@@ -1,3 +1,10 @@
+.discovery-parent {
+	& .discovery-categories {
+		display: flex;
+		flex-direction: row;
+	}
+}
+
 .ugc_results_wrapper {
 	display: flex;
 	flex-direction: column;
@@ -80,6 +87,9 @@
 		}
 	}
 	&.is343 {
+		--rarity: var(--rarity-store);
+	}
+	&.isRec {
 		--rarity: var(--theme-activate);
 	}
 	& .thumbnail {
@@ -132,6 +142,15 @@
 }
 
 .ugc_search_wrapper {
+	& .page-controls_wrapper {
+		position: relative;
+		& .placeholder_throbber {
+			margin: 0;
+			position: absolute;
+			left: 0;
+			top: -1.2em;
+		}
+	}
 	& .ugc_search-options {
 		display: flex;
 		flex-direction: row;

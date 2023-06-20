@@ -5,6 +5,8 @@ import { emitter } from 'eventEmitter';
 import { HTML } from 'lib/HTML';
 import { urlParams } from 'urlParams';
 import { MobileMicaMenu } from 'ui/mica';
+import { filenameFromPath } from 'utils/paths.js';
+import { settings } from 'ui/settings';
 
 import './index.css';
 
@@ -310,9 +312,13 @@ class Socket extends Component {
 		this.OptionPaths = OptionPaths;
 		this.socketName = socketName;
 
-		this.items = this.OptionPaths.map(path => new Item({ path }));
+		// this.items = this.OptionPaths.map(path => new Item({ path }));
+		this.items = [];
+		this.itemIDs = this.OptionPaths.map(path => filenameFromPath(path));
+		this.init();
 
 		// return this.render();
+		emitter.on('Inventory.setSort', () => this.sortItemIDs());
 	}
 
 	render() {
@@ -321,7 +327,8 @@ class Socket extends Component {
 			<div
 				class ="core-sockets_wrapper mica_content"
 			>
-				<span class="mica_content-title">${this.name?.replace('Atch.', 'Attachments') ?? 'Socket'} // ${this?.items?.length ?? '#'}</span>
+				<span class="mica_content-title">${this.name?.replace('Atch.', 'Attachments') ?? 'Socket'} // ${this?.OptionPaths?.length ?? '#'}</span>
+				${this.renderPageControls('upper')}
 				<ul
 					class="socket-items"
 				>
@@ -330,11 +337,172 @@ class Socket extends Component {
 						placeholder: placeholderItem.cloneNode(true)
 					}}</li>`)}
 				</ul>
+				${this.renderPageControls('lower')}
 			</div>
 		`;
 	}
 
 	get name() {
 		return db.getItemType(this?.socketName);
+	}
+
+	get defaultState() {
+		return {
+			page: 0
+		};
+	}
+
+	init() {
+		this.getCurrentItemPage();
+	}
+
+	set itemIDs(unsortedArray) {
+		const unsortedSet = new Set([...unsortedArray]);
+		if (!unsortedSet || !unsortedSet.size) return (this._itemIDs = unsortedSet);
+		this._unsortedItemIDs = unsortedSet;
+		const userSort = settings.getSetting('userSort') ?? 'default';
+		let sorted = this._unsortedItemIDs;
+		switch (userSort) {
+			case 'unsorted':
+				console.log('Sort: unsorted');
+				return (this._itemIDs = unsortedSet);
+				break;
+			case 'dateAdded':
+				console.log('Sort: dateAdded');
+				sorted = new Set([...unsortedSet].sort((a, b) => {
+					const aMeta = db.getItemManifestByID(a);
+					const bMeta = db.getItemManifestByID(b);
+					return (new Date(bMeta.added) - new Date(aMeta.added))
+				}));
+				break;
+			case 'dateModified':
+				console.log('Sort: dateModified');
+				sorted = new Set([...unsortedSet].sort((a, b) => {
+					const aMeta = db.getItemManifestByID(a);
+					const bMeta = db.getItemManifestByID(b);
+					return (new Date(bMeta.touched) - new Date(aMeta.touched))
+				}));
+				break;
+			case 'dateVisible':
+				console.log('Sort: dateVisible');
+				sorted = new Set([...unsortedSet].sort((a, b) => {
+					const aMeta = db.getItemManifestByID(a);
+					const bMeta = db.getItemManifestByID(b);
+					return (new Date(bMeta?.visible ?? new Date('2021-11-10')) - new Date(aMeta?.visible ?? new Date('2021-11-10')))
+				}));
+				break;
+			case 'popularity':
+				console.log('Sort: popularity');
+				sorted = new Set([...unsortedSet].sort((a, b) => {
+					const aMeta = db.getItemManifestByID(a);
+					const bMeta = db.getItemManifestByID(b);
+
+					const aPop = parseFloat(aMeta?.community?.stats?.cur ?? 0);
+					const bPop = parseFloat(bMeta?.community?.stats?.cur ?? 0);
+					return (bPop - aPop);
+				}));
+				break;
+			case 'popularityDelta':
+				console.log('Sort: popularityDelta');
+				sorted = new Set([...unsortedSet].sort((a, b) => {
+					const aMeta = db.getItemManifestByID(a);
+					const bMeta = db.getItemManifestByID(b);
+
+					const aPop = Math.abs(parseFloat(aMeta?.community?.stats?.delta ?? 0));
+					const bPop = Math.abs(parseFloat(bMeta?.community?.stats?.delta ?? 0));
+					return (bPop - aPop);
+				}));
+				break;
+			case 'alphanumeric':
+				console.log('Sort: alphanumeric');
+			default:
+				console.warn('Sort: default');
+				sorted = new Set([...unsortedSet].sort((a, b) => {
+					const aMeta = db.getItemManifestByID(a);
+					const bMeta = db.getItemManifestByID(b);
+					if (!aMeta || !bMeta) return 0;
+					return (aMeta.title.localeCompare(bMeta.title, 'en', { ignorePunctuation: true }))
+				}));
+		}
+
+		console.warn('sorted cores!', sorted)
+		return (this._itemIDs = sorted);
+	}
+
+	get itemIDs() {
+		return (this._itemIDs ??= new Set());
+	}
+
+	sortItemIDs() {
+		// TODO this is really bad
+		if (this.items.length)
+		{
+			this.items = [];
+			this.itemIDs = this.itemIDs;
+			this.init();
+			this.render();
+		}
+	}
+
+	getCurrentItemPage() {
+		return (this.items = [...this.currentPageIDs].map(id => new Item({ id })));
+	}
+
+	nextPage() {
+		if (this.pageNumber === this.pages-1) return;
+		this.state.page = this.pageNumber + 1;
+		this.getCurrentItemPage();
+		this.render();
+		this.scrollIntoView();
+	}
+
+	previousPage() {
+		if (this.pageNumber === 0) return;
+		this.state.page = this.pageNumber - 1;
+		this.getCurrentItemPage();
+		this.render();
+		this.scrollIntoView();
+	}
+
+	scrollIntoView() {
+		const el = document.querySelector(`#cores`);
+		if (el)
+		{
+			el.scrollIntoView();
+			history.replaceState({}, `Cylix`, `#cores`);
+		}
+	}
+
+	get pageLength() {
+		return inventory?.pageSize ?? 100;
+	}
+
+	get pages() {
+		return Math.ceil(this.itemIDs.size / this.pageLength);
+	}
+
+	get pageNumber() {
+		return this.state?.page ?? 0;
+	}
+
+	get currentPageIDs() {
+		return new Set([...this.itemIDs].slice((this.pageNumber * this.pageLength), (this.pageNumber * this.pageLength) + this.pageLength));
+	}
+
+	renderPageControls(id = 'upper') {
+		if (this.pages < 2) return '';
+		return HTML.wire(this, `:${id}`)`
+			<div class="page-controls_wrapper">
+				<button
+					onclick=${() => this.previousPage()}
+					disabled=${this.pageNumber === 0}
+				><div class=${`icon-masked icon-arrow-left`}></div>Prev</button>
+				<span>${this.pageNumber+1} of ${this.pages}</span>
+				<button
+					onclick=${() => this.nextPage()}
+					disabled=${this.pageNumber + 1 === this.pages}
+				>Next<div class=${`icon-masked icon-arrow-right`}></div></button>
+			</div>
+		`;
 	}
 }

@@ -336,7 +336,9 @@ class Database {
 	get seasons() {
 		return this._seasons ??= new Map([
 			[1, 'Heroes of Reach'],
-			[2, 'Lone Wolves']
+			[2, 'Lone Wolves'],
+			[3, 'Echoes Within'],
+			[4, 'Infection']
 		])
 	}
 

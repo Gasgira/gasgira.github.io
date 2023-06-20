@@ -1,6 +1,7 @@
 import { HTML } from 'lib/HTML';
 import { Component } from 'component';
 import { settings } from 'ui/settings';
+import { emitter } from 'eventEmitter';
 
 import './index.css';
 
@@ -14,6 +15,7 @@ class ModalConstructor extends Component {
 		this.modals.add(modal);
 		this.render();
 		document.body.style.overflow = 'hidden';
+		history.pushState({}, `Cylix Guide`, ``);
 	}
 
 	closeView(modal) {
@@ -38,6 +40,9 @@ class Modal extends Component {
 	constructor(view) {
 		super();
 		this.view = view;
+		emitter.once('popstate', () => {
+			modalConstructor.closeView(this);
+		});
 	}
 
 	render() {

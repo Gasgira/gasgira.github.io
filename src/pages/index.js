@@ -9,6 +9,8 @@ import { armorHall } from 'pages/vanity/customization';
 import { profile } from 'pages/vanity/Profile';
 import { urlParams } from 'urlParams';
 import { VANITY_BETA } from 'environment';
+import { itemPanel } from 'db/itemPanel';
+import { db } from 'db';
 // import { Forge } from 'pages/forge';
 
 class PageItems {
@@ -137,6 +139,12 @@ class Router {
 		try {
 			const url = new URL(window.location);
 			const { pathname } = url;
+			const pathParts = pathname.split('/');
+			if (pathname === '/' && itemPanel.state.visible)
+			{
+				this.page = this.items;
+				itemPanel.hide();
+			}
 
 			if (this?.pathname === pathname) return;
 			console.info(`[Router.route] "${this?.pathname ?? 'initial'}" -> "${pathname}"`);
@@ -146,6 +154,16 @@ class Router {
 			{
 				if (this.page === this.vanity) return;
 				this.page = this.vanity;
+			}
+				else if (pathname.startsWith('/item'))
+			{
+				// console.log('test', pathname)
+				// if (this.page === this.items) return;
+				// this.page = this.items;
+				if (pathParts?.[2])
+				{
+					db.showItemPanelByID(pathParts?.[2].trim(), true);
+				}
 			}
 				else if (pathname.startsWith('/play'))
 			{
@@ -164,7 +182,11 @@ class Router {
 			}
 				else
 			{
-				if (this.page === this.items) return;
+				if (this.page === this.items)
+				{
+					if (pathname === '/' && itemPanel.state.visible) itemPanel.hide();
+					return;
+				}
 				this.page = this.items;
 			}
 

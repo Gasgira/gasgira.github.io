@@ -23,6 +23,15 @@ class App {
 				>Privacy</span>
 			`;
 
+			const url = new URL(window.location);
+			const { pathname } = url;
+			if (pathname.startsWith('/item/'))
+			{
+				console.log(`[cylix.init] Loading item from url... "${pathname}"`);
+				const pathParts = pathname.split('/');
+				if (pathParts?.[2]) history.pushState(null, null, `/#item/${pathParts?.[2]}`);
+			}
+
 			await this.handleNavigation();
 			this.parseUriHash();
 

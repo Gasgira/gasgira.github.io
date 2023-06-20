@@ -12,6 +12,11 @@ class HeaderNav extends Component {
 	constructor() {
 		super();
 		this.links = [];
+		document.addEventListener('click', (e)=> {
+			if (!this.state.showMenu) return;
+			if (e.target.closest('.menu_wrapper')) return;
+			this.setState({showMenu: false})
+		});
 	}
 
 	get defaultState() {
@@ -145,9 +150,7 @@ class HeaderNav extends Component {
 		}
 		return HTML.wire(this, ':menu')`
 			<li>
-				<div class="menu_wrapper"
-					onblur=${() => console.log('blur')}
-				>
+				<div class="menu_wrapper">
 					<button
 						aria-label="Menu"
 						title="Additional Options"
@@ -155,12 +158,15 @@ class HeaderNav extends Component {
 					>
 						<div class="icon-masked icon-close"></div>
 					</button>
-					<div class="menu_list_wrapper">
-						<ul class="menu_list">
+					<div
+						class="menu_list_wrapper"
+					>
+						<ul
+							class="menu_list"
+						>
 							<li>${this.spoilersButton()}</li>
 							<li>${this.discordButton()}</li>
 							<li>${this.settingsButton()}</li>
-							<li>${this.forgeButton()}</li>
 							<li>${this.aboutButton()}</li>
 						</ul>
 					</div>
@@ -217,7 +223,7 @@ class HeaderNav extends Component {
 	}
 
 	itemsButton() {
-		if (this.pathname === '/') return '';
+		if (this.pathname === '/' || this.pathname.startsWith('/item/')) return '';
 		return HTML.wire(this, ':items')`
 			<li><button
 				aria-label="Items"
@@ -254,7 +260,7 @@ class HeaderNav extends Component {
 					dispatchEvent(popStateEvent);
 				}}
 			>
-				Discovery
+				Community
 			</button></li>
 		`;
 	}
@@ -303,6 +309,7 @@ class HeaderNav extends Component {
 					this.setState({showMenu: false});
 					modalConstructor.showView(about.render())
 				}}
+				onconnected=${(e) => e?.target.focus()}
 			>
 				<span>About</span><div class="icon-masked icon-quote"></div>
 			</button>

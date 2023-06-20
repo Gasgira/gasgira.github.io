@@ -2,6 +2,7 @@ import { Component } from 'component';
 import { HTML } from 'lib/HTML';
 import { modalConstructor } from 'ui/modal';
 import { emitter } from 'eventEmitter';
+import Chart from 'chart.js/auto';
 
 import './index.css';
 
@@ -77,7 +78,7 @@ class UGCDetailPanel extends Component {
 				class="dbItemPanel_clickout"
 				onclick=${() => this.hide()}
 			></div>
-			<div class=${`dbItemPanel_wrapper ugc_detail-panel${asset.is343 ? ' is343' : ''}`}>
+			<div class=${`dbItemPanel_wrapper ugc_detail-panel${asset.is343 ? ' is343' : ''}${asset.isRecommended ? ' isRec' : ''}`}>
 				<header id="ugc_detail-panel_header" class="asset-title">
 					<h2>${asset.title}</h2>
 				</header>
@@ -109,34 +110,29 @@ class UGCDetailPanel extends Component {
 							<span>${asset.playsRecent.toLocaleString()}</span>
 						</li>
 						<li>
-							<span>Likes</span>
-							<span>${asset.likes.toLocaleString()}</span>
-						</li>
-						<li>
 							<span>Rating</span>
 							<span>${asset.averageRating}</span>
 						</li>
 					</ul>
 					<div class="description">
-						<span class="date-modified"><div class=${`icon-masked icon-ugc-${asset.assetKindIndex}`}></div>Last Updated: ${asset.dateModified.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+						<span class="date-modified"><div class=${`icon-masked icon-ugc-${asset.assetKindIndex}`}></div>Last Updated: ${asset.lastModifiedVersion}</span>
 						<span class="text">${asset.description}</span>
 					</div>
 					<ul class="tags">
 						${asset.tags.map(tag => `<li>${tag}</li>`)}
 					</ul>
 					<div class="credits">
-						<h3>Author</h3>
-						<div class="author">...</div>
-						<h3>Contributors</h3>
+						<h3>${asset.contributors.length > 1 ? 'File Owner' : 'Author'}</h3>
+						<div class="author">${asset.originalAuthor}</div>
+						<h3>${asset.contributors.length > 1 ? `Contributors [${asset.contributors.length}]` : ''}</h3>
 						<ul>
-							${asset.contributors.map((contributor, index) => `<li>Contributor ${index+1}</li>`)}
+							${asset.contributors.length > 1 ? asset.contributors.map((contributor, index) => `<li>${contributor}</li>`) : ''}
 						</ul>
 					</div>
 				</div>
 				<div class="links">
 					<h3>Find & Bookmark</h3>
-					<a href=${this.waypointLink}>Waypoint</a><br/>
-					<a href=${this.xugcLink}>XUGC</a>
+					<a target="_blank" rel="noopener noreferrer" href=${this.waypointLink}>Waypoint</a><br/>
 				</div>
 				<div class="details">
 					<h3>Details</h3>
@@ -151,7 +147,7 @@ class UGCDetailPanel extends Component {
 						</li>
 						<li class="details-list-item">
 							<label>Date Published</label>
-							<span>${asset.dateCreated.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+							<span>${asset.datePublished.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</span>
 						</li>
 						<li class="details-list-item">
 							<label>Date Modified</label>
@@ -162,16 +158,8 @@ class UGCDetailPanel extends Component {
 							<span>${asset.isCopyProtected ? 'Yes' : 'No'}</span>
 						</li>
 						<li class="details-list-item">
-							<label>Has Nodegraph</label>
-							<span>${asset.hasNodeGraph ? 'Yes' : 'No'}</span>
-						</li>
-						<li class="details-list-item">
 							<label>Objects</label>
 							<span>${asset.objectCount.toLocaleString()}</span>
-						</li>
-						<li class="details-list-item">
-							<label>Referenced Assets</label>
-							<span></span>
 						</li>
 					</ul>
 				</div>
@@ -215,6 +203,10 @@ class UGCDetailPanel extends Component {
 	get waypointLink() {
 		const url = new URL(this.state.asset.waypointBrowserURI, 'https://www.halowaypoint.com');
 		return `${url}`;
+	}
+
+	async getMapStats() {
+		if (this._mapStats) return this._mapStats;
 	}
 }
 

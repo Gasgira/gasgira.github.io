@@ -435,7 +435,15 @@ class ItemPanel extends Component {
 		if (this.state.visible)
 		{
 			this.setState({visible: false});
-			history.pushState(null, 'Halosets', `#`);
+
+			const { pathname } = new URL(window.location);
+			if (pathname.startsWith('/item/'))
+			{
+				history.pushState(null, 'Halosets', `/${this.pagePathMeta}`);
+			} else {
+				history.pushState(null, 'Halosets', `#`);
+			}
+
 			document.body.style.overflow = 'auto';
 		}
 	}
@@ -445,12 +453,35 @@ class ItemPanel extends Component {
 		document.body.style.overflow = 'auto';
 	}
 
+	get pagePath() {
+		const { pathname } = new URL(window.location);
+		if (pathname === '/' || pathname.startsWith('/item/')) return '/item';
+		return '#item';
+	}
+
+	get pagePathMeta() {
+		const params = new URLSearchParams(window.location.search);
+		const query = `${params.size ? `?${params}` : ''}`;
+
+		const hash = window.location.hash?.substring?.(1);
+		const newHash = `${hash && !hash.startsWith('item') ? `#${hash}` : ''}`;
+
+		return `${query}${newHash}`;
+	}
+
+	makeUrl(itemId) {
+		const params = new URLSearchParams(window.location.search);
+		const query = `${params.size ? `?${params}` : ''}`
+		return `${this.pagePath}/${itemId}${this.pagePathMeta}`;
+	}
+
 	displayItem(item, skipState) {
 		// check if is of class Item...
+		if (!item?.id) return;
 		if (skipState) {
-			history.replaceState({path: `${item?.path}`}, `Halosets`, `#item/${item?.id}`);
+			history.replaceState({path: `${item?.path}`}, `Halosets`, `${this.makeUrl(item.id)}`);
 		} else {
-			history.pushState({path: `${item?.path}`}, `Halosets`, `#item/${item?.id}`);
+			history.pushState({path: `${item?.path}`}, `Halosets`, `${this.makeUrl(item.id)}`);
 		}
 		this.scrollToTop();
 		this.state = {
@@ -716,6 +747,14 @@ class ItemPanel extends Component {
 							<label>Availability</label>
 							<span class="community_tag-list">
 								${community.availability}
+							</span>
+						</div>`);
+					break;
+				case 'cost':
+					displays.push(`<div class="community_item">
+							<label>Cost</label>
+							<span class="community_tag-list">
+								${community.cost}
 							</span>
 						</div>`);
 					break;

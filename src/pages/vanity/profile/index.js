@@ -9,7 +9,8 @@ class Profile extends Component {
 			search: '',
 			failedSearch: '',
 			status: '',
-			fetching: false
+			fetching: false,
+			rateLimit: false
 		};
 	}
 
@@ -31,7 +32,8 @@ class Profile extends Component {
 			this.state = {
 				...this.defaultState,
 				gamertag,
-				profile
+				profile,
+				rateLimit: this.state.rateLimit
 			};
 			this.announceProfile(profile, gamertag);
 			this.render();
@@ -44,7 +46,14 @@ class Profile extends Component {
 		this.setUrlPathToGamertag();
 		return this.html`<div class="mica_viewer vanity-profile_wrapper" id="vanity-profile-search">
 			<header class="mica_header-strip">
-				<button aria-label="Search" title="Search" onclick=${() => this.submitSearch()}><div class="icon-masked icon-search"></div></button>
+				<button
+					aria-label="Search"
+					title="Search"
+					onclick=${() => this.submitSearch()}
+					disabled=${this.state.rateLimit || this.state.fetching}
+				>
+					<div class="icon-masked icon-search"></div>
+				</button>
 				<input
 					aria-label="Search Input"
 					type="search"
@@ -68,12 +77,21 @@ class Profile extends Component {
 		return HTML.wire(this, ':status')`${status ?? this.state.status}`;
 	}
 
+	async controlsRateLimit() {
+		this.state.rateLimit = true;
+		// this.render();
+		setTimeout(() => {
+			this.state.rateLimit = false;
+			this.render();
+		}, 3000);
+	}
+
 	inputSearch(string) {
 		if (typeof string === 'string') this.state.search = string;
 	}
 
 	async submitSearch() {
-		if (this.state.fetching) return;
+		if (this.state.fetching || this.state.rateLimit) return;
 		if (!this.state.search || typeof this.state.search !== 'string') return;
 
 		const search = this.state.search;
@@ -100,6 +118,10 @@ class Profile extends Component {
 	async requestProfile(gamertag) {
 		// return sampleProfile;
 		try {
+			if (this.state.rateLimit) return;
+			this.controlsRateLimit();
+			// return;
+
 			if (this.state.disabled) throw new Error(`System offline. Please come back later.`);
 			if (!gamertag || typeof gamertag !== 'string') throw new Error(`No gamertag "${gamertag}"`);
 			if (this.wrongGamertags.has(gamertag.toLowerCase()))

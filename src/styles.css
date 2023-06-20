@@ -255,6 +255,7 @@ a:not([class]), .parentSocket {
 
 .placeholder_throbber {
 	margin: 10rem 0;
+	align-self: center;
 	& .loading_dot {
 			fill: currentColor;
 			animation: 2s loading_path cubic-bezier(.1, .7, 1, 1) infinite normal
@@ -280,7 +281,8 @@ button {
 	overflow: visible;
 	border: none;
 	margin: 0.2em;
-	transition: color var(--time-state) linear,
+	transition: opacity var(--time-state) linear,
+		color var(--time-state) linear,
 		background var(--time-state) linear,
 		text-shadow var(--time-active) linear;
 	&[disabled] {
@@ -309,6 +311,9 @@ button {
 	&:hover:not([disabled]) {
 		color: #000;
 		background-color: hsla(var(--theme-interact-hsl), 1);
+	}
+	&:focus:not([disabled]) {
+		background-color: hsla(var(--theme-interact-hsl), 0.1);
 	}
 	& .icon-masked {
 		cursor: pointer;
@@ -526,7 +531,7 @@ button {
 		align-content: center;
 		justify-content: center;
 		& span {
-			width: 4rem;
+			min-width: 5rem;
 			display: flex;
 			flex-direction: row;
 			align-items: center;

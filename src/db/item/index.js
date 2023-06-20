@@ -43,7 +43,7 @@ export class Item extends Component {
 			this._meta = meta;
 			this._id = meta.name;
 
-			db.items.set(this.meta.name, this);
+			db.items.set(meta.name, this);
 		} else if (properties.path) {
 			const id = filenameFromPath(properties.path).toLowerCase();
 			if (!id) return;
@@ -96,7 +96,7 @@ export class Item extends Component {
 	}
 
 	get id() {
-		return this?._id ?? (this._id = this.meta.name);
+		return this._id ??= this.meta.name;
 	}
 
 	get altName() {
@@ -291,12 +291,11 @@ export class Item extends Component {
 			>
 				<span>${this.name ?? '???'}</span>
 				${itemTypeIcon ? this.renderItemTypeIcon() : ''}
-				${{html: this.seasonNumber > 1 ? `<div
-						class="season-icon"
-						data-season="${this.seasonNumber ?? 0}"
-						style="-webkit-mask-image:${`url(/seasons.svg#${this.seasonNumber ?? 0})`}"
-					></div>` : ''
-				}}
+				<div
+					class="season-icon"
+					data-season="${this.seasonNumber ?? 0}"
+					style="-webkit-mask-image:${`url(/seasons.svg#${this.seasonNumber ?? 0})`}"
+				></div>
 			</button>
 		`;
 	}
@@ -414,6 +413,9 @@ export class Item extends Component {
 					break;
 				case 'Inventory/Armor/Themes/007-001-fwl-7f58d7f6.json':
 					svgId = 'CHIMERA'
+					break;
+				case 'Inventory/Armor/Themes/007-001-haz-c13d0b38.json':
+					svgId = 'HAZMAT'
 					break;
 
 				default:

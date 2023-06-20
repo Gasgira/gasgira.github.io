@@ -22,6 +22,17 @@
 		display: flex;
 		flex-direction: row;
 	}
+	& .mica_nav-list {
+		& li {
+			border-left: .2rem solid var(--theme-text);
+			&.season {
+				border-color: var(--rarity-legendary);
+			}
+			&.event {
+				border-color: var(--rarity-epic);
+			}
+		}
+	}
 }
 
 .timeline_wrapper {
@@ -311,6 +322,184 @@
 		flex-direction: column;
 		& .timeline_list.operations button {
 			max-height: var(--lengthMax);
+		}
+	}
+}
+
+.economy {
+	width: 100%;
+	& input[type=date] {
+		background: none;
+		background-color: rgba(0,0,0,0.15);
+		padding: 0.2rem;
+		margin: 0.1rem 0;
+		color: currentColor;
+		border: none;
+		font-size: 1em;
+		border-radius: var(--theme-border-radius);
+		transition: background-color var(--time-active) linear,
+			color var(--time-active) linear;
+		&:hover, &:active, &:focus {
+			background-color: var(--theme-interact);
+			color: #000;
+		}
+	}
+	& .economy_store-date {
+		display: block;
+		opacity: 0.8;
+		font-style: italic;
+		font-size: 1.5rem;
+		margin-top: 3rem;
+		margin-left: 1rem;
+	}
+	& .store-list {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		width: 100%;
+		padding: 0.5em;
+		list-style-type: none;
+		justify-content: flex-start;
+		align-items: center;
+		align-content: center;
+		gap: 0.2rem;
+		& .hi-box {
+			margin: 0.25em 0.2em;
+		}
+	}
+	& ul.economy-offerings {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		width: 100%;
+		padding: 0.5em;
+		list-style-type: none;
+		justify-content: flex-start;
+		align-items: flex-start;
+		align-content: flex-start;
+		gap: 0.2rem;
+		& > li {
+			width: 100%;
+		}
+		& .economy-offering {
+			width: 100%;
+			min-height: 15rem;
+			background-position: top 3rem left;
+			background-size: 25%, cover;
+			background-repeat: no-repeat;
+			position: relative;
+			border-radius: var(--theme-border-radius);
+			--rarity: var(--rarity-store);
+			&.rare {
+				--rarity: var(--rarity-rare);
+			}
+			&.epic {
+				--rarity: var(--rarity-epic);
+			}
+			&.legendary {
+				--rarity: var(--rarity-legendary);
+			}
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: -1;
+				display: block;
+				pointer-events: none;
+				background: linear-gradient(11deg, var(--rarity), rgba(0,0,0,0) 60%);
+				mask: var(--noise), linear-gradient(11deg, #000 30%, transparent 55%);
+				border-radius: var(--theme-border-radius);
+			}
+			&.height-4 {
+				/* background-position: top left; */
+			}
+			& header {
+				top: 1rem;
+				left: 1rem;
+				font-size: 1.3rem;
+				position: absolute;
+				& .flair {
+					opacity: 0.8;
+					font-style: italic;
+					font-size: 1rem;
+				}
+			}
+			& .offering-layout {
+				display: flex;
+				flex-direction: row;
+				justify-content: left;
+				padding-top: 3rem;
+				& .offering-img {
+					object-fit: contain;
+					max-width: 25vw;
+					max-height: 50vh;
+					min-width: 200px;
+					height: auto;
+					width: auto;
+					mask: linear-gradient(180deg, #000 70%, transparent 80%);
+				}
+				& .offering-info {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					& aside {
+						opacity: 0.8;
+						font-style: italic;
+						display: block;
+					}
+					& .items_list {
+						list-style-type: none;
+						display: flex;
+						flex-direction: row;
+						flex-wrap: wrap;
+						justify-content: left;
+						& button.dbItemIcon {
+							--lengthMax: 25vw;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media(max-width: 1000px) {
+	.economy-offering {
+		&::before {
+			background: linear-gradient(141deg, var(--rarity), rgba(0,0,0,0) 60%) !important;
+			mask: var(--noise), linear-gradient(141deg, #000 30%, transparent 55%) !important;
+		}
+		& header, & aside {
+			text-shadow: -0.1rem 0.1rem 0.1rem #000, 0.1rem 0.1rem 0.1rem #000;
+		}
+		& .offering-layout {
+			flex-direction: column !important;
+			align-items: flex-start !important;
+			overflow: clip;
+			position: relative;
+			& .offering-img {
+				align-self: center;
+				position: absolute;
+				top: -0.5rem;
+				width: 100% !important;
+				max-width: 100% !important;
+				height: 15rem !important;
+				max-height: 15rem !important;
+				object-fit: contain !important;
+				object-position: top right;
+				z-index: -1;
+				mask: linear-gradient(180deg, #000 70%, transparent 95%) !important;
+			}
+			& .offering-info {
+				margin-top: 5rem;
+				& aside {
+					padding: 0.5rem 0.3rem;
+					opacity: 1 !important;
+				}
+			}
 		}
 	}
 }

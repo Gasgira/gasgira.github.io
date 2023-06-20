@@ -94,6 +94,9 @@
 			justify-content: left;
 		}
 	}
+	& .page-controls_wrapper {
+		align-self: center;
+	}
 }
 
 @media(max-width: 580px) {
