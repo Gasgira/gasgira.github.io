@@ -409,7 +409,7 @@ class InventoryCategory extends Component {
 					${this.categoryName === 'Favorites' && !this.items.length ? HTML.wire(this, ':favPlaceholder')`
 						<div class="favorites-placeholder">Tap the <span
 							class=${'favorite'}
-							style=${{backgroundImage: `url(items.svg#unfavored)`}}
+							style=${{backgroundImage: `url(/items.svg#unfavored)`}}
 						></span> in item detail panels to collect favorites into this section.</div>
 					` : ''}
 				</ul>

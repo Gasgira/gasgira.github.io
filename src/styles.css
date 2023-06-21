@@ -742,6 +742,9 @@ button {
 	&.icon-ugc-10 {
 		mask-image: url("assets/icons.svg#forge");
 	}
+	&.icon-emblem {
+		mask-image: url("assets/items.svg#ArmorEmblem");
+	}
 }
 
 .no-select {

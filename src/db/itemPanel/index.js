@@ -602,7 +602,7 @@ class ItemPanel extends Component {
 								const meta = db.getItemManifestByID(id);
 								if (!meta) return '';
 
-								return `<a class="parentSocket" href=${`#item/${meta.name}`}>${db.getItemTitleById(id)}</a>`
+								return `<a class="parentSocket" href=${`${this.pagePath}/${meta.name}`}>${db.getItemTitleById(id)}</a>`
 							})}
 						</span>
 					</div>
@@ -883,7 +883,7 @@ class ItemPanel extends Component {
 					const meta = db.getItemManifestByID(name);
 					if (meta)
 					{
-						return `<a href=${`#item/${meta.name}`}>${db.getItemTitleById(meta.name)}</a>`;
+						return `<a href=${`${this.pagePath}/${meta.name}`}>${db.getItemTitleById(meta.name)}</a>`;
 					} else {
 						return `<a href=${`#${value}`}>${value}</a>`;
 					}

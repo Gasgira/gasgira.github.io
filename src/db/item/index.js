@@ -411,7 +411,7 @@ export class Item extends Component {
 				case 'Inventory/Armor/Themes/007-001-spi-c13d0b38.json':
 					svgId = 'SPI'
 					break;
-				case 'Inventory/Armor/Themes/007-001-fwl-7f58d7f6.json':
+				case 'Inventory/Armor/Themes/007-001-fwl-c13d0b38.json':
 					svgId = 'CHIMERA'
 					break;
 				case 'Inventory/Armor/Themes/007-001-haz-c13d0b38.json':

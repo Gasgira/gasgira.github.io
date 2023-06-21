@@ -34,6 +34,9 @@ class Calendar extends Component {
 		this.events = [];
 		this.operations = [];
 
+		const careerMeta = db.getItemManifestByID(filenameFromPath(this.data?.CareerRank?.RewardTrackPath));
+		this.career.rewardTrackPath = `item/${careerMeta.name}/${careerMeta.res}.json`;
+
 		this.data?.Seasons?.forEach(async season => {
 			const path = season.OperationTrackPath;
 			if (!path) return;
@@ -108,7 +111,7 @@ class Calendar extends Component {
 				this.renderEventList();
 				const paramEvent = urlParams.getSecionSetting('calendar', { dash: true });
 				if (paramEvent) this.showRewardTrackByName(paramEvent);
-			})
+			});
 		return this;
 	}
 
@@ -124,6 +127,10 @@ class Calendar extends Component {
 
 	get economy() {
 		return this._economy ??= new Economy();
+	}
+
+	get career() {
+		return this._career ??= new Career();
 	}
 
 	async render() {
@@ -154,6 +161,13 @@ class Calendar extends Component {
 			</button></li>
 			<li
 			><button
+				onclick=${() => this.showCareer()}
+				class=${this.state.rewardTrack === this.career ? 'active' : null}
+			>
+				<span>Career</span>
+			</button></li>
+			<li
+			><button
 				onclick=${() => this.showCapstoneCalendar()}
 				class=${this.state?.rewardTrack === 'capstone' ? 'active' : null}
 			>
@@ -162,7 +176,7 @@ class Calendar extends Component {
 			<li
 			><button
 				onclick=${() => this.showEconomy()}
-				class=${this.state?.rewardTrack === this.economy ? 'active' : null}
+				class=${this.state.rewardTrack === this.economy ? 'active' : null}
 			>
 				<span>Store</span>
 			</button></li>
@@ -410,6 +424,12 @@ class Calendar extends Component {
 			this.economy.init();
 			return;
 		}
+		if (name === 'career')
+		{
+			this.setState({rewardTrack: this.career});
+			this.career.init();
+			return;
+		}
 		for (const rewardTrack of [...this?.rewardTracks.values()])
 		{
 			if (rewardTrack?.name === name)
@@ -439,6 +459,14 @@ class Calendar extends Component {
 		this.setState({rewardTrack: this.economy});
 		this.economy.init();
 		urlParams.setSecionSetting('calendar', 'store', { dash: true });
+		this.scrollIntoView();
+	}
+
+	showCareer() {
+		this.state.mobileMenu = false;
+		this.setState({rewardTrack: this.career});
+		this.career.init();
+		urlParams.setSecionSetting('calendar', 'career', { dash: true });
 		this.scrollIntoView();
 	}
 
@@ -538,6 +566,93 @@ class RewardTrack extends Component {
 		const endDate = new Date(endDateString);
 
 		if (startDate && endDate) this.dates.push({startDate, endDate});
+	}
+}
+
+class Career extends Component {
+	constructor(rewardTrack) {
+		super();
+		if (rewardTrack && rewardTrack?.Ranks) this._rewardTrack = rewardTrack;
+	}
+
+	async init() {
+		if (this.rewardTrackPath)
+		{
+			const rewardTrack = await db.getJSON(this.rewardTrackPath);
+			if (rewardTrack) this._rewardTrack = rewardTrack;
+
+			let sum = 0;
+			this.rewardTrack.Ranks.forEach(rank => {
+				sum = sum + parseInt(rank.XpRequiredForRank);
+				rank.totalXp = `${sum}`;
+			})
+		}
+
+		this.render();
+	}
+
+	render() {
+		return this.html`
+			<div class="reward-track_wrapper mica_content">
+				<ul class="career-ranks-list">${this.renderRewardList()}</ul>
+			</div>
+		`;
+	}
+
+	async renderRewardList() {
+		return HTML.wire(this, ':list')`
+			${this?.rewardTrack?.Ranks?.map(rank => {
+				return HTML.wire(rank)`<li class="career-rank">
+					<ul class="rank_rewards">
+						<li class="rank-img_container">
+							<img
+								class="rank-img"
+								src=${`${STATIC_ROOT}images/${rank.RankIcon.toLowerCase()}`}
+								decoding="async"
+								fetchpriority="low"
+								loading="lazy"
+								width="200"
+								height="280"
+							>
+						</li>
+						<li class="rank_number">
+							<span class="rank-number">${rank.Rank}</span>
+							<span class="rank-title">${rank.RankTitle} ${rank.RankGrade || ''}</span>
+							<span class="rank-xp"><span class="fade">+ </span>${rank.XpRequiredForRank.toLocaleString()}<span class="fade"> // </span>${parseInt(rank.totalXp).toLocaleString()}</span>
+							<span class="rank-rewards">${{ html: rank.FreeRewards.InventoryRewards.length ? '<div class="icon-masked icon-emblem"></div>' : '' }}</span>
+						</li>
+					</ul>
+				</li>`
+			})}
+		`;
+
+	// 	<ul class="rank_reward-items">
+	// 	${rank?.FreeRewards?.InventoryRewards?.map(reward => {
+	// 		return HTML.wire(reward, ':freeInventory')`<li>${{
+	// 			any: new Item({ path: reward?.InventoryItemPath }).renderIcon('reward', {itemTypeIcon: true}),
+	// 			placeholder: placeholderItem.cloneNode(true)
+	// 		}}</li>`
+	// 	})}
+	// 	${rank?.FreeRewards?.CurrencyRewards?.map(reward => {
+	// 		return HTML.wire(reward, ':freeCurrency')`<li class="currency" data-quantity=${parseInt(reward?.Amount)}>${{
+	// 			any: new Item({ path: reward?.CurrencyPath }).renderIcon(`${rank.Rank}-${performance.now()}`),
+	// 			placeholder: placeholderItem.cloneNode(true)
+	// 		}}</li>`
+	// 	})}
+	// </ul>
+	}
+
+	get rewardTrack() {
+		return this._rewardTrack ??= {
+			TrackId: "careerRank1",
+			Ranks: [],
+			Name: "Career Rank Loading...",
+			Description: "Earn Personal Score to Advance Career Rank."
+		};
+	}
+
+	get name() {
+		return this.rewardTrack?.Name ?? 'Career';
 	}
 }
 
