@@ -520,6 +520,18 @@
 		margin: 0.1rem;
 		background-color: rgba(0,0,0,0.25);
 		border-radius: var(--theme-border-radius);
+		&.has-rewards {
+			cursor: pointer;
+			transition: background-color var(--time-state) linear;
+			&:hover {
+				background-color: rgba(255,255,255,1);
+				color: #000;
+				text-shadow: 0 0 1rem #fff, 0 0 0.5rem #fff;
+				& .rank-subtitle {
+					color: #fff;
+				}
+			}
+		}
 		& .rank_rewards {
 			display: flex;
 			width: 100%;
@@ -531,7 +543,6 @@
 				display: flex;
 				flex-direction: column;
 				font-weight: bold;
-				text-shadow: -0.1rem 0.1rem 0.1rem #000, 0.1rem 0.1rem 0.1rem #000;
 				& .rank-number {
 					display: block;
 					position: absolute;
@@ -545,6 +556,16 @@
 					position: absolute;
 					align-self: center;
 					bottom: 2.2rem;
+				}
+				& .rank-subtitle {
+					display: block;
+					position: absolute;
+					align-self: center;
+					top: 0.6rem;
+					opacity: 0;
+					font-size: 0.8em;
+					z-index: 2;
+					transition: opacity var(--time-state) linear;
 				}
 				& .rank-xp {
 					display: block;
@@ -562,8 +583,8 @@
 					position: absolute;
 					right: 0.8rem;
 					top: 0.6rem;
-					opacity: 0.6;
-					font-size: 0.8em;
+					opacity: 0.8;
+					font-size: 1.2rem;
 				}
 			}
 			& .rank-img_container {
@@ -574,13 +595,54 @@
 				justify-content: flex-start;
 				align-items: center;
 				padding: 0.6rem;
+				& img {
+					transition: opacity var(--time-state) linear;
+				}
 				& .rank-img {
 					height: 8rem;
 					width: auto;
 					position: absolute;
-					z-index: 0;
+					z-index: 1;
+					user-select: none;
+				}
+				& .rank-img_adornment {
+					height: 8rem;
+					width: auto;
+					position: absolute;
+					z-index: 1;
+					user-select: none;
+					opacity: 0;
+					display: none;
+				}
+			}
+			&:hover {
+				& .rank-subtitle {
+					opacity: 1;
+					text-shadow: -0.1rem 0.1rem 0.1rem #000, 0.1rem 0.1rem 0.1rem #000;
 				}
 			}
 		}
+		&:hover {
+			& .rank-img {
+				opacity: 0;
+			}
+			& .rank-img_adornment {
+				opacity: 1 !important;
+				display: block !important;
+			}
+		}
+	}
+}
+
+.career-rank_details {
+	& header {
+		font-size: 2rem;
+	}
+	& .career-rank_rewards {
+		list-style-type: none;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		padding: 0.5em;
 	}
 }

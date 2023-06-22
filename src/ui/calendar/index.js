@@ -6,6 +6,7 @@ import { Item, placeholderItem } from 'db/item';
 import { urlParams } from 'urlParams';
 import { MobileMicaMenu } from 'ui/mica';
 import { filenameFromPath } from 'utils/paths.js';
+import { modalConstructor } from 'ui/modal';
 import { STATIC_ROOT } from 'environment';
 
 import './index.css';
@@ -576,16 +577,19 @@ class Career extends Component {
 	}
 
 	async init() {
+		if (this.ranks.length) return;
 		if (this.rewardTrackPath)
 		{
 			const rewardTrack = await db.getJSON(this.rewardTrackPath);
 			if (rewardTrack) this._rewardTrack = rewardTrack;
 
 			let sum = 0;
-			this.rewardTrack.Ranks.forEach(rank => {
+			for (const rank of this.rewardTrack.Ranks)
+			{
 				sum = sum + parseInt(rank.XpRequiredForRank);
-				rank.totalXp = `${sum}`;
-			})
+				rank.totalXp = parseInt(sum);
+				this.ranks.push(new CareerRank(rank));
+			}
 		}
 
 		this.render();
@@ -599,31 +603,13 @@ class Career extends Component {
 		`;
 	}
 
+	get ranks() {
+		return this._ranks ??= [];
+	}
+
 	async renderRewardList() {
 		return HTML.wire(this, ':list')`
-			${this?.rewardTrack?.Ranks?.map(rank => {
-				return HTML.wire(rank)`<li class="career-rank">
-					<ul class="rank_rewards">
-						<li class="rank-img_container">
-							<img
-								class="rank-img"
-								src=${`${STATIC_ROOT}images/${rank.RankIcon.toLowerCase()}`}
-								decoding="async"
-								fetchpriority="low"
-								loading="lazy"
-								width="200"
-								height="280"
-							>
-						</li>
-						<li class="rank_number">
-							<span class="rank-number">${rank.Rank}</span>
-							<span class="rank-title">${rank.RankTitle} ${rank.RankGrade || ''}</span>
-							<span class="rank-xp"><span class="fade">+ </span>${rank.XpRequiredForRank.toLocaleString()}<span class="fade"> // </span>${parseInt(rank.totalXp).toLocaleString()}</span>
-							<span class="rank-rewards">${{ html: rank.FreeRewards.InventoryRewards.length ? '<div class="icon-masked icon-emblem"></div>' : '' }}</span>
-						</li>
-					</ul>
-				</li>`
-			})}
+			${this.ranks.map(rank => rank.render())}
 		`;
 
 	// 	<ul class="rank_reward-items">
@@ -653,6 +639,123 @@ class Career extends Component {
 
 	get name() {
 		return this.rewardTrack?.Name ?? 'Career';
+	}
+}
+
+class CareerRank extends Component {
+	constructor(rank) {
+		super();
+		if (rank && rank?.Rank) this.rank = rank;
+	}
+
+	render() {
+		return this.html`
+			<li
+				class=${`career-rank${this.rewardIds ? ' has-rewards' : ''}`}
+				onclick=${() => this.showDetails()}
+			>
+				<ul class="rank_rewards">
+					<li class="rank-img_container">
+						<img
+							class="rank-img"
+							src=${`${STATIC_ROOT}images/${this.rank.RankIcon.toLowerCase()}`}
+							decoding="async"
+							fetchpriority="low"
+							loading="lazy"
+							width="200"
+							height="280"
+						>
+						<img
+							class="rank-img_adornment"
+							src=${`${STATIC_ROOT}images/${this.rank.RankAdornmentIcon.toLowerCase()}`}
+							decoding="async"
+							fetchpriority="low"
+							loading="lazy"
+							width="200"
+							height="280"
+						>
+					</li>
+					<li class="rank_number">
+						<span class="rank-subtitle">${this.subTitle}</span>
+						<span class="rank-number">${this.level}</span>
+						<span class="rank-title">${this.fullTitle}</span>
+						<span class="rank-xp"><span class="fade">+ </span>${this.xpRequiredForRank.toLocaleString()}<span class="fade"> // </span>${this.totalXp.toLocaleString()}</span>
+						<span class="rank-rewards">${{ html: this.rank.FreeRewards.InventoryRewards.length ? '<div class="icon-masked icon-emblem"></div>' : '' }}</span>
+					</li>
+				</ul>
+			</li>
+		`;
+	}
+
+	async showDetails() {
+		if (this.rewardIds)
+		{
+			modalConstructor.showView(this.renderDetails());
+			await this.initRewardItems();
+			this.renderDetails();
+		}
+	}
+
+	get rewardIds() {
+		if (this.rank?.FreeRewards?.InventoryRewards.length)
+		{
+			return this.rank.FreeRewards.InventoryRewards.map(reward => filenameFromPath(reward.InventoryItemPath));
+		}
+	}
+
+	get rewardItems() {
+		if (this._rewardItems) return this._rewardItems;
+	}
+
+	async initRewardItems() {
+		try {
+			const items = await Promise.all(this.rewardIds.map(id => db.getItem({ id })));
+			this._rewardItems = items;
+		} catch (error) {
+			console.error(`[CareerRank.initRewardItems]`, error);
+		}
+	}
+
+	renderDetails() {
+		return HTML.wire(this, ':details')`
+			<div class="career-rank_details">
+				<header>
+					<span class="subtitle">${this.subTitle}</span>
+					<span class="subtitle">${this.fullTitle}</span>
+				</header>
+				<span>${this.totalXp.toLocaleString()} XP</span>
+				${this.renderRewards()}
+			</div>
+		`;
+	}
+
+	renderRewards() {
+		if (!this.rewardItems) return '';
+		return HTML.wire(this, ':rewards')`
+			<ul class="career-rank_rewards">
+				${this.rewardItems.map(reward => reward.renderIcon(`career-${this.level}`, {itemTypeIcon: true}))}
+			</ul>
+		`;
+	}
+
+	get level() {
+		return this.rank.Rank ?? '??';
+	}
+
+	get subTitle() {
+		return `${this.rank?.RankSubTitle ?? 'Metal'}`;
+	}
+
+	get fullTitle() {
+		return `${this.rank?.RankTitle ?? 'Rank'} ${this.rank?.RankGrade ?? ''}`;
+	}
+
+	get totalXp() {
+		return this.rank?.totalXp ?? 0;
+	}
+
+	get xpRequiredForRank() {
+		return this.rank?.XpRequiredForRank ?? 0;
 	}
 }
 
