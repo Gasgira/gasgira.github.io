@@ -586,10 +586,13 @@ class Career extends Component {
 			let sum = 0;
 			for (const rank of this.rewardTrack.Ranks)
 			{
+				rank.initalXp = parseInt(sum);
 				sum = sum + parseInt(rank.XpRequiredForRank);
 				rank.totalXp = parseInt(sum);
-				this.ranks.push(new CareerRank(rank));
+				this.ranks.push(new CareerRank(rank, this));
 			}
+
+			this._careerXpSum = sum;
 		}
 
 		this.render();
@@ -605,6 +608,10 @@ class Career extends Component {
 
 	get ranks() {
 		return this._ranks ??= [];
+	}
+
+	get careerXpSum() {
+		return this._careerXpSum ?? 0;
 	}
 
 	async renderRewardList() {
@@ -643,9 +650,10 @@ class Career extends Component {
 }
 
 class CareerRank extends Component {
-	constructor(rank) {
+	constructor(rank, career) {
 		super();
 		if (rank && rank?.Rank) this.rank = rank;
+		if (career) this.career = career;
 	}
 
 	render() {
@@ -676,8 +684,7 @@ class CareerRank extends Component {
 						>
 					</li>
 					<li class="rank_number">
-						<span class="rank-subtitle">${this.subTitle}</span>
-						<span class="rank-number">${this.level}</span>
+						<span class="rank-number">${this.level}<br/>${this.xpPercent}</span>
 						<span class="rank-title">${this.fullTitle}</span>
 						<span class="rank-xp"><span class="fade">+ </span>${this.xpRequiredForRank.toLocaleString()}<span class="fade"> // </span>${this.totalXp.toLocaleString()}</span>
 						<span class="rank-rewards">${{ html: this.rank.FreeRewards.InventoryRewards.length ? '<div class="icon-masked icon-emblem"></div>' : '' }}</span>
@@ -747,7 +754,7 @@ class CareerRank extends Component {
 	}
 
 	get fullTitle() {
-		return `${this.rank?.RankTitle ?? 'Rank'} ${this.rank?.RankGrade ?? ''}`;
+		return `${this.rank?.RankTitle ?? 'Rank'} ${this.rank.RankGrade || ''}`;
 	}
 
 	get totalXp() {
@@ -756,6 +763,13 @@ class CareerRank extends Component {
 
 	get xpRequiredForRank() {
 		return this.rank?.XpRequiredForRank ?? 0;
+	}
+
+	get xpPercent() {
+		return parseFloat(this.rank.initalXp / this.career.careerXpSum).toLocaleString(undefined, {
+			style: 'percent',
+			minimumFractionDigits: 2
+		});
 	}
 }
 
@@ -1015,6 +1029,15 @@ class Offering extends Component {
 	constructor(offering) {
 		super();
 		this.data = offering;
+
+		const skipOfferingNames = new Set([
+			"HCS OFFERS",
+			"VIEW BATTLE PASSES",
+			"STORE OFFERS",
+			"Boost and Swap Pack"
+		]);
+
+		if (skipOfferingNames.has(this.name)) this.skipOffering = true;
 	}
 
 	get id() {
@@ -1072,6 +1095,7 @@ class Offering extends Component {
 	}
 
 	render() {
+		if (this.skipOffering) return '';
 		return this.html`
 			<div
 				class=${`economy-offering ${this.quality} height-${this.heightHint}`}

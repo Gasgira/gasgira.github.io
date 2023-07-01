@@ -434,12 +434,13 @@
 				padding-top: 3rem;
 				& .offering-img {
 					object-fit: contain;
+					object-position: bottom;
 					max-width: 25vw;
 					max-height: 50vh;
 					min-width: 200px;
 					height: auto;
 					width: auto;
-					mask: linear-gradient(180deg, #000 70%, transparent 80%);
+					mask: linear-gradient(180deg, #000 85%, transparent 100%);
 				}
 				& .offering-info {
 					display: flex;
@@ -486,7 +487,6 @@
 				top: -0.5rem;
 				width: 100% !important;
 				max-width: 100% !important;
-				height: 15rem !important;
 				max-height: 15rem !important;
 				object-fit: contain !important;
 				object-position: top right;
@@ -515,7 +515,8 @@
 		list-style-type: none;
 		display: flex;
 		/* border: 1px solid red; */
-		width: 10rem;
+		width: 12rem;
+		max-width: 45vw;
 		height: 12rem;
 		margin: 0.1rem;
 		background-color: rgba(0,0,0,0.25);
@@ -526,9 +527,12 @@
 			&:hover {
 				background-color: rgba(255,255,255,1);
 				color: #000;
-				text-shadow: 0 0 1rem #fff, 0 0 0.5rem #fff;
+				text-shadow: none;
 				& .rank-subtitle {
 					color: #fff;
+				}
+				& .rank-number {
+					text-shadow: initial !important;
 				}
 			}
 		}
@@ -543,13 +547,15 @@
 				display: flex;
 				flex-direction: column;
 				font-weight: bold;
+				z-index: 1;
 				& .rank-number {
 					display: block;
 					position: absolute;
 					left: 0.8rem;
 					top: 0.6rem;
-					opacity: 0.6;
+					opacity: 0.8;
 					font-size: 0.8em;
+					text-shadow: -0.05rem 0.05rem 0.1rem #000;
 				}
 				& .rank-title {
 					display: block;
@@ -581,8 +587,8 @@
 				& .rank-rewards {
 					display: block;
 					position: absolute;
-					right: 0.8rem;
-					top: 0.6rem;
+					right: 0.4rem;
+					top: 0.4rem;
 					opacity: 0.8;
 					font-size: 1.2rem;
 				}
