@@ -586,7 +586,7 @@ class Career extends Component {
 			let sum = 0;
 			for (const rank of this.rewardTrack.Ranks)
 			{
-				rank.initalXp = parseInt(sum);
+				rank.initialXp = parseInt(sum);
 				sum = sum + parseInt(rank.XpRequiredForRank);
 				rank.totalXp = parseInt(sum);
 				this.ranks.push(new CareerRank(rank, this));
@@ -686,7 +686,7 @@ class CareerRank extends Component {
 					<li class="rank_number">
 						<span class="rank-number">${this.level}<br/>${this.xpPercent}</span>
 						<span class="rank-title">${this.fullTitle}</span>
-						<span class="rank-xp"><span class="fade">+ </span>${this.xpRequiredForRank.toLocaleString()}<span class="fade"> // </span>${this.totalXp.toLocaleString()}</span>
+						<span class="rank-xp">${this.initialXp.toLocaleString()} <span class="fade">+ </span>${this.xpRequiredForRank.toLocaleString()}</span>
 						<span class="rank-rewards">${{ html: this.rank.FreeRewards.InventoryRewards.length ? '<div class="icon-masked icon-emblem"></div>' : '' }}</span>
 					</li>
 				</ul>
@@ -761,12 +761,16 @@ class CareerRank extends Component {
 		return this.rank?.totalXp ?? 0;
 	}
 
+	get initialXp() {
+		return this.rank?.initialXp ?? 0;
+	}
+
 	get xpRequiredForRank() {
 		return this.rank?.XpRequiredForRank ?? 0;
 	}
 
 	get xpPercent() {
-		return parseFloat(this.rank.initalXp / this.career.careerXpSum).toLocaleString(undefined, {
+		return parseFloat(this.rank.initialXp / this.career.careerXpSum).toLocaleString(undefined, {
 			style: 'percent',
 			minimumFractionDigits: 2
 		});

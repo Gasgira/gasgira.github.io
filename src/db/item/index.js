@@ -235,23 +235,28 @@ export class Item extends Component {
 	}
 
 	get showCoatingRenderIcon() {
-		const parentIDs = this.parentIDs;
-		const unsupportedIDs = this.tempUnsupportedCores;
+		if (this.type === 'ArmorCoating' && this.seasonNumber < 3 && !this.isRedacted)
+		{
+			const parentIDs = this.parentIDs;
+			const unsupportedIDs = this.tempUnsupportedCores;
 
-		let supported = true;
+			let supported = true;
 
-		parentIDs.forEach(id => {
-			if (unsupportedIDs.has(id))  supported = false;
-		});
+			parentIDs.forEach(id => {
+				if (unsupportedIDs.has(id))  supported = false;
+			});
 
-		return supported;
+			return supported;
+		}
+
+		return false;
 	}
 
 	async renderIcon(id, {
 		itemTypeIcon = false
 	} = {}) {
 		await this.init();
-		if (this.type === 'ArmorCoating' && this.seasonNumber < 3 && !this.isRedacted && this.showCoatingRenderIcon)
+		if (this.showCoatingRenderIcon)
 		{
 			return HTML.wire(this, `:${id ?? 'icon'}`)`
 				<button

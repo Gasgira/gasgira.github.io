@@ -59,6 +59,7 @@ class I18n extends Component {
 
 	get countryCodes() {
 		return this._countryCodes??= new Set([
+			"en-US",
 			"cs-CZ",
 			"da-DK",
 			"de-DE",

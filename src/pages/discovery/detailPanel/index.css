@@ -124,7 +124,7 @@
 			margin-left: .5rem;
 		}
 	}
-	& .links {
+	& .links, & .margin {
 		margin: 1rem var(--edge-pad);
 	}
 	& .details {
@@ -144,6 +144,12 @@
 					margin-right: 0.5rem;
 				}
 			}
+		}
+	}
+	& .history-stats {
+		display: none;
+		&.Map {
+			display: block;
 		}
 	}
 }

@@ -143,6 +143,10 @@ class Palettes extends Component {
 		return this.state.expanded ? [...this.state.configs] : [...this.state.configs].slice(0, 1);
 	}
 
+	get errorImageFilename() {
+		return '104-001-classics-one-782a8d66_98277613';
+	}
+
 	render() {
 		if (this.state.item && this.state.item.type === 'SpartanEmblem')
 		{
@@ -155,16 +159,18 @@ class Palettes extends Component {
 								<div class="palettes_nameplate_wrapper">
 									<img
 										class="palettes_nameplate"
-										src=${`${STATIC_ROOT}images/nameplates/${this.nameplateFilename(config)}.png`}
+										src=${`${STATIC_ROOT}images/nameplates/${this.state.brokenImage ? this.errorImageFilename : this.nameplateFilename(config)}.png`}
 										width="1280"
 										height="240"
+										onerror=${() => this.setState({ brokenImage: true })}
 									>
 									<div class="nameplate_content">
 										<img
 											class="palettes_emblem"
-											src=${`${STATIC_ROOT}images/emblems/${this.nameplateFilename(config)}.png`}
+											src=${`${STATIC_ROOT}images/emblems/${this.state.brokenImage ? this.errorImageFilename : this.nameplateFilename(config)}.png`}
 											width="240"
 											height="240"
+											onerror=${() => this.setState({ brokenImage: true })}
 										>
 										<div class="nametag_wrapper" style=${{color: this.getEmblemColor(config)}}>
 											<span class="nametag_player">${this.playerName ?? properties?.title ?? '...'}</span>
@@ -863,7 +869,7 @@ class ItemPanel extends Component {
 				<li>Basic — Several players.</li>
 				<li>Common — At least one player.</li>
 				<li>Rare — Once every couple matches.</li>
-				<li>Exotic — It would be strange to see someone wear this.</li>
+				<li>Exotic — It might be strange to see someone wear this.</li>
 			</ul>
 		`;
 	}

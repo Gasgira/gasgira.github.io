@@ -106,10 +106,12 @@ class UGCDetailPanel extends Component {
 							<span>${asset.playsAllTime.toLocaleString()}</span>
 						</li>
 						<li>
-							<span>Plays (Recent)</span>
+							<span>Recent Plays</span>
 							<span>${asset.playsRecent.toLocaleString()}</span>
 						</li>
-						<li>
+						<li
+							title=${`${asset.ratingCount} ratings`}
+						>
 							<span>Rating</span>
 							<span>${asset.averageRating}</span>
 						</li>
@@ -121,6 +123,10 @@ class UGCDetailPanel extends Component {
 					<ul class="tags">
 						${asset.tags.map(tag => `<li>${tag}</li>`)}
 					</ul>
+					<div class=${`history-stats ${asset.assetKind}`}>
+						<h3 class="margin">Plays</h3>
+						${asset.assetKind === 'Map' ? asset.historyPlays.length > 2 ? this.chartCanvasPlays() : 'No Data' : ''}
+					</div>
 					<div class="credits">
 						<h3>${asset.contributors.length > 1 ? 'File Owner' : 'Author'}</h3>
 						<div class="author">${asset.originalAuthor}</div>
@@ -167,6 +173,76 @@ class UGCDetailPanel extends Component {
 		`;
 	}
 
+	chartCanvasPlays() {
+		return HTML.wire(this, ':chartCanvasPlays')`
+			<canvas
+				id="chartCanvasPlays"
+				class="chartHistory plays"
+				onconnected=${() => this.renderHistoryPlays()}
+			></canvas>
+		`;
+	}
+
+	renderHistoryPlays() {
+		const element = document.getElementById('chartCanvasPlays');
+		if (!element) return;
+		const data = [...this.asset.historyPlays];
+		if (!data || data.length < 2) return;
+
+		let sum = 0;
+		const totals = data.map(([date, plays]) => {
+			sum = sum + plays;
+			return [date, sum];
+		})
+		// if (data[0][1] > data[1][1]) data[0][1] = 0;
+
+		if (this.playChart) this.playChart.destroy();
+
+		this.playChart = new Chart(element, {
+			type: 'line',
+			data: {
+				labels: totals.map(el => new Date(`${el[0]}T18:05:03.402Z`).toLocaleDateString()),
+				datasets: [
+					{
+						label: 'Day',
+						data: data.map(el => el[1]),
+						cubicInterpolationMode: 'monotone',
+						tension: 0.4,
+						borderColor: '#2dbfe1',
+						backgroundColor: '#0d2436'
+					},
+					{
+						label: 'Overall',
+						data: totals.map(el => el[1]),
+						cubicInterpolationMode: 'monotone',
+						tension: 0.4,
+						borderColor: '#8a3513',
+						backgroundColor: '#2b1005'
+					}
+				]
+			},
+			options: {
+				interaction: {
+					intersect: false,
+					mode: 'index',
+				},
+				scales: {
+					x: {
+						ticks: {
+							autoSkip: true,
+							maxTicksLimit: 14
+						}
+					},
+					y: {
+						suggestedMin: 5,
+						type: 'logarithmic',
+					}
+				},
+				animation: false
+			}
+		});
+	}
+
 	get defaultImage() {
 		return 'https://hi.cylix.guide/ugc/images/default.jpg';
 	}
@@ -207,6 +283,10 @@ class UGCDetailPanel extends Component {
 
 	async getMapStats() {
 		if (this._mapStats) return this._mapStats;
+	}
+
+	get asset() {
+		return this.state.asset;
 	}
 }
 

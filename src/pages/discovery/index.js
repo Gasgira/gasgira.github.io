@@ -32,6 +32,7 @@ export class Discovery extends Component {
 		if (pathParts?.[2]?.startsWith('recommended')) this.state.view = this.recommended;
 
 		this.render();
+		await discovery.loadUgcStats();
 
 		if (this.state.view === this.search) this.search.submit();
 	}
@@ -196,6 +197,27 @@ class DiscoveryManager {
 
 	get host() {
 		return this._host ?? 'blobs-infiniteugc.svc.halowaypoint.com';
+	}
+
+	async loadUgcStats() {
+		try {
+			// TODO This should instead be loaded server side in the future
+			const res = await db.getJSON(`/ugc/stats_maps.json`);
+			if (!res) throw new Error(`Failed to fetch`, res);
+
+			if (res && Array.isArray(res?.assets))
+			{
+				this._ugcStats = new Map(res.assets);
+				console.log(`[DiscoveryManager.loadUgcStats] "${this._ugcStats.size}" asset stats loaded!`)
+			}
+		} catch (error) {
+			console.log(`[DiscoveryManager.loadUgcStats]`, error)
+		}
+	}
+
+	getAssetStats(assetId) {
+		if (!this._ugcStats || !this._ugcStats.has(assetId)) return;
+		return this._ugcStats.get(assetId);
 	}
 }
 
@@ -704,6 +726,10 @@ class UGCAsset extends Component {
 		return parseFloat(this.asset?.AverageRating ?? this.asset?.AssetStats?.AverageRating ?? 0).toFixed(2);
 	}
 
+	get ratingCount() {
+		return parseInt(this.asset?.NumberOfRatings ?? 0);
+	}
+
 	get bookmarks() {
 		return this.likes || parseInt(this.asset.Bookmarks ?? this.asset?.AssetStats?.Favorites ?? 0);
 	}
@@ -772,6 +798,13 @@ class UGCAsset extends Component {
 	getAssetRelativeUrl(path) {
 		const prefix = this.asset?.Files?.Prefix;
 		return `${prefix}${path}`;
+	}
+
+	get historyPlays() {
+		if (this._historyPlays) return this._historyPlays;
+		const history = discovery.getAssetStats(this.id);
+		if (history) return (this._historyPlays = history);
+		return [];
 	}
 }
 
