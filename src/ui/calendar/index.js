@@ -34,9 +34,12 @@ class Calendar extends Component {
 		this.data = await db.getJSON(`item/${calendarMeta.name}/${calendarMeta.res}.json`);
 		this.events = [];
 		this.operations = [];
+		this.currentOperations = [];
 
 		const careerMeta = db.getItemManifestByID(filenameFromPath(this.data?.CareerRank?.RewardTrackPath));
 		this.career.rewardTrackPath = `item/${careerMeta.name}/${careerMeta.res}.json`;
+
+		const seasonStartDate = new Date('2023-10-17T16:00:00.654Z');
 
 		this.data?.Seasons?.forEach(async season => {
 			const path = season.OperationTrackPath;
@@ -51,6 +54,15 @@ class Calendar extends Component {
 				endDate: season?.EndDate?.ISO8601Date,
 				rewardTrack
 			});
+
+			if (new Date(season?.StartDate?.ISO8601Date) > seasonStartDate) {
+				this.currentOperations.push({
+					type: 'operation',
+					startDate: season?.StartDate?.ISO8601Date,
+					endDate: season?.EndDate?.ISO8601Date,
+					rewardTrack
+				});
+			}
 		});
 		// const launchDate = new Date('2021-11-15T08:00:00');
 		const today = new Date();
@@ -240,34 +252,24 @@ class Calendar extends Component {
 	}
 
 	get minimumEventDate() {
-		return this._minimumEventDate ??= new Date('2023-06-20T20:00:00Z');
+		return this._minimumEventDate ??= new Date('2023-10-16T20:00:00Z');
 	}
 
 	calendar() {
 		return HTML.wire(this, ':calendar')`
 		<div class="reward-track_wrapper mica_content">
-			<span>Season 4 // ${this.remainingTimeInSeason()}</span>
+			<span>Season 5 // ${this.remainingTimeInSeason()}</span>
 			<div class="timeline_wrapper">
 				<ul class="timeline_list operations">
-					${() => {
-						const operation = this?.operations?.[this.operations.length - 1];
-						if (!operation) return 'Could not get active season!';
-
-						let active = true;
+					${this?.currentOperations?.map(operation => {
+						let active = false;
 						let startDate = new Date(operation.startDate);
-
-						// Season 1 special case dates for nice display
-						// const launchDate = new Date('2021-11-15T08:00:00');
-						// const csrResetDate = new Date('2023-06-20T20:00:00Z');
-						const csrResetDate = this.minimumEventDate;
-
-						if (startDate < csrResetDate) startDate = this.minimumEventDate;
+						if (startDate < this.minimumEventDate) startDate = this.minimumEventDate;
 						const endDate = new Date(operation.endDate);
-						// endDate.setDate(endDate.getDate() - 1);
+						endDate.setDate(endDate.getDate() - 1);
 
 						const today = new Date();
 						if (startDate <= today && new Date(operation.endDate) >= today) active = true;
-
 						return HTML.wire(operation)`
 							<li
 								class=${`timeline-event ${operation?.type ?? 'ritual'}${active ? ' active' : ''}`}
@@ -287,7 +289,7 @@ class Calendar extends Component {
 								</button>
 							</li>
 						`;
-					}}
+					}) ?? '...'}
 				</ul>
 				<ul class="timeline_list rituals">
 					${{html: this?.events ? '' : '<div class="timeline-placeholder">Loading timeline...</div>'}}
@@ -363,7 +365,7 @@ class Calendar extends Component {
 			const active = weekStartDate <= today && weekEndDate >= today;
 
 			return HTML.wire(weekStartDate)`
-				<li class=${`calendar-item${weekEndDate <= today ? ' past' : active ? ' active' : weekEndDate > finalDate ? ' past' : ' future'}`}>
+				<li class=${`calendar-item${weekEndDate <= today ? ' past' : active ? ' active' : weekStartDate >= finalDate ? ' past' : ' future'}`}>
 					<div class="date-wrapper">
 						${
 							active ? HTML.wire()`
@@ -888,7 +890,7 @@ class Storefront extends Component {
 	render() {
 		return this.html`
 			<div class="storefront" id="economy">
-				<span>Storefront // ${this.name}</span>
+				<span>Storefront // ${this.name} // ${this.offeringsCount} Offerings</span>
 				${this.renderDatePicker()}
 				${this.renderPageControls('upper')}
 				<ul class="economy-offerings">
@@ -969,6 +971,10 @@ class Storefront extends Component {
 
 	get offerings() {
 		return (this._offerings ??= new Set());
+	}
+
+	get offeringsCount() {
+		return this.offerings.size;
 	}
 
 	get pageLength() {

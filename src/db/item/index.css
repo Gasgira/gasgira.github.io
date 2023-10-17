@@ -158,7 +158,7 @@ button.dbItemIcon {
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center center;
-		&[data-season="4"] {
+		&[data-season="5"] {
 			background-color: var(--rarity-event);
 		}
 	}

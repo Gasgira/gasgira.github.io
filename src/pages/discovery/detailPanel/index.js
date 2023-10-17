@@ -80,7 +80,7 @@ class UGCDetailPanel extends Component {
 			></div>
 			<div class=${`dbItemPanel_wrapper ugc_detail-panel${asset.is343 ? ' is343' : ''}${asset.isRecommended ? ' isRec' : ''}`}>
 				<header id="ugc_detail-panel_header" class="asset-title">
-					<h2>${asset.title}</h2>
+					<h2>${asset.title}<div class=${`icon-masked icon-ugc-${asset.isRecommendedBadge ? 'rec' : 'no-rec'}`}></div></h2>
 				</header>
 				<div class="img-viewer_wrapper">
 					<img
@@ -118,6 +118,7 @@ class UGCDetailPanel extends Component {
 					</ul>
 					<div class="description">
 						<span class="date-modified"><div class=${`icon-masked icon-ugc-${asset.assetKindIndex}`}></div>Last Updated: ${asset.lastModifiedVersion}</span>
+						<span class="recommended-note">${asset.recommendedNote}</span>
 						<span class="text">${asset.description}</span>
 					</div>
 					<ul class="tags">
@@ -125,7 +126,7 @@ class UGCDetailPanel extends Component {
 					</ul>
 					<div class=${`history-stats ${asset.assetKind}`}>
 						<h3 class="margin">Plays</h3>
-						${asset.assetKind === 'Map' ? asset.historyPlays.length > 2 ? this.chartCanvasPlays() : 'No Data' : ''}
+						${asset.assetKind === 'Map' ? asset.historyPlays.length > 1 ? this.chartCanvasPlays() : 'No Data' : ''}
 					</div>
 					<div class="credits">
 						<h3>${asset.contributors.length > 1 ? 'File Owner' : 'Author'}</h3>
@@ -187,7 +188,7 @@ class UGCDetailPanel extends Component {
 		const element = document.getElementById('chartCanvasPlays');
 		if (!element) return;
 		const data = [...this.asset.historyPlays];
-		if (!data || data.length < 2) return;
+		if (!data || data.length < 1) return;
 
 		let sum = 0;
 		const totals = data.map(([date, plays]) => {
@@ -209,7 +210,8 @@ class UGCDetailPanel extends Component {
 						cubicInterpolationMode: 'monotone',
 						tension: 0.4,
 						borderColor: '#2dbfe1',
-						backgroundColor: '#0d2436'
+						backgroundColor: '#0d2436',
+						pointStyle: false
 					},
 					{
 						label: 'Overall',
@@ -217,7 +219,8 @@ class UGCDetailPanel extends Component {
 						cubicInterpolationMode: 'monotone',
 						tension: 0.4,
 						borderColor: '#8a3513',
-						backgroundColor: '#2b1005'
+						backgroundColor: '#2b1005',
+						pointStyle: false
 					}
 				]
 			},

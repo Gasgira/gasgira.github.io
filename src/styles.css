@@ -168,6 +168,10 @@ a:not([class]), .parentSocket {
 	}
 }
 
+.display-none {
+	display: none;
+}
+
 @keyframes slide-in-right {
 	0% {
 		transform: translateX(100%);
@@ -709,6 +713,9 @@ button {
 	&.icon-arrow-right {
 		mask-image: url("assets/icons.svg#arrow-right");
 	}
+	&.icon-ugc-rec {
+		mask-image: url("assets/icons.svg#ugc-rec-badge");
+	}
 	&.icon-ugc-0 {
 		mask-image: url("assets/icons.svg#forge");
 	}
@@ -717,6 +724,9 @@ button {
 	}
 	&.icon-ugc-2 {
 		mask-image: url("assets/icons.svg#ugc-2");
+	}
+	&.icon-ugc-2-r {
+		mask-image: url("assets/icons.svg#ugc-2-r");
 	}
 	&.icon-ugc-3 {
 		mask-image: url("assets/icons.svg#forge");

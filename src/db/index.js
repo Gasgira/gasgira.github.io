@@ -51,6 +51,10 @@ class Database {
 		return this._revealHidden ??= false;
 	}
 
+	get date() {
+		return this?.index?.date ?? new Date('2021-11-15T20:00:00.000Z');
+	}
+
 	async getMetaData() {
 		const meta = this.getItemManifestByID('metadata');
 		// const metadata = await this.getJSON('metadata/metadata.json')
@@ -338,7 +342,8 @@ class Database {
 			[1, 'Heroes of Reach'],
 			[2, 'Lone Wolves'],
 			[3, 'Echoes Within'],
-			[4, 'Infection']
+			[4, 'Infection'],
+			[5, 'Reckoning']
 		])
 	}
 

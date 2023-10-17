@@ -425,7 +425,7 @@ class Socket extends Component {
 				}));
 		}
 
-		console.warn('sorted cores!', sorted)
+		// console.warn('sorted cores!', sorted)
 		return (this._itemIDs = sorted);
 	}
 

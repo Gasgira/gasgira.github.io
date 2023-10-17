@@ -124,7 +124,7 @@
 		flex-grow: 2;
 	}
 	& .timeline_list.operations {
-		width: 10rem;
+		/* width: 10rem; */
 		& button {
 			height: 20.2rem;
 			max-height: 20.2rem;

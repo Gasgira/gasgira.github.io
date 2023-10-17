@@ -580,6 +580,14 @@ class Search extends InventoryCategory {
 			this.state.filters.set('svis', parseInt(visibility));
 		}
 
+		const cross = urlParams.getSecionSetting('scross');
+		if (cross)
+		{
+			console.log('crosscore urlParams', cross)
+			if (cross === 'true') this.state.filters.set('scross', true);
+			if (cross === 'false') this.state.filters.set('scross', false);
+		}
+
 		if (this.state.term || this.state.filters.size) {
 			this.searchItems();
 		} else {
@@ -782,6 +790,18 @@ class Search extends InventoryCategory {
 							if (selected) return `<option value=${quality} selected>${quality}</option>`
 							return `<option value=${quality}>${quality}</option>`
 						})}
+					</select>
+				</li>
+				<li class="filter-input_wrapper">
+					<label for="select_cross">Cross Compat</label>
+					<select
+						name="select_cross"
+						id="select_cross"
+						onchange=${(e) => this.filterCross(e.target.value)}
+					>
+						<option value="">Any</option>
+						<option value="true">True</option>
+						<option value="false">False</option>
 					</select>
 				</li>
 				<li class="filter-input_wrapper">
@@ -1062,6 +1082,13 @@ class Search extends InventoryCategory {
 				if (typeof result.quality === 'undefined') return false;
 				if (filters.get('siq') !== result.quality) return false;
 				// console.log('Quality', filters.get('siq'), result.manufacturer);
+			}
+
+			// Cross Core
+			if (filters.has('scross'))
+			{
+				if (result?.cross === undefined) return false;
+				if (result.cross !== filters.get('scross')) return false;
 			}
 
 			// Season
@@ -1348,6 +1375,24 @@ class Search extends InventoryCategory {
 
 		this.state.filters.set(filterKey, value);
 		urlParams.setSecionSetting(filterKey, `${value}`);
+	}
+
+	filterCross(value) {
+		const filterKey = 'scross';
+		switch (value) {
+			case "true":
+				this.state.filters.set(filterKey, true);
+				urlParams.setSecionSetting(filterKey, 'true');
+				break;
+			case "false":
+				this.state.filters.set(filterKey, false);
+				urlParams.setSecionSetting(filterKey, 'false');
+				break;
+			default:
+				this.state.filters.delete(filterKey);
+				urlParams.deleteSecionSetting(filterKey);
+				break;
+		}
 	}
 
 	filterSeason(value) {

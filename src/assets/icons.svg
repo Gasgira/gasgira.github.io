@@ -8,6 +8,15 @@
 			display: flex;
 			}
 		</style>
+		<svg id="ugc-map">
+			<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+			<polyline points="3 7 9 4 15 7 21 4 21 17 15 20 9 17 3 20 3 7" />
+			<line x1="9" y1="4" x2="9" y2="17" />
+			<line x1="15" y1="7" x2="15" y2="20" />
+		</svg>
+		<svg id="ugc-rec" stroke="#fff" fill="#fff">
+			<path d="M22.86,10.86,19.38,7.38V6.3L16.16,3.09H15.09L12,0,8.91,3.09H7.58L4.36,6.3V7.64L1.14,10.86l3.22,3.22v1.34L7,18.1V24l3.36-3.88,1.6,1.6,1.46-1.45L16.69,24V18.1l2.69-2.68V14.35Zm-19.58,0L12,2.15l8.72,8.71L12,19.58Z"/>
+		</svg>
 	</defs>
 	<g id="close-x">
 		<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -243,10 +252,13 @@
 		<path d="M9 4h6a2 2 0 0 1 2 2v14l-5 -3l-5 3v-14a2 2 0 0 1 2 -2" />
 	</g>
 	<g id="ugc-2">
-		<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-		<polyline points="3 7 9 4 15 7 21 4 21 17 15 20 9 17 3 20 3 7" />
-		<line x1="9" y1="4" x2="9" y2="17" />
-		<line x1="15" y1="7" x2="15" y2="20" />
+		<use href="#ugc-map"/>
+	</g>
+	<g id="ugc-2-r">
+		<use href="#ugc-map"/>
+	</g>
+	<g id="ugc-rec-badge">
+		<use href="#ugc-rec"/>
 	</g>
 	<g id="ugc-6">
 		<path stroke="none" d="M0 0h24v24H0z" fill="none"/>

@@ -85,6 +85,16 @@
 		&::before {
 			border-width: 0.25em;
 		}
+		& .badges {
+			opacity: 0.33;
+			& .badge-rec {
+				color: #000;
+			}
+		}
+		& .titles .icon-masked {
+			opacity: 1;
+			color: #000;
+		}
 	}
 	&.is343 {
 		--rarity: var(--rarity-store);
@@ -128,6 +138,7 @@
 		}
 		& .icon-masked {
 			opacity: 0.5;
+			color: var(--rarity);
 		}
 	}
 	& .badges {
@@ -135,8 +146,9 @@
 		position: absolute;
 		top: 0.25em;
 		right: 0.5em;
-		opacity: 0.5;
-		& .badge-343i {
+		opacity: 0.75;
+		& .badge-rec {
+			color: var(--theme-activate);
 		}
 	}
 }

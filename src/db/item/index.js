@@ -397,35 +397,44 @@ export class Item extends Component {
 		{
 			if (!path) return '';
 			let svgId = 'ArmorCoating';
-			switch (path) {
-				case 'Inventory/Armor/Themes/007-001-olympus-c13d0b38.json':
+			const id = db.itemPathToID(path);
+			switch (id) {
+				case '007-001-olympus-c13d0b38':
 					svgId = 'MK7'
 					break;
-				case 'Inventory/Armor/Themes/007-001-reach-2564121f.json':
+				case '007-001-reach-2564121f':
 					svgId = 'MK5'
 					break;
-				case 'Inventory/Armor/Themes/007-001-samurai-55badb14.json':
+				case '007-001-samurai-55badb14':
 					svgId = 'YOROI'
 					break;
-				case 'Inventory/Armor/Themes/007-000-eagle-strike-0903655e.json':
+				case '007-000-eagle-strike-0903655e':
 					svgId = 'ENTRENCHED'
 					break;
-				case 'Inventory/Armor/Themes/007-000-lone-wolf-0903655e.json':
+				case '007-000-lone-wolf-0903655e':
 					svgId = 'RAKSHASA'
 					break;
-				case 'Inventory/Armor/Themes/007-001-spi-c13d0b38.json':
+				case '007-001-spi-c13d0b38':
 					svgId = 'SPI'
 					break;
-				case 'Inventory/Armor/Themes/007-001-fwl-c13d0b38.json':
+				case '007-001-fwl-c13d0b38':
 					svgId = 'CHIMERA'
 					break;
-				case 'Inventory/Armor/Themes/007-001-haz-c13d0b38.json':
+				case '007-001-haz-c13d0b38':
 					svgId = 'HAZMAT'
+					break;
+				case '007-000-lgc-001-0903655e':
+					svgId = 'MK5CE'
+					break;
+				case '007-000-inf-001-0903655e':
+					svgId = 'MK6'
 					break;
 
 				default:
 					break;
 			}
+
+			if (this.isCrossCompatible) svgId = 'CrossCompatible';
 			return HTML.wire()`
 				<div
 					class=${`item-type-icon ${this.type ?? 'default-type'}`}
@@ -604,6 +613,15 @@ export class Item extends Component {
 		if (this?._tags) return this._tags;
 		if (Array.isArray(this.community?.tags)) return (this._tags = new Set(this.community.tags));
 		return (this._tags = new Set());
+	}
+
+	get isCrossCompatible() {
+		if (this?.data?.CommonData?.IsCrossCompatible !== undefined)
+		{
+			if (this?.data?.CommonData?.IsCrossCompatible) return true;
+		}
+
+		return false;
 	}
 }
 

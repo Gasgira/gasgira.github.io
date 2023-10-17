@@ -23,6 +23,11 @@ class App {
 				>Privacy</span>
 			`;
 
+			console.warn(db.date)
+			HTML.bind(document.querySelector('.js--db-date'))`
+				${db.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+			`;
+
 			const url = new URL(window.location);
 			const { pathname } = url;
 			if (pathname.startsWith('/item/'))

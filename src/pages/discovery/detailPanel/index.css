@@ -12,6 +12,18 @@
 		font-size: 1.5rem;
 		padding: 1rem 2rem;
 		position: relative;
+		& .icon-ugc-no-rec {
+			display: none;
+		}
+		& h2 {
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			justify-content: space-between;
+			& .icon-ugc-rec {
+				color: var(--rarity);
+			}
+		}
 		&::before {
 			content: "";
 			position: absolute;
@@ -67,12 +79,13 @@
 			padding: 1.5rem var(--edge-pad);
 			box-shadow: 0 1rem 1rem rgba(0,0,0,0.25);
 			margin-bottom: 3rem;
-			& .date-modified {
+			& .date-modified, & .recommended-note {
 				font-size: 0.9rem;
 				opacity: 0.66;
 				display: flex;
 				flex-direction: row;
 				align-items: center;
+				margin-bottom: 0.5rem;
 			}
 			& .text {
 				font-size: 1.2rem;

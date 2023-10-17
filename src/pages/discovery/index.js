@@ -32,7 +32,8 @@ export class Discovery extends Component {
 		if (pathParts?.[2]?.startsWith('recommended')) this.state.view = this.recommended;
 
 		this.render();
-		await discovery.loadUgcStats();
+		discovery.loadUgcStats();
+		discovery.loadRecommendedRegistry();
 
 		if (this.state.view === this.search) this.search.submit();
 	}
@@ -142,7 +143,7 @@ class DiscoveryManager {
 	get assetSorts() {
 		return this._assetSorts ??= new Map([
 			['Name', 'Name'],
-			['Likes', 'Likes'],
+			['Likes', 'Bookmarks'],
 			['PlaysRecent', 'Plays, Recent'],
 			['PlaysAllTime', 'Plays, All Time'],
 			['NumberOfObjects', 'Number Of Objects'],
@@ -152,7 +153,7 @@ class DiscoveryManager {
 			['DateCreatedUtc', 'Date Created'],
 			['DateModifiedUtc', 'Date Modified'],
 			['DatePublishedUtc', 'Date Published'],
-			['Bookmarks', 'Bookmarks']
+			// ['Bookmarks', 'Bookmarks']
 		]);
 	}
 
@@ -215,9 +216,29 @@ class DiscoveryManager {
 		}
 	}
 
+	async loadRecommendedRegistry() {
+		try {
+			const res = await db.getJSON(`/ugc/rec-registry.json`);
+			if (!res) throw new Error(`Failed to fetch`, res);
+
+			if (res && Array.isArray(res?.assets))
+			{
+				this._recommendedRegistry = new Map(res.assets);
+				console.log(`[DiscoveryManager.loadRecommendedRegistry] "${this._recommendedRegistry.size}" asset stats loaded for date "${res.date}"`);
+			}
+		} catch (error) {
+			console.log(`[DiscoveryManager.loadRecommendedRegistry]`, error)
+		}
+	}
+
 	getAssetStats(assetId) {
 		if (!this._ugcStats || !this._ugcStats.has(assetId)) return;
 		return this._ugcStats.get(assetId);
+	}
+
+	getAssetRecommendation(assetId) {
+		if (!this._recommendedRegistry || !this._recommendedRegistry.has(assetId)) return;
+		return this._recommendedRegistry.get(assetId);
 	}
 }
 
@@ -622,12 +643,15 @@ class UGCAsset extends Component {
 					onload=${() => this.setState({ loadedImage: true })}
 				>
 				<div class="titles">
-					<div class=${`icon-masked icon-ugc-${this.assetKindIndex}`}></div>
+					<div class=${`icon-masked icon-ugc-${this.assetKindIndex}${this.isRecommendedBadge ? ' rec' : ''}`}></div>
 					<span class="name">${this.title}</span>
 				</div>
 				<div class="badges">
 					${{
 						html: this.is343 ? `<span class="badge-343i">343</span>` : ''
+					}}
+					${{
+						html: this.isRecommendedBadge ? `<div class="badge-rec icon-masked icon-ugc-rec"></div>` : ''
 					}}
 				</div>
 			</button>
@@ -760,6 +784,29 @@ class UGCAsset extends Component {
 
 	get isRecommended() {
 		return this._isRecommended ??= (this.asset?.ParentAssetCount ?? this.asset?.AssetStats?.ParentAssetCount > 0) && !this.is343;
+	}
+
+	get isRecommendedBadge() {
+		if (discovery._recommendedRegistry && discovery._recommendedRegistry.has(this.id)) return true;
+		return false;
+	}
+
+	get recommendedNote () {
+		if (!this.isRecommendedBadge) return '';
+		console.log(this.recommendedDate, this.recommendedDate > new Date('2023-05-18T07:57:07.502Z'))
+		return `343 Recommended ${this.recommendedDate > new Date('2023-05-18T07:57:07.502Z') ? this.recommendedDate.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }) : ''}`;
+	}
+
+	get recommendedDate() {
+		if (this._recommendedDate) return this._recommendedDate;
+		if (this.isRecommendedBadge)
+		{
+			const recommendation = discovery.getAssetRecommendation(this.id);
+			if (recommendation && Date.parse(recommendation.date))
+			{
+				return (this._recommendedDate = new Date(recommendation.date));
+			}
+		}
 	}
 
 	get dateModified() {

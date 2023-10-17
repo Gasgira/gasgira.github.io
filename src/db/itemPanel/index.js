@@ -601,6 +601,7 @@ class ItemPanel extends Component {
 							</div>
 						</div>
 						<span class="attribute">${this.state.item?.data?.CommonData?.CustomAvailability ?? null}</span>
+						<span class=${`attribute${this.state.item.isCrossCompatible ? '' : ' display-none'}`}>Cross Compatible</span>
 						<span class="attribute">
 							${this.state.item?.parentPaths ? `Applies to: ` : ''}
 							${[...this.state.item?.parentPaths ?? []].map(async path => {
