@@ -32,6 +32,7 @@ class Calendar extends Component {
 		const calendarMeta = db.getItemManifestByID('seasoncalendar');
 		if (!calendarMeta) return;
 		this.data = await db.getJSON(`item/${calendarMeta.name}/${calendarMeta.res}.json`);
+		this.archivedEvents = [];
 		this.events = [];
 		this.operations = [];
 		this.currentOperations = [];
@@ -84,13 +85,23 @@ class Calendar extends Component {
 
 			if (!this.rewardTracks.has(path))
 			{
+				const rewardTrack = new RewardTrack(path, false);
+				rewardTrack.addDates(ritual?.StartDate?.ISO8601Date, ritual?.EndDate?.ISO8601Date);
+
 				if (!(startDate < this.minimumEventDate))
 				{
-					const rewardTrack = new RewardTrack(path, false);
 					this.rewardTracks.set(`${path}`, rewardTrack);
-					rewardTrack.addDates(ritual?.StartDate?.ISO8601Date, ritual?.EndDate?.ISO8601Date);
-	
 					this.events.push({
+						type: 'ritual',
+						startDate: ritual?.StartDate?.ISO8601Date,
+						endDate: ritual?.EndDate?.ISO8601Date,
+						rewardTrack,
+						isNext,
+						isPast
+					});
+				} else {
+					this.rewardTracksArchive.set(`${path}`, rewardTrack);
+					this.archivedEvents.push({
 						type: 'ritual',
 						startDate: ritual?.StartDate?.ISO8601Date,
 						endDate: ritual?.EndDate?.ISO8601Date,
@@ -125,6 +136,13 @@ class Calendar extends Component {
 				const paramEvent = urlParams.getSecionSetting('calendar', { dash: true });
 				if (paramEvent) this.showRewardTrackByName(paramEvent);
 			});
+		Promise.allSettled([...this?.rewardTracksArchive.values()].map(rewardTrack => rewardTrack.init()))
+			.then(() => {
+				// this.render();
+				this.renderEventList();
+				const paramEvent = urlParams.getSecionSetting('calendar', { dash: true });
+				if (paramEvent) this.showRewardTrackByName(paramEvent);
+			});
 		return this;
 	}
 
@@ -136,6 +154,10 @@ class Calendar extends Component {
 
 	get rewardTracks() {
 		return this?._rewardTracks ?? (this._rewardTracks = new Map());
+	}
+
+	get rewardTracksArchive() {
+		return this?._rewardTracksArchive ?? (this._rewardTracksArchive = new Map());
 	}
 
 	get economy() {
@@ -194,6 +216,16 @@ class Calendar extends Component {
 				<span>Store</span>
 			</button></li>
 			${[...this?.rewardTracks.values()].map(rewardTrack => HTML.wire(rewardTrack)`
+				<li
+					class=${rewardTrack.isSeason ? 'season' : 'event'}
+				><button
+					onclick=${() => this.showRewardTrack(rewardTrack)}
+					class=${this.state?.rewardTrack === rewardTrack ? 'active' : null}
+				>
+					<span>${rewardTrack?.name}</span>
+				</button></li>
+			`)}
+			${[...this?.rewardTracksArchive.values()].map(rewardTrack => HTML.wire(rewardTrack)`
 				<li
 					class=${rewardTrack.isSeason ? 'season' : 'event'}
 				><button

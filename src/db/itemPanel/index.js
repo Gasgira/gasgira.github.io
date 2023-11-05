@@ -6,6 +6,7 @@ import { filenameFromPath } from 'utils/paths.js';
 import { modalConstructor } from 'ui/modal';
 import { STATIC_ROOT } from 'environment';
 import { diff as createDiff, formatters as renderDiff } from 'jsondiffpatch';
+import Chart from 'chart.js/auto';
 
 import './index.css';
 import './diff.css';
@@ -433,7 +434,8 @@ class ItemPanel extends Component {
 			pretty: true,
 			copyStatus: 'Copy Link',
 			page: 'api',
-			community: false
+			community: false,
+			showStatHistory: db.isStatHistoryLoaded
 		};
 	}
 
@@ -732,6 +734,8 @@ class ItemPanel extends Component {
 		if (!this?.item.community) return;
 		const community = this.item.community;
 		const displays = [];
+		let hasStats = false;
+
 		for (const property in community)
 		{
 			switch (property) {
@@ -770,6 +774,7 @@ class ItemPanel extends Component {
 					const delta = (parseFloat(community?.stats?.delta ?? 0) * 100).toFixed(2);
 					const deltaSymbol = delta > 0 ? '+' : delta < 0 ? '' : '~';
 					const deltaClass = delta > 0 ? 'pos' : delta < 0 ? 'neg' : 'neut';
+					hasStats = true;
 
 					displays.push(`<div class="community_item">
 							<label>Popularity as Equipped by Recent Players</label>
@@ -804,9 +809,96 @@ class ItemPanel extends Component {
 					class="community_content"
 				>
 					${{html: displays}}
+					${hasStats ? this.renderStatHistory() : ''}
 				</div>
 			</section>
 		`;
+	}
+
+	async renderStatHistory() {
+		if (this.state.showStatHistory) {
+			return HTML.wire(this, ':communityHistory')`
+				<div
+					class="item-panel_community-history"
+				>
+					<h3>Weekly Fashion Stats</h3>
+					${this.chartCanvasStatHistory()}
+				</div>
+			`;
+		} else {
+			return HTML.wire(this, ':communityHistory')`
+				<div
+					class="item-panel_community-history"
+				>
+					<button
+						onclick=${() => this.setState({ showStatHistory: true })}
+					>
+						<div class="icon-masked icon-info"></div>
+						Load Fashion History
+					</button>
+				</div>
+			`;
+		}
+	}
+
+	chartCanvasStatHistory() {
+		return HTML.wire(this, ':chartCanvasStatHistory')`
+			<canvas
+				id="chartCanvasStatHistory"
+				class="chartHistory itemStats"
+				onconnected=${() => this.renderStatHistoryChart()}
+			></canvas>
+		`;
+	}
+
+	async renderStatHistoryChart() {
+		const element = document.getElementById('chartCanvasStatHistory');
+		if (!element) return;
+		const history = this.state.itemStatHistory ??= await db.getStatHistoryByID(this.item.id);
+		if (!history || history.sample.length < 1) return;
+
+		if (this.itemStatHistoryChart) this.itemStatHistoryChart.destroy();
+
+		this.itemStatHistoryChart = new Chart(element, {
+			type: 'line',
+			data: {
+				labels: history.sample.map((el, index) => {
+					const date = new Date(history.start);
+					return new Date(date.setDate(date.getDate() + (7 * index))).toLocaleDateString();
+				}),
+				datasets: [
+					{
+						label: 'Percent',
+						data: history.sample.map(scalar => scalar * 100),
+						cubicInterpolationMode: 'monotone',
+						tension: 0.4,
+						borderColor: '#2dbfe1',
+						backgroundColor: '#0d2436',
+						pointStyle: history.sample.length > 7 ? false : true
+					}
+				]
+			},
+			options: {
+				responsive: true,
+				interaction: {
+					intersect: false,
+					mode: 'index',
+				},
+				scales: {
+					x: {
+						ticks: {
+							autoSkip: true,
+							maxTicksLimit: 14
+						}
+					},
+					y: {
+						min: 0,
+						type: 'logarithmic',
+					}
+				},
+				animation: false
+			}
+		});
 	}
 
 	async renderHistoryMenu() {

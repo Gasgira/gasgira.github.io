@@ -292,6 +292,41 @@ class Database {
 		}
 	}
 
+	async getStatHistoryIndex() {
+		const history = await this.getJSON('itemStatHistory.json')
+		if (history && Array.isArray(history.samples))
+		{
+			this._statHistory = new Map(history.samples);
+			console.info(`[db.getStatHistoryIndex] loading history with "${this._statHistory.size}" items from "${history.date}"`);
+			return this._statHistory;
+		}
+		console.error(`[db.getStatHistoryIndex] No history index!`);
+	}
+
+	async getStatHistoryByID(id) {
+		try {
+			if (!id) return;
+			if (!this?._statHistory) await this.getStatHistoryIndex();
+
+			if (!this._statHistory || !this._statHistory.size)
+			{
+				console.error(`[db.getStatHistoryByID] No history index!`);
+				return;
+			}
+
+			if (this._statHistory.has(id)) return this._statHistory.get(id);
+			console.warn(`[db.getStatHistoryByID] No history for "${id}"!`);
+		} catch (error) {
+			console.error(`[db.getStatHistoryByID] uncaught`, error);
+		}
+	}
+
+	get isStatHistoryLoaded() {
+		if (this._isStatHisoryLoaded) return true;
+		if (this?._statHistory) return (this._isStatHisoryLoaded = true);
+		return false;
+	}
+
 	async getEmblemColorIndex() {
 		if (this._emblemColors) return this._emblemColors;
 		const json = await this.getJSON('emblemColors.json');
