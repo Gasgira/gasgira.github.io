@@ -203,6 +203,10 @@
 				point-events: none;
 				transition: background-color var(--time-active) linear;
 			}
+			& .rank_reward-items {
+				display: flex;
+				flex-direction: row;
+			}
 			& .rank_reward-items li {
 				position: relative;
 				&::before {
@@ -211,7 +215,7 @@
 					align-items: center;
 					position: absolute;
 					font-size: 0.8em;
-					bottom: -2.5em;
+					bottom: -1.5em;
 					height: 1em;
 					width: 3rem;
 					left: calc(50% - 1.5rem);
@@ -235,7 +239,7 @@
 				align-items: center;
 				position: absolute;
 				font-size: 0.8em;
-				bottom: -2.5em;
+				bottom: -1.5em;
 				height: 1em;
 				width: 3rem;
 				right: 0;

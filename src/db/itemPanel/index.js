@@ -816,29 +816,14 @@ class ItemPanel extends Component {
 	}
 
 	async renderStatHistory() {
-		if (this.state.showStatHistory) {
-			return HTML.wire(this, ':communityHistory')`
-				<div
-					class="item-panel_community-history"
-				>
-					<h3>Weekly Fashion Stats</h3>
-					${this.chartCanvasStatHistory()}
-				</div>
-			`;
-		} else {
-			return HTML.wire(this, ':communityHistory')`
-				<div
-					class="item-panel_community-history"
-				>
-					<button
-						onclick=${() => this.setState({ showStatHistory: true })}
-					>
-						<div class="icon-masked icon-info"></div>
-						Load Fashion History
-					</button>
-				</div>
-			`;
-		}
+		return HTML.wire(this, ':communityHistory')`
+			<div
+				class="item-panel_community-history"
+			>
+				<h3>Weekly Fashion Stats</h3>
+				${this.chartCanvasStatHistory()}
+			</div>
+		`;
 	}
 
 	chartCanvasStatHistory() {
