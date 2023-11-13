@@ -203,7 +203,7 @@ class DiscoveryManager {
 	async loadUgcStats() {
 		try {
 			// TODO This should instead be loaded server side in the future
-			const res = await db.getJSON(`/ugc/stats_maps.json`);
+			const res = await db.getJSON(`ugc/stats_maps.json`);
 			if (!res) throw new Error(`Failed to fetch`, res);
 
 			if (res && Array.isArray(res?.assets))
@@ -218,7 +218,7 @@ class DiscoveryManager {
 
 	async loadRecommendedRegistry() {
 		try {
-			const res = await db.getJSON(`/ugc/rec-registry.json`);
+			const res = await db.getJSON(`ugc/rec-registry.json`);
 			if (!res) throw new Error(`Failed to fetch`, res);
 
 			if (res && Array.isArray(res?.assets))
@@ -1011,7 +1011,7 @@ class UGCManifest extends UGCSearch {
 	}
 
 	async loadManifest() {
-		const res = await db.getJSON(`/ugc/${this.projectPath}.json`);
+		const res = await db.getJSON(`ugc/${this.projectPath}.json`);
 
 		if (!res)
 		{

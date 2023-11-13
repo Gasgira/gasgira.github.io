@@ -206,6 +206,7 @@
 			& .rank_reward-items {
 				display: flex;
 				flex-direction: row;
+				flex-wrap: wrap;
 			}
 			& .rank_reward-items li {
 				position: relative;
