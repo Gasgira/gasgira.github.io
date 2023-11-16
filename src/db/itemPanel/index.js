@@ -508,6 +508,7 @@ class ItemPanel extends Component {
 		this.screenshots.display(item);
 
 		this.render();
+		this.renderStatHistoryChart()
 
 		if (this.palettes.types.has(item.type)) this.palettes.init();
 
