@@ -5,6 +5,9 @@
 	&.is343 {
 		--rarity: var(--rarity-store);
 	}
+	&.isFeatured {
+		--rarity: var(--rarity-event);
+	}
 	&.isRec {
 		--rarity: var(--theme-activate);
 	}

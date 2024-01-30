@@ -429,6 +429,9 @@ export class Item extends Component {
 				case '007-000-inf-001-0903655e':
 					svgId = 'MK6'
 					break;
+				case 'TODO':
+					svgId = 'MK4'
+					break;
 
 				default:
 					break;

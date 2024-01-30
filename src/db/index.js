@@ -378,7 +378,8 @@ class Database {
 			[2, 'Lone Wolves'],
 			[3, 'Echoes Within'],
 			[4, 'Infection'],
-			[5, 'Reckoning']
+			[5, 'Reckoning'],
+			[6, 'Operations']
 		])
 	}
 

@@ -372,7 +372,7 @@ class Socket extends Component {
 				sorted = new Set([...unsortedSet].sort((a, b) => {
 					const aMeta = db.getItemManifestByID(a);
 					const bMeta = db.getItemManifestByID(b);
-					return (new Date(bMeta.added) - new Date(aMeta.added))
+					return (new Date(bMeta?.added ?? '2021-11-10') - new Date(aMeta?.added ?? '2021-11-10'))
 				}));
 				break;
 			case 'dateModified':

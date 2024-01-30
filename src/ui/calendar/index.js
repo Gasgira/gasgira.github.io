@@ -290,7 +290,7 @@ class Calendar extends Component {
 	calendar() {
 		return HTML.wire(this, ':calendar')`
 		<div class="reward-track_wrapper mica_content">
-			<span>Season 5 // ${this.remainingTimeInSeason()}</span>
+			<span>Operation // ${this.remainingTimeInSeason()}</span>
 			<div class="timeline_wrapper">
 				<ul class="timeline_list operations">
 					${this?.currentOperations?.map(operation => {
@@ -308,7 +308,7 @@ class Calendar extends Component {
 							>
 								<div
 									class="event-bg"
-									style=${{backgroundImage: `url(${STATIC_ROOT}images/${db.pathCase(operation.rewardTrack?.data?.SummaryImagePath)})`}}
+									style=${{backgroundImage: `url(${STATIC_ROOT}images/${db.pathCase(operation.rewardTrack?.data?.BackgroundImagePath)})`}}
 								></div>
 								<button
 									onclick=${() => this.showRewardTrack(operation.rewardTrack)}
@@ -317,6 +317,7 @@ class Calendar extends Component {
 									${startDate.toLocaleDateString(undefined, { month: 'short', day: 'numeric' })}
 									${' - '}${endDate.toLocaleDateString(undefined, { month: 'short', day: 'numeric' })}
 									</span>
+										<span class="upcoming">${active ? 'Live Now' : ''}</span>
 									<span class="event-name">${operation.rewardTrack.name}</span>
 								</button>
 							</li>

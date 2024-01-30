@@ -46,7 +46,6 @@
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		width: 100%;
 		padding: 0.5em;
 		list-style-type: none;
 		justify-content: flex-start;
@@ -125,10 +124,17 @@
 	}
 	& .timeline_list.operations {
 		/* width: 10rem; */
+		& .event-bg {
+			background-size: cover;
+			background-position: right;
+		}
 		& button {
-			height: 20.2rem;
+			height: 8.2rem;
 			max-height: 20.2rem;
-			width: 10rem;
+			width: 30rem;
+			& .event-name {
+				font-size: 1.5rem;
+			}
 		}
 	}
 }
@@ -136,8 +142,16 @@
 @media(max-width: 580px) {
 	.timeline_wrapper {
 		flex-direction: column;
-		& .timeline_list.operations button {
-			max-height: var(--lengthMax);
+		& .timeline_list.operations {
+			& .event-bg {
+				background-position: right;
+			}
+			& button {
+				max-height: var(--lengthMax);
+				& .event-name {
+					font-size: 1rem;
+				}
+			}
 		}
 	}
 }

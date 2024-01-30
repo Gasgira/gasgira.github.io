@@ -78,7 +78,7 @@ class UGCDetailPanel extends Component {
 				class="dbItemPanel_clickout"
 				onclick=${() => this.hide()}
 			></div>
-			<div class=${`dbItemPanel_wrapper ugc_detail-panel${asset.is343 ? ' is343' : ''}${asset.isRecommended ? ' isRec' : ''}`}>
+			<div class=${`dbItemPanel_wrapper ugc_detail-panel${asset.is343 ? ' is343' : ''}${asset.isRecommendedBadge ? ' isRec' : ''}${asset.hasParentAssets ? ' isFeatured' : ''}`}>
 				<header id="ugc_detail-panel_header" class="asset-title">
 					<h2>${asset.title}<div class=${`icon-masked icon-ugc-${asset.isRecommendedBadge ? 'rec' : 'no-rec'}`}></div></h2>
 				</header>

@@ -629,7 +629,7 @@ class UGCAsset extends Component {
 		// ></div>
 		return this.html`
 			<button
-				class=${`ugc_item${this.is343 ? ' is343' : ''}${this.isRecommended ? ' isRec' : ''}`}
+				class=${`ugc_item${this.is343 ? ' is343' : ''}${this.hasParentAssets ? ' isFeatured' : ''}${this.isRecommendedBadge ? ' isRec' : ''}`}
 				onclick=${() => this.displayDetails()}
 				title=${this.title}
 			>
@@ -789,6 +789,10 @@ class UGCAsset extends Component {
 	get isRecommendedBadge() {
 		if (discovery._recommendedRegistry && discovery._recommendedRegistry.has(this.id)) return true;
 		return false;
+	}
+
+	get hasParentAssets() {
+		return this._hasParentAssets ??= (this.asset?.ParentAssetCount ?? this.asset?.AssetStats?.ParentAssetCount > 0) && !this.is343;
 	}
 
 	get recommendedNote () {
