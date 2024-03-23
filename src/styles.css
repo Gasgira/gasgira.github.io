@@ -138,10 +138,15 @@ footer {
 		justify-content: center;
 	}
 	& a {
-		text-decoration: none;
+		text-decoration: underline;
 	}
 	& span {
 		padding-left: 0.33em;
+	}
+	& p {
+		padding-top: 1em;
+		max-width: 50em;
+		text-align: center;
 	}
 }
 

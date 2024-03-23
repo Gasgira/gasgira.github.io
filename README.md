@@ -11,6 +11,10 @@ Halo Infinite © Microsoft Corporation. Cylix Guide was created under Microsoft'
 
 The original assets (e.g. code) used for this website (excluding marks such as "Cylix Guide," the greenman logo, and content associated with Microsoft) are available under the ISC license.
 
+# Support
+
+I am a cartographer - the best way to help Cylix Guide keep running is to explore [custom push pin maps at GeoJango](https://geojango.com/collections/world-push-pin-maps). We make incredibly detailed maps for exploring the world, so you can track your travels, plan a journey, and tell your story.
+
 
 ISC License
 
