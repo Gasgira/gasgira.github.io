@@ -196,14 +196,16 @@ class Database {
 	}
 
 	manifestHasID(id) {
-		if (!id || typeof id !== 'string') return false;
+		// if (!id || typeof id !== 'string') return false;
 		if (this.index.manifest.has(id)) return true;
+		if (this.index.manifest.has(id.toLowerCase())) return true;
 		return false;
 	}
 
 	getItemManifestByID(id) {
 		if (!id || typeof id !== 'string') return;
 		if (this.index.manifest.has(id)) return this.index.manifest.get(id);
+		if (this.index.manifest.has(id.toLowerCase())) return this.index.manifest.get(id.toLowerCase());
 		console.warn(`[db.getItemManifestByID] Not found! "${id}"`);
 	}
 

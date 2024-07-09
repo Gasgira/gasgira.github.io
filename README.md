@@ -18,7 +18,7 @@ I am a cartographer - the best way to help Cylix Guide keep running is to explor
 
 ISC License
 
-Copyright (c) 2022 Kwatzy
+Copyright (c) 2024 Kwatzy
 
 Permission to use, copy, modify, and/or distribute this software for any
 purpose with or without fee is hereby granted, provided that the above

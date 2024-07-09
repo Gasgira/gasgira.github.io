@@ -135,7 +135,7 @@ class Profile extends Component {
 				fetching: true,
 				status: 'Searching...'
 			});
-			// const response = await fetch(new URL(`/api/vanity/${gamertag}`, `https://cylix.guide`));
+			// const response = await fetch(new URL(`/api/vanity/profile/${gamertag}`, `https://cylix.guide`));
 			const response = await fetch(new URL(`/api/vanity/profile/${gamertag}`, `https://${window.location.host}`));
 			console.log('requestAppearance', response.status);
 			this.state.fetching = false;
